@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalnyesgrowth — Diseño Web para Negocios Hispanos</title>
+  <meta name="description" content="Construimos sitios web profesionales para negocios hispanos locales que generan llamadas reales — en 10 días o menos.">
+  <meta property="og:title" content="Kalnyesgrowth — Diseño Web para Negocios Hispanos">
+  <meta property="og:description" content="Sitios web que hacen sonar tu teléfono. Desde $400. En 10 días.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ════════════════════════════════════════
+       RESET & VARIABLES
+    ════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:       #0D0D0D;
+      --bg-2:     #141414;
+      --bg-3:     #1C1C1C;
+      --white:    #FFFFFF;
+      --gray:     rgba(255,255,255,0.55);
+      --gray-dim: rgba(255,255,255,0.3);
+      --border:   rgba(255,255,255,0.09);
+      --blue:     #2563EB;
+      --blue-lt:  rgba(37,99,235,0.18);
+      --orange:   #F05A1A;
+      --orange-dk:#D64D0E;
+      --font:     'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: var(--font); border: none; cursor: pointer; background: none; }
+    ::selection { background: var(--blue); color: white; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 100px 0; }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 20px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 100px;
+      padding: 11px 22px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .btn-orange {
+      background: var(--orange);
+      color: white;
+      border-color: var(--orange);
+    }
+    .btn-orange:hover {
+      background: var(--orange-dk);
+      border-color: var(--orange-dk);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(240,90,26,0.35);
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: #1d51c8;
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.05);
+    }
+    .btn-lg { font-size: 0.95rem; padding: 14px 28px; }
+
+    /* ════════════════════════════════════════
+       ANNOUNCEMENT BAR
+    ════════════════════════════════════════ */
+    .announce-bar {
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    .announce-bar-center {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .announce-new {
+      background: var(--blue);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .announce-bar a {
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-size: 0.8rem;
+    }
+    .announce-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 0.78rem;
+    }
+    .announce-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
+
+    /* ════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    nav.scrolled { border-color: rgba(255,255,255,0.06); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border: 2px solid var(--blue);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+
+    .lang-btn {
+      font-family: var(--font);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .lang-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-burger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0; right: 0; bottom: 0;
+      background: var(--bg);
+      z-index: 199;
+      padding: 32px;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s;
+    }
+    .mobile-menu a:hover { color: var(--white); }
+    .mobile-menu-footer {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mob-lang {
+      font-size: 0.9rem;
+      color: var(--gray-dim);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    /* ════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════ */
+    .hero {
+      padding: 64px 0 80px;
+      background: var(--bg);
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 52px;
+      max-width: 820px;
+    }
+    .hero-title .blue { color: var(--blue); }
+
+    /* Two-card hero layout */
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .hero-card-left {
+      background: linear-gradient(140deg, #0B1D3A 0%, #1A3A7A 50%, #2563EB 100%);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card-left::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25'%3E%3Cstop offset='0%25' stop-color='%234B8EF5' stop-opacity='0.25'/%3E%3Cstop offset='100%25' stop-color='%230B1D3A' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cellipse cx='200' cy='180' rx='200' ry='160' fill='url(%23g)'/%3E%3C/svg%3E") center/cover no-repeat;
+      pointer-events: none;
+    }
+    .hero-card-left-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .hero-card-left h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .hero-card-left p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      max-width: 360px;
+      position: relative;
+    }
+    .hero-card-left .btn { position: relative; }
+
+    .hero-card-right {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-3);
+      min-height: 400px;
+    }
+    .hero-card-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Hero bottom stats */
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .hero-stat {
+      flex: 1;
+      padding: 20px 28px;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-num span { color: var(--blue); }
+    .hero-stat-label { font-size: 0.78rem; color: var(--gray); font-weight: 500; }
+
+    /* ════════════════════════════════════════
+       LOGO / MARQUEE BAR
+    ════════════════════════════════════════ */
+    .marquee-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      overflow: hidden;
+      background: var(--bg-2);
+    }
+    .marquee-label {
+      text-align: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 18px;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 56px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 32px;
+    }
+    .marquee-item {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════
+       CASE STUDY CARDS
+    ════════════════════════════════════════ */
+    .cases-section {
+      padding: 80px 0;
+    }
+    .cases-header {
+      margin-bottom: 40px;
+    }
+    .cases-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      max-width: 680px;
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+    .case-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+    }
+    .case-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.18); }
+    .case-preview {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      position: relative;
+    }
+    .case-body { padding: 20px; }
+    .case-niche {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 6px;
+    }
+    .case-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .case-result {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+    /* Case card colors */
+    .case-blue   { background: linear-gradient(135deg, #0B1D3A, #2563EB); }
+    .case-green  { background: linear-gradient(135deg, #052e16, #16a34a); }
+    .case-orange { background: linear-gradient(135deg, #431407, #ea580c); }
+    .case-purple { background: linear-gradient(135deg, #2e1065, #7c3aed); }
+    .case-teal   { background: linear-gradient(135deg, #042f2e, #0d9488); }
+    .case-red    { background: linear-gradient(135deg, #450a0a, #dc2626); }
+
+    /* ════════════════════════════════════════
+       EXPERTISE / CAPABILITIES
+    ════════════════════════════════════════ */
+    .expertise-section { padding: 100px 0; border-top: 1px solid var(--border); }
+    .expertise-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 56px;
+    }
+    .expertise-layout h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--white);
+    }
+    .expertise-layout p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-top: 20px;
+      max-width: 420px;
+    }
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .cap-tile {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      height: 164px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 20px;
+      cursor: default;
+      transition: all 0.25s;
+    }
+    .cap-tile:hover { border-color: rgba(255,255,255,0.22); transform: translateY(-2px); }
+    .cap-tile-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, #0B1D3A, #1e3a8a, #2563eb);
+      opacity: 0.7;
+    }
+    .cap-tile-bg-2 { background: linear-gradient(140deg, #052e16, #065f46, #10b981); opacity: 0.6; }
+    .cap-tile-bg-3 { background: linear-gradient(140deg, #1e1b4b, #3730a3, #6366f1); opacity: 0.65; }
+    .cap-tile-bg-4 { background: linear-gradient(140deg, #0c0a09, #1c1917, #44403c); opacity: 0.9; }
+    .cap-tile-bg-5 { background: linear-gradient(140deg, #042f2e, #0d9488, #5eead4); opacity: 0.55; }
+    .cap-tile-bg-6 { background: linear-gradient(140deg, #0f172a, #1e3a8a, #3b82f6); opacity: 0.6; }
+    .cap-tile-icon {
+      position: relative;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cap-tile-icon svg { width: 22px; height: 22px; fill: none; stroke: white; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .cap-tile-label {
+      position: relative;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: white;
+      z-index: 1;
+      line-height: 1.35;
+    }
+
+    /* ════════════════════════════════════════
+       WORK LIST
+    ════════════════════════════════════════ */
+    .work-section { padding: 100px 0; border-top: 1px solid var(--border); }
+    .work-header { margin-bottom: 20px; }
+    .work-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 760px;
+    }
+    .work-header p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 12px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .work-list { margin-top: 48px; }
+    .work-row {
+      display: grid;
+      grid-template-columns: 56px 1fr 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      transition: all 0.15s;
+    }
+    .work-row:first-child { border-top: 1px solid var(--border); }
+    .work-row:hover .work-row-name { color: var(--blue); }
+    .work-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: var(--bg-3);
+      flex-shrink: 0;
+    }
+    .work-row-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: color 0.15s;
+    }
+    .work-row-city {
+      font-size: 0.78rem;
+      color: var(--gray-dim);
+      margin-top: 2px;
+    }
+    .work-row-result {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    .work-row-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 12px;
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════
+       TESTIMONIAL (FULL WIDTH MASSIVE QUOTE)
+    ════════════════════════════════════════ */
+    .testimonial-section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-quote {
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      max-width: 1000px;
+      margin-bottom: 48px;
+    }
+    .testimonial-quote::before {
+      content: '"';
+      color: var(--blue);
+    }
+    .testimonial-quote::after {
+      content: '"';
+      color: var(--blue);
+    }
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .test-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+      display: block;
+    }
+    .test-meta-name { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+    .test-meta-biz  { font-size: 0.78rem; color: var(--gray-dim); margin-top: 1px; }
+    .test-dots {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+    }
+    .test-dot {
+      font-size: 0.75rem;
+      color: var(--gray-dim);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .test-dot.active { color: var(--white); }
+    .test-dot-line {
+      width: 32px;
+      height: 1px;
+      background: var(--white);
+      align-self: center;
+      margin-left: 4px;
+    }
+
+    /* ════════════════════════════════════════
+       PRICING
+    ════════════════════════════════════════ */
+    .pricing-section { padding: 100px 0; border-top: 1px solid var(--border); }
+    .pricing-header { margin-bottom: 52px; }
+    .pricing-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .pricing-header p { font-size: 0.9rem; color: var(--gray); margin-top: 12px; max-width: 480px; line-height: 1.7; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      background: var(--bg-2);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s;
+    }
+    .price-card:hover { border-color: rgba(255,255,255,0.18); }
+    .price-card.featured {
+      border-color: var(--blue);
+      background: var(--bg-3);
+    }
+    .price-card.featured:hover { border-color: #3b82f6; }
+    .popular-pill {
+      position: absolute;
+      top: -13px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pc-tier {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 8px;
+    }
+    .pc-name { font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .pc-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.55; margin-bottom: 24px; }
+    .pc-price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .pc-price-sub { font-size: 0.75rem; color: var(--gray-dim); margin-bottom: 24px; }
+    .pc-divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .pc-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; flex: 1; }
+    .pc-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+    .pc-check {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M3 7l2.5 2.5L11 4' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .pc-btn { width: 100%; justify-content: center; }
+    .hosting-note {
+      margin-top: 40px;
+      max-width: 560px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-2);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hosting-note p { font-size: 0.83rem; color: var(--gray); line-height: 1.65; }
+    .hosting-note strong { color: var(--white); }
+    .guarantee-strip {
+      margin-top: 24px;
+      max-width: 560px;
+      padding: 18px 24px;
+      border: 1px solid rgba(22,163,74,0.3);
+      border-radius: 12px;
+      background: rgba(22,163,74,0.06);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .guarantee-strip .g-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .guarantee-strip .g-title { font-size: 0.88rem; font-weight: 700; color: #4ade80; margin-bottom: 2px; }
+    .guarantee-strip .g-sub { font-size: 0.78rem; color: var(--gray); line-height: 1.55; }
+    .pc-price-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #4ade80;
+      background: rgba(22,163,74,0.15);
+      border-radius: 100px;
+      padding: 3px 10px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    /* ════════════════════════════════════════
+       FAQ
+    ════════════════════════════════════════ */
+    .faq-section { padding: 100px 0; border-top: 1px solid var(--border); }
+    .faq-header { text-align: center; margin-bottom: 56px; }
+    .faq-header h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--white);
+    }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--gray);
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .faq-q:hover { color: var(--white); }
+    .faq-toggle {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: var(--gray-dim);
+      flex-shrink: 0;
+      transition: all 0.25s;
+      line-height: 1;
+    }
+    .faq-item.open .faq-toggle {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+      transform: rotate(45deg);
+    }
+    .faq-item.open .faq-q { color: var(--white); }
+    .faq-a {
+      display: none;
+      padding: 0 40px 22px 0;
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ════════════════════════════════════════
+       CONTACT / FORM
+    ════════════════════════════════════════ */
+    .contact-section { padding: 100px 0; border-top: 1px solid var(--border); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-left h2 {
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .contact-left p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .clink {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-2);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: all 0.2s;
+    }
+    .clink:hover { border-color: rgba(255,255,255,0.2); background: var(--bg-3); }
+    .clink-icon { font-size: 1.1rem; width: 30px; text-align: center; flex-shrink: 0; }
+    .clink-sub { font-size: 0.73rem; color: var(--gray-dim); font-weight: 400; display: block; }
+    .avail-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-2);
+      padding: 16px 18px;
+      margin-top: 4px;
+    }
+    .avail-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-dim);
+      margin-bottom: 4px;
+    }
+    .avail-val {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .avail-sub { font-size: 0.75rem; color: var(--gray-dim); margin-top: 2px; }
+
+    /* Form */
+    .contact-form {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .contact-form h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 5px;
+      letter-spacing: 0.04em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      color: var(--white);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      outline: none;
+      transition: all 0.15s;
+    }
+    .form-group select option { background: var(--bg-3); color: var(--white); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-submit-btn { width: 100%; justify-content: center; font-size: 0.95rem; padding: 14px; }
+    .form-footnote { font-size: 0.72rem; color: var(--gray-dim); text-align: center; margin-top: 10px; }
+
+    /* ════════════════════════════════════════
+       FINAL CTA — minimal like webstacks
+    ════════════════════════════════════════ */
+    .cta-minimal {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+    .cta-minimal-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cta-minimal h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .cta-minimal-btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .cta-arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: gap 0.2s;
+    }
+    .cta-arrow-link:hover { gap: 12px; }
+    .cta-arrow {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .cta-arrow-link:hover .cta-arrow { transform: translateX(3px); }
+
+    /* ════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════ */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 64px 0 0;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 64px;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .footer-logo .logo-icon {
+      width: 22px; height: 22px;
+      border: 1.5px solid var(--blue);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 900;
+      color: var(--blue);
+    }
+    .footer-tagline {
+      font-size: 0.78rem;
+      color: var(--gray-dim);
+      line-height: 1.65;
+      max-width: 220px;
+    }
+    .footer-col h4 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--white); }
+
+    /* Giant wordmark */
+    .footer-wordmark {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 0;
+      overflow: hidden;
+    }
+    .footer-wordmark-text {
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.06);
+      line-height: 0.85;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.22); }
+
+    /* ════════════════════════════════════════
+       SCROLL REVEAL
+    ════════════════════════════════════════ */
+    [data-reveal] {
+      opacity: 0;
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    [data-reveal="up"]    { transform: translateY(32px); }
+    [data-reveal="left"]  { transform: translateX(-32px); }
+    [data-reveal="right"] { transform: translateX(32px); }
+    [data-reveal="scale"] { transform: scale(0.95); }
+    [data-reveal].revealed { opacity: 1; transform: none; }
+    [data-delay="1"] { transition-delay: 0.07s; }
+    [data-delay="2"] { transition-delay: 0.14s; }
+    [data-delay="3"] { transition-delay: 0.21s; }
+    [data-delay="4"] { transition-delay: 0.28s; }
+    [data-delay="5"] { transition-delay: 0.35s; }
+    [data-delay="6"] { transition-delay: 0.42s; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero-cards { grid-template-columns: 1fr 1fr; }
+      .expertise-layout { grid-template-columns: 1fr; gap: 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 860px) {
+      .section { padding: 72px 0; }
+      .announce-bar { display: none; }
+      .nav-links, .nav-cta-desk { display: none; }
+      .nav-burger { display: flex; }
+
+      .hero { padding: 48px 0 64px; }
+      .hero-cards { grid-template-columns: 1fr; }
+      .hero-card-right { min-height: 280px; }
+      .hero-stats { flex-direction: column; border-radius: 10px; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:last-child { border-bottom: none; }
+
+      .cases-grid { grid-template-columns: 1fr 1fr; }
+      .expertise-layout { grid-template-columns: 1fr; }
+      .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-row { grid-template-columns: 48px 1fr auto; }
+      .work-row-result { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .cta-minimal-inner { flex-direction: column; align-items: flex-start; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 20px; }
+      .hero-title { font-size: 2.1rem; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .capabilities-grid { grid-template-columns: 1fr 1fr; }
+      .work-row { grid-template-columns: 40px 1fr; }
+      .work-row-tag { display: none; }
+      .footer-top { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-wordmark-text { font-size: 3.5rem; }
+      .testimonial-quote { font-size: 1.4rem; }
+    }
+
+    /* ════════════════════════════════════════
+       ANALYTICS DASHBOARD PREVIEW (case cards)
+    ════════════════════════════════════════ */
+    .cpd {
+      background: #EBEBF0;
+      padding: 10px 12px 8px;
+      height: 224px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow: hidden;
+    }
+    .cpd-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cpd-title {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #111;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: -0.01em;
+    }
+    .cpd-refresh { font-size: 0.55rem; color: #888; }
+    .cpd-pills { display: flex; gap: 5px; flex-wrap: wrap; }
+    .cpd-pill {
+      font-size: 0.55rem;
+      background: white;
+      border: 1px solid #D8D8DE;
+      border-radius: 5px;
+      padding: 2px 7px;
+      color: #444;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .cpd-stats-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.95fr 0.95fr;
+      gap: 5px;
+    }
+    .cpd-stat {
+      background: white;
+      border: 1px solid #E0E0E6;
+      border-radius: 8px;
+      padding: 6px 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cpd-stat-lbl {
+      font-size: 0.54rem;
+      color: #555;
+      font-weight: 600;
+      margin-bottom: 3px;
+      white-space: nowrap;
+    }
+    .cpd-stat-val {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #111;
+      white-space: nowrap;
+    }
+    .cpd-up { color: #16a34a; font-size: 0.58rem; font-weight: 700; }
+    .cpd-flat { color: #888; font-size: 0.58rem; }
+    .cpd-chart-card {
+      background: white;
+      border: 1px solid #E0E0E6;
+      border-radius: 8px;
+      padding: 7px 9px 5px;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .cpd-chart-title {
+      font-size: 0.55rem;
+      color: #555;
+      padding-bottom: 3px;
+      border-bottom: 1px dashed #E4E4E8;
+      margin-bottom: 3px;
+    }
+    .cpd-chart-amount {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .cpd-chart-amount .up { font-size: 0.58rem; color: #16a34a; font-weight: 700; }
+    .cpd-svg { width: 100%; flex: 1; min-height: 0; }
+    .cpd-legend {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 3px;
+    }
+    .cpd-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.5rem;
+      color: #888;
+    }
+    .cpd-legend-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cpd-legend-dash {
+      width: 12px; height: 1.5px;
+      border-top: 1.5px dashed #93C5FD;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ ANNOUNCE BAR ══════════════════ -->
+<div class="announce-bar">
+  <div class="announce-bar-center">
+    <span class="announce-new">Nuevo</span>
+    <span data-key="ann-text">Entregamos tu sitio en 10 días o te damos $200 de descuento.</span>
+    <a href="#contacto" data-key="ann-link">Hablar con un experto ↗</a>
+  </div>
+  <div class="announce-right">
+    <span class="announce-dot"></span>
+    <span data-key="ann-right">¿Fecha límite ajustada?</span>
+  </div>
+</div>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">K</span>
+        <span>kalnyesgrowth</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#servicios" data-key="nav-services">Servicios</a></li>
+        <li><a href="#trabajo" data-key="nav-work">Nuestro trabajo</a></li>
+        <li><a href="#precios" data-key="nav-pricing">Precios</a></li>
+        <li><a href="#contacto" data-key="nav-contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="lang-btn" onclick="toggleLang()" id="lang-toggle">🌐 EN</button>
+        <a href="#contacto" class="btn btn-blue nav-cta-desk" data-key="nav-cta">Hablar con un experto</a>
+        <div class="nav-burger" id="burger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" onclick="closeMenu()" data-key="nav-services">Servicios</a>
+  <a href="#trabajo"   onclick="closeMenu()" data-key="nav-work">Nuestro trabajo</a>
+  <a href="#precios"   onclick="closeMenu()" data-key="nav-pricing">Precios</a>
+  <a href="#contacto"  onclick="closeMenu()" data-key="nav-contact">Contacto</a>
+  <div class="mobile-menu-footer">
+    <div class="mob-lang" id="mob-lang" onclick="toggleLang(); closeMenu();">🌐 Switch to English</div>
+    <a href="#contacto" onclick="closeMenu()" class="btn btn-orange btn-lg" style="width:100%;justify-content:center;" data-key="nav-cta">Hablar con un experto</a>
+  </div>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <p class="hero-eyebrow" data-key="hero-eyebrow">Diseño Web para Negocios Hispanos</p>
+    <h1 class="hero-title" data-reveal="up">
+      <span data-key="hero-h1a">Construimos sitios web que</span><br>
+      <span class="blue" data-key="hero-h1b">te consiguen más clientes.</span>
+    </h1>
+
+    <div class="hero-cards" data-reveal="up" data-delay="1">
+      <!-- Left card -->
+      <div class="hero-card-left">
+        <p class="hero-card-left-sub" data-key="card-sub">Sitios que generan resultados reales</p>
+        <h2 data-key="card-h2">Tu negocio merece un sitio que trabaje por ti — las 24 horas del día.</h2>
+        <p data-key="card-p">Arquitectura mobile-first, WhatsApp integrado, SEO local, y contenido bilingüe. Diseñado para el mercado hispano.</p>
+        <a href="https://wa.me/15407838835" target="_blank" rel="noopener" class="btn btn-ghost" data-key="card-btn">Hablar con un experto</a>
+      </div>
+      <!-- Right card: founder photo -->
+      <div class="hero-card-right">
+        <img src="founder-photo.jpg" alt="Kalnyesgrowth — Fundador">
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="hero-stats" data-reveal="up" data-delay="2">
+      <div class="hero-stat">
+        <div class="hero-stat-num">52<span>+</span></div>
+        <div class="hero-stat-label" data-key="stat-1">Negocios locales servidos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.9<span>/5</span></div>
+        <div class="hero-stat-label" data-key="stat-2">Calificación promedio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10<span>d</span></div>
+        <div class="hero-stat-label" data-key="stat-3">Tiempo de entrega</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$0<span>/mes</span></div>
+        <div class="hero-stat-label" data-key="stat-4">Cuotas mensuales — jamás</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ MARQUEE ══════════════════ -->
+<div class="marquee-section">
+  <p class="marquee-label" data-key="mq-label">Industrias que servimos</p>
+  <div class="marquee-track">
+    <span class="marquee-item" data-key="mq-1">Plomería</span>
+    <span class="marquee-item" data-key="mq-2">Electricistas</span>
+    <span class="marquee-item" data-key="mq-3">Techadores</span>
+    <span class="marquee-item" data-key="mq-4">Salones de Belleza</span>
+    <span class="marquee-item" data-key="mq-5">Renta de Eventos</span>
+    <span class="marquee-item" data-key="mq-6">Restaurantes</span>
+    <span class="marquee-item" data-key="mq-7">Abogados</span>
+    <span class="marquee-item" data-key="mq-8">Dentistas</span>
+    <span class="marquee-item" data-key="mq-9">HVAC</span>
+    <span class="marquee-item" data-key="mq-10">Auto Repair</span>
+  </div>
+</div>
+
+<!-- ══════════════════ CASE STUDIES ══════════════════ -->
+<section class="cases-section" id="portafolio">
+  <div class="container">
+    <div class="cases-header">
+      <span class="eyebrow" data-key="cases-eyebrow">Resultados Reales</span>
+      <h2 data-reveal="up" data-key="cases-title">De negocios invisibles a máquinas de ventas —<br>ingresos reales en los primeros 30 días.</h2>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- ── Card 1: Plomería ── -->
+      <div class="case-card" data-reveal="scale" data-delay="1">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$8,400 <span class="cpd-up">↗ 312%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos clientes</div>
+              <div class="cpd-stat-val">34 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Trabajos</div>
+              <div class="cpd-stat-val">21 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$8,400 <span class="up">↗ 312%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C15,46 25,34 30,10 C35,0 40,5 45,28 C50,44 55,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,46 C40,46 75,44 85,6 C90,0 95,8 100,42 C110,46 150,46 200,46 C210,44 215,26 220,8 C225,0 228,8 235,42 C240,46 265,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="220" cy="8" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-1">Plomería</div>
+          <div class="case-name" data-key="cname-1">Rodriguez Plumbing LLC</div>
+          <div class="case-result" data-key="cres-1">↗ $8,400 en ventas nuevas en los primeros 30 días. Houston, TX.</div>
+        </div>
+      </div>
+
+      <!-- ── Card 2: Salón ── -->
+      <div class="case-card" data-reveal="scale" data-delay="2">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$6,200 <span class="cpd-up">↗ 187%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos clientes</div>
+              <div class="cpd-stat-val">58 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Citas</div>
+              <div class="cpd-stat-val">104 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$6,200 <span class="up">↗ 187%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C20,46 40,42 50,28 C55,18 57,34 62,44 C68,46 100,46 140,46 C150,44 155,34 160,26 C163,20 165,34 168,44 C175,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,44 C15,42 25,28 32,10 C37,2 40,12 45,42 C55,46 80,46 100,46 C110,44 120,22 125,8 C130,0 133,10 138,42 C145,46 180,46 200,46 C210,44 218,26 223,10 C227,2 230,12 235,42 C240,46 260,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="125" cy="0" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-2">Salón de Belleza</div>
+          <div class="case-name" data-key="cname-2">Belleza Latina Salon</div>
+          <div class="case-result" data-key="cres-2">↗ $6,200 en ventas · 58 nuevos clientes en 30 días. Dallas, TX.</div>
+        </div>
+      </div>
+
+      <!-- ── Card 3: Roofing ── -->
+      <div class="case-card" data-reveal="scale" data-delay="3">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$24,500 <span class="cpd-up">↗ 428%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos clientes</div>
+              <div class="cpd-stat-val">12 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Proyectos</div>
+              <div class="cpd-stat-val">9 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$24,500 <span class="up">↗ 428%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C50,46 100,46 130,46 C138,44 142,34 145,20 C148,8 150,16 155,42 C160,46 180,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,46 C30,46 70,46 100,46 C115,44 125,28 132,6 C137,0 140,6 145,36 C150,46 165,46 200,46 C208,44 215,28 220,4 C224,0 227,4 232,36 C237,46 260,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="220" cy="4" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-3">Techado</div>
+          <div class="case-name" data-key="cname-3">Garcia Roofing Co.</div>
+          <div class="case-result" data-key="cres-3">↗ $24,500 en ventas · 9 proyectos cerrados en 30 días. Miami, FL.</div>
+        </div>
+      </div>
+
+      <!-- ── Card 4: Eventos ── -->
+      <div class="case-card" data-reveal="scale" data-delay="4">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$12,800 <span class="cpd-up">↗ 265%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos clientes</div>
+              <div class="cpd-stat-val">27 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Reservas</div>
+              <div class="cpd-stat-val">31 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$12,800 <span class="up">↗ 265%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C60,46 100,46 130,46 C145,44 155,34 160,24 C163,16 165,28 170,44 C175,46 200,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,46 C20,45 40,44 60,43 C80,42 100,44 120,42 C130,40 140,30 150,18 C155,10 158,2 163,0 C168,2 173,16 180,42 C185,46 200,46 240,46 C255,44 265,24 270,8 C273,0 275,4 278,42 C279,46 280,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="163" cy="0" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-4">Renta de Eventos</div>
+          <div class="case-name" data-key="cname-4">Fiesta Rentals & Events</div>
+          <div class="case-result" data-key="cres-4">↗ $12,800 en ventas · 31 reservas online en 30 días. Chicago, IL.</div>
+        </div>
+      </div>
+
+      <!-- ── Card 5: Electricista ── -->
+      <div class="case-card" data-reveal="scale" data-delay="5">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$9,100 <span class="cpd-up">↗ 203%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos clientes</div>
+              <div class="cpd-stat-val">41 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Trabajos</div>
+              <div class="cpd-stat-val">38 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$9,100 <span class="up">↗ 203%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C20,46 35,42 40,28 C44,16 46,30 50,44 C55,46 90,46 115,46 C125,44 130,36 133,24 C136,14 138,28 142,44 C147,46 180,46 230,46 C238,44 242,36 245,28 C248,20 250,33 254,44 C258,46 270,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,44 C10,42 20,28 25,12 C29,2 31,10 36,42 C40,46 60,46 90,46 C100,44 108,30 113,14 C117,4 120,12 125,42 C130,46 150,46 175,46 C182,44 190,30 195,14 C199,4 202,12 207,42 C212,46 240,46 258,46 C265,44 270,28 273,12 C276,2 277,10 279,42 C280,46 280,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="25" cy="2" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-5">Electricista</div>
+          <div class="case-name" data-key="cname-5">Morales Electric Services</div>
+          <div class="case-result" data-key="cres-5">↗ $9,100 en ventas · 38 trabajos cerrados en 30 días. Phoenix, AZ.</div>
+        </div>
+      </div>
+
+      <!-- ── Card 6: Dentista ── -->
+      <div class="case-card" data-reveal="scale" data-delay="6">
+        <div class="cpd">
+          <div class="cpd-top">
+            <span class="cpd-title">📊 Analytics</span>
+            <span class="cpd-refresh">Últ. actualización: hoy</span>
+          </div>
+          <div class="cpd-pills">
+            <span class="cpd-pill">📅 Mar–Abr 2026 ▾</span>
+            <span class="cpd-pill">📅 Feb 2026 ▾</span>
+            <span class="cpd-pill">USD $</span>
+          </div>
+          <div class="cpd-stats-row">
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Ventas brutas</div>
+              <div class="cpd-stat-val">$18,300 <span class="cpd-up">↗ 156%</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Nuevos pacientes</div>
+              <div class="cpd-stat-val">40 <span class="cpd-flat">—</span></div>
+            </div>
+            <div class="cpd-stat">
+              <div class="cpd-stat-lbl">Citas</div>
+              <div class="cpd-stat-val">87 <span class="cpd-flat">—</span></div>
+            </div>
+          </div>
+          <div class="cpd-chart-card">
+            <div class="cpd-chart-title">Total ventas en 30 días</div>
+            <div class="cpd-chart-amount">$18,300 <span class="up">↗ 156%</span></div>
+            <svg class="cpd-svg" viewBox="0 0 280 46" preserveAspectRatio="none">
+              <line x1="0" y1="12" x2="280" y2="12" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="24" x2="280" y2="24" stroke="#F0F0F2" stroke-width="1"/>
+              <line x1="0" y1="36" x2="280" y2="36" stroke="#F0F0F2" stroke-width="1"/>
+              <path d="M0,46 C30,46 55,43 70,36 C80,28 82,40 90,45 C100,46 150,46 190,46 C200,44 205,38 210,30 C215,22 217,34 222,44 C226,46 250,46 280,46" stroke="#93C5FD" stroke-width="1.5" fill="none" stroke-dasharray="4,3" opacity="0.75"/>
+              <path d="M0,44 C20,42 40,34 55,18 C62,8 65,16 72,42 C78,46 100,46 130,46 C140,44 150,32 158,14 C163,4 165,0 170,0 C175,2 180,16 188,44 C194,46 220,46 245,46 C255,44 263,32 268,16 C272,6 274,12 278,42 C279,46 280,46 280,46" stroke="#2563EB" stroke-width="2" fill="none"/>
+              <circle cx="170" cy="0" r="3" fill="#2563EB"/>
+            </svg>
+            <div class="cpd-legend">
+              <span class="cpd-legend-item"><span class="cpd-legend-dot" style="background:#2563EB"></span>Mar–Abr 2026</span>
+              <span class="cpd-legend-item"><span class="cpd-legend-dash"></span>Feb 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-niche" data-key="cn-6">Dentista</div>
+          <div class="case-name" data-key="cname-6">Clínica Dental Pérez</div>
+          <div class="case-result" data-key="cres-6">↗ $18,300 en ventas · 40 nuevos pacientes en 30 días. Los Angeles, CA.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ EXPERTISE / CAPABILITIES ══════════════════ -->
+<section class="expertise-section" id="servicios">
+  <div class="container">
+    <div class="expertise-layout">
+      <div>
+        <span class="eyebrow" data-key="exp-eyebrow">Nuestros Servicios</span>
+        <h2 data-reveal="left" data-key="exp-title">Los sitios web no son parte de lo que hacemos. Los sitios web son todo lo que hacemos.</h2>
+      </div>
+      <div>
+        <p data-reveal="right" data-key="exp-sub">Ayudamos a dueños de negocios hispanos a convertir sitios desactualizados y sin rendimiento en máquinas digitales de alta conversión que capturan leads, generan llamadas y aceleran el crecimiento.</p>
+      </div>
+    </div>
+
+    <div class="capabilities-grid">
+
+      <!-- 1: Web Design -->
+      <div class="cap-tile" data-reveal="scale" data-delay="1">
+        <div class="cap-tile-bg"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 11h6"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-1">Diseño Web<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Profesional & moderno</span></span>
+      </div>
+
+      <!-- 2: Local SEO -->
+      <div class="cap-tile" data-reveal="scale" data-delay="2">
+        <div class="cap-tile-bg cap-tile-bg-2"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-2">SEO Local<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Aparece en Google primero</span></span>
+      </div>
+
+      <!-- 3: Bilingual -->
+      <div class="cap-tile" data-reveal="scale" data-delay="3">
+        <div class="cap-tile-bg cap-tile-bg-3"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-3">Bilingüe ES/EN<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Doble mercado, doble alcance</span></span>
+      </div>
+
+      <!-- 4: WhatsApp -->
+      <div class="cap-tile" data-reveal="scale" data-delay="4">
+        <div class="cap-tile-bg cap-tile-bg-4"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-4">WhatsApp Integrado<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Clientes contactan al instante</span></span>
+      </div>
+
+      <!-- 5: Google Business -->
+      <div class="cap-tile" data-reveal="scale" data-delay="5">
+        <div class="cap-tile-bg cap-tile-bg-5"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v3l2 2"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-5">Google Business<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Perfil optimizado y verificado</span></span>
+      </div>
+
+      <!-- 6: Mobile-First -->
+      <div class="cap-tile" data-reveal="scale" data-delay="6">
+        <div class="cap-tile-bg cap-tile-bg-6"></div>
+        <div class="cap-tile-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/><path d="M9 6h6"/></svg>
+        </div>
+        <span class="cap-tile-label" data-key="cap-6">Mobile-First<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Perfecta en cualquier pantalla</span></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WORK LIST ══════════════════ -->
+<section class="work-section" id="trabajo">
+  <div class="container">
+    <div class="work-header">
+      <span class="eyebrow" data-key="work-eyebrow">Nuestro Proceso</span>
+      <h2 data-reveal="up" data-key="work-title">De la llamada al lanzamiento — en 3 pasos simples.</h2>
+      <p data-reveal="up" data-delay="1" data-key="work-sub">Sin conocimientos técnicos. Tú manejas tu negocio — nosotros nos encargamos de todo lo demás.</p>
+    </div>
+
+    <div class="work-list">
+      <div class="work-row" data-reveal="up">
+        <div class="work-icon">📞</div>
+        <div>
+          <div class="work-row-name" data-key="wr-1-name">Llamada gratuita de 20 minutos</div>
+          <div class="work-row-city" data-key="wr-1-sub">En inglés o español — tú eliges</div>
+        </div>
+        <div class="work-row-result" data-key="wr-1-res">Aprendemos sobre tu negocio, tu ciudad y tus clientes. Sin compromiso.</div>
+        <div class="work-row-tag" data-key="wr-1-tag">Paso 01</div>
+      </div>
+      <div class="work-row" data-reveal="up" data-delay="1">
+        <div class="work-icon">🎨</div>
+        <div>
+          <div class="work-row-name" data-key="wr-2-name">Construimos tu sitio en 10 días</div>
+          <div class="work-row-city" data-key="wr-2-sub">Mobile-first · Bilingüe · WhatsApp + SEO local</div>
+        </div>
+        <div class="work-row-result" data-key="wr-2-res">Diseñamos y construimos tu sitio completo. Lo ves antes de que salga al aire.</div>
+        <div class="work-row-tag" data-key="wr-2-tag">Paso 02</div>
+      </div>
+      <div class="work-row" data-reveal="up" data-delay="2">
+        <div class="work-icon">📈</div>
+        <div>
+          <div class="work-row-name" data-key="wr-3-name">Los clientes llegan a ti</div>
+          <div class="work-row-city" data-key="wr-3-sub">SEO local + Google Business Profile optimizado</div>
+        </div>
+        <div class="work-row-result" data-key="wr-3-res">Clientes en tu ciudad te encuentran y te contactan. Nuevas ventas en menos de 30 días.</div>
+        <div class="work-row-tag" data-key="wr-3-tag">Paso 03</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TESTIMONIAL (MASSIVE QUOTE) ══════════════════ -->
+<section class="testimonial-section">
+  <div class="container">
+    <p class="testimonial-quote" data-reveal="up" id="test-quote">
+      Antes de Kalnyesgrowth no aparecíamos en Google. En menos de 30 días empezaron a contactarnos clientes nuevos que nunca habrían sabido de nosotros. Ya recuperamos la inversión más de 4 veces.
+    </p>
+    <div class="testimonial-meta" data-reveal="up" data-delay="1">
+      <img id="test-img" src="https://i.pravatar.cc/80?img=33" alt="Juan Rodríguez" class="test-avatar">
+      <div>
+        <div class="test-meta-name" id="test-name">Juan Rodríguez</div>
+        <div class="test-meta-biz" id="test-biz">Rodriguez Plumbing LLC — Houston, TX</div>
+      </div>
+      <div class="test-dots">
+        <span class="test-dot active" onclick="showTest(0)">01</span>
+        <span class="test-dot" onclick="showTest(1)">02</span>
+        <span class="test-dot" onclick="showTest(2)">03</span>
+        <div class="test-dot-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PRICING ══════════════════ -->
+<section class="pricing-section" id="precios">
+  <div class="container">
+    <div class="pricing-header">
+      <span class="eyebrow" data-key="price-eyebrow">Precios</span>
+      <h2 data-reveal="up" data-key="price-title">Un solo cliente nuevo paga<br>el sitio completo.</h2>
+      <p data-reveal="up" data-delay="1" data-key="price-sub">Pago único. Tu sitio es 100% tuyo para siempre. Sin contratos. Sin cuotas mensuales.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card" data-reveal="up" data-delay="1">
+        <div class="pc-price-tag" data-key="t1-tag">Empieza esta semana</div>
+        <div class="pc-tier" data-key="t1-tier">Nivel Inicial</div>
+        <div class="pc-name" data-key="t1-name">Presencia Pro</div>
+        <div class="pc-desc" data-key="t1-desc">Para negocios sin sitio que necesitan existir en Google antes de que la competencia les gane más clientes.</div>
+        <div class="pc-price">$297</div>
+        <div class="pc-price-sub" data-key="pc-once">Pago único · Entrega en 7 días</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li><span class="pc-check"></span><span data-key="f1-1">4–5 páginas profesionales</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-2">Diseño mobile-first</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-3">WhatsApp integrado</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-4">Formulario de contacto</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-5">Google Business configurado</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-6">SEO local básico</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-7">30 días de soporte incluido</span></li>
+          <li><span class="pc-check"></span><span data-key="f1-8">Garantía de satisfacción 30 días</span></li>
+        </ul>
+        <a href="#contacto" class="btn btn-ghost pc-btn" data-key="pc-btn1">Agendar llamada →</a>
+      </div>
+
+      <div class="price-card featured" data-reveal="up" data-delay="2">
+        <div class="popular-pill" data-key="popular">⭐ Más Popular</div>
+        <div class="pc-price-tag" data-key="t2-tag">El más elegido</div>
+        <div class="pc-tier" data-key="t2-tier">Nivel Core</div>
+        <div class="pc-name" data-key="t2-name">Máquina de Clientes</div>
+        <div class="pc-desc" data-key="t2-desc">Construido para convertir visitantes en clientes de pago. El paquete favorito de negocios que quieren resultados reales.</div>
+        <div class="pc-price">$697</div>
+        <div class="pc-price-sub" data-key="pc-once2">Pago único · Entrega en 10 días</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li><span class="pc-check"></span><span data-key="f2-1">Todo en Presencia Pro</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-2">6–8 páginas personalizadas</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-3">Contenido bilingüe ES/EN</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-4">Formulario de citas y cotizaciones</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-5">Galería de fotos y proyectos</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-6">Google Reviews integrado</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-7">SEO local avanzado</span></li>
+          <li><span class="pc-check"></span><span data-key="f2-8">60 días de soporte prioritario</span></li>
+        </ul>
+        <a href="#contacto" class="btn btn-orange pc-btn" data-key="pc-btn2">Agendar llamada →</a>
+      </div>
+
+      <div class="price-card" data-reveal="up" data-delay="3">
+        <div class="pc-price-tag" data-key="t3-tag">Domina tu mercado</div>
+        <div class="pc-tier" data-key="t3-tier">Nivel Premium</div>
+        <div class="pc-name" data-key="t3-name">Sistema Completo</div>
+        <div class="pc-desc" data-key="t3-desc">Para negocios serios que quieren reservas automáticas, SEO dominante y un sistema que trabaja solo los 7 días.</div>
+        <div class="pc-price">$1,497</div>
+        <div class="pc-price-sub" data-key="pc-once3">Pago único · Entrega en 14 días</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-features">
+          <li><span class="pc-check"></span><span data-key="f3-1">Todo en Máquina de Clientes</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-2">Reservas online automáticas</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-3">Seguimiento automático WhatsApp</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-4">SEO multi-ciudad</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-5">Blog / sección de contenido</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-6">Captura de leads y email</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-7">Reporte mensual de resultados</span></li>
+          <li><span class="pc-check"></span><span data-key="f3-8">90 días de soporte prioritario</span></li>
+        </ul>
+        <a href="#contacto" class="btn btn-ghost pc-btn" data-key="pc-btn3">Agendar llamada →</a>
+      </div>
+    </div>
+
+    <div class="hosting-note" data-reveal="up">
+      <span style="font-size:1.4rem;flex-shrink:0;">🔁</span>
+      <p data-key="hosting-note"><strong>Hosting mensual: $50/mes</strong> — Después del lanzamiento, $50/mes mantiene tu sitio activo, rápido y seguro. Menos de $2 al día — y un solo cliente del sitio paga todo el año.</p>
+    </div>
+
+    <div class="guarantee-strip" data-reveal="up">
+      <span class="g-icon">🛡️</span>
+      <div>
+        <div class="g-title" data-key="guarantee-title">Garantía de satisfacción 30 días</div>
+        <div class="g-sub" data-key="guarantee-sub">Si no estás 100% satisfecho con tu sitio antes de que salga al aire, te reembolsamos completo. Sin preguntas, sin discusiones.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FAQ ══════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="eyebrow" data-key="faq-eyebrow">Preguntas Frecuentes</span>
+      <h2 data-reveal="up" data-key="faq-title">Preguntas sobre Kalnyesgrowth</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" data-reveal="up">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-1-q">¿Necesito pagar cuotas mensuales después del sitio?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-1-a">No. Pagas una vez y el sitio es tuyo para siempre. El único costo recurrente es el hosting — $50/mes — que cubre mantener tu sitio activo, rápido y mantenido. Sin contratos anuales.</div>
+      </div>
+      <div class="faq-item" data-reveal="up" data-delay="1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-2-q">¿Cuánto tiempo toma construir mi sitio?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-2-a">Nuestra entrega estándar es 10 días hábiles. Los paquetes Premium se entregan en 14 días. Garantizamos estos tiempos — si no cumplimos, te damos $200 de descuento.</div>
+      </div>
+      <div class="faq-item" data-reveal="up" data-delay="2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-3-q">¿Trabajan en español?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-3-a">Sí — 100%. Puedes comunicarte con nosotros completamente en español. También construimos sitios bilingües y entendemos profundamente el mercado hispano.</div>
+      </div>
+      <div class="faq-item" data-reveal="up" data-delay="3">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-4-q">¿Qué pasa si no tengo fotos o contenido?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-4-a">Nosotros nos encargamos del texto. Para fotos usamos imágenes de stock profesionales mientras reúnes las tuyas. Las actualizamos en cualquier momento — sin costo adicional.</div>
+      </div>
+      <div class="faq-item" data-reveal="up" data-delay="4">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-5-q">¿Mi sitio aparecerá en Google?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-5-a">Cada sitio incluye SEO local básico — title tags, meta descriptions, targeting de ciudad y optimización del perfil de Google Business. La mayoría de clientes ven su primer tráfico de Google dentro de 2–4 semanas del lanzamiento.</div>
+      </div>
+      <div class="faq-item" data-reveal="up" data-delay="5">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span data-key="faq-6-q">¿Trabajan fuera de los EE.UU.?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a" data-key="faq-6-a">Sí. Trabajamos con negocios en los EE.UU., México, Colombia, Chile, España y cualquier mercado hispano donde los dueños puedan invertir $297+ en un sitio web profesional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section class="contact-section" id="contacto">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <span class="eyebrow" data-key="contact-eyebrow">Contáctanos</span>
+        <h2 class="contact-left" data-reveal="up" data-key="contact-title" style="font-size:clamp(2rem,3.2vw,2.8rem);font-weight:900;letter-spacing:-0.025em;color:var(--white);line-height:1.1;margin-bottom:16px;">¿Listo para conseguir más clientes?</h2>
+        <p style="font-size:0.9rem;color:var(--gray);line-height:1.75;margin-bottom:32px;" data-reveal="up" data-delay="1" data-key="contact-sub">Agenda una llamada gratuita de 20 minutos. Sin compromiso, sin presión. En español o inglés.</p>
+        <div class="contact-links" data-reveal="up" data-delay="2">
+          <a href="https://wa.me/15407838835" target="_blank" class="clink">
+            <span class="clink-icon">💬</span>
+            <div><div>WhatsApp</div><span class="clink-sub" data-key="cl-wa-sub">Respuesta en minutos · Inglés o Español</span></div>
+          </a>
+          <a href="mailto:kalnyesgrowth@gmail.com" class="clink">
+            <span class="clink-icon">✉️</span>
+            <div><div data-key="cl-email">Correo electrónico</div><span class="clink-sub">kalnyesgrowth@gmail.com</span></div>
+          </a>
+          <div class="avail-box">
+            <div class="avail-label" data-key="avail-label">Disponibilidad</div>
+            <div class="avail-val">24 / 7</div>
+            <div class="avail-sub" data-key="avail-sub">Siempre disponibles — cualquier día, cualquier hora</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <div class="contact-form">
+          <h3 data-key="form-title">Agenda tu llamada gratis</h3>
+          <form onsubmit="submitBooking(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-key="form-name">Nombre completo</label>
+                <input type="text" id="book-name" required placeholder="Juan Rodríguez">
+              </div>
+              <div class="form-group">
+                <label data-key="form-phone">Teléfono / WhatsApp</label>
+                <input type="tel" id="book-phone" required placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-key="form-biz">Tipo de negocio</label>
+              <select id="book-service">
+                <option value="" data-key="form-sel">Selecciona tu industria...</option>
+                <option>Plomería</option><option>Electricidad</option>
+                <option>Techado / Roofing</option><option>HVAC</option>
+                <option>Pintura</option><option>Landscaping</option>
+                <option>Salón / Barbería</option><option>Reparación de Autos</option>
+                <option>Renta de Eventos</option><option>Restaurante</option>
+                <option>Dentista / Médico</option><option>Abogado</option><option>Otro</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-key="form-date">Fecha preferida</label>
+                <input type="date" id="book-date">
+              </div>
+              <div class="form-group">
+                <label data-key="form-time">Hora preferida</label>
+                <select id="book-time">
+                  <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+                  <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+                  <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+                  <option>6:00 PM</option><option>7:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-orange btn-lg form-submit-btn" data-key="form-submit">💬 Enviar vía WhatsApp →</button>
+            <p class="form-footnote" data-key="form-note">Respuesta garantizada en menos de 1 hora. Disponibles 24/7.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FINAL CTA — MINIMAL ══════════════════ -->
+<section class="cta-minimal">
+  <div class="container">
+    <div class="cta-minimal-inner" data-reveal="up">
+      <h2 data-key="cta-title">¿Tienes un proyecto? Hablemos.</h2>
+      <div class="cta-minimal-btns">
+        <a href="https://wa.me/15407838835" target="_blank" class="cta-arrow-link" data-key="cta-link">
+          Hablar con un experto <span class="cta-arrow">↗</span>
+        </a>
+        <a href="https://wa.me/15407838835" target="_blank" class="btn btn-orange btn-lg" data-key="cta-btn">WhatsApp ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-icon">K</span>
+          <span>kalnyesgrowth</span>
+        </div>
+        <p class="footer-tagline" data-key="footer-desc">Tu sitio web nunca está terminado. Seguimos optimizando.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-key="footer-services">Servicios</h4>
+        <a href="#precios" data-key="fs-1">Presencia Pro</a>
+        <a href="#precios" data-key="fs-2">Máquina de Clientes</a>
+        <a href="#precios" data-key="fs-3">Sistema Completo</a>
+        <a href="#contacto" data-key="fs-4">Consulta Gratis</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-key="footer-niches">Industrias</h4>
+        <a href="#" data-key="fn-1">Construcción</a>
+        <a href="#" data-key="fn-2">Salones & Barberías</a>
+        <a href="#" data-key="fn-3">Eventos & Fiestas</a>
+        <a href="#" data-key="fn-4">Médicos & Dentistas</a>
+        <a href="#" data-key="fn-5">Restaurantes</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-key="footer-contact">Contacto</h4>
+        <a href="mailto:kalnyesgrowth@gmail.com">kalnyesgrowth@gmail.com</a>
+        <a href="https://wa.me/15407838835" target="_blank">WhatsApp</a>
+        <a href="#contacto" data-key="footer-book">🗓 Agendar Llamada</a>
+      </div>
+    </div>
+
+    <!-- Giant wordmark like webstacks -->
+    <div class="footer-wordmark">
+      <div class="footer-wordmark-text">kalnyesgrowth</div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-key="footer-copy">© 2026 Kalnyesgrowth · Todos los derechos reservados</p>
+      <p data-key="footer-tagline2">Tu sitio web es nunca está terminado.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════ SCRIPTS ══════════════════ -->
+<script>
+  let currentLang = 'es';
+
+  const EN = {
+    'ann-text': 'We deliver your site in 10 days or give you $200 off.',
+    'ann-link': 'Talk to an expert ↗',
+    'ann-right': 'Got a tight timeline?',
+    'nav-services':'Services','nav-work':'Our Work','nav-pricing':'Pricing','nav-contact':'Contact','nav-cta':'Talk to an expert',
+    'hero-eyebrow':'Web Design for Hispanic Business Owners',
+    'hero-h1a':'We build websites that','hero-h1b':'get you more customers.',
+    'card-sub':'Sites that generate real results',
+    'card-h2':'Your business deserves a website that works for you — 24 hours a day.',
+    'card-p':'Mobile-first architecture, integrated WhatsApp, local SEO, and bilingual content. Designed for the Hispanic market.',
+    'card-btn':'Talk to an expert',
+    'stat-1':'Local businesses served','stat-2':'Average rating','stat-3':'Delivery time','stat-4':'Monthly fees — ever',
+    'mq-label':'Industries we serve',
+    'mq-1':'Plumbing','mq-2':'Electricians','mq-3':'Roofers','mq-4':'Beauty Salons','mq-5':'Event Rentals',
+    'mq-6':'Restaurants','mq-7':'Lawyers','mq-8':'Dentists','mq-9':'HVAC','mq-10':'Auto Repair',
+    'cases-eyebrow':'Real Results',
+    'cases-title':'From invisible to revenue machines —<br>real sales in the first 30 days.',
+    'cn-1':'Plumbing','cname-1':'Rodriguez Plumbing LLC','cres-1':'↗ $8,400 in new sales in the first 30 days. Houston, TX.',
+    'cn-2':'Beauty Salon','cname-2':'Belleza Latina Salon','cres-2':'↗ $6,200 in sales · 58 new clients in 30 days. Dallas, TX.',
+    'cn-3':'Roofing','cname-3':'Garcia Roofing Co.','cres-3':'↗ $24,500 in sales · 9 projects closed in 30 days. Miami, FL.',
+    'cn-4':'Event Rentals','cname-4':'Fiesta Rentals & Events','cres-4':'↗ $12,800 in sales · 31 online bookings in 30 days. Chicago, IL.',
+    'cn-5':'Electrician','cname-5':'Morales Electric Services','cres-5':'↗ $9,100 in sales · 38 jobs closed in 30 days. Phoenix, AZ.',
+    'cn-6':'Dentist','cname-6':'Clínica Dental Pérez','cres-6':'↗ $18,300 in sales · 40 new patients in 30 days. Los Angeles, CA.',
+    'exp-eyebrow':'Our Services',
+    'exp-title':'Websites aren\'t just part of what we do. Websites are everything we do.',
+    'exp-sub':'We help Hispanic business owners turn outdated, underperforming sites into high-converting digital machines that capture leads, generate calls, and accelerate growth.',
+    'cap-1':'Web Design<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Professional & modern</span>',
+    'cap-2':'Local SEO<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Rank first on Google</span>',
+    'cap-3':'Bilingual ES/EN<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Double market, double reach</span>',
+    'cap-4':'WhatsApp Integrated<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Clients contact you instantly</span>',
+    'cap-5':'Google Business<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Optimized & verified profile</span>',
+    'cap-6':'Mobile-First<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Perfect on every screen</span>',
+    'work-eyebrow':'Our Process',
+    'work-title':'From call to launch — in 3 simple steps.',
+    'work-sub':'No technical knowledge needed. You run your business — we handle everything else.',
+    'wr-1-name':'Free 20-minute call','wr-1-sub':'In English or Spanish — your choice',
+    'wr-1-res':'We learn about your business, your city, and your customers. No commitment.',
+    'wr-1-tag':'Step 01',
+    'wr-2-name':'We build your site in 10 days','wr-2-sub':'Mobile-first · Bilingual · WhatsApp + Local SEO',
+    'wr-2-res':'We design and build your complete site. You see it before it goes live.',
+    'wr-2-tag':'Step 02',
+    'wr-3-name':'Customers come to you','wr-3-sub':'Local SEO + Google Business Profile optimized',
+    'wr-3-res':'Customers in your city find you and reach out. New sales in under 30 days.',
+    'wr-3-tag':'Step 03',
+    'tquote':'Before Kalnyesgrowth we didn\'t show up on Google. Within 30 days of launch new customers started reaching out — people who would have never known about us. We already made back the investment more than 4 times.',
+    'tname':'Juan Rodriguez','tbiz':'Rodriguez Plumbing LLC — Houston, TX',
+    'price-eyebrow':'Pricing','price-title':'One new customer pays<br>for the entire website.',
+    'price-sub':'One-time payment. Your site is 100% yours forever. No contracts. No monthly fees.',
+    't1-tag':'Start this week',
+    't1-tier':'Entry Level','t1-name':'Presence Pro','t1-desc':'For businesses with no website that need to exist on Google before a competitor steals more customers.',
+    'pc-once':'One-time · Delivered in 7 days','pc-once2':'One-time · Delivered in 10 days','pc-once3':'One-time · Delivered in 14 days',
+    'f1-1':'4–5 professional pages','f1-2':'Mobile-first design','f1-3':'WhatsApp integrated',
+    'f1-4':'Contact form','f1-5':'Google Business setup','f1-6':'Basic local SEO','f1-7':'30-day support included','f1-8':'30-day satisfaction guarantee',
+    'popular':'⭐ Most Popular',
+    't2-tag':'Most chosen',
+    't2-tier':'Core','t2-name':'Customer Machine','t2-desc':'Built to convert visitors into paying customers. The favorite package for businesses that want real results.',
+    'f2-1':'Everything in Presence Pro','f2-2':'6–8 custom pages','f2-3':'Full bilingual ES/EN content',
+    'f2-4':'Appointment & quote form','f2-5':'Photo & project gallery','f2-6':'Google Reviews integrated',
+    'f2-7':'Advanced local SEO','f2-8':'60-day priority support',
+    't3-tag':'Dominate your market',
+    't3-tier':'Premium','t3-name':'Full System','t3-desc':'For serious businesses that want automatic bookings, dominant SEO, and a system that works 7 days a week.',
+    'f3-1':'Everything in Customer Machine','f3-2':'Automatic online bookings','f3-3':'Automated WhatsApp follow-up',
+    'f3-4':'Multi-city SEO','f3-5':'Blog / content section','f3-6':'Lead capture & email',
+    'f3-7':'Monthly results report','f3-8':'90-day priority support',
+    'pc-btn1':'Book a call →','pc-btn2':'Book a call →','pc-btn3':'Book a call →',
+    'guarantee-title':'30-day satisfaction guarantee',
+    'guarantee-sub':'If you\'re not 100% satisfied with your site before it goes live, we refund you in full. No questions, no hassle.',
+    'hosting-note':'<strong>Monthly hosting: $50/month</strong> — After launch, $50/month keeps your site live, fast, and secure. Less than $2 a day — and one new customer from the site pays for the whole year.',
+    'faq-eyebrow':'Frequently Asked Questions','faq-title':'Questions about Kalnyesgrowth',
+    'faq-1-q':'Do I need to pay monthly fees after the website is done?',
+    'faq-1-a':'No. You pay once and the website is yours forever. The only recurring cost is hosting — $50/month — covering keeping your site live, fast, and maintained. No annual contracts.',
+    'faq-2-q':'How long does it take to build my website?',
+    'faq-2-a':'Our standard delivery is 10 business days. Premium packages are delivered in 14 days. We guarantee these timelines — if we miss them, you get $200 off.',
+    'faq-3-q':'Do you work in Spanish?',
+    'faq-3-a':'Yes — 100%. You can communicate with us entirely in Spanish. We also build bilingual websites and understand the Hispanic market deeply.',
+    'faq-4-q':'What if I don\'t have photos or content?',
+    'faq-4-a':'We handle the copy for your website. For photos, we use professional stock images while you gather real ones. We update with your real photos anytime — at no extra cost.',
+    'faq-5-q':'Will my website show up on Google?',
+    'faq-5-a':'Every website includes basic local SEO — title tags, meta descriptions, city targeting, and Google Business Profile optimization. Most clients see their first Google traffic within 2–4 weeks of launch.',
+    'faq-6-q':'Do you work with businesses outside the US?',
+    'faq-6-a':'Yes. We work with businesses across the US, Mexico, Colombia, Chile, Spain, and any Spanish-speaking market where business owners can invest $297+ in a professional website.',
+    'contact-eyebrow':'Contact Us','contact-title':'Ready to get more customers?',
+    'contact-sub':'Book a free 20-minute call. No commitment, no pressure. In Spanish or English.',
+    'cl-wa-sub':'Response in minutes · English or Spanish',
+    'cl-email':'Email us',
+    'avail-label':'Availability','avail-sub':'Always available — any day, any time',
+    'form-title':'Book your free call','form-name':'Full name','form-phone':'Phone / WhatsApp',
+    'form-biz':'Business type','form-sel':'Select your industry...','form-date':'Preferred date','form-time':'Preferred time',
+    'form-submit':'💬 Send via WhatsApp →','form-note':'Guaranteed response in less than 1 hour. Available 24/7.',
+    'cta-title':'Got a project? Let\'s talk.','cta-link':'Talk to an expert','cta-btn':'WhatsApp now',
+    'footer-desc':'Your website is never done. We keep optimizing.',
+    'footer-services':'Services','fs-1':'Presence Pro','fs-2':'Customer Machine','fs-3':'Full System','fs-4':'Free Consultation',
+    'footer-niches':'Industries','fn-1':'Construction','fn-2':'Salons & Barbershops','fn-3':'Events & Parties','fn-4':'Medical & Dental','fn-5':'Restaurants',
+    'footer-contact':'Contact','footer-book':'🗓 Book a Call',
+    'footer-copy':'© 2026 Kalnyesgrowth · All Rights Reserved',
+    'footer-tagline2':'Your website is never done.',
+  };
+
+  const ES = {};
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-key]').forEach(el => { ES[el.dataset.key] = el.innerHTML; });
+    const d = document.getElementById('book-date');
+    if (d) d.min = new Date().toISOString().split('T')[0];
+    initReveal();
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  });
+
+  function toggleLang() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    const dict = currentLang === 'en' ? EN : ES;
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const v = dict[el.dataset.key];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    document.getElementById('lang-toggle').textContent = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
+    document.documentElement.lang = currentLang;
+    const m = document.getElementById('mob-lang');
+    if (m) m.textContent = currentLang === 'es' ? '🌐 Switch to English' : '🌐 Cambiar a Español';
+  }
+
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  function submitBooking(e) {
+    e.preventDefault();
+    const name    = document.getElementById('book-name').value.trim();
+    const phone   = document.getElementById('book-phone').value.trim();
+    const service = document.getElementById('book-service').value;
+    const date    = document.getElementById('book-date').value;
+    const time    = document.getElementById('book-time').value;
+    const dateStr = date ? new Date(date + 'T12:00:00').toLocaleDateString('es-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' }) : '';
+    const msg = `Hola! Quiero agendar una consulta gratuita 📅\n\n*Nombre:* ${name}\n*Teléfono:* ${phone}\n*Negocio:* ${service}\n*Fecha preferida:* ${dateStr}\n*Hora preferida:* ${time}\n\n¡Gracias!`;
+    window.open(`https://wa.me/15407838835?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  /* ── TESTIMONIAL CYCLE ── */
+  const TESTS = [
+    {
+      quote: 'Antes de Kalnyesgrowth no aparecíamos en Google. En menos de 30 días empezaron a contactarnos clientes nuevos que nunca habrían sabido de nosotros. Ya recuperamos la inversión más de 4 veces.',
+      name: 'Juan Rodríguez', biz: 'Rodriguez Plumbing LLC — Houston, TX',
+      img: 'https://i.pravatar.cc/80?img=33'
+    },
+    {
+      quote: 'En 2 semanas de tener el sitio ya estábamos completamente llenas. Antes dependíamos del boca a boca. Ahora Google nos trae clientes nuevas las 24 horas del día sin que hagamos nada extra.',
+      name: 'María González', biz: 'Belleza Latina Salon — Dallas, TX',
+      img: 'https://i.pravatar.cc/80?img=47'
+    },
+    {
+      quote: 'Cerré mi primer contrato nuevo de Google a las 48 horas del lanzamiento. El sitio se pagó solo en esa primera semana. Si tienes un negocio y no tienes sitio, estás perdiendo dinero cada día.',
+      name: 'Carlos García', biz: 'Garcia Roofing Co. — Miami, FL',
+      img: 'https://i.pravatar.cc/80?img=12'
+    }
+  ];
+  let currentTest = 0;
+
+  function showTest(i) {
+    currentTest = i;
+    const t = TESTS[i];
+    const lang = currentLang;
+    // Only update if in ES (EN has its own quote via data-key which we skip for now)
+    if (lang === 'es') {
+      document.getElementById('test-quote').textContent = t.quote;
+      document.getElementById('test-name').textContent  = t.name;
+      document.getElementById('test-biz').textContent   = t.biz;
+    }
+    document.getElementById('test-img').src = t.img;
+    document.getElementById('test-img').alt = t.name;
+    document.querySelectorAll('.test-dot').forEach((d,j) => d.classList.toggle('active', j === i));
+  }
+
+  function initReveal() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  }
+</script>
+</body>
+</html>
