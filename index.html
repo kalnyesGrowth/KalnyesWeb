@@ -901,6 +901,129 @@
     }
 
     /* ════════════════════════════════════════
+       MONEY LOST SECTION
+    ════════════════════════════════════════ */
+    .money-section { padding: 100px 0; border-top: 1px solid var(--border); background: var(--bg-2); }
+    .money-header { text-align: center; margin-bottom: 64px; }
+    .money-header h2 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .money-header p { font-size: 0.95rem; color: var(--gray); max-width: 520px; margin: 0 auto; line-height: 1.75; }
+
+    .money-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .money-card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Donut chart */
+    .donut-wrap { display: flex; align-items: center; justify-content: center; }
+    .donut-svg { width: 148px; height: 148px; transform: rotate(-90deg); }
+    .donut-track { stroke: var(--bg); }
+    .donut-ring {
+      stroke-dasharray: 0 345;
+      transition: stroke-dasharray 1.6s cubic-bezier(0.4,0,0.2,1) 0.4s;
+    }
+    .donut-center-text { transform: rotate(90deg); transform-origin: 70px 70px; }
+    .money-card.chart-active .donut-ring-1 { stroke-dasharray: 124 221; } /* 36% of 345 */
+
+    /* Bar chart */
+    .bar-chart { display: flex; flex-direction: column; gap: 16px; }
+    .bar-group { display: flex; flex-direction: column; gap: 6px; }
+    .bar-label-row { display: flex; justify-content: space-between; align-items: center; }
+    .bar-label-text { font-size: 0.78rem; color: var(--gray); font-weight: 500; }
+    .bar-label-val { font-size: 0.78rem; font-weight: 700; color: var(--white); }
+    .bar-label-val.green { color: #4ade80; }
+    .bar-track { height: 10px; background: var(--bg); border-radius: 100px; overflow: hidden; }
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      width: 0;
+      transition: width 1.4s cubic-bezier(0.4,0,0.2,1) 0.5s;
+    }
+    .bar-fill-bad  { background: linear-gradient(90deg, #ef4444, #f87171); }
+    .bar-fill-good { background: linear-gradient(90deg, #2563eb, #4ade80); }
+    .money-card.chart-active .bar-fill-bad  { width: 48%; }
+    .money-card.chart-active .bar-fill-good { width: 100%; }
+
+    /* Card body */
+    .money-card-content { display: flex; flex-direction: column; gap: 12px; }
+    .money-accent { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+    .money-card-title { font-size: 1.1rem; font-weight: 800; color: var(--white); }
+    .money-card-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    .money-loss-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fca5a5;
+      width: fit-content;
+    }
+    .money-gain-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.2);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #86efac;
+      width: fit-content;
+    }
+
+    /* Bottom stat row */
+    .money-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .msr-item {
+      padding: 28px 28px;
+      background: var(--bg-3);
+      text-align: center;
+    }
+    .msr-item:not(:last-child) { border-right: 1px solid var(--border); }
+    .msr-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .msr-label { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .money-grid { grid-template-columns: 1fr; }
+      .money-stats-row { grid-template-columns: 1fr; }
+      .msr-item:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ════════════════════════════════════════
        FAQ
     ════════════════════════════════════════ */
     .faq-section { padding: 100px 0; border-top: 1px solid var(--border); }
@@ -1439,15 +1562,15 @@
   <div class="container">
     <p class="hero-eyebrow" data-key="hero-eyebrow">Diseño Web para Negocios Hispanos</p>
     <h1 class="hero-title" data-reveal="up">
-      <span data-key="hero-h1a">El sitio web que trabaja por ti —</span><br>
-      <span class="blue" data-key="hero-h1b">ahorra tiempo, consigue más clientes.</span>
+      <span data-key="hero-h1a">El sitio web que trabaja por ti.</span><br>
+      <span class="blue" data-key="hero-h1b">Ahorra tiempo, consigue más clientes.</span>
     </h1>
 
     <div class="hero-cards" data-reveal="up" data-delay="1">
       <!-- Left card -->
       <div class="hero-card-left">
         <p class="hero-card-left-sub" data-key="card-sub">Sitios que generan resultados reales</p>
-        <h2 data-key="card-h2">Tu negocio merece un sitio que trabaje por ti — las 24 horas del día.</h2>
+        <h2 data-key="card-h2">Tu negocio merece un sitio que trabaje por ti, las 24 horas del día.</h2>
         <p data-key="card-p">Arquitectura mobile-first, WhatsApp integrado, SEO local, y contenido bilingüe. Diseñado para el mercado hispano.</p>
         <a href="https://wa.me/15407838835" target="_blank" rel="noopener" class="btn btn-ghost" data-key="card-btn">Hablar con un experto</a>
       </div>
@@ -1473,7 +1596,7 @@
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">$0<span>/mes</span></div>
-        <div class="hero-stat-label" data-key="stat-4">Cuotas mensuales — jamás</div>
+        <div class="hero-stat-label" data-key="stat-4">Sin cuotas mensuales, jamás</div>
       </div>
     </div>
   </div>
@@ -1496,12 +1619,100 @@
   </div>
 </div>
 
+<!-- ══════════════════ MONEY LOST ══════════════════ -->
+<section class="money-section">
+  <div class="container">
+
+    <div class="money-header" data-reveal="up">
+      <span class="eyebrow" data-key="ml-eyebrow">El Costo de No Estar en Línea</span>
+      <h2 data-key="ml-title">Miles de dólares perdidos cada mes.<br>Por no tener sitio web ni sistema de reservas.</h2>
+      <p data-key="ml-sub">La mayoría de negocios locales no saben cuánto están perdiendo. Aquí están los números reales.</p>
+    </div>
+
+    <div class="money-grid">
+
+      <!-- Card 1: No website -->
+      <div class="money-card" data-reveal="up" data-delay="1">
+        <!-- Donut Chart -->
+        <div class="donut-wrap">
+          <svg class="donut-svg" viewBox="0 0 140 140">
+            <circle class="donut-track" cx="70" cy="70" r="55" fill="none" stroke-width="13"/>
+            <circle class="donut-ring donut-ring-1" cx="70" cy="70" r="55" fill="none"
+              stroke="#ef4444" stroke-width="13" stroke-linecap="round"/>
+            <g class="donut-center-text">
+              <text x="70" y="62" text-anchor="middle" fill="white" font-family="Inter,sans-serif"
+                font-size="26" font-weight="900">36%</text>
+              <text x="70" y="80" text-anchor="middle" fill="rgba(255,255,255,0.4)"
+                font-family="Inter,sans-serif" font-size="10" font-weight="500" data-key="ml-donut-label">sin sitio web</text>
+            </g>
+          </svg>
+        </div>
+        <!-- Content -->
+        <div class="money-card-content">
+          <div class="money-accent" style="color:#ef4444">36%</div>
+          <div class="money-card-title" data-key="ml-c1-title">De negocios locales no tiene sitio web</div>
+          <p class="money-card-desc" data-key="ml-c1-desc">Son invisibles para el 97% de sus clientes potenciales. Cada vez que alguien busca en Google, ese negocio no existe. Los clientes van directo a la competencia que sí aparece.</p>
+          <div class="money-loss-tag" data-key="ml-c1-tag">💸 Hasta $70,000 perdidos al año en clientes que nunca los encuentran</div>
+        </div>
+      </div>
+
+      <!-- Card 2: No booking system -->
+      <div class="money-card" data-reveal="up" data-delay="2">
+        <!-- Bar Chart -->
+        <div class="bar-chart">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-dim);margin-bottom:4px;" data-key="ml-chart-label">Ingresos mensuales promedio</div>
+          <div class="bar-group">
+            <div class="bar-label-row">
+              <span class="bar-label-text" data-key="ml-bar1">Sin reservas online</span>
+              <span class="bar-label-val">$3,200/mes</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill bar-fill-bad"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label-row">
+              <span class="bar-label-text" data-key="ml-bar2">Con reservas online</span>
+              <span class="bar-label-val green">$5,100/mes</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill bar-fill-good"></div></div>
+          </div>
+          <div style="font-size:0.75rem;color:#4ade80;font-weight:700;margin-top:4px;" data-key="ml-bar-diff">↗ 59% más ingresos con reservas automáticas</div>
+        </div>
+        <!-- Content -->
+        <div class="money-card-content">
+          <div class="money-accent" style="color:#f59e0b">74%</div>
+          <div class="money-card-title" data-key="ml-c2-title">De sitios web no tienen sistema de reservas</div>
+          <p class="money-card-desc" data-key="ml-c2-desc">Cada cliente que no puede reservar o cotizar al instante tiene un 60% de probabilidad de irse a la competencia. Un sistema de reservas trabaja por ti las 24 horas, sin que hagas nada.</p>
+          <div class="money-gain-tag" data-key="ml-c2-tag">📈 Negocios con reservas online generan 59% más ingresos en promedio</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom stats row -->
+    <div class="money-stats-row" data-reveal="up">
+      <div class="msr-item">
+        <div class="msr-num">97%</div>
+        <p class="msr-label" data-key="ml-s1">de consumidores busca en Google antes de visitar un negocio local</p>
+      </div>
+      <div class="msr-item">
+        <div class="msr-num">70%</div>
+        <p class="msr-label" data-key="ml-s2">de personas prefiere reservar o cotizar en línea antes que llamar por teléfono</p>
+      </div>
+      <div class="msr-item">
+        <div class="msr-num">3x</div>
+        <p class="msr-label" data-key="ml-s3">más leads convierten los negocios con sitio web profesional vs. los que no tienen</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══════════════════ CASE STUDIES ══════════════════ -->
 <section class="cases-section" id="portafolio">
   <div class="container">
     <div class="cases-header">
       <span class="eyebrow" data-key="cases-eyebrow">Resultados Reales</span>
-      <h2 data-reveal="up" data-key="cases-title">De negocios invisibles a máquinas de ventas —<br>ingresos reales en los primeros 30 días.</h2>
+      <h2 data-reveal="up" data-key="cases-title">De negocios invisibles a máquinas de ventas.<br>Ingresos reales en los primeros 30 días.</h2>
     </div>
 
     <div class="cases-grid">
@@ -1888,8 +2099,8 @@
   <div class="container">
     <div class="work-header">
       <span class="eyebrow" data-key="work-eyebrow">Nuestro Proceso</span>
-      <h2 data-reveal="up" data-key="work-title">De la llamada al lanzamiento — en 3 pasos simples.</h2>
-      <p data-reveal="up" data-delay="1" data-key="work-sub">Sin conocimientos técnicos. Tú manejas tu negocio — nosotros nos encargamos de todo lo demás.</p>
+      <h2 data-reveal="up" data-key="work-title">De la llamada al lanzamiento, en 3 pasos simples.</h2>
+      <p data-reveal="up" data-delay="1" data-key="work-sub">Sin conocimientos técnicos. Tú manejas tu negocio. Nosotros nos encargamos de todo lo demás.</p>
     </div>
 
     <div class="work-list">
@@ -1897,7 +2108,7 @@
         <div class="work-icon">📞</div>
         <div>
           <div class="work-row-name" data-key="wr-1-name">Llamada gratuita de 20 minutos</div>
-          <div class="work-row-city" data-key="wr-1-sub">En inglés o español — tú eliges</div>
+          <div class="work-row-city" data-key="wr-1-sub">En inglés o español. Tú eliges.</div>
         </div>
         <div class="work-row-result" data-key="wr-1-res">Aprendemos sobre tu negocio, tu ciudad y tus clientes. Sin compromiso.</div>
         <div class="work-row-tag" data-key="wr-1-tag">Paso 01</div>
@@ -1934,7 +2145,7 @@
       <img id="test-img" src="https://i.pravatar.cc/80?img=33" alt="Juan Rodríguez" class="test-avatar">
       <div>
         <div class="test-meta-name" id="test-name">Juan Rodríguez</div>
-        <div class="test-meta-biz" id="test-biz">Rodriguez Plumbing LLC — Houston, TX</div>
+        <div class="test-meta-biz" id="test-biz">Rodriguez Plumbing LLC · Houston, TX</div>
       </div>
       <div class="test-dots">
         <span class="test-dot active" onclick="showTest(0)">01</span>
@@ -2023,7 +2234,7 @@
 
     <div class="hosting-note" data-reveal="up">
       <span style="font-size:1.4rem;flex-shrink:0;">🔁</span>
-      <p data-key="hosting-note"><strong>Hosting mensual: $50/mes</strong> — Después del lanzamiento, $50/mes mantiene tu sitio activo, rápido y seguro. Menos de $2 al día — y un solo cliente del sitio paga todo el año.</p>
+      <p data-key="hosting-note"><strong>Hosting mensual: $50/mes</strong> · Después del lanzamiento, $50/mes mantiene tu sitio activo, rápido y seguro. Menos de $2 al día. Un solo cliente del sitio paga todo el año.</p>
     </div>
 
     <div class="guarantee-strip" data-reveal="up">
@@ -2049,35 +2260,35 @@
           <span data-key="faq-1-q">¿Necesito pagar cuotas mensuales después del sitio?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-a" data-key="faq-1-a">No. Pagas una vez y el sitio es tuyo para siempre. El único costo recurrente es el hosting — $50/mes — que cubre mantener tu sitio activo, rápido y mantenido. Sin contratos anuales.</div>
+        <div class="faq-a" data-key="faq-1-a">No. Pagas una vez y el sitio es tuyo para siempre. El único costo recurrente es el hosting ($50/mes), que cubre mantener tu sitio activo, rápido y mantenido. Sin contratos anuales.</div>
       </div>
       <div class="faq-item" data-reveal="up" data-delay="1">
         <div class="faq-q" onclick="toggleFaq(this)">
           <span data-key="faq-2-q">¿Cuánto tiempo toma construir mi sitio?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-a" data-key="faq-2-a">Nuestra entrega estándar es 10 días hábiles. Los paquetes Premium se entregan en 14 días. Garantizamos estos tiempos — si no cumplimos, te damos $200 de descuento.</div>
+        <div class="faq-a" data-key="faq-2-a">Nuestra entrega estándar es 10 días hábiles. Los paquetes Premium se entregan en 14 días. Garantizamos estos tiempos: si no cumplimos, te damos $200 de descuento.</div>
       </div>
       <div class="faq-item" data-reveal="up" data-delay="2">
         <div class="faq-q" onclick="toggleFaq(this)">
           <span data-key="faq-3-q">¿Trabajan en español?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-a" data-key="faq-3-a">Sí — 100%. Puedes comunicarte con nosotros completamente en español. También construimos sitios bilingües y entendemos profundamente el mercado hispano.</div>
+        <div class="faq-a" data-key="faq-3-a">Sí, 100%. Puedes comunicarte con nosotros completamente en español. También construimos sitios bilingües y entendemos profundamente el mercado hispano.</div>
       </div>
       <div class="faq-item" data-reveal="up" data-delay="3">
         <div class="faq-q" onclick="toggleFaq(this)">
           <span data-key="faq-4-q">¿Qué pasa si no tengo fotos o contenido?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-a" data-key="faq-4-a">Nosotros nos encargamos del texto. Para fotos usamos imágenes de stock profesionales mientras reúnes las tuyas. Las actualizamos en cualquier momento — sin costo adicional.</div>
+        <div class="faq-a" data-key="faq-4-a">Nosotros nos encargamos del texto. Para fotos usamos imágenes de stock profesionales mientras reúnes las tuyas. Las actualizamos en cualquier momento, sin costo adicional.</div>
       </div>
       <div class="faq-item" data-reveal="up" data-delay="4">
         <div class="faq-q" onclick="toggleFaq(this)">
           <span data-key="faq-5-q">¿Mi sitio aparecerá en Google?</span>
           <span class="faq-toggle">+</span>
         </div>
-        <div class="faq-a" data-key="faq-5-a">Cada sitio incluye SEO local básico — title tags, meta descriptions, targeting de ciudad y optimización del perfil de Google Business. La mayoría de clientes ven su primer tráfico de Google dentro de 2–4 semanas del lanzamiento.</div>
+        <div class="faq-a" data-key="faq-5-a">Cada sitio incluye SEO local básico: title tags, meta descriptions, targeting de ciudad y optimización del perfil de Google Business. La mayoría de clientes ven su primer tráfico de Google dentro de 2 a 4 semanas del lanzamiento.</div>
       </div>
       <div class="faq-item" data-reveal="up" data-delay="5">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -2110,7 +2321,7 @@
           <div class="avail-box">
             <div class="avail-label" data-key="avail-label">Disponibilidad</div>
             <div class="avail-val">24 / 7</div>
-            <div class="avail-sub" data-key="avail-sub">Siempre disponibles — cualquier día, cualquier hora</div>
+            <div class="avail-sub" data-key="avail-sub">Siempre disponibles. Cualquier día, cualquier hora.</div>
           </div>
         </div>
       </div>
@@ -2236,17 +2447,34 @@
     'ann-right': 'Got a tight timeline?',
     'nav-services':'Services','nav-work':'Our Work','nav-pricing':'Pricing','nav-contact':'Contact','nav-cta':'Talk to an expert',
     'hero-eyebrow':'Web Design for Hispanic Business Owners',
-    'hero-h1a':'The website that works for you —','hero-h1b':'save time, get more clients.',
+    'hero-h1a':'The website that works for you.','hero-h1b':'Save time, get more clients.',
     'card-sub':'Sites that generate real results',
-    'card-h2':'Your business deserves a website that works for you — 24 hours a day.',
+    'card-h2':'Your business deserves a website that works for you, 24 hours a day.',
     'card-p':'Mobile-first architecture, integrated WhatsApp, local SEO, and bilingual content. Designed for the Hispanic market.',
     'card-btn':'Talk to an expert',
-    'stat-1':'Local businesses served','stat-2':'Average rating','stat-3':'Delivery time','stat-4':'Monthly fees — ever',
+    'stat-1':'Local businesses served','stat-2':'Average rating','stat-3':'Delivery time','stat-4':'No monthly fees, ever',
     'mq-label':'Industries we serve',
     'mq-1':'Plumbing','mq-2':'Electricians','mq-3':'Roofers','mq-4':'Beauty Salons','mq-5':'Event Rentals',
     'mq-6':'Restaurants','mq-7':'Lawyers','mq-8':'Dentists','mq-9':'HVAC','mq-10':'Auto Repair',
+    'ml-eyebrow':'The Cost of Being Offline',
+    'ml-title':'Thousands of dollars lost every month.<br>For not having a website or booking system.',
+    'ml-sub':'Most local businesses have no idea how much they\'re losing. Here are the real numbers.',
+    'ml-donut-label':'no website',
+    'ml-c1-title':'Of local businesses have no website',
+    'ml-c1-desc':'They\'re invisible to 97% of their potential customers. Every time someone searches on Google, that business doesn\'t exist. Customers go straight to the competitor who shows up.',
+    'ml-c1-tag':'💸 Up to $70,000 lost per year in customers who never find them',
+    'ml-chart-label':'Average monthly revenue',
+    'ml-bar1':'Without online booking',
+    'ml-bar2':'With online booking',
+    'ml-bar-diff':'↗ 59% more revenue with automatic bookings',
+    'ml-c2-title':'Of websites have no booking system',
+    'ml-c2-desc':'Every customer who can\'t book or get a quote instantly has a 60% chance of going to a competitor. A booking system works for you 24 hours a day, without you doing anything.',
+    'ml-c2-tag':'📈 Businesses with online booking generate 59% more revenue on average',
+    'ml-s1':'of consumers search on Google before visiting a local business',
+    'ml-s2':'of people prefer to book or quote online rather than call',
+    'ml-s3':'more leads convert for businesses with a professional website vs. those without',
     'cases-eyebrow':'Real Results',
-    'cases-title':'From invisible to revenue machines —<br>real sales in the first 30 days.',
+    'cases-title':'From invisible to revenue machines.<br>Real sales in the first 30 days.',
     'cn-1':'Plumbing','cname-1':'Rodriguez Plumbing LLC','cres-1':'↗ $8,400 in new sales in the first 30 days. Houston, TX.',
     'cn-2':'Beauty Salon','cname-2':'Belleza Latina Salon','cres-2':'↗ $6,200 in sales · 58 new clients in 30 days. Dallas, TX.',
     'cn-3':'Roofing','cname-3':'Garcia Roofing Co.','cres-3':'↗ $24,500 in sales · 9 projects closed in 30 days. Miami, FL.',
@@ -2263,9 +2491,9 @@
     'cap-5':'Google Business<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Optimized & verified profile</span>',
     'cap-6':'Mobile-First<br><span style="font-weight:400;opacity:0.65;font-size:0.75rem;">Perfect on every screen</span>',
     'work-eyebrow':'Our Process',
-    'work-title':'From call to launch — in 3 simple steps.',
-    'work-sub':'No technical knowledge needed. You run your business — we handle everything else.',
-    'wr-1-name':'Free 20-minute call','wr-1-sub':'In English or Spanish — your choice',
+    'work-title':'From call to launch, in 3 simple steps.',
+    'work-sub':'No technical knowledge needed. You run your business. We handle everything else.',
+    'wr-1-name':'Free 20-minute call','wr-1-sub':'In English or Spanish. Your choice.',
     'wr-1-res':'We learn about your business, your city, and your customers. No commitment.',
     'wr-1-tag':'Step 01',
     'wr-2-name':'We build your site in 10 days','wr-2-sub':'Mobile-first · Bilingual · WhatsApp + Local SEO',
@@ -2274,8 +2502,8 @@
     'wr-3-name':'Customers come to you','wr-3-sub':'Local SEO + Google Business Profile optimized',
     'wr-3-res':'Customers in your city find you and reach out. New sales in under 30 days.',
     'wr-3-tag':'Step 03',
-    'tquote':'Before Kalnyesgrowth we didn\'t show up on Google. Within 30 days of launch new customers started reaching out — people who would have never known about us. We already made back the investment more than 4 times.',
-    'tname':'Juan Rodriguez','tbiz':'Rodriguez Plumbing LLC — Houston, TX',
+    'tquote':'Before Kalnyesgrowth we didn\'t show up on Google. Within 30 days of launch new customers started reaching out. People who would have never known about us. We already made back the investment more than 4 times.',
+    'tname':'Juan Rodriguez','tbiz':'Rodriguez Plumbing LLC · Houston, TX',
     'price-eyebrow':'Pricing','price-title':'One new customer pays<br>for the entire website.',
     'price-sub':'One-time payment. Your site is 100% yours forever. No contracts. No monthly fees.',
     't1-tag':'Start this week',
@@ -2297,25 +2525,25 @@
     'pc-btn1':'Book a call →','pc-btn2':'Book a call →','pc-btn3':'Book a call →',
     'guarantee-title':'30-day satisfaction guarantee',
     'guarantee-sub':'If you\'re not 100% satisfied with your site before it goes live, we refund you in full. No questions, no hassle.',
-    'hosting-note':'<strong>Monthly hosting: $50/month</strong> — After launch, $50/month keeps your site live, fast, and secure. Less than $2 a day — and one new customer from the site pays for the whole year.',
+    'hosting-note':'<strong>Monthly hosting: $50/month</strong> · After launch, $50/month keeps your site live, fast, and secure. Less than $2 a day. One new customer from the site pays for the whole year.',
     'faq-eyebrow':'Frequently Asked Questions','faq-title':'Questions about Kalnyesgrowth',
     'faq-1-q':'Do I need to pay monthly fees after the website is done?',
-    'faq-1-a':'No. You pay once and the website is yours forever. The only recurring cost is hosting — $50/month — covering keeping your site live, fast, and maintained. No annual contracts.',
+    'faq-1-a':'No. You pay once and the website is yours forever. The only recurring cost is hosting ($50/month), which covers keeping your site live, fast, and maintained. No annual contracts.',
     'faq-2-q':'How long does it take to build my website?',
-    'faq-2-a':'Our standard delivery is 10 business days. Premium packages are delivered in 14 days. We guarantee these timelines — if we miss them, you get $200 off.',
+    'faq-2-a':'Our standard delivery is 10 business days. Premium packages are delivered in 14 days. We guarantee these timelines: if we miss them, you get $200 off.',
     'faq-3-q':'Do you work in Spanish?',
-    'faq-3-a':'Yes — 100%. You can communicate with us entirely in Spanish. We also build bilingual websites and understand the Hispanic market deeply.',
+    'faq-3-a':'Yes, 100%. You can communicate with us entirely in Spanish. We also build bilingual websites and understand the Hispanic market deeply.',
     'faq-4-q':'What if I don\'t have photos or content?',
-    'faq-4-a':'We handle the copy for your website. For photos, we use professional stock images while you gather real ones. We update with your real photos anytime — at no extra cost.',
+    'faq-4-a':'We handle the copy for your website. For photos, we use professional stock images while you gather real ones. We update with your real photos anytime, at no extra cost.',
     'faq-5-q':'Will my website show up on Google?',
-    'faq-5-a':'Every website includes basic local SEO — title tags, meta descriptions, city targeting, and Google Business Profile optimization. Most clients see their first Google traffic within 2–4 weeks of launch.',
+    'faq-5-a':'Every website includes basic local SEO: title tags, meta descriptions, city targeting, and Google Business Profile optimization. Most clients see their first Google traffic within 2 to 4 weeks of launch.',
     'faq-6-q':'Do you work with businesses outside the US?',
     'faq-6-a':'Yes. We work with businesses across the US, Mexico, Colombia, Chile, Spain, and any Spanish-speaking market where business owners can invest $450+ in a professional website.',
     'contact-eyebrow':'Contact Us','contact-title':'Ready to get more customers?',
     'contact-sub':'Book a free 20-minute call. No commitment, no pressure. In Spanish or English.',
     'cl-wa-sub':'Response in minutes · English or Spanish',
     'cl-email':'Email us',
-    'avail-label':'Availability','avail-sub':'Always available — any day, any time',
+    'avail-label':'Availability','avail-sub':'Always available. Any day, any time.',
     'form-title':'Book your free call','form-name':'Full name','form-phone':'Phone / WhatsApp',
     'form-biz':'Business type','form-sel':'Select your industry...','form-date':'Preferred date','form-time':'Preferred time',
     'form-submit':'💬 Send via WhatsApp →','form-note':'Guaranteed response in less than 1 hour. Available 24/7.',
@@ -2387,17 +2615,17 @@
   const TESTS = [
     {
       quote: 'Antes de Kalnyesgrowth no aparecíamos en Google. En menos de 30 días empezaron a contactarnos clientes nuevos que nunca habrían sabido de nosotros. Ya recuperamos la inversión más de 4 veces.',
-      name: 'Juan Rodríguez', biz: 'Rodriguez Plumbing LLC — Houston, TX',
+      name: 'Juan Rodríguez', biz: 'Rodriguez Plumbing LLC · Houston, TX',
       img: 'https://i.pravatar.cc/80?img=33'
     },
     {
       quote: 'En 2 semanas de tener el sitio ya estábamos completamente llenas. Antes dependíamos del boca a boca. Ahora Google nos trae clientes nuevas las 24 horas del día sin que hagamos nada extra.',
-      name: 'María González', biz: 'Belleza Latina Salon — Dallas, TX',
+      name: 'María González', biz: 'Belleza Latina Salon · Dallas, TX',
       img: 'https://i.pravatar.cc/80?img=47'
     },
     {
       quote: 'Cerré mi primer contrato nuevo de Google a las 48 horas del lanzamiento. El sitio se pagó solo en esa primera semana. Si tienes un negocio y no tienes sitio, estás perdiendo dinero cada día.',
-      name: 'Carlos García', biz: 'Garcia Roofing Co. — Miami, FL',
+      name: 'Carlos García', biz: 'Garcia Roofing Co. · Miami, FL',
       img: 'https://i.pravatar.cc/80?img=12'
     }
   ];
@@ -2428,6 +2656,17 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    // Chart animations for money section
+    const chartIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('chart-active');
+          chartIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.money-card').forEach(el => chartIo.observe(el));
   }
 </script>
 </body>
