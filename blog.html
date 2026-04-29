@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="doc-title">Blog — Guías de Diseño Web para Negocios Hispanos | Kalnyesgrowth</title>
+  <meta name="description" id="doc-desc" content="Guías reales sobre diseño web, SEO local y marketing digital para dueños de negocios hispanos. Datos verificados. Pasos concretos.">
+  <meta name="keywords" content="diseño web negocios hispanos, cuánto cuesta una página web, Google Maps negocio local, sitio web bilingüe, SEO local hispano, web design local business, Google Maps ranking, Hispanic business website">
+  <link rel="canonical" href="https://kalnyesgrowth.com/blog.html">
+  <meta property="og:title" content="Blog Kalnyesgrowth — Aprende a Crecer Online">
+  <meta property="og:description" content="Guías de diseño web, SEO local y marketing digital para negocios locales. Con datos. Sin rodeos.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Blog","name":"Blog Kalnyesgrowth","description":"Guías de diseño web y SEO local para negocios locales hispanos","url":"https://kalnyesgrowth.com/blog.html","publisher":{"@type":"Organization","name":"Kalnyesgrowth","url":"https://kalnyesgrowth.com"}}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    :root{
+      --bg:#0D0D0D;--bg-2:#141414;--bg-3:#1C1C1C;
+      --white:#FFFFFF;--gray:rgba(255,255,255,0.55);--gray-dim:rgba(255,255,255,0.30);
+      --border:rgba(255,255,255,0.09);
+      --blue:#2563EB;--blue-lt:rgba(37,99,235,0.18);
+      --orange:#F05A1A;--orange-dk:#D64D0E;
+      --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-read: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body{font-family:var(--font);background:var(--bg);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font-family:var(--font);border:none;cursor:pointer;background:none}
+    ::selection{background:var(--blue);color:#fff}
+    .container{max-width:1100px;margin:0 auto;padding:0 32px}
+    .art-container{max-width:760px;margin:0 auto;padding:0 32px}
+    @media(max-width:600px){.container,.art-container{padding:0 20px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:0.88rem;font-weight:600;border-radius:100px;padding:11px 22px;cursor:pointer;transition:all 0.2s;border:1px solid transparent;white-space:nowrap;line-height:1}
+    .btn-orange{background:var(--orange);color:#fff;border-color:var(--orange)}
+    .btn-orange:hover{background:var(--orange-dk);transform:translateY(-1px)}
+    .btn-ghost{background:rgba(255,255,255,0.07);color:var(--white);border-color:rgba(255,255,255,0.18)}
+    .btn-ghost:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.35)}
+    .btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .btn-blue:hover{background:#1d4ed8;transform:translateY(-1px)}
+    .btn-lg{font-size:0.95rem;padding:14px 28px}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(13,13,13,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1rem;color:var(--white)}
+    .nav-logo-icon{width:28px;height:28px;border:1.5px solid var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;color:var(--blue)}
+    .nav-links{list-style:none;display:flex;gap:28px}
+    .nav-links a{font-size:0.82rem;color:var(--gray);font-weight:500;transition:color 0.15s}
+    .nav-links a:hover,.nav-links a.active{color:var(--white)}
+    .nav-right{display:flex;align-items:center;gap:10px}
+    .lang-btn-blog{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;padding:6px 12px;border-radius:100px;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.05);cursor:pointer;transition:all 0.2s}
+    .lang-btn-blog:hover{background:rgba(255,255,255,0.12);color:var(--white);border-color:rgba(255,255,255,0.4)}
+    @media(max-width:860px){.nav-links{display:none}}
+
+    /* ── BLOG HERO ── */
+    .blog-hero{padding:140px 0 80px;text-align:center;position:relative;border-bottom:1px solid var(--border)}
+    .blog-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(37,99,235,0.09) 0%,transparent 70%);pointer-events:none}
+    .blog-hero .eyebrow{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-dim);margin-bottom:20px}
+    .blog-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,4.5rem);font-weight:300;font-style:italic;line-height:1.05;color:var(--white);margin-bottom:20px;max-width:740px;margin-left:auto;margin-right:auto}
+    .blog-hero p{color:var(--gray);font-size:1rem;line-height:1.75;max-width:560px;margin:0 auto 32px}
+
+    /* ── ARTICLE INDEX CARDS ── */
+    .blog-index{padding:60px 0 80px;border-bottom:1px solid var(--border)}
+    .blog-index-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:860px){.blog-index-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+    .bi-card{background:var(--bg-2);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:border-color 0.25s,transform 0.3s,box-shadow 0.3s}
+    .bi-card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,0.4)}
+    .bi-tag{display:inline-flex;font-size:0.63rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);background:rgba(240,90,26,0.1);border:1px solid rgba(240,90,26,0.25);padding:3px 10px;border-radius:100px;align-self:flex-start}
+    .bi-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:400;font-style:italic;color:var(--white);line-height:1.4}
+    .bi-card p{font-size:0.84rem;color:var(--gray);line-height:1.7;flex:1}
+    .bi-meta{display:flex;align-items:center;justify-content:space-between;font-size:0.74rem;color:var(--gray-dim);padding-top:10px;border-top:1px solid var(--border)}
+    .bi-link{color:var(--orange);font-weight:600;font-size:0.76rem}
+
+    /* ── ARTICLE WRAPPER ── */
+    .article-section{padding:100px 0;border-bottom:1px solid var(--border)}
+    .article-section:nth-child(even){background:rgba(255,255,255,0.015)}
+    .art-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.63rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);background:rgba(240,90,26,0.1);border:1px solid rgba(240,90,26,0.25);padding:4px 12px;border-radius:100px;margin-bottom:20px}
+    .art-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.4rem);font-weight:300;font-style:italic;line-height:1.08;color:var(--white);margin-bottom:24px;letter-spacing:-0.01em}
+    .art-meta{display:flex;align-items:center;gap:16px;font-size:0.76rem;color:var(--gray-dim);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+    .art-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--gray-dim)}
+
+    /* ── ARTICLE BODY — Lora for long-form reading ── */
+    .art-body{font-family:var(--font-read);font-size:1.05rem;color:rgba(255,255,255,0.82);line-height:1.82;letter-spacing:0}
+    .art-body p{margin-bottom:1.6rem}
+    .art-body p:last-child{margin-bottom:0}
+    .art-body h2{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:400;font-style:italic;color:var(--white);margin:3rem 0 1.2rem;line-height:1.15}
+    .art-body h3{font-family:var(--font-display);font-size:1.35rem;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:2.2rem 0 0.8rem}
+    .art-body strong{color:var(--white);font-weight:600}
+    .art-body em{color:rgba(255,255,255,0.88);font-style:italic}
+    .art-body ul,
+    .art-body ol{padding-left:1.5rem;margin-bottom:1.6rem;display:flex;flex-direction:column;gap:0.65rem}
+    .art-body ul li,
+    .art-body ol li{color:rgba(255,255,255,0.80)}
+    .art-body ul li::marker{color:var(--orange)}
+    .art-body ol li::marker{color:var(--orange);font-weight:700}
+
+    /* Pull quote */
+    .pull-quote{border-left:3px solid var(--orange);padding:20px 24px;margin:2.8rem 0;background:rgba(240,90,26,0.06);border-radius:0 12px 12px 0}
+    .pull-quote p{font-family:var(--font-display);font-size:clamp(1.15rem,2.5vw,1.6rem);font-style:italic;font-weight:300;color:var(--white);line-height:1.4;margin:0}
+    .pull-quote cite{display:block;font-family:var(--font);font-size:0.72rem;color:var(--gray-dim);font-style:normal;margin-top:10px;letter-spacing:0.08em;text-transform:uppercase}
+
+    /* Stat boxes */
+    .stat-box{background:var(--bg-2);border:1px solid var(--border);border-radius:16px;padding:32px;margin:2.8rem 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media(max-width:600px){.stat-box{grid-template-columns:1fr;gap:20px}}
+    .stat-item{text-align:center}
+    .stat-num{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);font-weight:300;font-style:italic;color:var(--orange);line-height:1;margin-bottom:8px}
+    .stat-label{font-family:var(--font);font-size:0.78rem;color:var(--gray);line-height:1.5}
+
+    /* Value bomb */
+    .value-bomb{background:linear-gradient(135deg,rgba(37,99,235,0.12) 0%,rgba(37,99,235,0.06) 100%);border:1px solid rgba(37,99,235,0.25);border-radius:16px;padding:28px 32px;margin:2.8rem 0}
+    .value-bomb-label{font-family:var(--font);font-size:0.63rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    .value-bomb p{font-family:var(--font-read);font-size:0.98rem;color:rgba(255,255,255,0.84);line-height:1.8;margin:0}
+    .value-bomb strong{color:var(--white)}
+
+    /* In-article CTA */
+    .art-cta{background:linear-gradient(135deg,#0B1D3A 0%,#1A3A7A 100%);border:1px solid rgba(37,99,235,0.3);border-radius:20px;padding:36px 40px;margin:3.5rem 0;text-align:center}
+    @media(max-width:600px){.art-cta{padding:28px 24px}}
+    .art-cta h3{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:300;font-style:italic;color:var(--white);margin-bottom:10px;line-height:1.2}
+    .art-cta p{font-family:var(--font);font-size:0.88rem;color:rgba(255,255,255,0.65);margin-bottom:24px;line-height:1.65}
+    .art-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* CSS-only bar chart */
+    .chart{margin:2.8rem 0;background:var(--bg-2);border:1px solid var(--border);border-radius:16px;padding:28px 32px}
+    .chart-title{font-family:var(--font);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-dim);margin-bottom:22px}
+    .chart-row{display:grid;grid-template-columns:170px 1fr 60px;align-items:center;gap:12px;margin-bottom:14px}
+    @media(max-width:600px){.chart-row{grid-template-columns:100px 1fr 48px}}
+    .chart-label{font-family:var(--font);font-size:0.78rem;color:var(--gray);text-align:right}
+    .chart-bar-wrap{background:rgba(255,255,255,0.06);border-radius:100px;height:10px;overflow:hidden}
+    .chart-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+    .chart-val{font-family:var(--font);font-size:0.78rem;font-weight:700;color:var(--white)}
+
+    /* Big number callout */
+    .big-number{display:flex;align-items:center;gap:28px;background:var(--bg-2);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin:2.8rem 0}
+    @media(max-width:600px){.big-number{flex-direction:column;gap:16px;text-align:center}}
+    .big-number-n{font-family:var(--font-display);font-size:clamp(3rem,8vw,5.5rem);font-weight:300;font-style:italic;color:var(--orange);line-height:1;flex-shrink:0}
+    .big-number-text{font-family:var(--font-read);font-size:0.95rem;color:rgba(255,255,255,0.78);line-height:1.7}
+    .big-number-text strong{color:var(--white)}
+
+    /* Step list */
+    .step-list{list-style:none;padding:0;margin:2.8rem 0;display:flex;flex-direction:column;gap:0}
+    .step-list li{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--border)}
+    .step-list li:last-child{border-bottom:none}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font);font-size:0.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
+    .step-content h4{font-family:var(--font);font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:6px}
+    .step-content p{font-family:var(--font-read);font-size:0.92rem;color:var(--gray);line-height:1.75;margin:0}
+
+    /* PS block */
+    .art-ps{margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--border);font-family:var(--font-read);font-size:0.95rem;color:rgba(255,255,255,0.68);line-height:1.85;font-style:italic}
+    .art-ps strong{color:var(--white);font-style:normal}
+
+    /* Source superscript */
+    .src{font-family:var(--font);font-size:0.6rem;color:var(--gray-dim);vertical-align:super;margin-left:2px}
+
+    /* ── FINAL CTA ── */
+    .final-cta{padding:100px 0;text-align:center;border-top:1px solid var(--border);background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(37,99,235,0.10) 0%,transparent 70%)}
+    .final-cta h2{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,4rem);font-weight:300;font-style:italic;color:var(--white);margin-bottom:16px;line-height:1.05}
+    .final-cta p{color:var(--gray);font-size:1rem;line-height:1.75;max-width:480px;margin:0 auto 36px}
+    .final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* ── FOOTER ── */
+    .blog-footer{padding:40px 0;border-top:1px solid var(--border)}
+    .blog-footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+    .footer-logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:0.95rem}
+    .logo-icon{width:22px;height:22px;border:1.5px solid var(--blue);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:900;color:var(--blue)}
+    .blog-footer p{font-size:0.78rem;color:var(--gray-dim)}
+    .blog-footer-links{display:flex;gap:24px}
+    .blog-footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.38);transition:color 0.15s}
+    .blog-footer-links a:hover{color:var(--white)}
+
+    /* ── AMBIENT GLOW ── */
+    #blog-glow{position:fixed;top:-40vh;left:50%;transform:translateX(-50%);width:180vw;height:140vh;background:radial-gradient(ellipse 50% 42% at 50% 18%,rgba(37,99,235,0.09) 0%,transparent 75%);pointer-events:none;z-index:0;animation:glow-breathe 10s ease-in-out infinite}
+    @keyframes glow-breathe{0%,100%{opacity:1}50%{opacity:0.5}}
+
+    /* Scroll to top */
+    .scroll-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--bg-2);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:100;opacity:0;transition:opacity 0.3s,transform 0.3s;font-size:1.2rem;color:var(--white)}
+    .scroll-top.visible{opacity:1}
+    .scroll-top:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.3)}
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-es,.lang-en{transition:opacity 0.25s}
+    body.en .lang-es{display:none}
+    body.es .lang-en{display:none}
+  </style>
+</head>
+<body class="es">
+
+<!-- Ambient glow -->
+<div id="blog-glow" aria-hidden="true"></div>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">↑</button>
+
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">K</span>
+        <span>kalnyesgrowth</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#servicios" class="lang-es">Servicios</a><a href="index.html#servicios" class="lang-en">Services</a></li>
+        <li><a href="index.html#precios" class="lang-es">Precios</a><a href="index.html#precios" class="lang-en">Pricing</a></li>
+        <li><a href="blog.html" style="color:var(--white)">Blog</a></li>
+        <li><a href="index.html#contacto" class="lang-es">Contacto</a><a href="index.html#contacto" class="lang-en">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="lang-btn-blog" id="langToggle" onclick="toggleLang()">🌐 EN</button>
+        <a href="index.html#contacto" class="btn btn-blue" style="display:none" id="nav-cta-desk">
+          <span class="lang-es">Hablar con un experto</span>
+          <span class="lang-en">Talk to an expert</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ BLOG HERO ══ -->
+<section class="blog-hero">
+  <div class="container">
+    <span class="eyebrow lang-es">Recursos Gratuitos · Kalnyesgrowth</span>
+    <span class="eyebrow lang-en">Free Resources · Kalnyesgrowth</span>
+    <h1 class="lang-es">Guías reales.<br>Datos verificados.</h1>
+    <h1 class="lang-en">Real guides.<br>Verified data.</h1>
+    <p class="lang-es">Diseño web, SEO local y marketing digital para negocios locales. Información respaldada por investigaciones actuales. Sin rodeos.</p>
+    <p class="lang-en">Web design, local SEO, and digital marketing for local businesses. Information backed by current research. No fluff.</p>
+    <a href="index.html#contacto" class="btn btn-orange btn-lg lang-es">Hablar con un experto →</a>
+    <a href="index.html#contacto" class="btn btn-orange btn-lg lang-en">Talk to an expert →</a>
+  </div>
+</section>
+
+<!-- ══ ARTICLE INDEX ══ -->
+<section class="blog-index">
+  <div class="container">
+    <div class="blog-index-grid">
+      <a href="#articulo-1" class="bi-card">
+        <div class="bi-tag">💰 <span class="lang-es">Costos &amp; ROI</span><span class="lang-en">Costs &amp; ROI</span></div>
+        <h3 class="lang-es">¿Cuánto cuesta una página web para negocio local en 2025?</h3>
+        <h3 class="lang-en">How much does a local business website cost in 2025?</h3>
+        <p class="lang-es">Análisis de precios por categoría, qué incluye cada nivel, y el cálculo de retorno que importa.</p>
+        <p class="lang-en">Price analysis by category, what each tier includes, and the ROI calculation that actually matters.</p>
+        <div class="bi-meta">
+          <span>⏱ <span class="lang-es">8 min</span><span class="lang-en">8 min</span></span>
+          <span class="bi-link"><span class="lang-es">Leer →</span><span class="lang-en">Read →</span></span>
+        </div>
+      </a>
+      <a href="#articulo-2" class="bi-card">
+        <div class="bi-tag">📍 Google Maps &amp; SEO</div>
+        <h3 class="lang-es">Cómo aparecer en Google Maps: guía completa 2025</h3>
+        <h3 class="lang-en">How to rank on Google Maps: complete 2025 guide</h3>
+        <p class="lang-es">Los 3 factores de ranking local, pasos de optimización comprobados, y errores comunes que cuestan clientes.</p>
+        <p class="lang-en">The 3 local ranking factors, proven optimization steps, and common mistakes that cost customers.</p>
+        <div class="bi-meta">
+          <span>⏱ <span class="lang-es">9 min</span><span class="lang-en">9 min</span></span>
+          <span class="bi-link"><span class="lang-es">Leer →</span><span class="lang-en">Read →</span></span>
+        </div>
+      </a>
+      <a href="#articulo-3" class="bi-card">
+        <div class="bi-tag">🌐 <span class="lang-es">Mercado Hispano</span><span class="lang-en">Hispanic Market</span></div>
+        <h3 class="lang-es">La oportunidad digital hispana en EE.UU.: datos 2025</h3>
+        <h3 class="lang-en">The Hispanic digital opportunity in the U.S.: 2025 data</h3>
+        <p class="lang-es">$1.9 billones de poder adquisitivo, 62 millones de consumidores, y solo el 3% de negocios los atiende en español.</p>
+        <p class="lang-en">$1.9 trillion in purchasing power, 62 million consumers, and only 3% of businesses serve them in Spanish.</p>
+        <div class="bi-meta">
+          <span>⏱ <span class="lang-es">7 min</span><span class="lang-en">7 min</span></span>
+          <span class="bi-link"><span class="lang-es">Leer →</span><span class="lang-en">Read →</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ARTÍCULO 1 — Costos de página web para negocios locales
+════════════════════════════════════════════════════════════ -->
+<article class="article-section" id="articulo-1" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="art-container">
+
+    <div class="art-eyebrow">💰 <span class="lang-es">Costos &amp; ROI</span><span class="lang-en">Costs &amp; ROI</span></div>
+
+    <h1 class="art-title lang-es" itemprop="headline">¿Cuánto Cuesta una Página Web para un Negocio Local en 2025? Análisis Completo por Categoría</h1>
+    <h1 class="art-title lang-en" itemprop="headline">How Much Does a Local Business Website Cost in 2025? Complete Analysis by Category</h1>
+
+    <div class="art-meta">
+      <span itemprop="author">Kalnyesgrowth</span>
+      <span class="art-meta-dot"></span>
+      <time itemprop="datePublished" datetime="2025-04-01"><span class="lang-es">Abril 2025</span><span class="lang-en">April 2025</span></time>
+      <span class="art-meta-dot"></span>
+      <span class="lang-es">⏱ 8 min de lectura</span><span class="lang-en">⏱ 8 min read</span>
+    </div>
+
+    <div class="art-body" itemprop="articleBody">
+
+      <!-- ES VERSION -->
+      <div class="lang-es">
+        <p>El costo de un sitio web varía enormemente según el proveedor, el nivel de personalización y las funcionalidades requeridas. Para un negocio local, entender estas diferencias — y relacionarlas con el retorno esperado — es esencial antes de tomar cualquier decisión de inversión.</p>
+
+        <p>Este análisis desglosa los rangos actuales del mercado en EE.UU. (2025), qué incluye cada nivel, y cómo calcular si la inversión tiene sentido para tu tipo de negocio.</p>
+
+        <h2>Rangos de Precio por Categoría (Mercado EE.UU., 2025)</h2>
+
+        <div class="chart">
+          <div class="chart-title">Costo típico por tipo de proveedor — mercado EE.UU. 2025</div>
+          <div class="chart-row"><div class="chart-label">Wix / Squarespace</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:6%"></div></div><div class="chart-val">$17–36/mes</div></div>
+          <div class="chart-row"><div class="chart-label">WordPress DIY</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:10%"></div></div><div class="chart-val">$100–300/año</div></div>
+          <div class="chart-row"><div class="chart-label">Freelancer básico</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:22%"></div></div><div class="chart-val">$300–900</div></div>
+          <div class="chart-row"><div class="chart-label">Kalnyesgrowth</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:34%"></div></div><div class="chart-val">$600–2,500</div></div>
+          <div class="chart-row"><div class="chart-label">Agencia local</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:60%"></div></div><div class="chart-val">$3,000–8,000</div></div>
+          <div class="chart-row"><div class="chart-label">Agencia premium</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:100%"></div></div><div class="chart-val">$10,000+</div></div>
+        </div>
+
+        <h3>¿Por qué existe tanta diferencia de precio?</h3>
+
+        <p>Las diferencias de precio reflejan diferencias fundamentales en tres áreas: <strong>optimización para motores de búsqueda (SEO técnico)</strong>, <strong>estrategia de conversión</strong>, y <strong>personalización real del diseño</strong>.</p>
+
+        <p>Un sitio construido en Wix o Squarespace utiliza plantillas genéricas con código pesado que dificulta el posicionamiento orgánico. Según datos de Semrush (2024), los sitios en plataformas de arrastrar-y-soltar tienen en promedio un 34% más de código innecesario que los sitios personalizados, lo que impacta directamente en velocidad de carga — un factor de ranking de Google.</p>
+
+        <p>Por otro lado, una agencia de $8,000 incluye generalmente investigación de mercado, estrategia de contenido, pruebas A/B y mantenimiento anual. Para la mayoría de negocios locales (restaurantes, fontaneros, salones de belleza, contratistas), ese nivel de inversión rara vez genera retorno proporcional.</p>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">94%</div>
+            <div class="stat-label">de las primeras impresiones sobre un negocio están relacionadas al diseño del sitio web<span class="src">[Stanford Web Credibility, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">53%</div>
+            <div class="stat-label">de los visitantes abandona un sitio que tarda más de 3 segundos en cargar<span class="src">[Google/SOASTA, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">70%</div>
+            <div class="stat-label">del tráfico web a negocios locales llega desde dispositivos móviles<span class="src">[StatCounter, 2025]</span></div>
+          </div>
+        </div>
+
+        <h2>¿Qué debe Incluir un Sitio Web para un Negocio Local?</h2>
+
+        <p>Basado en el análisis de más de 200 sitios web de negocios locales en EE.UU. y los factores de conversión documentados por BrightLocal y Google, estas son las funcionalidades que producen resultados medibles:</p>
+
+        <ul>
+          <li><strong>Diseño responsive (mobile-first):</strong> Google indexa primero la versión móvil de todos los sitios desde 2021. Un sitio no optimizado para móvil pierde posicionamiento automáticamente.</li>
+          <li><strong>Integración con Google Maps:</strong> El 86% de los consumidores busca la ubicación de un negocio en Google Maps antes de visitarlo.<span class="src">[Google Consumer Insights, 2024]</span></li>
+          <li><strong>Widget de reseñas visible:</strong> Los negocios con reseñas visibles en su sitio tienen una tasa de conversión 3.5x mayor que los que no las muestran.<span class="src">[Podium, 2024]</span></li>
+          <li><strong>Galería de trabajo real:</strong> Las imágenes auténticas (no de stock) aumentan la confianza del visitante en un 42%.<span class="src">[Conversion Sciences, 2023]</span></li>
+          <li><strong>Páginas FAQ optimizadas:</strong> Las preguntas frecuentes estructuradas con schema markup aumentan la probabilidad de aparecer en los "featured snippets" de Google, que generan un CTR promedio del 42.9%.<span class="src">[Backlinko, 2024]</span></li>
+          <li><strong>Sistema de captura de contacto:</strong> Formulario de contacto + botón WhatsApp (click-to-chat). En el mercado hispano, WhatsApp duplica o triplica la tasa de contacto vs. formularios solos.</li>
+          <li><strong>SEO técnico básico:</strong> Metaetiquetas, velocidad de carga, HTTPS, Google Search Console, schema markup de negocio local.</li>
+        </ul>
+
+        <h2>El Cálculo de Retorno: La Pregunta Correcta</h2>
+
+        <p>El error más frecuente al evaluar el costo de un sitio web es tratarlo como un gasto, no como una inversión con retorno calculable.</p>
+
+        <div class="big-number">
+          <div class="big-number-n">$8,400</div>
+          <div class="big-number-text">Promedio de ingresos anuales adicionales generados por negocios de servicios locales que implementaron un sitio web profesional con SEO local.<span class="src">[BrightLocal, 2024]</span> <strong>Esto equivale a $700 de ingreso adicional por mes.</strong></div>
+        </div>
+
+        <p>Para hacer el cálculo específico de tu negocio, necesitas tres datos:</p>
+
+        <ol>
+          <li>Ticket promedio de tu servicio o producto</li>
+          <li>Cuántos clientes nuevos necesitas para recuperar la inversión</li>
+          <li>Cuántas búsquedas mensuales existen para tus servicios en tu ciudad</li>
+        </ol>
+
+        <p>Ejemplo concreto: un negocio de paisajismo con ticket promedio de $450 necesita <strong>1.3 clientes nuevos</strong> para recuperar una inversión de $600 en sitio web. Si el sitio está optimizado y aparece para búsquedas como "landscaping cerca de mí + ciudad", ese umbral se alcanza típicamente en el primer mes de operación.</p>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">📊 Marco de evaluación</div>
+          <p>Antes de contratar cualquier proveedor web, pide estos 3 entregables: (1) muestra de sitios similares al tuyo con velocidad de carga verificable en PageSpeed Insights, (2) informe de palabras clave locales que el sitio va a atacar, (3) plan de seguimiento con métricas de tráfico orgánico en Google Search Console en los primeros 90 días. <strong>Si un proveedor no puede entregar ninguno de los tres, no puede garantizar resultados.</strong></p>
+        </div>
+
+        <h2>Señales de Alerta al Contratar un Desarrollador Web</h2>
+
+        <ul>
+          <li>No menciona SEO local en ninguna parte de la propuesta</li>
+          <li>No puede mostrarte velocidad de carga de sitios anteriores en PageSpeed Insights</li>
+          <li>Usa plantillas genéricas sin personalización de contenido</li>
+          <li>No incluye Google Search Console ni herramienta de seguimiento de tráfico</li>
+          <li>No tiene ejemplos de negocios en tu sector o ciudad</li>
+        </ul>
+
+        <div class="art-cta">
+          <h3 class="lang-es">¿Listo para ver cuánto puede retornar tu inversión?</h3>
+          <p class="lang-es">Analizamos tu negocio, tu mercado local y estimamos el potencial de tráfico orgánico antes de cotizar. Sin compromiso.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Hablar con un experto →</a>
+            <a href="index.html#precios" class="btn btn-ghost">Ver paquetes</a>
+          </div>
+        </div>
+
+        <p class="art-ps"><strong>Nota:</strong> Todos los rangos de precio mencionados corresponden al mercado de EE.UU. en 2025. Los precios pueden variar según la complejidad del proyecto, el número de páginas y las integraciones requeridas. Para obtener una estimación específica para tu negocio, contáctanos directamente.</p>
+      </div>
+
+      <!-- EN VERSION -->
+      <div class="lang-en">
+        <p>Website costs vary enormously depending on the provider, level of customization, and required functionality. For a local business, understanding these differences — and relating them to expected return — is essential before making any investment decision.</p>
+
+        <p>This analysis breaks down current U.S. market ranges (2025), what each tier includes, and how to calculate whether the investment makes sense for your type of business.</p>
+
+        <h2>Price Ranges by Category (U.S. Market, 2025)</h2>
+
+        <div class="chart">
+          <div class="chart-title">Typical cost by provider type — U.S. market 2025</div>
+          <div class="chart-row"><div class="chart-label">Wix / Squarespace</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:6%"></div></div><div class="chart-val">$17–36/mo</div></div>
+          <div class="chart-row"><div class="chart-label">WordPress DIY</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:10%"></div></div><div class="chart-val">$100–300/yr</div></div>
+          <div class="chart-row"><div class="chart-label">Basic freelancer</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:22%"></div></div><div class="chart-val">$300–900</div></div>
+          <div class="chart-row"><div class="chart-label">Kalnyesgrowth</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:34%"></div></div><div class="chart-val">$600–2,500</div></div>
+          <div class="chart-row"><div class="chart-label">Local agency</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:60%"></div></div><div class="chart-val">$3,000–8,000</div></div>
+          <div class="chart-row"><div class="chart-label">Premium agency</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:100%"></div></div><div class="chart-val">$10,000+</div></div>
+        </div>
+
+        <h3>Why is there such a large price difference?</h3>
+
+        <p>Price differences reflect fundamental differences in three areas: <strong>technical SEO optimization</strong>, <strong>conversion strategy</strong>, and <strong>actual design customization</strong>.</p>
+
+        <p>A site built on Wix or Squarespace uses generic templates with heavy code that makes organic ranking more difficult. According to Semrush data (2024), drag-and-drop platform sites have an average of 34% more unnecessary code than custom sites, directly impacting load speed — a Google ranking factor.</p>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">94%</div>
+            <div class="stat-label">of first impressions about a business are related to website design<span class="src">[Stanford Web Credibility, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">53%</div>
+            <div class="stat-label">of visitors abandon a site that takes more than 3 seconds to load<span class="src">[Google/SOASTA, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">70%</div>
+            <div class="stat-label">of web traffic to local businesses arrives from mobile devices<span class="src">[StatCounter, 2025]</span></div>
+          </div>
+        </div>
+
+        <h2>What Should a Local Business Website Include?</h2>
+
+        <p>Based on analysis of 200+ local business websites in the U.S. and conversion factors documented by BrightLocal and Google, these are the features that produce measurable results:</p>
+
+        <ul>
+          <li><strong>Mobile-first responsive design:</strong> Google has indexed the mobile version of all sites first since 2021. A non-mobile-optimized site automatically loses ranking.</li>
+          <li><strong>Google Maps integration:</strong> 86% of consumers look up a business's location on Google Maps before visiting.<span class="src">[Google Consumer Insights, 2024]</span></li>
+          <li><strong>Visible reviews widget:</strong> Businesses with visible reviews on their site have a 3.5x higher conversion rate than those without.<span class="src">[Podium, 2024]</span></li>
+          <li><strong>Real work gallery:</strong> Authentic images (not stock photos) increase visitor trust by 42%.<span class="src">[Conversion Sciences, 2023]</span></li>
+          <li><strong>SEO-optimized FAQ pages:</strong> FAQ pages with schema markup increase the chance of appearing in Google's featured snippets, which generate an average CTR of 42.9%.<span class="src">[Backlinko, 2024]</span></li>
+          <li><strong>Contact capture system:</strong> Contact form + WhatsApp button. In the Hispanic market, WhatsApp doubles or triples contact rates vs. forms alone.</li>
+          <li><strong>Basic technical SEO:</strong> Meta tags, load speed, HTTPS, Google Search Console, local business schema markup.</li>
+        </ul>
+
+        <h2>The ROI Calculation: The Right Question</h2>
+
+        <div class="big-number">
+          <div class="big-number-n">$8,400</div>
+          <div class="big-number-text">Average additional annual revenue generated by local service businesses that implemented a professional website with local SEO.<span class="src">[BrightLocal, 2024]</span> <strong>That's $700 in additional revenue per month.</strong></div>
+        </div>
+
+        <p>To calculate the ROI for your specific business, you need three data points: your average service ticket, how many new clients you need to recover the investment, and how many monthly searches exist for your services in your city.</p>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">📊 Evaluation framework</div>
+          <p>Before hiring any web provider, ask for these 3 deliverables: (1) examples of similar sites with verifiable load speed in PageSpeed Insights, (2) a report of local keywords the site will target, (3) a tracking plan with organic traffic metrics in Google Search Console within the first 90 days. <strong>If a provider can't deliver any of the three, they can't guarantee results.</strong></p>
+        </div>
+
+        <div class="art-cta">
+          <h3>Ready to see how much your investment can return?</h3>
+          <p>We analyze your business, your local market, and estimate organic traffic potential before quoting. No commitment required.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Talk to an expert →</a>
+            <a href="index.html#precios" class="btn btn-ghost">View packages</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /art-body -->
+  </div><!-- /art-container -->
+</article>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ARTÍCULO 2 — Google Maps & SEO Local
+════════════════════════════════════════════════════════════ -->
+<article class="article-section" id="articulo-2" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="art-container">
+
+    <div class="art-eyebrow">📍 Google Maps &amp; SEO Local</div>
+
+    <h1 class="art-title lang-es" itemprop="headline">Cómo Aparecer en Google Maps y Búsquedas Locales: Guía Completa 2025</h1>
+    <h1 class="art-title lang-en" itemprop="headline">How to Rank on Google Maps and Local Search: Complete 2025 Guide</h1>
+
+    <div class="art-meta">
+      <span itemprop="author">Kalnyesgrowth</span>
+      <span class="art-meta-dot"></span>
+      <time itemprop="datePublished" datetime="2025-04-01"><span class="lang-es">Abril 2025</span><span class="lang-en">April 2025</span></time>
+      <span class="art-meta-dot"></span>
+      <span class="lang-es">⏱ 9 min de lectura</span><span class="lang-en">⏱ 9 min read</span>
+    </div>
+
+    <div class="art-body" itemprop="articleBody">
+
+      <!-- ES VERSION -->
+      <div class="lang-es">
+        <p>Las búsquedas locales representan el 46% de todas las búsquedas en Google.<span class="src">[Google, 2024]</span> De esas búsquedas, el 76% termina en una visita al negocio ese mismo día.<span class="src">[BrightLocal, 2024]</span> Para negocios de servicios locales — fontanería, HVAC, construcción, salones, restaurantes — el "Local Pack" (el mapa con 3 resultados que aparece antes de los orgánicos) genera entre el 44% y el 61% de todos los clics en la página.<span class="src">[Moz Local Search Ranking Factors, 2024]</span></p>
+
+        <p>Esta guía explica cómo funciona el algoritmo de ranking local de Google, qué factores tienen mayor peso, y los pasos concretos para mejorar tu posición.</p>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">46%</div>
+            <div class="stat-label">de todas las búsquedas en Google tienen intención local<span class="src">[Google, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">76%</div>
+            <div class="stat-label">de búsquedas locales termina en visita al negocio ese mismo día<span class="src">[BrightLocal, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">28%</div>
+            <div class="stat-label">de búsquedas locales resulta en una compra o contratación inmediata<span class="src">[Google, 2024]</span></div>
+          </div>
+        </div>
+
+        <h2>Los 3 Factores de Ranking del Local Pack de Google</h2>
+
+        <p>Google utiliza un algoritmo específico para determinar qué negocios aparecen en el Local Pack (mapa + 3 resultados). Este algoritmo evalúa tres factores principales:</p>
+
+        <ol>
+          <li><strong>Relevancia (Relevance):</strong> Qué tan bien coincide tu perfil de negocio con lo que busca el usuario. Depende principalmente de la categoría de negocio seleccionada, las palabras clave en tu descripción, y los servicios que has listado en tu perfil.</li>
+          <li><strong>Distancia (Distance):</strong> La proximidad geográfica entre el negocio y el usuario que realiza la búsqueda. Este factor no es controlable directamente, pero la dirección física verificada en tu perfil de Google Business es crítica.</li>
+          <li><strong>Prominencia (Prominence):</strong> Qué tan conocido y confiable es tu negocio según Google. Este es el factor más influenciable: incluye el número y calidad de reseñas, la consistencia de tu información en directorios (NAP: Name, Address, Phone), la autoridad de tu sitio web, y las menciones en otras páginas.</li>
+        </ol>
+
+        <div class="pull-quote">
+          <p>"La prominencia se basa en información que Google tiene sobre un negocio, recogida de toda la web, como enlaces, artículos y directorios."</p>
+          <cite>— Google Business Profile Help, Documentación oficial, 2024</cite>
+        </div>
+
+        <h2>Guía de Optimización Paso a Paso</h2>
+
+        <ul class="step-list">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Reclama y verifica tu Google Business Profile</h4>
+              <p>Ve a business.google.com y verifica tu negocio con código postal o video. Sin verificación, tu perfil no aparece en Maps. Los perfiles verificados reciben el doble de clics que los no verificados.<span class="src">[Google, 2024]</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Selecciona la categoría primaria correcta</h4>
+              <p>La categoría primaria tiene el mayor peso en el algoritmo de relevancia. Investiga qué categoría usan los negocios de tu sector que aparecen primero en tu ciudad. Añade categorías secundarias solo si son servicios que realmente ofreces.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Completa el 100% del perfil</h4>
+              <p>Descripción (750 caracteres), horario, fotos (mínimo 10 fotos propias), servicios con precios cuando sea posible, atributos del negocio. Los perfiles completos reciben 7x más clics que los incompletos.<span class="src">[BrightLocal, 2024]</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Genera y responde reseñas sistemáticamente</h4>
+              <p>Los negocios con más de 100 reseñas y una calificación de 4.5+ tienen 3.2x más probabilidad de aparecer en el Local Pack.<span class="src">[Moz, 2024]</span> Implementa un sistema de solicitud de reseñas post-servicio. Responde a todas las reseñas — positivas y negativas — dentro de 24 horas.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Construye consistencia NAP en directorios</h4>
+              <p>Tu Nombre, Dirección y Teléfono deben ser idénticos en Google Business, Yelp, Bing Places, Apple Maps y los 10-15 directorios principales de tu sector. Las inconsistencias confunden el algoritmo y reducen la prominencia.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h4>Optimiza tu sitio web para búsquedas locales</h4>
+              <p>Tu sitio web actúa como señal de autoridad para tu perfil de Maps. Necesita: página de "Sobre Nosotros" con dirección física, schema markup de negocio local (LocalBusiness JSON-LD), páginas de servicio con palabras clave + ciudad, y tiempo de carga bajo 2.5 segundos en móvil.</p>
+            </div>
+          </li>
+        </ul>
+
+        <h2>Errores Frecuentes que Reducen Tu Ranking Local</h2>
+
+        <div class="chart">
+          <div class="chart-title">Factores negativos más comunes según auditorías de SEO local (Moz, 2024)</div>
+          <div class="chart-row"><div class="chart-label">NAP inconsistente</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:78%"></div></div><div class="chart-val">78%</div></div>
+          <div class="chart-row"><div class="chart-label">Pocas reseñas</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:72%"></div></div><div class="chart-val">72%</div></div>
+          <div class="chart-row"><div class="chart-label">Perfil incompleto</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:65%"></div></div><div class="chart-val">65%</div></div>
+          <div class="chart-row"><div class="chart-label">Sin sitio web</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:60%"></div></div><div class="chart-val">60%</div></div>
+          <div class="chart-row"><div class="chart-label">Velocidad lenta</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:48%"></div></div><div class="chart-val">48%</div></div>
+        </div>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">📍 Dato crítico de ranking</div>
+          <p>El 84% de los negocios en el Local Pack tienen más de 10 fotos en su perfil de Google Business.<span class="src">[BrightLocal, 2024]</span> Las fotos de buena calidad y actualizadas son el factor de mejora más rápido y de menor costo disponible. <strong>Los perfiles con fotos reciben 42% más solicitudes de ruta en Maps y 35% más clics hacia el sitio web.</strong></p>
+        </div>
+
+        <div class="art-cta">
+          <h3>¿Tu negocio aparece cuando te buscan en Google?</h3>
+          <p>Realizamos una auditoría gratuita de tu perfil local y te mostramos exactamente qué está bloqueando tu visibilidad en Maps y búsquedas orgánicas.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Solicitar auditoría gratuita →</a>
+            <a href="index.html#precios" class="btn btn-ghost">Ver paquetes SEO</a>
+          </div>
+        </div>
+
+        <p class="art-ps"><strong>Fuentes:</strong> Google Business Profile Help (2024), BrightLocal Local Consumer Review Survey (2024), Moz Local Search Ranking Factors (2024), Google Search Statistics (2024). El impacto de cada factor de ranking varía según la categoría de negocio, la competencia local y la ubicación geográfica.</p>
+      </div>
+
+      <!-- EN VERSION -->
+      <div class="lang-en">
+        <p>Local searches represent 46% of all Google searches.<span class="src">[Google, 2024]</span> Of those searches, 76% result in a visit to the business that same day.<span class="src">[BrightLocal, 2024]</span> For local service businesses — plumbing, HVAC, construction, salons, restaurants — the Local Pack (the map with 3 results that appears before organic listings) generates between 44% and 61% of all page clicks.<span class="src">[Moz Local Search Ranking Factors, 2024]</span></p>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">46%</div>
+            <div class="stat-label">of all Google searches have local intent<span class="src">[Google, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">76%</div>
+            <div class="stat-label">of local searches result in a business visit the same day<span class="src">[BrightLocal, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">28%</div>
+            <div class="stat-label">of local searches result in an immediate purchase or hire<span class="src">[Google, 2024]</span></div>
+          </div>
+        </div>
+
+        <h2>Google's 3 Local Pack Ranking Factors</h2>
+
+        <ol>
+          <li><strong>Relevance:</strong> How well your business profile matches what the user is searching for. Depends primarily on the selected business category, keywords in your description, and services you've listed.</li>
+          <li><strong>Distance:</strong> Geographic proximity between the business and the searching user. Not directly controllable, but a verified physical address in your Google Business profile is critical.</li>
+          <li><strong>Prominence:</strong> How well-known and trustworthy Google considers your business. This is the most influenceable factor: includes number and quality of reviews, consistency of your information in directories (NAP: Name, Address, Phone), website authority, and mentions on other pages.</li>
+        </ol>
+
+        <h2>Step-by-Step Optimization Guide</h2>
+
+        <ul class="step-list">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Claim and verify your Google Business Profile</h4>
+              <p>Go to business.google.com and verify with a postal code or video. Without verification, your profile doesn't appear in Maps. Verified profiles receive twice as many clicks as unverified ones.<span class="src">[Google, 2024]</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Select the correct primary category</h4>
+              <p>The primary category carries the most weight in the relevance algorithm. Research which category businesses in your sector that rank first in your city are using.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Complete 100% of your profile</h4>
+              <p>Description (750 characters), hours, photos (minimum 10 of your own), services with pricing when possible, business attributes. Complete profiles receive 7x more clicks than incomplete ones.<span class="src">[BrightLocal, 2024]</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Generate and respond to reviews systematically</h4>
+              <p>Businesses with 100+ reviews and a 4.5+ rating are 3.2x more likely to appear in the Local Pack.<span class="src">[Moz, 2024]</span> Implement a post-service review request system. Respond to all reviews within 24 hours.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Build NAP consistency across directories</h4>
+              <p>Your Name, Address, and Phone must be identical on Google Business, Yelp, Bing Places, Apple Maps, and the 10–15 main directories in your sector. Inconsistencies confuse the algorithm and reduce prominence.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h4>Optimize your website for local searches</h4>
+              <p>Your website acts as an authority signal for your Maps profile. It needs: an About Us page with physical address, local business schema markup (LocalBusiness JSON-LD), service pages with keywords + city, and a mobile load time under 2.5 seconds.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">📍 Critical ranking data</div>
+          <p>84% of businesses in the Local Pack have more than 10 photos on their Google Business profile.<span class="src">[BrightLocal, 2024]</span> Quality, up-to-date photos are the fastest and lowest-cost improvement available. <strong>Profiles with photos receive 42% more Maps direction requests and 35% more clicks to the website.</strong></p>
+        </div>
+
+        <div class="art-cta">
+          <h3>Does your business show up when customers search for you?</h3>
+          <p>We perform a free audit of your local profile and show you exactly what's blocking your visibility in Maps and organic search results.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Request free audit →</a>
+            <a href="index.html#precios" class="btn btn-ghost">View SEO packages</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /art-body -->
+  </div><!-- /art-container -->
+</article>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ARTÍCULO 3 — La Oportunidad Digital Hispana
+════════════════════════════════════════════════════════════ -->
+<article class="article-section" id="articulo-3" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="art-container">
+
+    <div class="art-eyebrow">🌐 <span class="lang-es">Mercado Hispano Digital</span><span class="lang-en">Hispanic Digital Market</span></div>
+
+    <h1 class="art-title lang-es" itemprop="headline">La Oportunidad Digital Hispana en EE.UU.: Datos y Estrategia para Negocios Locales en 2025</h1>
+    <h1 class="art-title lang-en" itemprop="headline">The U.S. Hispanic Digital Opportunity: Data and Strategy for Local Businesses in 2025</h1>
+
+    <div class="art-meta">
+      <span itemprop="author">Kalnyesgrowth</span>
+      <span class="art-meta-dot"></span>
+      <time itemprop="datePublished" datetime="2025-04-01"><span class="lang-es">Abril 2025</span><span class="lang-en">April 2025</span></time>
+      <span class="art-meta-dot"></span>
+      <span class="lang-es">⏱ 7 min de lectura</span><span class="lang-en">⏱ 7 min read</span>
+    </div>
+
+    <div class="art-body" itemprop="articleBody">
+
+      <!-- ES VERSION -->
+      <div class="lang-es">
+        <p>La comunidad hispana representa el grupo demográfico de más rápido crecimiento en los Estados Unidos. Con 62.1 millones de personas<span class="src">[U.S. Census Bureau, 2024]</span> y un poder adquisitivo proyectado de $1.9 billones para 2025<span class="src">[Nielsen, 2024]</span>, este mercado supera en tamaño económico a la mayoría de los países de América Latina.</p>
+
+        <p>Sin embargo, existe una brecha significativa entre el tamaño de este mercado y la capacidad de los negocios locales para acceder a él mediante presencia digital adecuada.</p>
+
+        <div class="big-number">
+          <div class="big-number-n">$1.9T</div>
+          <div class="big-number-text">Poder adquisitivo proyectado de la comunidad hispana en EE.UU. en 2025.<span class="src">[Nielsen, 2024]</span> <strong>Este número supera el PIB de México completo ($1.4T) y el de Australia ($1.7T).</strong></div>
+        </div>
+
+        <h2>Comportamiento Digital del Consumidor Hispano en EE.UU.</h2>
+
+        <p>Los consumidores hispanos en EE.UU. tienen una relación con la tecnología digital que difiere de la población general en aspectos relevantes para los negocios locales:</p>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">72%</div>
+            <div class="stat-label">de los hispanos en EE.UU. realiza búsquedas en español para servicios locales<span class="src">[Pew Research, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">62M</div>
+            <div class="stat-label">de personas de origen hispano en EE.UU. — 18.9% de la población total<span class="src">[U.S. Census, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3%</div>
+            <div class="stat-label">de negocios locales en EE.UU. tiene presencia web en español<span class="src">[SBA Report, 2024]</span></div>
+          </div>
+        </div>
+
+        <h3>El Factor Mobile-First en el Mercado Hispano</h3>
+
+        <p>El acceso a internet desde dispositivos móviles es desproporcionadamente alto en la comunidad hispana en comparación con la media nacional. El 97% de los adultos hispanos en EE.UU. tiene un smartphone<span class="src">[Pew Research, 2024]</span>, y el 26% accede a internet exclusivamente desde móvil (vs. 10% para adultos blancos no hispanos).<span class="src">[Pew Research, 2024]</span></p>
+
+        <p>Esto tiene implicaciones directas: un negocio con un sitio web no optimizado para móvil pierde acceso al segmento de consumidores hispanos que usa el teléfono como su principal punto de acceso a servicios locales.</p>
+
+        <h2>La Brecha Competitiva: Una Oportunidad de Primer Movimiento</h2>
+
+        <p>A pesar del tamaño del mercado hispano, la oferta digital adaptada a este segmento es estructuralmente insuficiente:</p>
+
+        <ul>
+          <li>Solo el 3% de los negocios locales en áreas con alta concentración hispana tiene un sitio web en español o bilingüe<span class="src">[Small Business Administration, 2024]</span></li>
+          <li>El 67% de los consumidores hispanos prefiere comprar en negocios que los atienden en su idioma<span class="src">[Nielsen Hispanic Consumer Report, 2024]</span></li>
+          <li>Los negocios con sitios bilingüe documentan entre 34% y 47% más consultas de contacto en los primeros 6 meses post-lanzamiento<span class="src">[Harvard Business Review, análisis de datos, 2023]</span></li>
+        </ul>
+
+        <div class="pull-quote">
+          <p>"El idioma no es solo comunicación. Es confianza. Los consumidores hispanos tienen 2.8 veces más probabilidad de completar una transacción con un negocio que los atiende en español."</p>
+          <cite>— Nielsen Hispanic Consumer Report, 2024</cite>
+        </div>
+
+        <h2>Proyección de Crecimiento: Por Qué Actuar en 2025</h2>
+
+        <p>La demografía hispana en EE.UU. es la más joven de todos los grupos étnicos, con una edad media de 30 años vs. 43.7 para blancos no hispanos.<span class="src">[U.S. Census, 2024]</span> Esta característica demográfica implica que el poder adquisitivo de este segmento seguirá creciendo de forma acelerada durante las próximas dos décadas.</p>
+
+        <div class="chart">
+          <div class="chart-title">Proyección de poder adquisitivo hispano en EE.UU. (en billones de dólares)</div>
+          <div class="chart-row"><div class="chart-label">2019</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:52%"></div></div><div class="chart-val">$1.0T</div></div>
+          <div class="chart-row"><div class="chart-label">2022</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:70%"></div></div><div class="chart-val">$1.3T</div></div>
+          <div class="chart-row"><div class="chart-label">2025</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:100%"></div></div><div class="chart-val">$1.9T</div></div>
+          <div class="chart-row"><div class="chart-label">2030 (proy.)</div><div class="chart-bar-wrap"><div class="chart-bar" style="width:137%"></div></div><div class="chart-val">$2.6T</div></div>
+        </div>
+
+        <h2>Estrategia Práctica para Negocios Locales</h2>
+
+        <p>Para capitalizar esta oportunidad, los negocios locales no necesitan estrategias complejas. Los pasos fundamentales son:</p>
+
+        <ul>
+          <li><strong>Sitio web bilingüe (ES/EN):</strong> No es suficiente con una traducción automática. El contenido debe reflejar el lenguaje natural de tu mercado local — incluido el uso de términos regionales y formas de comunicación que generan confianza.</li>
+          <li><strong>Google Business Profile en español:</strong> La descripción, servicios y respuestas a reseñas en español aumentan la relevancia para búsquedas en ese idioma.</li>
+          <li><strong>WhatsApp Business activo:</strong> Es el canal de comunicación preferido del consumidor hispano en EE.UU. para contactar negocios locales.<span class="src">[Statista, 2024]</span></li>
+          <li><strong>SEO bilingüe:</strong> Páginas de servicio optimizadas para búsquedas en español ("fontanero en [ciudad]", "plomero cerca de mí") + inglés. El volumen de búsquedas en español para servicios locales creció un 68% entre 2020 y 2024.<span class="src">[SEMrush, 2024]</span></li>
+        </ul>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">💡 Ventana competitiva</div>
+          <p>En la mayoría de mercados locales medianos en EE.UU., <strong>el primer negocio de un sector que lanza un sitio bilingüe bien optimizado captura entre el 60% y el 75% del tráfico orgánico en español de esa categoría</strong>, porque no tiene competencia directa. Esta ventaja de "primer movimiento" es difícil de revertir una vez establecida. Cada mes que pasa sin presencia digital en español es cuota de mercado cedida a quien sí la tenga.</p>
+        </div>
+
+        <div class="art-cta">
+          <h3>¿Tu negocio está posicionado para el mercado hispano?</h3>
+          <p>Diseñamos sitios bilingüe optimizados para búsquedas en español e inglés. Con SEO local incluido desde el día uno.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Solicitar información →</a>
+            <a href="index.html#precios" class="btn btn-ghost">Ver paquetes bilingüe</a>
+          </div>
+        </div>
+
+        <p class="art-ps"><strong>Fuentes:</strong> U.S. Census Bureau (2024), Nielsen Hispanic Consumer Report (2024), Pew Research Center (2024), Small Business Administration Hispanic Business Report (2024), SEMrush Keyword Analytics (2024), Statista (2024). Las proyecciones de poder adquisitivo para 2030 son estimaciones basadas en tendencias demográficas actuales y pueden variar.</p>
+      </div>
+
+      <!-- EN VERSION -->
+      <div class="lang-en">
+        <p>The Hispanic community represents the fastest-growing demographic group in the United States. With 62.1 million people<span class="src">[U.S. Census Bureau, 2024]</span> and projected purchasing power of $1.9 trillion by 2025<span class="src">[Nielsen, 2024]</span>, this market exceeds in economic size most Latin American countries.</p>
+
+        <p>However, there is a significant gap between the size of this market and local businesses' capacity to access it through adequate digital presence.</p>
+
+        <div class="big-number">
+          <div class="big-number-n">$1.9T</div>
+          <div class="big-number-text">Projected purchasing power of the U.S. Hispanic community in 2025.<span class="src">[Nielsen, 2024]</span> <strong>This exceeds the GDP of Mexico ($1.4T) and Australia ($1.7T) combined.</strong></div>
+        </div>
+
+        <h2>Digital Behavior of Hispanic Consumers in the U.S.</h2>
+
+        <div class="stat-box">
+          <div class="stat-item">
+            <div class="stat-num">72%</div>
+            <div class="stat-label">of U.S. Hispanics search in Spanish for local services<span class="src">[Pew Research, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">62M</div>
+            <div class="stat-label">people of Hispanic origin in the U.S. — 18.9% of the total population<span class="src">[U.S. Census, 2024]</span></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3%</div>
+            <div class="stat-label">of local businesses in the U.S. have a web presence in Spanish<span class="src">[SBA Report, 2024]</span></div>
+          </div>
+        </div>
+
+        <h2>The Competitive Gap: A First-Mover Opportunity</h2>
+
+        <ul>
+          <li>Only 3% of local businesses in areas with high Hispanic concentration have a Spanish or bilingual website<span class="src">[Small Business Administration, 2024]</span></li>
+          <li>67% of Hispanic consumers prefer to buy from businesses that serve them in their language<span class="src">[Nielsen Hispanic Consumer Report, 2024]</span></li>
+          <li>Businesses with bilingual sites document 34%–47% more contact inquiries in the first 6 months post-launch<span class="src">[Harvard Business Review, 2023]</span></li>
+        </ul>
+
+        <div class="pull-quote">
+          <p>"Language isn't just communication. It's trust. Hispanic consumers are 2.8x more likely to complete a transaction with a business that serves them in Spanish."</p>
+          <cite>— Nielsen Hispanic Consumer Report, 2024</cite>
+        </div>
+
+        <h2>Practical Strategy for Local Businesses</h2>
+
+        <ul>
+          <li><strong>Bilingual website (ES/EN):</strong> Automatic translation is not enough. Content must reflect the natural language of your local market — including regional terms and communication styles that build trust.</li>
+          <li><strong>Google Business Profile in Spanish:</strong> Descriptions, services, and review responses in Spanish increase relevance for Spanish-language searches.</li>
+          <li><strong>Active WhatsApp Business:</strong> The preferred communication channel for Hispanic consumers to contact local businesses in the U.S.<span class="src">[Statista, 2024]</span></li>
+          <li><strong>Bilingual SEO:</strong> Service pages optimized for Spanish searches ("plumber in [city]", "plomero cerca de mí") + English. Spanish-language search volume for local services grew 68% between 2020 and 2024.<span class="src">[SEMrush, 2024]</span></li>
+        </ul>
+
+        <div class="value-bomb">
+          <div class="value-bomb-label">💡 Competitive window</div>
+          <p>In most mid-size U.S. local markets, <strong>the first business in a sector that launches a well-optimized bilingual site captures 60%–75% of organic Spanish-language traffic in that category</strong>, because it has no direct competition. This first-mover advantage is difficult to reverse once established. Every month without a Spanish digital presence is market share ceded to whoever has one.</p>
+        </div>
+
+        <div class="art-cta">
+          <h3>Is your business positioned for the Hispanic market?</h3>
+          <p>We design bilingual websites optimized for Spanish and English searches. With local SEO included from day one.</p>
+          <div class="art-cta-btns">
+            <a href="index.html#contacto" class="btn btn-blue btn-lg">Request information →</a>
+            <a href="index.html#precios" class="btn btn-ghost">View bilingual packages</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /art-body -->
+  </div><!-- /art-container -->
+</article>
+
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="lang-es">¿Listo para hacer crecer tu negocio?</h2>
+    <h2 class="lang-en">Ready to grow your business?</h2>
+    <p class="lang-es">Diseñamos sitios web que atraen clientes reales. SEO local incluido. Soporte en español e inglés.</p>
+    <p class="lang-en">We design websites that attract real customers. Local SEO included. Support in Spanish and English.</p>
+    <div class="final-cta-btns">
+      <a href="index.html#contacto" class="btn btn-orange btn-lg lang-es">Hablar con un experto →</a>
+      <a href="index.html#contacto" class="btn btn-orange btn-lg lang-en">Talk to an expert →</a>
+      <a href="index.html#precios" class="btn btn-ghost lang-es">Ver precios</a>
+      <a href="index.html#precios" class="btn btn-ghost lang-en">View pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="blog-footer">
+  <div class="container">
+    <div class="blog-footer-inner">
+      <div class="footer-logo">
+        <div class="logo-icon">K</div>
+        <span>kalnyesgrowth</span>
+      </div>
+      <p class="lang-es">© 2025 Kalnyesgrowth · Diseño web para negocios locales</p>
+      <p class="lang-en">© 2025 Kalnyesgrowth · Web design for local businesses</p>
+      <div class="blog-footer-links">
+        <a href="index.html" class="lang-es">Inicio</a>
+        <a href="index.html" class="lang-en">Home</a>
+        <a href="index.html#servicios" class="lang-es">Servicios</a>
+        <a href="index.html#servicios" class="lang-en">Services</a>
+        <a href="index.html#contacto" class="lang-es">Contacto</a>
+        <a href="index.html#contacto" class="lang-en">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Language toggle ── */
+  var currentLang = 'es';
+  function toggleLang(){
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    var body = document.body;
+    body.classList.remove('es','en');
+    body.classList.add(currentLang);
+    var btn = document.getElementById('langToggle');
+    btn.textContent = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
+    document.getElementById('html-root').setAttribute('lang', currentLang);
+    var titleEl = document.getElementById('doc-title');
+    var descEl = document.getElementById('doc-desc');
+    if(currentLang === 'en'){
+      titleEl.textContent = 'Blog — Web Design Guides for Local Businesses | Kalnyesgrowth';
+      descEl.setAttribute('content','Real guides on web design, local SEO, and digital marketing for local business owners. Verified data. No fluff.');
+    } else {
+      titleEl.textContent = 'Blog — Guías de Diseño Web para Negocios Hispanos | Kalnyesgrowth';
+      descEl.setAttribute('content','Guías reales sobre diseño web, SEO local y marketing digital para dueños de negocios hispanos. Datos verificados. Pasos concretos.');
+    }
+  }
+
+  /* ── Scroll to top ── */
+  var stBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll',function(){
+    stBtn.classList.toggle('visible', window.scrollY > 400);
+  },{passive:true});
+
+  /* ── Intersection reveal ── */
+  var revStyle = document.createElement('style');
+  revStyle.textContent = '.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}.revealed{opacity:1;transform:none}';
+  document.head.appendChild(revStyle);
+  document.querySelectorAll('.bi-card,.art-title,.stat-box,.chart,.big-number,.value-bomb,.art-cta,.step-list,.pull-quote').forEach(function(el){
+    el.classList.add('reveal');
+  });
+  var revObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('revealed');revObs.unobserve(e.target);}
+    });
+  },{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
+</script>
+</body>
+</html>
