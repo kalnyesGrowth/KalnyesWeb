@@ -982,48 +982,48 @@ footer{background:var(--dark);padding:56px 0 32px}
 
     <div class="port-stage" id="port-stage">
 
-      <!-- Panel 1: Pepe's Party Rental — PHONE -->
+      <!-- Panel 1: Emma Lu's Party Rentals — PHONE -->
       <div class="port-panel p-left">
         <div class="device-phone">
           <span class="phone-pwr"></span>
           <div class="phone-screen" id="vp-pepes">
             <div id="pi-pepes">
-              <iframe src="https://pepespartyrentall.com/" loading="lazy" title="Pepe's Party Rental"></iframe>
+              <iframe src="https://kalnyesgrowth.github.io/emmalus-demo/" loading="lazy" title="Emma Lu's Party Rentals"></iframe>
             </div>
           </div>
           <div class="phone-home-bar"></div>
         </div>
         <div class="port-footer">
-          <div class="port-tag">📱 Mobile · Party Rentals · Virginia</div>
-          <div class="port-name">Pepe's Party Rental</div>
-          <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+          <div class="port-tag">📱 Mobile · Party Rentals · Corpus Christi, TX</div>
+          <div class="port-name">Emma Lu's Party Rentals</div>
+          <a href="https://kalnyesgrowth.github.io/emmalus-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
         </div>
       </div>
 
-      <!-- Panel 2: Red Apple Tobacco — TABLET -->
+      <!-- Panel 2: Forget-Me-Not Florist — TABLET -->
       <div class="port-panel p-active">
         <div class="device-tablet">
           <div class="tablet-screen" id="vp-kg">
             <div id="pi-kg">
-              <iframe src="https://kalnyesgrowth.github.io/KalnyesWebEngl/" loading="lazy" title="Red Apple Tobacco & Convenience"></iframe>
+              <iframe src="https://kalnyesgrowth.github.io/forget-me-not-demo/" loading="lazy" title="Forget-Me-Not Florist"></iframe>
             </div>
           </div>
           <div class="tablet-home-bar"></div>
         </div>
         <div class="port-footer">
-          <div class="port-tag">📟 Tablet · Tobacco Shop · Stafford, VA</div>
-          <div class="port-name">Red Apple Tobacco &amp; Convenience</div>
-          <a href="https://kalnyesgrowth.github.io/KalnyesWebEngl/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+          <div class="port-tag">📟 Tablet · Florist · Warrenton, VA</div>
+          <div class="port-name">Forget-Me-Not Florist</div>
+          <a href="https://kalnyesgrowth.github.io/forget-me-not-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
         </div>
       </div>
 
-      <!-- Panel 3: FreshCut Landscaping — DESKTOP -->
+      <!-- Panel 3: Forget-Me-Not 3D — DESKTOP -->
       <div class="port-panel p-right">
         <div class="device-desktop">
           <div class="device-monitor">
             <div class="desktop-screen" id="vp-freshcut">
               <div id="pi-freshcut">
-                <iframe src="../freshcut-landscaping/index.html" loading="lazy" title="FreshCut Landscaping"></iframe>
+                <iframe src="https://kalnyesgrowth.github.io/forget-me-not-3d-demo/" loading="lazy" title="Forget-Me-Not Florist 3D"></iframe>
               </div>
             </div>
           </div>
@@ -1031,9 +1031,9 @@ footer{background:var(--dark);padding:56px 0 32px}
           <div class="device-base"></div>
         </div>
         <div class="port-footer">
-          <div class="port-tag">🖥 Desktop · Landscaping · Virginia</div>
-          <div class="port-name">FreshCut Landscaping LLC</div>
-          <a href="../freshcut-landscaping/index.html" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+          <div class="port-tag">🖥 Desktop · Florist · Warrenton, VA</div>
+          <div class="port-name">Forget-Me-Not Florist — Premium</div>
+          <a href="https://kalnyesgrowth.github.io/forget-me-not-3d-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
         </div>
       </div>
 
@@ -1274,55 +1274,7 @@ function toggleFaq(btn) {
   }
 }
 
-// Portfolio iframe fallback
-(function(){
-  var panels = [
-    { vpId:'vp-pepes',   piId:'pi-pepes',    fallback:'img/portfolio-pepes.jpg' },
-    { vpId:'vp-kg',      piId:'pi-kg',       fallback:'img/portfolio-redapple.jpg' },
-    { vpId:'vp-freshcut',piId:'pi-freshcut', fallback:'img/portfolio-freshcut.jpg' },
-  ];
-
-  function checkIframe(p) {
-    var vp = document.getElementById(p.vpId);
-    var pi = document.getElementById(p.piId);
-    if (!vp || !pi) return;
-    var iframe = pi.querySelector('iframe');
-    if (!iframe) return;
-
-    function swapToShot() {
-      pi.innerHTML = '<img class="port-img" src="' + p.fallback + '" alt="Site preview" draggable="false">';
-    }
-
-    var safety = setTimeout(function() {
-      try {
-        var blocked = !(iframe.contentDocument && iframe.contentDocument.body &&
-                        iframe.contentDocument.body.children.length > 0);
-        if (blocked) swapToShot();
-      } catch(e) { /* cross-origin = ok */ }
-    }, 8000);
-
-    iframe.addEventListener('load', function() {
-      clearTimeout(safety);
-      var ok = false;
-      try {
-        var doc = iframe.contentDocument;
-        ok = !!(doc && doc.body && doc.body.children.length > 2);
-      } catch(e) { ok = true; }
-      if (!ok) swapToShot();
-    });
-  }
-
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (!e.isIntersecting) return;
-      obs.unobserve(e.target);
-      panels.forEach(checkIframe);
-    });
-  }, {threshold:0.1});
-
-  var stage = document.getElementById('port-stage');
-  if (stage) obs.observe(stage);
-})();
+// Portfolio: all iframes point to our own GitHub Pages demos — fully embeddable, no fallback needed
 
 // Portfolio carousel
 (function(){
