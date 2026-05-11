@@ -1022,13 +1022,14 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="device-desktop">
           <div class="device-monitor">
             <div class="desktop-screen" id="vp-freshcut">
-              <div id="pi-freshcut" style="position:relative;width:100%;height:100%">
-                <img class="port-img" src="img/portfolio-pepes.jpg" alt="Pepe's Party Rental website" draggable="false" style="width:100%;height:100%;object-fit:cover;object-position:top">
+              <div id="pi-freshcut" style="position:relative;width:100%;height:100%;overflow:hidden">
+                <img src="img/portfolio-pepes.jpg" alt="Pepe's Party Rental website" draggable="false"
+                     style="width:100%;height:auto;display:block;object-fit:cover;object-position:top;pointer-events:none">
                 <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener"
                    style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
                           background:rgba(26,58,191,.92);color:#fff;font-size:.7rem;font-weight:700;
                           padding:8px 18px;border-radius:8px;text-decoration:none;white-space:nowrap;
-                          box-shadow:0 4px 16px rgba(0,0,0,.4);letter-spacing:.04em">
+                          box-shadow:0 4px 16px rgba(0,0,0,.4);letter-spacing:.04em;z-index:5">
                   ↗ Visit Live Site
                 </a>
               </div>
