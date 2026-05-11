@@ -1005,7 +1005,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="device-tablet">
           <div class="tablet-screen" id="vp-kg">
             <div id="pi-kg">
-              <img class="port-img" src="img/portfolio-redapple.jpg" alt="Red Apple Tobacco & Convenience website" draggable="false">
+              <iframe src="https://kalnyesgrowth.github.io/KalnyesWebEngl/" loading="lazy" title="Red Apple Tobacco & Convenience"></iframe>
             </div>
           </div>
           <div class="tablet-home-bar"></div>
@@ -1378,58 +1378,7 @@ function toggleFaq(btn) {
   go(1);
 })();
 
-// Portfolio screenshot scroll-pan animation (device-aware)
-(function(){
-  var configs = {
-    'pi-pepes':   { ZOOM:0.508, CSS_W:390,  VP_H:428 },
-    'pi-kg':      { ZOOM:0.409, CSS_W:768,  VP_H:476 },
-    'pi-freshcut':{ ZOOM:0.344, CSS_W:1280, VP_H:275 }
-  };
-
-  function applyAnim(piEl, img, cfg) {
-    if (!img.naturalHeight || !img.naturalWidth) return;
-    var visualH = (img.naturalHeight / img.naturalWidth) * cfg.CSS_W * cfg.ZOOM;
-    var dist = Math.floor(visualH - cfg.VP_H);
-    if (dist < 40) return;
-    var kf = 'sp_' + piEl.id;
-    var old = document.getElementById(kf);
-    if (old) old.remove();
-    var s = document.createElement('style');
-    s.id = kf;
-    s.textContent =
-      '@keyframes ' + kf + '{' +
-      '0%,8%{transform:translateY(0)}' +
-      '46%,54%{transform:translateY(-' + dist + 'px)}' +
-      '92%,100%{transform:translateY(0)}' +
-      '}';
-    document.head.appendChild(s);
-    piEl.style.animation = kf + ' 16s ease-in-out infinite';
-  }
-
-  function watchPi(piEl, cfg) {
-    var img = piEl.querySelector('img.port-img');
-    if (img) {
-      if (img.complete && img.naturalHeight) { applyAnim(piEl, img, cfg); }
-      else { img.addEventListener('load', function(){ applyAnim(piEl, img, cfg); }); }
-    }
-    new MutationObserver(function(muts){
-      muts.forEach(function(m){
-        m.addedNodes.forEach(function(n){
-          if (n.nodeName === 'IMG') {
-            n.complete && n.naturalHeight
-              ? applyAnim(piEl, n, cfg)
-              : n.addEventListener('load', function(){ applyAnim(piEl, n, cfg); });
-          }
-        });
-      });
-    }).observe(piEl, {childList:true});
-  }
-
-  Object.keys(configs).forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) watchPi(el, configs[id]);
-  });
-})();
+// Portfolio: no auto-scroll — viewers navigate freely inside each device
 </script>
 
 </body>
