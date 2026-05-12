@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kalnyesgrowth.github.io/KalnyesWeb/sitemap.xml
+Sitemap: https://kalnyesgrowth.com/sitemap.xml
