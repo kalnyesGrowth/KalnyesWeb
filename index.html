@@ -350,6 +350,19 @@ p{color:var(--body);line-height:1.75}
 .price-card.featured .btn-gold{box-shadow:0 6px 20px rgba(26,58,191,.28)}
 .pricing-footnote{text-align:center;color:var(--muted);font-size:.82rem;margin-top:32px;line-height:1.8}
 .pricing-footnote strong{color:var(--dark)}
+/* value stack */
+.vs-dashed{border:none;border-top:2px dashed var(--border);margin:20px 0}
+.vs-total{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted);margin-bottom:4px}
+.vs-total .vs-retail{text-decoration:line-through}
+.vs-you-pay{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.92rem;color:#15803d;margin-bottom:4px}
+.vs-savings{text-align:center;font-size:.75rem;background:#dcfce7;color:#15803d;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:20px;display:inline-block;width:100%}
+/* guarantee strip */
+.pricing-guarantee{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:flex-start;background:#f0fdf4;border:2px solid #86efac;border-radius:var(--r-lg);padding:24px 28px;margin-top:48px}
+.guarantee-seal{font-size:2.4rem;line-height:1}
+.guarantee-body strong{display:block;font-size:1rem;color:var(--dark);margin-bottom:6px}
+.guarantee-body p{font-size:.88rem;color:var(--body);margin:0;line-height:1.65}
+.pricing-scarcity{text-align:center;margin-top:20px;font-size:.85rem;color:#b91c1c;font-weight:700;letter-spacing:.01em}
+.pricing-scarcity span{background:#fee2e2;padding:3px 10px;border-radius:50px}
 
 /* ══════════════════════════════════════════
    HOW IT WORKS
@@ -1053,34 +1066,38 @@ footer{background:var(--dark);padding:56px 0 32px}
 <section id="precios">
   <div class="container">
     <div class="pricing-intro">
-      <span class="eyebrow eyebrow-gold">Simple, Honest Pricing</span>
-      <h2>Pick Your Plan. We Handle Everything Else.</h2>
+      <span class="eyebrow eyebrow-gold">Done-For-You Websites</span>
+      <h2>A Website That Pays for Itself. Guaranteed.</h2>
     </div>
-    <p class="pricing-subtitle">No hidden fees. No monthly contracts. Pay once, own your site forever. The Pro plan includes a <strong>free first month of social media content</strong> — a full strategy to make sure your new website starts bringing in customers from day one.</p>
+    <p class="pricing-subtitle">One payment. You own it forever. Every plan is a complete customer-getting system — design, SEO, and content done for you. If your site isn't ranking on Google within 90 days, we keep working until it does. At no extra charge.</p>
 
     <div class="pricing-grid">
 
       <!-- STARTER -->
       <div class="price-card">
         <div class="price-tier">Starter</div>
-        <div class="price-name">Get Found Online</div>
+        <div class="price-name">Get Online & Start Showing Up</div>
         <div class="price-amount">
           <span class="price-dollar">$600</span>
         </div>
         <p class="price-note">One-time · You own it forever</p>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>5-page professional website</li>
-          <li>Mobile-first design (looks great on any phone)</li>
-          <li>Contact form + click-to-call button</li>
+          <li>5-page professional website <strong>($1,200 value)</strong></li>
+          <li>Mobile-first design — looks great on every phone</li>
+          <li>Click-to-call button + contact form</li>
           <li>Google Maps embedded on your site</li>
-          <li>Basic local SEO setup</li>
-          <li>SSL security certificate (HTTPS)</li>
+          <li>On-page SEO so Google can find you <strong>($200 value)</strong></li>
+          <li>SSL certificate + fast load speed</li>
           <li>Delivered in 7 business days</li>
           <li class="dimmed">Google Business Profile optimization</li>
-          <li class="dimmed">Blog section</li>
+          <li class="dimmed">Blog articles to rank on Google</li>
           <li class="dimmed">Bilingual site (EN/ES)</li>
         </ul>
+        <hr class="vs-dashed">
+        <div class="vs-total"><span>If bought separately:</span><span class="vs-retail">$1,600</span></div>
+        <div class="vs-you-pay"><span>Your price today:</span><span>$600</span></div>
+        <span class="vs-savings">You save $1,000</span>
         <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-outline">Get Started →</a>
       </div>
 
@@ -1088,63 +1105,81 @@ footer{background:var(--dark);padding:56px 0 32px}
       <div class="price-card featured">
         <div class="popular-badge">⭐ Most Popular</div>
         <div class="price-tier">Growth</div>
-        <div class="price-name">Get Found & Get Calls</div>
+        <div class="price-name">Get Found on Google & Get Calls</div>
         <div class="price-amount">
           <span class="price-dollar">$1,200</span>
         </div>
         <p class="price-note">One-time · You own it forever</p>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>Up to 10 pages (services, about, contact…)</li>
-          <li>Mobile-first design (looks great on any phone)</li>
+          <li>Up to 10 pages (services, about, contact…) <strong>($2,500 value)</strong></li>
+          <li>Mobile-first design — looks great on every phone</li>
           <li>Contact form + WhatsApp button</li>
           <li>Google Maps + directions page</li>
           <li><strong>Full local SEO setup ($297 value — included)</strong></li>
-          <li><strong>Google Business Profile optimization</strong></li>
+          <li><strong>Google Business Profile optimization ($197 value — included)</strong></li>
           <li>Review request system (get more 5-star reviews)</li>
           <li><strong>3 blog articles to rank on Google ($447 value — included)</strong></li>
-          <li>SSL + Google Analytics + Search Console</li>
+          <li>Google Analytics + Search Console setup</li>
           <li>Delivered in 7 business days</li>
           <li class="dimmed">Bilingual site (EN/ES)</li>
-          <li class="dimmed">Booking / reservation system</li>
+          <li class="dimmed">Booking system</li>
         </ul>
+        <hr class="vs-dashed">
+        <div class="vs-total"><span>If bought separately:</span><span class="vs-retail">$3,641</span></div>
+        <div class="vs-you-pay"><span>Your price today:</span><span>$1,200</span></div>
+        <span class="vs-savings">You save $2,441</span>
         <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-gold">Get Started →</a>
       </div>
 
       <!-- PRO -->
       <div class="price-card">
         <div class="price-tier">Pro</div>
-        <div class="price-name">Dominate Your Market</div>
+        <div class="price-name">Own Your Market. Leave Competitors Behind.</div>
         <div class="price-amount">
           <span class="price-dollar">$2,200</span><span style="font-size:1rem;color:var(--muted);font-weight:600">+</span>
         </div>
-        <p class="price-note">One-time · Price varies by scope</p>
+        <p class="price-note">One-time · Custom scope · You own it forever</p>
         <div class="price-bonus">
           <span class="price-bonus-icon">🎁</span>
-          <div class="price-bonus-text"><strong>FREE: 1 Month of Full Social Strategy</strong> — 30 posts, a 30-day content calendar, and a custom social media strategy built to fill your calendar with new clients.</div>
+          <div class="price-bonus-text"><strong>FREE Bonus: 1 Full Month of Social Media Content</strong> — 30 ready-to-post pieces, a 30-day content calendar, and a custom strategy to fill your calendar with new clients from day one. ($997 value — yours free)</div>
         </div>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li>Unlimited pages</li>
-          <li>Mobile-first design (looks great on any phone)</li>
-          <li>Booking / reservation / ordering system</li>
-          <li><strong>Full bilingual site (English + Spanish)</strong></li>
-          <li><strong>Full local SEO setup + bilingual SEO ($297 value — included)</strong></li>
-          <li><strong>Google Business Profile optimization</strong></li>
-          <li>Review request system + automated follow-up</li>
+          <li>Unlimited pages + custom premium design <strong>($4,500 value)</strong></li>
+          <li>Booking, reservation, or ordering system <strong>($297 value)</strong></li>
+          <li><strong>Full bilingual site — English + Spanish ($500 value)</strong></li>
+          <li><strong>Full local SEO + bilingual SEO ($497 value — included)</strong></li>
+          <li><strong>Google Business Profile optimization ($197 value — included)</strong></li>
+          <li>Review automation + follow-up system</li>
           <li><strong>6 blog articles targeting your top keywords ($894 value — included)</strong></li>
-          <li>Custom animations + premium design</li>
-          <li>SSL + Analytics + Search Console + Sitemap</li>
-          <li>Priority delivery + dedicated support</li>
+          <li>Custom animations + scroll effects</li>
+          <li>Priority delivery + dedicated support line</li>
+          <li><strong>BONUS: 1 month social media content ($997 value — free)</strong></li>
         </ul>
+        <hr class="vs-dashed">
+        <div class="vs-total"><span>If bought separately:</span><span class="vs-retail">$7,882</span></div>
+        <div class="vs-you-pay"><span>Your price today:</span><span>$2,200+</span></div>
+        <span class="vs-savings">You save $5,000+</span>
         <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-green">Let's Talk →</a>
       </div>
 
     </div>
 
+    <!-- GUARANTEE -->
+    <div class="pricing-guarantee">
+      <div class="guarantee-seal">🛡️</div>
+      <div class="guarantee-body">
+        <strong>The 90-Day Ranking Guarantee</strong>
+        <p>If your new website doesn't rank on Google for at least 3 local keywords within 90 days of launch, we keep doing SEO work on your site until it does — at zero extra cost to you. We only win when you win.</p>
+      </div>
+    </div>
+
+    <p class="pricing-scarcity"><span>We only take 4 new clients per month to protect quality. 2 spots remain this month.</span></p>
+
     <p class="pricing-footnote">
-      <strong>Not sure which plan fits?</strong> Book a free 15-min call — we'll tell you exactly what your business needs. No upsells, no pressure.<br>
-      All plans: 50% upfront · 50% when your site goes live · Payment plans available.
+      <strong>Not sure which plan is right for you?</strong> Book a free 15-min call — we'll tell you exactly what your business needs. No upsells, no pressure.<br>
+      All plans: 50% upfront · 50% on launch day · Payment plans available on request.
     </p>
   </div>
 </section>
