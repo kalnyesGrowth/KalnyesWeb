@@ -859,6 +859,43 @@ footer{background:var(--dark);padding:56px 0 32px}
 .calendly-inline-widget{min-width:320px;height:700px}
 @media(max-width:768px){.calendly-inline-widget{height:1100px}}
 
+/* ── MEET JOSE ── */
+.meet-jose-section{padding:80px 0;background:#fff;border-top:1px solid var(--border)}
+.meet-jose-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:960px;margin:0 auto}
+.jose-photo-wrap{position:relative;text-align:center}
+.jose-avatar{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#1a3abf,#0f2899);display:flex;align-items:center;justify-content:center;font-size:5rem;font-weight:900;color:#fff;margin:0 auto;box-shadow:0 16px 48px rgba(26,58,191,.25)}
+.jose-location-badge{display:inline-flex;align-items:center;gap:6px;background:#f0f4ff;color:#1a3abf;font-size:.78rem;font-weight:800;padding:6px 14px;border-radius:50px;margin-top:16px;letter-spacing:.05em}
+.jose-bio h3{font-size:1.6rem;margin-bottom:8px}
+.jose-bio .jose-subtitle{color:var(--muted);font-size:1rem;margin-bottom:20px}
+.jose-bio p{color:var(--body);line-height:1.8;margin-bottom:16px;font-size:.97rem}
+.jose-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.jose-stat{background:var(--bg2);border-radius:var(--r);padding:14px 16px;text-align:center}
+.jose-stat-num{font-size:1.5rem;font-weight:900;color:var(--gold);display:block}
+.jose-stat-lbl{font-size:.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:768px){.meet-jose-inner{grid-template-columns:1fr;gap:36px;text-align:center}.jose-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ── CALL PREVIEW ── */
+.call-preview{background:#fff;border:2px solid var(--border);border-radius:var(--r-lg);padding:32px 36px;margin-bottom:36px}
+.call-preview h3{font-size:1.15rem;margin-bottom:20px;text-align:center;color:var(--dark)}
+.call-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.call-step{text-align:center;padding:16px 12px;border-radius:var(--r);background:var(--bg2)}
+.call-step-icon{font-size:1.8rem;display:block;margin-bottom:8px}
+.call-step-title{font-weight:800;font-size:.88rem;color:var(--dark);margin-bottom:4px}
+.call-step-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
+.call-step-num{display:inline-block;background:var(--gold);color:#fff;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:50px;margin-bottom:8px}
+@media(max-width:600px){.call-steps{grid-template-columns:1fr}.call-step{text-align:left;display:flex;gap:14px;align-items:flex-start}.call-step-icon{flex-shrink:0}}
+
+/* ── DIRECT CONTACT STRIP ── */
+.direct-strip{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:var(--r-lg);padding:28px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.direct-strip-left h4{color:#fff;font-size:1.05rem;margin-bottom:4px}
+.direct-strip-left p{color:rgba(255,255,255,.65);font-size:.85rem;margin:0}
+.direct-strip-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-sms{background:#25D366;color:#fff;padding:12px 22px;border-radius:50px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn-sms:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.4)}
+.btn-call-direct{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.25);padding:12px 22px;border-radius:50px;font-weight:700;font-size:.88rem;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;transition:all .2s}
+.btn-call-direct:hover{background:rgba(255,255,255,.18)}
+@media(max-width:600px){.direct-strip{flex-direction:column;text-align:center}.direct-strip-btns{justify-content:center}}
+
 /* ── GUARANTEE STRIP ── */
 .guarantee-strip{
   background:linear-gradient(135deg,#064e3b 0%,#065f46 100%);
@@ -1538,6 +1575,31 @@ footer{background:var(--dark);padding:56px 0 32px}
   </div>
 </section>
 
+<!-- ══════════════════ MEET JOSE ══════════════════ -->
+<section class="meet-jose-section">
+  <div class="container">
+    <div class="meet-jose-inner">
+      <div class="jose-photo-wrap">
+        <div class="jose-avatar">J</div>
+        <div class="jose-location-badge">📍 Stafford, VA — Local</div>
+      </div>
+      <div class="jose-bio">
+        <span class="eyebrow eyebrow-gold">Who You're Talking To</span>
+        <h3>Hey, I'm Jose — your neighbor in Stafford.</h3>
+        <p class="jose-subtitle">Owner & Lead Designer at Kalnyes Growth</p>
+        <p>I'm not an agency overseas or a faceless company. I'm a local web designer right here in Stafford, Virginia — which means I know the market you're in, the customers you're trying to reach, and what it actually takes to get a local business growing online.</p>
+        <p>I've built websites for party rental companies, landscapers, restaurants, and service businesses all across the Stafford and Fredericksburg area. Every site I deliver includes a live preview before you pay a single dollar — because your trust matters more than a quick sale.</p>
+        <div class="jose-stats">
+          <div class="jose-stat"><span class="jose-stat-num">57+</span><span class="jose-stat-lbl">Sites Delivered</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">7 Days</span><span class="jose-stat-lbl">Avg. Delivery Time</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">4.9★</span><span class="jose-stat-lbl">Client Rating</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">$0</span><span class="jose-stat-lbl">Until You Love It</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════ FAQ ══════════════════ -->
 <section id="faq" style="padding:100px 0">
   <div class="container">
@@ -1664,6 +1726,48 @@ footer{background:var(--dark);padding:56px 0 32px}
       <span class="eyebrow eyebrow-gold">Book Your Call</span>
       <h2>Pick a Time That Works for You</h2>
       <p>Free 15-minute strategy call. We'll look at your current online presence and tell you exactly what it would take to start getting more customers from Google. No pitch. No pressure.</p>
+    </div>
+
+    <!-- What Happens on Your Call -->
+    <div class="call-preview">
+      <h3>What Happens on Your Free 15-Minute Call</h3>
+      <div class="call-steps">
+        <div class="call-step">
+          <span class="call-step-num">Step 1</span>
+          <span class="call-step-icon">🔍</span>
+          <div class="call-step-title">We Review Your Online Presence</div>
+          <p class="call-step-desc">We look at your current website, Google ranking, and what your competitors are doing better.</p>
+        </div>
+        <div class="call-step">
+          <span class="call-step-num">Step 2</span>
+          <span class="call-step-icon">🎨</span>
+          <div class="call-step-title">We Build Your Free Preview</div>
+          <p class="call-step-desc">Within 5–7 days we send you a live link to a full preview of your new site. No charge yet.</p>
+        </div>
+        <div class="call-step">
+          <span class="call-step-num">Step 3</span>
+          <span class="call-step-icon">✅</span>
+          <div class="call-step-title">You Love It, Then Pay</div>
+          <p class="call-step-desc">Only if you're 100% happy do you pay. If not, you walk away — no charge, no questions asked.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Contact Strip -->
+    <div class="direct-strip">
+      <div class="direct-strip-left">
+        <h4>Not ready to book a call? That's fine.</h4>
+        <p>Text or WhatsApp Jose directly — he responds within the hour, usually faster.</p>
+      </div>
+      <div class="direct-strip-btns">
+        <a class="btn-sms" href="https://wa.me/15407838835?text=Hi%20Jose!%20I%20got%20your%20email%20and%20I%27m%20interested%20in%20a%20free%20website%20preview%20for%20my%20business." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.571l5.847-1.533A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.359-.213-3.72.976.992-3.628-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+          WhatsApp Jose
+        </a>
+        <a class="btn-call-direct" href="sms:+15407838835&body=Hi%20Jose!%20I%27m%20interested%20in%20a%20free%20website%20preview." target="_blank" rel="noopener">
+          📱 Send a Text
+        </a>
+      </div>
     </div>
 
     <!-- Zero-Risk Guarantee -->
