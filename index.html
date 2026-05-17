@@ -384,7 +384,7 @@ p{color:var(--body);line-height:1.75}
 .port-stage{
   display:flex;justify-content:center;align-items:flex-end;
   gap:36px;perspective:2000px;perspective-origin:50% 30%;
-  padding:0 80px 24px;max-width:100%;overflow-x:hidden
+  padding:0 80px 24px
 }
 .port-panel{
   flex-shrink:0;width:auto;
@@ -514,11 +514,12 @@ p{color:var(--body);line-height:1.75}
 }
 .port-btn:hover{background:rgba(26,58,191,.2);border-color:rgba(26,58,191,.5);color:#fff}
 .port-carousel-outer{position:relative;display:flex;align-items:center;justify-content:center}
-.port-nav-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);font-size:1.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;position:absolute;top:42%;transform:translateY(-50%);z-index:20}
+.port-nav-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);font-size:1.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;position:absolute;top:42%;transform:translateY(-50%);z-index:30;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
 .port-nav-btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
 .port-nav-btn:disabled{opacity:.18;pointer-events:none}
-#port-prev{left:8px}
-#port-next{right:8px}
+#port-prev{left:0px}
+#port-next{right:0px}
+@media(max-width:768px){.port-nav-btn{width:52px;height:52px;font-size:2rem;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3)}}
 .port-dots-row{display:flex;justify-content:center;gap:8px;margin-top:24px}
 .port-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0;flex-shrink:0}
 .port-dot.active{width:28px;background:var(--gold)}
@@ -2420,6 +2421,15 @@ function toggleFaq(btn) {
 
   prevBtn.addEventListener('click', function(){ go(cur - 1); });
   nextBtn.addEventListener('click', function(){ go(cur + 1); });
+
+  // Touch swipe support for mobile
+  var stage = document.getElementById('port-stage');
+  var touchStartX = 0;
+  stage.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { dx < 0 ? go(cur + 1) : go(cur - 1); }
+  }, {passive:true});
 
   document.addEventListener('keydown', function(e) {
     var s = document.getElementById('work');
