@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin's Roofing | Est. 1982 | CertainTeed Certified | Fredericksburg, VA</title>
+  <meta name="description" content="Kevin's Roofing — serving Fredericksburg & Northern Virginia since 1982. CertainTeed certified, licensed & insured. Roof replacements, repairs, storm damage, gutters. Free inspections.">
+  <meta property="og:title" content="Kevin's Roofing | Est. 1982 | CertainTeed Certified | Fredericksburg VA">
+  <meta property="og:description" content="40+ years in Northern Virginia roofing. CertainTeed certified, licensed & insured. Roof replacement, repairs & storm damage. Free inspection.">
+  <meta property="og:url" content="https://kalnyesgrowth.com/kevins-roofing/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kevin's Roofing",
+    "description": "CertainTeed certified roofing contractor serving Fredericksburg and Northern Virginia since 1982. Roof replacement, repairs, storm damage, and gutters.",
+    "email": "info@kevinsroofing.com",
+    "url": "https://kalnyesgrowth.com/kevins-roofing/",
+    "foundingDate": "1982",
+    "areaServed": [
+      { "@type": "City", "name": "Fredericksburg", "addressRegion": "VA" },
+      { "@type": "City", "name": "Stafford", "addressRegion": "VA" },
+      { "@type": "City", "name": "Spotsylvania", "addressRegion": "VA" }
+    ],
+    "serviceType": ["Roofing", "Roof Replacement", "Roof Repair", "Storm Damage", "Gutter Installation"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --slate: #1a1f2e;
+      --slate-mid: #242c3d;
+      --red: #c0392b;
+      --red-light: #e74c3c;
+      --white: #fff;
+      --gray: #f2f3f5;
+      --text: #1a1a1a;
+      --text-light: #64748b;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #fff; }
+
+    /* DEMO NOTICE */
+    #demo-notice {
+      background: linear-gradient(90deg, #1a1f2e, #242c3d);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    #demo-notice strong { color: #f87171; }
+    #demo-notice a { color: #fbbf24; text-decoration: underline; font-weight: 700; }
+
+    /* NAV */
+    nav {
+      background: var(--slate);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+    .nav-brand { color: #fff; font-size: 18px; font-weight: 900; }
+    .nav-brand span { color: #f87171; }
+    .nav-est { font-size: 10px; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .8px; display: block; margin-top: 1px; }
+    .nav-cta {
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--red-light); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(140deg, #0e1117 0%, #1a1f2e 55%, #2c1010 100%);
+      color: #fff;
+      padding: 76px 24px 68px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 65% 35%, rgba(192,57,43,.15) 0%, transparent 65%);
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+    .badge.highlight {
+      background: rgba(192,57,43,.22);
+      border-color: rgba(192,57,43,.5);
+      color: #fca5a5;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 em { color: #f87171; font-style: normal; }
+    .hero p {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.78);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+      position: relative;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--red-light); }
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,.35);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--red);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .stat-item { color: #fff; }
+    .stat-num { font-size: 26px; font-weight: 900; display: block; }
+    .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; opacity: .85; }
+
+    /* CREDENTIALS */
+    .creds { background: var(--gray); padding: 52px 24px; }
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .cred-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      border-top: 3px solid var(--red);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .cred-icon { font-size: 26px; margin-bottom: 8px; }
+    .cred-title { font-size: 13px; font-weight: 800; color: var(--slate); }
+    .cred-sub { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* ABOUT */
+    .about { padding: 72px 24px; max-width: 760px; margin: 0 auto; text-align: center; }
+    .about h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--slate); margin-bottom: 16px; }
+    .about p { font-size: 16px; color: var(--text-light); line-height: 1.75; margin-bottom: 16px; }
+    .about p strong { color: var(--slate); }
+
+    /* SERVICES */
+    .services { background: var(--gray); padding: 72px 24px; }
+    .services h2 { text-align: center; font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--slate); margin-bottom: 8px; }
+    .services-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border-left: 4px solid var(--red);
+      transition: transform .2s;
+    }
+    .service-card:hover { transform: translateY(-3px); }
+    .service-icon { font-size: 30px; margin-bottom: 12px; }
+    .service-card h3 { font-size: 16px; font-weight: 800; color: var(--slate); margin-bottom: 6px; }
+    .service-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+    /* REVIEWS */
+    .reviews { padding: 72px 24px; }
+    .reviews h2 { text-align: center; font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--slate); margin-bottom: 8px; }
+    .reviews-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.08);
+      border-top: 3px solid var(--red);
+    }
+    .review-stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; }
+    .review-text { font-size: 14px; color: #374151; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { font-size: 13px; font-weight: 700; color: var(--slate); }
+    .review-location { font-size: 12px; color: var(--text-light); }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, var(--slate), var(--slate-mid));
+      color: #fff;
+      padding: 72px 24px;
+    }
+    .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; margin-bottom: 12px; }
+    .contact p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 32px; line-height: 1.65; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form select option { background: #242c3d; color: #fff; }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.4); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: #f87171; }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn {
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s;
+      width: 100%;
+    }
+    .submit-btn:hover { background: var(--red-light); }
+    .contact-email { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.6); }
+    .contact-email a { color: #fbbf24; }
+
+    /* FOOTER */
+    footer {
+      background: #0a0c11;
+      color: rgba(255,255,255,.5);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer strong { color: rgba(255,255,255,.82); }
+
+    /* MOBILE BAR */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 -3px 12px rgba(0,0,0,.25);
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 52px 20px 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-bar { gap: 20px; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 56px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-ghost { white-space: normal; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DEMO NOTICE -->
+<div id="demo-notice">
+  <strong>📋 Free Website Preview</strong> — This site was built for Kevin's Roofing as a complimentary demo by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth.com</a>. Not affiliated with this business. <a href="https://kalnyesgrowth.com/free-preview/">See more demos →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <span class="nav-brand">Kevin's <span>Roofing</span></span>
+    <span class="nav-est">CertainTeed Certified · Est. 1982</span>
+  </div>
+  <a href="mailto:info@kevinsroofing.com" class="nav-cta">Free Inspection</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge-row">
+    <span class="badge highlight">🏆 CertainTeed Certified</span>
+    <span class="badge">Est. 1982 — 40+ Years</span>
+    <span class="badge">Licensed & Insured</span>
+  </div>
+  <h1>Fredericksburg's<br><em>Most Experienced</em> Roofer</h1>
+  <p>Since 1982, Kevin's Roofing has been the trusted name for roof replacements, repairs, and storm damage across the Fredericksburg area. CertainTeed certified. Licensed and insured. Free inspections.</p>
+  <div class="hero-btns">
+    <a href="mailto:info@kevinsroofing.com" class="btn-primary">Schedule Free Inspection</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">1982</span>
+    <span class="stat-label">Year Established</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">40+</span>
+    <span class="stat-label">Years in Business</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">CertainTeed</span>
+    <span class="stat-label">Certified Installer</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Licensed & Insured</span>
+  </div>
+</div>
+
+<!-- CREDENTIALS -->
+<section class="creds">
+  <p class="section-label">Why Homeowners Trust Kevin's Roofing</p>
+  <div class="creds-grid">
+    <div class="cred-card">
+      <div class="cred-icon">📅</div>
+      <div class="cred-title">Established 1982</div>
+      <div class="cred-sub">40+ years in Northern Virginia</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🏆</div>
+      <div class="cred-title">CertainTeed Certified</div>
+      <div class="cred-sub">Factory-approved installer with product warranties</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🛡️</div>
+      <div class="cred-title">Licensed & Insured</div>
+      <div class="cred-sub">Full liability & workers' comp coverage</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">⛈️</div>
+      <div class="cred-title">Storm Damage Experts</div>
+      <div class="cred-sub">Insurance claims assistance included</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🔍</div>
+      <div class="cred-title">Free Inspections</div>
+      <div class="cred-sub">Full roof assessment at no charge</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">📋</div>
+      <div class="cred-title">Workmanship Warranty</div>
+      <div class="cred-sub">Backed by both labor & manufacturer guarantees</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>40 Years. One Family. One Standard.</h2>
+  <p>Kevin's Roofing has been the Fredericksburg area's go-to roofing contractor since <strong>1982</strong>. That's four decades of roof replacements, storm repairs, and satisfied homeowners who keep calling us back.</p>
+  <p>As a <strong>CertainTeed certified installer</strong>, we can offer extended manufacturer warranties that most roofers can't — because CertainTeed only certifies contractors who meet rigorous installation standards. That certification protects you long after the crew leaves your driveway.</p>
+  <p>Every roof we install starts with a free inspection. No pressure. No gimmicks. Just an honest assessment of what your roof needs — and what it doesn't.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Roofing Services</h2>
+  <p class="services-sub">Residential & commercial — full replacements to emergency repairs</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Roof Replacement</h3>
+      <p>Complete tear-off and replacement with CertainTeed architectural shingles. Manufacturer and workmanship warranties included.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Roof Repairs</h3>
+      <p>Leaks, missing shingles, flashing failures — we find the root cause and fix it right. No patchwork that fails in the next storm.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⛈️</div>
+      <h3>Storm Damage</h3>
+      <p>Hail, wind, fallen tree limbs. We document damage, work with your insurance adjuster, and handle the claim from start to finish.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Free Roof Inspections</h3>
+      <p>Full attic-to-ridge assessment at no charge. Know exactly what your roof's condition is before committing to any work.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌊</div>
+      <h3>Gutter Installation</h3>
+      <p>Seamless aluminum gutters installed with proper pitch and downspout placement to keep water off your foundation.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Roofing</h3>
+      <p>Flat, low-slope, and commercial metal roofing for businesses, HOAs, and multi-unit properties across Northern Virginia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <p class="reviews-sub">40+ years of happy homeowners across Fredericksburg & Northern Virginia</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"After the hailstorm we had last spring, three roofers came out and gave me different stories. Kevin's was the only one who showed me exactly what happened, took photos, and helped me file the insurance claim. New roof installed in two days. Incredible work."</p>
+      <div class="review-author">Robert H.</div>
+      <div class="review-location">Fredericksburg, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"We've used Kevin's Roofing twice — once in 2009 and again in 2023. Both times: on time, clean job site, and the roof looks fantastic. The CertainTeed warranty alone was worth it. I recommend them to every neighbor whose roof is getting old."</p>
+      <div class="review-author">Linda S.</div>
+      <div class="review-location">Stafford, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"40 years in business for a reason. Free inspection turned into a full replacement — they found a slow leak we didn't know about. Professional, fair price, done in one day. The crew even cleaned up every nail in the yard. Top-tier operation."</p>
+      <div class="review-author">Mark D.</div>
+      <div class="review-location">Spotsylvania, VA</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Get Your Free Roof Inspection</h2>
+    <p>We'll assess your roof, document everything, and give you an honest recommendation — no pressure, no obligation. Most inspections completed within 48 hours of your request.</p>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch within 24 hours to schedule your free inspection.');">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Property Address (for inspection scheduling)">
+      <select>
+        <option value="" disabled selected>What do you need?</option>
+        <option>Full Roof Replacement</option>
+        <option>Roof Repair</option>
+        <option>Storm Damage Assessment</option>
+        <option>Free Inspection Only</option>
+        <option>Gutter Installation</option>
+        <option>Commercial Roofing</option>
+        <option>Not Sure — Need Advice</option>
+      </select>
+      <textarea placeholder="Tell us more — age of roof, visible damage, recent storms, insurance situation..."></textarea>
+      <button type="submit" class="submit-btn">Schedule My Free Inspection</button>
+    </form>
+    <p class="contact-email">Or email us: <a href="mailto:info@kevinsroofing.com">info@kevinsroofing.com</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Kevin's Roofing</strong> &nbsp;·&nbsp; Fredericksburg, Stafford & Northern Virginia &nbsp;·&nbsp; Established 1982</p>
+  <p style="margin-top:8px;">CertainTeed Certified &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; <a href="mailto:info@kevinsroofing.com" style="color:#f59e0b;">info@kevinsroofing.com</a></p>
+  <p style="margin-top:16px; font-size:11px; opacity:.5;">Website by <a href="https://kalnyesgrowth.com" style="color:#888;">KalnyesGrowth.com</a></p>
+</footer>
+
+<!-- MOBILE BAR -->
+<a href="mailto:info@kevinsroofing.com" class="mobile-bar">📧 Email for Free Roof Inspection</a>
+
+</body>
+</html>
