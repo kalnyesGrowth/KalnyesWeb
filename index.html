@@ -2034,6 +2034,200 @@ footer{background:var(--dark);padding:56px 0 32px}
   </div>
 </section>
 
+<!-- ══════════════════ CHAT WIDGET ══════════════════ -->
+<style>
+#kg-chat-widget{position:fixed;bottom:28px;right:24px;z-index:9999;font-family:'Inter',sans-serif;display:none}
+@media(min-width:768px){#kg-chat-widget{display:block}}
+#kg-chat-bubble{width:56px;height:56px;background:linear-gradient(135deg,#6c63ff,#a78bfa);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(108,99,255,.5);transition:transform .2s;margin-left:auto}
+#kg-chat-bubble:hover{transform:scale(1.08)}
+#kg-chat-bubble svg{width:26px;height:26px;fill:#fff}
+#kg-chat-box{width:320px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);overflow:hidden;margin-bottom:12px;display:none;flex-direction:column}
+#kg-chat-box.open{display:flex}
+#kg-chat-header{background:linear-gradient(135deg,#6c63ff,#a78bfa);padding:14px 16px;display:flex;align-items:center;gap:10px;justify-content:space-between}
+#kg-chat-header-left{display:flex;align-items:center;gap:10px}
+#kg-chat-avatar{width:36px;height:36px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+#kg-chat-header h4{color:#fff;font-size:.9rem;font-weight:700;margin:0}
+#kg-chat-header p{color:rgba(255,255,255,.8);font-size:.72rem;margin:0}
+#kg-chat-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.7);font-size:1.2rem;padding:0;line-height:1}
+#kg-chat-close:hover{color:#fff}
+#kg-chat-messages{padding:14px;display:flex;flex-direction:column;gap:10px;max-height:300px;overflow-y:auto}
+.kg-msg{max-width:85%;padding:9px 12px;border-radius:12px;font-size:.84rem;line-height:1.45}
+.kg-msg-bot{background:#f3f0ff;color:#1a1a2e;border-bottom-left-radius:4px;align-self:flex-start}
+.kg-msg-user{background:#6c63ff;color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+#kg-chat-options{padding:0 14px 14px;display:flex;flex-direction:column;gap:7px}
+.kg-opt{background:#fff;border:1.5px solid #6c63ff;color:#6c63ff;border-radius:50px;padding:7px 14px;font-size:.8rem;font-weight:700;cursor:pointer;text-align:left;transition:all .15s}
+.kg-opt:hover{background:#6c63ff;color:#fff}
+.kg-opt-link{display:inline-block;background:#6c63ff;color:#fff;border-radius:50px;padding:8px 16px;font-size:.82rem;font-weight:700;text-decoration:none;margin-top:4px;transition:background .15s}
+.kg-opt-link:hover{background:#5a52e0}
+.kg-opt-book{display:inline-block;background:linear-gradient(135deg,#6c63ff,#a78bfa);color:#fff;border-radius:50px;padding:10px 20px;font-size:.84rem;font-weight:700;text-decoration:none;text-align:center;margin-top:2px;box-shadow:0 4px 14px rgba(108,99,255,.4);transition:transform .15s}
+.kg-opt-book:hover{transform:translateY(-1px)}
+#kg-chat-dot{position:absolute;top:0;right:0;width:12px;height:12px;background:#22c55e;border-radius:50%;border:2px solid #fff}
+#kg-chat-bubble-wrap{position:relative;display:inline-block}
+</style>
+
+<div id="kg-chat-widget">
+  <div id="kg-chat-box" role="dialog" aria-label="Chat with Kalnyes Growth">
+    <div id="kg-chat-header">
+      <div id="kg-chat-header-left">
+        <div id="kg-chat-avatar">👋</div>
+        <div>
+          <h4>Jose · Kalnyes Growth</h4>
+          <p>Usually replies in minutes</p>
+        </div>
+      </div>
+      <button id="kg-chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="kg-chat-messages"></div>
+    <div id="kg-chat-options"></div>
+  </div>
+  <div id="kg-chat-bubble-wrap">
+    <div id="kg-chat-bubble" role="button" aria-label="Open chat" tabindex="0">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    </div>
+    <div id="kg-chat-dot"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var widget=document.getElementById('kg-chat-widget');
+  var box=document.getElementById('kg-chat-box');
+  var bubble=document.getElementById('kg-chat-bubble');
+  var closeBtn=document.getElementById('kg-chat-close');
+  var messagesEl=document.getElementById('kg-chat-messages');
+  var optionsEl=document.getElementById('kg-chat-options');
+  var opened=false;
+  var timerFired=false;
+
+  function addMsg(text,type){
+    var m=document.createElement('div');
+    m.className='kg-msg kg-msg-'+type;
+    m.innerHTML=text;
+    messagesEl.appendChild(m);
+    messagesEl.scrollTop=messagesEl.scrollHeight;
+  }
+
+  function clearOptions(){optionsEl.innerHTML='';}
+
+  function showOptions(opts){
+    clearOptions();
+    opts.forEach(function(o){
+      var btn=document.createElement('button');
+      btn.className='kg-opt';
+      btn.textContent=o.label;
+      btn.onclick=function(){
+        addMsg(o.label,'user');
+        clearOptions();
+        setTimeout(function(){o.next();},400);
+      };
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function showLink(text,href,bookStyle){
+    var a=document.createElement('a');
+    a.className=bookStyle?'kg-opt-book':'kg-opt-link';
+    a.href=href;
+    a.target='_blank';
+    a.rel='noopener';
+    a.textContent=text;
+    optionsEl.appendChild(a);
+  }
+
+  function stepIndustry(){
+    addMsg("What kind of business do you run?","bot");
+    showOptions([
+      {label:"🔧 Plumbing",next:stepPlumbing},
+      {label:"❄️ HVAC / Heating & Cooling",next:stepHVAC},
+      {label:"🎉 Party Rental / Events",next:stepParty},
+      {label:"🌿 Landscaping / Lawn Care",next:stepLandscape},
+      {label:"🏗️ Other local business",next:stepOther}
+    ]);
+  }
+
+  function stepPlumbing(){
+    addMsg("Perfect — I actually built a free demo for a plumbing company in Virginia. Want to see it?","bot");
+    showOptions([
+      {label:"Yes, show me!",next:function(){
+        addMsg("Here's a live preview I built for White Plumbing Co. — same quality, built for YOUR business.","bot");
+        clearOptions();
+        showLink("View Plumbing Demo →","https://kalnyesgrowth.com/white-plumbing/",false);
+        setTimeout(function(){stepBook();},600);
+      }},
+      {label:"Just tell me pricing",next:stepPrice}
+    ]);
+  }
+
+  function stepHVAC(){
+    addMsg("Great — I built a free demo for a San Antonio HVAC company. Check it out:","bot");
+    clearOptions();
+    showLink("View HVAC Demo →","https://kalnyesgrowth.com/san-antonio-hvac/",false);
+    setTimeout(function(){stepBook();},600);
+  }
+
+  function stepParty(){
+    addMsg("Fun niche! I built a demo for a party rental company — full inventory, booking CTA, the works:","bot");
+    clearOptions();
+    showLink("View Party Rental Demo →","https://kalnyesgrowth.com/pepes-demo/",false);
+    setTimeout(function(){stepBook();},600);
+  }
+
+  function stepLandscape(){
+    addMsg("Love it — here's a landscaping demo I built:","bot");
+    clearOptions();
+    showLink("View Landscaping Demo →","https://kalnyesgrowth.com/freshcut-demo/",false);
+    setTimeout(function(){stepBook();},600);
+  }
+
+  function stepOther(){
+    addMsg("I build sites for all kinds of local businesses — the approach is the same: mobile-first, Google-optimized, built to get you calls.","bot");
+    clearOptions();
+    setTimeout(function(){stepBook();},400);
+  }
+
+  function stepPrice(){
+    addMsg("The free preview is yours to see at no cost. If you love it and want to launch it as your real site — it's <strong>$400 one time</strong>. Hosting included for a year.","bot");
+    clearOptions();
+    setTimeout(function(){stepBook();},400);
+  }
+
+  function stepBook(){
+    addMsg("Want me to build a free preview for YOUR business? Book a 15-minute call — no pitch, just show you the site.","bot");
+    clearOptions();
+    showLink("📅 Book a Free 15-Min Call →","https://kalnyesgrowth.com/#book-call",true);
+  }
+
+  function openChat(){
+    if(opened)return;
+    opened=true;
+    box.classList.add('open');
+    document.getElementById('kg-chat-dot').style.display='none';
+    setTimeout(function(){
+      addMsg("👋 Hi! Looking to get more customers from your website?","bot");
+      setTimeout(function(){stepIndustry();},700);
+    },300);
+  }
+
+  bubble.addEventListener('click',openChat);
+  bubble.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')openChat();});
+  closeBtn.addEventListener('click',function(){
+    box.classList.remove('open');
+    opened=false;
+  });
+
+  // Auto-open after 6s if not dismissed this session
+  if(!sessionStorage.getItem('kg-chat-auto')){
+    setTimeout(function(){
+      if(!opened){
+        timerFired=true;
+        sessionStorage.setItem('kg-chat-auto','1');
+        openChat();
+      }
+    },6000);
+  }
+})();
+</script>
+
 <!-- ══════════════════ FOOTER ══════════════════ -->
 <footer>
   <div class="container">
