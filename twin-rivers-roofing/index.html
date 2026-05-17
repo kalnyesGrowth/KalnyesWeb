@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twin Rivers Roofing | 30+ Years | Fredericksburg, VA</title>
+  <meta name="description" content="Twin Rivers Roofing — 30+ years serving Fredericksburg, Stafford & Spotsylvania. Licensed & insured roofing contractor. Roof replacements, repairs, storm damage. Free inspections. Call Doug.">
+  <meta property="og:title" content="Twin Rivers Roofing | 30+ Years | Fredericksburg, VA">
+  <meta property="og:description" content="Fredericksburg's experienced roofing contractor. 30+ years, licensed & insured. Roof replacement, repairs, storm damage. Free inspections from Doug.">
+  <meta property="og:url" content="https://kalnyesgrowth.com/twin-rivers-roofing/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Twin Rivers Roofing",
+    "description": "Experienced roofing contractor serving Fredericksburg, Stafford, and Spotsylvania for 30+ years. Roof replacement, repairs, storm damage, and gutters.",
+    "email": "doug@twinriversroofing.com",
+    "url": "https://kalnyesgrowth.com/twin-rivers-roofing/",
+    "areaServed": [
+      { "@type": "City", "name": "Fredericksburg", "addressRegion": "VA" },
+      { "@type": "City", "name": "Stafford", "addressRegion": "VA" },
+      { "@type": "City", "name": "Spotsylvania", "addressRegion": "VA" }
+    ],
+    "serviceType": ["Roofing", "Roof Replacement", "Roof Repair", "Storm Damage", "Gutters"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --river: #0a3a5c;
+      --river-mid: #0e4d7a;
+      --silver: #94a3b8;
+      --accent: #3b82f6;
+      --white: #fff;
+      --gray: #f1f5f9;
+      --text: #1a2332;
+      --text-light: #64748b;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #fff; }
+
+    #demo-notice {
+      background: linear-gradient(90deg, #0a3a5c, #0e4d7a);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    #demo-notice strong { color: #93c5fd; }
+    #demo-notice a { color: #fbbf24; text-decoration: underline; font-weight: 700; }
+
+    nav {
+      background: var(--river);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .nav-logo { display: flex; flex-direction: column; }
+    .nav-name { color: #fff; font-size: 17px; font-weight: 900; }
+    .nav-name span { color: #93c5fd; }
+    .nav-tag { color: rgba(255,255,255,.45); font-size: 10px; letter-spacing: .8px; text-transform: uppercase; }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .hero {
+      background: linear-gradient(140deg, #040f1a 0%, #0a3a5c 55%, #061829 100%);
+      color: #fff;
+      padding: 76px 24px 68px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 35%, rgba(59,130,246,.12) 0%, transparent 65%);
+    }
+    .badge-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; position: relative; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+    .badge.highlight {
+      background: rgba(59,130,246,.2);
+      border-color: rgba(59,130,246,.5);
+      color: #93c5fd;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 em { color: #93c5fd; font-style: normal; }
+    .hero p {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.78);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+      position: relative;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,.35);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .stats-bar {
+      background: var(--accent);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .stat-item { color: #fff; }
+    .stat-num { font-size: 26px; font-weight: 900; display: block; }
+    .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; opacity: .85; }
+
+    .creds { background: var(--gray); padding: 52px 24px; }
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .cred-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      border-top: 3px solid var(--river-mid);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .cred-icon { font-size: 26px; margin-bottom: 8px; }
+    .cred-title { font-size: 13px; font-weight: 800; color: var(--river); }
+    .cred-sub { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    .about { padding: 72px 24px; max-width: 760px; margin: 0 auto; text-align: center; }
+    .about h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--river); margin-bottom: 16px; }
+    .about p { font-size: 16px; color: var(--text-light); line-height: 1.75; margin-bottom: 16px; }
+    .about p strong { color: var(--river); }
+
+    .services { background: var(--gray); padding: 72px 24px; }
+    .services h2 { text-align: center; font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--river); margin-bottom: 8px; }
+    .services-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border-left: 4px solid var(--river-mid);
+      transition: transform .2s;
+    }
+    .service-card:hover { transform: translateY(-3px); }
+    .service-icon { font-size: 30px; margin-bottom: 12px; }
+    .service-card h3 { font-size: 16px; font-weight: 800; color: var(--river); margin-bottom: 6px; }
+    .service-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+    .reviews { padding: 72px 24px; }
+    .reviews h2 { text-align: center; font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--river); margin-bottom: 8px; }
+    .reviews-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.08);
+      border-top: 3px solid var(--river-mid);
+    }
+    .review-stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; }
+    .review-text { font-size: 14px; color: #374151; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { font-size: 13px; font-weight: 700; color: var(--river); }
+    .review-location { font-size: 12px; color: var(--text-light); }
+
+    .contact {
+      background: linear-gradient(135deg, var(--river), var(--river-mid));
+      color: #fff;
+      padding: 72px 24px;
+    }
+    .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; margin-bottom: 12px; }
+    .contact p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 32px; line-height: 1.65; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+    }
+    .contact-form select option { background: #0e4d7a; color: #fff; }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.4); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: #93c5fd; outline: none; }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .contact-email { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.6); }
+    .contact-email a { color: #fbbf24; }
+
+    footer {
+      background: #030d18;
+      color: rgba(255,255,255,.5);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer strong { color: rgba(255,255,255,.82); }
+
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 -3px 12px rgba(0,0,0,.25);
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 52px 20px 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-bar { gap: 20px; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 56px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-ghost { white-space: normal; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="demo-notice">
+  <strong>📋 Free Website Preview</strong> — This site was built for Twin Rivers Roofing as a complimentary demo by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth.com</a>. Not affiliated with Doug's business. <a href="https://kalnyesgrowth.com/free-preview/">See more demos →</a>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    <span class="nav-name">Twin <span>Rivers</span> Roofing</span>
+    <span class="nav-tag">30+ Years · Fredericksburg VA · Licensed & Insured</span>
+  </div>
+  <a href="mailto:doug@twinriversroofing.com" class="nav-cta">Free Inspection</a>
+</nav>
+
+<section class="hero">
+  <div class="badge-row">
+    <span class="badge highlight">📅 30+ Years in Business</span>
+    <span class="badge">Fredericksburg & Northern VA</span>
+    <span class="badge">Licensed & Insured</span>
+  </div>
+  <h1>Fredericksburg's <em>30-Year</em><br>Roofing Contractor</h1>
+  <p>Over three decades of roofing experience in the Fredericksburg area. Doug and the Twin Rivers Roofing team have replaced and repaired thousands of roofs — with the skill, honesty, and accountability that comes from 30+ years in one community.</p>
+  <div class="hero-btns">
+    <a href="mailto:doug@twinriversroofing.com" class="btn-primary">Schedule Free Inspection</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">30+</span>
+    <span class="stat-label">Years Experience</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">Thousands</span>
+    <span class="stat-label">Roofs Installed</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">Free</span>
+    <span class="stat-label">Inspections</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Licensed & Insured</span>
+  </div>
+</div>
+
+<section class="creds">
+  <p class="section-label">Why Homeowners Choose Twin Rivers Roofing</p>
+  <div class="creds-grid">
+    <div class="cred-card">
+      <div class="cred-icon">📅</div>
+      <div class="cred-title">30+ Years Experience</div>
+      <div class="cred-sub">Three decades in Fredericksburg</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🛡️</div>
+      <div class="cred-title">Licensed & Insured</div>
+      <div class="cred-sub">Full coverage — yours and theirs</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">⛈️</div>
+      <div class="cred-title">Storm Damage Experts</div>
+      <div class="cred-sub">Insurance claim assistance available</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🔍</div>
+      <div class="cred-title">Free Inspections</div>
+      <div class="cred-sub">Full assessment at no charge</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">💬</div>
+      <div class="cred-title">Doug Answers Directly</div>
+      <div class="cred-sub">Owner-operated, not a call center</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">✅</div>
+      <div class="cred-title">Quality Workmanship</div>
+      <div class="cred-sub">Done right, backed by warranty</div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>30 Years. One Contractor. Doug.</h2>
+  <p>Twin Rivers Roofing has been serving Fredericksburg, Stafford, and Spotsylvania for over <strong>30 years</strong>. Doug started this company with a simple commitment: do the job right, be honest about what a roof needs, and stand behind the work.</p>
+  <p>Fredericksburg gets severe thunderstorms, ice storms, and wind events that test every roof. Doug has seen every type of damage and knows exactly how to fix it — and how to work with your insurance company when storm damage is involved.</p>
+  <p>When you call Twin Rivers Roofing, <strong>Doug picks up</strong>. Not a receptionist, not a salesperson. The guy doing the work.</p>
+</section>
+
+<section class="services" id="services">
+  <h2>Roofing Services</h2>
+  <p class="services-sub">Full-service residential roofing — replacements, repairs, and storm damage</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Roof Replacement</h3>
+      <p>Complete tear-off and replacement with quality architectural shingles. Properly flashed, properly ventilated, properly done.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Roof Repairs</h3>
+      <p>Leaks, missing shingles, flashing problems — diagnosed and fixed properly. No patchwork that fails next season.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⛈️</div>
+      <h3>Storm Damage</h3>
+      <p>Wind, hail, and fallen trees. Doug documents everything and can work directly with your insurance adjuster.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Free Roof Inspections</h3>
+      <p>Full inspection including decking, flashing, valleys, and ventilation. Know exactly where your roof stands before it becomes a crisis.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌊</div>
+      <h3>Gutter Installation</h3>
+      <p>Seamless aluminum gutters and downspouts matched to your home. Proper pitch and placement to protect your foundation.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Roofing</h3>
+      <p>Flat, low-slope, and commercial roofing for businesses and multi-unit properties across Northern Virginia.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <p class="reviews-sub">30+ years of Fredericksburg-area homeowners who called Doug</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Doug came out the same day I called — after a bad storm knocked shingles off my entire back slope. He tarped it that afternoon and had the full replacement done in two days. 30 years of experience shows. You could tell he'd seen this exact situation a hundred times."</p>
+      <div class="review-author">Brian K.</div>
+      <div class="review-location">Fredericksburg, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I got four quotes. Three were from big companies with slick salespeople. Doug showed up himself, walked my roof, and gave me a straight number on paper. Best price, most honest assessment, and the cleanest job. We'll be calling Twin Rivers for our next roof too."</p>
+      <div class="review-author">Kathy M.</div>
+      <div class="review-location">Stafford, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Hired Twin Rivers after my neighbor used them — she raved about the job and she was right. Professional crew, clean site, and Doug followed up the next week to make sure everything looked right. That's a contractor who takes pride in his work. 10/10 recommend."</p>
+      <div class="review-author">Paul F.</div>
+      <div class="review-location">Spotsylvania, VA</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Schedule Your Free Inspection</h2>
+    <p>Fill out the form and Doug will follow up within 24 hours to schedule your free inspection. Most appointments available within the week.</p>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Doug will be in touch within 24 hours.');">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Property Address">
+      <select>
+        <option value="" disabled selected>What do you need?</option>
+        <option>Free Inspection</option>
+        <option>Full Roof Replacement</option>
+        <option>Roof Repair</option>
+        <option>Storm Damage Assessment</option>
+        <option>Gutter Installation</option>
+        <option>Commercial Roofing</option>
+      </select>
+      <textarea placeholder="Any details — age of roof, recent storms, visible issues, insurance situation..."></textarea>
+      <button type="submit" class="submit-btn">Request Free Inspection</button>
+    </form>
+    <p class="contact-email">Email Doug directly: <a href="mailto:doug@twinriversroofing.com">doug@twinriversroofing.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Twin Rivers Roofing</strong> &nbsp;·&nbsp; Fredericksburg, Stafford & Northern Virginia</p>
+  <p style="margin-top:8px;">30+ Years Experience &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; <a href="mailto:doug@twinriversroofing.com" style="color:#93c5fd;">doug@twinriversroofing.com</a></p>
+  <p style="margin-top:16px; font-size:11px; opacity:.5;">Website by <a href="https://kalnyesgrowth.com" style="color:#888;">KalnyesGrowth.com</a></p>
+</footer>
+
+<a href="mailto:doug@twinriversroofing.com" class="mobile-bar">📧 Email Doug for Free Inspection</a>
+
+</body>
+</html>
