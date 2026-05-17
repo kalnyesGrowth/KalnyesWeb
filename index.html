@@ -384,7 +384,7 @@ p{color:var(--body);line-height:1.75}
 .port-stage{
   display:flex;justify-content:center;align-items:flex-end;
   gap:36px;perspective:2000px;perspective-origin:50% 30%;
-  padding:0 80px 24px
+  padding:0 40px 24px
 }
 .port-panel{
   flex-shrink:0;width:auto;
@@ -513,13 +513,12 @@ p{color:var(--body);line-height:1.75}
   transition:all .2s;text-decoration:none
 }
 .port-btn:hover{background:rgba(26,58,191,.2);border-color:rgba(26,58,191,.5);color:#fff}
-.port-carousel-outer{position:relative;display:flex;align-items:center;justify-content:center}
-.port-nav-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);font-size:1.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;position:absolute;top:42%;transform:translateY(-50%);z-index:30;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
+.port-carousel-outer{display:flex;align-items:center;justify-content:center;gap:0;width:100%}
+.port-nav-btn{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;z-index:30;position:relative}
 .port-nav-btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
-.port-nav-btn:disabled{opacity:.18;pointer-events:none}
-#port-prev{left:0px}
-#port-next{right:0px}
-@media(max-width:768px){.port-nav-btn{width:52px;height:52px;font-size:2rem;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3)}}
+.port-nav-btn:disabled{opacity:.15;pointer-events:none}
+.port-stage{flex:1;min-width:0}
+@media(max-width:768px){.port-nav-btn{width:48px;height:48px;font-size:1.8rem;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}}
 .port-dots-row{display:flex;justify-content:center;gap:8px;margin-top:24px}
 .port-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0;flex-shrink:0}
 .port-dot.active{width:28px;background:var(--gold)}
@@ -678,7 +677,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   .steps::before{display:none}
   .faq-layout{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
-  .port-stage{perspective:none;gap:20px;padding:0 60px 24px}
+  .port-stage{perspective:none;gap:20px;padding:0 20px 24px}
   .port-panel.p-left,.port-panel.p-right,.port-panel.p-active{transform:none;opacity:1}
   .device-monitor{width:360px}
   .desktop-screen{width:340px;height:213px}
@@ -709,16 +708,16 @@ footer{background:var(--dark);padding:56px 0 32px}
   .nav-links,.nav-phone{display:none}
   .nav-cta .btn{display:none}
   .hamburger{display:flex}
-  .port-stage{justify-content:center}
+  .port-stage{justify-content:center;padding:0 8px 24px}
   .port-panel.p-left,.port-panel.p-right{display:none}
-  .port-carousel-outer{padding:0 44px}
+  .port-carousel-outer{padding:0 8px}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center}
   .btn-group{flex-direction:column;align-items:flex-start}
 }
 
 @media(max-width:768px){
-  .port-carousel-outer{padding:0 28px}
+  .port-carousel-outer{padding:0 4px}
   .device-monitor{width:284px;border-radius:12px;padding:8px 8px 6px}
   .desktop-screen{width:268px;height:168px;border-radius:4px}
   .desktop-screen iframe{width:780px;height:488px;transform:scale(0.3436);transform-origin:0 0;position:absolute;top:0;left:0}
@@ -732,7 +731,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   .phone-screen iframe{width:390px;height:843px;transform:scale(0.3590);transform-origin:0 0;position:absolute;top:0;left:0}
 }
 @media(max-width:400px){
-  .port-carousel-outer{padding:0 16px}
+  .port-carousel-outer{padding:0 2px}
   .device-monitor{width:264px}
   .desktop-screen{width:248px;height:155px}
   .desktop-screen iframe{width:720px;height:450px;transform:scale(0.3444);transform-origin:0 0;position:absolute;top:0;left:0}
