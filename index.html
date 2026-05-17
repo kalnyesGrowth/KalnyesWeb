@@ -953,6 +953,17 @@ footer{background:var(--dark);padding:56px 0 32px}
   50%{box-shadow:0 4px 32px rgba(37,211,102,.85),0 0 0 8px rgba(37,211,102,.15)}
 }
 @media(max-width:480px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}.wa-float svg{width:28px;height:28px}}
+
+/* ── NICHE ROI GRID ── */
+.niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.niche-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:box-shadow .2s,transform .2s}
+.niche-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.niche-icon{font-size:2rem;margin-bottom:12px}
+.niche-name{font-size:1.05rem;font-weight:800;color:var(--dark);margin-bottom:8px}
+.niche-roi{font-size:.83rem;font-weight:700;color:var(--gold2);background:var(--gold-bg);padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:14px}
+.niche-desc{font-size:.87rem;color:var(--muted);line-height:1.65;margin:0}
+@media(max-width:900px){.niche-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.niche-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1487,6 +1498,58 @@ footer{background:var(--dark);padding:56px 0 32px}
 
   <div style="text-align:center;margin-top:36px">
     <a href="#book-call" class="btn btn-gold btn-lg">Get a Site Like These →</a>
+  </div>
+</section>
+
+<!-- ══════════════════ NICHE ROI ══════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px">
+      <span class="eyebrow">Built for Your Industry</span>
+      <h2>One New Customer Pays for the Whole Site</h2>
+      <p style="max-width:620px;margin:16px auto 0;color:var(--muted);font-size:1.05rem">We specialize in niches where a single job more than covers the website investment — then your site keeps working for free, 24/7, forever.</p>
+    </div>
+    <div class="niche-grid">
+      <div class="niche-card">
+        <div class="niche-icon">🎪</div>
+        <div class="niche-name">Party &amp; Event Rental</div>
+        <span class="niche-roi">1 weekend booking = $400–$1,200</span>
+        <p class="niche-desc">Show your full inventory, capture online bookings, and rank for "bounce house rental near me" before summer peak season. Your busiest months deserve a site that converts.</p>
+      </div>
+      <div class="niche-card">
+        <div class="niche-icon">❄️</div>
+        <div class="niche-name">HVAC</div>
+        <span class="niche-roi">1 AC replacement = $3,000–$8,000</span>
+        <p class="niche-desc">Emergency calls happen at 2am. Homeowners search Google first — if you're not ranking, your competitor gets the job. A fast site with a click-to-call button is your 24/7 dispatcher.</p>
+      </div>
+      <div class="niche-card">
+        <div class="niche-icon">🔧</div>
+        <div class="niche-name">Plumbing</div>
+        <span class="niche-roi">1 emergency call = $300–$2,000</span>
+        <p class="niche-desc">Plumbing searches have the highest emergency intent of any local niche. A mobile-first site that loads in under 2 seconds captures calls that bounce off slow competitors.</p>
+      </div>
+      <div class="niche-card">
+        <div class="niche-icon">🌿</div>
+        <div class="niche-name">Landscaping</div>
+        <span class="niche-roi">1 lawn contract = $1,200–$4,800/yr recurring</span>
+        <p class="niche-desc">Recurring revenue from a single new client adds up fast. Google Maps + a professional site is how landscapers fill their entire weekly route without chasing referrals.</p>
+      </div>
+      <div class="niche-card">
+        <div class="niche-icon">✨</div>
+        <div class="niche-name">Cleaning Services</div>
+        <span class="niche-roi">1 recurring client = $1,800–$3,600/yr</span>
+        <p class="niche-desc">Cleaning businesses live on recurring revenue. A site that ranks for "house cleaning near me" fills your calendar with customers who keep booking — month after month.</p>
+      </div>
+      <div class="niche-card">
+        <div class="niche-icon">🖌️</div>
+        <div class="niche-name">Painters</div>
+        <span class="niche-roi">1 exterior job = $2,000–$6,000</span>
+        <p class="niche-desc">Before/after galleries, instant quote requests, and Google rankings turn your painting business into a lead machine. Stop relying on word of mouth alone.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="#book-call" class="btn btn-gold btn-lg">Get a Free Website Preview for Your Business →</a>
+    </div>
   </div>
 </section>
 
