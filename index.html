@@ -965,6 +965,19 @@ footer{background:var(--dark);padding:56px 0 32px}
 .callback-form button:hover{background:var(--gold2)}
 @media(max-width:580px){.callback-form-wrap{padding:24px 20px}}
 
+/* ── EXIT-INTENT POPUP ── */
+#exit-popup{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.68);align-items:center;justify-content:center;padding:24px}
+.exit-box{background:#fff;border-radius:20px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+.exit-box h3{font-size:1.55rem;margin-bottom:8px}
+.exit-box p{color:var(--muted);font-size:.92rem;margin-bottom:24px;line-height:1.6}
+#exit-close{position:absolute;top:14px;right:18px;font-size:1.5rem;cursor:pointer;color:var(--muted);background:none;border:none;line-height:1;padding:4px 8px}
+#exit-close:hover{color:var(--dark)}
+.exit-inputs{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:0 auto 12px}
+.exit-inputs input{padding:13px 20px;border:1.5px solid var(--border);border-radius:50px;font-size:.9rem;font-family:var(--font);outline:none;transition:border-color .2s}
+.exit-inputs input:focus{border-color:var(--gold)}
+.exit-skip{font-size:.8rem;color:var(--muted);cursor:pointer;display:inline-block;margin-top:10px}
+.exit-skip:hover{color:var(--dark);text-decoration:underline}
+
 /* ── NICHE ROI GRID ── */
 .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .niche-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:box-shadow .2s,transform .2s}
@@ -1956,13 +1969,10 @@ footer{background:var(--dark);padding:56px 0 32px}
     <div class="callback-form-wrap">
       <h3>Not a calendar person? Just drop your number.</h3>
       <p>Jose will call you back within the hour — no scheduling app needed.</p>
-      <form class="callback-form" action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="📞 Callback Request — New Lead from kalnyesgrowth.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="text" name="business" placeholder="Business type (e.g. plumber)">
-        <input type="tel" name="phone" placeholder="Phone number" required>
+      <form class="callback-form" onsubmit="submitCallbackWA(event)">
+        <input type="text" id="cb-name" placeholder="Your name" required>
+        <input type="text" id="cb-biz" placeholder="Business type (e.g. plumber)">
+        <input type="tel" id="cb-phone" placeholder="Phone number" required>
         <button type="submit">Call Me Back →</button>
       </form>
     </div>
@@ -2041,6 +2051,22 @@ footer{background:var(--dark);padding:56px 0 32px}
 </div>
 
 <!-- ══════════════════ WHATSAPP FLOAT ══════════════════ -->
+<!-- EXIT-INTENT POPUP -->
+<div id="exit-popup">
+  <div class="exit-box">
+    <button id="exit-close" aria-label="Close">✕</button>
+    <div style="font-size:2.2rem;margin-bottom:14px">⚡</div>
+    <h3>Before you go —</h3>
+    <p>Drop your number and Jose will send you a <strong>free preview</strong> of what your business's new website could look like. No call required.</p>
+    <form class="exit-inputs" onsubmit="submitExitWA(event)">
+      <input type="text" id="ex-name" placeholder="Your name" required>
+      <input type="tel" id="ex-phone" placeholder="Your phone number" required>
+      <button type="submit" class="btn btn-gold" style="border-radius:50px;justify-content:center">Send Me a Free Preview →</button>
+    </form>
+    <span class="exit-skip" onclick="closeExitPopup()">No thanks, I'm not interested</span>
+  </div>
+</div>
+
 <a id="wa-float" href="https://wa.me/15407838835?text=Hi%21%20I%20saw%20your%20website%20and%20I%27m%20interested%20in%20a%20new%20website%20for%20my%20business." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 2.9C8.8 2.9 2.9 8.8 2.9 16c0 2.3.6 4.5 1.8 6.5L2 30l7.7-2.7c1.9 1 4 1.6 6.3 1.6 7.2 0 13.1-5.9 13.1-13.1 0-7.1-5.9-12.9-13.1-12.9zm7.5 18.2c-.3.9-1.8 1.7-2.5 1.8-.6.1-1.4.1-2.3-.1-.5-.1-1.2-.4-2-.7-3.5-1.5-5.8-5-5.9-5.2-.1-.2-1.2-1.6-1.2-3.1 0-1.4.7-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.3.6 1 2.2 1.1 2.4.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 2 .9 2.3 1.1.3.2.6.3.7.5.1.3.1 1.2-.2 2.1z"/>
@@ -2146,6 +2172,63 @@ function handleAudit(e) {
   var msg = "Hi! I’d like a free website audit for: " + url + " - I found you at KalnyesGrowth.com";
   window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
 }
+
+// Callback form — WhatsApp (no activation required, instant notification on Jose’s phone)
+function submitCallbackWA(e) {
+  e.preventDefault();
+  var name = document.getElementById(‘cb-name’).value;
+  var biz  = document.getElementById(‘cb-biz’).value;
+  var phone= document.getElementById(‘cb-phone’).value;
+  var msg  = ‘📞 CALLBACK REQUEST — kalnyesgrowth.com\nName: ‘ + name +
+             (biz ? ‘\nBusiness: ‘ + biz : ‘’) +
+             ‘\nPhone: ‘ + phone +
+             ‘\n\nPlease call me back about a free website preview!’;
+  document.getElementById(‘cb-name’).value = ‘’;
+  document.getElementById(‘cb-biz’).value  = ‘’;
+  document.getElementById(‘cb-phone’).value= ‘’;
+  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
+}
+
+// Exit-intent popup
+function closeExitPopup() {
+  document.getElementById(‘exit-popup’).style.display = ‘none’;
+  try { sessionStorage.setItem(‘exitDismissed’, ‘1’); } catch(e) {}
+}
+function submitExitWA(e) {
+  e.preventDefault();
+  var name  = document.getElementById(‘ex-name’).value;
+  var phone = document.getElementById(‘ex-phone’).value;
+  var msg   = ‘👋 FREE PREVIEW REQUEST — kalnyesgrowth.com\nName: ‘ + name +
+              ‘\nPhone: ‘ + phone +
+              "\n\nI’d like a free preview of what my new website could look like!";
+  closeExitPopup();
+  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
+}
+document.getElementById(‘exit-close’).addEventListener(‘click’, closeExitPopup);
+
+// Desktop exit-intent: fires when cursor exits through top of viewport
+(function() {
+  var shown = false;
+  function maybeShow() {
+    if (shown) return;
+    try { if (sessionStorage.getItem(‘exitDismissed’)) return; } catch(e) {}
+    shown = true;
+    document.getElementById(‘exit-popup’).style.display = ‘flex’;
+  }
+  document.addEventListener(‘mouseleave’, function(e) {
+    if (e.clientY < 10) maybeShow();
+  });
+  // Mobile fallback: show after 50s of inactivity if they haven’t scrolled to #book-call
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    setTimeout(function() {
+      var bc = document.getElementById(‘book-call’);
+      if (bc) {
+        var r = bc.getBoundingClientRect();
+        if (r.top > window.innerHeight) maybeShow(); // haven’t reached booking section
+      }
+    }, 50000);
+  }
+})();
 
 // Dynamic spots counter — increments as the week progresses so urgency feels real
 (function(){
