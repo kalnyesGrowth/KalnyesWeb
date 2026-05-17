@@ -909,6 +909,25 @@ footer{background:var(--dark);padding:56px 0 32px}
 .guarantee-text strong{color:#6ee7b7}
 @media(max-width:640px){.guarantee-strip{padding:24px;gap:20px;flex-direction:column;text-align:center}}
 
+/* ── CALENDLY URGENCY BAR ── */
+.cal-urgency-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:32px;flex-wrap:wrap;
+  background:linear-gradient(135deg,#f0f4ff,#eef1ff);
+  border:1px solid rgba(26,58,191,.15);border-radius:var(--r);
+  padding:16px 24px;margin-bottom:20px;
+  font-size:.88rem;color:var(--body)
+}
+.cal-urgency-item{display:flex;align-items:center;gap:8px;font-weight:600}
+.cal-urgency-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#22c55e;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(34,197,94,.2);
+  animation:livePulse 1.8s ease-in-out infinite
+}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 6px rgba(34,197,94,.08)}}
+@media(max-width:640px){.cal-urgency-bar{flex-direction:column;gap:12px;text-align:center;padding:14px 18px}}
+
 /* ── WHATSAPP FLOAT ── */
 .wa-float{
   position:fixed;bottom:28px;right:28px;z-index:9999;
@@ -942,8 +961,8 @@ footer{background:var(--dark);padding:56px 0 32px}
 <div id="announce-bar">
   <div class="announce-inner">
     <span class="announce-dot"></span>
-    <span>⚡ <strong>Only 3 spots left this month</strong> — Free site preview in 5 days. You don't pay until you love it.</span>
-    <a href="#book-call" class="announce-cta">Claim Your Free Call →</a>
+    <span>⚡ <strong>2 strategy call spots open this week (May 19–23)</strong> — Free site preview in 5 days. You never pay until you love it.</span>
+    <a href="#book-call" class="announce-cta">Grab a Spot →</a>
   </div>
 </div>
 
@@ -986,7 +1005,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   <div class="container">
     <div class="hero-layout">
       <div class="hero-left">
-        <div class="hero-badge">Virginia's Growth-First Web Agency</div>
+        <div class="hero-badge">Stafford, VA · Serving Fredericksburg &amp; Northern Virginia</div>
         <h1 class="hero-h1">We Build Websites That Make Local Businesses <em>More Money</em></h1>
         <p class="hero-sub">Not just good-looking websites — revenue machines. Every Kalnyes Growth site is mobile-first, Google-optimized, and engineered to turn first-time visitors into paying customers who call, book, and come back.</p>
         <p style="font-size:.95rem;font-weight:700;color:var(--gold);margin-bottom:20px;margin-top:-4px;">✓ We build your site FREE first. You only pay if you love it. Zero risk.</p>
@@ -1673,6 +1692,16 @@ footer{background:var(--dark);padding:56px 0 32px}
           </div>
         </div>
 
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            I've never heard of Kalnyes Growth. Are you a real local business?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — we're based right here in Stafford, VA (zip: 22554). Jose Morales, the founder, is your neighbor. You can reach him directly at (540) 783-8835 or kalnyesgrowth@gmail.com — he reads and responds to every message himself. You can also see live examples of sites we've built in the portfolio above. We're a newer agency, which is exactly why we offer the preview-first model: you see a fully built, live website for your specific business before paying a single dollar. No risk on your end.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -1783,9 +1812,9 @@ footer{background:var(--dark);padding:56px 0 32px}
 <section id="book-call">
   <div class="container">
     <div class="book-intro">
-      <span class="eyebrow eyebrow-gold">Book Your Call</span>
-      <h2>Pick a Time That Works for You</h2>
-      <p>Free 15-minute strategy call. We'll look at your current online presence and tell you exactly what it would take to start getting more customers from Google. No pitch. No pressure.</p>
+      <span class="eyebrow eyebrow-gold">Book Your Free Strategy Call</span>
+      <h2>Only 2 Spots Left This Week — Pick Your Time Now</h2>
+      <p>Free 15-minute strategy call. We look at your current online presence, show you what's costing you customers, and if it makes sense — build your full website FREE so you can see it before paying a dollar. No pitch. No pressure. Jose responds to every booking within the hour.</p>
     </div>
 
     <!-- What Happens on Your Call -->
@@ -1837,6 +1866,16 @@ footer{background:var(--dark);padding:56px 0 32px}
         <h3>Zero-Risk Guarantee — You Pay Nothing Until You Love It</h3>
         <p>We build your full site <strong>in 5–7 days</strong> and send you a live preview before you pay a single dollar. If you don't love what you see, you walk away with no charge and no questions asked. <strong>You only pay when you're 100% happy.</strong> That's our promise on every project.</p>
       </div>
+    </div>
+
+    <!-- Availability urgency bar above Calendly -->
+    <div class="cal-urgency-bar">
+      <div class="cal-urgency-item">
+        <span class="cal-urgency-dot"></span>
+        <strong>2 spots available this week</strong> (May 19–23)
+      </div>
+      <div class="cal-urgency-item">⚡ Jose responds to every booking within 1 hour</div>
+      <div class="cal-urgency-item">🛡️ 100% free — no card required to book</div>
     </div>
 
     <div class="calendly-inline-widget" data-url="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&primary_color=1a3abf" style="min-width:320px;height:700px;"></div>
@@ -1894,7 +1933,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 
 <!-- ══════════════════ MOBILE STICKY CTA BAR ══════════════════ -->
 <div id="mobile-cta-bar">
-  <a href="#book-call" class="mcta-book">📅 Book Free Call</a>
+  <a href="#book-call" class="mcta-book">📅 Book Free Call — 2 Spots Left</a>
   <a href="tel:+15407838835" class="mcta-call">📞 Call Now</a>
 </div>
 
