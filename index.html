@@ -954,6 +954,17 @@ footer{background:var(--dark);padding:56px 0 32px}
 }
 @media(max-width:480px){.wa-float{bottom:20px;right:20px;width:54px;height:54px}.wa-float svg{width:28px;height:28px}}
 
+/* ── CALLBACK FORM ── */
+.callback-form-wrap{background:var(--green3);border:1px solid rgba(0,0,0,.1);border-radius:var(--r-lg);padding:32px 36px;margin:36px 0 8px;text-align:center}
+.callback-form-wrap h3{font-size:1.2rem;margin-bottom:6px}
+.callback-form-wrap p{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.callback-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:620px;margin:0 auto}
+.callback-form input{flex:1 1 180px;padding:13px 18px;border:1.5px solid var(--border);border-radius:50px;font-size:.9rem;font-family:var(--font);outline:none;transition:border-color .2s}
+.callback-form input:focus{border-color:var(--gold)}
+.callback-form button{background:var(--gold);color:#fff;border:none;border-radius:50px;padding:13px 28px;font-weight:700;font-size:.9rem;cursor:pointer;white-space:nowrap;transition:background .2s}
+.callback-form button:hover{background:var(--gold2)}
+@media(max-width:580px){.callback-form-wrap{padding:24px 20px}}
+
 /* ── NICHE ROI GRID ── */
 .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .niche-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 24px;transition:box-shadow .2s,transform .2s}
@@ -1939,6 +1950,21 @@ footer{background:var(--dark);padding:56px 0 32px}
       </div>
       <div class="cal-urgency-item">⚡ Jose responds to every booking within 1 hour</div>
       <div class="cal-urgency-item">🛡️ 100% free — no card required to book</div>
+    </div>
+
+    <!-- Callback Request Form — lower friction than Calendly -->
+    <div class="callback-form-wrap">
+      <h3>Not a calendar person? Just drop your number.</h3>
+      <p>Jose will call you back within the hour — no scheduling app needed.</p>
+      <form class="callback-form" action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="📞 Callback Request — New Lead from kalnyesgrowth.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="text" name="business" placeholder="Business type (e.g. plumber)">
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <button type="submit">Call Me Back →</button>
+      </form>
     </div>
 
     <div class="calendly-inline-widget" data-url="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&primary_color=1a3abf" style="min-width:320px;height:700px;"></div>
