@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- REVIEWS-CHECKED: real-reviews-found-yahoo-local-yelp-facebook -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>White Plumbing Company LLC | Stafford, VA | (703) 672-8667</title>
+<meta name="description" content="White Plumbing Company LLC — family-owned, 35+ years serving Stafford, VA. Water heaters, toilets, faucets, drain cleaning. Call Greg: (703) 672-8667.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a2e;line-height:1.65;background:#fff}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+:root{
+  --blue:#1a3a6b;
+  --blue2:#0d2449;
+  --sky:#2563eb;
+  --sky2:#1d4ed8;
+  --accent:#f59e0b;
+  --light:#f0f4ff;
+  --border:#dde3f0;
+  --muted:#6b7280;
+  --r:10px
+}
+
+/* NAV */
+nav{background:var(--blue);padding:0 24px;position:sticky;top:0;z-index:99;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;font-size:1.15rem;font-weight:800;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.nav-phone{color:#fff;font-weight:700;font-size:1rem;background:var(--accent);padding:9px 20px;border-radius:50px;transition:background .2s}
+.nav-phone:hover{background:#d97706}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;border:1px solid rgba(255,255,255,.25)}
+#hero h1{color:#fff;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.08;margin-bottom:16px;letter-spacing:-.02em}
+#hero h1 em{color:var(--accent);font-style:normal}
+#hero p{color:rgba(255,255,255,.85);font-size:1.1rem;max-width:560px;margin:0 auto 36px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#1a1a2e;padding:16px 36px;border-radius:50px;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-primary:hover{background:#d97706;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:16px 36px;border-radius:50px;font-weight:700;font-size:1rem;transition:all .2s}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero-trust{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.15)}
+.trust-item{color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:7px}
+.trust-item svg{flex-shrink:0}
+
+/* URGENT BAR */
+#urgent{background:var(--accent);padding:14px 24px;text-align:center}
+#urgent p{font-size:.9rem;font-weight:700;color:#1a1a2e}
+#urgent a{color:var(--blue);text-decoration:underline}
+
+/* SERVICES */
+#services{padding:88px 24px;background:#fff}
+.container{max-width:1100px;margin:0 auto}
+.eyebrow{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--blue2);line-height:1.1;letter-spacing:-.02em}
+.section-sub{color:var(--muted);font-size:1rem;margin-top:10px;max-width:540px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.service-card{background:var(--light);border-radius:var(--r);padding:28px 24px;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+.service-card:hover{box-shadow:0 8px 32px rgba(26,58,107,.12);transform:translateY(-3px)}
+.service-icon{font-size:2rem;margin-bottom:14px}
+.service-card h3{font-size:1.05rem;font-weight:800;color:var(--blue2);margin-bottom:8px}
+.service-card p{font-size:.87rem;color:var(--muted);line-height:1.6}
+@media(max-width:780px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.services-grid{grid-template-columns:1fr}}
+
+/* WHY US */
+#why{background:var(--light);padding:88px 24px;border-top:1px solid var(--border)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:44px}
+.why-list{display:flex;flex-direction:column;gap:20px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-check{width:36px;height:36px;background:var(--sky);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.9rem}
+.why-item h4{font-weight:800;color:var(--blue2);margin-bottom:4px;font-size:1rem}
+.why-item p{font-size:.87rem;color:var(--muted);line-height:1.6}
+.stat-box{background:var(--blue);border-radius:18px;padding:40px;text-align:center;color:#fff}
+.stat-num{font-size:4rem;font-weight:900;color:var(--accent);line-height:1;display:block}
+.stat-label{font-size:.9rem;color:rgba(255,255,255,.8);margin-top:6px;display:block}
+.stat-divider{height:1px;background:rgba(255,255,255,.15);margin:28px 0}
+@media(max-width:700px){.why-grid{grid-template-columns:1fr}}
+
+/* REVIEWS */
+#reviews{padding:88px 24px;background:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.review-card{background:var(--light);border-radius:var(--r);padding:28px 24px;border:1px solid var(--border)}
+.stars{color:var(--accent);font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.review-text{font-size:.9rem;color:#374151;line-height:1.7;font-style:italic;margin-bottom:16px}
+.reviewer{font-size:.82rem;font-weight:700;color:var(--blue2)}
+.review-source{font-size:.75rem;color:var(--muted);margin-top:3px}
+@media(max-width:780px){.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.reviews-grid{grid-template-columns:1fr}}
+
+/* ABOUT */
+#about{background:var(--blue);padding:88px 24px;color:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:44px}
+#about h2{color:#fff}
+#about .eyebrow{color:var(--accent)}
+.about-text{color:rgba(255,255,255,.85);font-size:1rem;line-height:1.8;margin:16px 0}
+.about-sig{font-size:1.2rem;font-weight:800;color:var(--accent);margin-top:20px}
+.about-sig span{display:block;font-size:.85rem;font-weight:400;color:rgba(255,255,255,.7);margin-top:3px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-stat{background:rgba(255,255,255,.08);border-radius:var(--r);padding:24px;text-align:center;border:1px solid rgba(255,255,255,.12)}
+.about-stat-num{font-size:2.4rem;font-weight:900;color:var(--accent);display:block;line-height:1}
+.about-stat-label{font-size:.8rem;color:rgba(255,255,255,.7);margin-top:6px;display:block}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr}}
+
+/* CTA */
+#cta{background:var(--light);padding:88px 24px;text-align:center;border-top:1px solid var(--border)}
+#cta h2{color:var(--blue2);margin-bottom:14px}
+#cta p{color:var(--muted);max-width:520px;margin:0 auto 36px;font-size:1rem}
+.cta-methods{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.cta-email{font-size:.85rem;color:var(--muted)}
+.cta-email a{color:var(--sky);font-weight:600}
+
+/* FOOTER */
+footer{background:var(--blue2);color:rgba(255,255,255,.7);text-align:center;padding:28px 24px;font-size:.82rem}
+footer strong{color:#fff}
+
+/* MOBILE STICKY BAR */
+#sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--blue);z-index:990;padding:14px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.3)}
+.sticky-inner{display:flex;gap:10px;justify-content:center}
+.sticky-call,.sticky-text{flex:1;max-width:200px;text-align:center;padding:13px;border-radius:50px;font-weight:800;font-size:.9rem}
+.sticky-call{background:var(--accent);color:#1a1a2e}
+.sticky-text{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+@media(max-width:640px){#sticky-bar{display:block}body{padding-bottom:76px}}
+
+/* PREVIEW NOTICE */
+.preview-banner{background:linear-gradient(90deg,#1a3abf,#0f2899);color:#fff;text-align:center;padding:10px 20px;font-size:.82rem;font-weight:700}
+.preview-banner a{color:#fbbf24;text-decoration:underline}
+</style>
+</head>
+<body>
+
+<!-- PREVIEW NOTICE (shown to Greg — this is his demo) -->
+<div class="preview-banner">
+  🎨 This is a <strong>free preview site</strong> built by Jose at Kalnyes Growth — just for White Plumbing Co.
+  Like what you see? <a href="https://calendly.com/kalnyesgrowth/boost-your-business">Book a free 15-min call →</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">WHITE <span>PLUMBING</span></div>
+    <a class="nav-phone" href="tel:7036728667">☎ (703) 672-8667</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <span class="hero-badge">Stafford, VA · Family Owned · Licensed & Insured</span>
+    <h1>If You Want It Right,<br>Call <em>WHITE!</em></h1>
+    <p>35+ years serving Stafford, Virginia. Water heaters, toilets, faucets, drains — done right the first time by Greg White and his team.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="tel:7036728667">📞 Call (703) 672-8667</a>
+      <a class="btn-secondary" href="#services">See Our Services ↓</a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        35+ Years Experience
+      </span>
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Family Owned &amp; Operated
+      </span>
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        5-Star Rated on Google &amp; Yelp
+      </span>
+      <span class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Licensed &amp; Insured
+      </span>
+    </div>
+  </div>
+</section>
+
+<div id="urgent">
+  <p>📅 Scheduling for this week · Mon–Fri 6AM–6PM · Sat 6AM–2PM · <a href="tel:7036728667">Call to book: (703) 672-8667</a></p>
+</div>
+
+<section id="services">
+  <div class="container">
+    <span class="eyebrow">What We Fix</span>
+    <h2>Plumbing Services for<br>Stafford &amp; Surrounding Areas</h2>
+    <p class="section-sub">From water heater replacements to faucet installs, we handle residential and small commercial plumbing — done right the first time.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚿</div>
+        <h3>Water Heater Installation &amp; Repair</h3>
+        <p>Tank and tankless water heaters installed and repaired. Fast turnaround so you're not without hot water.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚽</div>
+        <h3>Toilet Installation &amp; Repair</h3>
+        <p>New toilets installed from your purchase or ours. Running, leaking, or broken — we fix it fast.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚰</div>
+        <h3>Faucet Installation &amp; Repair</h3>
+        <p>Kitchen and bathroom faucets installed, repaired, or replaced. Bring yours or we'll supply it.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗑️</div>
+        <h3>Garbage Disposal</h3>
+        <p>Disposals installed, repaired, or replaced quickly. We work with all major brands.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Drain Cleaning</h3>
+        <p>Slow or clogged drains cleared professionally. Kitchen, bath, and floor drains.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <h3>Water Filtration Systems</h3>
+        <p>Whole-house and under-sink water filtration installation for cleaner, better-tasting water.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Stafford's Most Trusted Plumber Since 1990</h2>
+        <div class="why-list" style="margin-top:32px">
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Greg White answers the phone</h4>
+              <p>You talk directly to the owner — no call centers, no runaround. Greg is communicative and accommodates your schedule.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>35+ years of experience</h4>
+              <p>Family-owned since the beginning. We've built our reputation one job at a time in Stafford and the surrounding areas.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Transparent, honest pricing</h4>
+              <p>No surprise bills. We tell you what it costs before we start. If it changes, we tell you why.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Residential &amp; small commercial</h4>
+              <p>We handle homes and small businesses across Stafford County and beyond.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">35+</span>
+        <span class="stat-label">Years Serving Stafford, VA</span>
+        <div class="stat-divider"></div>
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Recommend Rate on Facebook</span>
+        <div class="stat-divider"></div>
+        <span class="stat-num">⭐ 5.0</span>
+        <span class="stat-label">Average Rating Across Review Platforms</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <span class="eyebrow">What Customers Say</span>
+    <h2>Real Reviews from Real Stafford Neighbors</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Greg White is my forever plumber. He has saved me many many times with exemplary, efficient, and affordable service."</p>
+        <div class="reviewer">Sea W.</div>
+        <div class="review-source">Yahoo Local · Verified Review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Owner Greg is communicative and accommodates your schedule. Technician Travis provided excellent service and answered all our questions thoroughly."</p>
+        <div class="reviewer">Charles S.</div>
+        <div class="review-source">Yahoo Local · May 2025</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Knowledgeable, transparent, and flexible. They delivered superior results on our powder room and vanity project. Highly recommend."</p>
+        <div class="reviewer">Vaedra J.</div>
+        <div class="review-source">Yahoo Local · September 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About White Plumbing</span>
+        <h2>Family-Owned.<br>Stafford-Proud.</h2>
+        <p class="about-text">White Plumbing Company LLC has been serving homeowners and small businesses in Stafford, Virginia for over 35 years. We built this company on a simple belief: if you do the job right and treat people honestly, they'll call you back — and tell their neighbors.</p>
+        <p class="about-text">Every job, from a single faucet install to a full water heater replacement, gets the same attention. You'll always know who's coming, what it will cost, and what to expect when we're done.</p>
+        <div class="about-sig">
+          Greg White
+          <span>Owner &amp; Master Plumber · White Plumbing Company LLC</span>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="about-stat-num">35+</span>
+          <span class="about-stat-label">Years in Business</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">85+</span>
+          <span class="about-stat-label">5-Star Facebook Reviews</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">24+</span>
+          <span class="about-stat-label">Yelp Reviews</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">5.0</span>
+          <span class="about-stat-label">Average Star Rating</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <span class="eyebrow">Ready to Book?</span>
+    <h2>Get Your Plumbing Fixed Right</h2>
+    <p>Call or text Greg directly. We schedule fast, show up on time, and leave your home cleaner than we found it.</p>
+    <div class="cta-methods">
+      <a class="btn-primary" href="tel:7036728667">📞 Call (703) 672-8667</a>
+      <a class="btn-secondary" style="background:var(--blue);color:#fff;padding:16px 36px;border-radius:50px;font-weight:700;font-size:1rem" href="mailto:services@whiteplumbingco.com">✉ Email Greg</a>
+    </div>
+    <p class="cta-email">Mon–Fri 6AM–6PM · Sat 6AM–2PM · <a href="mailto:services@whiteplumbingco.com">services@whiteplumbingco.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>White Plumbing Company LLC</strong> · 524 Garrisonville Rd, Stafford, VA 22463 · (703) 672-8667</p>
+  <p style="margin-top:6px">© 2026 White Plumbing Company LLC · Licensed &amp; Insured · Serving Stafford, VA and surrounding areas</p>
+  <p style="margin-top:10px;font-size:.75rem;color:rgba(255,255,255,.4)">Website preview built by <a href="https://kalnyesgrowth.com" style="color:rgba(255,255,255,.5)">Kalnyes Growth</a></p>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div id="sticky-bar">
+  <div class="sticky-inner">
+    <a class="sticky-call" href="tel:7036728667">📞 Call Greg Now</a>
+    <a class="sticky-text" href="sms:7036728667">💬 Text Us</a>
+  </div>
+</div>
+
+</body>
+</html>
