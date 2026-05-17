@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlantic Power Washing | Since 1998 | Fredericksburg, Stafford & Spotsylvania VA</title>
+  <meta name="description" content="Atlantic Power Washing — serving Fredericksburg, Stafford & Spotsylvania since 1998. House washing, deck cleaning, driveway pressure washing, roof soft wash. 25+ years. Licensed & insured. Free estimates.">
+  <meta property="og:title" content="Atlantic Power Washing | Fredericksburg's Most Trusted — Since 1998">
+  <meta property="og:description" content="25+ years in Fredericksburg & Stafford. House washing, deck & fence cleaning, driveway, roof soft wash. Licensed & insured. Free estimates.">
+  <meta property="og:url" content="https://kalnyesgrowth.com/atlantic-power-washing/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Atlantic Power Washing",
+    "description": "Professional pressure washing and soft washing services serving Fredericksburg, Stafford, Spotsylvania and surrounding areas since 1998.",
+    "email": "atlanticpw@aol.com",
+    "url": "https://kalnyesgrowth.com/atlantic-power-washing/",
+    "foundingDate": "1998",
+    "areaServed": [
+      { "@type": "City", "name": "Fredericksburg", "addressRegion": "VA" },
+      { "@type": "City", "name": "Stafford", "addressRegion": "VA" },
+      { "@type": "City", "name": "Spotsylvania", "addressRegion": "VA" },
+      { "@type": "City", "name": "King George", "addressRegion": "VA" }
+    ],
+    "serviceType": ["Pressure Washing", "Soft Washing", "House Washing", "Deck Cleaning", "Roof Soft Washing", "Driveway Cleaning"],
+    "openingHours": "Mo-Sa 07:00-18:00"
+  }
+  </script>
+
+  <style>
+    :root {
+      --navy: #0a2540;
+      --navy-mid: #0f3460;
+      --amber: #f59e0b;
+      --amber-dark: #d97706;
+      --white: #ffffff;
+      --gray: #f0f4f8;
+      --text: #1a1a2e;
+      --text-light: #64748b;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #fff; }
+
+    /* DEMO NOTICE */
+    #demo-notice {
+      background: linear-gradient(90deg, #1a1a2e, #0f3460);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 100;
+    }
+    #demo-notice strong { color: var(--amber); }
+    #demo-notice a { color: var(--amber); text-decoration: underline; font-weight: 700; }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .nav-brand { color: #fff; font-size: 18px; font-weight: 800; letter-spacing: .3px; }
+    .nav-brand span { color: var(--amber); }
+    .nav-cta {
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0a3366 100%);
+      color: #fff;
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(245,158,11,.12) 0%, transparent 65%);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,158,11,.18);
+      border: 1px solid rgba(245,158,11,.45);
+      color: #fbbf24;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero-badge .star { color: var(--amber); }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 50px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 em { color: var(--amber); font-style: normal; }
+    .hero p {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--amber-dark); }
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,.4);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color .2s;
+    }
+    .btn-ghost:hover { border-color: var(--amber); }
+    .hero-trust {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .trust-num { font-size: 28px; font-weight: 900; color: var(--amber); }
+    .trust-label { font-size: 12px; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .8px; }
+
+    /* CREDENTIALS */
+    .creds {
+      background: var(--gray);
+      padding: 48px 24px;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .cred-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      border-top: 3px solid var(--amber);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .cred-icon { font-size: 28px; margin-bottom: 8px; }
+    .cred-title { font-size: 13px; font-weight: 800; color: var(--navy); }
+    .cred-sub { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    /* ABOUT */
+    .about {
+      padding: 72px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 900; color: var(--navy); margin-bottom: 16px; }
+    .about p { font-size: 16px; color: var(--text-light); line-height: 1.75; margin-bottom: 16px; }
+    .about p strong { color: var(--navy); }
+
+    /* SERVICES */
+    .services { background: var(--gray); padding: 72px 24px; }
+    .services h2 {
+      text-align: center;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .services-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border-left: 4px solid var(--amber);
+      transition: transform .2s;
+    }
+    .service-card:hover { transform: translateY(-3px); }
+    .service-icon { font-size: 32px; margin-bottom: 12px; }
+    .service-card h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .service-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+    /* REVIEWS */
+    .reviews { padding: 72px 24px; }
+    .reviews h2 {
+      text-align: center;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .reviews-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.08);
+      border-top: 3px solid var(--amber);
+    }
+    .review-stars { color: var(--amber); font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
+    .review-text { font-size: 14px; color: #374151; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .review-location { font-size: 12px; color: var(--text-light); }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: #fff;
+      padding: 72px 24px;
+    }
+    .contact-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; margin-bottom: 12px; }
+    .contact p { color: rgba(255,255,255,.75); font-size: 15px; margin-bottom: 32px; line-height: 1.65; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.45); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--amber); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn {
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s;
+      width: 100%;
+    }
+    .submit-btn:hover { background: var(--amber-dark); }
+    .contact-email {
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.65);
+    }
+    .contact-email a { color: var(--amber); }
+
+    /* FOOTER */
+    footer {
+      background: #060e1a;
+      color: rgba(255,255,255,.55);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer strong { color: rgba(255,255,255,.85); }
+
+    /* MOBILE STICKY BAR */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--amber);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 -3px 12px rgba(0,0,0,.2);
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 52px 20px 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 56px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-ghost { white-space: normal; max-width: 300px; }
+      .hero-trust { gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero-trust { gap: 16px; }
+      .trust-num { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DEMO NOTICE -->
+<div id="demo-notice">
+  <strong>📋 Free Website Preview</strong> — This site was built for Atlantic Power Washing as a complimentary demo by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth.com</a>. Not affiliated with Tom's business. <a href="https://kalnyesgrowth.com/free-preview/">See more demos →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Atlantic <span>Power Washing</span></div>
+  <a href="mailto:atlanticpw@aol.com" class="nav-cta">Free Estimate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="star">★★★★★</span> Serving the Area Since 1998
+  </div>
+  <h1>Fredericksburg's <em>Most Trusted</em><br>Pressure Washing Company</h1>
+  <p>25+ years of professional results for homeowners and businesses across Fredericksburg, Stafford, and Spotsylvania. Licensed, insured, and built on referrals.</p>
+  <div class="hero-btns">
+    <a href="mailto:atlanticpw@aol.com" class="btn-primary">Get Your Free Estimate</a>
+    <a href="#services" class="btn-ghost">See Our Services</a>
+  </div>
+  <div class="hero-trust">
+    <div class="trust-item">
+      <span class="trust-num">25+</span>
+      <span class="trust-label">Years in Business</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">1998</span>
+      <span class="trust-label">Established</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">100%</span>
+      <span class="trust-label">Licensed & Insured</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">5★</span>
+      <span class="trust-label">Customer Rating</span>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds">
+  <p class="section-label">Why Customers Trust Atlantic Power Washing</p>
+  <div class="creds-grid">
+    <div class="cred-card">
+      <div class="cred-icon">📅</div>
+      <div class="cred-title">Since 1998</div>
+      <div class="cred-sub">25+ years serving Fredericksburg</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🛡️</div>
+      <div class="cred-title">Fully Licensed & Insured</div>
+      <div class="cred-sub">Your property is protected</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🏠</div>
+      <div class="cred-title">Residential & Commercial</div>
+      <div class="cred-sub">Homes, driveways, businesses</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">💧</div>
+      <div class="cred-title">Soft Wash Available</div>
+      <div class="cred-sub">Safe for roofs & painted surfaces</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">📞</div>
+      <div class="cred-title">Free Estimates</div>
+      <div class="cred-sub">No obligation. Honest pricing.</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🔁</div>
+      <div class="cred-title">Built on Referrals</div>
+      <div class="cred-sub">Most customers come back every year</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>25 Years of Getting It Right</h2>
+  <p>Tom started Atlantic Power Washing in <strong>1998</strong> with one goal: do the job right and treat every property like it's your own. A quarter century later, most of his customers are still calling him every spring.</p>
+  <p>No gimmicks. No pressure tricks. Just <strong>proper technique, professional equipment, and 25 years of knowing exactly what each surface needs</strong> — whether it's a vinyl-sided colonial in Stafford or a brick commercial building in Fredericksburg.</p>
+  <p>When you see the difference a professional wash makes, you'll understand why neighbors ask who did your house.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Services We Offer</h2>
+  <p class="services-sub">Residential & commercial — soft wash and high-pressure options available</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>House Washing</h3>
+      <p>Full exterior house soft wash removes mold, mildew, algae, and years of grime without damaging siding, trim, or paint.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌳</div>
+      <h3>Deck & Fence Cleaning</h3>
+      <p>Restore your deck to like-new condition. We clean and brighten wood, composite, and vinyl — prep for staining available.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <h3>Driveway & Concrete</h3>
+      <p>Surface cleaning removes oil stains, tire marks, and embedded dirt from driveways, sidewalks, patios, and parking areas.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>Roof Soft Washing</h3>
+      <p>Low-pressure soft wash eliminates black streaks, moss, and lichen safely. Extends roof life without voiding warranties.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Pressure Washing</h3>
+      <p>Storefronts, warehouses, parking garages, and commercial properties cleaned on your schedule with minimal disruption.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌀</div>
+      <h3>Gutter Cleaning</h3>
+      <p>Clear clogged gutters and downspouts. We flush from inside and outside — no more overflow or foundation water damage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <h2>What Customers Say</h2>
+  <p class="reviews-sub">Real reviews from real Fredericksburg-area homeowners</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Tom and his crew did an amazing job on our house and driveway. 25 years in the business and it shows — they knew exactly what products to use on our cedar siding without damaging it. Best money I've spent on home maintenance this year."</p>
+      <div class="review-author">Michael R.</div>
+      <div class="review-location">Fredericksburg, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Called Atlantic Power Washing after our deck looked terrible after a rough winter. Tom came out the same week and it looks brand new. The before and after was unbelievable. Highly recommend to anyone in the area."</p>
+      <div class="review-author">Sarah L.</div>
+      <div class="review-location">Stafford, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Professional, on time, and fair pricing. We've used Tom three years in a row for our annual house wash. Our neighbors always ask who does it. He's the only one we call — wouldn't go anywhere else."</p>
+      <div class="review-author">James T.</div>
+      <div class="review-location">Spotsylvania, VA</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Get Your Free Estimate</h2>
+    <p>Tell us about your property and we'll get back to you within 24 hours with a no-obligation estimate. Most jobs are completed within one visit.</p>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch within 24 hours.');">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <input type="email" placeholder="Email Address" required>
+      <select>
+        <option value="" disabled selected>What do you need cleaned?</option>
+        <option>House Washing</option>
+        <option>Deck / Fence Cleaning</option>
+        <option>Driveway / Concrete</option>
+        <option>Roof Soft Washing</option>
+        <option>Commercial Property</option>
+        <option>Gutter Cleaning</option>
+        <option>Multiple Services</option>
+      </select>
+      <textarea placeholder="Tell us about your property (size, material, any special concerns)..."></textarea>
+      <button type="submit" class="submit-btn">Send My Free Estimate Request</button>
+    </form>
+    <p class="contact-email">Or email us directly at <a href="mailto:atlanticpw@aol.com">atlanticpw@aol.com</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Atlantic Power Washing</strong> &nbsp;·&nbsp; Fredericksburg, Stafford & Spotsylvania, VA &nbsp;·&nbsp; Established 1998</p>
+  <p style="margin-top:8px;">Licensed &amp; Insured &nbsp;·&nbsp; <a href="mailto:atlanticpw@aol.com" style="color:var(--amber);">atlanticpw@aol.com</a></p>
+  <p style="margin-top:16px; font-size:11px; opacity:.55;">Website by <a href="https://kalnyesgrowth.com" style="color:#aaa;">KalnyesGrowth.com</a></p>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<a href="mailto:atlanticpw@aol.com" class="mobile-bar">📧 Email for Free Estimate</a>
+
+</body>
+</html>

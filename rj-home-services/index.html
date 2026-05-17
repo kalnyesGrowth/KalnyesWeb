@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJ Home Services | Generac Generator Dealer | Goldvein & Fredericksburg, VA</title>
+  <meta name="description" content="RJ Home Services — your Generac certified dealer and home services experts in Goldvein & Fredericksburg, VA. 300+ five-star reviews. BBB A+. Generator installation, electrical, and whole-home backup power. Free estimates.">
+  <meta property="og:title" content="RJ Home Services | 300+ Reviews | Generac Dealer | Goldvein, VA">
+  <meta property="og:description" content="Generac certified dealer with 300+ five-star reviews and BBB A+ rating. Home services, generator installation & backup power in the Fredericksburg area.">
+  <meta property="og:url" content="https://kalnyesgrowth.com/rj-home-services/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "RJ Home Services",
+    "description": "Generac certified generator dealer and home services company serving Goldvein, Fredericksburg, and surrounding Virginia communities. 300+ five-star reviews. BBB A+.",
+    "email": "Rich@RJHomeServiceva.com",
+    "url": "https://kalnyesgrowth.com/rj-home-services/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Goldvein",
+      "addressRegion": "VA"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "300"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Goldvein", "addressRegion": "VA" },
+      { "@type": "City", "name": "Fredericksburg", "addressRegion": "VA" },
+      { "@type": "City", "name": "Stafford", "addressRegion": "VA" },
+      { "@type": "City", "name": "Culpeper", "addressRegion": "VA" }
+    ],
+    "serviceType": ["Generator Installation", "Generator Service", "Electrical Services", "Home Services", "Generac Dealer"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --dark: #111827;
+      --dark-mid: #1f2937;
+      --orange: #ea580c;
+      --orange-light: #f97316;
+      --amber: #f59e0b;
+      --white: #ffffff;
+      --gray: #f3f4f6;
+      --text: #1a1a1a;
+      --text-light: #6b7280;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #fff; }
+
+    /* DEMO NOTICE */
+    #demo-notice {
+      background: linear-gradient(90deg, #111827, #1f2937);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    #demo-notice strong { color: var(--orange-light); }
+    #demo-notice a { color: var(--amber); text-decoration: underline; font-weight: 700; }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+    .nav-logo { display: flex; flex-direction: column; }
+    .nav-name { color: #fff; font-size: 17px; font-weight: 900; }
+    .nav-name span { color: var(--orange-light); }
+    .nav-tag { color: rgba(255,255,255,.5); font-size: 10px; letter-spacing: .8px; text-transform: uppercase; }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--orange-light); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0c1120 0%, #111827 50%, #1a0a00 100%);
+      color: #fff;
+      padding: 76px 24px 68px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 35%, rgba(234,88,12,.15) 0%, transparent 65%);
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+    .badge.highlight {
+      background: rgba(234,88,12,.2);
+      border-color: rgba(234,88,12,.5);
+      color: #fdba74;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 50px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero h1 em { color: var(--orange-light); font-style: normal; }
+    .hero p {
+      font-size: clamp(15px, 2.2vw, 18px);
+      color: rgba(255,255,255,.78);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--orange-light); }
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,.35);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--orange-light); }
+
+    /* REVIEW BAR */
+    .review-bar {
+      background: var(--orange);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .review-bar-item { color: #fff; }
+    .review-bar-num { font-size: 26px; font-weight: 900; display: block; }
+    .review-bar-label { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; opacity: .85; }
+
+    /* CREDENTIALS */
+    .creds { background: var(--gray); padding: 52px 24px; }
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .cred-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      border-top: 3px solid var(--orange);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .cred-icon { font-size: 26px; margin-bottom: 8px; }
+    .cred-title { font-size: 13px; font-weight: 800; color: var(--dark); }
+    .cred-sub { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* GENERAC FEATURE */
+    .generac-section {
+      padding: 72px 24px;
+      background: var(--dark);
+      color: #fff;
+    }
+    .generac-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .generac-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .generac-section h2 {
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .generac-section h2 em { color: var(--orange-light); font-style: normal; }
+    .generac-section p {
+      color: rgba(255,255,255,.72);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .generac-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+      text-align: left;
+    }
+    .gen-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .gen-card h4 { font-size: 14px; font-weight: 800; color: var(--orange-light); margin-bottom: 6px; }
+    .gen-card p { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.6; }
+
+    /* SERVICES */
+    .services { padding: 72px 24px; background: var(--gray); }
+    .services h2 {
+      text-align: center;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .services-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border-left: 4px solid var(--orange);
+      transition: transform .2s;
+    }
+    .service-card:hover { transform: translateY(-3px); }
+    .service-icon { font-size: 30px; margin-bottom: 10px; }
+    .service-card h3 { font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .service-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+    /* REVIEWS */
+    .reviews { padding: 72px 24px; }
+    .reviews h2 {
+      text-align: center;
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .reviews-sub { text-align: center; color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.08);
+      border-top: 3px solid var(--orange);
+    }
+    .review-stars { color: var(--amber); font-size: 16px; margin-bottom: 12px; }
+    .review-text { font-size: 14px; color: #374151; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { font-size: 13px; font-weight: 700; color: var(--dark); }
+    .review-location { font-size: 12px; color: var(--text-light); }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: #fff;
+      padding: 72px 24px;
+    }
+    .contact-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; margin-bottom: 12px; }
+    .contact p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 32px; line-height: 1.65; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .contact-form select option { background: #1f2937; color: #fff; }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.4); }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--orange-light); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn {
+      background: var(--orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s;
+      width: 100%;
+    }
+    .submit-btn:hover { background: var(--orange-light); }
+    .contact-email {
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+    }
+    .contact-email a { color: var(--amber); }
+
+    /* FOOTER */
+    footer {
+      background: #07090e;
+      color: rgba(255,255,255,.5);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer strong { color: rgba(255,255,255,.82); }
+
+    /* MOBILE BAR */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      text-align: center;
+      padding: 14px;
+      z-index: 999;
+      text-decoration: none;
+      box-shadow: 0 -3px 12px rgba(0,0,0,.25);
+      white-space: normal;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 52px 20px 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .review-bar { gap: 20px; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 56px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-ghost { white-space: normal; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- DEMO NOTICE -->
+<div id="demo-notice">
+  <strong>📋 Free Website Preview</strong> — This site was built for RJ Home Services as a complimentary demo by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth.com</a>. Not affiliated with Rich's business. <a href="https://kalnyesgrowth.com/free-preview/">See more demos →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-name">RJ <span>Home Services</span></span>
+    <span class="nav-tag">Generac Certified Dealer · BBB A+</span>
+  </div>
+  <a href="mailto:Rich@RJHomeServiceva.com" class="nav-cta">Free Estimate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge-row">
+    <span class="badge highlight">⭐ 300+ Five-Star Reviews</span>
+    <span class="badge">BBB A+ Accredited</span>
+    <span class="badge">Generac Certified Dealer</span>
+  </div>
+  <h1>Goldvein & Fredericksburg's<br><em>Most Trusted Home Services</em></h1>
+  <p>From backup generator installation to home repairs, RJ Home Services has earned 300+ five-star reviews and BBB A+ accreditation serving families across central Virginia.</p>
+  <div class="hero-btns">
+    <a href="mailto:Rich@RJHomeServiceva.com" class="btn-primary">Get Your Free Estimate</a>
+    <a href="#services" class="btn-ghost">Our Services</a>
+  </div>
+</section>
+
+<!-- REVIEW BAR -->
+<div class="review-bar">
+  <div class="review-bar-item">
+    <span class="review-bar-num">300+</span>
+    <span class="review-bar-label">Five-Star Reviews</span>
+  </div>
+  <div class="review-bar-item">
+    <span class="review-bar-num">BBB A+</span>
+    <span class="review-bar-label">Rating</span>
+  </div>
+  <div class="review-bar-item">
+    <span class="review-bar-num">Generac</span>
+    <span class="review-bar-label">Certified Dealer</span>
+  </div>
+  <div class="review-bar-item">
+    <span class="review-bar-num">Central VA</span>
+    <span class="review-bar-label">Service Area</span>
+  </div>
+</div>
+
+<!-- CREDENTIALS -->
+<section class="creds">
+  <p class="section-label">Why Customers Choose RJ Home Services</p>
+  <div class="creds-grid">
+    <div class="cred-card">
+      <div class="cred-icon">⭐</div>
+      <div class="cred-title">300+ Five-Star Reviews</div>
+      <div class="cred-sub">Consistently top-rated in the area</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🏆</div>
+      <div class="cred-title">BBB A+ Accredited</div>
+      <div class="cred-sub">Highest rating, no complaints</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">⚡</div>
+      <div class="cred-title">Generac Certified Dealer</div>
+      <div class="cred-sub">Factory-trained generator specialists</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🛡️</div>
+      <div class="cred-title">Licensed & Insured</div>
+      <div class="cred-sub">Full protection for you & your home</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">📋</div>
+      <div class="cred-title">Free Estimates</div>
+      <div class="cred-sub">No obligation. Honest pricing.</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">📍</div>
+      <div class="cred-title">Local to Goldvein, VA</div>
+      <div class="cred-sub">Serving central Virginia communities</div>
+    </div>
+  </div>
+</section>
+
+<!-- GENERAC FEATURE SECTION -->
+<section class="generac-section">
+  <div class="generac-inner">
+    <span class="generac-badge">Generac Certified Dealer</span>
+    <h2>Never Lose Power Again.<br><em>Whole-Home Backup Generators</em></h2>
+    <p>As a certified Generac dealer, RJ Home Services installs, services, and maintains whole-home standby generators. When the grid goes down — storm, outage, or emergency — your home stays on automatically within seconds.</p>
+    <p>We handle everything: site assessment, permit applications, installation, electrical hookup, and ongoing maintenance plans. Rich and his team are factory-trained and have installed generators across central Virginia.</p>
+    <div class="generac-grid">
+      <div class="gen-card">
+        <h4>Standby Generator Installation</h4>
+        <p>Whole-home automatic backup power. Turns on in seconds without you doing a thing.</p>
+      </div>
+      <div class="gen-card">
+        <h4>Generator Maintenance Plans</h4>
+        <p>Annual tune-ups, load tests, and inspections to keep your generator ready when you need it.</p>
+      </div>
+      <div class="gen-card">
+        <h4>Generator Repair & Service</h4>
+        <p>If it's not starting or not running right, we diagnose and fix it — fast.</p>
+      </div>
+      <div class="gen-card">
+        <h4>Transfer Switch Installation</h4>
+        <p>Safe, code-compliant transfer switches for portables or permanent systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>All Services</h2>
+  <p class="services-sub">Home services, generator solutions, and more — done right the first time</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3>Generac Generator Installation</h3>
+      <p>Certified installation of Generac standby generators for whole-home or essential circuit backup. Permits handled.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Generator Maintenance</h3>
+      <p>Annual service plans including oil changes, filter replacements, battery tests, and full operational inspections.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Home Repairs & Handyman</h3>
+      <p>From small fixes to larger projects — doors, windows, decks, and general home maintenance done professionally.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💡</div>
+      <h3>Electrical Services</h3>
+      <p>Panel work, outlet installations, transfer switches, and electrical connections for generator systems.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛠️</div>
+      <h3>Emergency Power Solutions</h3>
+      <p>Portable generator hookups, transfer switch upgrades, and emergency service when you need power fast.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Free In-Home Estimates</h3>
+      <p>Rich comes to you, assesses your property, and gives you a clear, honest estimate with no pressure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <h2>300+ Five-Star Reviews</h2>
+  <p class="reviews-sub">From families across Goldvein, Fredericksburg, Stafford & beyond</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Rich installed our Generac generator last spring and it already paid for itself. We lost power twice during storms and our house never went dark once. Installation was clean, professional, and he walked us through everything. Top-notch company."</p>
+      <div class="review-author">David M.</div>
+      <div class="review-location">Goldvein, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I called RJ Home Services after three other contractors ghosted me. Rich showed up on time, gave me a fair quote the same day, and had the work done by the end of the week. 300 reviews doesn't lie — these guys are the real deal. BBB A+ says it all."</p>
+      <div class="review-author">Patricia K.</div>
+      <div class="review-location">Fredericksburg, VA</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"We've used RJ Home Services for three different jobs over the past two years. Every single time — on time, fair price, clean work. Rich is one of the most honest contractors I've ever dealt with. Won't use anyone else."</p>
+      <div class="review-author">Greg T.</div>
+      <div class="review-location">Stafford, VA</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Get Your Free Estimate</h2>
+    <p>Tell us what you need and Rich will get back to you within 24 hours. Generator quotes include a site assessment at no charge.</p>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Rich will be in touch within 24 hours.');">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <input type="email" placeholder="Email Address" required>
+      <select>
+        <option value="" disabled selected>What can we help you with?</option>
+        <option>Generator Installation (Generac)</option>
+        <option>Generator Repair / Maintenance</option>
+        <option>Home Repairs / Handyman</option>
+        <option>Electrical Services</option>
+        <option>Transfer Switch Installation</option>
+        <option>Other / Not Sure</option>
+      </select>
+      <textarea placeholder="Tell us more about what you need — property address, generator size, scope of work..."></textarea>
+      <button type="submit" class="submit-btn">Send My Free Estimate Request</button>
+    </form>
+    <p class="contact-email">Email Rich directly: <a href="mailto:Rich@RJHomeServiceva.com">Rich@RJHomeServiceva.com</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>RJ Home Services</strong> &nbsp;·&nbsp; Goldvein, VA &nbsp;·&nbsp; Serving Fredericksburg, Stafford & Central Virginia</p>
+  <p style="margin-top:8px;">Generac Certified Dealer &nbsp;·&nbsp; BBB A+ &nbsp;·&nbsp; Licensed &amp; Insured</p>
+  <p style="margin-top:8px;"><a href="mailto:Rich@RJHomeServiceva.com" style="color:var(--amber);">Rich@RJHomeServiceva.com</a></p>
+  <p style="margin-top:16px; font-size:11px; opacity:.5;">Website by <a href="https://kalnyesgrowth.com" style="color:#888;">KalnyesGrowth.com</a></p>
+</footer>
+
+<!-- MOBILE BAR -->
+<a href="mailto:Rich@RJHomeServiceva.com" class="mobile-bar">📧 Email Rich for Free Estimate</a>
+
+</body>
+</html>
