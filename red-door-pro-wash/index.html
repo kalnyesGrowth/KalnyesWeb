@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Red Door Pro Wash | Fredericksburg & Stafford VA Pressure Washing</title>
+<meta name="description" content="Red Door Pro Wash — veteran-owned pressure washing in Fredericksburg & Stafford VA. 300+ five-star reviews. Roof washing, house washing, soft wash, gutter cleaning. Free quote.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;font-family:'Segoe UI',Arial,sans-serif;background:#f8f8f8;color:#1a1a1a}
+:root{--red:#c0392b;--red-dark:#922b21;--red-light:#e74c3c;--gold:#f39c12;--white:#fff;--bg:#f8f8f8;--dark:#111}
+
+/* ── ANNOUNCE BAR ── */
+#kg-announce{background:var(--red-dark);color:#fff;text-align:center;padding:10px 16px;font-size:.85rem;letter-spacing:.04em}
+#kg-announce a{color:#ffd6d6;text-decoration:underline}
+
+/* ── HERO ── */
+#hero{background:linear-gradient(135deg,#1a0000 0%,#3d0a0a 40%,#6b1111 100%);color:#fff;padding:60px 20px 50px;text-align:center;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.vet-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 16px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+.vet-badge svg{width:16px;height:16px;fill:#ffd700}
+#hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+#hero h1 span{color:var(--gold)}
+#hero .tagline{font-size:clamp(1rem,2.5vw,1.25rem);opacity:.85;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-stars{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:28px}
+.hero-stars .stars{color:var(--gold);font-size:1.5rem;letter-spacing:2px}
+.hero-stars .count{font-size:1.1rem;font-weight:700}
+.hero-stars .sub{font-size:.85rem;opacity:.75}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-primary{background:var(--red);color:#fff;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:background .2s;touch-action:manipulation;display:inline-block}
+.btn-primary:hover{background:var(--red-dark)}
+.btn-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,.5);transition:all .2s;touch-action:manipulation;display:inline-block}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+
+/* ── REVIEW STRIP ── */
+#review-strip{background:var(--red);color:#fff;padding:18px 20px;text-align:center}
+#review-strip .inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center}
+.r-stat{text-align:center}
+.r-stat .num{font-size:1.8rem;font-weight:800;line-height:1}
+.r-stat .lab{font-size:.8rem;opacity:.85;letter-spacing:.05em;text-transform:uppercase}
+.r-sep{width:1px;height:40px;background:rgba(255,255,255,.3)}
+@media(max-width:500px){.r-sep{display:none}}
+
+/* ── SECTION COMMON ── */
+section{padding:60px 20px}
+.section-inner{max-width:1000px;margin:0 auto}
+h2.section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;text-align:center;margin-bottom:8px}
+.section-sub{text-align:center;color:#666;margin-bottom:40px;font-size:1.05rem}
+
+/* ── SERVICES ── */
+#services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.svc-card{background:#f8f8f8;border-radius:10px;padding:24px 20px;text-align:center;border-top:3px solid var(--red)}
+.svc-icon{font-size:2.2rem;margin-bottom:10px}
+.svc-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.svc-card p{font-size:.85rem;color:#666;line-height:1.5}
+
+/* ── WHY ── */
+#why{background:#f8f8f8}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.why-card{background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.why-icon{font-size:2rem;margin-bottom:10px}
+.why-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--red-dark)}
+.why-card p{font-size:.88rem;color:#555;line-height:1.55}
+
+/* ── REVIEWS ── */
+#reviews{background:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.review-card{background:#f8f8f8;border-radius:10px;padding:22px;border-left:3px solid var(--red)}
+.review-stars{color:var(--gold);font-size:1rem;margin-bottom:8px}
+.review-text{font-size:.92rem;color:#333;line-height:1.6;font-style:italic;margin-bottom:12px}
+.review-author{font-size:.85rem;font-weight:700;color:#555}
+.review-source{font-size:.78rem;color:#999}
+
+/* ── VETERAN ── */
+#veteran{background:linear-gradient(135deg,#0d1b2a 0%,#1b2a3b 100%);color:#fff;text-align:center;padding:60px 20px}
+#veteran h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px}
+#veteran p{max-width:620px;margin:0 auto 24px;opacity:.85;line-height:1.65;font-size:1.05rem}
+.flag-icons{font-size:2.5rem;margin-bottom:20px;letter-spacing:8px}
+
+/* ── CTA ── */
+#cta{background:var(--red-dark);color:#fff;text-align:center;padding:60px 20px}
+#cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:12px}
+#cta p{max-width:540px;margin:0 auto 28px;opacity:.85;font-size:1.05rem}
+
+/* ── FOOTER ── */
+footer{background:#111;color:#aaa;text-align:center;padding:30px 20px;font-size:.85rem}
+footer a{color:#ccc;text-decoration:none}
+footer strong{color:#fff}
+
+/* ── KG CLAIM BAR ── */
+#kg-claim-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(20,20,20,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.1);padding:12px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;z-index:999}
+#kg-claim-bar span{color:#bbb;font-size:.82rem;white-space:nowrap;flex-shrink:0}
+#kg-claim-bar a{padding:9px 18px;border-radius:6px;font-size:.85rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;touch-action:manipulation}
+.bar-cta{background:var(--red);color:#fff}
+.bar-wa{background:#25d366;color:#fff}
+@media(max-width:600px){
+  #kg-claim-bar span{width:100%;text-align:center}
+  #kg-claim-bar a{flex:1;text-align:center;white-space:normal;min-width:0}
+}
+
+body{padding-bottom:80px}
+</style>
+</head>
+<body>
+
+<div id="kg-announce">
+  🔴 This is a <strong>free demo site</strong> built by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth</a> — $0 to see it, $400 to launch it live.
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="vet-badge">
+    <svg viewBox="0 0 24 24"><path d="M12 2L8 8H2l5 4-2 7 7-4 7 4-2-7 5-4h-6z"/></svg>
+    Veteran-Owned &amp; Operated
+  </div>
+  <h1>Fredericksburg's Most<br><span>Trusted Pressure Washers</span></h1>
+  <p class="tagline">Exterior cleaning that transforms your property — soft wash, roof, gutters &amp; more. 12-month warranty included.</p>
+  <div class="hero-stars">
+    <div class="stars">★★★★★</div>
+    <div class="count">300+</div>
+    <div class="sub">Five-Star Reviews</div>
+  </div>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Get My Free Quote</a>
+    <a class="btn-outline" href="tel:5409934913">📞 (540) 993-4913</a>
+  </div>
+</section>
+
+<!-- REVIEW STRIP -->
+<div id="review-strip">
+  <div class="inner">
+    <div class="r-stat"><div class="num">300+</div><div class="lab">5-Star Reviews</div></div>
+    <div class="r-sep"></div>
+    <div class="r-stat"><div class="num">★ 4.9</div><div class="lab">Average Rating</div></div>
+    <div class="r-sep"></div>
+    <div class="r-stat"><div class="num">12-Mo</div><div class="lab">House Wash Warranty</div></div>
+    <div class="r-sep"></div>
+    <div class="r-stat"><div class="num">Veteran</div><div class="lab">Owned &amp; Operated</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Professional exterior cleaning for every surface — safe, proven methods</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <h3>House Washing</h3>
+        <p>Soft wash method removes mold, algae & grime. Includes 12-month warranty.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏚️</div>
+        <h3>Roof Washing</h3>
+        <p>Kills black streaks at the root. Extends roof life and restores curb appeal.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <h3>Gutter Cleaning</h3>
+        <p>Full flush & inspection. Gutter guard installation also available.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🪟</div>
+        <h3>Window Cleaning</h3>
+        <p>Streak-free results inside and out. Perfect before a home sale or event.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🧱</div>
+        <h3>Paver Sealing</h3>
+        <p>Clean, seal & protect driveways and patios. Locks in color for years.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏢</div>
+        <h3>Commercial Washing</h3>
+        <p>Storefronts, parking lots, fleets — we handle large-scale projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <h2 class="section-title">Why Fredericksburg Chooses Red Door</h2>
+    <p class="section-sub">Real reviews. Real results. Real accountability.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎖️</div>
+        <h3>Veteran Owned</h3>
+        <p>Jonathan Maynard served and now serves the Fredericksburg community. The military values of precision, discipline, and accountability show in every job.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>12-Month Warranty</h3>
+        <p>The best warranty in the industry. If your house wash fades early, we come back — no questions, no charge.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💧</div>
+        <h3>Soft Wash Technology</h3>
+        <p>High pressure damages siding, roofing, and paint. We use low-pressure + biodegradable solution to clean safely and thoroughly.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📍</div>
+        <h3>Local &amp; Insured</h3>
+        <p>Based in Fredericksburg, serving Stafford, Spotsylvania, King George, Manassas &amp; Woodbridge. Fully licensed and insured.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <h2 class="section-title">300+ Five-Star Reviews</h2>
+    <p class="section-sub">Real customers. Real homes. Real results.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Jonathan and his team were prompt, professional, and thorough. My house looks brand new. The communication via email and text throughout the whole process was outstanding."</p>
+        <div class="review-author">Michael T.</div>
+        <div class="review-source">Google Review — Fredericksburg, VA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I was amazed at how clean my roof looked after they finished. I was convinced I'd have to replace it. They saved me thousands of dollars. Veteran-owned and it shows — top-notch service."</p>
+        <div class="review-author">Sandra R.</div>
+        <div class="review-source">Google Review — Stafford, VA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best pressure washing company in the area. Reasonably priced, locally owned, and they actually show up when they say they will. My driveway and gutters look incredible."</p>
+        <div class="review-author">Derek M.</div>
+        <div class="review-source">Google Review — Spotsylvania, VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VETERAN SECTION -->
+<section id="veteran">
+  <div class="flag-icons">🇺🇸</div>
+  <h2>Honoring Those Who Served</h2>
+  <p>Red Door Pro Wash is proud to be veteran-owned and operated. Every month, we run a Veteran Honor Program — nominate a veteran in the Fredericksburg community to receive a free or discounted service as our way of saying thank you for their service.</p>
+  <a class="btn-outline" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Nominate a Veteran or Get Your Free Quote</a>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="section-inner">
+    <h2>Ready to Transform Your Property?</h2>
+    <p>Free quotes. No pressure. Same-week scheduling available. Serving Fredericksburg, Stafford, Spotsylvania, King George &amp; Woodbridge.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a class="btn-primary" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Book a Free Quote</a>
+      <a class="btn-outline" href="tel:5409934913">📞 (540) 993-4913</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Red Door Pro Wash</strong> · 19 Baron Park Rd, Fredericksburg, VA 22405</p>
+  <p style="margin-top:8px">📞 <a href="tel:5409934913">(540) 993-4913</a> · Veteran-Owned · Licensed &amp; Insured</p>
+  <p style="margin-top:16px;font-size:.75rem;color:#555">Demo site built by <a href="https://kalnyesgrowth.com" style="color:#888">KalnyesGrowth.com</a> — $400 to launch your real site</p>
+</footer>
+
+<!-- STICKY CLAIM BAR -->
+<div id="kg-claim-bar">
+  <span>🔴 Free demo — $400 to launch</span>
+  <a class="bar-cta" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Book a Call</a>
+  <a class="bar-wa" href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%20saw%20the%20Red%20Door%20Pro%20Wash%20demo%20site" target="_blank">WhatsApp Jose</a>
+</div>
+
+</body>
+</html>

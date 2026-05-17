@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WashMasters Pressure Washing | Fredericksburg VA | Veteran-Owned</title>
+<meta name="description" content="WashMasters — veteran-owned pressure washing in Fredericksburg VA. Hundreds of 5-star reviews. House washing, roof cleaning, concrete, deck & gutter services. Call Kyle for a free estimate.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;font-family:'Segoe UI',Arial,sans-serif;background:#f4f7fb;color:#1a1a2e}
+:root{--blue:#1a5cad;--blue-dark:#123f7a;--blue-light:#2980b9;--gold:#f5a623;--white:#fff}
+
+/* ── ANNOUNCE BAR ── */
+#kg-announce{background:var(--blue-dark);color:#fff;text-align:center;padding:10px 16px;font-size:.85rem;letter-spacing:.04em}
+#kg-announce a{color:#a8d4ff;text-decoration:underline}
+
+/* ── HERO ── */
+#hero{background:linear-gradient(135deg,#0a1628 0%,#123055 50%,#1a5cad 100%);color:#fff;padding:60px 20px 50px;text-align:center;overflow:hidden;position:relative}
+.drop-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 25% 30%,rgba(255,255,255,.04) 0%,transparent 50%),radial-gradient(circle at 75% 70%,rgba(26,92,173,.3) 0%,transparent 60%);pointer-events:none}
+.vet-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:6px 16px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;position:relative}
+.vet-badge span{font-size:1rem}
+#hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:12px;position:relative}
+#hero h1 em{color:var(--gold);font-style:normal}
+#hero .tagline{font-size:clamp(.95rem,2.2vw,1.2rem);opacity:.85;margin-bottom:28px;max-width:580px;margin-left:auto;margin-right:auto;position:relative}
+.hero-stats{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:30px;position:relative}
+.h-stat{text-align:center}
+.h-stat .num{font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1}
+.h-stat .lab{font-size:.78rem;opacity:.75;text-transform:uppercase;letter-spacing:.05em}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative}
+.btn-primary{background:var(--gold);color:#1a1a1a;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:800;text-decoration:none;touch-action:manipulation;display:inline-block;transition:opacity .2s}
+.btn-primary:hover{opacity:.9}
+.btn-outline{background:transparent;color:#fff;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,.5);touch-action:manipulation;display:inline-block;transition:all .2s}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+
+/* ── TRUST BAR ── */
+#trust-bar{background:var(--blue);color:#fff;padding:16px 20px;text-align:center}
+#trust-bar .inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;font-size:.9rem}
+.trust-item{display:flex;align-items:center;gap:6px}
+.trust-item span:first-child{font-size:1.2rem}
+
+/* ── SECTION ── */
+section{padding:60px 20px}
+.section-inner{max-width:1000px;margin:0 auto}
+h2.section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;text-align:center;margin-bottom:8px}
+.section-sub{text-align:center;color:#666;margin-bottom:40px;font-size:1.05rem}
+
+/* ── SERVICES ── */
+#services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.svc-card{background:#f4f7fb;border-radius:10px;padding:24px 20px;text-align:center;border-top:3px solid var(--blue)}
+.svc-icon{font-size:2.2rem;margin-bottom:10px}
+.svc-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.svc-card p{font-size:.85rem;color:#666;line-height:1.5}
+
+/* ── WHY ── */
+#why{background:#f4f7fb}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.why-card{background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.why-icon{font-size:2rem;margin-bottom:10px}
+.why-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--blue-dark)}
+.why-card p{font-size:.88rem;color:#555;line-height:1.55}
+
+/* ── REVIEWS ── */
+#reviews{background:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.review-card{background:#f4f7fb;border-radius:10px;padding:22px;border-left:3px solid var(--blue)}
+.review-stars{color:var(--gold);font-size:1rem;margin-bottom:8px}
+.review-text{font-size:.92rem;color:#333;line-height:1.6;font-style:italic;margin-bottom:12px}
+.review-author{font-size:.85rem;font-weight:700;color:#555}
+.review-source{font-size:.78rem;color:#999}
+
+/* ── VETERAN ── */
+#veteran{background:linear-gradient(135deg,#0a1628 0%,#1b2a3b 100%);color:#fff;text-align:center;padding:60px 20px}
+#veteran h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px}
+#veteran p{max-width:620px;margin:0 auto 24px;opacity:.85;line-height:1.65;font-size:1.05rem}
+
+/* ── CTA ── */
+#cta{background:var(--blue-dark);color:#fff;text-align:center;padding:60px 20px}
+#cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:12px}
+#cta p{max-width:540px;margin:0 auto 28px;opacity:.85;font-size:1.05rem}
+
+/* ── FOOTER ── */
+footer{background:#0a1628;color:#aaa;text-align:center;padding:30px 20px;font-size:.85rem}
+footer a{color:#ccc;text-decoration:none}
+footer strong{color:#fff}
+
+/* ── KG CLAIM BAR ── */
+#kg-claim-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(10,22,40,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.1);padding:12px 16px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;z-index:999}
+#kg-claim-bar span{color:#bbb;font-size:.82rem;white-space:nowrap;flex-shrink:0}
+#kg-claim-bar a{padding:9px 18px;border-radius:6px;font-size:.85rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;touch-action:manipulation}
+.bar-cta{background:var(--blue);color:#fff}
+.bar-wa{background:#25d366;color:#fff}
+@media(max-width:600px){
+  #kg-claim-bar span{width:100%;text-align:center}
+  #kg-claim-bar a{flex:1;text-align:center;white-space:normal;min-width:0}
+}
+
+body{padding-bottom:80px}
+</style>
+</head>
+<body>
+
+<div id="kg-announce">
+  💧 This is a <strong>free demo site</strong> built by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth</a> — $0 to see it, $400 to launch it live.
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="drop-pattern"></div>
+  <div class="vet-badge"><span>🎖️</span> SDVOSB — Veteran-Owned &amp; Operated</div>
+  <h1>Fredericksburg's<br><em>Highest-Rated</em><br>Pressure Washing</h1>
+  <p class="tagline">Hundreds of five-star reviews. Biodegradable soft wash. Trusted by homeowners across Fredericksburg, King George &amp; Caroline County.</p>
+  <div class="hero-stats">
+    <div class="h-stat"><div class="num">★ 5.0</div><div class="lab">Average Rating</div></div>
+    <div class="h-stat"><div class="num">100s</div><div class="lab">5-Star Reviews</div></div>
+    <div class="h-stat"><div class="num">1,000s</div><div class="lab">Projects Done</div></div>
+  </div>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Get My Free Estimate</a>
+    <a class="btn-outline" href="tel:5403001071">📞 (540) 300-1071</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust-bar">
+  <div class="inner">
+    <div class="trust-item"><span>🎖️</span><span>Veteran-Owned SDVOSB</span></div>
+    <div class="trust-item"><span>🛡️</span><span>Licensed &amp; Insured</span></div>
+    <div class="trust-item"><span>🌿</span><span>Biodegradable Solutions</span></div>
+    <div class="trust-item"><span>📍</span><span>Port Royal, VA — Serving Fredericksburg Area</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <h2 class="section-title">What We Clean</h2>
+    <p class="section-sub">Safe, proven methods for every surface on your property</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <h3>House Washing</h3>
+        <p>Soft wash removes mold, mildew & algae from siding — safe for all surfaces.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏚️</div>
+        <h3>Roof Washing</h3>
+        <p>Kills black streaks and roof algae at the root. Extends roof life significantly.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏗️</div>
+        <h3>Concrete Cleaning</h3>
+        <p>Driveways, walkways & patios — professional sealing available after cleaning.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <h3>Gutter Cleaning</h3>
+        <p>Full flush &amp; inspection. Gutter guard installation also available.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🪵</div>
+        <h3>Deck &amp; Fence</h3>
+        <p>Clean and seal for long-lasting protection and restored curb appeal.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🪟</div>
+        <h3>Window Cleaning</h3>
+        <p>Streak-free exterior window cleaning. Perfect before selling or hosting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <h2 class="section-title">Why Homeowners Trust WashMasters</h2>
+    <p class="section-sub">Veteran values: show up on time, do the job right, stand behind the work</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎖️</div>
+        <h3>Veteran-Owned SDVOSB</h3>
+        <p>Service-Disabled Veteran-Owned Small Business. Military precision and accountability on every job — we don't cut corners.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <h3>Safe Soft Wash</h3>
+        <p>Biodegradable solutions that kill mold and algae at the root without damaging siding, roofing, or landscaping.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Fast Scheduling</h3>
+        <p>Kyle responds quickly and books same-week when available. No chasing contractors — we show up when we say we will.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3>Fair, Transparent Pricing</h3>
+        <p>Free estimates with no pressure. Consistent 5.0-star reviews for quality AND affordability — you get both.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <h2 class="section-title">What Customers Say</h2>
+    <p class="section-sub">Hundreds of five-star reviews across Google, Yelp &amp; Nextdoor</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kyle was responsive, professional, and affordable. I was amazed at how clean he got my house. I found WashMasters through Google and the consistent 5.0 rating said it all."</p>
+        <div class="review-author">Jennifer S.</div>
+        <div class="review-source">Google Review — Fredericksburg, VA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Saw WashMasters was veteran-owned and called immediately. Kyle showed up early, did an amazing job on my home and deck. Great professionalism and quality of work."</p>
+        <div class="review-author">Brad T.</div>
+        <div class="review-source">Google Review — King George, VA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Kyle got me a quote in record time and was early on the day I booked. My roof looked absolutely brand new — I was amazed at the results. Will definitely use again."</p>
+        <div class="review-author">Kathy M.</div>
+        <div class="review-source">Yelp Review — Port Royal, VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VETERAN SECTION -->
+<section id="veteran" style="background:linear-gradient(135deg,#0a1628 0%,#1b2a3b 100%);color:#fff;text-align:center;padding:60px 20px">
+  <div style="font-size:3rem;margin-bottom:20px">🇺🇸 🎖️</div>
+  <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px">Service-Disabled Veteran Small Business</h2>
+  <p style="max-width:600px;margin:0 auto 28px;opacity:.85;line-height:1.65;font-size:1.05rem">WashMasters is proud to be a SDVOSB — a Service-Disabled Veteran-Owned Small Business. When you hire us, you're supporting a veteran family and getting the same discipline and attention to detail that military service demands.</p>
+  <a style="background:transparent;color:#fff;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,.5);touch-action:manipulation;display:inline-block" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Get My Free Estimate</a>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="section-inner">
+    <h2>Ready to See the Difference?</h2>
+    <p>Free estimates, same-week scheduling, veteran accountability. Serving Fredericksburg, King George, Caroline County &amp; surrounding areas.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a class="btn-primary" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Book My Free Estimate</a>
+      <a class="btn-outline" href="tel:5403001071">📞 (540) 300-1071</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>WashMasters Pressure Washing</strong> · 30939 Portobago Trail, Port Royal, VA 22535</p>
+  <p style="margin-top:8px">📞 <a href="tel:5403001071">(540) 300-1071</a> · Veteran-Owned SDVOSB · Licensed &amp; Insured</p>
+  <p style="margin-top:16px;font-size:.75rem;color:#555">Demo site built by <a href="https://kalnyesgrowth.com" style="color:#888">KalnyesGrowth.com</a> — $400 to launch your real site</p>
+</footer>
+
+<!-- STICKY CLAIM BAR -->
+<div id="kg-claim-bar">
+  <span>💧 Free demo — $400 to launch</span>
+  <a class="bar-cta" href="https://kalnyesgrowth.com/free-preview/" target="_blank">Book a Call</a>
+  <a class="bar-wa" href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%20saw%20the%20WashMasters%20demo%20site" target="_blank">WhatsApp Jose</a>
+</div>
+
+</body>
+</html>
