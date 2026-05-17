@@ -518,7 +518,7 @@ p{color:var(--body);line-height:1.75}
 .port-nav-btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
 .port-nav-btn:disabled{opacity:.15;pointer-events:none}
 .port-stage{flex:1;min-width:0}
-@media(max-width:768px){.port-nav-btn{width:48px;height:48px;font-size:1.8rem;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}}
+@media(max-width:768px){.port-nav-btn{width:56px;height:56px;font-size:2rem;background:var(--gold)!important;border-color:var(--gold)!important;color:#111!important;box-shadow:0 4px 16px rgba(0,0,0,.4)}}
 .port-dots-row{display:flex;justify-content:center;gap:8px;margin-top:24px}
 .port-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0;flex-shrink:0}
 .port-dot.active{width:28px;background:var(--gold)}
@@ -2418,8 +2418,12 @@ function toggleFaq(btn) {
     });
   });
 
-  prevBtn.addEventListener('click', function(){ go(cur - 1); });
-  nextBtn.addEventListener('click', function(){ go(cur + 1); });
+  function navBtn(btn, handler) {
+    btn.addEventListener('click', handler);
+    btn.addEventListener('touchend', function(e){ e.preventDefault(); handler(); }, {passive:false});
+  }
+  navBtn(prevBtn, function(){ go(cur - 1); });
+  navBtn(nextBtn, function(){ go(cur + 1); });
 
   // Touch swipe support for mobile
   var stage = document.getElementById('port-stage');
