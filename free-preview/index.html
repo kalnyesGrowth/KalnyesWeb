@@ -454,6 +454,40 @@
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<style>
+/* EXIT INTENT POPUP */
+#ei-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;align-items:center;justify-content:center;padding:16px}
+#ei-overlay.show{display:flex}
+#ei-box{background:#fff;border-radius:16px;padding:36px 32px;max-width:460px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative;animation:eipop .3s ease}
+@keyframes eipop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+#ei-close{position:absolute;top:14px;right:18px;font-size:1.4rem;cursor:pointer;color:#9ca3af;background:none;border:none;line-height:1}
+#ei-box h3{font-size:1.5rem;font-weight:800;color:#111827;margin-bottom:10px;line-height:1.25}
+#ei-box p{font-size:.95rem;color:#4b5563;margin-bottom:22px;line-height:1.6}
+.ei-btns{display:flex;flex-direction:column;gap:10px}
+.ei-btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25d366;color:#fff;padding:16px 24px;border-radius:10px;font-weight:800;font-size:1rem;text-decoration:none}
+.ei-btn-call{display:flex;align-items:center;justify-content:center;gap:8px;background:#1a73e8;color:#fff;padding:14px 24px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none}
+.ei-btn-skip{font-size:.8rem;color:#9ca3af;cursor:pointer;background:none;border:none;margin-top:6px;text-decoration:underline}
+#ei-box .ei-badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+</style>
+
+<!-- EXIT INTENT POPUP -->
+<div id="ei-overlay" role="dialog" aria-modal="true">
+  <div id="ei-box">
+    <button id="ei-close" aria-label="Close">×</button>
+    <div class="ei-badge">⏰ Only 5 spots left this month</div>
+    <h3>Before you go —<br>get your free preview</h3>
+    <p>Don't lose customers to competitors who have a website. Takes 2 minutes — we build the whole site and you see it <strong>before paying anything.</strong></p>
+    <div class="ei-btns">
+      <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%20want%20a%20free%20website%20preview%20for%20my%20business" class="ei-btn-wa">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Text Jose on WhatsApp (fastest)
+      </a>
+      <a href="tel:+15407838835" class="ei-btn-call">📞 Call (540) 783-8835 directly</a>
+      <button class="ei-btn-skip" id="ei-skip">No thanks, I'll figure it out myself</button>
+    </div>
+  </div>
+</div>
+
 <script>
   /* Scroll reveal */
   var s = document.createElement('style');
@@ -462,6 +496,25 @@
   document.querySelectorAll('.how-card,.demo-card,.social-card,.trust-item').forEach(function(el){el.classList.add('rev')});
   var obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rved');obs.unobserve(e.target);}});},{threshold:0.08});
   document.querySelectorAll('.rev').forEach(function(el){obs.observe(el);});
+
+  /* Exit intent */
+  var eiShown = false;
+  var eiOverlay = document.getElementById('ei-overlay');
+  function showEI(){if(eiShown)return;eiShown=true;eiOverlay.classList.add('show');if(typeof gtag==='function')gtag('event','exit_intent_shown');}
+  function hideEI(){eiOverlay.classList.remove('show');}
+  document.getElementById('ei-close').addEventListener('click',hideEI);
+  document.getElementById('ei-skip').addEventListener('click',hideEI);
+  eiOverlay.addEventListener('click',function(e){if(e.target===eiOverlay)hideEI();});
+  /* Desktop: mouse leaves to top of viewport */
+  document.addEventListener('mouseleave',function(e){if(e.clientY<=0)showEI();});
+  /* Mobile: show after 45s of inactivity or scroll back to top */
+  var mobileTimer = setTimeout(function(){if(/Mobi|Android/i.test(navigator.userAgent))showEI();},45000);
+  var lastScrollY = 0;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y<lastScrollY&&lastScrollY>400&&y<100&&/Mobi|Android/i.test(navigator.userAgent))showEI();
+    lastScrollY=y;
+  });
 </script>
 </body>
 </html>
