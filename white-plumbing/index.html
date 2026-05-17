@@ -9,7 +9,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a2e;line-height:1.65;background:#fff}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1a1a2e;line-height:1.65;background:#fff;padding-bottom:56px}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
@@ -129,16 +129,17 @@ footer strong{color:#fff}
 @media(max-width:640px){#sticky-bar{display:block}body{padding-bottom:76px}}
 
 /* PREVIEW NOTICE */
-.preview-banner{background:linear-gradient(90deg,#1a3abf,#0f2899);color:#fff;text-align:center;padding:10px 20px;font-size:.82rem;font-weight:700}
-.preview-banner a{color:#fbbf24;text-decoration:underline}
+.preview-banner{background:linear-gradient(90deg,#1a3abf,#0f2899);color:#fff;text-align:center;padding:12px 20px 14px;font-size:.84rem;font-weight:700;position:fixed;bottom:0;left:0;right:0;z-index:10000;box-shadow:0 -4px 24px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.preview-banner a{background:#fbbf24;color:#1a1a2e;padding:7px 18px;border-radius:50px;font-weight:900;font-size:.82rem;text-decoration:none;white-space:nowrap}
+.preview-banner a:hover{background:#f59e0b}
 </style>
 </head>
 <body>
 
 <!-- PREVIEW NOTICE (shown to Greg — this is his demo) -->
 <div class="preview-banner">
-  🎨 This is a <strong>free preview site</strong> built by Jose at Kalnyes Growth — just for White Plumbing Co.
-  Like what you see? <a href="https://calendly.com/kalnyesgrowth/boost-your-business">Book a free 15-min call →</a>
+  <span>🎨 <strong>Free preview</strong> built by Jose at Kalnyes Growth — just for White Plumbing Co. Like what you see?</span>
+  <a href="https://kalnyesgrowth.com/#book-call">Book a Free 15-Min Call →</a>
 </div>
 
 <nav>
