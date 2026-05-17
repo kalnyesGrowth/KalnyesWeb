@@ -1672,6 +1672,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="niche-name">Painters</div>
         <span class="niche-roi">1 exterior job = $2,000–$6,000</span>
         <p class="niche-desc">Before/after galleries, instant quote requests, and Google rankings turn your painting business into a lead machine. Stop relying on word of mouth alone.</p>
+        <a href="https://kalnyesgrowth.com/painter-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live painting preview →</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px">
@@ -2205,6 +2206,7 @@ footer{background:var(--dark);padding:56px 0 32px}
       {label:"❄️ HVAC / Heating & Cooling",next:stepHVAC},
       {label:"🎉 Party Rental / Events",next:stepParty},
       {label:"🌿 Landscaping / Lawn Care",next:stepLandscape},
+      {label:"🖌️ Painting",next:stepPainting},
       {label:"🏗️ Other local business",next:stepOther}
     ]);
   }
@@ -2240,6 +2242,13 @@ footer{background:var(--dark);padding:56px 0 32px}
     addMsg("Love it — here's a landscaping demo I built:","bot");
     clearOptions();
     showLink("View Landscaping Demo →","https://kalnyesgrowth.com/freshcut-demo/",false);
+    setTimeout(function(){stepBook();},600);
+  }
+
+  function stepPainting(){
+    addMsg("Great niche — before/after galleries and Google rankings are game-changers for painters. Here's a demo I built:","bot");
+    clearOptions();
+    showLink("View Painting Demo →","https://kalnyesgrowth.com/painter-demo/",false);
     setTimeout(function(){stepBook();},600);
   }
 
