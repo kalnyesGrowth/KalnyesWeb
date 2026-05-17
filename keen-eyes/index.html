@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Keen Eyes Auto Detailing | Stafford VA | Army Veteran · IDA Certified</title>
+<meta name="description" content="Keen Eyes Auto Detailing — Stafford VA's Army veteran-owned, IDA Certified mobile auto detailer. Ceramic coatings, paint correction, interior deep clean, window tint. BBB A+. Wayne Lewis, 20+ years U.S. Army. (540) 385-1641.">
+<link rel="canonical" href="https://kalnyesgrowth.com/keen-eyes/">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f0f4f8;color:#0d1b2e}
+:root{--navy:#0d2b52;--navy-light:#1a3d6b;--gold:#c9a227;--gold-light:#e6b800;--cream:#f8f9fc}
+nav{background:#0d2b52;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:800;color:#fff;font-size:1rem}
+.nav-phone{font-weight:700;color:var(--gold-light);font-size:.9rem;text-decoration:none}
+#hero{background:linear-gradient(135deg,#060e1a 0%,#0d2b52 55%,#1a3d6b 100%);color:#fff;padding:70px 20px 56px;text-align:center}
+.hero-label{display:inline-block;background:rgba(201,162,39,.15);color:var(--gold-light);border:1px solid rgba(201,162,39,.35);border-radius:20px;padding:5px 16px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+#hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:14px;max-width:780px;margin-left:auto;margin-right:auto}
+#hero h1 em{color:var(--gold-light);font-style:normal}
+#hero p{font-size:clamp(1rem,2.2vw,1.15rem);opacity:.88;max-width:580px;margin:0 auto 30px;line-height:1.65}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:32px}
+.btn-gold{background:var(--gold);color:#0d1b2e;padding:16px 32px;border-radius:8px;font-size:1.05rem;font-weight:800;text-decoration:none;touch-action:manipulation;display:inline-block}
+.btn-outline{background:transparent;color:#fff;padding:16px 32px;border-radius:8px;font-size:1.05rem;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,.45);touch-action:manipulation;display:inline-block}
+.proof-strip{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;opacity:.85}
+.container{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:68px 20px}
+h2.st{font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:800;text-align:center;margin-bottom:10px}
+.ss{text-align:center;color:#3a4a62;margin-bottom:44px;font-size:1.05rem;max-width:580px;margin-left:auto;margin-right:auto}
+.sl{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px}
+#creds{background:var(--navy);color:#fff;padding:36px 20px}
+.creds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+@media(max-width:600px){.creds-grid{grid-template-columns:repeat(2,1fr)}}
+.cred-card{text-align:center;padding:18px 10px;background:rgba(255,255,255,.07);border:1px solid rgba(201,162,39,.25);border-radius:10px}
+.cred-icon{font-size:1.6rem;margin-bottom:6px}
+.cred-title{font-size:.82rem;font-weight:800;color:var(--gold-light);margin-bottom:2px}
+.cred-sub{font-size:.74rem;color:rgba(255,255,255,.65)}
+#about{background:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:920px;margin:0 auto}
+@media(max-width:720px){.about-inner{grid-template-columns:1fr}}
+.about-text h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;margin-bottom:14px}
+.about-text p{color:#3a4a62;line-height:1.7;margin-bottom:14px;font-size:.95rem}
+.about-certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.cert-badge{background:var(--navy);color:var(--gold-light);font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:20px}
+.about-img{background:linear-gradient(135deg,#0d2b52,#1a3d6b);border-radius:12px;min-height:280px;display:flex;align-items:center;justify-content:center;text-align:center;padding:32px;color:#fff}
+.about-img h3{font-size:1.5rem;font-weight:800;color:var(--gold-light);margin-bottom:10px}
+.about-img p{font-size:.9rem;opacity:.8;line-height:1.6}
+#services{background:var(--cream)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.svc-card{background:#fff;border:1px solid #d8e0ec;border-radius:10px;padding:24px 20px;border-top:3px solid var(--gold)}
+.svc-icon{font-size:1.8rem;margin-bottom:10px}
+.svc-card h3{font-size:.97rem;font-weight:700;margin-bottom:8px}
+.svc-card p{font-size:.84rem;color:#3a4a62;line-height:1.55}
+#reviews{background:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.rev-card{background:var(--cream);border:1px solid #d8e0ec;border-radius:10px;padding:20px}
+.rev-stars{color:#f9a825;font-size:1rem;margin-bottom:8px}
+.rev-text{font-size:.87rem;line-height:1.6;color:#0d1b2e;margin-bottom:12px;font-style:italic}
+.rev-author{font-size:.78rem;font-weight:700;color:var(--navy)}
+.rev-src{font-size:.72rem;color:#888;margin-top:2px}
+#contact{background:var(--cream);border-top:1px solid #d8e0ec}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:900px;margin:0 auto}
+@media(max-width:760px){.contact-inner{grid-template-columns:1fr}}
+.contact-left h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:12px}
+.contact-left p{color:#3a4a62;line-height:1.7;margin-bottom:18px}
+.cta-box{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--navy);color:#fff;border-radius:8px;margin-bottom:10px;text-decoration:none}
+.cta-box span{font-size:1.5rem}
+.cta-box div{flex:1}
+.cta-box strong{display:block;font-size:1.05rem}
+.cta-box small{opacity:.8;font-size:.82rem}
+.cta-wa{background:#25d366}
+.contact-right{background:#fff;border:1px solid #d8e0ec;border-radius:10px;padding:28px}
+.contact-right h3{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:#0d1b2e}
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-size:.82rem;font-weight:700;color:#3a4a62;margin-bottom:4px}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:10px 12px;border:1px solid #d8e0ec;border-radius:6px;font-size:.9rem;font-family:inherit;color:#0d1b2e}
+.form-row textarea{min-height:80px;resize:vertical}
+.form-submit{width:100%;background:var(--navy);color:#fff;border:none;padding:14px;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer}
+#kg-claim-bar{background:#060e1a;color:#7a9acc;text-align:center;padding:14px 20px;font-size:.82rem}
+#kg-claim-bar a{color:var(--gold-light);font-weight:700;text-decoration:none}
+footer{background:#060e1a;color:#3a5070;text-align:center;padding:28px 20px;font-size:.82rem}
+footer a{color:#7a9acc;text-decoration:none}
+footer strong{color:#fff}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #d8e0ec;padding:10px 16px;gap:8px;z-index:300}
+@media(max-width:700px){.mobile-bar{display:flex}}
+.mobile-bar a{flex:1;text-align:center;padding:13px 4px;border-radius:8px;font-weight:700;font-size:.82rem;text-decoration:none;line-height:1.3;white-space:normal;min-width:0}
+.mb-call{background:var(--navy);color:#fff}
+.mb-wa{background:#25d366;color:#fff}
+.mb-book{background:var(--cream);color:#0d1b2e;border:1px solid #d8e0ec}
+body{padding-bottom:80px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Keen Eyes Auto Detailing","description":"Army veteran-owned, IDA Certified mobile auto detailing in Stafford VA. Ceramic coatings, paint correction, interior deep cleaning, window tinting. BBB A+.","url":"https://keeneyesautodetailing.com","telephone":"+15403851641","email":"info@keeneyesautodetailing.com","address":{"@type":"PostalAddress","streetAddress":"227 Garrisonville Rd","addressLocality":"Stafford","addressRegion":"VA","postalCode":"22554","addressCountry":"US"},"areaServed":["Stafford VA","Fredericksburg VA","Woodbridge VA","Northern Virginia"]}</script>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Keen Eyes Auto Detailing · Stafford VA</div>
+  <a href="tel:+15403851641" class="nav-phone">📞 (540) 385-1641</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-label">🇺🇸 Army Veteran · IDA Certified · BBB A+</div>
+  <h1>Stafford VA's <em>Veteran-Owned</em><br>Certified Auto Detailer — Wayne Lewis</h1>
+  <p>20+ years U.S. Army. IDA Certified Detailer. The same discipline and precision that served this country now protects your vehicle's finish. Ceramic coatings, paint correction, interior restoration — done right the first time.</p>
+  <div class="hero-btns">
+    <a class="btn-gold" href="tel:+15403851641">📞 Call (540) 385-1641</a>
+    <a class="btn-outline" href="#contact">Book a Detail →</a>
+  </div>
+  <div class="proof-strip">
+    <div>🎖️ 20+ Years U.S. Army</div>
+    <div>🏅 IDA Certified Detailer (CD + SV)</div>
+    <div>✅ BBB A+ Accredited</div>
+    <div>📍 Mobile · Stafford · Fredericksburg · Woodbridge</div>
+  </div>
+</section>
+
+<section id="creds">
+  <div class="creds-grid">
+    <div class="cred-card"><div class="cred-icon">🎖️</div><div class="cred-title">U.S. Army Veteran</div><div class="cred-sub">20+ Years Active Duty Service</div></div>
+    <div class="cred-card"><div class="cred-icon">🏅</div><div class="cred-title">IDA Certified Detailer</div><div class="cred-sub">CD + Skills Validated (SV)</div></div>
+    <div class="cred-card"><div class="cred-icon">✅</div><div class="cred-title">BBB A+ Accredited</div><div class="cred-sub">Accredited Since 2025</div></div>
+    <div class="cred-card"><div class="cred-icon">🛡️</div><div class="cred-title">Fully Insured</div><div class="cred-sub">Detail King Certified · Est. 2020</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="sl">About Wayne</div>
+        <h2>20 Years in the Army. Now Protecting Your Vehicle.</h2>
+        <p>Wayne Lewis served over two decades as a U.S. Army soldier — where precision, attention to detail, and getting it right the first time aren't optional. In 2020, he brought that same standard to Stafford as a certified mobile auto detailer.</p>
+        <p>Wayne holds IDA Certified Detailer (CD) and Skills Validated (SV) credentials — among the most respected certifications in the detailing industry worldwide. He's BBB A+ accredited and Detail King certified.</p>
+        <p>When Wayne details your vehicle, you're not getting a teenager with a pressure washer. You're getting a trained professional who takes your investment seriously.</p>
+        <div class="about-certs">
+          <span class="cert-badge">🏅 IDA Certified Detailer</span>
+          <span class="cert-badge">🎯 Skills Validated (SV)</span>
+          <span class="cert-badge">✅ BBB A+</span>
+          <span class="cert-badge">🛡️ Detail King Certified</span>
+          <span class="cert-badge">🇺🇸 Veteran-Owned</span>
+        </div>
+      </div>
+      <div class="about-img">
+        <div>
+          <h3>"I served for 20 years.<br>Now I serve your vehicle."</h3>
+          <p>Wayne Lewis · Owner &amp; Lead Detailer<br>Keen Eyes Auto Detailing · Stafford, VA<br><br>📍 Mobile · Serving Stafford, Fredericksburg &amp; Woodbridge</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="sl">Our Services</div>
+    <h2 class="st">Professional detailing for every need</h2>
+    <p class="ss">Mobile service — we come to you. Stafford, Fredericksburg, Woodbridge, and surrounding areas.</p>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">🛡️</div><h3>Ceramic Coating</h3><p>Long-lasting paint protection that repels water, dirt, and UV damage. Keeps your vehicle looking new for years.</p></div>
+      <div class="svc-card"><div class="svc-icon">✨</div><h3>Paint Correction</h3><p>Remove swirl marks, scratches, and oxidation. Restore your paint to a mirror-like finish that turns heads.</p></div>
+      <div class="svc-card"><div class="svc-icon">🧹</div><h3>Interior Deep Clean</h3><p>Full interior restoration — seats, carpets, door panels, dashboard. Left spotless and smelling fresh.</p></div>
+      <div class="svc-card"><div class="svc-icon">🪟</div><h3>UV Window Tinting</h3><p>Block heat, protect your interior, and improve privacy. Professional grade film, precision application.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="sl">Customer Reviews</div>
+    <h2 class="st">5-star rated across Stafford &amp; Fredericksburg</h2>
+    <p class="ss">Customers consistently highlight Wayne's professionalism, communication, and the quality of results they never expected.</p>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Wayne was incredibly professional and communicative throughout the entire process. My car looks better than it did when I drove it off the lot. The ceramic coating is unbelievable."</p>
+        <div class="rev-author">David M. — Stafford, VA</div>
+        <div class="rev-src">Google Review</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"I was skeptical about mobile detailing but Wayne completely changed my mind. He came to my house, set up everything, and my truck looks absolutely brand new inside and out."</p>
+        <div class="rev-author">Jennifer L. — Fredericksburg, VA</div>
+        <div class="rev-src">Google Review</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"As a fellow veteran, I trusted Wayne with my daily driver. He took his time, explained every step, and delivered results that far exceeded what I paid. Will use again and again."</p>
+        <div class="rev-author">Robert C. — Stafford, VA</div>
+        <div class="rev-src">Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2>Book Your Detail</h2>
+      <p>Mobile service — Wayne comes to your home or office. Serving Stafford, Fredericksburg, Woodbridge, and surrounding Northern Virginia.</p>
+      <a href="tel:+15403851641" class="cta-box">
+        <span>📞</span>
+        <div><strong>(540) 385-1641</strong><small>Call Wayne directly · Mon–Fri 9AM–5PM</small></div>
+      </a>
+      <a href="mailto:info@keeneyesautodetailing.com" class="cta-box">
+        <span>✉️</span>
+        <div><strong>info@keeneyesautodetailing.com</strong><small>Email for quotes and scheduling</small></div>
+      </a>
+      <a href="https://wa.me/15403851641?text=Hi%20Wayne%2C%20I%27d%20like%20to%20book%20a%20detail" class="cta-box cta-wa">
+        <span>💬</span>
+        <div><strong>Text Wayne</strong><small>Fastest way to book</small></div>
+      </a>
+    </div>
+    <div class="contact-right">
+      <h3>Request a Quote</h3>
+      <form>
+        <div class="form-row"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
+        <div class="form-row"><label>Phone</label><input type="tel" placeholder="(540) 555-0000"></div>
+        <div class="form-row"><label>Service</label>
+          <select>
+            <option>Ceramic Coating</option>
+            <option>Paint Correction</option>
+            <option>Interior Deep Clean</option>
+            <option>Window Tinting</option>
+            <option>Full Detail Package</option>
+          </select>
+        </div>
+        <div class="form-row"><label>Vehicle Make &amp; Model</label><input type="text" placeholder="2021 Ford F-150"></div>
+        <div class="form-row"><label>City</label><input type="text" placeholder="Stafford, Fredericksburg..."></div>
+        <button class="form-submit" type="submit">Request Quote →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="kg-claim-bar">
+  This is a <strong>free website demo</strong> built by <a href="https://kalnyesgrowth.com/free-preview/">KalnyesGrowth Web Design</a> — like what you see? <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%20saw%20the%20Keen%20Eyes%20demo%20and%20want%20to%20launch%20it">Text Jose to launch it →</a>
+</div>
+
+<footer>
+  <p><strong>Keen Eyes Auto Detailing</strong> · Stafford, VA · <a href="tel:+15403851641">(540) 385-1641</a></p>
+  <p style="margin-top:8px">Mobile auto detailing · Ceramic coatings · Paint correction · Stafford · Fredericksburg · Woodbridge VA</p>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+15403851641" class="mb-call">📞 Call</a>
+  <a href="https://wa.me/15403851641?text=Hi%20Wayne%2C%20I%27d%20like%20to%20book%20a%20detail" class="mb-wa">💬 Text</a>
+  <a href="#contact" class="mb-book">📋 Book Detail</a>
+</div>
+</body>
+</html>
