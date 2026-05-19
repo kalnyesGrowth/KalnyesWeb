@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>His Grace Handyman Services — Fredericksburg, VA</title>
+  <meta name="description" content="His Grace Handyman — Sunny Bokurla, Fredericksburg VA. Carpentry, painting, cabinets, assembly, installations and 50+ services. 4.9★, 394 hires, Top Pro. Free estimates.">
+  <meta property="og:title" content="His Grace Handyman — Fredericksburg, VA">
+  <meta property="og:description" content="4.9★, 394 hires, Top Pro. Handyman services done right in Fredericksburg & Northern VA.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0d0f1a;color:#ecedf5;-webkit-font-smoothing:antialiased}
+
+    :root{
+      --bg:#0d0f1a;
+      --bg2:#131525;
+      --bg3:#1a1e35;
+      --indigo:#6366f1;
+      --indigo-bright:#818cf8;
+      --gold:#f59e0b;
+      --text:#ecedf5;
+      --muted:#8b90b8;
+      --border:#252840;
+    }
+
+    /* KG PROMO BANNER */
+    .kg-banner{background:linear-gradient(90deg,#1e3a5f,#1a4a7a);border-bottom:2px solid var(--gold);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:500}
+    .kg-banner-text{font-size:0.82rem;color:#e0edff;font-weight:500;flex:1;min-width:200px}
+    .kg-banner-text strong{color:#fff;font-weight:700}
+    .kg-banner-actions{display:flex;gap:6px;flex-wrap:wrap}
+    .kg-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:6px;font-size:0.78rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity 0.2s}
+    .kg-btn:hover{opacity:0.85}
+    .kg-btn-call{background:#1a73e8;color:#fff}
+    .kg-btn-wa{background:#25d366;color:#fff}
+    .kg-btn-book{background:var(--gold);color:#000}
+    @media(max-width:600px){.kg-banner{padding:8px 12px}.kg-banner-text{font-size:0.76rem}.kg-btn{padding:6px 10px;font-size:0.73rem}}
+
+    /* NAV */
+    nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{display:flex;align-items:center;gap:10px}
+    .nav-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--indigo),#4f46e5);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .nav-name{font-weight:800;font-size:0.95rem;color:var(--text);line-height:1.1}
+    .nav-name span{display:block;font-weight:500;font-size:0.72rem;color:var(--muted)}
+    .nav-right a{display:inline-flex;align-items:center;padding:9px 18px;background:var(--indigo);color:#fff;font-weight:700;font-size:0.82rem;border-radius:7px;text-decoration:none;transition:background 0.2s}
+    .nav-right a:hover{background:#4f46e5}
+
+    /* HERO */
+    .hero{background:linear-gradient(160deg,#080a15 0%,#0d0f1a 40%,#111325 70%,#161930 100%);padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 350px at 50% -5%,rgba(99,102,241,0.1),transparent);pointer-events:none}
+    .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.35);color:var(--indigo-bright);font-size:0.73rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:20px}
+    .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:16px}
+    .hero h1 em{font-style:normal;color:var(--indigo-bright)}
+    .hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 36px;line-height:1.65}
+    .hero-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-bottom:36px}
+    .stat{text-align:center}
+    .stat-n{font-size:2rem;font-weight:900;color:var(--gold);line-height:1}
+    .stat-l{font-size:0.71rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:3px}
+    .hero-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn-indigo{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--indigo);color:#fff;font-weight:700;font-size:0.95rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s}
+    .btn-indigo:hover{background:#4f46e5;transform:translateY(-2px)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--text);font-weight:600;font-size:0.95rem;border-radius:8px;border:1px solid var(--border);text-decoration:none;transition:border-color 0.2s}
+    .btn-ghost:hover{border-color:var(--indigo)}
+
+    /* TRUST BAR */
+    .trust-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .t-item{display:flex;align-items:center;gap:7px;font-size:0.8rem;color:var(--muted)}
+    .t-item strong{color:var(--text);font-weight:600}
+
+    /* SERVICES */
+    .section{padding:64px 24px}
+    .container{max-width:900px;margin:0 auto}
+    .section-tag{font-size:0.73rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--indigo-bright);margin-bottom:10px}
+    .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px}
+    .section-sub{font-size:0.95rem;color:var(--muted);line-height:1.65;max-width:540px;margin-bottom:36px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .svc-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color 0.2s,transform 0.2s}
+    .svc-card:hover{border-color:var(--indigo);transform:translateY(-3px)}
+    .svc-icon{font-size:1.8rem;margin-bottom:12px}
+    .svc-card h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:7px}
+    .svc-card p{font-size:0.84rem;color:var(--muted);line-height:1.55}
+
+    /* MORE SERVICES */
+    .more-services{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:16px}
+    .more-services h4{font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:14px}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:0.76rem;font-weight:500;color:var(--muted);background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);padding:4px 10px;border-radius:6px}
+
+    /* WHY SECTION */
+    .why-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .why-list{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+    .why-item{display:flex;gap:16px;align-items:flex-start;padding:18px;background:var(--bg3);border:1px solid var(--border);border-radius:10px}
+    .why-num{font-size:1.8rem;font-weight:900;color:rgba(99,102,241,0.25);line-height:1;flex-shrink:0;width:36px}
+    .why-content h4{font-size:0.92rem;font-weight:700;color:#fff;margin-bottom:5px}
+    .why-content p{font-size:0.83rem;color:var(--muted);line-height:1.5}
+
+    /* REVIEWS */
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .review-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative}
+    .review-stars{color:var(--gold);font-size:0.9rem;margin-bottom:10px}
+    .review-text{font-size:0.87rem;color:#c4c8e0;line-height:1.6;font-style:italic;margin-bottom:12px}
+    .review-author{font-size:0.76rem;font-weight:600;color:var(--muted)}
+
+    /* CONTACT */
+    .contact-section{background:var(--bg2);border-top:1px solid var(--border)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+    @media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+    .contact-info h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:#fff;margin-bottom:10px}
+    .contact-info p{font-size:0.9rem;color:var(--muted);line-height:1.6}
+    .c-links{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+    .c-link{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.2s}
+    .c-link:hover{border-color:var(--indigo)}
+    .c-link-icon{font-size:1.2rem;flex-shrink:0}
+    .c-link-text strong{display:block;font-size:0.88rem;font-weight:700;color:#fff}
+    .c-link-text span{font-size:0.78rem;color:var(--muted)}
+    .book-box{background:linear-gradient(135deg,#0d1a2e,#162540);border:1px solid rgba(245,158,11,0.3);border-radius:12px;padding:28px;text-align:center}
+    .book-box h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:8px}
+    .book-box p{font-size:0.85rem;color:var(--muted);margin-bottom:20px;line-height:1.55}
+    .book-cta{display:block;padding:14px 24px;background:var(--gold);color:#000;font-weight:700;font-size:0.92rem;border-radius:8px;text-decoration:none;transition:background 0.2s;margin-bottom:10px}
+    .book-cta:hover{background:#fbbf24}
+    .book-note{font-size:0.75rem;color:var(--muted)}
+
+    /* FOOTER */
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:24px;text-align:center}
+    footer p{font-size:0.76rem;color:var(--muted)}
+    .footer-badge{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:0.71rem;color:var(--muted)}
+    .footer-badge a{color:var(--indigo-bright);text-decoration:none}
+
+    /* MOBILE STICKY */
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--bg2);border-top:1px solid var(--border);padding:10px 16px;gap:8px}
+    @media(max-width:680px){.mobile-sticky{display:flex;padding-bottom:max(10px,env(safe-area-inset-bottom))}}
+    .ms-btn{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:0.82rem;text-decoration:none;white-space:nowrap}
+    .ms-quote{background:var(--indigo);color:#fff}
+    .ms-wa{background:#25d366;color:#fff}
+    .ms-book{background:var(--gold);color:#000}
+
+    /* WHATSAPP FLOAT */
+    #wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);z-index:400;text-decoration:none;transition:transform 0.2s;animation:waPulse 2.5s infinite}
+    #wa-float:hover{transform:scale(1.1);animation:none}
+    #wa-float svg{width:28px;height:28px;fill:#fff}
+    @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.8)}}
+    @media(max-width:680px){#wa-float{display:none}}
+  </style>
+</head>
+<body>
+
+<!-- KG PROMO BANNER -->
+<div class="kg-banner">
+  <div class="kg-banner-text">
+    <strong>Sunny</strong> — your free website is ready. See it free, launch it for $400.
+  </div>
+  <div class="kg-banner-actions">
+    <a href="tel:+15407838835" class="kg-btn kg-btn-call">📞 Call Jose</a>
+    <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Sunny%20from%20His%20Grace%20Handyman%20and%20I%27d%20like%20to%20see%20my%20free%20website%20preview" class="kg-btn kg-btn-wa">💬 WhatsApp</a>
+    <a href="https://kalnyesgrowth.com/book/" class="kg-btn kg-btn-book">📅 Book Free Call</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">🔨</div>
+    <div class="nav-name">
+      His Grace Handyman Services
+      <span>Fredericksburg, VA · 50+ Services</span>
+    </div>
+  </div>
+  <div class="nav-right">
+    <a href="https://www.thumbtack.com/va/fredericksburg/handyman/his-grace/service/493601035903598600" target="_blank" rel="noopener">Free Estimate →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">⭐ 4.9 Stars · 394 Hires · Top Pro</div>
+  <h1>One call.<br><em>Any job.</em><br>Done right.</h1>
+  <p class="hero-sub">Sunny Bokurla handles it all — carpentry, painting, installations, cabinet work, furniture assembly, and 50+ more services. Fredericksburg's most-hired handyman on Thumbtack.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-n">394</div>
+      <div class="stat-l">Hires</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">4.9★</div>
+      <div class="stat-l">218 Reviews</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">50+</div>
+      <div class="stat-l">Services</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">Top</div>
+      <div class="stat-l">Pro Status</div>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <a href="https://www.thumbtack.com/va/fredericksburg/handyman/his-grace/service/493601035903598600" target="_blank" rel="noopener" class="btn-indigo">Get Free Estimate</a>
+    <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Sunny%20from%20His%20Grace%20Handyman%20and%20I%27d%20like%20to%20see%20my%20free%20website%20preview" class="btn-ghost">💬 Launch This Website</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="t-item">🏆 <strong>Thumbtack Top Pro</strong></div>
+  <div class="t-item">✅ <strong>Background Checked</strong></div>
+  <div class="t-item">📍 <strong>Fredericksburg, VA</strong></div>
+  <div class="t-item">⚡ <strong>Fast Response</strong></div>
+  <div class="t-item">💳 <strong>Flexible Payment</strong></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">What I Do</div>
+    <h2 class="section-title">50+ services. One reliable pro.</h2>
+    <p class="section-sub">Whatever you need done around the house — Sunny handles it. No job too big, no detail too small.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🪵</div>
+        <h3>Carpentry & Trim</h3>
+        <p>Framing, trim work, door installation, baseboard and molding, general wood repairs and custom carpentry.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🍳</div>
+        <h3>Cabinet Installation</h3>
+        <p>Kitchen and bathroom cabinet install and removal, adjustments, hardware upgrades, and custom fitting.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎨</div>
+        <h3>Interior Painting</h3>
+        <p>Clean, precise interior painting for walls, ceilings, trim, doors, and accent features.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">💡</div>
+        <h3>Installations</h3>
+        <p>Lighting fixtures, windows, toilets, appliances, ceiling fans — installed properly the first time.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛋️</div>
+        <h3>Furniture Assembly</h3>
+        <p>IKEA and all brands. Fast, careful assembly with no leftover screws and no stripped bolts.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔧</div>
+        <h3>General Repairs</h3>
+        <p>Door adjustments, drywall patches, hardware fixes, and all the small jobs that never get done.</p>
+      </div>
+    </div>
+    <div class="more-services">
+      <h4>More services offered:</h4>
+      <div class="tag-cloud">
+        <span class="tag">Tile work</span>
+        <span class="tag">Window installation</span>
+        <span class="tag">Door repair & install</span>
+        <span class="tag">Pressure washing</span>
+        <span class="tag">Deck repair</span>
+        <span class="tag">Plumbing fixtures</span>
+        <span class="tag">TV mounting</span>
+        <span class="tag">Furniture moving</span>
+        <span class="tag">Shelving & storage</span>
+        <span class="tag">Weatherproofing</span>
+        <span class="tag">Caulking & sealing</span>
+        <span class="tag">Gutter cleaning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-tag">Why Sunny</div>
+    <h2 class="section-title">What keeps people coming back</h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-num">1</div>
+        <div class="why-content">
+          <h4>You get a person, not a crew rotation</h4>
+          <p>Sunny is a one-person operation. The pro you book is the one who shows up — every time, on every job.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">2</div>
+        <div class="why-content">
+          <h4>Genuinely responsive</h4>
+          <p>394 clients chose him because he responds fast and shows up when he says he will. No ghosting, no reschedules.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">3</div>
+        <div class="why-content">
+          <h4>Verified by 218 five-star reviews</h4>
+          <p>Every review is from a real Fredericksburg homeowner on Thumbtack. The 4.9-star average isn't luck — it's consistency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag">Reviews</div>
+    <h2 class="section-title">What Fredericksburg homeowners say</h2>
+    <div class="reviews-grid" style="margin-top:32px">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Sonny was a pleasure. I am so glad I found him and now feel I have a handyman and construction person for life."</p>
+        <div class="review-author">Jackie P. · Apr 2025 · Thumbtack</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Sunny is amazing. Highly recommend him as a handyman! He is polite, responsive, and genuinely really good at what he does."</p>
+        <div class="review-author">Justin &amp; Danielelle R. · Mar 2025 · Thumbtack</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"He will be the only handyman that I use until he retires. Professional, kind, efficient and timely in everything."</p>
+        <div class="review-author">Carolyn O. · Mar 2025 · Thumbtack</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted)">4.9★ across 218 verified reviews · Thumbtack Top Pro</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-tag">Get in Touch</div>
+        <h2>Ready to book Sunny?</h2>
+        <p>Request a free estimate through Thumbtack, or contact Jose at Kalnyes Growth to see this website live for your business — free to look, $400 to launch.</p>
+        <div class="c-links">
+          <a href="https://www.thumbtack.com/va/fredericksburg/handyman/his-grace/service/493601035903598600" target="_blank" rel="noopener" class="c-link">
+            <span class="c-link-icon">⭐</span>
+            <div class="c-link-text">
+              <strong>Request a Free Estimate — Thumbtack</strong>
+              <span>4.9★ · 394 hires · 218 reviews</span>
+            </div>
+          </a>
+          <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Sunny%20from%20His%20Grace%20Handyman%20and%20I%27d%20like%20to%20see%20my%20free%20website%20preview" class="c-link">
+            <span class="c-link-icon">💬</span>
+            <div class="c-link-text">
+              <strong>WhatsApp Jose</strong>
+              <span>Ask about launching this website</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="book-box">
+        <h3>📅 Want this website live?</h3>
+        <p>Jose at Kalnyes Growth built this demo free for Sunny. Zero cost to view — $400 to launch with a full year of hosting. Walk away free if it's not right.</p>
+        <a href="https://kalnyesgrowth.com/book/" class="book-cta">Book a Free 15-Min Call</a>
+        <div class="book-note">kalnyesgrowth.com · (540) 783-8835</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>His Grace Handyman Services · Fredericksburg, VA 22407</p>
+  <p style="margin-top:4px">Serving Fredericksburg, Stafford, Spotsylvania &amp; surrounding Northern Virginia</p>
+  <div class="footer-badge">
+    Website demo by <a href="https://kalnyesgrowth.com" target="_blank">Kalnyes Growth</a> · Free to view, $400 to launch
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="https://www.thumbtack.com/va/fredericksburg/handyman/his-grace/service/493601035903598600" target="_blank" rel="noopener" class="ms-btn ms-quote">⭐ Get Quote</a>
+  <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Sunny%20from%20His%20Grace%20Handyman%20and%20I%27d%20like%20to%20see%20my%20free%20website%20preview" class="ms-btn ms-wa">💬 WhatsApp</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-btn ms-book">📅 Book</a>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a id="wa-float" href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Sunny%20from%20His%20Grace%20Handyman%20and%20I%27d%20like%20to%20see%20my%20free%20website%20preview" title="WhatsApp Jose" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
