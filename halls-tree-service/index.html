@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall's Tree Service LLC — Expert Tree Care | Stafford, VA</title>
+<meta name="description" content="Hall's Tree Service LLC — ISA Certified Arborist, veteran-owned, serving Stafford, Fredericksburg & Northern Virginia. Tree removal, pruning, stump grinding. 15% off first visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fafaf8;color:#1a1f14;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* KG BANNER */
+#kg-promo-banner{background:linear-gradient(90deg,#0f2a6b 0%,#1557b0 100%);color:#fff;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:system-ui,-apple-system,sans-serif;font-size:.84rem;line-height:1.4;position:sticky;top:0;z-index:9999}
+#kg-promo-banner a{background:#fff;color:#1557b0;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.8rem;white-space:nowrap;flex-shrink:0}
+
+/* NAV */
+nav{background:#1a2e14;padding:16px 5%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'DM Serif Display',Georgia,serif;color:#fff;font-size:1.25rem;letter-spacing:-.2px}
+.logo em{color:#86efac;font-style:normal}
+.nav-phone{color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;padding:9px 20px;background:rgba(255,255,255,.1);border-radius:6px;border:1px solid rgba(255,255,255,.2)}
+
+/* VETERAN STRIP */
+.vet-strip{background:#1a2e14;border-top:1px solid rgba(255,255,255,.1);padding:10px 5%;text-align:center;color:rgba(255,255,255,.7);font-size:.82rem;letter-spacing:.04em}
+.vet-strip strong{color:#86efac}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,#1a2e14 0%,#2d4a20 100%);color:#fff;padding:68px 5% 60px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(134,239,172,.12);color:#86efac;font-size:.76rem;font-weight:700;padding:6px 16px;border-radius:100px;border:1px solid rgba(134,239,172,.25);margin-bottom:18px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.2rem,6vw,3.8rem);font-weight:400;line-height:1.1;margin-bottom:18px;max-width:740px;margin-left:auto;margin-right:auto}
+.hero h1 em{color:#86efac;font-style:italic}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.7;max-width:540px;margin:0 auto 32px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.btn-green{background:#16a34a;color:#fff;padding:16px 32px;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s}
+.btn-green:hover{background:#15803d}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;padding:16px 28px;border-radius:8px;font-size:1rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.2)}
+.hero-stats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:36px}
+.stat{text-align:center}
+.stat-n{font-size:1.9rem;font-weight:800;color:#86efac;line-height:1}
+.stat-l{font-size:.76rem;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.4}
+
+/* CREDENTIALS STRIP */
+.creds{padding:28px 5%;background:#f0fdf4;border-bottom:1px solid #bbf7d0;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.cred-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #bbf7d0;border-radius:100px;padding:8px 16px;font-size:.82rem;font-weight:600;color:#14532d}
+
+/* SERVICES */
+.services{padding:72px 5%}
+.section-tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#16a34a;margin-bottom:10px}
+.section-title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);color:#1a1f14;margin-bottom:10px;line-height:1.15;font-weight:400}
+.section-sub{font-size:1rem;color:#4b5a40;line-height:1.7;max-width:520px;margin-bottom:48px}
+.svc-rows{display:flex;flex-direction:column;gap:0}
+.svc-row{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start;padding:24px 0;border-bottom:1px solid #e8ede4}
+.svc-num{font-size:2rem;font-weight:800;color:#d1fae5;line-height:1;flex-shrink:0;font-family:'DM Serif Display',Georgia,serif}
+.svc-row h3{font-size:1.05rem;font-weight:700;color:#1a1f14;margin-bottom:5px}
+.svc-row p{font-size:.875rem;color:#4b5a40;line-height:1.65}
+
+/* ABOUT */
+.about{padding:72px 5%;background:#1a2e14;color:#fff}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:980px;margin:0 auto}
+@media(max-width:720px){.about-inner{grid-template-columns:1fr}}
+.about h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:18px;line-height:1.15;font-weight:400}
+.about h2 em{color:#86efac;font-style:italic}
+.about p{font-size:.95rem;color:rgba(255,255,255,.8);line-height:1.72;margin-bottom:16px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.a-stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:18px;text-align:center}
+.a-stat-n{font-size:1.7rem;font-weight:800;color:#86efac}
+.a-stat-l{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.4}
+
+/* OFFERS */
+.offers{padding:56px 5%;background:#f0fdf4}
+.offers-inner{max-width:800px;margin:0 auto;text-align:center}
+.offers h2{font-size:1.5rem;font-weight:700;color:#14532d;margin-bottom:28px}
+.offer-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+@media(max-width:600px){.offer-cards{grid-template-columns:1fr}}
+.offer-card{background:#fff;border:2px solid #bbf7d0;border-radius:10px;padding:22px 20px}
+.offer-pct{font-size:2rem;font-weight:800;color:#16a34a;line-height:1;margin-bottom:6px}
+.offer-card h3{font-size:.95rem;font-weight:700;color:#14532d;margin-bottom:4px}
+.offer-card p{font-size:.82rem;color:#4b5a40;line-height:1.55}
+
+/* CTA */
+.cta-final{padding:72px 5%;text-align:center;background:#fff}
+.cta-final h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.7rem,4vw,2.4rem);color:#1a1f14;margin-bottom:12px;font-weight:400;line-height:1.2}
+.cta-final p{font-size:1rem;color:#4b5a40;max-width:500px;margin:0 auto 28px;line-height:1.7}
+.contact-strip{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.contact-strip a{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:7px;border:1px solid #d1fae5;font-size:.88rem;font-weight:600;color:#1a1f14;text-decoration:none;background:#f0fdf4}
+.emergency-note{margin-top:20px;padding:14px 20px;background:#fff3cd;border:1px solid #fde68a;border-radius:8px;font-size:.85rem;color:#92400e;max-width:480px;margin-left:auto;margin-right:auto;font-weight:500}
+
+/* FOOTER */
+footer{background:#111a0e;color:rgba(255,255,255,.45);padding:24px 5%;text-align:center;font-size:.78rem}
+footer strong{color:rgba(255,255,255,.75)}
+
+/* MOBILE STICKY */
+.mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#1a2e14;border-top:1px solid rgba(255,255,255,.12);padding:10px 16px;gap:8px}
+@media(max-width:700px){.mobile-sticky{display:flex;padding-bottom:max(10px,env(safe-area-inset-bottom))}}
+.mobile-sticky a{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:.83rem;text-decoration:none}
+.ms-call{background:#16a34a;color:#fff}
+.ms-book{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+
+@media(max-width:640px){.svc-row{grid-template-columns:1fr}.svc-num{display:none}}
+</style>
+</head>
+<body>
+
+<div id="kg-promo-banner">
+  <span style="opacity:.9">📋 <strong>Free demo by KalnyesGrowth</strong> &nbsp;·&nbsp; Stafford, VA &nbsp;·&nbsp; <strong>$400 to launch</strong> &nbsp;·&nbsp; hosting &amp; domain included &nbsp;·&nbsp; free if you don't love it</span>
+  <a href="https://kalnyesgrowth.com/book/">📅 Book Free Call →</a>
+</div>
+
+<nav>
+  <div class="logo">Hall's <em>Tree Service</em> LLC</div>
+  <a href="tel:+15403526250" class="nav-phone">📞 (540) 352-6250</a>
+</nav>
+
+<div class="vet-strip">
+  🇺🇸 <strong>Veteran-Owned</strong> &nbsp;·&nbsp; ISA Certified Arborist &nbsp;·&nbsp; 15% Off First Visit &nbsp;·&nbsp; 10% Military, Fire & Police Discount
+</div>
+
+<section class="hero">
+  <div class="hero-badge">🌳 ISA Certified · Stafford's Tree Experts</div>
+  <h1>Expert Tree Care.<br><em>Done Right.</em><br>From a Vet Who Cares.</h1>
+  <p class="hero-sub">Hall's Tree Service LLC brings over a decade of professional arborist experience to Stafford, Northern Virginia, and surrounding counties. ISA certified. Veteran-owned. Licensed and insured.</p>
+  <div class="cta-row">
+    <a href="tel:+15403526250" class="btn-green">📞 Call for a Free Estimate</a>
+    <a href="https://kalnyesgrowth.com/book/" class="btn-ghost">📅 Book Online</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">ISA</div><div class="stat-l">Certified<br>Arborist</div></div>
+    <div class="stat"><div class="stat-n">10+</div><div class="stat-l">Years of<br>Experience</div></div>
+    <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Emergency<br>Response</div></div>
+    <div class="stat"><div class="stat-n">Local</div><div class="stat-l">Stafford, VA<br>based &amp; owned</div></div>
+  </div>
+</section>
+
+<div class="creds">
+  <span class="cred-pill">🌿 ISA Certified Arborist</span>
+  <span class="cred-pill">🇺🇸 Veteran-Owned Business</span>
+  <span class="cred-pill">🛡️ Licensed &amp; Insured</span>
+  <span class="cred-pill">⚡ 24/7 Emergency Service</span>
+  <span class="cred-pill">📍 Stafford, VA</span>
+</div>
+
+<section class="services">
+  <div class="section-tag">Our Services</div>
+  <div class="section-title">Professional tree care,<br>start to finish.</div>
+  <p class="section-sub">From a single dead branch to full lot clearing, we handle every scope of tree work safely and efficiently.</p>
+  <div class="svc-rows">
+    <div class="svc-row">
+      <div class="svc-num">01</div>
+      <div>
+        <h3>Tree Removal</h3>
+        <p>Safe, efficient removal of dead, diseased, storm-damaged, or unwanted trees. We protect your lawn, structures, and landscaping throughout the process. Full cleanup included.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">02</div>
+      <div>
+        <h3>Tree Pruning &amp; Trimming</h3>
+        <p>ISA-certified pruning techniques that improve tree health, structure, and appearance — without unnecessary cuts that shorten the tree's life. Seasonal and maintenance trimming available.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">03</div>
+      <div>
+        <h3>Stump Grinding</h3>
+        <p>Remove hazardous stumps that damage lawn equipment, attract pests, and trip up family members. Ground below grade and covered — no ugly stump left behind.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">04</div>
+      <div>
+        <h3>Tree Planting</h3>
+        <p>Expert planting of the right species in the right location. We advise on species selection based on your soil, sunlight, and spacing to give new trees the best start.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">05</div>
+      <div>
+        <h3>Emergency Storm Response</h3>
+        <p>24/7 emergency service for storm-damaged trees threatening your home, vehicle, or power lines. Fast response, safe removal, immediate hazard mitigation.</p>
+      </div>
+    </div>
+    <div class="svc-row">
+      <div class="svc-num">06</div>
+      <div>
+        <h3>Commercial Tree Care</h3>
+        <p>Property managers, HOAs, and commercial property owners trust us for regular maintenance, lot clearing, and emergency response. Fully insured for commercial sites.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-tag" style="color:#86efac">About Alex Hall</p>
+      <h2>A veteran arborist who<br><em>takes pride in every job.</em></h2>
+      <p>Alex Hall served his country, then put that same discipline and work ethic into building Hall's Tree Service LLC — a certified, insured tree care company serving Stafford and Northern Virginia for over a decade.</p>
+      <p>ISA certification means Alex doesn't just remove trees — he understands how they grow, why they fail, and what they need to thrive. That knowledge protects your property and saves you money long-term.</p>
+    </div>
+    <div class="about-stats">
+      <div class="a-stat"><div class="a-stat-n">10+</div><div class="a-stat-l">Years in business</div></div>
+      <div class="a-stat"><div class="a-stat-n">ISA</div><div class="a-stat-l">Certified Arborist</div></div>
+      <div class="a-stat"><div class="a-stat-n">24/7</div><div class="a-stat-l">Emergency available</div></div>
+      <div class="a-stat"><div class="a-stat-n">Vet</div><div class="a-stat-l">Veteran-owned</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offers">
+  <div class="offers-inner">
+    <h2>Special Discounts for Our Community</h2>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <div class="offer-pct">15%</div>
+        <h3>First-Time Customer Discount</h3>
+        <p>Save 15% on your first service with Hall's Tree Service. Book a free estimate to get started.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-pct">10%</div>
+        <h3>Military, Fire &amp; Police</h3>
+        <p>We honor those who serve. 10% discount for all active duty, veterans, firefighters, and law enforcement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <h2>Ready for a free estimate?</h2>
+  <p>Call or book online. We assess your trees, answer your questions, and give you a clear quote before any work begins.</p>
+  <a href="tel:+15403526250" class="btn-green" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none">📞 Call (540) 352-6250</a>
+  <div class="contact-strip">
+    <a href="tel:+15403526250">📞 (540) 352-6250</a>
+    <a href="mailto:hallstreeservicellc@gmail.com">✉️ hallstreeservicellc@gmail.com</a>
+    <a href="https://kalnyesgrowth.com/book/">📅 Book online</a>
+  </div>
+  <div class="emergency-note">⚡ 24/7 Emergency Service — storm damage doesn't wait, and neither do we.</div>
+  <p style="margin-top:20px;font-size:.78rem;color:#9ca3af">Serving Stafford · Dale City · Fredericksburg · Triangle · Woodbridge · Lorton, VA</p>
+</section>
+
+<footer>
+  <strong>Hall's Tree Service LLC</strong> &nbsp;·&nbsp; Stafford, VA &nbsp;·&nbsp; (540) 352-6250 &nbsp;·&nbsp; hallstreeservicellc@gmail.com<br>
+  <span style="margin-top:6px;display:block">ISA Certified Arborist · Veteran-Owned · Licensed &amp; Insured · 24/7 Emergency</span>
+</footer>
+
+<div class="mobile-sticky">
+  <a href="tel:+15403526250" class="ms-call">📞 Call Alex</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-book">📅 Book Free Call</a>
+</div>
+
+</body>
+</html>
