@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&amp;L Junk Removal | Junk Hauling &amp; Light Demo — Fredericksburg VA</title>
+  <meta name="description" content="C&L Junk Removal — family-owned junk hauling, estate cleanouts, light demolition in Fredericksburg, Stafford & Spotsylvania VA. Open 7 days, 7AM–7PM. Free estimates. Discounts for veterans, first responders & seniors. Call (540) 214-8721.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;-webkit-font-smoothing:antialiased;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    .container-sm{max-width:720px;margin:0 auto;padding:0 24px}
+    @media(max-width:600px){.container,.container-sm{padding:0 16px}}
+    :root{
+      --c:#c2410c;--c-dk:#9a3412;--c-lt:#fff7ed;
+      --charcoal:#1c1c1c;
+      --text:#111827;--text-2:#4b5563;--text-3:#9ca3af;
+      --border:#e5e7eb;--bg-2:#f9fafb;--radius:10px
+    }
+    .claim-bar{background:var(--c-dk);color:#fff;text-align:center;padding:12px 16px;font-size:0.85rem;font-weight:500;position:sticky;top:0;z-index:300}
+    .claim-bar strong{color:#fdba74}
+    .claim-bar a{color:#fdba74;font-weight:700;text-decoration:underline}
+    nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-icon{width:36px;height:36px;background:var(--c);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .logo-text{font-weight:800;font-size:1rem;color:var(--charcoal)}
+    .logo-sub{font-size:0.7rem;color:var(--text-3);line-height:1}
+    .nav-call{background:var(--c);color:#fff;padding:8px 18px;border-radius:7px;font-size:0.85rem;font-weight:700}
+    .hours-bar{background:var(--charcoal);color:#fff;text-align:center;padding:9px 16px;font-size:0.82rem;font-weight:600}
+    .hours-bar span{color:#fdba74}
+    .hero{background:linear-gradient(150deg,#1c1c1c 0%,#2d1a0f 100%);color:#fff;padding:64px 0 52px}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(253,186,116,0.12);color:#fdba74;font-size:0.75rem;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:16px;border:1px solid rgba(253,186,116,0.25)}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:680px}
+    .hero h1 em{font-style:normal;color:#fdba74}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.78);line-height:1.7;max-width:520px;margin-bottom:32px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;border-radius:8px;padding:15px 28px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;text-align:center;white-space:normal;line-height:1.3}
+    .btn-orange{background:var(--c);color:#fff;border-color:var(--c)}
+    .btn-orange:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 4px 16px rgba(194,65,12,0.4)}
+    .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)}
+    .btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+    .btn-lg{font-size:1.1rem;padding:17px 34px}
+    .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .trust-row{display:flex;gap:24px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12)}
+    .trust-item{font-size:0.85rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+    .trust-item strong{color:#fff;font-weight:700}
+    .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+    .section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.2}
+    .section-sub{font-size:0.97rem;color:var(--text-2);line-height:1.7}
+    .how-it-works{padding:72px 0;background:var(--bg-2);border-top:1px solid var(--border)}
+    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+    @media(max-width:740px){.how-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}}
+    .how-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;text-align:center}
+    .how-num{width:44px;height:44px;border-radius:50%;background:var(--c);color:#fff;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .how-card h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:8px}
+    .how-card p{font-size:0.85rem;color:var(--text-2);line-height:1.6}
+    .services{padding:72px 0;background:#fff}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:40px}
+    .svc-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:box-shadow 0.2s}
+    .svc-card:hover{box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+    .svc-icon{font-size:1.6rem;margin-bottom:8px}
+    .svc-card h3{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:6px}
+    .svc-card p{font-size:0.78rem;color:var(--text-2);line-height:1.5}
+    .discounts{padding:48px 0;background:var(--c-lt);border-top:1px solid #fed7aa;border-bottom:1px solid #fed7aa}
+    .discounts-grid{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+    .discount-badge{background:#fff;border:2px solid var(--c);border-radius:100px;padding:8px 20px;font-size:0.82rem;font-weight:700;color:var(--c-dk)}
+    .contact{padding:72px 0;background:var(--charcoal);color:#fff;text-align:center}
+    .contact h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .contact p{opacity:0.75;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+    .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .contact-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);padding:20px 28px;text-align:center;min-width:160px}
+    .contact-card .icon{font-size:1.4rem;margin-bottom:6px}
+    .contact-card .label{font-size:0.72rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .contact-card .value{font-size:1.1rem;font-weight:800;color:#fff}
+    .contact-card .value a{color:#fdba74}
+    footer{padding:24px 0;background:#111;border-top:1px solid rgba(255,255,255,0.06)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    footer p{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    footer a{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:#fff;border-top:1px solid var(--border);padding:10px 16px;gap:8px}
+    @media(max-width:700px){.mobile-sticky{display:flex}}
+    .mobile-sticky a{flex:1;text-align:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:0.85rem;white-space:normal;line-height:1.3}
+    .ms-call{background:var(--c);color:#fff}
+    .ms-claim{background:var(--charcoal);color:#fff}
+  </style>
+</head>
+<body>
+
+<!-- CLAIM BAR -->
+<div class="claim-bar">
+  <strong>This is a free demo site</strong> built by KalnyesGrowth · <strong>Claim it for $600 →</strong> <a href="https://kalnyesgrowth.com/book/">Book free call</a> · (540) 783-8835
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <div class="logo-icon">🚛</div>
+        <div>
+          <div class="logo-text">C&amp;L Junk Removal, LLC</div>
+          <div class="logo-sub">Fredericksburg, VA · Family-Owned Since 2020</div>
+        </div>
+      </div>
+      <a href="tel:+15402148721" class="nav-call">📞 (540) 214-8721</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HOURS BAR -->
+<div class="hours-bar">
+  Open <span>7 Days a Week · 7AM – 7PM</span> · Free estimates · Same-day service available
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🚛 Family-Owned · Licensed &amp; Insured · Free Estimates</div>
+    <h1>Junk Gone <em>Today</em> — No Heavy Lifting Required</h1>
+    <p class="hero-sub">C&L Junk Removal handles the hard part so you don't have to. From full estate cleanouts to light demolition, we haul it all — fast, fair, and with the reliability of a family-owned business that cares about your neighborhood.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+15402148721" class="btn btn-orange btn-lg">📞 Get a Free Quote — (540) 214-8721</a>
+      <a href="#services" class="btn btn-outline-white">What We Remove</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item">✅ <strong>Family-Owned</strong> since 2020</div>
+      <div class="trust-item">✅ <strong>7 Days</strong> a week availability</div>
+      <div class="trust-item">✅ <strong>Free estimates</strong> always</div>
+      <div class="trust-item">✅ <strong>Licensed &amp; insured</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three Steps to a Clutter-Free Space</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h3>Send a photo</h3>
+        <p>Text or email us a photo of what you need gone. We'll give you an instant quote — no home visit required.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h3>We show up and haul</h3>
+        <p>Our crew arrives on schedule, loads everything up, and cleans up behind themselves. You don't lift a finger.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h3>Enjoy your space</h3>
+        <p>We responsibly dispose of or donate items wherever possible. Your space is clear — often same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What We Remove</div>
+    <h2 class="section-title">We Haul Just About Anything</h2>
+    <p class="section-sub">Residential, commercial, big or small — if it needs to go, we'll take it.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏚️</div>
+        <h3>Estate Cleanouts</h3>
+        <p>Full estate and hoarding cleanouts handled with care and discretion. We work around your timeline.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📦</div>
+        <h3>Garage &amp; Basement</h3>
+        <p>Decades of accumulated stuff cleared out. Furniture, boxes, appliances, electronics — all of it.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛋️</div>
+        <h3>Furniture Removal</h3>
+        <p>Couches, beds, dressers, office furniture. Even the awkward stuff — pianos, safes, and sectionals.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔨</div>
+        <h3>Light Demolition</h3>
+        <p>Sheds, decks, fences, hot tubs, and small structures removed and hauled away cleanly.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏗️</div>
+        <h3>Construction Debris</h3>
+        <p>Post-renovation cleanup. Drywall, lumber, flooring, roofing materials — cleared fast.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛥️</div>
+        <h3>Specialty Removals</h3>
+        <p>Boats, campers, trampolines, playgrounds, and other oversized items most haulers won't touch.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">♻️</div>
+        <h3>Appliance Removal</h3>
+        <p>Refrigerators, washers, dryers, dishwashers. We disconnect and haul them out — responsibly disposed.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏢</div>
+        <h3>Commercial Cleanouts</h3>
+        <p>Office moves, property management cleanouts, retail liquidations. Fast turnaround, flexible scheduling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOUNTS -->
+<section class="discounts">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Special Discounts</div>
+    <h2 class="section-title" style="font-size:clamp(1.3rem,3vw,2rem)">We Give Back to Our Community</h2>
+    <p class="section-sub" style="max-width:480px;margin:0 auto">C&L proudly offers discounts to those who serve our community and our country.</p>
+    <div class="discounts-grid">
+      <span class="discount-badge">🎖️ Veterans</span>
+      <span class="discount-badge">🚒 First Responders</span>
+      <span class="discount-badge">👴 Seniors</span>
+      <span class="discount-badge">📚 Teachers</span>
+      <span class="discount-badge">🏠 Realtors</span>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-3);margin-top:20px">Ask about your discount when you call for a free estimate.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section style="padding:56px 0;background:var(--bg-2);border-top:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Where We Work</div>
+    <h2 class="section-title">Fredericksburg &amp; Surrounding Areas</h2>
+    <p class="section-sub" style="max-width:520px;margin:0 auto 28px">Fredericksburg · Stafford · Spotsylvania · Lake of the Woods · King George · Caroline County · surrounding communities</p>
+    <a href="tel:+15402148721" class="btn btn-orange">📞 Get Your Free Quote</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Ready to Clear It Out?</h2>
+    <p>Text us a photo of what you need gone and we'll respond with a price — often within minutes. Open 7 days, 7AM to 7PM.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="label">Call or Text</div>
+        <div class="value"><a href="tel:+15402148721">(540) 214-8721</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="label">Based In</div>
+        <div class="value" style="font-size:0.9rem">113 Hamilton St<br>Fredericksburg, VA</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🕐</div>
+        <div class="label">Hours</div>
+        <div class="value" style="font-size:0.9rem">7 Days a Week<br>7:00AM – 7:00PM</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:8px">Licensed &amp; Insured · Free Estimates · Same-Day Service Available</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 C&amp;L Junk Removal, LLC · Fredericksburg, VA</p>
+      <p>Site by <a href="https://kalnyesgrowth.com">KalnyesGrowth</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="tel:+15402148721" class="ms-call">📞 Free Quote</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-claim">🌐 Claim This Site — $600</a>
+</div>
+
+</body>
+</html>

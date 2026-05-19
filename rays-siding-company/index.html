@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray's Siding Company | Siding, Roofing & Windows — Fredericksburg VA</title>
+  <meta name="description" content="Ray's Siding Company — family-owned siding, roofing, windows, and exterior renovation. 30+ years serving Fredericksburg, Stafford & Spotsylvania VA. BBB Accredited. James Hardie & GAF certified. Call (540) 710-6864.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;-webkit-font-smoothing:antialiased;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    .container-sm{max-width:720px;margin:0 auto;padding:0 24px}
+    @media(max-width:600px){.container,.container-sm{padding:0 16px}}
+    :root{
+      --c:#166534;--c-dk:#14532d;--c-lt:#f0fdf4;
+      --slate:#1e293b;--slate-lt:#f8fafc;
+      --text:#111827;--text-2:#4b5563;--text-3:#9ca3af;
+      --border:#e5e7eb;--bg-2:#f9fafb;--radius:10px
+    }
+    .claim-bar{background:var(--c-dk);color:#fff;text-align:center;padding:12px 16px;font-size:0.85rem;font-weight:500;position:sticky;top:0;z-index:300}
+    .claim-bar strong{color:#86efac}
+    .claim-bar a{color:#86efac;font-weight:700;text-decoration:underline}
+    nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-icon{width:36px;height:36px;background:var(--c);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .logo-text{font-weight:800;font-size:1rem;color:var(--c-dk)}
+    .logo-sub{font-size:0.7rem;color:var(--text-3);line-height:1}
+    .nav-call{background:var(--c);color:#fff;padding:8px 18px;border-radius:7px;font-size:0.85rem;font-weight:700}
+    .hero{background:linear-gradient(150deg,#14532d 0%,#1e3a2f 100%);color:#fff;padding:64px 0 52px}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(134,239,172,0.15);color:#86efac;font-size:0.75rem;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:16px;border:1px solid rgba(134,239,172,0.3)}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:680px}
+    .hero h1 em{font-style:normal;color:#86efac}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.78);line-height:1.7;max-width:520px;margin-bottom:32px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;border-radius:8px;padding:15px 28px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;text-align:center;white-space:normal;line-height:1.3}
+    .btn-green{background:var(--c);color:#fff;border-color:var(--c)}
+    .btn-green:hover{background:#0f4424;transform:translateY(-1px);box-shadow:0 4px 16px rgba(22,101,52,0.4)}
+    .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)}
+    .btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+    .btn-lg{font-size:1.1rem;padding:17px 34px}
+    .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .trust-row{display:flex;gap:24px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12)}
+    .trust-item{font-size:0.85rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+    .trust-item strong{color:#fff;font-weight:700}
+    .brands{padding:28px 0;background:#fff;border-bottom:1px solid var(--border)}
+    .brands-inner{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+    .brand-pill{background:var(--bg-2);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:0.75rem;font-weight:700;color:var(--text-2)}
+    .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+    .section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.2}
+    .section-sub{font-size:0.97rem;color:var(--text-2);line-height:1.7}
+    .services{padding:72px 0;background:var(--bg-2);border-top:1px solid var(--border)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:40px}
+    .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center;transition:box-shadow 0.2s}
+    .svc-card:hover{box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+    .svc-icon{font-size:1.8rem;margin-bottom:10px}
+    .svc-card h3{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:6px}
+    .svc-card p{font-size:0.78rem;color:var(--text-2);line-height:1.5}
+    .about{padding:72px 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}
+    @media(max-width:767px){.about-grid{grid-template-columns:1fr}}
+    .about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .about-stat{background:var(--c-lt);border:1px solid #bbf7d0;border-radius:var(--radius);padding:18px;text-align:center}
+    .about-stat strong{display:block;font-size:1.6rem;font-weight:800;color:var(--c-dk)}
+    .about-stat span{font-size:0.78rem;color:var(--text-2);font-weight:600}
+    .bbb-banner{padding:36px 0;background:linear-gradient(90deg,#1d4f2e,#166534);color:#fff;text-align:center}
+    .bbb-banner h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+    .bbb-banner p{font-size:0.88rem;color:rgba(255,255,255,0.78)}
+    .contact{padding:72px 0;background:var(--c-dk);color:#fff;text-align:center}
+    .contact h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .contact p{opacity:0.75;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+    .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .contact-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);padding:20px 28px;text-align:center;min-width:160px}
+    .contact-card .icon{font-size:1.4rem;margin-bottom:6px}
+    .contact-card .label{font-size:0.72rem;color:rgba(255,255,255,0.55);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .contact-card .value{font-size:1.1rem;font-weight:800;color:#fff}
+    .contact-card .value a{color:#86efac}
+    footer{padding:24px 0;background:#0d2a18;border-top:1px solid rgba(255,255,255,0.06)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    footer p{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    footer a{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:#fff;border-top:1px solid var(--border);padding:10px 16px;gap:8px}
+    @media(max-width:700px){.mobile-sticky{display:flex}}
+    .mobile-sticky a{flex:1;text-align:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:0.85rem;white-space:normal;line-height:1.3}
+    .ms-call{background:var(--c);color:#fff}
+    .ms-claim{background:var(--c-dk);color:#fff}
+  </style>
+</head>
+<body>
+
+<!-- CLAIM BAR -->
+<div class="claim-bar">
+  <strong>This is a free demo site</strong> built by KalnyesGrowth · <strong>Claim it for $600 →</strong> <a href="https://kalnyesgrowth.com/book/">Book free call</a> · Also available in Spanish · (540) 783-8835
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <div class="logo-icon">🏠</div>
+        <div>
+          <div class="logo-text">Ray's Siding Company</div>
+          <div class="logo-sub">Fredericksburg, VA · Est. 30+ Years</div>
+        </div>
+      </div>
+      <a href="tel:+15407106864" class="nav-call">📞 (540) 710-6864</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">⭐ Family-Owned · BBB Accredited Since 1993</div>
+    <h1>Fredericksburg's <em>Exterior Experts</em> — Trusted for 30+ Years</h1>
+    <p class="hero-sub">From siding and roofing to windows, doors, and decks — Ray's Siding Company transforms the exterior of your home with the brands homeowners trust and the craftsmanship that lasts decades.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+15407106864" class="btn btn-green btn-lg">📞 Call Mike — Free Estimate</a>
+      <a href="#services" class="btn btn-outline-white">See Our Services</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item">✅ <strong>30+ Years</strong> in business</div>
+      <div class="trust-item">✅ <strong>BBB Accredited</strong> since 1993</div>
+      <div class="trust-item">✅ <strong>Family-Owned</strong> &amp; operated</div>
+      <div class="trust-item">✅ <strong>James Hardie &amp; GAF</strong> partner</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands">
+  <div class="container">
+    <div class="brands-inner">
+      <span style="font-size:0.75rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.1em;margin-right:8px">Premium partners:</span>
+      <span class="brand-pill">James Hardie</span>
+      <span class="brand-pill">GAF Roofing</span>
+      <span class="brand-pill">Provia</span>
+      <span class="brand-pill">Tamko</span>
+      <span class="brand-pill">BBB Accredited</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Complete Exterior Renovation</h2>
+    <p class="section-sub">One company for every surface on the outside of your home. No subcontractors. No surprises.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <h3>Siding Installation</h3>
+        <p>Vinyl, James Hardie fiber cement, and premium options. Energy-efficient, weather-resistant, and designed to last.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏗️</div>
+        <h3>Roofing</h3>
+        <p>GAF and Tamko certified roofing installation. Full replacement, storm damage repair, and new construction.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🪟</div>
+        <h3>Windows</h3>
+        <p>Provia windows for energy savings and curb appeal. Full installation, measurements, and warranty included.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🚪</div>
+        <h3>Entrance Doors</h3>
+        <p>Steel, fiberglass, and wood entry doors. Improve security, insulation, and your home's first impression.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🌿</div>
+        <h3>Porches &amp; Decks</h3>
+        <p>Screened porches, open decks, and patio enclosures built to match your home's exterior and stand up to Virginia weather.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🌧️</div>
+        <h3>Gutters</h3>
+        <p>Seamless gutter installation and replacement. Protect your foundation and landscaping from water damage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">Rooted in Community. Built on Reputation.</h2>
+    <div class="about-grid">
+      <div>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75;margin-bottom:20px">Ray's Siding Company has been a fixture in the Fredericksburg area for over 30 years. Owner Mike King personally visits every job site to assess your project — because after three decades in the business, he knows that precision measurements and understanding your vision from the start are what separate a good job from a great one.</p>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75;margin-bottom:20px">Today, Ray's is a true family business. Mike's son Michael and his wife Chrissy are part of the team — bringing the same hands-on dedication that built the company's reputation across Spotsylvania, Fredericksburg, Stafford, Caroline, and King George counties.</p>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75">From local sponsorships to community outreach, Ray's invests in the neighborhoods they serve. BBB Accredited since 1993 — before most of their competitors were in business.</p>
+      </div>
+      <div class="about-stat-grid">
+        <div class="about-stat">
+          <strong>30+</strong>
+          <span>Years in business</span>
+        </div>
+        <div class="about-stat">
+          <strong>1993</strong>
+          <span>BBB Accredited since</span>
+        </div>
+        <div class="about-stat">
+          <strong>40+</strong>
+          <span>Team members</span>
+        </div>
+        <div class="about-stat">
+          <strong>4</strong>
+          <span>Premium brand partners</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BBB BANNER -->
+<div class="bbb-banner">
+  <div class="container">
+    <h3>⭐ BBB Accredited Business Since 1993 · Family-Owned &amp; Operated</h3>
+    <p>Over three decades of standing behind every job. No excuses, no runarounds — just quality exterior work and a name you can trust.</p>
+  </div>
+</div>
+
+<!-- SERVICE AREA -->
+<section style="padding:56px 0;background:var(--bg-2);border-top:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Where We Work</div>
+    <h2 class="section-title">Serving Greater Fredericksburg</h2>
+    <p class="section-sub" style="max-width:560px;margin:0 auto 28px">Fredericksburg · Stafford · Spotsylvania · Caroline · King George · Orange · Culpeper · Louisa · Northern Neck · Lake Anna · Ashland · Ruther Glen · Bowling Green</p>
+    <a href="tel:+15407106864" class="btn btn-green">📞 Call for a Free Estimate</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Ready for a Free Estimate?</h2>
+    <p>Mike King will personally visit your property, measure everything precisely, and give you a detailed quote — no pressure, no obligation.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="label">Call or Text</div>
+        <div class="value"><a href="tel:+15407106864">(540) 710-6864</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="label">Location</div>
+        <div class="value" style="font-size:0.9rem">343 Wallace Lane<br>Fredericksburg, VA 22408</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <div class="label">Email</div>
+        <div class="value" style="font-size:0.9rem"><a href="mailto:rayssidingcompany@gmail.com">rayssidingcompany@gmail.com</a></div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:8px">Licensed &amp; Insured · BBB Accredited · Family-Owned Since 1993</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 Ray's Siding Company · Fredericksburg, VA</p>
+      <p>Site by <a href="https://kalnyesgrowth.com">KalnyesGrowth</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="tel:+15407106864" class="ms-call">📞 Call Mike</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-claim">🌐 Claim This Site — $600</a>
+</div>
+
+</body>
+</html>

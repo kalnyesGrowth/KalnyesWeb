@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workhouse Plumbing | Veteran-Owned Plumber — Fredericksburg VA</title>
+  <meta name="description" content="Workhouse Plumbing — veteran-owned, founded by David Morris Dickens. 24/7 emergency plumbing, drain cleaning, water heaters, gas lines, and more. Serving Fredericksburg, Stafford & Northern VA. Call (571) 444-6437.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;-webkit-font-smoothing:antialiased;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    .container-sm{max-width:720px;margin:0 auto;padding:0 24px}
+    @media(max-width:600px){.container,.container-sm{padding:0 16px}}
+    :root{
+      --c:#1e3a5f;--c-dk:#162d4a;--c-lt:#eff6ff;
+      --amber:#b45309;--amber-lt:#fef3c7;
+      --text:#111827;--text-2:#4b5563;--text-3:#9ca3af;
+      --border:#e5e7eb;--bg-2:#f9fafb;--radius:10px
+    }
+    .claim-bar{background:var(--c-dk);color:#fff;text-align:center;padding:12px 16px;font-size:0.85rem;font-weight:500;position:sticky;top:0;z-index:300}
+    .claim-bar strong{color:#93c5fd}
+    .claim-bar a{color:#93c5fd;font-weight:700;text-decoration:underline}
+    nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-icon{width:36px;height:36px;background:var(--c);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .logo-text{font-weight:800;font-size:1rem;color:var(--c-dk)}
+    .logo-sub{font-size:0.7rem;color:var(--text-3);line-height:1}
+    .nav-call{background:var(--c);color:#fff;padding:8px 18px;border-radius:7px;font-size:0.85rem;font-weight:700}
+    .emergency-bar{background:var(--amber);color:#fff;text-align:center;padding:10px 16px;font-size:0.82rem;font-weight:700}
+    .hero{background:linear-gradient(150deg,#0f2440 0%,#1e3a5f 100%);color:#fff;padding:64px 0 52px}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(147,197,253,0.12);color:#93c5fd;font-size:0.75rem;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:16px;border:1px solid rgba(147,197,253,0.25)}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:680px}
+    .hero h1 em{font-style:normal;color:#93c5fd}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.78);line-height:1.7;max-width:520px;margin-bottom:32px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;border-radius:8px;padding:15px 28px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;text-align:center;white-space:normal;line-height:1.3}
+    .btn-blue{background:var(--c);color:#fff;border-color:var(--c)}
+    .btn-blue:hover{background:#162d4a;transform:translateY(-1px);box-shadow:0 4px 16px rgba(30,58,95,0.4)}
+    .btn-amber{background:var(--amber);color:#fff;border-color:var(--amber)}
+    .btn-amber:hover{background:#92400e;transform:translateY(-1px)}
+    .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)}
+    .btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+    .btn-lg{font-size:1.1rem;padding:17px 34px}
+    .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .trust-row{display:flex;gap:24px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12)}
+    .trust-item{font-size:0.85rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+    .trust-item strong{color:#fff;font-weight:700}
+    .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+    .section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.2}
+    .section-sub{font-size:0.97rem;color:var(--text-2);line-height:1.7}
+    .services{padding:72px 0;background:var(--bg-2);border-top:1px solid var(--border)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:40px}
+    .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center;transition:box-shadow 0.2s}
+    .svc-card:hover{box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+    .svc-icon{font-size:1.8rem;margin-bottom:10px}
+    .svc-card h3{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:6px}
+    .svc-card p{font-size:0.78rem;color:var(--text-2);line-height:1.5}
+    .about{padding:72px 0;background:#fff}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}
+    @media(max-width:767px){.about-grid{grid-template-columns:1fr}}
+    .about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .about-stat{background:var(--c-lt);border:1px solid #bfdbfe;border-radius:var(--radius);padding:18px;text-align:center}
+    .about-stat strong{display:block;font-size:1.6rem;font-weight:800;color:var(--c-dk)}
+    .about-stat span{font-size:0.78rem;color:var(--text-2);font-weight:600}
+    .vet-banner{padding:36px 0;background:linear-gradient(90deg,#0f2440,#1e3a5f);color:#fff;text-align:center}
+    .vet-banner h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+    .vet-banner p{font-size:0.88rem;color:rgba(255,255,255,0.75)}
+    .contact{padding:72px 0;background:var(--c-dk);color:#fff;text-align:center}
+    .contact h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .contact p{opacity:0.75;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+    .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .contact-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);padding:20px 28px;text-align:center;min-width:160px}
+    .contact-card .icon{font-size:1.4rem;margin-bottom:6px}
+    .contact-card .label{font-size:0.72rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
+    .contact-card .value{font-size:1.1rem;font-weight:800;color:#fff}
+    .contact-card .value a{color:#93c5fd}
+    footer{padding:24px 0;background:#0a1929;border-top:1px solid rgba(255,255,255,0.06)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    footer p{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    footer a{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:#fff;border-top:1px solid var(--border);padding:10px 16px;gap:8px}
+    @media(max-width:700px){.mobile-sticky{display:flex}}
+    .mobile-sticky a{flex:1;text-align:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:0.85rem;white-space:normal;line-height:1.3}
+    .ms-call{background:var(--amber);color:#fff}
+    .ms-claim{background:var(--c);color:#fff}
+  </style>
+</head>
+<body>
+
+<!-- CLAIM BAR -->
+<div class="claim-bar">
+  <strong>This is a free demo site</strong> built by KalnyesGrowth · <strong>Claim it for $600 →</strong> <a href="https://kalnyesgrowth.com/book/">Book free call</a> · (540) 783-8835
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <div class="logo-icon">🔧</div>
+        <div>
+          <div class="logo-text">Workhouse Plumbing</div>
+          <div class="logo-sub">Fredericksburg, VA · Veteran-Owned</div>
+        </div>
+      </div>
+      <a href="tel:+15714446437" class="nav-call">📞 (571) 444-6437</a>
+    </div>
+  </div>
+</nav>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  🚨 24/7 Emergency Plumbing — Available Nights, Weekends &amp; Holidays · Call Now: <a href="tel:+15714446437" style="color:#fff;font-weight:800">(571) 444-6437</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🇺🇸 Veteran-Owned · Licensed &amp; Insured · Founded 2015</div>
+    <h1>Honest Plumbing Built on <em>Decades of Experience</em></h1>
+    <p class="hero-sub">Workhouse Plumbing was built by David Morris Dickens — one man's passion for honest, high-quality plumbing service grown into a full-service company known for reliability, respect, and results across Northern Virginia.</p>
+    <div class="hero-cta-row">
+      <a href="tel:+15714446437" class="btn btn-amber btn-lg">🚨 Call Now — 24/7 Emergency</a>
+      <a href="#services" class="btn btn-outline-white">See All Services</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item">✅ <strong>Veteran-Owned</strong></div>
+      <div class="trust-item">✅ <strong>24/7 Emergency</strong> service</div>
+      <div class="trust-item">✅ <strong>Transparent pricing</strong> always</div>
+      <div class="trust-item">✅ <strong>Licensed &amp; insured</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What We Fix</div>
+    <h2 class="section-title">Full-Service Plumbing for Northern VA</h2>
+    <p class="section-sub">From drain clogs to whole-home repiping — Workhouse handles it all with transparent pricing and no surprise charges.</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🚰</div>
+        <h3>Drain Cleaning</h3>
+        <p>Clogged drains cleared fast. Kitchen, bathroom, floor drains, and main sewer line.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔥</div>
+        <h3>Water Heaters</h3>
+        <p>Tank and tankless water heater installation, repair, and replacement. Same-day service available.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔴</div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipes, flooding, and leaks — 24/7, nights, weekends, and holidays. We answer every call.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔩</div>
+        <h3>Repiping</h3>
+        <p>Whole-home repiping for older homes. PEX, copper, and CPVC. Stop recurring leaks for good.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🧱</div>
+        <h3>Sewer Services</h3>
+        <p>Sewer line repair, replacement, camera inspection, and hydro-jetting for stubborn blockages.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔥</div>
+        <h3>Gas Lines</h3>
+        <p>Gas line installation, repair, and leak detection. Certified, safe, and code-compliant every time.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">💧</div>
+        <h3>Water Treatment</h3>
+        <p>Water softeners, filtration systems, and treatment for well and municipal water sources.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛁</div>
+        <h3>Kitchen &amp; Bath</h3>
+        <p>Fixture installation, faucet replacement, garbage disposal, shower valves, and toilet repair.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <h3>Sump Pumps</h3>
+        <p>Installation, replacement, and backup systems for basement waterproofing and flood prevention.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔒</div>
+        <h3>Backflow Prevention</h3>
+        <p>Backflow preventer installation, testing, and certification. Required for many commercial properties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">Built from One Man's Passion. Grown on Trust.</h2>
+    <div class="about-grid">
+      <div>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75;margin-bottom:20px">Workhouse Plumbing was founded in 2015 by David Morris Dickens — a veteran who brought the same discipline, attention to detail, and commitment to doing things right that defined his military service into every job he takes on.</p>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75;margin-bottom:20px">What started as one man's passion for craftsmanship has grown into a full-service plumbing company serving Fredericksburg, Stafford, Spotsylvania, Woodbridge, Manassas, and all of Northern Virginia — built on a simple promise: reliable, transparent, respectful service every time.</p>
+        <p style="font-size:0.97rem;color:var(--text-2);line-height:1.75">No price surprises. No disappearing after the job. Just honest plumbing from people who take pride in their work.</p>
+      </div>
+      <div class="about-stat-grid">
+        <div class="about-stat">
+          <strong>2015</strong>
+          <span>Founded</span>
+        </div>
+        <div class="about-stat">
+          <strong>24/7</strong>
+          <span>Emergency availability</span>
+        </div>
+        <div class="about-stat">
+          <strong>🇺🇸</strong>
+          <span>Veteran-Owned</span>
+        </div>
+        <div class="about-stat">
+          <strong>10+</strong>
+          <span>Service types offered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VET BANNER -->
+<div class="vet-banner">
+  <div class="container">
+    <h3>🇺🇸 Veteran-Owned &amp; Operated · Transparent Pricing · No Surprise Charges</h3>
+    <p>David Morris Dickens built Workhouse Plumbing on the same values that served him in the military: reliability, precision, and doing right by the people who trust you.</p>
+  </div>
+</div>
+
+<!-- SERVICE AREA -->
+<section style="padding:56px 0;background:var(--bg-2);border-top:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label">Service Area</div>
+    <h2 class="section-title">Serving All of Northern Virginia</h2>
+    <p class="section-sub" style="max-width:580px;margin:0 auto 28px">Fredericksburg · Stafford · Spotsylvania · Woodbridge · Manassas · Dumfries · Alexandria · Fairfax Station · Burke · Lorton · Springfield · King George · Ruther Glen</p>
+    <a href="tel:+15714446437" class="btn btn-blue">📞 Call (571) 444-6437</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Plumbing Emergency? Call Now.</h2>
+    <p>Available 24 hours a day, 7 days a week — including holidays. David and his team will be there.</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="icon">🚨</div>
+        <div class="label">24/7 Emergency</div>
+        <div class="value"><a href="tel:+15714446437">(571) 444-6437</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="label">Based In</div>
+        <div class="value" style="font-size:0.9rem">Fredericksburg, VA<br>45 Centreport Pkwy, Ste 105</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <div class="label">Email</div>
+        <div class="value" style="font-size:0.85rem"><a href="mailto:contactus@workhouseplumbing.com">contactus@workhouseplumbing.com</a></div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:8px">Licensed &amp; Insured · Veteran-Owned · Backflow Certified</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 Workhouse Plumbing · Fredericksburg, VA</p>
+      <p>Site by <a href="https://kalnyesgrowth.com">KalnyesGrowth</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="tel:+15714446437" class="ms-call">🚨 24/7 Emergency</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-claim">🌐 Claim This Site — $600</a>
+</div>
+
+</body>
+</html>
