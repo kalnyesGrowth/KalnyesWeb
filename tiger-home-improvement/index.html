@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiger Home Improvement LLC — Remodeling & Home Services | Springfield, VA</title>
+  <meta name="description" content="Tiger Home Improvement LLC in Springfield, VA. Kitchen, bathroom, basement remodeling, drywall, carpentry, decks, and more. 15+ years experience. 4.9★ rated. Call (571) 733-1761.">
+  <meta property="og:title" content="Tiger Home Improvement LLC — Springfield, VA">
+  <meta property="og:description" content="Kitchen, bath, basement remodeling. Drywall. Carpentry. 4.9★, 123 hires. Springfield & Northern VA.">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#0e1117;color:#f0ebe4;-webkit-font-smoothing:antialiased}
+
+    :root{
+      --bg:#0e1117;
+      --bg2:#141920;
+      --bg3:#1a2230;
+      --copper:#c2770e;
+      --copper-bright:#f59e0b;
+      --orange:#fb923c;
+      --text:#f0ebe4;
+      --muted:#9aa3ae;
+      --border:#2a3445;
+    }
+
+    /* KG PROMO BANNER */
+    .kg-banner{background:linear-gradient(90deg,#1e3a5f,#1a4a7a);border-bottom:2px solid var(--copper);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:500}
+    .kg-banner-text{font-size:0.82rem;color:#e0edff;font-weight:500;flex:1;min-width:200px}
+    .kg-banner-text strong{color:#fff;font-weight:700}
+    .kg-banner-actions{display:flex;gap:6px;flex-wrap:wrap}
+    .kg-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:6px;font-size:0.78rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:opacity 0.2s}
+    .kg-btn:hover{opacity:0.85}
+    .kg-btn-call{background:#1a73e8;color:#fff}
+    .kg-btn-wa{background:#25d366;color:#fff}
+    .kg-btn-book{background:var(--copper-bright);color:#000}
+    @media(max-width:600px){.kg-banner{padding:8px 12px}.kg-banner-text{font-size:0.76rem}.kg-btn{padding:6px 10px;font-size:0.73rem}}
+
+    /* NAV */
+    nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{display:flex;align-items:center;gap:10px}
+    .nav-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--copper),var(--copper-bright));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .nav-name{font-weight:800;font-size:0.95rem;color:var(--text);line-height:1.1}
+    .nav-name span{display:block;font-weight:500;font-size:0.72rem;color:var(--muted)}
+    .nav-phone a{font-size:0.85rem;font-weight:700;color:var(--copper-bright);text-decoration:none}
+    @media(max-width:500px){.nav-name span{display:none}}
+
+    /* HERO */
+    .hero{background:linear-gradient(160deg,#0a0e16 0%,#0e1117 35%,#141a24 70%,#1a2230 100%);padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 400px at 50% 0%,rgba(194,119,14,0.08),transparent);pointer-events:none}
+    .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(194,119,14,0.15);border:1px solid rgba(194,119,14,0.35);color:var(--copper-bright);font-size:0.74rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:20px}
+    .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:16px}
+    .hero h1 em{font-style:normal;color:var(--copper-bright)}
+    .hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto 36px;line-height:1.65}
+    .hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:36px}
+    .stat-item{text-align:center}
+    .stat-num{font-size:1.9rem;font-weight:900;color:var(--orange);line-height:1}
+    .stat-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:3px}
+    .hero-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--copper);color:#fff;font-weight:700;font-size:0.95rem;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s}
+    .btn-primary:hover{background:var(--copper-bright);transform:translateY(-2px)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--text);font-weight:600;font-size:0.95rem;border-radius:8px;border:1px solid var(--border);text-decoration:none;transition:border-color 0.2s,background 0.2s}
+    .btn-secondary:hover{border-color:var(--copper);background:rgba(194,119,14,0.08)}
+
+    /* TRUST STRIP */
+    .trust-strip{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 24px}
+    .trust-inner{max-width:800px;margin:0 auto;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:7px;font-size:0.8rem;color:var(--muted)}
+    .trust-item strong{color:var(--text);font-weight:600}
+
+    /* SERVICES */
+    .section{padding:64px 24px}
+    .container{max-width:900px;margin:0 auto}
+    .section-label{font-size:0.73rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
+    .section-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px}
+    .section-sub{font-size:0.95rem;color:var(--muted);line-height:1.65;max-width:540px;margin-bottom:40px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .service-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color 0.2s,transform 0.2s}
+    .service-card:hover{border-color:var(--copper);transform:translateY(-3px)}
+    .service-icon{font-size:1.8rem;margin-bottom:12px}
+    .service-card h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:7px}
+    .service-card p{font-size:0.84rem;color:var(--muted);line-height:1.55}
+
+    /* WHY SECTION */
+    .why-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .why-item{padding:20px;border-left:3px solid var(--copper);background:rgba(194,119,14,0.04);border-radius:0 8px 8px 0}
+    .why-item h4{font-size:0.92rem;font-weight:700;color:#fff;margin-bottom:6px}
+    .why-item p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+    /* REVIEWS */
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .review-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px}
+    .review-stars{color:var(--copper-bright);font-size:0.88rem;margin-bottom:10px}
+    .review-text{font-size:0.86rem;color:#d4cfc9;line-height:1.6;font-style:italic;margin-bottom:12px}
+    .review-author{font-size:0.78rem;font-weight:600;color:var(--muted)}
+
+    /* GUARANTEE */
+    .guarantee{background:linear-gradient(135deg,#0d1c10,#122018);border:1px solid rgba(34,197,94,0.25);border-radius:12px;padding:28px;text-align:center;margin:40px 0 0}
+    .guarantee h3{font-size:1.1rem;font-weight:800;color:#4ade80;margin-bottom:8px}
+    .guarantee p{font-size:0.88rem;color:#86efac;line-height:1.6}
+
+    /* CONTACT */
+    .contact-section{background:var(--bg2);border-top:1px solid var(--border)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+    @media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+    .contact-heading h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:#fff;margin-bottom:10px}
+    .contact-heading p{font-size:0.9rem;color:var(--muted);line-height:1.6}
+    .contact-methods{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+    .contact-link{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.2s,background 0.2s}
+    .contact-link:hover{border-color:var(--copper);background:rgba(194,119,14,0.06)}
+    .contact-link-icon{font-size:1.2rem;flex-shrink:0}
+    .contact-link-text strong{display:block;font-size:0.88rem;font-weight:700;color:#fff}
+    .contact-link-text span{font-size:0.78rem;color:var(--muted)}
+
+    /* BOOK PANEL */
+    .book-panel{background:linear-gradient(135deg,#0d1a2e,#162540);border:1px solid rgba(194,119,14,0.3);border-radius:12px;padding:28px;text-align:center}
+    .book-panel h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:8px}
+    .book-panel p{font-size:0.85rem;color:var(--muted);margin-bottom:20px;line-height:1.55}
+    .book-cta{display:block;padding:14px 24px;background:var(--copper);color:#fff;font-weight:700;font-size:0.92rem;border-radius:8px;text-decoration:none;transition:background 0.2s;margin-bottom:10px}
+    .book-cta:hover{background:var(--copper-bright)}
+    .book-note{font-size:0.75rem;color:var(--muted)}
+
+    /* FOOTER */
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:24px;text-align:center}
+    .footer-text{font-size:0.76rem;color:var(--muted)}
+    .footer-badge{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:0.71rem;color:var(--muted)}
+    .footer-badge a{color:var(--copper);text-decoration:none}
+
+    /* MOBILE STICKY */
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--bg2);border-top:1px solid var(--border);padding:10px 16px;gap:8px}
+    @media(max-width:680px){.mobile-sticky{display:flex;padding-bottom:max(10px,env(safe-area-inset-bottom))}}
+    .ms-btn{flex:1;display:flex;align-items:center;justify-content:center;padding:13px 6px;border-radius:8px;font-weight:700;font-size:0.82rem;text-decoration:none;white-space:nowrap}
+    .ms-call{background:#1a73e8;color:#fff}
+    .ms-wa{background:#25d366;color:#fff}
+    .ms-book{background:var(--copper);color:#fff}
+
+    /* WHATSAPP FLOAT */
+    #wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);z-index:400;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;animation:waPulse 2.5s infinite}
+    #wa-float:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 28px rgba(37,211,102,0.7)}
+    #wa-float svg{width:28px;height:28px;fill:#fff}
+    @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.8)}}
+    @media(max-width:680px){#wa-float{display:none}}
+  </style>
+</head>
+<body>
+
+<!-- KG PROMO BANNER -->
+<div class="kg-banner">
+  <div class="kg-banner-text">
+    <strong>Martha</strong> — your free website is ready. See it, then decide. No cost to look.
+  </div>
+  <div class="kg-banner-actions">
+    <a href="tel:+15407838835" class="kg-btn kg-btn-call">📞 Call Jose</a>
+    <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Martha%20from%20Tiger%20Home%20Improvement%20and%20I%27d%20like%20to%20see%20the%20free%20website%20preview" class="kg-btn kg-btn-wa">💬 WhatsApp</a>
+    <a href="https://kalnyesgrowth.com/book/" class="kg-btn kg-btn-book">📅 Book Free Call</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">🐯</div>
+    <div class="nav-name">
+      Tiger Home Improvement LLC
+      <span>Springfield, VA · Northern Virginia</span>
+    </div>
+  </div>
+  <div class="nav-phone">
+    <a href="tel:+15717331761">(571) 733-1761</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">⭐ 4.9 Stars · 123 Hires · Springfield, VA</div>
+  <h1>Remodeling done right.<br><em>On time. On budget.</em></h1>
+  <p class="hero-sub">Kitchens, bathrooms, basements, drywall, carpentry, decks — Tiger Home Improvement handles it all. 15 years of experience across Northern Virginia.</p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">123</div>
+      <div class="stat-label">Hires on Thumbtack</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">96 Reviews</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Pro Crew Members</div>
+    </div>
+  </div>
+  <div class="hero-ctas">
+    <a href="tel:+15717331761" class="btn-primary">📞 Call (571) 733-1761</a>
+    <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Martha%20from%20Tiger%20Home%20Improvement%20and%20I%27d%20like%20to%20see%20the%20free%20website%20preview" class="btn-secondary">💬 Get Free Estimate</a>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">✅ <strong>Background Checked</strong></div>
+    <div class="trust-item">🔧 <strong>15 Years Experience</strong></div>
+    <div class="trust-item">📍 <strong>Northern Virginia</strong></div>
+    <div class="trust-item">💳 <strong>Flexible Payment</strong></div>
+    <div class="trust-item">⚡ <strong>Fast Response</strong></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Full home improvement, start to finish</h2>
+    <p class="section-sub">From a single drywall patch to a complete kitchen gut-and-rebuild — we bring the same attention to every job.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🍳</div>
+        <h3>Kitchen Remodeling</h3>
+        <p>Cabinets, countertops, layout changes, tile backsplash — complete kitchen transformations or targeted upgrades.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛁</div>
+        <h3>Bathroom Remodeling</h3>
+        <p>Shower tile, vanity replacement, flooring, lighting — fresh bathrooms that hold up for years.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Basement Finishing</h3>
+        <p>Turn unused space into a usable room — rec rooms, home offices, guest suites, full framing and finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧱</div>
+        <h3>Drywall Services</h3>
+        <p>Hanging, finishing, texturing, and repair. Smooth walls from new construction to patch-and-paint.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🪵</div>
+        <h3>Carpentry & Trim</h3>
+        <p>Crown molding, baseboards, framing, cabinetry, deck and porch work — precise finish carpentry.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔨</div>
+        <h3>General Contracting</h3>
+        <p>New construction builds, home modifications, gazebo installation, furniture building and refinishing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-label">Why Tiger</div>
+    <h2 class="section-title">What makes us different</h2>
+    <div class="why-grid" style="margin-top:32px">
+      <div class="why-item">
+        <h4>We don't leave until you're satisfied</h4>
+        <p>Our crew stays on the job until the work meets your standard — not just ours.</p>
+      </div>
+      <div class="why-item">
+        <h4>Fast response, every time</h4>
+        <p>We respond to estimate requests within a day. Most jobs are scheduled within the week.</p>
+      </div>
+      <div class="why-item">
+        <h4>5-person experienced crew</h4>
+        <p>15 years of experience across the full team. Background checked. Fully vetted.</p>
+      </div>
+      <div class="why-item">
+        <h4>Pay how you want</h4>
+        <p>Cash, check, card, Venmo, Zelle, PayPal, CashApp — whatever is easiest for you.</p>
+      </div>
+    </div>
+    <div class="guarantee">
+      <h3>✅ 100% Satisfaction Commitment</h3>
+      <p>We're not done until you're happy. Every job includes a final walkthrough and any touch-ups needed before we call it complete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">What Northern Virginia homeowners say</h2>
+    <div class="reviews-grid" style="margin-top:32px">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Rodolfo was not going to leave my home until I was completely satisfied. Highly recommend this team."</p>
+        <div class="review-author">William M. · Jan 2026 · via Thumbtack</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"From start to finish, professional. I couldn't be happier with the results."</p>
+        <div class="review-author">Catrina P. · Aug 2025 · via Thumbtack</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Quick to respond and quick to action! They answered my request quickly and got the job done right."</p>
+        <div class="review-author">Kenneth M. · Jan 2026 · via Thumbtack</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:0.8rem;color:var(--muted)">4.9★ average across 96 reviews · Thumbtack Top Pro</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-heading">
+        <div class="section-label">Get in Touch</div>
+        <h2>Ready to get started?</h2>
+        <p>Free estimates, fast response. Call or text, and we'll get a time on the calendar that works for you.</p>
+        <div class="contact-methods">
+          <a href="tel:+15717331761" class="contact-link">
+            <span class="contact-link-icon">📞</span>
+            <div class="contact-link-text">
+              <strong>(571) 733-1761</strong>
+              <span>Call or text — we respond fast</span>
+            </div>
+          </a>
+          <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Martha%20from%20Tiger%20Home%20Improvement%20and%20I%27d%20like%20to%20see%20the%20free%20website%20preview" class="contact-link">
+            <span class="contact-link-icon">💬</span>
+            <div class="contact-link-text">
+              <strong>WhatsApp Jose</strong>
+              <span>Ask about your free website preview</span>
+            </div>
+          </a>
+          <a href="https://www.thumbtack.com/va/springfield/hardwood-floor-installation/tiger-home-improvement-llc/service/400732996610138116" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">⭐</span>
+            <div class="contact-link-text">
+              <strong>Thumbtack Profile</strong>
+              <span>96 reviews · 123 hires · 4.9 stars</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="book-panel">
+        <h3>📅 Want a website like this?</h3>
+        <p>This preview was built by Jose at Kalnyes Growth — for free. If you love it, it's $400 to launch with hosting included. You don't pay unless you're happy.</p>
+        <a href="https://kalnyesgrowth.com/book/" class="book-cta">Book a Free 15-Min Call</a>
+        <div class="book-note">kalnyesgrowth.com · (540) 783-8835</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-text">Tiger Home Improvement LLC · Springfield, VA 22153 · (571) 733-1761</p>
+  <p class="footer-text">Serving Northern Virginia: Springfield, Fairfax, Stafford, Lorton, Manassas &amp; beyond</p>
+  <div class="footer-badge">
+    Website demo by <a href="https://kalnyesgrowth.com" target="_blank">Kalnyes Growth</a> · Free to view, $400 to launch
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="tel:+15717331761" class="ms-btn ms-call">📞 Call</a>
+  <a href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Martha%20from%20Tiger%20Home%20Improvement%20and%20I%27d%20like%20to%20see%20the%20free%20website%20preview" class="ms-btn ms-wa">💬 WhatsApp</a>
+  <a href="https://kalnyesgrowth.com/book/" class="ms-btn ms-book">📅 Book</a>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a id="wa-float" href="https://wa.me/15407838835?text=Hi%20Jose%2C%20I%27m%20Martha%20from%20Tiger%20Home%20Improvement%20and%20I%27d%20like%20to%20see%20the%20free%20website%20preview" title="Chat on WhatsApp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
