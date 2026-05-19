@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floors &amp; More — Fredericksburg, VA | Flooring, Tile &amp; Carpet Installation</title>
+<meta name="description" content="Floors & More — Fredericksburg VA flooring contractor. Hardwood, tile, carpet, LVP installation and removal. Local, trusted, highly recommended. Call David at (540) 287-4030.">
+<meta property="og:title" content="Floors & More — Fredericksburg, VA Flooring Contractor">
+<meta property="og:description" content="Tile, hardwood, carpet, LVP — Fredericksburg VA. Trusted by local homeowners. Call (540) 287-4030.">
+<meta property="og:type" content="website">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+
+<style>
+  :root {
+    --bg: #faf7f3;
+    --bg2: #f2ede5;
+    --terra: #8b4a2f;
+    --terra-mid: #b06040;
+    --terra-light: #d4875a;
+    --warm: #c9891a;
+    --warm-light: #e8a836;
+    --text: #1e1a15;
+    --text-soft: #4e4038;
+    --text-muted: #8a7060;
+    --white: #fffef9;
+    --border: #ddd5c8;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── KG BANNER ── */
+  #kg-banner {
+    display: none;
+    background: var(--terra);
+    color: #fff;
+    padding: 10px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 0.83rem;
+    line-height: 1.4;
+  }
+  #kg-banner.show { display: block; }
+  .kg-banner-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .kg-banner-text { flex: 1; min-width: 200px; }
+  .kg-banner-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .kg-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 13px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; border: none; text-decoration: none; }
+  .kg-btn-call { background: var(--warm); color: #fff; }
+  .kg-btn-wa { background: #25d366; color: #fff; }
+  .kg-btn-book { background: #fff; color: var(--terra); }
+
+  /* ── NAV ── */
+  nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 20px; position: sticky; top: 0; z-index: 900; }
+  nav.with-banner { top: 44px; }
+  .nav-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+  .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--terra); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--warm); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { font-size: 0.87rem; font-weight: 500; color: var(--text-soft); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terra); }
+  .nav-cta { background: var(--terra); color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; white-space: nowrap; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--terra-mid); }
+  @media (max-width: 660px) { .nav-links { display: none; } }
+
+  /* ── HERO ── */
+  .hero { background: var(--terra); color: #fff; padding: 70px 20px 60px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 45%, rgba(180,100,60,0.3) 0%, transparent 65%); }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); border-radius: 100px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 18px; }
+  .hero h1 em { font-style: normal; color: var(--warm-light); }
+  .hero-sub { font-size: 1.06rem; color: rgba(255,255,255,0.82); line-height: 1.65; max-width: 520px; margin-bottom: 30px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--warm); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 0.98rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: #b07010; transform: translateY(-1px); }
+  .btn-outline-hero { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.32); color: #fff; padding: 14px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 600; transition: background 0.2s; }
+  .btn-outline-hero:hover { background: rgba(255,255,255,0.18); }
+  .hero-trust { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.68); }
+  .hero-trust span { display: flex; align-items: center; gap: 5px; }
+  .hero-trust strong { color: rgba(255,255,255,0.92); }
+
+  /* ── STRIP ── */
+  .strip { background: var(--warm); color: #fff; padding: 13px 20px; text-align: center; font-size: 0.87rem; font-weight: 600; letter-spacing: 0.01em; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 60px 20px; }
+  .section-inner { max-width: 1040px; margin: 0 auto; }
+  .section-alt { background: var(--bg2); }
+  .section-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra-mid); margin-bottom: 10px; }
+  .section-title { font-size: clamp(1.6rem, 3.5vw, 2.1rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 14px; }
+  .section-sub { font-size: 0.97rem; color: var(--text-soft); max-width: 560px; line-height: 1.65; margin-bottom: 40px; }
+
+  /* ── SERVICES ── */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
+  .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 24px 22px; display: flex; gap: 16px; align-items: flex-start; transition: box-shadow 0.2s, transform 0.15s; }
+  .service-card:hover { box-shadow: 0 6px 24px rgba(139,74,47,0.1); transform: translateY(-2px); }
+  .svc-num { width: 34px; height: 34px; min-width: 34px; border-radius: 8px; background: var(--terra); color: #fff; font-size: 0.82rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .svc-body h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; }
+  .svc-body p { font-size: 0.84rem; color: var(--text-soft); line-height: 1.55; }
+
+  /* ── ABOUT ── */
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+  @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; gap: 32px; } }
+  .about-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 14px; }
+  .about-text p { font-size: 0.94rem; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+  .stat-num { font-size: 1.9rem; font-weight: 800; color: var(--terra); letter-spacing: -0.04em; line-height: 1; margin-bottom: 5px; }
+  .stat-lbl { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── FLOOR TYPES ── */
+  .floor-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .floor-chip { background: var(--white); border: 1.5px solid var(--terra-light); color: var(--terra); border-radius: 100px; padding: 8px 18px; font-size: 0.86rem; font-weight: 600; }
+
+  /* ── AREAS ── */
+  .area-section { padding: 36px 20px; border-top: 1px solid var(--border); }
+  .area-inner { max-width: 1040px; margin: 0 auto; }
+  .area-label { font-size: 0.77rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+  .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .area-tag { background: var(--white); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 0.81rem; font-weight: 600; color: var(--text-soft); }
+
+  /* ── REVIEWS ── */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-top: 36px; }
+  .review-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px; }
+  .review-stars { color: var(--warm); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 1px; }
+  .review-text { font-size: 0.89rem; color: var(--text-soft); line-height: 1.65; margin-bottom: 14px; font-style: italic; }
+  .review-meta { font-size: 0.77rem; font-weight: 700; color: var(--text-muted); }
+
+  /* ── CTA ── */
+  .cta-section { background: var(--terra); padding: 68px 20px; text-align: center; color: #fff; }
+  .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+  .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 460px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-warm { background: var(--warm); color: #fff; padding: 14px 28px; border-radius: 10px; font-size: 0.98rem; font-weight: 700; transition: background 0.2s; }
+  .btn-cta-warm:hover { background: #b07010; }
+  .btn-cta-outline { border: 2px solid rgba(255,255,255,0.42); color: #fff; padding: 14px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 600; transition: background 0.2s; }
+  .btn-cta-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── FOOTER ── */
+  footer { background: #1a1008; color: rgba(255,255,255,0.6); padding: 40px 20px 80px; }
+  .footer-inner { max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; }
+  .footer-brand { flex: 1; min-width: 200px; }
+  .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .footer-logo span { color: var(--warm-light); }
+  .footer-brand p { font-size: 0.84rem; line-height: 1.6; max-width: 260px; }
+  .footer-col { flex: 1; min-width: 160px; }
+  .footer-col h4 { font-size: 0.8rem; font-weight: 700; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+  .footer-col p { font-size: 0.84rem; margin-bottom: 6px; }
+  .footer-col a { color: rgba(255,255,255,0.6); }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { max-width: 1040px; margin: 24px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.77rem; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
+
+  /* ── MOBILE STICKY ── */
+  .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 800; background: var(--terra); padding: 10px 12px; border-top: 2px solid var(--terra-light); }
+  .mobile-sticky-inner { display: flex; gap: 8px; max-width: 480px; margin: 0 auto; }
+  .ms-btn { flex: 1; padding: 11px 8px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; text-align: center; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; white-space: normal; max-width: 100%; }
+  .ms-call { background: var(--warm); color: #fff; }
+  .ms-wa { background: #25d366; color: #fff; }
+  .ms-est { background: #fff; color: var(--terra); }
+  @media (max-width: 760px) { .mobile-sticky { display: block; } }
+</style>
+</head>
+<body>
+
+<!-- KG BANNER -->
+<div id="kg-banner">
+  <div class="kg-banner-inner">
+    <div class="kg-banner-text">
+      <strong>David — your free website is ready.</strong> Built for Floors &amp; More. $400 to launch with hosting. Free if you don't love it.
+    </div>
+    <div class="kg-banner-actions">
+      <a href="tel:+15407838835" class="kg-btn kg-btn-call">📞 Call Jose</a>
+      <a href="https://wa.me/15407838835?text=Hey%20Jose%2C%20I%20saw%20my%20free%20demo%20for%20Floors%20%26%20More!" class="kg-btn kg-btn-wa">💬 WhatsApp</a>
+      <a href="https://kalnyesgrowth.com/book/" class="kg-btn kg-btn-book">Book Free Call →</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Floors <span>&</span> More</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+15402874030" class="nav-cta">📞 (540) 287-4030</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📍 Fredericksburg, VA · Stafford · Spotsylvania</div>
+    <h1>Beautiful floors, <em>done right.</em></h1>
+    <p class="hero-sub">Floors &amp; More handles tile, hardwood, carpet, LVP, and everything in between — removal, installation, and finishing. Local, trusted, and recommended by your neighbors.</p>
+    <div class="hero-actions">
+      <a href="tel:+15402874030" class="btn-primary">📞 Get a Free Estimate</a>
+      <a href="#services" class="btn-outline-hero">See All Services</a>
+    </div>
+    <div class="hero-trust">
+      <span>⭐ <strong>Nextdoor recommended</strong> — multiple neighborhoods</span>
+      <span>🔨 <strong>Full removal &amp; installation</strong> — one crew</span>
+      <span>📍 <strong>Locally owned</strong> — Fredericksburg, VA</span>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">Free estimates · Tile, hardwood, carpet, LVP &amp; more · Call David: (540) 287-4030</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Every floor type — installed and finished right</h2>
+    <p class="section-sub">From old tile removal to fresh hardwood installation, we handle every step so you get floors that look great and last for years.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-num">1</div>
+        <div class="svc-body">
+          <h3>Tile Installation</h3>
+          <p>Bathroom floors, showers, kitchen backsplashes, entryways — measured, cut, and set level every time.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">2</div>
+        <div class="svc-body">
+          <h3>Tile Removal</h3>
+          <p>We demo old tile cleanly without damaging the subfloor — so your new installation starts on a solid base.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">3</div>
+        <div class="svc-body">
+          <h3>Hardwood Flooring</h3>
+          <p>Solid and engineered hardwood installation — oak, maple, and more. Sanding and finishing available.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">4</div>
+        <div class="svc-body">
+          <h3>Carpet Installation</h3>
+          <p>Bedrooms, living rooms, stairs — we install carpet clean and tight with professional stretching.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">5</div>
+        <div class="svc-body">
+          <h3>Luxury Vinyl Plank (LVP)</h3>
+          <p>Waterproof, durable, and beautiful. LVP is perfect for kitchens, bathrooms, and high-traffic areas.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">6</div>
+        <div class="svc-body">
+          <h3>Shower Remodeling &amp; Tile</h3>
+          <p>Full shower tile replacement — old material removed, waterproofing done right, new tile set and grouted.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="floor-grid">
+      <span class="floor-chip">Ceramic Tile</span>
+      <span class="floor-chip">Porcelain Tile</span>
+      <span class="floor-chip">Hardwood</span>
+      <span class="floor-chip">Engineered Wood</span>
+      <span class="floor-chip">Luxury Vinyl Plank</span>
+      <span class="floor-chip">Carpet</span>
+      <span class="floor-chip">Laminate</span>
+      <span class="floor-chip">Subfloor Repair</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label">About Floors &amp; More</div>
+        <h2>Fredericksburg's floor crew — trusted by neighbors</h2>
+        <p>Floors &amp; More is a locally owned flooring and tile company serving Fredericksburg and the surrounding area. Owner David Servick has been doing this work for years and built a reputation in the community for clean installs, honest pricing, and doing the job right the first time.</p>
+        <p>We handle everything from a single bathroom tile job to whole-house flooring projects. You get one point of contact, clear communication, and a finished floor that looks exactly how it should.</p>
+        <p>Multiple Nextdoor neighborhoods have recommended Floors &amp; More — not from advertising, but from neighbor-to-neighbor word of mouth. That's the standard we hold ourselves to on every job.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">6+</div>
+          <div class="stat-lbl">Floor Types</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">⭐</div>
+          <div class="stat-lbl">Nextdoor Rec.</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">1</div>
+          <div class="stat-lbl">Point of Contact</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Free</div>
+          <div class="stat-lbl">Estimates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<div class="area-section">
+  <div class="area-inner">
+    <div class="area-label">Service Area</div>
+    <div class="area-tags">
+      <span class="area-tag">📍 Fredericksburg</span>
+      <span class="area-tag">📍 Stafford</span>
+      <span class="area-tag">📍 Spotsylvania</span>
+      <span class="area-tag">📍 Woodford</span>
+      <span class="area-tag">📍 King George</span>
+      <span class="area-tag">📍 Surrounding Areas</span>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-inner">
+    <div class="section-label">What Neighbors Say</div>
+    <h2 class="section-title">Recommended across Fredericksburg &amp; Stafford</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I highly recommend Floors and More. We've used them for multiple jobs in our home and the quality is consistently excellent. David is reliable and does beautiful work."</p>
+        <div class="review-meta">D.G. — Rappahannock Academy, VA <span style="font-weight:400"> · Nextdoor</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"He removed our old tile shower and replaced it with new tile. He did an awesome job — clean work, great finish, and the price was very fair."</p>
+        <div class="review-meta">B.B. — Fredericksburg, VA <span style="font-weight:400"> · Nextdoor</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"David installed LVP throughout our main floor. He was on time, very professional, and the floors look incredible. We couldn't be happier with the result."</p>
+        <div class="review-meta">Fredericksburg Homeowner <span style="font-weight:400"> · Nextdoor</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready for new floors?</h2>
+  <p>Call or text David for a free estimate. Tile, hardwood, carpet, LVP — one call handles it all.</p>
+  <div class="cta-actions">
+    <a href="tel:+15402874030" class="btn-cta-warm">📞 Call (540) 287-4030</a>
+    <a href="mailto:bluetorino73@yahoo.com" class="btn-cta-outline">✉ bluetorino73@yahoo.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Floors <span>&</span> More</div>
+      <p>Locally owned flooring &amp; tile contractor serving Fredericksburg, Stafford, Spotsylvania &amp; surrounding VA.</p>
+    </div>
+    <div class="footer-col" id="contact-footer">
+      <h4>Contact</h4>
+      <p>📞 <a href="tel:+15402874030">(540) 287-4030</a></p>
+      <p>✉ <a href="mailto:bluetorino73@yahoo.com">bluetorino73@yahoo.com</a></p>
+      <p>📍 Fredericksburg, VA 22407</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <p>Tile Installation &amp; Removal</p>
+      <p>Hardwood &amp; Engineered Wood</p>
+      <p>Carpet · LVP · Laminate</p>
+      <p>Shower Tile Remodeling</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Floors &amp; More — Fredericksburg, VA</span>
+    <span style="font-size:0.72rem;color:rgba(255,255,255,0.25)">Site by <a href="https://kalnyesgrowth.com" style="color:rgba(255,255,255,0.3)">KalnyesGrowth</a></span>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <div class="mobile-sticky-inner">
+    <a href="tel:+15402874030" class="ms-btn ms-call">📞 Call</a>
+    <a href="https://wa.me/15402874030" class="ms-btn ms-wa">💬 Text</a>
+    <a href="mailto:bluetorino73@yahoo.com" class="ms-btn ms-est">✉ Email</a>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('preview') === 'jose') {
+    document.getElementById('kg-banner').classList.add('show');
+    document.getElementById('main-nav').classList.add('with-banner');
+  }
+</script>
+</body>
+</html>
