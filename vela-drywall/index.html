@@ -9,7 +9,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Vela Drywall Painting LLC","description":"Drywall and painting services in Stafford VA — hanging, finishing, texture, repairs, and painting. 10+ years experience. Free estimates.","telephone":"+15712415940","email":"veladrywallpaintingllc@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Stafford","addressRegion":"VA","postalCode":"22554","addressCountry":"US"},"areaServed":["Stafford VA","Fredericksburg VA","Quantico VA","Spotsylvania VA"]}
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Vela Drywall Painting LLC","description":"Drywall and painting services in Stafford VA — hanging, finishing, texture, repairs, and painting. 10+ years experience. Free estimates.","telephone":"+15712413940","email":"veladrywallpaintingllc@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Stafford","addressRegion":"VA","postalCode":"22554","addressCountry":"US"},"areaServed":["Stafford VA","Fredericksburg VA","Quantico VA","Spotsylvania VA"]}
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -36,7 +36,8 @@ h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800}
 p{color:var(--body);line-height:1.75}
 
 /* KG BANNER */
-#kg-banner{background:linear-gradient(90deg,#0f2a6b,#1557b0);color:#fff;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:.84rem;position:sticky;top:0;z-index:9999}
+#kg-banner{background:linear-gradient(90deg,#0f2a6b,#1557b0);color:#fff;padding:11px 20px;display:none;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:.84rem;position:sticky;top:0;z-index:9999}
+#kg-banner.show{display:flex}
 #kg-banner a{background:#fff;color:#1557b0;font-weight:700;padding:7px 18px;border-radius:6px;font-size:.8rem;white-space:nowrap}
 
 /* NAV */
@@ -151,7 +152,7 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
 <nav>
   <div class="nav-brand">Vela Drywall Painting LLC<small>Stafford, VA — Licensed & Insured</small></div>
   <div class="nav-cta">
-    <a href="tel:+15712415940" class="nav-call">📞 (571) 241-3940</a>
+    <a href="tel:+15712413940" class="nav-call">📞 (571) 241-3940</a>
   </div>
 </nav>
 
@@ -164,7 +165,7 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
         <h1 class="hero-h1">Drywall & Painting Done <em>Right</em> — Stafford, VA</h1>
         <p class="hero-sub">Vela Drywall Painting LLC — 10+ years of quality work in Stafford, Fredericksburg, and Quantico. Free estimates on all jobs. Licensed and insured.</p>
         <div class="hero-btns">
-          <a href="tel:+15712415940" class="btn-cta">📞 Call for Free Estimate</a>
+          <a href="tel:+15712413940" class="btn-cta">📞 Call for Free Estimate</a>
           <a href="mailto:veladrywallpaintingllc@gmail.com" class="btn-ghost">✉️ Email Us</a>
         </div>
         <div class="hero-stats">
@@ -187,7 +188,7 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
           <div class="hc-item">Free estimates — fast scheduling</div>
           <div class="hc-item">Customer satisfaction guaranteed</div>
         </div>
-        <a href="tel:+15712415940" class="hc-btn">Call (571) 241-3940 →</a>
+        <a href="tel:+15712413940" class="hc-btn">Call (571) 241-3940 →</a>
       </div>
     </div>
   </div>
@@ -247,7 +248,7 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
       </div>
     </div>
     <div style="text-align:center;margin-top:40px">
-      <a href="tel:+15712415940" class="btn-cta">Get a Free Estimate → (571) 241-3940</a>
+      <a href="tel:+15712413940" class="btn-cta">Get a Free Estimate → (571) 241-3940</a>
     </div>
   </div>
 </section>
@@ -298,7 +299,7 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
         <h2>Get a Free Estimate</h2>
         <p>Call or text Duglas directly. Free estimates on all jobs — usually scheduled within a few days. Residential and commercial work welcome.</p>
         <div class="clinks">
-          <a href="tel:+15712415940" class="clink">
+          <a href="tel:+15712413940" class="clink">
             <div class="clink-icon" style="background:#fff7ed">📞</div>
             <div><div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:1px">Call or Text</div>(571) 241-3940</div>
           </a>
@@ -344,9 +345,13 @@ footer p{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8}
 
 <!-- MOBILE STICKY -->
 <div id="mob-bar">
-  <a href="tel:+15712415940" class="mb-call">📞 Call Duglas</a>
+  <a href="tel:+15712413940" class="mb-call">📞 Call Duglas</a>
   <a href="mailto:veladrywallpaintingllc@gmail.com" class="mb-email">✉️ Email</a>
 </div>
 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('preview') === 'jose') document.getElementById('kg-banner').classList.add('show');
+</script>
 </body>
 </html>
