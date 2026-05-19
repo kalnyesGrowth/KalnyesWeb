@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Door Pro Wash | Fredericksburg VA — Veteran-Owned Exterior Cleaning</title>
+  <meta name="description" content="Red Door Pro Wash — veteran-owned pressure washing & soft washing company. House washing, roof cleaning, deck & patio, gutter cleaning, paver sealing. 12-month warranty. Serving Fredericksburg, Stafford & Spotsylvania VA. Call (540) 993-4913.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;-webkit-font-smoothing:antialiased;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    .container-sm{max-width:720px;margin:0 auto;padding:0 24px}
+    @media(max-width:600px){.container,.container-sm{padding:0 16px}}
+    :root{
+      --c:#b91c1c;--c-dk:#7f1d1d;--c-lt:#fef2f2;
+      --charcoal:#1c1c1c;--charcoal-2:#2d2d2d;
+      --text:#111827;--text-2:#4b5563;--text-3:#9ca3af;
+      --border:#e5e7eb;--bg-2:#f9fafb;--radius:10px
+    }
+    .claim-bar{background:var(--charcoal);color:#fff;text-align:center;padding:12px 16px;font-size:0.85rem;font-weight:500;position:sticky;top:0;z-index:300}
+    .claim-bar strong{color:#fca5a5}
+    .claim-bar a{color:#fca5a5;font-weight:700;text-decoration:underline}
+    nav{background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-icon{width:36px;height:36px;background:var(--c);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .logo-text{font-weight:800;font-size:1rem;color:var(--charcoal)}
+    .logo-sub{font-size:0.7rem;color:var(--text-3);line-height:1}
+    .nav-call{background:var(--c);color:#fff;padding:8px 18px;border-radius:7px;font-size:0.85rem;font-weight:700}
+    .hero{background:linear-gradient(160deg,var(--charcoal) 0%,#2d1515 100%);color:#fff;padding:64px 0 52px}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(185,28,28,0.25);color:#fca5a5;font-size:0.75rem;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(185,28,28,0.4)}
+    .veteran-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:5px 14px;border-radius:100px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.2)}
+    .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.12;margin-bottom:16px;max-width:680px}
+    .hero h1 em{font-style:normal;color:#fca5a5}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.78);line-height:1.7;max-width:520px;margin-bottom:32px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;border-radius:8px;padding:15px 28px;cursor:pointer;border:2px solid transparent;transition:all 0.15s;text-align:center;white-space:normal;line-height:1.3}
+    .btn-red{background:var(--c);color:#fff;border-color:var(--c)}
+    .btn-red:hover{background:var(--c-dk);transform:translateY(-1px);box-shadow:0 4px 16px rgba(185,28,28,0.4)}
+    .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)}
+    .btn-outline-white:hover{background:rgba(255,255,255,0.1)}
+    .btn-lg{font-size:1.1rem;padding:17px 34px}
+    .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .trust-row{display:flex;gap:24px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12)}
+    .trust-item{font-size:0.85rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:6px}
+    .trust-item strong{color:#fff;font-weight:700}
+    .warranty-banner{background:var(--c-lt);border:1px solid #fecaca;border-radius:var(--radius);padding:18px 24px;margin:40px 0 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .warranty-icon{font-size:2rem;flex-shrink:0}
+    .warranty-text strong{display:block;font-size:0.95rem;font-weight:800;color:var(--c-dk);margin-bottom:4px}
+    .warranty-text span{font-size:0.82rem;color:var(--text-2)}
+    .services{padding:72px 0;background:var(--bg-2);border-top:1px solid var(--border)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:40px}
+    .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+    .svc-icon{font-size:1.8rem;margin-bottom:10px}
+    .svc-card h3{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:6px}
+    .svc-card p{font-size:0.78rem;color:var(--text-2);line-height:1.5}
+    .soft-wash{padding:72px 0;background:#fff}
+    .soft-wash-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:40px}
+    @media(max-width:767px){.soft-wash-grid{grid-template-columns:1fr}}
+    .method-box{background:var(--c-lt);border:1px solid #fecaca;border-radius:var(--radius);padding:24px}
+    .method-box h3{font-size:1rem;font-weight:800;color:var(--c-dk);margin-bottom:12px}
+    .method-box p{font-size:0.85rem;color:var(--text-2);line-height:1.7}
+    .reviews{padding:72px 0;background:var(--bg-2)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:40px}
+    .review-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+    .review-stars{color:#f59e0b;font-size:1rem;margin-bottom:10px;letter-spacing:2px}
+    .review-text{font-size:0.9rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:12px}
+    .review-author{font-size:0.8rem;font-weight:600;color:var(--text-2)}
+    .contact{padding:72px 0;background:var(--charcoal);color:#fff;text-align:center}
+    .contact h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+    .contact p{opacity:0.75;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+    .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+    .contact-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius);padding:20px 28px;text-align:center;min-width:160px}
+    .cc-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:600}
+    .cc-val{font-size:1rem;font-weight:700;color:#fff}
+    .btn-main{background:var(--c);color:#fff;border-color:var(--c);font-size:1.15rem;padding:17px 38px}
+    .btn-main:hover{background:var(--c-dk);transform:translateY(-1px)}
+    footer{background:#111827;color:#fff;padding:36px 0;text-align:center}
+    footer p{font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.8}
+    .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#fff;border-top:2px solid var(--c);padding:12px 16px;gap:10px}
+    @media(max-width:767px){.mobile-sticky{display:flex}}
+    .mobile-sticky a{flex:1;text-align:center;padding:13px 8px;border-radius:8px;font-size:0.875rem;font-weight:700;white-space:normal;line-height:1.3}
+    .ms-call{background:var(--c);color:#fff}
+    .ms-wa{background:#25D366;color:#fff}
+    @media(max-width:767px){body{padding-bottom:74px}}
+    .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+    .section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--text);margin-bottom:12px;line-height:1.2}
+  </style>
+</head>
+<body>
+<div class="claim-bar"><strong>🌐 This is a free demo</strong> built by Kalnyes Growth · Is this your business? <a href="https://kalnyesgrowth.com/book/">Claim it for $400 →</a></div>
+<nav><div class="container"><div class="nav-inner">
+  <div class="logo-wrap"><div class="logo-icon">🚿</div><div><div class="logo-text">Red Door Pro Wash</div><div class="logo-sub">Veteran-Owned · Fredericksburg VA</div></div></div>
+  <a href="tel:+15409934913" class="nav-call">📞 (540) 993-4913</a>
+</div></div></nav>
+
+<section class="hero"><div class="container-sm">
+  <div class="veteran-badge">🇺🇸 Veteran-Owned & Operated</div>
+  <div class="hero-badge">🚿 Soft Wash Specialists — Fredericksburg, Stafford & Spotsylvania</div>
+  <h1>The exterior cleaning company that gets it <em>right the first time</em></h1>
+  <p class="hero-sub">Red Door Pro Wash is Jonathan Maynard's veteran-owned exterior cleaning company — built on service, communication, and results. House washing, roof soft wash, deck cleaning, gutter cleaning, and paver sealing. 12-month warranty on house washes. Serving Fredericksburg, Stafford, Spotsylvania, Woodbridge, and surrounding areas.</p>
+  <div class="hero-cta-row">
+    <a href="tel:+15409934913" class="btn btn-red btn-lg">📞 Get a Free Quote</a>
+    <a href="#contact" class="btn btn-outline-white">Book Online</a>
+  </div>
+  <div class="trust-row">
+    <div class="trust-item">🇺🇸 <strong>Veteran-Owned</strong></div>
+    <div class="trust-item">🛡 <strong>12-Month</strong> Warranty</div>
+    <div class="trust-item">🌿 <strong>Soft Wash</strong> Method</div>
+    <div class="trust-item">⭐ <strong>5.0★</strong> Rated</div>
+  </div>
+  <div class="warranty-banner">
+    <div class="warranty-icon">🛡</div>
+    <div class="warranty-text">
+      <strong>12-Month Warranty on Every House Wash</strong>
+      <span>Industry-leading warranty on roof cleaning too. We stand behind our work. If it's not right, we come back — no questions, no charge.</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="services"><div class="container">
+  <div class="section-label">What we do</div>
+  <div class="section-title">Exterior Cleaning Services</div>
+  <div class="services-grid">
+    <div class="svc-card"><div class="svc-icon">🏠</div><h3>House Washing</h3><p>Soft wash method removes mold, mildew, algae, and dirt without damaging your siding. 12-month warranty included.</p></div>
+    <div class="svc-card"><div class="svc-icon">🏛</div><h3>Roof Cleaning</h3><p>Soft wash roof treatment eliminates black streaks, moss, and algae. Industry-leading warranty. No pressure — no damage.</p></div>
+    <div class="svc-card"><div class="svc-icon">🪵</div><h3>Deck & Patio</h3><p>Pressure washing and soft wash for wood decks, composite, concrete patios, and stone surfaces.</p></div>
+    <div class="svc-card"><div class="svc-icon">🌧</div><h3>Gutter Cleaning</h3><p>Full gutter cleaning and flush — plus gutter guard installation to stop buildup before it starts.</p></div>
+    <div class="svc-card"><div class="svc-icon">🧱</div><h3>Paver Sealing</h3><p>Clean and seal pavers to lock in color, repel stains, and prevent weed growth. Driveways, walkways, patios.</p></div>
+    <div class="svc-card"><div class="svc-icon">🏢</div><h3>Commercial</h3><p>Storefront, parking lot, multi-unit exteriors — commercial pressure washing on your schedule.</p></div>
+  </div>
+</div></section>
+
+<section class="soft-wash"><div class="container">
+  <div class="section-label">Our method</div>
+  <div class="section-title">Why soft wash — not just pressure</div>
+  <div class="soft-wash-grid">
+    <div>
+      <p style="color:var(--text-2);line-height:1.8;margin-bottom:20px">Most pressure washing companies blast everything with high pressure. That works on driveways — but it damages siding, strips paint, breaks seals on windows, and can force water behind your walls.</p>
+      <p style="color:var(--text-2);line-height:1.8;margin-bottom:20px">Red Door Pro Wash uses a soft wash method for delicate surfaces: low-pressure water combined with biodegradable cleaning solutions that kill mold, mildew, and algae at the root — not just on the surface.</p>
+      <p style="color:var(--text-2);line-height:1.8">The result lasts longer. The surface stays protected. And we back it with a 12-month warranty — something high-pressure companies can't offer because they know the problem comes back faster.</p>
+    </div>
+    <div class="method-box">
+      <h3>🚫 What high-pressure washing damages:</h3>
+      <p style="margin-bottom:16px">Vinyl siding · Wood siding · Roof shingles · Window seals · Painted surfaces · Masonry mortar · Composite decking</p>
+      <h3>✅ What soft wash protects and cleans:</h3>
+      <p>All of the above — safely, effectively, and with results that last. Jonathan's military background means following the right process every time, not taking shortcuts.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="reviews"><div class="container">
+  <div class="section-label">Customer reviews</div>
+  <div class="section-title">What Fredericksburg homeowners say</div>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Jonathan and his team did our house and roof. The difference is incredible — looks brand new. And he walked us through exactly what he was doing and why. You can tell he cares about the work, not just the paycheck."</p><div class="review-author">— Mike T., Fredericksburg VA</div></div>
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Had black algae streaks on our roof for years. Tried a power wash company before — came back within a season. Red Door used the soft wash method and gave us a 12-month warranty. Two years later, still clean."</p><div class="review-author">— Sandra R., Stafford VA</div></div>
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Veteran-owned, on time, professional, excellent results. They cleaned our deck, driveway, and gutters in one visit. Easy communication, fair price, and they didn't cut any corners. Will use every year."</p><div class="review-author">— Kevin & Lisa M., Spotsylvania VA</div></div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container">
+  <h2>Get your free exterior cleaning quote</h2>
+  <p>Call or text Jonathan directly — fast response, fair pricing, no pressure.</p>
+  <div class="contact-cards">
+    <div class="contact-card"><div class="cc-label">Direct Line</div><div class="cc-val">(540) 993-4913</div></div>
+    <div class="contact-card"><div class="cc-label">Hours</div><div class="cc-val">M–F 8am–5pm</div></div>
+    <div class="contact-card"><div class="cc-label">Service Area</div><div class="cc-val">FXBG · Stafford · Spotsy</div></div>
+  </div>
+  <a href="tel:+15409934913" class="btn btn-main">📞 Call (540) 993-4913</a>
+</div></section>
+
+<footer><div class="container">
+  <p>Red Door Pro Wash · 19 Baron Park Road Suite 105, Fredericksburg, VA 22405 · Veteran-Owned · Licensed & Insured</p>
+  <p style="margin-top:8px;font-size:0.72rem;opacity:0.4">Demo site built by <a href="https://kalnyesgrowth.com" style="color:rgba(255,255,255,0.5)">Kalnyes Growth</a> · kalnyesgrowth.com/free-preview/</p>
+</div></footer>
+
+<div class="mobile-sticky">
+  <a href="tel:+15409934913" class="ms-call">📞 Free Quote</a>
+  <a href="https://wa.me/15409934913?text=Hi%20Jonathan%2C%20I%27m%20interested%20in%20a%20quote%20for%20exterior%20cleaning%20in%20the%20Fredericksburg%20area" class="ms-wa">💬 Text Jonathan</a>
+</div>
+</body></html>
