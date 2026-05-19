@@ -11,6 +11,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://kalnyesgrowth.com/painter-website-virginia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/lawn-care-website-virginia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://kalnyesgrowth.com/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
