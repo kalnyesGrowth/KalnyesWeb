@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Koncrete LLC — Custom Concrete & Outdoor Living | Stafford, VA</title>
+<meta name="description" content="King Koncrete LLC — 25+ years crafting patios, outdoor kitchens, pool decks, and engraved concrete in Stafford County, VA. Licensed & insured. Free estimates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',system-ui,sans-serif;background:#faf9f7;color:#1c1a18;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* CLAIM */
+.claim{background:#1c1a18;color:#fff;text-align:center;padding:11px 20px;font-size:.82rem;letter-spacing:.1px;line-height:1.5}
+.claim a{color:#fbbf24;font-weight:600;text-decoration:none}
+.claim a:hover{text-decoration:underline}
+
+/* NAV */
+nav{background:#faf9f7;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid #e8e4dc}
+.logo{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:900;color:#1c1a18;letter-spacing:-.5px}
+.logo em{color:oklch(0.52 0.14 52);font-style:normal}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-size:.9rem;font-weight:600;color:#1c1a18;text-decoration:none;letter-spacing:.2px}
+.nav-btn{background:oklch(0.52 0.14 52);color:#fff;padding:10px 22px;border-radius:5px;font-size:.85rem;font-weight:700;text-decoration:none;letter-spacing:.3px}
+.nav-btn:hover{background:oklch(0.44 0.13 52)}
+
+/* HERO */
+.hero{background:oklch(0.18 0.03 52);color:#fff;min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 6%;gap:60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:0;top:0;width:45%;height:100%;background:oklch(0.22 0.04 52);clip-path:polygon(8% 0,100% 0,100% 100%,0 100%)}
+.hero-content{position:relative;z-index:2;padding:80px 0}
+.hero-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:oklch(0.72 0.12 52);margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4vw,3.4rem);font-weight:900;line-height:1.08;margin-bottom:24px;color:#fff}
+.hero h1 em{font-style:italic;color:oklch(0.75 0.14 52)}
+.hero-sub{font-size:1.05rem;line-height:1.7;color:oklch(0.75 0.02 52);margin-bottom:36px;max-width:440px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.cta-main{background:oklch(0.75 0.14 52);color:oklch(0.18 0.03 52);padding:16px 32px;border-radius:5px;font-size:.95rem;font-weight:700;text-decoration:none;letter-spacing:.2px}
+.cta-main:hover{background:oklch(0.82 0.14 52)}
+.cta-sec{border:1.5px solid oklch(0.4 0.04 52);color:oklch(0.7 0.02 52);padding:15px 28px;border-radius:5px;font-size:.95rem;font-weight:600;text-decoration:none}
+.cta-sec:hover{border-color:oklch(0.6 0.04 52);color:#fff}
+.hero-proof{position:relative;z-index:2;display:flex;flex-direction:column;gap:20px;padding:80px 0 80px 50px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:auto;padding:64px 6%}.hero::before{display:none}.hero-content{padding:0}.hero-proof{padding:0;flex-direction:row;flex-wrap:wrap;gap:16px}}
+.proof-block{background:oklch(0.24 0.04 52);border-radius:8px;padding:20px 24px;border:1px solid oklch(0.28 0.04 52)}
+.proof-num{font-family:'Playfair Display',Georgia,serif;font-size:2.2rem;font-weight:900;color:oklch(0.75 0.14 52);line-height:1}
+.proof-label{font-size:.78rem;color:oklch(0.6 0.02 52);margin-top:4px;letter-spacing:.3px}
+
+/* RIBBON */
+.ribbon{background:oklch(0.52 0.14 52);color:#fff;padding:20px 6%;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;font-size:.85rem;font-weight:600;letter-spacing:.4px}
+.ribbon-item{display:flex;align-items:center;gap:8px}
+.ribbon-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5)}
+
+/* WHAT WE BUILD */
+.what{padding:88px 6%;background:#faf9f7}
+.section-kicker{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:oklch(0.52 0.14 52);margin-bottom:10px}
+.section-h{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:#1c1a18;margin-bottom:16px;line-height:1.15}
+.section-p{font-size:1rem;color:#6b6560;line-height:1.65;max-width:540px;margin-bottom:0}
+.what-header{margin-bottom:56px}
+.services-list{display:flex;flex-direction:column;gap:0}
+.service-row{display:grid;grid-template-columns:80px 1fr 2fr;gap:0;border-top:1px solid #e8e4dc;padding:28px 0;align-items:start;transition:background .15s}
+.service-row:hover{background:oklch(0.97 0.005 52)}
+.service-row:last-child{border-bottom:1px solid #e8e4dc}
+.svc-num{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:900;color:oklch(0.82 0.08 52);padding-top:2px}
+.svc-name{font-size:1.05rem;font-weight:700;color:#1c1a18;padding-right:24px;line-height:1.3}
+.svc-desc{font-size:.9rem;color:#6b6560;line-height:1.6}
+@media(max-width:680px){.service-row{grid-template-columns:56px 1fr;gap:0}.svc-desc{display:none}}
+
+/* ABOUT SPLIT */
+.about{background:oklch(0.22 0.04 52);color:#fff;padding:88px 6%}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;max-width:1100px;align-items:center}
+@media(max-width:760px){.about-inner{grid-template-columns:1fr;gap:44px}}
+.about-kicker{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:oklch(0.75 0.14 52);margin-bottom:10px}
+.about h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:24px;line-height:1.15}
+.about-body p{font-size:.95rem;line-height:1.75;color:oklch(0.72 0.02 52);margin-bottom:16px}
+.trust-list{display:flex;flex-direction:column;gap:18px}
+.trust-item{display:flex;align-items:center;gap:16px;padding:18px 22px;background:oklch(0.27 0.04 52);border-radius:6px}
+.trust-check{width:28px;height:28px;border-radius:50%;background:oklch(0.52 0.14 52);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;color:#fff}
+.trust-text{font-size:.9rem;font-weight:600;color:#fff}
+.trust-text small{display:block;font-size:.78rem;font-weight:400;color:oklch(0.65 0.02 52);margin-top:2px}
+
+/* PROCESS */
+.process{padding:88px 6%;background:#fff}
+.process-inner{max-width:900px}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border:1px solid #e8e4dc;border-radius:10px;overflow:hidden}
+@media(max-width:700px){.process-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.process-steps{grid-template-columns:1fr}}
+.pstep{padding:32px 24px;border-right:1px solid #e8e4dc;position:relative}
+.pstep:last-child{border-right:none}
+@media(max-width:700px){.pstep:nth-child(2){border-right:none}.pstep:nth-child(3){border-right:1px solid #e8e4dc}.pstep{border-bottom:1px solid #e8e4dc}}
+.pstep-n{font-family:'Playfair Display',Georgia,serif;font-size:2.8rem;font-weight:900;color:oklch(0.9 0.06 52);line-height:1;margin-bottom:14px}
+.pstep h3{font-size:.95rem;font-weight:700;color:#1c1a18;margin-bottom:6px}
+.pstep p{font-size:.84rem;color:#6b6560;line-height:1.55}
+
+/* CTA BAND */
+.cta-band{background:oklch(0.52 0.14 52);color:#fff;padding:72px 6%;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+@media(max-width:680px){.cta-band{grid-template-columns:1fr;gap:28px}}
+.cta-band h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:8px}
+.cta-band p{font-size:.95rem;color:rgba(255,255,255,.82);max-width:480px;line-height:1.6}
+.cta-band-btns{display:flex;flex-direction:column;gap:10px;min-width:200px}
+.cta-band-btns a{text-align:center;padding:15px 28px;border-radius:5px;font-size:.95rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.cta-band-btns .b1{background:#fff;color:oklch(0.44 0.13 52)}
+.cta-band-btns .b1:hover{background:oklch(0.95 0.06 52)}
+.cta-band-btns .b2{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.cta-band-btns .b2:hover{border-color:#fff}
+
+/* FOOTER */
+footer{background:#1c1a18;color:rgba(255,255,255,.45);padding:32px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:.8rem}
+footer strong{color:rgba(255,255,255,.85)}
+.footer-note{font-size:.72rem;color:rgba(255,255,255,.25)}
+.footer-note a{color:rgba(255,255,255,.3);text-decoration:none}
+
+/* MOBILE STICKY */
+.stick{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:12px 16px;gap:10px;background:#1c1a18;border-top:2px solid oklch(0.52 0.14 52)}
+@media(max-width:768px){
+  .stick{display:flex}
+  .stick a{flex:1;text-align:center;padding:14px 8px;border-radius:6px;font-size:.9rem;font-weight:700;text-decoration:none;white-space:normal;line-height:1.2}
+  .stick .s1{background:oklch(0.75 0.14 52);color:#1c1a18}
+  .stick .s2{background:oklch(0.52 0.14 52);color:#fff}
+  body{padding-bottom:80px}
+  .nav-btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="claim">
+  This is a free custom website built for King Koncrete LLC &nbsp;·&nbsp;
+  <a href="https://kalnyesgrowth.com/book/">$600 to launch with hosting — free if you don't love it →</a>
+</div>
+
+<nav>
+  <div class="logo">King <em>Koncrete</em> LLC</div>
+  <div class="nav-right">
+    <a href="tel:5403688036" class="nav-phone">(540) 368-8036</a>
+    <a href="https://kalnyesgrowth.com/book/" class="nav-btn">Free Estimate</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Stafford County, Virginia</div>
+    <h1>Concrete work built to <em>outlast</em> everything else.</h1>
+    <p class="hero-sub">Custom patios, outdoor kitchens, pool decks, and engraved concrete — crafted the same way we've done it for 25 years. No shortcuts.</p>
+    <div class="hero-ctas">
+      <a href="https://kalnyesgrowth.com/book/" class="cta-main">Get a Free Estimate</a>
+      <a href="tel:5403688036" class="cta-sec">Call (540) 368-8036</a>
+    </div>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-block">
+      <div class="proof-num">25+</div>
+      <div class="proof-label">Years in Stafford County</div>
+    </div>
+    <div class="proof-block">
+      <div class="proof-num">100%</div>
+      <div class="proof-label">Satisfaction Guaranteed</div>
+    </div>
+    <div class="proof-block">
+      <div class="proof-num">5★</div>
+      <div class="proof-label">Rated on Angi & Yelp</div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon">
+  <div class="ribbon-item">Licensed &amp; Insured</div>
+  <div class="ribbon-dot"></div>
+  <div class="ribbon-item">Free Estimates</div>
+  <div class="ribbon-dot"></div>
+  <div class="ribbon-item">Financing Available</div>
+  <div class="ribbon-dot"></div>
+  <div class="ribbon-item">Mon–Sat Hours</div>
+  <div class="ribbon-dot"></div>
+  <div class="ribbon-item">Stafford County Specialists</div>
+</div>
+
+<section class="what">
+  <div class="what-header">
+    <div class="section-kicker">What We Build</div>
+    <h2 class="section-h">Every project, poured right.</h2>
+    <p class="section-p">From a backyard patio to a full outdoor kitchen with engraved concrete counters — we design and build the whole thing.</p>
+  </div>
+  <div class="services-list">
+    <div class="service-row">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Custom Patios</div>
+      <div class="svc-desc">Stamped, brushed, exposed aggregate — we match the finish to how your family actually uses the space and how much Virginia weather it needs to handle.</div>
+    </div>
+    <div class="service-row">
+      <div class="svc-num">02</div>
+      <div class="svc-name">Outdoor Kitchens</div>
+      <div class="svc-desc">Built-in grills, prep counters, bar seating — all anchored on a concrete base designed for decade-long outdoor exposure.</div>
+    </div>
+    <div class="service-row">
+      <div class="svc-num">03</div>
+      <div class="svc-name">Fireplaces &amp; Fire Pits</div>
+      <div class="svc-desc">Custom concrete fire features that turn any backyard into a gathering place — year-round, not just in summer.</div>
+    </div>
+    <div class="service-row">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Pool Decks</div>
+      <div class="svc-desc">Slip-resistant and heat-reflective — mixed and poured specifically for Virginia summers and pool chemical exposure.</div>
+    </div>
+    <div class="service-row">
+      <div class="svc-num">05</div>
+      <div class="svc-name">Custom Engraved Concrete</div>
+      <div class="svc-desc">Names, patterns, family crests, business logos — permanently carved into the concrete. No paint, no stickers, no fading.</div>
+    </div>
+    <div class="service-row">
+      <div class="svc-num">06</div>
+      <div class="svc-name">Walkways, Steps &amp; Sitting Walls</div>
+      <div class="svc-desc">Decorative walkways, stoops, and low concrete walls with optional integrated lighting — the details that add real curb value.</div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <div class="about-body">
+      <div class="about-kicker">About King Koncrete</div>
+      <h2>Twenty-five years of doing it the hard way.</h2>
+      <p>King Koncrete LLC has been working in Stafford County since before most of the current neighborhoods existed. We've poured concrete for the same families that came back for a second patio ten years later — because the first one still looked great.</p>
+      <p>We know Virginia soil, frost lines, and clay content. Your concrete is mixed and cured specifically for this region, not pulled from a standard formula. That's why our work lasts when others crack.</p>
+      <p>Open Monday through Friday 9AM–5PM, Saturday 9AM–2PM. Financing available through Lyon Financial for larger projects.</p>
+    </div>
+    <div class="trust-list">
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div class="trust-text">25+ Years in Stafford County<small>Same team, same standards — since the late 1990s</small></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div class="trust-text">Licensed &amp; Fully Insured<small>Full liability and workers' comp on every job</small></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div class="trust-text">100% Satisfaction Guarantee<small>If it isn't right, we come back and make it right</small></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-check">✓</div>
+        <div class="trust-text">Financing Through Lyon Financial<small>Monthly payments for larger outdoor projects</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="process-inner">
+    <div class="section-kicker">The Process</div>
+    <h2 class="section-h">What happens after you call.</h2>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-n">1</div>
+        <h3>Free Estimate</h3>
+        <p>We walk the property with you, take measurements, and give you a detailed written quote. No pressure, no deposit required.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-n">2</div>
+        <h3>Design</h3>
+        <p>We finalize the layout, finish, and any custom features before a shovel touches the ground.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-n">3</div>
+        <h3>Installation</h3>
+        <p>Our experienced crew handles grading, forming, pouring, and finishing — start to finish, on the agreed schedule.</p>
+      </div>
+      <div class="pstep">
+        <div class="pstep-n">4</div>
+        <h3>Walkthrough</h3>
+        <p>We go over every detail with you before we leave. If anything needs adjustment, it happens before we pack up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div>
+    <h2>Ready to see what we can build for you?</h2>
+    <p>Free estimates, no pressure. Call during business hours or use the contact form and we'll get back to you same day.</p>
+  </div>
+  <div class="cta-band-btns">
+    <a href="https://kalnyesgrowth.com/book/" class="b1">Get Free Estimate</a>
+    <a href="tel:5403688036" class="b2">Call (540) 368-8036</a>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <strong>King Koncrete LLC</strong> &nbsp;·&nbsp; Stafford County, VA &nbsp;·&nbsp; (540) 368-8036
+    <div style="margin-top:4px">kingkoncretellc@gmail.com &nbsp;·&nbsp; Mon–Fri 9–5 · Sat 9–2</div>
+  </div>
+  <div class="footer-note">
+    Free demo by <a href="https://kalnyesgrowth.com">KalnyesGrowth</a> · <a href="https://kalnyesgrowth.com/book/">$600 to make it yours</a>
+  </div>
+</footer>
+
+<div class="stick">
+  <a href="tel:5403688036" class="s1">Call Now</a>
+  <a href="https://kalnyesgrowth.com/book/" class="s2">Free Estimate</a>
+</div>
+
+</body>
+</html>
