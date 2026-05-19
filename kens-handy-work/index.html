@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ken's Handy Work | Handyman Services | Stafford, VA</title>
+<meta name="description" content="Ken's Handy Work — reliable handyman services in Stafford, VA. Home repairs, carpentry, painting, plumbing, and more. Call Kenneth at (571) 576-2861.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+<style>
+  :root{
+    --bg:#08100c;--bg2:#0d1610;--bg3:#121c14;
+    --green:#1a6030;--green-light:#246840;--green-bright:#38a060;
+    --wood:#8a5a18;--wood-light:#a07020;--wood-bright:#c89030;
+    --text:#c8e0cc;--text-muted:#5a8060;
+    --border:rgba(36,104,64,0.24);--card:#0d1610;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;overflow-x:hidden;}
+
+  #kg-banner{display:none;background:linear-gradient(135deg,#04080a 0%,#0a1408 50%,#04080a 100%);border-bottom:2px solid var(--wood-bright);padding:10px 16px;position:sticky;top:0;z-index:1000;}
+  #kg-banner.show{display:block;}
+  .kg-banner-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .kg-banner-text{font-size:0.82rem;color:#98c8a0;line-height:1.4;}
+  .kg-banner-text strong{color:var(--wood-bright);font-size:0.88rem;}
+  .kg-banner-actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;}
+  .kg-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:6px;font-size:0.78rem;font-weight:700;text-decoration:none;transition:all .2s;}
+  .kg-btn-call{background:var(--green);color:#fff;border:1px solid var(--green-light);}
+  .kg-btn-call:hover{background:var(--green-light);}
+  .kg-btn-book{background:var(--wood);color:#fff;}
+  .kg-btn-book:hover{background:var(--wood-light);}
+
+  nav{background:rgba(8,16,12,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:900;}
+  .nav-logo{font-size:1.1rem;font-weight:800;color:var(--text);line-height:1.2;}
+  .nav-logo span{color:var(--green-bright);}
+  .nav-logo small{display:block;font-size:0.65rem;font-weight:500;color:var(--text-muted);letter-spacing:.05em;text-transform:uppercase;}
+  .nav-phone{color:var(--wood-bright);font-weight:700;text-decoration:none;font-size:0.95rem;}
+  .nav-phone:hover{color:#fff;}
+
+  .hero{padding:80px 24px 64px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(26,96,48,0.2) 0%,transparent 70%);}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,96,48,0.28);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:0.78rem;color:var(--green-bright);margin-bottom:20px;font-weight:600;}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;margin-bottom:18px;}
+  .hero h1 em{color:var(--wood-bright);font-style:normal;}
+  .hero p{font-size:1.05rem;color:var(--text-muted);max-width:520px;margin:0 auto 32px;line-height:1.6;}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:var(--green);color:#fff;border:none;padding:15px 32px;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+  .btn-primary:hover{background:var(--green-light);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:2px solid var(--border);padding:13px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;}
+  .btn-secondary:hover{border-color:var(--wood-light);color:var(--wood-bright);}
+
+  .trust-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 24px;}
+  .trust-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:16px;}
+  .trust-item{text-align:center;}
+  .trust-item strong{display:block;font-size:1.5rem;font-weight:900;color:var(--wood-bright);}
+  .trust-item span{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;}
+
+  section{padding:64px 24px;}
+  .section-inner{max-width:900px;margin:0 auto;}
+  .section-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--green-bright);font-weight:700;margin-bottom:10px;}
+  .section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;margin-bottom:14px;}
+  .section-sub{color:var(--text-muted);font-size:1rem;line-height:1.6;max-width:560px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:36px;}
+  .service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .2s;}
+  .service-card:hover{border-color:var(--green-bright);transform:translateY(-2px);}
+  .svc-icon{font-size:1.6rem;margin-bottom:8px;}
+  .service-card h3{font-size:0.92rem;font-weight:700;margin-bottom:5px;}
+  .service-card p{font-size:0.80rem;color:var(--text-muted);line-height:1.5;}
+
+  .list-section{background:var(--bg2);}
+  .repair-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:28px;}
+  .repair-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:0.85rem;display:flex;align-items:center;gap:8px;}
+  .repair-item::before{content:"✓";color:var(--green-bright);font-weight:800;flex-shrink:0;}
+
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:36px;}
+  .why-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:22px;}
+  .why-icon{font-size:1.6rem;margin-bottom:10px;}
+  .why-card h3{font-size:0.93rem;font-weight:700;margin-bottom:6px;}
+  .why-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.5;}
+
+  .cta-section{background:linear-gradient(135deg,#04080a 0%,#0c1810 50%,#04080a 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;padding:72px 24px;}
+  .cta-section h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:16px;}
+  .cta-section h2 em{color:var(--wood-bright);font-style:normal;}
+  .cta-section p{color:var(--text-muted);max-width:480px;margin:0 auto 32px;line-height:1.6;}
+  .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
+  .footer-inner{max-width:900px;margin:0 auto;}
+  .footer-name{font-size:1.1rem;font-weight:800;margin-bottom:6px;}
+  .footer-name span{color:var(--green-bright);}
+  footer p{font-size:0.82rem;color:var(--text-muted);margin-bottom:4px;}
+
+  .mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(8,16,12,0.97);border-top:2px solid var(--border);padding:10px 16px;gap:10px;}
+  .sticky-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;border-radius:8px;font-size:0.88rem;font-weight:700;text-decoration:none;}
+  .sticky-call{background:var(--green);color:#fff;}
+  .sticky-quote{background:var(--wood);color:#fff;}
+
+  @media(max-width:600px){
+    .mobile-sticky{display:flex;}
+    body{padding-bottom:70px;}
+    .hero{padding:60px 16px 48px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="kg-banner">
+  <div class="kg-banner-inner">
+    <div class="kg-banner-text">
+      <strong>Hey Kenneth — Jose here from KalnyesGrowth.</strong><br>
+      I built this site for Ken's Handy Work. No obligation — want to talk?
+    </div>
+    <div class="kg-banner-actions">
+      <a href="tel:+15407838835" class="kg-btn kg-btn-call">📞 Call Jose</a>
+      <a href="https://kalnyesgrowth.com/book/" class="kg-btn kg-btn-book" target="_blank">Book Free Call</a>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-logo">
+    Ken's <span>Handy Work</span>
+    <small>Handyman Services · Stafford, VA</small>
+  </div>
+  <a href="tel:+15715762861" class="nav-phone">🔨 (571) 576-2861</a>
+</nav>
+
+<section class="hero">
+  <div class="section-inner">
+    <div class="badge">🔨 Local Handyman · Stafford, VA</div>
+    <h1>Home Repairs Done<br><em>Right, By Kenneth</em></h1>
+    <p>No job too small. Ken's Handy Work handles the fixes, improvements, and repairs that keep your home in shape. One call, reliable work, fair price.</p>
+    <div class="hero-ctas">
+      <a href="tel:+15715762861" class="btn-primary">🔨 Call (571) 576-2861</a>
+      <a href="#services" class="btn-secondary">See All Services</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><strong>Local</strong><span>Stafford, VA</span></div>
+    <div class="trust-item"><strong>Fair</strong><span>Honest Pricing</span></div>
+    <div class="trust-item"><strong>Reliable</strong><span>Shows Up On Time</span></div>
+    <div class="trust-item"><strong>Many</strong><span>Trades Covered</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What Ken Does</div>
+    <h2 class="section-title">All the Jobs You've<br>Been Putting Off</h2>
+    <p class="section-sub">Whether it's a leaky faucet, broken door, fresh coat of paint, or a deck that needs work — Kenneth gets it done so you don't have to.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-icon">🚪</div>
+        <h3>Door &amp; Window Repairs</h3>
+        <p>Sticky doors, broken locks, drafty windows, new hardware. Fixed properly.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🎨</div>
+        <h3>Interior Painting</h3>
+        <p>Walls, ceilings, trim. Clean prep, no drips, professional finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🔧</div>
+        <h3>Plumbing Repairs</h3>
+        <p>Leaky faucets, running toilets, garbage disposals. Quick fixes, no plumber markup.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🪵</div>
+        <h3>Carpentry</h3>
+        <p>Shelving, trim, crown molding, door frames, baseboards — built or repaired.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🏗️</div>
+        <h3>Drywall Repair</h3>
+        <p>Holes, cracks, water damage. Patched, sanded, ready to paint.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">💡</div>
+        <h3>Light Electrical</h3>
+        <p>Outlets, switches, ceiling fans, fixture swaps. Safe and done to code.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🪟</div>
+        <h3>Caulking &amp; Weatherproofing</h3>
+        <p>Windows, doors, showers — sealed tight to keep the cold out and water out.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">🏠</div>
+        <h3>General Home Repairs</h3>
+        <p>Anything on your honey-do list. If it's broken, loose, or leaking, Ken can handle it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="list-section">
+  <div class="section-inner">
+    <div class="section-label">Common Repairs</div>
+    <h2 class="section-title">Got One of These?<br>Kenneth Can Handle It.</h2>
+    <div class="repair-list">
+      <div class="repair-item">Leaky faucet or pipe</div>
+      <div class="repair-item">Hole in drywall</div>
+      <div class="repair-item">Door that won't close right</div>
+      <div class="repair-item">Toilet running constantly</div>
+      <div class="repair-item">Broken outlet or switch</div>
+      <div class="repair-item">Ceiling fan installation</div>
+      <div class="repair-item">Cabinet door rehang</div>
+      <div class="repair-item">Baseboards or trim repair</div>
+      <div class="repair-item">Deck board replacement</div>
+      <div class="repair-item">Window screen replacement</div>
+      <div class="repair-item">Gutter spike reattachment</div>
+      <div class="repair-item">Room painting</div>
+      <div class="repair-item">Garbage disposal install</div>
+      <div class="repair-item">Weatherstripping replacement</div>
+      <div class="repair-item">Tile re-caulking</div>
+      <div class="repair-item">TV mounting</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-label">Why Ken's Handy Work</div>
+    <h2 class="section-title">One Person, One Call,<br>Done Right</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">📞</div>
+        <h3>Talk to Kenneth Directly</h3>
+        <p>No scheduling service, no middleman. You call Kenneth, Kenneth shows up.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📍</div>
+        <h3>Stafford Local</h3>
+        <p>Based in Stafford — close enough to respond fast and stay accountable to the community.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💲</div>
+        <h3>Fair Rates</h3>
+        <p>Small jobs, fair prices. No minimum call fee, no gouging on simple repairs.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛠️</div>
+        <h3>Wide Skill Set</h3>
+        <p>Most homeowners need someone who can do a little of everything — that's what Ken delivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <h2>Ready to Cross Something<br><em>Off Your List?</em></h2>
+    <p>Call Kenneth for a free estimate. Small job or big job — reliable work at a fair price in Stafford and Northern Virginia.</p>
+    <div class="cta-buttons">
+      <a href="tel:+15715762861" class="btn-primary">🔨 (571) 576-2861</a>
+      <a href="tel:+15715762861" class="btn-secondary">Free Estimate</a>
+    </div>
+    <p style="margin-top:20px;font-size:0.82rem;color:var(--text-muted);">Serving Stafford · Fredericksburg · Spotsylvania and surrounding Northern Virginia</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Ken's <span>Handy Work</span></div>
+    <p>Stafford, VA 22554</p>
+    <p><a href="tel:+15715762861" style="color:var(--wood-bright);text-decoration:none;">(571) 576-2861</a></p>
+    <p style="margin-top:16px;font-size:0.72rem;">Website by <a href="https://kalnyesgrowth.com" style="color:var(--green-bright);text-decoration:none;">KalnyesGrowth</a> · Stafford, VA</p>
+  </div>
+</footer>
+
+<div class="mobile-sticky">
+  <a href="tel:+15715762861" class="sticky-btn sticky-call">🔨 Call Kenneth</a>
+  <a href="tel:+15715762861" class="sticky-btn sticky-quote">🛠️ Free Estimate</a>
+</div>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+if(params.get('preview')==='jose')document.getElementById('kg-banner').classList.add('show');
+</script>
+</body>
+</html>
