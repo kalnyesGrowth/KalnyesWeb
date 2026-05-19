@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&R Landscaping — Fredericksburg, VA | Lawn Care, Gutter Cleaning & More</title>
+<meta name="description" content="S&R Landscaping serves Fredericksburg, Stafford & Spotsylvania VA. Lawn mowing, leaf removal, gutter cleaning, power washing, deck staining & more. Call Russell at (540) 226-1731.">
+<meta property="og:title" content="S&R Landscaping — Fredericksburg, VA">
+<meta property="og:description" content="Locally owned. Neighborhood Favorite 3 years running. Lawn care, gutters, power washing & more. Call (540) 226-1731.">
+<meta property="og:type" content="website">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --bg2: #edeae2;
+    --green: #2d5a1b;
+    --green-mid: #4a8a2e;
+    --green-light: #6cb84a;
+    --gold: #c8851a;
+    --text: #1c1e18;
+    --text-soft: #4a4e3f;
+    --text-muted: #7a7f6e;
+    --white: #fdfcf9;
+    --border: #d6d2c4;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── KG PROMO BANNER ── */
+  #kg-banner {
+    display: none;
+    background: var(--green);
+    color: #fff;
+    padding: 10px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 0.83rem;
+    line-height: 1.4;
+  }
+  #kg-banner.show { display: block; }
+  .kg-banner-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .kg-banner-text { flex: 1; min-width: 200px; }
+  .kg-banner-text strong { font-weight: 700; }
+  .kg-banner-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .kg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 13px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+  .kg-btn-call { background: var(--gold); color: #fff; }
+  .kg-btn-wa { background: #25d366; color: #fff; }
+  .kg-btn-book { background: #fff; color: var(--green); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+  nav.with-banner { top: 44px; }
+  .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 16px;
+  }
+  .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--green); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-soft); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    background: var(--green);
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--green-mid); }
+  @media (max-width: 660px) { .nav-links { display: none; } }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--green);
+    color: #fff;
+    padding: 72px 20px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(74,138,46,0.35) 0%, transparent 65%);
+  }
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+  .hero h1 em { font-style: normal; color: #a8e07a; }
+  .hero-sub {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #b0720f; transform: translateY(-1px); }
+  .btn-outline-hero {
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-outline-hero:hover { background: rgba(255,255,255,0.18); }
+  .hero-trust {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+  }
+  .hero-trust span { display: flex; align-items: center; gap: 5px; }
+  .hero-trust strong { color: #fff; }
+
+  /* ── STRIP ── */
+  .strip {
+    background: var(--gold);
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+  }
+
+  /* ── SERVICES ── */
+  .section { padding: 64px 20px; }
+  .section-inner { max-width: 1040px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-soft);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 24px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .service-card:hover { box-shadow: 0 6px 24px rgba(45,90,27,0.1); transform: translateY(-2px); }
+  .svc-num {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .svc-body h3 { font-size: 0.97rem; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+  .svc-body p { font-size: 0.85rem; color: var(--text-soft); line-height: 1.55; }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--bg2); padding: 64px 20px; }
+  .about-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px;
+    align-items: center;
+  }
+  @media (max-width: 680px) { .about-inner { grid-template-columns: 1fr; gap: 32px; } }
+  .about-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 14px; }
+  .about-text p { font-size: 0.95rem; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+  .stat-num { font-size: 2rem; font-weight: 800; color: var(--green); letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
+  .stat-lbl { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* ── AREA ── */
+  .area-section { padding: 40px 20px; border-top: 1px solid var(--border); }
+  .area-inner { max-width: 1040px; margin: 0 auto; }
+  .area-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+  .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .area-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* ── REVIEWS ── */
+  .reviews-section { padding: 64px 20px; background: var(--white); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .review-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 20px;
+  }
+  .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 1px; }
+  .review-text { font-size: 0.9rem; color: var(--text-soft); line-height: 1.65; margin-bottom: 14px; font-style: italic; }
+  .review-meta { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+  .review-source { font-size: 0.72rem; color: var(--text-muted); font-weight: 400; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--green);
+    padding: 72px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
+  .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 30px; line-height: 1.6; }
+  .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-white {
+    background: #fff;
+    color: var(--green);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+  .btn-cta-white:hover { background: #e8f5e0; }
+  .btn-cta-outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-cta-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.65);
+    padding: 40px 20px 80px;
+  }
+  .footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+  }
+  .footer-brand { flex: 1; min-width: 200px; }
+  .footer-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.6; max-width: 260px; }
+  .footer-contact { flex: 1; min-width: 180px; }
+  .footer-contact h4 { font-size: 0.82rem; font-weight: 700; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+  .footer-contact p { font-size: 0.85rem; margin-bottom: 6px; }
+  .footer-contact a { color: rgba(255,255,255,0.65); }
+  .footer-contact a:hover { color: #fff; }
+  .footer-bottom {
+    max-width: 1040px;
+    margin: 24px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.78rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  /* ── MOBILE STICKY ── */
+  .mobile-sticky {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    background: var(--green);
+    padding: 10px 12px;
+    border-top: 2px solid var(--green-light);
+  }
+  .mobile-sticky-inner {
+    display: flex;
+    gap: 8px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .ms-btn {
+    flex: 1;
+    padding: 11px 8px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: normal;
+    max-width: 100%;
+  }
+  .ms-call { background: var(--gold); color: #fff; }
+  .ms-wa { background: #25d366; color: #fff; }
+  .ms-est { background: #fff; color: var(--green); }
+
+  @media (max-width: 760px) { .mobile-sticky { display: block; } }
+</style>
+</head>
+<body>
+
+<!-- KG PROMO BANNER -->
+<div id="kg-banner">
+  <div class="kg-banner-inner">
+    <div class="kg-banner-text">
+      <strong>Hey Russell — your free website is ready.</strong> Built specifically for S&R Landscaping. $400 to launch with hosting. Free if you don't love it.
+    </div>
+    <div class="kg-banner-actions">
+      <a href="tel:+15407838835" class="kg-btn kg-btn-call">📞 Call Jose</a>
+      <a href="https://wa.me/15407838835?text=Hey%20Jose%2C%20I%20saw%20my%20free%20website%20demo%20for%20S%26R%20Landscaping!" class="kg-btn kg-btn-wa">💬 WhatsApp</a>
+      <a href="https://kalnyesgrowth.com/book/" class="kg-btn kg-btn-book">Book Free Call →</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">S<span>&</span>R <span style="color:var(--green)">Landscaping</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+15402261731" class="nav-cta">📞 (540) 226-1731</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📍 Fredericksburg, VA · Stafford · Spotsylvania</div>
+    <h1>Your yard, <em>done right</em> — every season.</h1>
+    <p class="hero-sub">S&R Landscaping keeps your property looking sharp year-round. Lawn care, gutters, power washing, deck staining & more — fair prices, reliable service, no runaround.</p>
+    <div class="hero-actions">
+      <a href="tel:+15402261731" class="btn-primary">📞 Get a Free Estimate</a>
+      <a href="#services" class="btn-outline-hero">See All Services</a>
+    </div>
+    <div class="hero-trust">
+      <span>⭐ <strong>Nextdoor Neighborhood Favorite</strong> — 3 years running</span>
+      <span>✅ <strong>Locally owned</strong> — Fredericksburg, VA</span>
+      <span>🌿 <strong>Year-round service</strong> — spring through winter</span>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">Free estimates · Reliable & responsive · Call or text any time → (540) 226-1731</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Full-service property care — inside and out</h2>
+    <p class="section-sub">From weekly mowing to seasonal cleanups, gutter maintenance to power washing — one call handles it all.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-num">1</div>
+        <div class="svc-body">
+          <h3>Lawn Mowing &amp; Maintenance</h3>
+          <p>Weekly, bi-weekly, or one-time cuts. Edging, trimming, and cleanup included — leave it looking tight every time.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">2</div>
+        <div class="svc-body">
+          <h3>Leaf Removal &amp; Yard Cleanup</h3>
+          <p>Fall and seasonal cleanups done right. We haul everything away — no mess left behind.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">3</div>
+        <div class="svc-body">
+          <h3>Lawn Aeration</h3>
+          <p>Loosen compacted soil, improve drainage, and let your grass breathe so it grows thick and green.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">4</div>
+        <div class="svc-body">
+          <h3>Gutter Cleaning &amp; Guards</h3>
+          <p>Clogged gutters cause real damage. We clear them out and can install guards so they stay clear longer.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">5</div>
+        <div class="svc-body">
+          <h3>Power Washing</h3>
+          <p>Driveways, sidewalks, patios, siding — we blast away grime and make your property look brand new.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">6</div>
+        <div class="svc-body">
+          <h3>Deck &amp; Fence Staining</h3>
+          <p>Protect your investment. We prep, stain, and seal wood decks and fences to last through every season.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">7</div>
+        <div class="svc-body">
+          <h3>Tree &amp; Stump Removal</h3>
+          <p>Dead trees, overgrown limbs, stubborn stumps — handled safely and hauled away clean.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="svc-num">8</div>
+        <div class="svc-body">
+          <h3>Snow Removal</h3>
+          <p>Don't get snowed in. We clear driveways and walkways so you can get out when winter hits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-label">About S&amp;R Landscaping</div>
+      <h2>Fredericksburg's trusted yard crew — year after year</h2>
+      <p>S&R Landscaping is a locally owned and operated property care company serving Fredericksburg, Stafford, and Spotsylvania. Owner Russell Weidner built this business on a simple standard: show up on time, do the job right, and leave your property better than you found it.</p>
+      <p>That's why we've earned Nextdoor's Neighborhood Favorite award three years in a row — not from advertising, but from neighbors recommending neighbors. We offer free estimates, straightforward pricing, and reliable communication throughout every job.</p>
+      <p>Whether you need weekly lawn service or a one-time seasonal cleanup, we treat every property like it's our own.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">3×</div>
+        <div class="stat-lbl">Nextdoor Favorite</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">8+</div>
+        <div class="stat-lbl">Services Offered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">Counties Served</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">Free</div>
+        <div class="stat-lbl">Estimates Always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<div class="area-section">
+  <div class="area-inner">
+    <div class="area-label">Service Area</div>
+    <div class="area-tags">
+      <span class="area-tag">📍 Fredericksburg</span>
+      <span class="area-tag">📍 Stafford</span>
+      <span class="area-tag">📍 Spotsylvania</span>
+      <span class="area-tag">📍 King George</span>
+      <span class="area-tag">📍 Locust Grove</span>
+      <span class="area-tag">📍 Culpeper</span>
+      <span class="area-tag">📍 Surrounding Areas</span>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-inner">
+    <div class="section-label">What Neighbors Say</div>
+    <h2 class="section-title">Nextdoor Neighborhood Favorite — 2021, 2022, 2023</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Does great work for a fair price! Russell shows up when he says he will and always leaves the yard looking great. Highly recommend."</p>
+        <div class="review-meta">F.K. <span class="review-source">— Nextdoor, 2024</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Super reliable and communicates well. S&R has been doing our lawn all season and they are consistently on time and do a thorough job every time."</p>
+        <div class="review-meta">Fredericksburg Neighbor <span class="review-source">— Nextdoor</span></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They did a fantastic job on our gutters and deck staining. Very professional, fair price, and easy to work with. Will be calling them again in the fall."</p>
+        <div class="review-meta">Stafford Homeowner <span class="review-source">— Nextdoor</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready for a yard you're proud of?</h2>
+  <p>Call or text Russell for a free estimate. No sales pressure — just honest pricing and quality work.</p>
+  <div class="cta-actions">
+    <a href="tel:+15402261731" class="btn-cta-white">📞 Call (540) 226-1731</a>
+    <a href="mailto:srlandscaping18@gmail.com" class="btn-cta-outline">✉ srlandscaping18@gmail.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">S<span>&</span>R Landscaping</div>
+      <p>Locally owned property care serving Fredericksburg, Stafford &amp; Spotsylvania, VA. Lawn care, gutters, power washing, deck staining &amp; more.</p>
+    </div>
+    <div class="footer-contact" id="contact-footer">
+      <h4>Contact</h4>
+      <p>📞 <a href="tel:+15402261731">(540) 226-1731</a></p>
+      <p>✉ <a href="mailto:srlandscaping18@gmail.com">srlandscaping18@gmail.com</a></p>
+      <p>📍 Fredericksburg, VA 22407</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Services</h4>
+      <p>Lawn Mowing · Leaf Removal</p>
+      <p>Gutter Cleaning · Power Washing</p>
+      <p>Deck Staining · Tree Removal</p>
+      <p>Snow Removal · Aeration</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 S&amp;R Landscaping — Fredericksburg, VA</span>
+    <span style="font-size:0.72rem;color:rgba(255,255,255,0.3)">Site by <a href="https://kalnyesgrowth.com" style="color:rgba(255,255,255,0.4)">KalnyesGrowth</a></span>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <div class="mobile-sticky-inner">
+    <a href="tel:+15402261731" class="ms-btn ms-call">📞 Call</a>
+    <a href="https://wa.me/15402261731" class="ms-btn ms-wa">💬 Text</a>
+    <a href="mailto:srlandscaping18@gmail.com" class="ms-btn ms-est">✉ Email</a>
+  </div>
+</div>
+
+<script>
+  // KG banner
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('preview') === 'jose') {
+    const banner = document.getElementById('kg-banner');
+    const nav = document.getElementById('main-nav');
+    banner.classList.add('show');
+    nav.classList.add('with-banner');
+  }
+</script>
+</body>
+</html>
