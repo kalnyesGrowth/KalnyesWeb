@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plug It Up Handyman Services LLC — King George &amp; Stafford, VA</title>
+<meta name="description" content="No job too small. Local handyman serving King George, Stafford, Fredericksburg & Spotsylvania VA. Call (540) 748-3666.">
+<meta property="og:title" content="Plug It Up Handyman Services LLC — King George & Stafford, VA">
+<meta property="og:description" content="No job too small. Repairs, installs, assembly & more. Serving King George, Stafford, Fredericksburg & Spotsylvania VA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3GK7DK3ZVP');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; font-family: 'DM Sans', system-ui, sans-serif; background: #f8f7f4; color: #1a1a1a; }
+
+/* KG Promo Banner */
+#kg-promo-banner {
+  background: linear-gradient(90deg,#0f2a6b 0%,#1557b0 100%);
+  color: #fff;
+  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-family: system-ui,-apple-system,sans-serif;
+  font-size: .84rem;
+  line-height: 1.4;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+#kg-promo-banner a {
+  background: #fff;
+  color: #1557b0;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: .8rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Nav */
+nav {
+  background: #1c1c1c;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.nav-logo-text { font-size: 1rem; font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.01em; }
+.nav-logo-sub { font-size: 0.7rem; color: rgba(255,255,255,0.45); font-weight: 400; }
+.nav-phone { font-size: 0.9rem; font-weight: 600; color: #f59e0b; text-decoration: none; }
+.nav-cta {
+  background: #f59e0b;
+  color: #1c1c1c;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 80px 24px 88px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0; right: 0;
+  height: 48px;
+  background: #f8f7f4;
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,0.15);
+  border: 1px solid rgba(245,158,11,0.3);
+  color: #fbbf24;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 .accent { color: #f59e0b; font-style: italic; }
+.hero-sub {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #1c1c1c;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+  letter-spacing: -0.01em;
+}
+.btn-primary:hover { background: #d97706; }
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  white-space: nowrap;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.13); }
+
+.hero-proof {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 52px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.proof-item-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.9rem;
+  color: #f59e0b;
+}
+.proof-item-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+/* Tagline strip */
+.tagline-strip {
+  background: #f59e0b;
+  padding: 14px 24px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1c1c1c;
+}
+
+/* Services */
+.services {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: #1c1c1c;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.section-sub {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 52px;
+  line-height: 1.65;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.service-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.service-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: #f59e0b;
+  line-height: 1;
+  min-width: 28px;
+}
+.service-content h3 { font-size: 1rem; font-weight: 700; color: #1c1c1c; margin-bottom: 6px; }
+.service-content p { font-size: 0.875rem; color: #6b7280; line-height: 1.55; }
+
+/* Promise section */
+.promise {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 80px 24px;
+}
+.promise-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.promise-text .section-label { text-align: left; color: #fbbf24; }
+.promise-text .section-title { text-align: left; color: #fff; }
+.promise-text p { color: rgba(255,255,255,0.65); line-height: 1.7; margin-top: 16px; font-size: 0.98rem; }
+.promise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.promise-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.promise-check {
+  width: 32px;
+  height: 32px;
+  background: rgba(245,158,11,0.15);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.promise-item-text h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.promise-item-text p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* Area strip */
+.area-strip {
+  background: #f0ede6;
+  padding: 48px 24px;
+  text-align: center;
+}
+.area-strip h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+.area-tags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.area-tag {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* CTA section */
+.cta-section {
+  padding: 80px 24px;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+.cta-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  color: #1c1c1c;
+  margin-bottom: 14px;
+}
+.cta-section p { color: #6b7280; font-size: 1rem; max-width: 460px; margin: 0 auto 32px; line-height: 1.65; }
+.cta-contacts {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.cta-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.cta-contact-link:hover { color: #1c1c1c; text-decoration: underline; }
+
+/* Footer */
+footer {
+  background: #1c1c1c;
+  color: rgba(255,255,255,0.5);
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 0.82rem;
+}
+footer strong { color: #fff; }
+footer .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+footer .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; }
+footer .footer-links a:hover { color: #f59e0b; }
+
+/* Mobile sticky */
+.sticky-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9998;
+  background: #1c1c1c;
+  padding: 12px 16px;
+  gap: 10px;
+  border-top: 2px solid #f59e0b;
+}
+.sticky-mobile a {
+  flex: 1;
+  text-align: center;
+  padding: 13px 8px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sticky-mobile .sticky-call { background: #f59e0b; color: #1c1c1c; }
+.sticky-mobile .sticky-book { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+
+@media (max-width: 768px) {
+  .sticky-mobile { display: flex; }
+  body { padding-bottom: 72px; }
+  nav .nav-cta { display: none; }
+  .promise-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero { padding: 56px 20px 72px; }
+  .services, .cta-section { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div id="kg-promo-banner" style="background:linear-gradient(90deg,#0f2a6b 0%,#1557b0 100%);color:#fff;padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-family:system-ui,-apple-system,sans-serif;font-size:.84rem;line-height:1.4;position:sticky;top:0;z-index:9999;">
+  <span style="opacity:.9">📋 <strong style="opacity:1">Free demo by KalnyesGrowth</strong> &nbsp;·&nbsp; Stafford, VA &nbsp;·&nbsp; <strong>$400 to launch</strong> &nbsp;·&nbsp; hosting &amp; domain included &nbsp;·&nbsp; free if you don't love it</span>
+  <a href="https://kalnyesgrowth.com/book/" style="background:#fff;color:#1557b0;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.8rem;white-space:nowrap;flex-shrink:0;">📅 Book Free Call →</a>
+</div>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">🔧</div>
+    <div>
+      <div class="nav-logo-text">Plug It Up</div>
+      <div class="nav-logo-sub">Handyman Services LLC</div>
+    </div>
+  </a>
+  <a class="nav-phone" href="tel:+15407483666">(540) 748-3666</a>
+  <a class="nav-cta" href="https://kalnyesgrowth.com/book/">Get Free Estimate</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">📍 King George · Stafford · Fredericksburg</div>
+  <h1>No Job<br><span class="accent">Too Small.</span></h1>
+  <p class="hero-sub">Repairs, installs, assembly, and fixes — done right, done fast. Serving the Fredericksburg area and surrounding localities.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://kalnyesgrowth.com/book/">Get a Free Estimate</a>
+    <a class="btn-secondary" href="tel:+15407483666">📞 (540) 748-3666</a>
+  </div>
+  <div class="hero-proof">
+    <div>
+      <div class="proof-item-num">Same</div>
+      <div class="proof-item-label">Day Response</div>
+    </div>
+    <div>
+      <div class="proof-item-num">100%</div>
+      <div class="proof-item-label">Locally Owned & Operated</div>
+    </div>
+    <div>
+      <div class="proof-item-num">5★</div>
+      <div class="proof-item-label">Customer Satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<div class="tagline-strip">LICENSED · INSURED · LOCAL · RELIABLE</div>
+
+<section class="services">
+  <p class="section-label">What We Handle</p>
+  <h2 class="section-title">From Small Fixes to Full Projects</h2>
+  <p class="section-sub">If it's broken, loose, leaking, or needs installing — we handle it. Residential and light commercial.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-content">
+        <h3>General Repairs</h3>
+        <p>Doors that won't close, drywall patches, leaky faucets, broken fixtures — we fix what's been on your list.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-content">
+        <h3>Furniture Assembly</h3>
+        <p>IKEA, Amazon, flat-pack of any kind. We assemble it correctly so it actually holds together.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-content">
+        <h3>Appliance Installation</h3>
+        <p>Dishwashers, washing machines, dryers, range hoods. Proper installation the first time.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-content">
+        <h3>Deck & Fence Repair</h3>
+        <p>Loose boards, broken rails, rotting posts — keep your outdoor space safe and looking good.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-content">
+        <h3>Interior & Exterior Painting</h3>
+        <p>Touch-ups, single rooms, full interiors, fences, trim. Clean lines and clean work.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-content">
+        <h3>Odd Jobs & More</h3>
+        <p>Mounting TVs, installing shelves, weatherstripping, caulking, pressure washing. If you need it done, we do it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="promise-inner">
+    <div class="promise-text">
+      <p class="section-label">Why Plug It Up</p>
+      <h2 class="section-title">We Show Up. We Do It Right.</h2>
+      <p>We know you've had a handyman cancel last minute or leave the job half-done. That's not how we operate. When you call, we answer. When we book, we show.</p>
+    </div>
+    <div class="promise-list">
+      <div class="promise-item">
+        <div class="promise-check">✓</div>
+        <div class="promise-item-text">
+          <h4>Honest Pricing</h4>
+          <p>Straight quotes before any work starts. No surprises on the invoice.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-check">✓</div>
+        <div class="promise-item-text">
+          <h4>Punctual & Reliable</h4>
+          <p>We book a time and we keep it. Your schedule matters.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-check">✓</div>
+        <div class="promise-item-text">
+          <h4>Licensed & Insured</h4>
+          <p>Fully covered. You're protected every time we're on your property.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-check">✓</div>
+        <div class="promise-item-text">
+          <h4>No Job Too Small</h4>
+          <p>That one thing you've been putting off for months — we'll take care of it today.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="area-strip">
+  <h3>Serving the Fredericksburg Area</h3>
+  <div class="area-tags">
+    <span class="area-tag">📍 King George</span>
+    <span class="area-tag">📍 Stafford</span>
+    <span class="area-tag">📍 Fredericksburg</span>
+    <span class="area-tag">📍 Spotsylvania</span>
+    <span class="area-tag">📍 And Surrounding Areas</span>
+  </div>
+</div>
+
+<section class="cta-section">
+  <h2>Ready to Cross It Off the List?</h2>
+  <p>Get a free estimate — no pressure. Tell us what needs fixing and we'll give you a straight answer.</p>
+  <a class="btn-primary" href="https://kalnyesgrowth.com/book/" style="display:inline-block;font-size:1.05rem;padding:16px 40px;">Get My Free Estimate →</a>
+  <div class="cta-contacts">
+    <a class="cta-contact-link" href="tel:+15407483666">📞 (540) 748-3666</a>
+    <a class="cta-contact-link" href="mailto:PlugItUpHandyman@gmail.com">✉️ PlugItUpHandyman@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <strong>Plug It Up Handyman Services LLC</strong><br>
+  King George, VA &nbsp;·&nbsp; Serving Fredericksburg, Stafford, Spotsylvania & Surrounding Areas<br>
+  (540) 748-3666 &nbsp;·&nbsp; PlugItUpHandyman@gmail.com
+  <div class="footer-links">
+    <a href="https://kalnyesgrowth.com/book/">Get Free Estimate</a>
+    <a href="tel:+15407483666">Call Now</a>
+    <a href="mailto:PlugItUpHandyman@gmail.com">Email</a>
+  </div>
+</footer>
+
+<div class="sticky-mobile">
+  <a class="sticky-call" href="tel:+15407483666">📞 Call Now</a>
+  <a class="sticky-book" href="https://kalnyesgrowth.com/book/">Free Estimate</a>
+</div>
+
+</body>
+</html>
