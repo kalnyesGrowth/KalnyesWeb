@@ -188,8 +188,17 @@
 
 <!-- ══ URGENCY BAR ══ -->
 <div class="urgency-bar">
-  <p>⏱ <strong>Calendly slots close May 26 — 8 days left.</strong> Free preview, then $400 to launch · También hablamos español · <a href="#book" style="color:#fff;font-weight:700;text-decoration:underline">Book now →</a></p>
+  <p>⏱ <strong>Calendly slots close May 26 — <span id="days-left">8</span> days left.</strong> Free preview, then $400 to launch · También hablamos español · <a href="#book" style="color:#fff;font-weight:700;text-decoration:underline">Book now →</a></p>
 </div>
+<script>
+(function(){
+  var deadline=new Date('2026-05-26T23:59:59-04:00');
+  var now=new Date();
+  var days=Math.max(0,Math.ceil((deadline-now)/(1000*60*60*24)));
+  var el=document.getElementById('days-left');
+  if(el) el.textContent=days+(days===1?' day':' days');
+})();
+</script>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
