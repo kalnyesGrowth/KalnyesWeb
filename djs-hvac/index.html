@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ's HVAC LLC — Heating & Cooling | Fredericksburg VA</title>
+  <meta name="description" content="Expert HVAC installation, repair, and maintenance in Fredericksburg, Stafford, and Spotsylvania VA. Master certified technician. Call (540) 809-4749.">
+  <link rel="canonical" href="https://kalnyesgrowth.com/djs-hvac/">
+  <meta property="og:title" content="DJ's HVAC LLC — Heating & Cooling | Fredericksburg VA">
+  <meta property="og:description" content="Master certified HVAC technician. 8+ years experience. Installation, repair, water heaters, air quality. Serving Fredericksburg VA.">
+  <meta property="og:url" content="https://kalnyesgrowth.com/djs-hvac/">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GK7DK3ZVP"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3GK7DK3ZVP');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    html{scroll-behavior:smooth}
+    :root{
+      --dark:#080d14;
+      --dark2:#0d1520;
+      --dark3:#131f2e;
+      --blue:#1e6fb8;
+      --blue-lt:#2487d9;
+      --cyan:#17a8c4;
+      --cyan-lt:#1ec9e8;
+      --text:#e8edf5;
+      --text-2:#a8b8cc;
+      --text-3:#6a7f96;
+      --border:rgba(255,255,255,0.08);
+      --font:'Inter',system-ui,sans-serif;
+      --radius:10px;
+    }
+    body{font-family:var(--font);background:var(--dark);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{max-width:1080px;margin:0 auto;padding:0 24px}
+    .container-sm{max-width:700px;margin:0 auto;padding:0 24px}
+    @media(max-width:600px){.container,.container-sm{padding:0 16px}}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-weight:700;border-radius:8px;padding:14px 28px;cursor:pointer;transition:all 0.15s;border:2px solid transparent;white-space:normal;line-height:1.3;text-align:center;font-size:1rem}
+    .btn-primary{background:var(--cyan);color:#06141f}
+    .btn-primary:hover{background:var(--cyan-lt);transform:translateY(-1px);box-shadow:0 4px 20px rgba(23,168,196,0.4)}
+    .btn-outline{background:transparent;color:var(--cyan);border-color:var(--cyan)}
+    .btn-outline:hover{background:rgba(23,168,196,0.08)}
+    .btn-lg{font-size:1.1rem;padding:18px 36px}
+    @media(max-width:600px){.btn-lg{padding:16px 24px;font-size:1rem}}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:200;background:rgba(8,13,20,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+    .nav-logo{font-weight:800;font-size:1.1rem;color:var(--text)}
+    .nav-logo span{color:var(--cyan)}
+    .nav-phone{display:flex;align-items:center;gap:8px;font-weight:700;font-size:0.95rem;color:var(--cyan)}
+    .nav-phone svg{flex-shrink:0}
+
+    /* HERO */
+    .hero{padding:80px 0 72px;background:linear-gradient(160deg,var(--dark) 0%,var(--dark2) 50%,rgba(23,168,196,0.04) 100%)}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    @media(max-width:768px){.hero-inner{grid-template-columns:1fr;gap:36px}}
+    .hero-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+    .hero-title{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;color:var(--text);line-height:1.15;margin-bottom:16px}
+    .hero-title span{color:var(--cyan)}
+    .hero-sub{font-size:1.05rem;color:var(--text-2);margin-bottom:32px;line-height:1.7}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+    .trust-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+    .trust-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:0.77rem;font-weight:600;color:var(--text-2)}
+    .trust-pill svg{color:var(--cyan);flex-shrink:0}
+    .hero-stats{background:var(--dark3);border:1px solid var(--border);border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .stat-item{text-align:center}
+    .stat-num{font-size:2rem;font-weight:800;color:var(--cyan);line-height:1}
+    .stat-label{font-size:0.75rem;color:var(--text-3);margin-top:4px;text-transform:uppercase;letter-spacing:0.06em}
+
+    /* URGENCY */
+    .urgency-bar{background:linear-gradient(90deg,rgba(23,168,196,0.12),rgba(23,168,196,0.06));border-top:1px solid rgba(23,168,196,0.2);border-bottom:1px solid rgba(23,168,196,0.2);padding:12px 0;text-align:center;font-size:0.85rem;color:var(--text-2)}
+    .urgency-bar strong{color:var(--cyan)}
+
+    /* SERVICES */
+    .services-section{padding:72px 0;background:var(--dark2)}
+    .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
+    .section-title{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--text);margin-bottom:8px;line-height:1.2}
+    .section-sub{font-size:1rem;color:var(--text-2);margin-bottom:40px;line-height:1.6}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.services-grid{grid-template-columns:1fr}}
+    .service-card{background:var(--dark3);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+    .service-icon{width:44px;height:44px;border-radius:10px;background:rgba(23,168,196,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--cyan);font-size:1.4rem}
+    .service-card h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px}
+    .service-card p{font-size:0.86rem;color:var(--text-3);line-height:1.55}
+
+    /* WHY */
+    .why-section{padding:72px 0;background:var(--dark)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    @media(max-width:768px){.why-grid{grid-template-columns:1fr;gap:32px}}
+    .why-points{display:flex;flex-direction:column;gap:20px}
+    .why-point{display:flex;gap:16px;align-items:flex-start}
+    .why-icon{width:40px;height:40px;border-radius:8px;background:rgba(23,168,196,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--cyan);font-size:1.1rem}
+    .why-point h4{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:3px}
+    .why-point p{font-size:0.85rem;color:var(--text-3);line-height:1.55}
+    .about-card{background:var(--dark3);border:1px solid var(--border);border-radius:14px;padding:32px}
+    .about-card h3{font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:4px}
+    .about-card .subtitle{font-size:0.85rem;color:var(--cyan);font-weight:600;margin-bottom:16px}
+    .about-card p{font-size:0.9rem;color:var(--text-2);line-height:1.65;margin-bottom:16px}
+    .cert-badges{display:flex;flex-wrap:wrap;gap:8px}
+    .cert-badge{background:rgba(23,168,196,0.08);border:1px solid rgba(23,168,196,0.2);border-radius:6px;padding:5px 12px;font-size:0.76rem;font-weight:600;color:var(--cyan)}
+
+    /* CTA */
+    .cta-section{padding:72px 0;background:linear-gradient(135deg,rgba(23,168,196,0.08),rgba(30,111,184,0.06));border-top:1px solid var(--border)}
+    .cta-inner{text-align:center;max-width:580px;margin:0 auto}
+    .cta-inner h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--text);margin-bottom:12px}
+    .cta-inner p{font-size:1rem;color:var(--text-2);margin-bottom:32px}
+    .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* FOOTER */
+    footer{background:var(--dark2);border-top:1px solid var(--border);padding:36px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-brand{font-weight:800;font-size:1rem;color:var(--text)}
+    .footer-brand span{color:var(--cyan)}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links a{font-size:0.85rem;color:var(--text-3)}
+    .footer-links a:hover{color:var(--cyan)}
+
+    /* MOBILE STICKY */
+    .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--dark2);border-top:1px solid var(--border);padding:12px 16px;gap:10px}
+    @media(max-width:768px){.sticky-cta{display:flex}}
+    .sticky-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--font);font-weight:700;font-size:0.88rem;border-radius:8px;padding:13px 10px;text-align:center;line-height:1.2;white-space:normal}
+    .sticky-call{background:var(--cyan);color:#06141f}
+    .sticky-sms{background:transparent;color:var(--cyan);border:2px solid var(--cyan)}
+  </style>
+</head>
+<body>
+
+<script src="/kg-preview.js"></script>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo">DJ's <span>HVAC</span> LLC</div>
+      <a href="tel:+15408094749" class="nav-phone">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.001 2.82a2 2 0 011.98-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        (540) 809-4749
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label">Fredericksburg VA · Licensed &amp; Insured</div>
+        <h1 class="hero-title">Heating &amp; Cooling You Can <span>Count On</span></h1>
+        <p class="hero-sub">Master certified HVAC technician with 8+ years of experience. Fast, fair, and reliable — from emergency repairs to full system replacements.</p>
+        <div class="hero-ctas">
+          <a href="tel:+15408094749" class="btn btn-primary btn-lg">Call (540) 809-4749</a>
+          <a href="sms:+15408094749" class="btn btn-outline btn-lg">Text for a Quote</a>
+        </div>
+        <div class="trust-strip">
+          <div class="trust-pill"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Master Certified Technician</div>
+          <div class="trust-pill"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Licensed &amp; Insured</div>
+          <div class="trust-pill"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Free Estimates</div>
+          <div class="trust-pill"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>All Brands Serviced</div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">5.0★</div>
+          <div class="stat-label">Star Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24h</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<div class="urgency-bar">
+  <div class="container">
+    Serving <strong>Fredericksburg · Stafford · Spotsylvania</strong> — Free estimates, all systems and brands
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">HVAC Services — Residential &amp; Light Commercial</h2>
+    <p class="section-sub">From routine tune-ups to emergency replacements, we handle it all.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <h3>AC Installation &amp; Repair</h3>
+        <p>New systems, repairs, seasonal tune-ups, and refrigerant services for all makes and models.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3>Heating Systems</h3>
+        <p>Gas and electric furnace installation, repair, and maintenance. Heat pumps and mini-splits too.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌡️</div>
+        <h3>Thermostat Services</h3>
+        <p>Smart thermostat upgrades, wiring, installation, and programming for any system.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <h3>Water Heaters</h3>
+        <p>Gas and electric water heater installation and replacement. Fast turnaround.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌬️</div>
+        <h3>Duct &amp; Vent Work</h3>
+        <p>Ductwork repair, sealing, and new installation to improve airflow and efficiency.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Air Quality Systems</h3>
+        <p>Humidifiers, air cleaners, air scrubbers, and UV purification systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DEMPSEY -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Clients Choose Us</div>
+        <h2 class="section-title">Honest Work, Fair Prices</h2>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-icon">🎓</div>
+            <div>
+              <h4>Master Certified Technician</h4>
+              <p>Virginia master HVAC license and contractor license — not just a handyman with a wrench.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon">💬</div>
+            <div>
+              <h4>Straight Advice</h4>
+              <p>We tell you what's actually wrong — no upselling, no unnecessary parts. Just the honest fix.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon">📅</div>
+            <div>
+              <h4>Shows Up on Time</h4>
+              <p>Neighbors on Nextdoor call us "reliable and reasonable." We mean it when we give you a window.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon">💰</div>
+            <div>
+              <h4>Fair Flat Pricing</h4>
+              <p>Free estimates before any work starts. No surprise charges on the invoice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>Dempsey James</h3>
+        <div class="subtitle">Owner &amp; Master HVAC Technician</div>
+        <p>I've been in the HVAC industry since 2007. I started DJ's HVAC to give homeowners a better option — a master-certified tech who shows up, tells the truth, and charges a fair price.</p>
+        <p>From Fredericksburg to Stafford to Spotsylvania, I've helped hundreds of families stay comfortable year-round. Highly recommended on Nextdoor.</p>
+        <div class="cert-badges">
+          <span class="cert-badge">Master HVAC License</span>
+          <span class="cert-badge">Virginia Contractor License</span>
+          <span class="cert-badge">8+ Years Experience</span>
+          <span class="cert-badge">5.0★ Rated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Ready to Schedule?</h2>
+      <p>Call or text for a free estimate. Most jobs booked within 24–48 hours.</p>
+      <div class="cta-actions">
+        <a href="tel:+15408094749" class="btn btn-primary btn-lg">Call (540) 809-4749</a>
+        <a href="sms:+15408094749" class="btn btn-outline btn-lg">Send a Text</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">DJ's <span>HVAC</span> LLC</div>
+      <div class="footer-links">
+        <span style="font-size:0.85rem;color:var(--text-3)">Fredericksburg, VA · (540) 809-4749</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="sticky-cta">
+  <a href="tel:+15408094749" class="sticky-call">📞 Call (540) 809-4749</a>
+  <a href="sms:+15408094749" class="sticky-sms">💬 Text for Quote</a>
+</div>
+
+</body>
+</html>
