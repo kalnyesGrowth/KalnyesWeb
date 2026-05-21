@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 33</div>
+    <div class="progress-count" id="sent-count">0 / 36</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -634,13 +634,64 @@
   </div>
 </div>
 
+<!-- 34 -->
+<div class="card" id="card-34">
+  <div class="card-header">
+    <div class="card-name">34. Mark O Anderson — Tree Service</div>
+    <span class="card-sent" id="sent-34">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+17036702659" class="phone-num">📞 (703) 670-2659</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Tree service $800-3k/job</div>
+  <div class="msg-box" id="msg-34">Hey Mark — Googled tree services in Stafford and Mark O Anderson's Tree Service doesn't show up at all. Spring storm season means homeowners with downed limbs and overgrown trees are calling whoever they find on Google right now — and it's not you. Tree removal averages $800-3k, trimming $200-800. I build websites for local contractors here — kalnyesgrowth.com shows my work. A simple site for $600 would pay for itself with one job. Free 15-min call?</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(34)">📋 Copy</button>
+    <a href="sms:+17036702659" class="btn btn-sms" onclick="markSent(34)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 35 -->
+<div class="card" id="card-35">
+  <div class="card-header">
+    <div class="card-name">35. JD Painting &amp; Home Remodeling</div>
+    <span class="card-sent" id="sent-35">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+17035989357" class="phone-num">📞 (703) 598-9357</a>
+  </div>
+  <div class="problem-tag">🔴 Blogspot only · Painting $1.5-8k/job · Remodel $8-30k</div>
+  <div class="msg-box" id="msg-35">Hey — looked up painters in Fredericksburg and JD Painting doesn't come up on Google. Your Blogspot page won't rank — anyone searching for a painter right now is finding your competitors. Interior paint $1,500-4k, exterior $3-8k, full remodel $8-30k. A real professional website for $600 costs less than one paint job and starts bringing leads instead of losing them. kalnyesgrowth.com to see the work — free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(35)">📋 Copy</button>
+    <a href="sms:+17035989357" class="btn btn-sms" onclick="markSent(35)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 36 -->
+<div class="card" id="card-36">
+  <div class="card-header">
+    <div class="card-name">36. Anderson Lawn &amp; Landscape LLC</div>
+    <span class="card-sent" id="sent-36">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15714518202" class="phone-num">📞 (571) 451-8202</a>
+  </div>
+  <div class="problem-tag">🔴 Facebook-only · Lawn/landscape $1.8-3.6k/client/yr</div>
+  <div class="msg-box" id="msg-36">Hey — searched "landscaping Stafford VA" on Google and Anderson Lawn & Landscape doesn't show up. You're Facebook-only, which means anyone searching for lawn care right now can't find you. Recurring lawn clients are worth $1,800-3,600 a year each — and landscaping projects average $3-15k. I build contractor websites for people in Stafford — kalnyesgrowth.com. $600 to launch and start getting found. Free call to see the plan.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(36)">📋 Copy</button>
+    <a href="sms:+15714518202" class="btn btn-sms" onclick="markSent(36)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 33;
+const total = 36;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
