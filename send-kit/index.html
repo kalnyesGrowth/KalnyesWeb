@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>KalnyesGrowth — Send Kit</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f1117;color:#e8edf5;padding:16px 16px 40px;-webkit-font-smoothing:antialiased}
+    h1{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:4px}
+    .subtitle{font-size:0.82rem;color:#6b7280;margin-bottom:20px}
+    .progress{background:#1e2433;border-radius:8px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .progress-label{font-size:0.78rem;color:#9ca3af}
+    .progress-count{font-size:1.1rem;font-weight:800;color:#22c55e}
+    .card{background:#1a1f2e;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:14px}
+    .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .card-name{font-size:1rem;font-weight:700;color:#fff}
+    .card-sent{font-size:0.72rem;font-weight:700;color:#22c55e;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);border-radius:100px;padding:3px 10px;display:none}
+    .card-sent.visible{display:inline-flex}
+    .phone-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+    .phone-num{font-size:0.88rem;font-weight:600;color:#60a5fa}
+    .msg-box{background:#0f1117;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;font-size:0.83rem;color:#d1d5db;line-height:1.6;margin-bottom:10px;white-space:pre-wrap;word-break:break-word}
+    .btn-row{display:flex;gap:8px}
+    .btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;border-radius:8px;font-size:0.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;text-align:center;line-height:1.2;-webkit-tap-highlight-color:transparent}
+    .btn-copy{background:#3b82f6;color:#fff}
+    .btn-copy.copied{background:#22c55e}
+    .btn-sms{background:#22c55e;color:#000}
+    .divider{height:1px;background:rgba(255,255,255,0.05);margin:20px 0}
+    .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6b7280;margin-bottom:12px}
+    .tip{background:#1e2433;border:1px solid rgba(59,130,246,0.2);border-radius:8px;padding:12px 14px;font-size:0.8rem;color:#93c5fd;margin-bottom:16px;line-height:1.5}
+    .sent-counter{font-size:0.78rem;color:#6b7280;text-align:center;margin-top:16px}
+  </style>
+</head>
+<body>
+
+<h1>Outreach Send Kit</h1>
+<p class="subtitle">Open on iPhone — tap Copy, then tap SMS to open Messages</p>
+
+<div class="progress">
+  <div>
+    <div class="progress-label">Texts sent today</div>
+    <div class="progress-count" id="sent-count">0 / 20</div>
+  </div>
+  <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
+    <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
+  </div>
+</div>
+
+<div class="tip">💡 Tap <strong>Copy</strong> to copy the message, then tap <strong>SMS</strong> to open Messages — just paste and hit send.</div>
+
+<div class="section-label">Priority 1 — New prospects</div>
+
+<!-- 1 -->
+<div class="card" id="card-1">
+  <div class="card-header">
+    <div class="card-name">1. John Hatt — Hatt's Handyman</div>
+    <span class="card-sent" id="sent-1">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15713297273" class="phone-num">📞 (571) 329-7273</a>
+  </div>
+  <div class="msg-box" id="msg-1">Hey John, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Hatt's Handyman — check it out: kalnyesgrowth.com/hatts-handyman/?preview=jose
+
+$600 to launch if you like it, completely free if you don't. Happy to show you on a quick call.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(1)">📋 Copy</button>
+    <a href="sms:+15713297273" class="btn btn-sms" onclick="markSent(1)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 2 -->
+<div class="card" id="card-2">
+  <div class="card-header">
+    <div class="card-name">2. Samuel Heflin — Heflin's Lawn Care</div>
+    <span class="card-sent" id="sent-2">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15404194536" class="phone-num">📞 (540) 419-4536</a>
+  </div>
+  <div class="msg-box" id="msg-2">Hey Samuel, I'm Jose from KalnyesGrowth. I built a free website for Heflin's Lawn Care — take a look: kalnyesgrowth.com/heflins-lawn-care/?preview=jose
+
+$600 to go live if you like it, no cost if you don't. Let me know what you think.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(2)">📋 Copy</button>
+    <a href="sms:+15404194536" class="btn btn-sms" onclick="markSent(2)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 3 -->
+<div class="card" id="card-3">
+  <div class="card-header">
+    <div class="card-name">3. Stefan Home Service</div>
+    <span class="card-sent" id="sent-3">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15409075088" class="phone-num">📞 (540) 907-5088</a>
+  </div>
+  <div class="msg-box" id="msg-3">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Stefan Home Service — check it out: kalnyesgrowth.com/stefan-home-service/?preview=jose
+
+Free to look. $600 to launch if you want it. No pressure at all.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(3)">📋 Copy</button>
+    <a href="sms:+15409075088" class="btn btn-sms" onclick="markSent(3)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 4 -->
+<div class="card" id="card-4">
+  <div class="card-header">
+    <div class="card-name">4. Marcell Hernandez — MD Contractors</div>
+    <span class="card-sent" id="sent-4">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15408417190" class="phone-num">📞 (540) 841-7190</a>
+  </div>
+  <div class="msg-box" id="msg-4">Hey Marcell, I'm Jose from KalnyesGrowth. I built a free website for MD Contractors — see it here: kalnyesgrowth.com/md-contractors/?preview=jose
+
+$600 to launch if you love it, completely free if not. Want to jump on a quick call?</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(4)">📋 Copy</button>
+    <a href="sms:+15408417190" class="btn btn-sms" onclick="markSent(4)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 5 -->
+<div class="card" id="card-5">
+  <div class="card-header">
+    <div class="card-name">5. Edgar Cruz — Local Aquia Handyman 🇪🇸</div>
+    <span class="card-sent" id="sent-5">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407203740" class="phone-num">📞 (540) 720-3740</a>
+  </div>
+  <div class="msg-box" id="msg-5">Hey Edgar, soy Jose de KalnyesGrowth en Stafford. Te construí un sitio web gratis — échale un vistazo: kalnyesgrowth.com/aquia-handyman/?preview=jose
+
+$600 para lanzarlo si te gusta, gratis si no. Sin presión.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(5)">📋 Copy</button>
+    <a href="sms:+15407203740" class="btn btn-sms" onclick="markSent(5)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="card" id="card-6">
+  <div class="card-header">
+    <div class="card-name">6. Sunset Junk Removal</div>
+    <span class="card-sent" id="sent-6">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15714779228" class="phone-num">📞 (571) 477-9228</a>
+  </div>
+  <div class="msg-box" id="msg-6">Hey, I'm Jose from KalnyesGrowth. I built a free website for Sunset Junk Removal — check it out: kalnyesgrowth.com/sunset-junk-removal/?preview=jose
+
+$600 to launch if you want it, free if you don't. Happy to chat.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(6)">📋 Copy</button>
+    <a href="sms:+15714779228" class="btn btn-sms" onclick="markSent(6)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="card" id="card-7">
+  <div class="card-header">
+    <div class="card-name">7. Dimitru — Encius Painting</div>
+    <span class="card-sent" id="sent-7">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15404405837" class="phone-num">📞 (540) 440-5837</a>
+  </div>
+  <div class="msg-box" id="msg-7">Hey Dimitru, I'm Jose from KalnyesGrowth. I built a free website for Encius Painting — take a look: kalnyesgrowth.com/encius-painting/?preview=jose
+
+$600 to go live if you like it. Free if you don't. Quick 15-min call to walk you through it?</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(7)">📋 Copy</button>
+    <a href="sms:+15404405837" class="btn btn-sms" onclick="markSent(7)">💬 SMS</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-label">Priority 2 — Follow-ups</div>
+
+<!-- 8 -->
+<div class="card" id="card-8">
+  <div class="card-header">
+    <div class="card-name">8. Wilson HVAC</div>
+    <span class="card-sent" id="sent-8">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15402074023" class="phone-num">📞 (540) 207-4023</a>
+  </div>
+  <div class="msg-box" id="msg-8">Hey, I'm Jose from KalnyesGrowth. Still have your free HVAC website ready — kalnyesgrowth.com/wilson-hvac/?preview=jose — $600 to launch, free if you don't love it. Still interested?</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(8)">📋 Copy</button>
+    <a href="sms:+15402074023" class="btn btn-sms" onclick="markSent(8)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="card" id="card-9">
+  <div class="card-header">
+    <div class="card-name">9. Hugo — Bruno's Electric</div>
+    <span class="card-sent" id="sent-9">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15715013823" class="phone-num">📞 (571) 501-3823</a>
+  </div>
+  <div class="msg-box" id="msg-9">Hey Hugo, Jose from KalnyesGrowth. Your free electrician website is still live: kalnyesgrowth.com/brunos-electric/?preview=jose — $600 to launch, free if not. Want to chat?</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(9)">📋 Copy</button>
+    <a href="sms:+15715013823" class="btn btn-sms" onclick="markSent(9)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="card" id="card-10">
+  <div class="card-header">
+    <div class="card-name">10. Craig Horton — Craig Horton Electric</div>
+    <span class="card-sent" id="sent-10">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15406570909" class="phone-num">📞 (540) 657-0909</a>
+  </div>
+  <div class="msg-box" id="msg-10">Hey Craig, Jose from KalnyesGrowth. Your electrician website demo is ready: kalnyesgrowth.com/craig-hortons-electric/?preview=jose — $600 to go live, free if you don't love it.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(10)">📋 Copy</button>
+    <a href="sms:+15406570909" class="btn btn-sms" onclick="markSent(10)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="card" id="card-11">
+  <div class="card-header">
+    <div class="card-name">11. Patrick Jackson — Jackson & Sons</div>
+    <span class="card-sent" id="sent-11">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407064723" class="phone-num">📞 (540) 706-4723</a>
+  </div>
+  <div class="msg-box" id="msg-11">Hey Patrick, Jose from KalnyesGrowth. Free contractor website ready for you: kalnyesgrowth.com/jackson-sons-construction/?preview=jose — $600 to launch, no cost if not.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(11)">📋 Copy</button>
+    <a href="sms:+15407064723" class="btn btn-sms" onclick="markSent(11)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="card" id="card-12">
+  <div class="card-header">
+    <div class="card-name">12. Cesar Guzman 🇪🇸</div>
+    <span class="card-sent" id="sent-12">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15712125225" class="phone-num">📞 (571) 212-5225</a>
+  </div>
+  <div class="msg-box" id="msg-12">Hey Cesar, soy Jose de KalnyesGrowth. Tu sitio web está listo: kalnyesgrowth.com/cesar-general-contractor/?preview=jose — $600 para lanzarlo, gratis si no te convence.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(12)">📋 Copy</button>
+    <a href="sms:+15712125225" class="btn btn-sms" onclick="markSent(12)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 13 -->
+<div class="card" id="card-13">
+  <div class="card-header">
+    <div class="card-name">13. Kenneth Cudjoe — Ken's Handy Work</div>
+    <span class="card-sent" id="sent-13">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15715762861" class="phone-num">📞 (571) 576-2861</a>
+  </div>
+  <div class="msg-box" id="msg-13">Hey Kenneth, Jose from KalnyesGrowth. Free handyman website still up for you: kalnyesgrowth.com/kens-handy-work/?preview=jose — $600 to launch, free if not.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(13)">📋 Copy</button>
+    <a href="sms:+15715762861" class="btn btn-sms" onclick="markSent(13)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 14 -->
+<div class="card" id="card-14">
+  <div class="card-header">
+    <div class="card-name">14. David Bonilla — Apex Power Wash</div>
+    <span class="card-sent" id="sent-14">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15715727599" class="phone-num">📞 (571) 572-7599</a>
+  </div>
+  <div class="msg-box" id="msg-14">Hey David, Jose from KalnyesGrowth. Free power washing website waiting for you: kalnyesgrowth.com/apex-power-wash/?preview=jose — $600 to launch, no cost if you pass.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(14)">📋 Copy</button>
+    <a href="sms:+15715727599" class="btn btn-sms" onclick="markSent(14)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 15 -->
+<div class="card" id="card-15">
+  <div class="card-header">
+    <div class="card-name">15. Dakota — Quality Handyman</div>
+    <span class="card-sent" id="sent-15">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15404468557" class="phone-num">📞 (540) 446-8557</a>
+  </div>
+  <div class="msg-box" id="msg-15">Hey Dakota, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Quality Handyman LLC — take a look: kalnyesgrowth.com/quality-handyman/?preview=jose
+
+$600 to go live with hosting included. Free if you don't love it. Happy to show you on a quick call.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(15)">📋 Copy</button>
+    <a href="sms:+15404468557" class="btn btn-sms" onclick="markSent(15)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 16 -->
+<div class="card" id="card-16">
+  <div class="card-header">
+    <div class="card-name">16. Jaime Arias — Arias Concrete</div>
+    <span class="card-sent" id="sent-16">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15408418789" class="phone-num">📞 (540) 841-8789</a>
+  </div>
+  <div class="msg-box" id="msg-16">Hey Jaime, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Arias Concrete — check it out: kalnyesgrowth.com/arias-concrete/?preview=jose
+
+$600 to launch with hosting. Free if you don't love it. Worth a quick look.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(16)">📋 Copy</button>
+    <a href="sms:+15408418789" class="btn btn-sms" onclick="markSent(16)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 17 -->
+<div class="card" id="card-17">
+  <div class="card-header">
+    <div class="card-name">17. Josue Rivas — JC Roofing</div>
+    <span class="card-sent" id="sent-17">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15402074993" class="phone-num">📞 (540) 207-4993</a>
+  </div>
+  <div class="msg-box" id="msg-17">Hey Josue, I'm Jose from KalnyesGrowth in Stafford. I built a free website for JC Roofing — take a look: kalnyesgrowth.com/jc-roofing/?preview=jose
+
+$600 to go live with hosting included. Free if you don't love it. Worth a quick look.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(17)">📋 Copy</button>
+    <a href="sms:+15402074993" class="btn btn-sms" onclick="markSent(17)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 18 -->
+<div class="card" id="card-18">
+  <div class="card-header">
+    <div class="card-name">18. Dempsey James — DJ's HVAC</div>
+    <span class="card-sent" id="sent-18">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15408094749" class="phone-num">📞 (540) 809-4749</a>
+  </div>
+  <div class="msg-box" id="msg-18">Hey Dempsey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for DJ's HVAC — take a look: kalnyesgrowth.com/djs-hvac/?preview=jose
+
+$600 to go live with hosting included. Free if you don't love it. Happy to show you on a quick call.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(18)">📋 Copy</button>
+    <a href="sms:+15408094749" class="btn btn-sms" onclick="markSent(18)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 19 -->
+<div class="card" id="card-19">
+  <div class="card-header">
+    <div class="card-name">19. Keiry Arevalo — AKJ Painting</div>
+    <span class="card-sent" id="sent-19">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+17033576515" class="phone-num">📞 (703) 357-6515</a>
+  </div>
+  <div class="msg-box" id="msg-19">Hey Keiry, I'm Jose from KalnyesGrowth in Stafford. I built a free website for AKJ Painting — take a look: kalnyesgrowth.com/akj-painting/?preview=jose
+
+$600 to go live with hosting. Free if you don't love it. Worth a quick look!</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(19)">📋 Copy</button>
+    <a href="sms:+17033576515" class="btn btn-sms" onclick="markSent(19)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 20 -->
+<div class="card" id="card-20">
+  <div class="card-header">
+    <div class="card-name">20. Rick Thompson — Rick Thompson Electric</div>
+    <span class="card-sent" id="sent-20">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15405488833" class="phone-num">📞 (540) 548-8833</a>
+  </div>
+  <div class="msg-box" id="msg-20">Hey Rick, Jose from KalnyesGrowth. Electrician website demo still up: kalnyesgrowth.com/rick-thompson-electric/?preview=jose — $600 to go live, free if you don't love it.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(20)">📋 Copy</button>
+    <a href="sms:+15405488833" class="btn btn-sms" onclick="markSent(20)">💬 SMS</a>
+  </div>
+</div>
+
+<div class="sent-counter" id="done-msg" style="display:none">
+  🎉 All texts sent! Check replies and follow up with anyone who clicks the demo link.
+</div>
+
+<script>
+let sentCount = 0;
+const total = 20;
+
+function copyMsg(n) {
+  const msg = document.getElementById('msg-' + n).textContent;
+  navigator.clipboard.writeText(msg).then(() => {
+    const btn = document.querySelector('#card-' + n + ' .btn-copy');
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = document.getElementById('msg-' + n).textContent;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn = document.querySelector('#card-' + n + ' .btn-copy');
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copy';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+function markSent(n) {
+  const badge = document.getElementById('sent-' + n);
+  if (!badge.classList.contains('visible')) {
+    badge.classList.add('visible');
+    sentCount++;
+    document.getElementById('sent-count').textContent = sentCount + ' / ' + total;
+    document.getElementById('progress-bar').style.width = (sentCount/total*100) + '%';
+    if (sentCount === total) {
+      document.getElementById('done-msg').style.display = 'block';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
