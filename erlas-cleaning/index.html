@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erla's Cleaning Services | Fredericksburg VA | Residential & Commercial</title>
+<meta name="description" content="Erla's Cleaning Services LLC — trusted residential and commercial cleaning in Fredericksburg, Stafford & Spotsylvania VA. Licensed & insured. Free estimates. Call (540) 847-1896.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script src="/kg-preview.js" defer></script>
+<style>
+  :root{
+    --teal:#0ea5a0;--teal-dk:#0b8a86;--teal-lt:#e0f7f6;
+    --dark:#0b1619;--mid:#101e22;--card:#152228;
+    --border:rgba(14,165,160,.18);--text:#d8eef0;--muted:#6d9ca2;
+    --warm:#f0fafa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:hidden}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,22,25,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{font-size:1.05rem;font-weight:800;color:#fff}
+  .nav-brand span{color:var(--teal)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .nav-phone{font-size:.9rem;font-weight:700;color:var(--teal);text-decoration:none}
+  .nav-book{background:var(--teal);color:#fff;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:6px;text-decoration:none}
+  .nav-book:hover{background:var(--teal-dk)}
+
+  /* HERO */
+  .hero{min-height:100vh;padding:80px 24px 60px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#0b1619 55%,#0d2225 100%);position:relative}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(14,165,160,.08) 0%,transparent 60%)}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,160,.12);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:.8rem;font-weight:700;color:var(--teal);letter-spacing:.05em;text-transform:uppercase;margin-bottom:24px}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:18px;max-width:760px}
+  .hero h1 em{color:var(--teal);font-style:normal}
+  .hero p{font-size:1.1rem;color:var(--muted);max-width:580px;margin:0 auto 32px}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:800;font-size:1rem;padding:16px 32px;border-radius:8px;text-decoration:none;transition:background .2s}
+  .btn-primary:hover{background:var(--teal-dk)}
+  .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--teal);font-weight:700;font-size:1rem;padding:15px 28px;border-radius:8px;border:1px solid var(--teal);text-decoration:none;transition:all .2s}
+  .btn-secondary:hover{background:rgba(14,165,160,.1)}
+  .trust-row{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);font-weight:600}
+  .trust-item::before{content:'✓';color:var(--teal);font-weight:900}
+
+  /* SERVICES */
+  section{padding:72px 24px}
+  .container{max-width:1080px;margin:0 auto}
+  .section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.2}
+  .section-intro{font-size:1rem;color:var(--muted);max-width:640px}
+  .services-section{background:var(--mid)}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;margin-top:36px}
+  .service-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 20px}
+  .service-icon{font-size:1.8rem;margin-bottom:10px}
+  .service-card h3{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:6px}
+  .service-card p{font-size:.84rem;color:var(--muted);line-height:1.5}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:36px}
+  .why-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .why-card h3{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .why-card h3 .dot{width:8px;height:8px;background:var(--teal);border-radius:50%;flex-shrink:0}
+  .why-card p{font-size:.86rem;color:var(--muted);line-height:1.6}
+
+  /* REVIEWS */
+  .reviews-section{background:var(--mid)}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:36px}
+  .review-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .stars{color:var(--teal);font-size:1rem;margin-bottom:10px}
+  .review-card blockquote{font-size:.88rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:14px}
+  .reviewer{font-size:.8rem;font-weight:700;color:var(--teal)}
+
+  /* CTA */
+  .cta-section{text-align:center}
+  .cta-section h2{margin-bottom:12px}
+  .cta-section p{color:var(--muted);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+  .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{background:#080e10;border-top:1px solid var(--border);padding:36px 24px;text-align:center}
+  .footer-brand{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:8px}
+  .footer-brand span{color:var(--teal)}
+  .footer-info{font-size:.84rem;color:var(--muted);line-height:2.1}
+  .footer-info a{color:var(--teal);text-decoration:none}
+
+  /* STICKY */
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;padding:10px 16px;background:rgba(11,22,25,.96);backdrop-filter:blur(12px);border-top:1px solid var(--border)}
+  .sticky-cta a{display:block;background:var(--teal);color:#fff;text-align:center;padding:14px;border-radius:8px;font-weight:800;font-size:.95rem;text-decoration:none}
+  @media(max-width:768px){.sticky-cta{display:block}.hero-ctas{flex-direction:column;align-items:center}body{padding-bottom:68px}.nav-book{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Erla's <span>Cleaning</span></div>
+  <div class="nav-cta">
+    <a href="tel:5408471896" class="nav-phone">(540) 847-1896</a>
+    <a href="tel:5408471896" class="nav-book">Book Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🌟 Licensed & Insured · Fredericksburg VA Since 2015</div>
+  <h1>A <em>Spotless Home</em><br>Is Our Promise to You</h1>
+  <p>Residential and commercial cleaning done right — the first time, every time. Trusted by hundreds of families across Fredericksburg, Stafford, and Spotsylvania.</p>
+  <div class="hero-ctas">
+    <a href="tel:5408471896" class="btn-primary">📞 Call for Free Quote</a>
+    <a href="mailto:erlascleaningservices@gmail.com" class="btn-secondary">✉ Email Us</a>
+  </div>
+  <div class="trust-row">
+    <div class="trust-item">Licensed & Insured</div>
+    <div class="trust-item">Free Estimates</div>
+    <div class="trust-item">Background Checked</div>
+    <div class="trust-item">Eco-Friendly Products Available</div>
+    <div class="trust-item">10+ Years Experience</div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <span class="section-label">Services</span>
+    <h2>Every Clean You Need, Covered</h2>
+    <p class="section-intro">From weekly maintenance to deep cleans and move-out service — we handle it all with care and attention to every detail.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Residential Cleaning</h3>
+        <p>Weekly, bi-weekly, or monthly home cleaning. Kitchens, bathrooms, bedrooms, living areas — all spotless.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Cleaning</h3>
+        <p>Offices, retail spaces, and commercial properties cleaned to a professional standard on your schedule.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Deep Cleaning</h3>
+        <p>Full top-to-bottom clean reaching every corner, baseboard, appliance, and surface for a truly fresh start.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Move In / Move Out</h3>
+        <p>Make your old place spotless for the next tenant or your new home ready for move-in day.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Post-Construction</h3>
+        <p>Dust, debris, and residue from remodels removed so your renovated space looks its absolute best.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <h3>Recurring Maintenance</h3>
+        <p>Set up a schedule that fits your life. Weekly, bi-weekly, or monthly — same crew every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">Why Erla's</span>
+    <h2>We Clean Like It's Our Own Home</h2>
+    <p class="section-intro">Over 10 years of professional cleaning experience in Northern Virginia. Here's what sets us apart.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3><span class="dot"></span>Owner-Run Quality</h3>
+        <p>Erla personally oversees every job. You get hands-on attention — not a rotating crew of strangers.</p>
+      </div>
+      <div class="why-card">
+        <h3><span class="dot"></span>Fully Licensed & Insured</h3>
+        <p>Full business insurance protects your home. If anything is damaged, you're covered. No stress.</p>
+      </div>
+      <div class="why-card">
+        <h3><span class="dot"></span>Background-Checked Team</h3>
+        <p>Every person who enters your home is screened. Your family's safety is not negotiable.</p>
+      </div>
+      <div class="why-card">
+        <h3><span class="dot"></span>Flexible Scheduling</h3>
+        <p>Early mornings, evenings, weekends — we work around your life, not the other way around.</p>
+      </div>
+      <div class="why-card">
+        <h3><span class="dot"></span>Eco-Friendly Options</h3>
+        <p>Safe cleaning products available for homes with kids, pets, or sensitivities. Just ask.</p>
+      </div>
+      <div class="why-card">
+        <h3><span class="dot"></span>Satisfaction Guaranteed</h3>
+        <p>Not happy? We come back and make it right — no questions asked, no extra charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="container">
+    <span class="section-label">Reviews</span>
+    <h2>Customers Love the Results</h2>
+    <p class="section-intro">Rated 5 stars by homeowners and businesses across Fredericksburg County.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Erla's team is incredible. My house has never looked this clean — they get into every corner and don't rush. I've tried 3 other services and none compare."</blockquote>
+        <div class="reviewer">— Homeowner, Fredericksburg VA</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We hired Erla's for a move-out clean and got our full deposit back. The landlord said it was the cleanest apartment he'd seen in years. Worth every penny."</blockquote>
+        <div class="reviewer">— Renter, Spotsylvania VA</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Our office has been using Erla's Cleaning for over a year. Reliable, professional, thorough. They show up on time every single week. Highly recommended."</blockquote>
+        <div class="reviewer">— Office Manager, Stafford VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <span class="section-label">Get Started</span>
+    <h2>Ready for a Cleaner Home?</h2>
+    <p>Call or email for a free quote. We'll get back to you same day and schedule at your convenience.</p>
+    <div class="cta-actions">
+      <a href="tel:5408471896" class="btn-primary">📞 Call (540) 847-1896</a>
+      <a href="mailto:erlascleaningservices@gmail.com" class="btn-secondary">✉ Email for Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Erla's <span>Cleaning Services</span></div>
+  <div class="footer-info">
+    409 Westwood Office Park, Fredericksburg, VA<br>
+    <a href="tel:5408471896">(540) 847-1896</a> &nbsp;|&nbsp;
+    <a href="mailto:erlascleaningservices@gmail.com">erlascleaningservices@gmail.com</a><br>
+    Licensed & Insured LLC · Est. 2015<br>
+    <small style="color:#1e3a3f;margin-top:8px;display:block">Serving Fredericksburg, Stafford, Spotsylvania, King George & surrounding areas</small>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="tel:5408471896">📞 Free Cleaning Quote — Call (540) 847-1896</a>
+</div>
+
+</body>
+</html>
