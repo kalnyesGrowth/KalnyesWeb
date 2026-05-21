@@ -187,8 +187,11 @@
 </nav>
 
 <!-- ══ URGENCY BAR ══ -->
-<div class="urgency-bar">
+<div class="urgency-bar" id="urgency-bar-fp">
   <p>📍 <strong>162+ demos built for Virginia contractors</strong> — Limited spots available this week · Free preview · $600 to launch · <a href="#book" style="color:#fff;font-weight:700;text-decoration:underline">Book now →</a></p>
+</div>
+<div id="countdown-bar-fp" style="display:none;background:#dc2626;color:#fff;padding:13px 24px;text-align:center;font-size:0.88rem;font-weight:600">
+  ⚠️ <strong>Booking window closes May 26</strong> — <strong id="fp-days"></strong> days left. After that, the free preview offer ends. <a href="#book" style="color:#fff;text-decoration:underline;font-weight:800">Book your call now →</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -1966,6 +1969,22 @@
     if(y<lastScrollY&&lastScrollY>400&&y<100&&/Mobi|Android/i.test(navigator.userAgent))showEI();
     lastScrollY=y;
   });
+</script>
+<script>
+(function(){
+  var deadline = new Date('2026-05-26T23:59:59');
+  var now = new Date();
+  var diff = deadline - now;
+  if(diff > 0 && diff < 7 * 24 * 3600 * 1000) {
+    var days = Math.ceil(diff / (24 * 3600 * 1000));
+    var el = document.getElementById('fp-days');
+    if(el) el.textContent = days;
+    var bar = document.getElementById('countdown-bar-fp');
+    if(bar) bar.style.display = 'block';
+    var orig = document.getElementById('urgency-bar-fp');
+    if(orig) orig.style.display = 'none';
+  }
+})();
 </script>
 </body>
 </html>

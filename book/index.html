@@ -152,8 +152,11 @@
   <a href="tel:+15407838835" class="nav-phone">📞 (540) 783-8835</a>
 </nav>
 
-<div class="urgency">
+<div class="urgency" id="urgency-bar">
   ⏱ <strong>Limited spots this week.</strong> Free preview, then $600 to launch · <a href="https://kalnyesgrowth.com/free-preview/">See 162+ real examples first →</a>
+</div>
+<div id="countdown-bar" style="display:none;background:#dc2626;color:#fff;padding:11px 24px;text-align:center;font-size:0.88rem;font-weight:600">
+  ⚠️ Booking window closes <strong id="countdown-deadline">May 26</strong> — <strong id="countdown-days"></strong> days left to get your free demo. <a href="#book" style="color:#fff;text-decoration:underline;font-weight:800">Book now →</a>
 </div>
 
 <div class="page">
@@ -407,5 +410,18 @@ function toggleFaq(btn) {
 }
 </script>
 
+<script>
+(function(){
+  var deadline = new Date('2026-05-26T23:59:59');
+  var now = new Date();
+  var diff = deadline - now;
+  if(diff > 0 && diff < 7 * 24 * 3600 * 1000) {
+    var days = Math.ceil(diff / (24 * 3600 * 1000));
+    document.getElementById('countdown-days').textContent = days;
+    document.getElementById('countdown-bar').style.display = 'block';
+    document.getElementById('urgency-bar').style.display = 'none';
+  }
+})();
+</script>
 </body>
 </html>
