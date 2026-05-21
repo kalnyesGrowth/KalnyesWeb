@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>KalnyesGrowth — Send Kit</title>
+  <title>KalnyesGrowth — Problem Outreach Kit</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html,body{overflow-x:hidden}
@@ -20,6 +20,7 @@
     .card-sent.visible{display:inline-flex}
     .phone-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
     .phone-num{font-size:0.88rem;font-weight:600;color:#60a5fa}
+    .problem-tag{font-size:0.7rem;font-weight:700;color:#f59e0b;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:6px;padding:2px 8px;margin-bottom:8px;display:inline-block}
     .msg-box{background:#0f1117;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px;font-size:0.83rem;color:#d1d5db;line-height:1.6;margin-bottom:10px;white-space:pre-wrap;word-break:break-word}
     .btn-row{display:flex;gap:8px}
     .btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;border-radius:8px;font-size:0.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;text-align:center;line-height:1.2;-webkit-tap-highlight-color:transparent}
@@ -34,503 +35,612 @@
 </head>
 <body>
 
-<h1>Outreach Send Kit</h1>
-<p class="subtitle">Open on iPhone — tap Copy, then tap SMS to open Messages</p>
+<h1>Problem Outreach Kit v2</h1>
+<p class="subtitle">Lead with their problem. Make it personal. Every message = specific problem + real dollars.</p>
 
 <div class="progress">
   <div>
-    <div class="progress-label">Texts sent today</div>
-    <div class="progress-count" id="sent-count">0 / 20</div>
+    <div class="progress-label">Texts sent</div>
+    <div class="progress-count" id="sent-count">0 / 33</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
   </div>
 </div>
 
-<div class="tip">💡 Tap <strong>Copy</strong> to copy the message, then tap <strong>SMS</strong> to open Messages — just paste and hit send.</div>
+<div class="tip">💡 NEW APPROACH: Each message names their specific problem + the money they're losing. Tap <strong>Copy</strong> then <strong>SMS</strong>. Do NOT send if you already texted them today.</div>
 
-<div class="section-label">Priority 1 — New prospects</div>
+<div class="section-label">High-Ticket Trades — Roofers, HVAC, Electric, GC</div>
 
 <!-- 1 -->
 <div class="card" id="card-1">
   <div class="card-header">
-    <div class="card-name">1. John Hatt — Hatt's Handyman</div>
+    <div class="card-name">1. Josue Rivas — JC Roofing</div>
     <span class="card-sent" id="sent-1">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15713297273" class="phone-num">📞 (571) 329-7273</a>
+    <a href="tel:+15402074993" class="phone-num">📞 (540) 207-4993</a>
   </div>
-  <div class="msg-box" id="msg-1">Hey John, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Hatt's Handyman — check it out: kalnyesgrowth.com/hatts-handyman/?preview=jose
-
-$600 to launch if you like it, completely free if you don't. Happy to show you on a quick call.</div>
+  <div class="problem-tag">🔴 Not on Google · Roofing $12-20k/job</div>
+  <div class="msg-box" id="msg-1">Hey Josue — ran a search for roofers in Stafford and JC Roofing doesn't show up on Google at all. Homeowners dealing with roof issues right now are calling the first result they find — and it's not you. Roofing jobs average $12-20k. Miss 2-3 leads a month and that's $25-60k you're not seeing. Check kalnyesgrowth.com to see my work — $600 to get you showing up. Happy to jump on a free 15-min call.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(1)">📋 Copy</button>
-    <a href="sms:+15713297273" class="btn btn-sms" onclick="markSent(1)">💬 SMS</a>
+    <a href="sms:+15402074993" class="btn btn-sms" onclick="markSent(1)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 2 -->
 <div class="card" id="card-2">
   <div class="card-header">
-    <div class="card-name">2. Samuel Heflin — Heflin's Lawn Care</div>
+    <div class="card-name">2. J&amp;R Roofing Solutions</div>
     <span class="card-sent" id="sent-2">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15404194536" class="phone-num">📞 (540) 419-4536</a>
+    <a href="tel:+15408482037" class="phone-num">📞 (540) 848-2037</a>
   </div>
-  <div class="msg-box" id="msg-2">Hey Samuel, I'm Jose from KalnyesGrowth. I built a free website for Heflin's Lawn Care — take a look: kalnyesgrowth.com/heflins-lawn-care/?preview=jose
-
-$600 to go live if you like it, no cost if you don't. Let me know what you think.</div>
+  <div class="problem-tag">🔴 Not on Google · Roofing $10-25k/job</div>
+  <div class="msg-box" id="msg-2">Hey — searched for roofers in Fredericksburg and J&R Roofing Solutions isn't showing up on Google. Homeowners with storm damage call whoever shows up first. One roofing job in this area = $10-25k. kalnyesgrowth.com shows what I build — $600 to launch and you'd start getting found. Quick call to see how it works?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(2)">📋 Copy</button>
-    <a href="sms:+15404194536" class="btn btn-sms" onclick="markSent(2)">💬 SMS</a>
+    <a href="sms:+15408482037" class="btn btn-sms" onclick="markSent(2)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 3 -->
 <div class="card" id="card-3">
   <div class="card-header">
-    <div class="card-name">3. Stefan Home Service</div>
+    <div class="card-name">3. Wilson HVAC</div>
     <span class="card-sent" id="sent-3">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15409075088" class="phone-num">📞 (540) 907-5088</a>
+    <a href="tel:+15402074023" class="phone-num">📞 (540) 207-4023</a>
   </div>
-  <div class="msg-box" id="msg-3">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Stefan Home Service — check it out: kalnyesgrowth.com/stefan-home-service/?preview=jose
-
-Free to look. $600 to launch if you want it. No pressure at all.</div>
+  <div class="problem-tag">🔴 Not on Google · AC season here · $300-8k/job</div>
+  <div class="msg-box" id="msg-3">Hey — searched HVAC repair in Stafford and Wilson HVAC isn't coming up on Google. Summer's here — AC calls are peaking right now. A homeowner with a broken AC calls whoever shows up first. Service calls $300-500, full installs $5-8k. Miss 3-4 jobs this summer = $3-10k gone. kalnyesgrowth.com shows the work — $600 to go live. Free call to discuss.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(3)">📋 Copy</button>
-    <a href="sms:+15409075088" class="btn btn-sms" onclick="markSent(3)">💬 SMS</a>
+    <a href="sms:+15402074023" class="btn btn-sms" onclick="markSent(3)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 4 -->
 <div class="card" id="card-4">
   <div class="card-header">
-    <div class="card-name">4. Marcell Hernandez — MD Contractors</div>
+    <div class="card-name">4. Dempsey James — DJ's HVAC</div>
     <span class="card-sent" id="sent-4">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15408417190" class="phone-num">📞 (540) 841-7190</a>
+    <a href="tel:+15408094749" class="phone-num">📞 (540) 809-4749</a>
   </div>
-  <div class="msg-box" id="msg-4">Hey Marcell, I'm Jose from KalnyesGrowth. I built a free website for MD Contractors — see it here: kalnyesgrowth.com/md-contractors/?preview=jose
-
-$600 to launch if you love it, completely free if not. Want to jump on a quick call?</div>
+  <div class="problem-tag">🔴 Not on Google · AC season · $400-6k/job</div>
+  <div class="msg-box" id="msg-4">Hey Dempsey — Googled HVAC in Stafford and DJ's HVAC isn't showing up. With summer here, people with AC problems are calling whoever they find on Google. They're not finding you. HVAC repairs average $400-800, installs $6k+. A site at $600 pays for itself with one job. kalnyesgrowth.com — quick call to see the plan?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(4)">📋 Copy</button>
-    <a href="sms:+15408417190" class="btn btn-sms" onclick="markSent(4)">💬 SMS</a>
+    <a href="sms:+15408094749" class="btn btn-sms" onclick="markSent(4)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 5 -->
 <div class="card" id="card-5">
   <div class="card-header">
-    <div class="card-name">5. Edgar Cruz — Local Aquia Handyman 🇪🇸</div>
+    <div class="card-name">5. Hugo — Bruno's Electric</div>
     <span class="card-sent" id="sent-5">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15407203740" class="phone-num">📞 (540) 720-3740</a>
+    <a href="tel:+15715013823" class="phone-num">📞 (571) 501-3823</a>
   </div>
-  <div class="msg-box" id="msg-5">Hey Edgar, soy Jose de KalnyesGrowth en Stafford. Te construí un sitio web gratis — échale un vistazo: kalnyesgrowth.com/aquia-handyman/?preview=jose
-
-$600 para lanzarlo si te gusta, gratis si no. Sin presión.</div>
+  <div class="problem-tag">🔴 Not on Google · Electrical $500-2.5k/job</div>
+  <div class="msg-box" id="msg-5">Hey Hugo — searched for electricians in Stafford and Bruno's Electric isn't coming up on Google. Homeowners looking for electrical work right now are finding your competitors. Electrical jobs average $500-2,500 each. A site that ranks costs $600 and pays for itself with one job. kalnyesgrowth.com to see my work — worth a quick call.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(5)">📋 Copy</button>
-    <a href="sms:+15407203740" class="btn btn-sms" onclick="markSent(5)">💬 SMS</a>
+    <a href="sms:+15715013823" class="btn btn-sms" onclick="markSent(5)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 6 -->
 <div class="card" id="card-6">
   <div class="card-header">
-    <div class="card-name">6. Sunset Junk Removal</div>
+    <div class="card-name">6. Craig Horton — Craig Horton Electric</div>
     <span class="card-sent" id="sent-6">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15714779228" class="phone-num">📞 (571) 477-9228</a>
+    <a href="tel:+15406570909" class="phone-num">📞 (540) 657-0909</a>
   </div>
-  <div class="msg-box" id="msg-6">Hey, I'm Jose from KalnyesGrowth. I built a free website for Sunset Junk Removal — check it out: kalnyesgrowth.com/sunset-junk-removal/?preview=jose
-
-$600 to launch if you want it, free if you don't. Happy to chat.</div>
+  <div class="problem-tag">🔴 Not on Google · EV chargers/panels · $600-2.5k/job</div>
+  <div class="msg-box" id="msg-6">Hey Craig — looked up electricians in Stafford and Craig Horton Electric doesn't appear on Google. New homeowners move into Stafford every month searching for a local electrician — panel upgrades, EV chargers, outlets — they call whoever shows up first. Electrical work averages $600-2k per job. $600 for the site, one job covers it. kalnyesgrowth.com — want to jump on a quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(6)">📋 Copy</button>
-    <a href="sms:+15714779228" class="btn btn-sms" onclick="markSent(6)">💬 SMS</a>
+    <a href="sms:+15406570909" class="btn btn-sms" onclick="markSent(6)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 7 -->
 <div class="card" id="card-7">
   <div class="card-header">
-    <div class="card-name">7. Dimitru — Encius Painting</div>
+    <div class="card-name">7. Rick Thompson Electric</div>
     <span class="card-sent" id="sent-7">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15404405837" class="phone-num">📞 (540) 440-5837</a>
+    <a href="tel:+15405488833" class="phone-num">📞 (540) 548-8833</a>
   </div>
-  <div class="msg-box" id="msg-7">Hey Dimitru, I'm Jose from KalnyesGrowth. I built a free website for Encius Painting — take a look: kalnyesgrowth.com/encius-painting/?preview=jose
-
-$600 to go live if you like it. Free if you don't. Quick 15-min call to walk you through it?</div>
+  <div class="problem-tag">🔴 Not on Google · Electrical $600-2.5k/job</div>
+  <div class="msg-box" id="msg-7">Hey Rick — Googled electricians in Stafford and Rick Thompson Electric isn't showing up. Every week homeowners in Stafford search for panel upgrades, outlets, EV charger installs. They call whoever appears first. Electrical jobs average $600-2,500. kalnyesgrowth.com shows what I build — $600 to launch it. Worth a call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(7)">📋 Copy</button>
-    <a href="sms:+15404405837" class="btn btn-sms" onclick="markSent(7)">💬 SMS</a>
+    <a href="sms:+15405488833" class="btn btn-sms" onclick="markSent(7)">💬 SMS</a>
   </div>
 </div>
 
 <div class="divider"></div>
-<div class="section-label">Priority 2 — Follow-ups</div>
+<div class="section-label">Remodeling &amp; Construction</div>
 
 <!-- 8 -->
 <div class="card" id="card-8">
   <div class="card-header">
-    <div class="card-name">8. Wilson HVAC</div>
+    <div class="card-name">8. Marcell Hernandez — MD Contractors</div>
     <span class="card-sent" id="sent-8">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15402074023" class="phone-num">📞 (540) 207-4023</a>
+    <a href="tel:+15408417190" class="phone-num">📞 (540) 841-7190</a>
   </div>
-  <div class="msg-box" id="msg-8">Hey, I'm Jose from KalnyesGrowth. Still have your free HVAC website ready — kalnyesgrowth.com/wilson-hvac/?preview=jose — $600 to launch, free if you don't love it. Still interested?</div>
+  <div class="problem-tag">🔴 Not on Google · Remodel $15-40k/job</div>
+  <div class="msg-box" id="msg-8">Hey Marcell — searched for general contractors in Stafford and MD Contractors isn't showing up on Google. Homeowners ready to remodel right now are calling competitors instead. Kitchen and bathroom remodels in this area = $15-40k. One missed inquiry per month is huge. kalnyesgrowth.com shows my work — $600 to launch. Quick call to walk through it?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(8)">📋 Copy</button>
-    <a href="sms:+15402074023" class="btn btn-sms" onclick="markSent(8)">💬 SMS</a>
+    <a href="sms:+15408417190" class="btn btn-sms" onclick="markSent(8)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 9 -->
 <div class="card" id="card-9">
   <div class="card-header">
-    <div class="card-name">9. Hugo — Bruno's Electric</div>
+    <div class="card-name">9. Patrick Jackson — Jackson &amp; Sons</div>
     <span class="card-sent" id="sent-9">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15715013823" class="phone-num">📞 (571) 501-3823</a>
+    <a href="tel:+15407064723" class="phone-num">📞 (540) 706-4723</a>
   </div>
-  <div class="msg-box" id="msg-9">Hey Hugo, Jose from KalnyesGrowth. Your free electrician website is still live: kalnyesgrowth.com/brunos-electric/?preview=jose — $600 to launch, free if not. Want to chat?</div>
+  <div class="problem-tag">🔴 Not on Google · GC projects $15-50k</div>
+  <div class="msg-box" id="msg-9">Hey Patrick — Googled construction contractors in Stafford and Jackson & Sons doesn't come up on Google. Home improvement projects explode in spring — homeowners ready to hire right now can't find you. Decks, additions, and remodels in this area average $15-50k. One missed project pays for the site 25 times over. kalnyesgrowth.com — quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(9)">📋 Copy</button>
-    <a href="sms:+15715013823" class="btn btn-sms" onclick="markSent(9)">💬 SMS</a>
+    <a href="sms:+15407064723" class="btn btn-sms" onclick="markSent(9)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 10 -->
 <div class="card" id="card-10">
   <div class="card-header">
-    <div class="card-name">10. Craig Horton — Craig Horton Electric</div>
+    <div class="card-name">10. Stefan Home Service</div>
     <span class="card-sent" id="sent-10">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15406570909" class="phone-num">📞 (540) 657-0909</a>
+    <a href="tel:+15409075088" class="phone-num">📞 (540) 907-5088</a>
   </div>
-  <div class="msg-box" id="msg-10">Hey Craig, Jose from KalnyesGrowth. Your electrician website demo is ready: kalnyesgrowth.com/craig-hortons-electric/?preview=jose — $600 to go live, free if you don't love it.</div>
+  <div class="problem-tag">🔴 Not on Google · Missing inbound leads</div>
+  <div class="msg-box" id="msg-10">Hey — searched for home services in Stafford and Stefan Home Service isn't showing up on Google. People looking to hire right now are finding other businesses first. A website that shows up in local searches is the difference between a steady pipeline and waiting on word of mouth. kalnyesgrowth.com — $600 to launch. Free call to see the plan.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(10)">📋 Copy</button>
-    <a href="sms:+15406570909" class="btn btn-sms" onclick="markSent(10)">💬 SMS</a>
+    <a href="sms:+15409075088" class="btn btn-sms" onclick="markSent(10)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 11 -->
 <div class="card" id="card-11">
   <div class="card-header">
-    <div class="card-name">11. Patrick Jackson — Jackson & Sons</div>
+    <div class="card-name">11. Cesar Guzman 🇪🇸 — Cesar GC</div>
     <span class="card-sent" id="sent-11">✓ Sent</span>
-  </div>
-  <div class="phone-row">
-    <a href="tel:+15407064723" class="phone-num">📞 (540) 706-4723</a>
-  </div>
-  <div class="msg-box" id="msg-11">Hey Patrick, Jose from KalnyesGrowth. Free contractor website ready for you: kalnyesgrowth.com/jackson-sons-construction/?preview=jose — $600 to launch, no cost if not.</div>
-  <div class="btn-row">
-    <button class="btn btn-copy" onclick="copyMsg(11)">📋 Copy</button>
-    <a href="sms:+15407064723" class="btn btn-sms" onclick="markSent(11)">💬 SMS</a>
-  </div>
-</div>
-
-<!-- 12 -->
-<div class="card" id="card-12">
-  <div class="card-header">
-    <div class="card-name">12. Cesar Guzman 🇪🇸</div>
-    <span class="card-sent" id="sent-12">✓ Sent</span>
   </div>
   <div class="phone-row">
     <a href="tel:+15712125225" class="phone-num">📞 (571) 212-5225</a>
   </div>
-  <div class="msg-box" id="msg-12">Hey Cesar, soy Jose de KalnyesGrowth. Tu sitio web está listo: kalnyesgrowth.com/cesar-general-contractor/?preview=jose — $600 para lanzarlo, gratis si no te convence.</div>
+  <div class="problem-tag">🔴 Not on Google · Remodel $15-40k/job</div>
+  <div class="msg-box" id="msg-11">Hey Cesar — searched for bathroom and kitchen remodeling contractors in Stafford and your business doesn't show up on Google. One missed remodel job in this area is $15k-30k walking out the door. I build websites for local contractors here — kalnyesgrowth.com shows the work. A simple site could bring you 3-5 inbound leads a month. Free 15-min call if you want to see what that would look like for your business.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(11)">📋 Copy</button>
+    <a href="sms:+15712125225" class="btn btn-sms" onclick="markSent(11)">💬 SMS</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-label">Concrete &amp; Drywall</div>
+
+<!-- 12 -->
+<div class="card" id="card-12">
+  <div class="card-header">
+    <div class="card-name">12. Jaime Arias — Arias Concrete</div>
+    <span class="card-sent" id="sent-12">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15408418789" class="phone-num">📞 (540) 841-8789</a>
+  </div>
+  <div class="problem-tag">🔴 Not on Google · Concrete $4-15k/job</div>
+  <div class="msg-box" id="msg-12">Hey Jaime — Googled concrete contractors in Stafford and Arias Concrete doesn't show up. Homeowners wanting driveways, patios, and foundations are calling whoever they find. Jobs average $4-15k in this area. Miss 2 a month and that's $8-30k you're leaving on the table. kalnyesgrowth.com — $600 to go live. Quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(12)">📋 Copy</button>
-    <a href="sms:+15712125225" class="btn btn-sms" onclick="markSent(12)">💬 SMS</a>
+    <a href="sms:+15408418789" class="btn btn-sms" onclick="markSent(12)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 13 -->
 <div class="card" id="card-13">
   <div class="card-header">
-    <div class="card-name">13. Kenneth Cudjoe — Ken's Handy Work</div>
+    <div class="card-name">13. Eagle Concrete LLC</div>
     <span class="card-sent" id="sent-13">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15715762861" class="phone-num">📞 (571) 576-2861</a>
+    <a href="tel:+15713098911" class="phone-num">📞 (571) 309-8911</a>
   </div>
-  <div class="msg-box" id="msg-13">Hey Kenneth, Jose from KalnyesGrowth. Free handyman website still up for you: kalnyesgrowth.com/kens-handy-work/?preview=jose — $600 to launch, free if not.</div>
+  <div class="problem-tag">🔴 Not on Google · Concrete $5-20k/job</div>
+  <div class="msg-box" id="msg-13">Hey — Googled concrete work in Fredericksburg and Eagle Concrete isn't coming up. People ready to hire for driveways, patios, and slabs are calling whoever shows up first — not you. Concrete jobs average $5-20k. kalnyesgrowth.com shows what I build — $600 to launch and start getting found. Worth a call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(13)">📋 Copy</button>
-    <a href="sms:+15715762861" class="btn btn-sms" onclick="markSent(13)">💬 SMS</a>
+    <a href="sms:+15713098911" class="btn btn-sms" onclick="markSent(13)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 14 -->
 <div class="card" id="card-14">
   <div class="card-header">
-    <div class="card-name">14. David Bonilla — Apex Power Wash</div>
+    <div class="card-name">14. JG Drywall LLC</div>
     <span class="card-sent" id="sent-14">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15715727599" class="phone-num">📞 (571) 572-7599</a>
+    <a href="tel:+15403715383" class="phone-num">📞 (540) 371-5383</a>
   </div>
-  <div class="msg-box" id="msg-14">Hey David, Jose from KalnyesGrowth. Free power washing website waiting for you: kalnyesgrowth.com/apex-power-wash/?preview=jose — $600 to launch, no cost if you pass.</div>
+  <div class="problem-tag">🔴 Not on Google · Drywall $1.5-8k/job</div>
+  <div class="msg-box" id="msg-14">Hey — Googled drywall contractors in Fredericksburg and JG Drywall LLC isn't showing up. New construction and renovation work in Stafford is booming — homeowners and builders searching for drywall work are calling whoever shows up first. Jobs average $1,500-8k. kalnyesgrowth.com to see my work — $600 to launch. Quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(14)">📋 Copy</button>
-    <a href="sms:+15715727599" class="btn btn-sms" onclick="markSent(14)">💬 SMS</a>
+    <a href="sms:+15403715383" class="btn btn-sms" onclick="markSent(14)">💬 SMS</a>
   </div>
 </div>
+
+<div class="divider"></div>
+<div class="section-label">Painting</div>
 
 <!-- 15 -->
 <div class="card" id="card-15">
   <div class="card-header">
-    <div class="card-name">15. Dakota — Quality Handyman</div>
+    <div class="card-name">15. Dimitru — Encius Painting</div>
     <span class="card-sent" id="sent-15">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15404468557" class="phone-num">📞 (540) 446-8557</a>
+    <a href="tel:+15404405837" class="phone-num">📞 (540) 440-5837</a>
   </div>
-  <div class="msg-box" id="msg-15">Hey Dakota, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Quality Handyman LLC — take a look: kalnyesgrowth.com/quality-handyman/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Happy to show you on a quick call.</div>
+  <div class="problem-tag">🔴 Not on Google · Painting $2-6k/job</div>
+  <div class="msg-box" id="msg-15">Hey Dimitru — searched for painters in Stafford and Encius Painting doesn't show up on Google. Homeowners planning projects right now are calling competitors. Painting jobs in this area average $2-6k per project. Miss 3 a month = $6-18k gone. kalnyesgrowth.com shows my work — $600 to go live. Want to do a quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(15)">📋 Copy</button>
-    <a href="sms:+15404468557" class="btn btn-sms" onclick="markSent(15)">💬 SMS</a>
+    <a href="sms:+15404405837" class="btn btn-sms" onclick="markSent(15)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 16 -->
 <div class="card" id="card-16">
   <div class="card-header">
-    <div class="card-name">16. Jaime Arias — Arias Concrete</div>
+    <div class="card-name">16. Keiry Arevalo — AKJ Painting</div>
     <span class="card-sent" id="sent-16">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15408418789" class="phone-num">📞 (540) 841-8789</a>
+    <a href="tel:+17033576515" class="phone-num">📞 (703) 357-6515</a>
   </div>
-  <div class="msg-box" id="msg-16">Hey Jaime, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Arias Concrete — check it out: kalnyesgrowth.com/arias-concrete/?preview=jose
-
-$600 to launch with hosting. Free if you don't love it. Worth a quick look.</div>
+  <div class="problem-tag">🔴 Not on Google · Painting $2-6k/job</div>
+  <div class="msg-box" id="msg-16">Hey Keiry — searched for painters in Stafford and AKJ Painting isn't showing up on Google. Homeowners planning spring/summer painting projects are booking now — they call whoever they find first. Interior and exterior projects average $2-6k each. Miss 3 a month = $6-18k. kalnyesgrowth.com — $600 to go live. Free call to walk through it.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(16)">📋 Copy</button>
-    <a href="sms:+15408418789" class="btn btn-sms" onclick="markSent(16)">💬 SMS</a>
+    <a href="sms:+17033576515" class="btn btn-sms" onclick="markSent(16)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 17 -->
 <div class="card" id="card-17">
   <div class="card-header">
-    <div class="card-name">17. Josue Rivas — JC Roofing</div>
+    <div class="card-name">17. G&amp;E Painting Services</div>
     <span class="card-sent" id="sent-17">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15402074993" class="phone-num">📞 (540) 207-4993</a>
+    <a href="tel:+17034055638" class="phone-num">📞 (703) 405-5638</a>
   </div>
-  <div class="msg-box" id="msg-17">Hey Josue, I'm Jose from KalnyesGrowth in Stafford. I built a free website for JC Roofing — take a look: kalnyesgrowth.com/jc-roofing/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look.</div>
+  <div class="problem-tag">🔴 Not on Google · Painting $2-7k/job</div>
+  <div class="msg-box" id="msg-17">Hey — searched for painters in Stafford and G&E Painting Services isn't coming up on Google. People ready to hire right now are calling whoever they find first. Interior and exterior jobs around here average $2-7k. A site for $600 pays for itself in one booking. kalnyesgrowth.com — free call to see how it'd work for you.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(17)">📋 Copy</button>
-    <a href="sms:+15402074993" class="btn btn-sms" onclick="markSent(17)">💬 SMS</a>
+    <a href="sms:+17034055638" class="btn btn-sms" onclick="markSent(17)">💬 SMS</a>
   </div>
 </div>
+
+<div class="divider"></div>
+<div class="section-label">Plumbing &amp; Flooring</div>
 
 <!-- 18 -->
 <div class="card" id="card-18">
   <div class="card-header">
-    <div class="card-name">18. Dempsey James — DJ's HVAC</div>
+    <div class="card-name">18. Craig Roberts — Plumbing LLC</div>
     <span class="card-sent" id="sent-18">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15408094749" class="phone-num">📞 (540) 809-4749</a>
+    <a href="tel:+15402205558" class="phone-num">📞 (540) 220-5558</a>
   </div>
-  <div class="msg-box" id="msg-18">Hey Dempsey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for DJ's HVAC — take a look: kalnyesgrowth.com/djs-hvac/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Happy to show you on a quick call.</div>
+  <div class="problem-tag">🔴 Not on Google · Emergency plumbing · $300-1.5k/job</div>
+  <div class="msg-box" id="msg-18">Hey Craig — searched for plumbers in Stafford and Craig Roberts Plumbing isn't showing up on Google. When someone has a leak or a busted water heater, they call whoever they find first. Plumbing jobs average $300-1,500 each. Miss 5-6 calls a month and that adds up fast. kalnyesgrowth.com shows my work — $600 to go live. Free call to walk through it.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(18)">📋 Copy</button>
-    <a href="sms:+15408094749" class="btn btn-sms" onclick="markSent(18)">💬 SMS</a>
+    <a href="sms:+15402205558" class="btn btn-sms" onclick="markSent(18)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 19 -->
 <div class="card" id="card-19">
   <div class="card-header">
-    <div class="card-name">19. Keiry Arevalo — AKJ Painting</div>
+    <div class="card-name">19. Keyci Flooring Experts</div>
     <span class="card-sent" id="sent-19">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+17033576515" class="phone-num">📞 (703) 357-6515</a>
+    <a href="tel:+15712781134" class="phone-num">📞 (571) 278-1134</a>
   </div>
-  <div class="msg-box" id="msg-19">Hey Keiry, I'm Jose from KalnyesGrowth in Stafford. I built a free website for AKJ Painting — take a look: kalnyesgrowth.com/akj-painting/?preview=jose
-
-$600 to go live with hosting. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · Flooring $2-8k/job</div>
+  <div class="msg-box" id="msg-19">Hey — searched for flooring contractors in Stafford and Keyci Flooring Experts isn't showing up on Google. New homeowners in Stafford are constantly looking for flooring installs and refinishes — they call whoever shows up first. Flooring jobs average $2-8k. Miss 2-3 a month = $4-24k. kalnyesgrowth.com — $600 to go live. Quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(19)">📋 Copy</button>
-    <a href="sms:+17033576515" class="btn btn-sms" onclick="markSent(19)">💬 SMS</a>
+    <a href="sms:+15712781134" class="btn btn-sms" onclick="markSent(19)">💬 SMS</a>
   </div>
 </div>
+
+<div class="divider"></div>
+<div class="section-label">Handyman &amp; Lawn</div>
 
 <!-- 20 -->
 <div class="card" id="card-20">
   <div class="card-header">
-    <div class="card-name">20. Rick Thompson — Rick Thompson Electric</div>
+    <div class="card-name">20. John Hatt — Hatt's Handyman</div>
     <span class="card-sent" id="sent-20">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15405488833" class="phone-num">📞 (540) 548-8833</a>
+    <a href="tel:+15713297273" class="phone-num">📞 (571) 329-7273</a>
   </div>
-  <div class="msg-box" id="msg-20">Hey Rick, Jose from KalnyesGrowth. Electrician website demo still up: kalnyesgrowth.com/rick-thompson-electric/?preview=jose — $600 to go live, free if you don't love it.</div>
+  <div class="problem-tag">🔴 Not on Google · Handyman $300-700/job</div>
+  <div class="msg-box" id="msg-20">Hey John — ran a search for handyman in Stafford and Hatt's Handyman doesn't show up on Google. Homeowners who need repairs right now are calling whoever they find first. Handyman work averages $300-700 per job. Get 5 new clients from your site per month and the $600 launch pays back in month one. kalnyesgrowth.com — free call to see it?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(20)">📋 Copy</button>
-    <a href="sms:+15405488833" class="btn btn-sms" onclick="markSent(20)">💬 SMS</a>
+    <a href="sms:+15713297273" class="btn btn-sms" onclick="markSent(20)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 21 -->
 <div class="card" id="card-21">
   <div class="card-header">
-    <div class="card-name">21. Keyci Flooring Experts</div>
+    <div class="card-name">21. Edgar Cruz 🇪🇸 — Aquia Handyman</div>
     <span class="card-sent" id="sent-21">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15712781134" class="phone-num">📞 (571) 278-1134</a>
+    <a href="tel:+15407203740" class="phone-num">📞 (540) 720-3740</a>
   </div>
-  <div class="msg-box" id="msg-21">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Keyci Flooring Experts — take a look: kalnyesgrowth.com/keyci-flooring/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 No Google · Spanish-speaking clients</div>
+  <div class="msg-box" id="msg-21">Hola Edgar — busqué handyman en Stafford y Aquia Handyman no aparece en Google. Los propietarios en Stafford que necesitan ayuda ahorita están llamando a la competencia. Cada trabajo promedia $300-800. kalnyesgrowth.com muestra mi trabajo — $600 para lanzarlo. ¿Hacemos una llamada de 15 minutos?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(21)">📋 Copy</button>
-    <a href="sms:+15712781134" class="btn btn-sms" onclick="markSent(21)">💬 SMS</a>
+    <a href="sms:+15407203740" class="btn btn-sms" onclick="markSent(21)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 22 -->
 <div class="card" id="card-22">
   <div class="card-header">
-    <div class="card-name">22. Erla Centeno — Erla's Cleaning</div>
+    <div class="card-name">22. Dakota — Quality Handyman LLC</div>
     <span class="card-sent" id="sent-22">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15408471896" class="phone-num">📞 (540) 847-1896</a>
+    <a href="tel:+15404468557" class="phone-num">📞 (540) 446-8557</a>
   </div>
-  <div class="msg-box" id="msg-22">Hey Erla, I'm Jose from KalnyesGrowth in Stafford. I built a free website for your cleaning business — take a look: kalnyesgrowth.com/erlas-cleaning/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · Handyman $200-600/job</div>
+  <div class="msg-box" id="msg-22">Hey Dakota — searched for handyman in Stafford and Quality Handyman LLC isn't coming up. When a homeowner needs something fixed, they Google it and call the first result. Jobs average $200-600 each. Miss 8-10 calls a month and that's $2-6k you're not seeing. kalnyesgrowth.com — $600 to go live. Happy to do a quick call.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(22)">📋 Copy</button>
-    <a href="sms:+15408471896" class="btn btn-sms" onclick="markSent(22)">💬 SMS</a>
+    <a href="sms:+15404468557" class="btn btn-sms" onclick="markSent(22)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 23 -->
 <div class="card" id="card-23">
   <div class="card-header">
-    <div class="card-name">23. Craig Roberts — Craig Roberts Plumbing</div>
+    <div class="card-name">23. Kenneth Cudjoe — Ken's Handy Work</div>
     <span class="card-sent" id="sent-23">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15402205558" class="phone-num">📞 (540) 220-5558</a>
+    <a href="tel:+15715762861" class="phone-num">📞 (571) 576-2861</a>
   </div>
-  <div class="msg-box" id="msg-23">Hey Craig, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Craig Roberts Plumbing — take a look: kalnyesgrowth.com/craig-roberts-plumbing/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · Handyman $300-700/job</div>
+  <div class="msg-box" id="msg-23">Hey Kenneth — searched for handyman in Stafford and Ken's Handy Work doesn't show up on Google. Homeowners in Stafford search for handyman help constantly — they're calling whoever appears first. Each job averages $300-700. Build a steady pipeline instead of relying on word of mouth alone. kalnyesgrowth.com — $600 to launch. Quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(23)">📋 Copy</button>
-    <a href="sms:+15402205558" class="btn btn-sms" onclick="markSent(23)">💬 SMS</a>
+    <a href="sms:+15715762861" class="btn btn-sms" onclick="markSent(23)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 24 -->
 <div class="card" id="card-24">
   <div class="card-header">
-    <div class="card-name">24. J&amp;R Roofing Solutions — Fredericksburg VA</div>
+    <div class="card-name">24. Samuel Heflin — Heflin's Lawn Care</div>
     <span class="card-sent" id="sent-24">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15408482037" class="phone-num">📞 (540) 848-2037</a>
+    <a href="tel:+15404194536" class="phone-num">📞 (540) 419-4536</a>
   </div>
-  <div class="msg-box" id="msg-24">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for J&R Roofing Solutions — take a look: kalnyesgrowth.com/jr-roofing/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · Recurring clients $1.2-2.4k/year</div>
+  <div class="msg-box" id="msg-24">Hey Samuel — searched for lawn care in Stafford and Heflin's Lawn Care isn't showing up on Google. You're missing people who search and hire right now — no waiting for referrals. A recurring lawn client is worth $1,200-2,400/year. Get 3-4 new clients from your site and it pays for itself every year. kalnyesgrowth.com — $600 to launch. Quick call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(24)">📋 Copy</button>
-    <a href="sms:+15408482037" class="btn btn-sms" onclick="markSent(24)">💬 SMS</a>
+    <a href="sms:+15404194536" class="btn btn-sms" onclick="markSent(24)">💬 SMS</a>
   </div>
 </div>
+
+<div class="divider"></div>
+<div class="section-label">Cleaning, Junk &amp; Power Wash</div>
 
 <!-- 25 -->
 <div class="card" id="card-25">
   <div class="card-header">
-    <div class="card-name">25. JG Drywall LLC — Fredericksburg VA</div>
+    <div class="card-name">25. Erla Centeno — Erla's Cleaning</div>
     <span class="card-sent" id="sent-25">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15403715383" class="phone-num">📞 (540) 371-5383</a>
+    <a href="tel:+15408471896" class="phone-num">📞 (540) 847-1896</a>
   </div>
-  <div class="msg-box" id="msg-25">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for JG Drywall LLC — take a look: kalnyesgrowth.com/jg-drywall/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not ranking on Google · Recurring $1.5-2.5k/client/year</div>
+  <div class="msg-box" id="msg-25">Hey Erla — searched for cleaning services in Fredericksburg and Erla's Cleaning isn't showing up on the first page of Google. You've got 10+ years of experience but potential clients searching right now can't find you. Each recurring cleaning client is worth $1,500-2,500/year. kalnyesgrowth.com — $600 to launch and start showing up. Free call to talk.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(25)">📋 Copy</button>
-    <a href="sms:+15403715383" class="btn btn-sms" onclick="markSent(25)">💬 SMS</a>
+    <a href="sms:+15408471896" class="btn btn-sms" onclick="markSent(25)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 26 -->
 <div class="card" id="card-26">
   <div class="card-header">
-    <div class="card-name">26. Eagle Concrete LLC — Fredericksburg VA</div>
+    <div class="card-name">26. Sunset Junk Removal</div>
     <span class="card-sent" id="sent-26">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+15713098911" class="phone-num">📞 (571) 309-8911</a>
+    <a href="tel:+15714779228" class="phone-num">📞 (571) 477-9228</a>
   </div>
-  <div class="msg-box" id="msg-26">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Eagle Concrete LLC — take a look: kalnyesgrowth.com/eagle-concrete/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · $200-500/job, high volume</div>
+  <div class="msg-box" id="msg-26">Hey — Googled junk removal in Stafford and Sunset Junk Removal isn't coming up. People who need junk cleared don't wait — they call the first result on Google. Jobs average $200-500. Miss 10-15 a month and that's $2-7k you're not seeing. kalnyesgrowth.com — $600 to launch. Worth a call?</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(26)">📋 Copy</button>
-    <a href="sms:+15713098911" class="btn btn-sms" onclick="markSent(26)">💬 SMS</a>
+    <a href="sms:+15714779228" class="btn btn-sms" onclick="markSent(26)">💬 SMS</a>
   </div>
 </div>
 
 <!-- 27 -->
 <div class="card" id="card-27">
   <div class="card-header">
-    <div class="card-name">27. G&amp;E Painting Services — Stafford VA</div>
+    <div class="card-name">27. David Bonilla — Apex Power Wash</div>
     <span class="card-sent" id="sent-27">✓ Sent</span>
   </div>
   <div class="phone-row">
-    <a href="tel:+17034055638" class="phone-num">📞 (703) 405-5638</a>
+    <a href="tel:+15715727599" class="phone-num">📞 (571) 572-7599</a>
   </div>
-  <div class="msg-box" id="msg-27">Hey, I'm Jose from KalnyesGrowth in Stafford. I built a free website for G&E Painting Services — take a look: kalnyesgrowth.com/ge-painting/?preview=jose
-
-$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="problem-tag">🔴 Not on Google · Peak season now · $300-700/job</div>
+  <div class="msg-box" id="msg-27">Hey David — Googled power washing in Stafford and Apex Power Wash isn't showing up. Spring/summer is peak season — homeowners are looking for pressure washing right now and calling whoever shows up first. Jobs average $300-700. Miss 8-10 a month = $3-7k. kalnyesgrowth.com — $600 to launch. Worth a call.</div>
   <div class="btn-row">
     <button class="btn btn-copy" onclick="copyMsg(27)">📋 Copy</button>
-    <a href="sms:+17034055638" class="btn btn-sms" onclick="markSent(27)">💬 SMS</a>
+    <a href="sms:+15715727599" class="btn btn-sms" onclick="markSent(27)">💬 SMS</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="section-label">New Prospects — Added May 21</div>
+
+<!-- 28 -->
+<div class="card" id="card-28">
+  <div class="card-header">
+    <div class="card-name">28. All American Pool Services LLC</div>
+    <span class="card-sent" id="sent-28">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407839902" class="phone-num">📞 (540) 783-9902</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Pool cleaning · $150-400/visit</div>
+  <div class="msg-box" id="msg-28">Hey — I searched for pool cleaning in Stafford and All American Pool Services isn't showing up on Google at all. Your competitors with websites are taking those calls every day. I design websites for local contractors in this area — kalnyesgrowth.com has examples of what I build. Happy to jump on a free 15-min call if you want to take a look.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(28)">📋 Copy</button>
+    <a href="sms:+15407839902" class="btn btn-sms" onclick="markSent(28)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 29 -->
+<div class="card" id="card-29">
+  <div class="card-header">
+    <div class="card-name">29. Plug It Up Handyman Services LLC</div>
+    <span class="card-sent" id="sent-29">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407483666" class="phone-num">📞 (540) 748-3666</a>
+  </div>
+  <div class="problem-tag">🔴 Canva site, not on Google · Handyman $300-700/job</div>
+  <div class="msg-box" id="msg-29">Hey — searched for handyman in Fredericksburg and Plug It Up Handyman isn't showing up on Google. You've got solid reviews on Facebook but a Canva page won't rank — bigger competitors are taking leads you're not even seeing. I build real contractor websites for people around Stafford/Fredericksburg. kalnyesgrowth.com to see the work. Free 15-min call if you want to talk.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(29)">📋 Copy</button>
+    <a href="sms:+15407483666" class="btn btn-sms" onclick="markSent(29)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 30 -->
+<div class="card" id="card-30">
+  <div class="card-header">
+    <div class="card-name">30. LCS Lawn Care Solution LLC</div>
+    <span class="card-sent" id="sent-30">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15406930507" class="phone-num">📞 (540) 693-0507</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Lawn care · Recurring $1.2-2.4k/client</div>
+  <div class="msg-box" id="msg-30">Hey — tried finding LCS Lawn Care on Google and you're not showing up for "lawn care Stafford." You've got good Facebook engagement but that's invisible to people searching for services right now. Competitors with websites are getting those jobs. I design contractor websites in this area — kalnyesgrowth.com shows what I build. Happy to jump on a free call.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(30)">📋 Copy</button>
+    <a href="sms:+15406930507" class="btn btn-sms" onclick="markSent(30)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 31 -->
+<div class="card" id="card-31">
+  <div class="card-header">
+    <div class="card-name">31. Lotty's Cleaning Services LLC</div>
+    <span class="card-sent" id="sent-31">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407621076" class="phone-num">📞 (540) 762-1076</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Cleaning · Recurring $1.5-2k/client/year</div>
+  <div class="msg-box" id="msg-31">Hey — looked up cleaning services in Stafford and Lotty's Cleaning Services doesn't show up on Google. You've got Yelp and Facebook but anyone searching right now can't find you. Each new recurring cleaning client you're missing is worth $1,500-2,000 a year. I design websites for local service businesses in Stafford — kalnyesgrowth.com shows my work. Happy to show you exactly what I'd build for you on a free 15-min call.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(31)">📋 Copy</button>
+    <a href="sms:+15407621076" class="btn btn-sms" onclick="markSent(31)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 32 -->
+<div class="card" id="card-32">
+  <div class="card-header">
+    <div class="card-name">32. Your Moving Company — Fredericksburg</div>
+    <span class="card-sent" id="sent-32">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15406935088" class="phone-num">📞 (540) 693-5088</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Moving $800-1.5k/job</div>
+  <div class="msg-box" id="msg-32">Hey — searched for movers in Fredericksburg and Your Moving Company doesn't come up on Google at all. You're on Yelp and Facebook but people searching right now are calling your competitors. A family-owned mover with 20+ years experience should be easy for people to find. I build contractor websites in this area — kalnyesgrowth.com. A basic site could bring you 4-6 booked moves a month that you're currently missing. Free call to talk.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(32)">📋 Copy</button>
+    <a href="sms:+15406935088" class="btn btn-sms" onclick="markSent(32)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 33 -->
+<div class="card" id="card-33">
+  <div class="card-header">
+    <div class="card-name">33. Cesar GC (Remodeling) 🇪🇸</div>
+    <span class="card-sent" id="sent-33">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15712125225" class="phone-num">📞 (571) 212-5225</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Kitchen/bath remodel $15-40k/job</div>
+  <div class="msg-box" id="msg-33">Hey Cesar — searched for bathroom and kitchen remodeling contractors in Stafford and your business doesn't show up on Google. One missed remodel job in this area is $15k-30k walking out the door. I build websites for local contractors here — kalnyesgrowth.com shows the work. A simple site could bring you 3-5 inbound leads a month. Free 15-min call if you want to see what that would look like for your business.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(33)">📋 Copy</button>
+    <a href="sms:+15712125225" class="btn btn-sms" onclick="markSent(33)">💬 SMS</a>
   </div>
 </div>
 
 <div class="sent-counter" id="done-msg" style="display:none">
-  🎉 All texts sent! Check replies and follow up with anyone who clicks the demo link.
+  🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 27;
+const total = 33;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
@@ -543,7 +653,6 @@ function copyMsg(n) {
       btn.classList.remove('copied');
     }, 2000);
   }).catch(() => {
-    // Fallback for older browsers
     const ta = document.createElement('textarea');
     ta.value = document.getElementById('msg-' + n).textContent;
     document.body.appendChild(ta);
