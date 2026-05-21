@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Free Website Is Ready — KalnyesGrowth</title>
+<meta name="description" content="I already built a free professional website for your business. See the full thing before paying anything. $600 to launch — free if you don't love it.">
+<meta property="og:title" content="Your Free Website Is Ready — KalnyesGrowth">
+<meta property="og:description" content="I built a complete professional website for your business — free to look at. $600 to launch, or walk away free.">
+<meta property="og:image" content="https://kalnyesgrowth.com/img/portfolio-kg.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1D2PTQB6LG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1D2PTQB6LG');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  :root{
+    --blue:#1a73e8;--blue-dk:#1557b0;--blue-lt:#e8f0fe;
+    --green:#16a34a;--green-lt:#dcfce7;
+    --text:#111827;--text-2:#4b5563;--text-3:#9ca3af;
+    --bg:#ffffff;--bg-2:#f8faff;--border:#e5e7eb;
+    --font:'Inter',system-ui,-apple-system,sans-serif;
+    --r:12px;
+  }
+  body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6}
+  a{text-decoration:none;color:inherit}
+
+  /* ── TOP BAR ── */
+  .topbar{background:var(--blue-dk);color:#fff;padding:10px 20px;text-align:center;font-size:0.82rem;font-weight:500}
+  .topbar strong{font-weight:700}
+
+  /* ── HERO ── */
+  .hero{padding:40px 20px 32px;background:linear-gradient(160deg,#f0f7ff 0%,#fff 70%);text-align:center}
+  .greeting{font-size:1rem;color:var(--text-2);margin-bottom:8px;font-weight:500}
+  .greeting strong{color:var(--text);font-weight:700}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:800;line-height:1.15;color:var(--text);margin-bottom:14px}
+  .hero h1 .accent{color:var(--blue)}
+  .hero-sub{font-size:1rem;color:var(--text-2);max-width:520px;margin:0 auto 24px;line-height:1.65}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+  .pill{background:var(--green-lt);color:var(--green);font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:100px;border:1px solid #bbf7d0}
+
+  /* ── CTA BUTTONS ── */
+  .cta-group{display:flex;flex-direction:column;gap:12px;align-items:center;margin-bottom:24px}
+  @media(min-width:500px){.cta-group{flex-direction:row;justify-content:center}}
+  .btn-book{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#fff;font-family:var(--font);font-size:1rem;font-weight:700;padding:16px 32px;border-radius:50px;border:none;cursor:pointer;transition:all .15s;text-decoration:none;text-align:center;width:100%;max-width:340px}
+  .btn-book:hover{background:var(--blue-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,115,232,.35)}
+  @media(min-width:500px){.btn-book{width:auto}}
+  .btn-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--blue);font-family:var(--font);font-size:0.95rem;font-weight:600;padding:14px 28px;border-radius:50px;border:2px solid var(--blue);text-decoration:none;width:100%;max-width:240px;text-align:center}
+  @media(min-width:500px){.btn-call{width:auto}}
+
+  /* ── GUARANTEE ── */
+  .guarantee{font-size:0.82rem;color:var(--text-3);display:flex;align-items:center;gap:6px;justify-content:center}
+  .guarantee .g-icon{font-size:1rem}
+
+  /* ── DEMO PREVIEW ── */
+  .preview-section{padding:36px 20px;background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .preview-label{text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+  .preview-title{text-align:center;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.3}
+  .demo-frame-wrap{max-width:680px;margin:0 auto;border-radius:var(--r);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.14);border:1px solid var(--border);background:#fff}
+  .demo-frame-bar{background:#f3f4f6;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+  .demo-dot{width:10px;height:10px;border-radius:50%}
+  .demo-url{flex:1;background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:0.75rem;color:var(--text-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .demo-frame-body{position:relative;height:420px;overflow:hidden;background:#f9f9f9}
+  .demo-frame-body iframe{width:100%;height:100%;border:none;pointer-events:none}
+  .demo-frame-overlay{position:absolute;inset:0;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:20px;background:linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.55) 100%)}
+  .demo-cta-badge{background:var(--blue);color:#fff;font-size:0.85rem;font-weight:700;padding:10px 22px;border-radius:50px;box-shadow:0 4px 16px rgba(26,115,232,.5)}
+  @media(max-width:500px){.demo-frame-body{height:300px}}
+
+  /* ── OFFER BOX ── */
+  .offer{padding:40px 20px}
+  .offer-inner{max-width:640px;margin:0 auto}
+  .offer h2{font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:20px;text-align:center;line-height:1.25}
+  .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+  @media(max-width:460px){.offer-grid{grid-template-columns:1fr}}
+  .offer-item{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:18px 16px;display:flex;flex-direction:column;gap:4px}
+  .offer-item .oi-icon{font-size:1.4rem;margin-bottom:6px}
+  .offer-item .oi-title{font-size:0.88rem;font-weight:700;color:var(--text)}
+  .offer-item .oi-desc{font-size:0.8rem;color:var(--text-2);line-height:1.5}
+
+  /* ── CALENDLY ── */
+  .cal-section{padding:40px 20px 60px;background:linear-gradient(160deg,#0f2a6b,#1a73e8);text-align:center}
+  .cal-section h2{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:8px}
+  .cal-section p{font-size:0.9rem;color:rgba(255,255,255,.8);margin-bottom:20px}
+  .cal-wrap{max-width:640px;margin:0 auto;background:rgba(255,255,255,.97);border-radius:var(--r);padding:18px;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .cal-hint{font-size:0.78rem;color:var(--text-3);margin-bottom:12px;font-weight:600}
+
+  /* ── FOOTER ── */
+  .ft{padding:24px 20px;text-align:center;border-top:1px solid var(--border)}
+  .ft p{font-size:0.78rem;color:var(--text-3)}
+  .ft a{color:var(--blue)}
+
+  /* ── MOBILE STICKY ── */
+  .ms{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;background:#fff;border-top:2px solid var(--border);padding:10px 16px;gap:8px}
+  @media(max-width:700px){.ms{display:flex;padding-bottom:calc(10px + env(safe-area-inset-bottom))}}
+  .ms a{flex:1;text-align:center;padding:13px 6px;border-radius:50px;font-weight:700;font-size:0.85rem;white-space:normal;line-height:1.3;display:flex;align-items:center;justify-content:center}
+  .ms-book{background:var(--blue);color:#fff}
+  .ms-call{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+  @media(max-width:700px){body{padding-bottom:80px}}
+
+  /* ── TRUST ROW ── */
+  .trust-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;padding:28px 20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-2)}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-2);font-weight:500}
+  .trust-item strong{color:var(--text);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <strong>KalnyesGrowth</strong> · Stafford, VA · (540) 783-8835 · kalnyesgrowth.com
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="greeting" id="greeting-text">Hey there —</p>
+  <h1 id="hero-h1">I Already Built Your<br><span class="accent" id="niche-span">Free Website.</span></h1>
+  <p class="hero-sub" id="hero-sub">A complete, professional site for your business — ready to view right now, before you pay anything. $600 to launch. Free if you don't love it.</p>
+  <div class="pill-row">
+    <span class="pill">✓ Free to see</span>
+    <span class="pill">✓ Built for your niche</span>
+    <span class="pill">✓ $600 to launch</span>
+    <span class="pill">✓ 158+ Virginia demos</span>
+  </div>
+  <div class="cta-group">
+    <a href="#book" class="btn-book">📅 Book Free 15-Min Call</a>
+    <a href="tel:+15407838835" class="btn-call">📞 (540) 783-8835</a>
+  </div>
+  <p class="guarantee"><span class="g-icon">🛡️</span> 100% free if you don't love it — no card, no contract</p>
+</section>
+
+<!-- ── TRUST ROW ── -->
+<div class="trust-row">
+  <div class="trust-item">⚡ <strong>158+</strong> sites built for VA contractors</div>
+  <div class="trust-item">📍 Local — <strong>Stafford, VA</strong></div>
+  <div class="trust-item">🌎 <strong>Bilingual</strong> EN / ES</div>
+  <div class="trust-item">🛡️ <strong>Free</strong> if you don't love it</div>
+</div>
+
+<!-- ── DEMO PREVIEW ── -->
+<section class="preview-section">
+  <div class="preview-label">Your Free Preview</div>
+  <h2 class="preview-title" id="preview-title">See what a site for your business looks like</h2>
+  <div class="demo-frame-wrap">
+    <div class="demo-frame-bar">
+      <div class="demo-dot" style="background:#ff5f57"></div>
+      <div class="demo-dot" style="background:#ffbd2e"></div>
+      <div class="demo-dot" style="background:#28c840"></div>
+      <div class="demo-url" id="demo-url">kalnyesgrowth.com/stafford-handyman/</div>
+    </div>
+    <div class="demo-frame-body">
+      <iframe id="demo-iframe" src="https://kalnyesgrowth.com/stafford-handyman/" loading="lazy" sandbox="allow-scripts allow-same-origin" title="Demo site preview"></iframe>
+      <a href="#book" class="demo-frame-overlay">
+        <span class="demo-cta-badge">📅 Book Free Call to Get This →</span>
+      </a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:16px;font-size:0.82rem;color:var(--text-3)">This is a real demo built for a local Virginia contractor. Yours will be customized for your exact business.</p>
+</section>
+
+<!-- ── OFFER ── -->
+<section class="offer">
+  <div class="offer-inner">
+    <h2>Everything included for $600</h2>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <div class="oi-icon">🎨</div>
+        <div class="oi-title">Custom Design</div>
+        <div class="oi-desc">Built for your brand, services, and service area. Not a template.</div>
+      </div>
+      <div class="offer-item">
+        <div class="oi-icon">📱</div>
+        <div class="oi-title">Mobile-First</div>
+        <div class="oi-desc">Looks perfect on every phone. Most of your customers are on mobile.</div>
+      </div>
+      <div class="offer-item">
+        <div class="oi-icon">🔍</div>
+        <div class="oi-title">Google-Ready</div>
+        <div class="oi-desc">Optimized to show up when local customers search for your services.</div>
+      </div>
+      <div class="offer-item">
+        <div class="oi-icon">🏠</div>
+        <div class="oi-title">1 Year Hosting</div>
+        <div class="oi-desc">Domain + hosting included. No monthly fees the first year.</div>
+      </div>
+      <div class="offer-item">
+        <div class="oi-icon">⚡</div>
+        <div class="oi-title">Done in 48 Hours</div>
+        <div class="oi-desc">From call to live site in 2 business days. No waiting months.</div>
+      </div>
+      <div class="offer-item">
+        <div class="oi-icon">🛡️</div>
+        <div class="oi-title">Free If You Don't Love It</div>
+        <div class="oi-desc">See the full site first. If it's not right, you owe nothing.</div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="#book" class="btn-book" style="max-width:360px;width:100%">📅 See Your Free Demo — Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALENDLY ── -->
+<section class="cal-section" id="book">
+  <h2>Book Your Free 15-Min Call</h2>
+  <p>Pick a time below — I'll show you the demo for your business live on the call.</p>
+  <div class="cal-wrap">
+    <p class="cal-hint">📅 Pick any open time — it's free</p>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/kalnyesgrowth/boost-your-business?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=1a73e8" style="min-width:280px;height:460px;width:100%"></div>
+  </div>
+  <p style="margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.55)">Or text / call: <a href="tel:+15407838835" style="color:#fff;font-weight:700">(540) 783-8835</a> · <a href="mailto:jose@kalnyesgrowth.com" style="color:rgba(255,255,255,.7)">jose@kalnyesgrowth.com</a></p>
+</section>
+
+<div class="ft">
+  <p>KalnyesGrowth · Web Design for Local Businesses · Stafford, VA</p>
+  <p style="margin-top:6px"><a href="https://kalnyesgrowth.com">kalnyesgrowth.com</a> · <a href="tel:+15407838835">(540) 783-8835</a></p>
+</div>
+
+<!-- ── MOBILE STICKY ── -->
+<div class="ms">
+  <a href="#book" class="ms-book">📅 Book Free Call</a>
+  <a href="tel:+15407838835" class="ms-call">📞 Call Jose</a>
+</div>
+
+<script async src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var name = p.get('who') || p.get('name') || '';
+  var niche = (p.get('n') || p.get('niche') || '').toLowerCase().trim();
+  var city  = p.get('c') || p.get('city') || 'Virginia';
+
+  // Niche → demo URL + label
+  var niches = {
+    plumber:    {url:'https://kalnyesgrowth.com/craig-roberts-plumbing/', label:'Plumbing Website', title:'plumber in '+city, path:'/craig-roberts-plumbing/'},
+    plumbing:   {url:'https://kalnyesgrowth.com/craig-roberts-plumbing/', label:'Plumbing Website', title:'plumber in '+city, path:'/craig-roberts-plumbing/'},
+    electrician:{url:'https://kalnyesgrowth.com/jls-electrical/',         label:'Electrician Website', title:'electrician in '+city, path:'/jls-electrical/'},
+    electric:   {url:'https://kalnyesgrowth.com/jls-electrical/',         label:'Electrician Website', title:'electrician in '+city, path:'/jls-electrical/'},
+    painter:    {url:'https://kalnyesgrowth.com/rivas-painting/',          label:'Painting Website', title:'painter in '+city, path:'/rivas-painting/'},
+    painting:   {url:'https://kalnyesgrowth.com/rivas-painting/',          label:'Painting Website', title:'painter in '+city, path:'/rivas-painting/'},
+    landscaper: {url:'https://kalnyesgrowth.com/rq3-landscaping/',         label:'Landscaping Website', title:'landscaper in '+city, path:'/rq3-landscaping/'},
+    landscaping:{url:'https://kalnyesgrowth.com/rq3-landscaping/',         label:'Landscaping Website', title:'landscaper in '+city, path:'/rq3-landscaping/'},
+    hvac:       {url:'https://kalnyesgrowth.com/ram-hvac/',                label:'HVAC Website', title:'HVAC contractor in '+city, path:'/ram-hvac/'},
+    roofing:    {url:'https://kalnyesgrowth.com/mills-roofing/',           label:'Roofing Website', title:'roofer in '+city, path:'/mills-roofing/'},
+    roofer:     {url:'https://kalnyesgrowth.com/mills-roofing/',           label:'Roofing Website', title:'roofer in '+city, path:'/mills-roofing/'},
+    cleaning:   {url:'https://kalnyesgrowth.com/flowers-cleaning/',        label:'Cleaning Service Website', title:'cleaning service in '+city, path:'/flowers-cleaning/'},
+    handyman:   {url:'https://kalnyesgrowth.com/stafford-handyman/',       label:'Handyman Website', title:'handyman in '+city, path:'/stafford-handyman/'},
+    contractor: {url:'https://kalnyesgrowth.com/mmc-contracting/',         label:'Contractor Website', title:'contractor in '+city, path:'/mmc-contracting/'},
+    pressure:   {url:'https://kalnyesgrowth.com/apex-power-wash/',         label:'Pressure Washing Website', title:'pressure washing business in '+city, path:'/apex-power-wash/'},
+    concrete:   {url:'https://kalnyesgrowth.com/king-koncrete/',           label:'Concrete Contractor Website', title:'concrete contractor in '+city, path:'/king-koncrete/'},
+  };
+
+  var info = niches[niche] || {url:'https://kalnyesgrowth.com/stafford-handyman/', label:'Contractor Website', title:'local business in '+city, path:'/stafford-handyman/'};
+
+  // Personalize greeting
+  if(name){
+    document.getElementById('greeting-text').innerHTML = 'Hey <strong>'+escHtml(name)+'</strong> —';
+    document.title = 'Hey '+escHtml(name)+' — Your Free Website Is Ready';
+  }
+
+  // Personalize headline
+  if(niche && niches[niche]){
+    document.getElementById('hero-h1').innerHTML = 'I Already Built Your<br><span class="accent">Free '+escHtml(cap(niche))+' Website.</span>';
+    document.getElementById('hero-sub').textContent = 'A complete, professional website built specifically for a '+info.title+' — ready to view right now, before you pay anything. $600 to launch. Free if you don\'t love it.';
+    document.getElementById('preview-title').textContent = 'Here\'s what a '+cap(niche)+' website looks like';
+  } else if(city && city !== 'Virginia'){
+    document.getElementById('hero-sub').textContent = 'A complete, professional website built for local businesses in '+escHtml(city)+' — ready to view right now, before you pay anything. $600 to launch. Free if you don\'t love it.';
+  }
+
+  // Load demo iframe
+  document.getElementById('demo-iframe').src = info.url;
+  document.getElementById('demo-url').textContent = 'kalnyesgrowth.com'+info.path;
+
+  function escHtml(s){ return s.replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]||c}); }
+  function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+})();
+</script>
+</body>
+</html>
