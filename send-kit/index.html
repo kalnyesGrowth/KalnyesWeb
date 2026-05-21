@@ -434,13 +434,31 @@ $600 to go live with hosting included. Free if you don't love it. Worth a quick 
   </div>
 </div>
 
+<!-- 23 -->
+<div class="card" id="card-23">
+  <div class="card-header">
+    <div class="card-name">23. Craig Roberts — Craig Roberts Plumbing</div>
+    <span class="card-sent" id="sent-23">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15402205558" class="phone-num">📞 (540) 220-5558</a>
+  </div>
+  <div class="msg-box" id="msg-23">Hey Craig, I'm Jose from KalnyesGrowth in Stafford. I built a free website for Craig Roberts Plumbing — take a look: kalnyesgrowth.com/craig-roberts-plumbing/?preview=jose
+
+$600 to go live with hosting included. Free if you don't love it. Worth a quick look!</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(23)">📋 Copy</button>
+    <a href="sms:+15402205558" class="btn btn-sms" onclick="markSent(23)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check replies and follow up with anyone who clicks the demo link.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 20;
+const total = 23;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
