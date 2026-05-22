@@ -259,7 +259,7 @@
       <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#111827;line-height:1.25;margin-bottom:10px">7 local businesses already have their site.<br>Yours could be next.</h2>
       <p style="font-size:0.93rem;color:#4b5563;max-width:520px;margin:0 auto">These aren't templates — every one is a real contractor in Stafford, Fredericksburg, or the surrounding area. Click to see the actual live site.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:1000px;margin:0 auto 32px">
+    <div id="demo-strip-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:1000px;margin:0 auto 32px">
 
       <a href="https://kalnyesgrowth.com/jf-electrical/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;background:#f8faff;border:1px solid #c7d9f8;border-radius:10px;padding:16px 18px;text-decoration:none;transition:box-shadow 0.15s" onmouseover="this.style.boxShadow='0 4px 16px rgba(26,115,232,0.15)'" onmouseout="this.style.boxShadow='none'">
         <div style="width:42px;height:42px;border-radius:9px;background:#1a73e8;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">⚡</div>
@@ -2352,6 +2352,54 @@
     if(span) span.textContent = tradeLabels[matched];
     var sub = document.getElementById('hero-sub-text');
     if(sub && subLabels[matched]) sub.textContent = subLabels[matched] + ' $600 to launch. Walk away free if you don\'t love it.';
+  })();
+
+  /* Demo strip: highlight + float matching trade demo to top */
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var t = (params.get('trade') || params.get('t') || '').toLowerCase();
+    if(!t) return;
+    // Map trade param → demo slug in href
+    var tradeDemo = {
+      electric:  'jf-electrical',
+      roofing:   'roofs-fast',
+      hvac:      'oha-hvac',
+      paint:     'medias-painting',
+      handyman:  'hbs-on-time',
+      landscap:  'grass-roots-lawn',
+    };
+    var matched = null;
+    Object.keys(tradeDemo).forEach(function(k){
+      if(!matched && (t.indexOf(k)!==-1 || k.indexOf(t)!==-1)) matched = k;
+    });
+    if(!matched) return;
+    var slug = tradeDemo[matched];
+    var grid = document.getElementById('demo-strip-grid');
+    if(!grid) return;
+    var cards = grid.querySelectorAll('a');
+    cards.forEach(function(card){
+      if(card.href && card.href.indexOf(slug)!==-1){
+        // Bold highlight
+        card.style.border = '2px solid #1a73e8';
+        card.style.boxShadow = '0 0 0 4px rgba(26,115,232,0.12)';
+        card.style.background = '#e8f0fe';
+        // Add "Your trade" label
+        var tag = document.createElement('span');
+        tag.textContent = '← Your trade';
+        tag.style.cssText = 'font-size:0.7rem;font-weight:800;color:#1557b0;background:#c7d9f8;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle';
+        var nameEl = card.querySelector('div > div');
+        if(nameEl) nameEl.appendChild(tag);
+        // Move to front of grid
+        grid.insertBefore(card, grid.firstChild);
+      }
+    });
+    // Also update demo strip section label
+    var strip = grid.closest('section');
+    if(strip){
+      var label = strip.querySelector('p');
+      var tradeNames = {electric:'electrician',roofing:'roofer',hvac:'HVAC',paint:'painter',handyman:'handyman',landscap:'landscaper'};
+      if(label && tradeNames[matched]) label.textContent = 'Already built for ' + tradeNames[matched] + 's near you';
+    }
   })();
 
   /* Calendly widget trust label — shows dynamic recent booking count */
