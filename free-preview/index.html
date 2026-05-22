@@ -2320,10 +2320,33 @@
 </div>
 
 <script>
-  /* Hero personalization from ?trade= URL param */
+  /* Hero personalization from ?trade= and ?biz= URL params */
   (function(){
     var params = new URLSearchParams(window.location.search);
     var t = (params.get('trade') || params.get('t') || '').toLowerCase();
+    var biz = params.get('biz') || '';
+
+    /* Business name personalisation — highest priority */
+    if(biz){
+      var h1 = document.getElementById('hero-h1');
+      if(h1) h1.innerHTML = '<span id="hero-h1-span" style="color:var(--blue)">' + biz.replace(/\+/g,' ') + '</span> — See Your Free Website';
+      var badge = document.getElementById('hero-badge-spots');
+      if(badge){
+        badge.style.background = '#fef3c7';
+        badge.style.borderColor = '#fde68a';
+        badge.style.color = '#92400e';
+        var lbl = document.getElementById('hero-badge-label');
+        if(lbl) lbl.textContent = '🏗️ Built specifically for ' + biz.replace(/\+/g,' ');
+      }
+      /* Update mid-page booking headline */
+      var bookH2 = document.querySelector('#book-mid h2');
+      if(bookH2) bookH2.innerHTML = 'Book the free call.<br><span style="color:#4ade80">' + biz.replace(/\+/g,' ') + '</span>'s site — ready in 48 hrs.';
+      /* Update hero sub if no trade override below */
+      var sub = document.getElementById('hero-sub-text');
+      if(sub) sub.textContent = 'I already built a complete, professional website for ' + biz.replace(/\+/g,' ') + ' — you see the full thing before paying a dollar. $600 to launch with hosting. Walk away free if you don\'t love it.';
+    }
+
+    /* Trade personalisation */
     if(!t) return;
     var tradeLabels = {
       roofing:'Free Roofing Website',  electric:'Free Electrician Website',
@@ -2348,10 +2371,13 @@
       if(t.indexOf(keys[i])!==-1 || keys[i].indexOf(t)!==-1){ matched=keys[i]; break; }
     }
     if(!matched) return;
-    var span = document.getElementById('hero-h1-span');
-    if(span) span.textContent = tradeLabels[matched];
-    var sub = document.getElementById('hero-sub-text');
-    if(sub && subLabels[matched]) sub.textContent = subLabels[matched] + ' $600 to launch. Walk away free if you don\'t love it.';
+    /* Only update H1 span if biz name didn't already override */
+    if(!biz){
+      var span = document.getElementById('hero-h1-span');
+      if(span) span.textContent = tradeLabels[matched];
+      var sub2 = document.getElementById('hero-sub-text');
+      if(sub2 && subLabels[matched]) sub2.textContent = subLabels[matched] + ' $600 to launch. Walk away free if you don\'t love it.';
+    }
   })();
 
   /* Demo strip: highlight + float matching trade demo to top */
