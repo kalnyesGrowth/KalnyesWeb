@@ -391,14 +391,31 @@
   <div class="container">
     <div class="demos-header">
       <div class="section-label">Real Examples — 175+ Local Businesses</div>
-      <h2 class="section-title">See what yours could look like</h2>
-      <p class="section-sub">Every card below is a real local contractor in Virginia — custom-built, not a template. Browse, then book the free call to see yours in 48 hours.</p>
-      <div style="display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 20px;background:#f0fff4;border:1px solid #c3e6cb;border-radius:8px;font-size:0.85rem;color:#166534;font-weight:600">
+      <h2 class="section-title" id="demos-headline">See what yours could look like</h2>
+      <p class="section-sub" id="demos-sub">Every card below is a real local contractor in Virginia — custom-built, not a template. Browse, then book the free call to see yours in 48 hours.</p>
+
+      <!-- Trade filter pills -->
+      <div id="trade-filters" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 4px">
+        <button onclick="filterTrade('all')" class="tf-btn tf-active" data-trade="all">All Trades</button>
+        <button onclick="filterTrade('roofing')" class="tf-btn" data-trade="roofing">🏠 Roofing</button>
+        <button onclick="filterTrade('electric')" class="tf-btn" data-trade="electric">⚡ Electrical</button>
+        <button onclick="filterTrade('plumb')" class="tf-btn" data-trade="plumb">🔧 Plumbing</button>
+        <button onclick="filterTrade('hvac')" class="tf-btn" data-trade="hvac">❄️ HVAC</button>
+        <button onclick="filterTrade('paint')" class="tf-btn" data-trade="paint">🖌️ Painting</button>
+        <button onclick="filterTrade('landscap')" class="tf-btn" data-trade="landscap">🌿 Landscaping</button>
+        <button onclick="filterTrade('handyman')" class="tf-btn" data-trade="handyman">🔨 Handyman</button>
+        <button onclick="filterTrade('clean')" class="tf-btn" data-trade="clean">🧹 Cleaning</button>
+        <button onclick="filterTrade('concrete')" class="tf-btn" data-trade="concrete">🧱 Concrete</button>
+        <button onclick="filterTrade('fence')" class="tf-btn" data-trade="fence">🪧 Fencing</button>
+      </div>
+      <p id="filter-count" style="font-size:0.8rem;color:var(--text-3);margin-bottom:16px"></p>
+
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:10px 20px;background:#f0fff4;border:1px solid #c3e6cb;border-radius:8px;font-size:0.85rem;color:#166534;font-weight:600">
         <span>🛡️</span> Every site below was built before the client paid a dollar
         <a href="#book-mid" style="color:#1557b0;font-weight:700;white-space:nowrap;text-decoration:underline">Book yours free →</a>
       </div>
     </div>
-    <div class="demos-grid">
+    <div class="demos-grid" id="demos-grid">
 
       <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="demo-card">
         <div class="demo-card-top">
@@ -2320,6 +2337,74 @@
   }
   setTimeout(showNext, 11000);
   setInterval(showNext, 35000);
+})();
+</script>
+
+<!-- Trade filter CSS + logic -->
+<style>
+.tf-btn{background:var(--bg-3);color:var(--text-2);border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-family:var(--font);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.15s;white-space:nowrap}
+.tf-btn:hover{background:var(--blue-lt);color:var(--blue);border-color:var(--blue)}
+.tf-btn.tf-active{background:var(--blue);color:#fff;border-color:var(--blue)}
+</style>
+<script>
+(function(){
+  /* Trade keyword map — each key is a filter slug, value is words to match in card title/text */
+  var tradeMap = {
+    roofing: ['roof','roofer','roofing'],
+    electric: ['electric','electrician','electrical','electricista','solar'],
+    plumb: ['plumb','plomería','plomero'],
+    hvac: ['hvac','air','heating','cooling','ac ','heat pump','chimney'],
+    paint: ['paint','painting','pintura'],
+    landscap: ['landscap','lawn','grass','mowing','tree','arborist','landscape','green'],
+    handyman: ['handyman','home repair','home service','home improvement','remodel'],
+    clean: ['clean','maid','carpet','pressure wash','power wash','janitorial'],
+    concrete: ['concrete','paving','asphalt','pavement','driveway'],
+    fence: ['fence','fencing','deck','patio','pergola'],
+  };
+
+  window.filterTrade = function(slug){
+    var cards = document.querySelectorAll('#demos-grid .demo-card');
+    var btns = document.querySelectorAll('.tf-btn');
+    btns.forEach(function(b){ b.classList.toggle('tf-active', b.dataset.trade === slug); });
+
+    var visible = 0;
+    cards.forEach(function(card){
+      if(slug === 'all'){ card.style.display = ''; visible++; return; }
+      var text = (card.textContent || card.innerText).toLowerCase();
+      var match = (tradeMap[slug] || []).some(function(kw){ return text.indexOf(kw) !== -1; });
+      card.style.display = match ? '' : 'none';
+      if(match) visible++;
+    });
+
+    var countEl = document.getElementById('filter-count');
+    if(countEl){
+      countEl.textContent = slug === 'all'
+        ? ''
+        : 'Showing ' + visible + ' demo' + (visible!==1?'s':'') + ' for your trade';
+    }
+  };
+
+  /* Auto-apply filter from URL param: ?trade=roofing or ?t=roofing */
+  var params = new URLSearchParams(window.location.search);
+  var tradeParam = (params.get('trade') || params.get('t') || '').toLowerCase();
+  if(tradeParam && tradeParam !== 'all'){
+    /* find best matching slug */
+    var bestSlug = null;
+    Object.keys(tradeMap).forEach(function(slug){
+      if(!bestSlug && tradeMap[slug].some(function(kw){ return tradeParam.indexOf(kw) !== -1 || kw.indexOf(tradeParam) !== -1; })){
+        bestSlug = slug;
+      }
+    });
+    if(bestSlug){
+      document.addEventListener('DOMContentLoaded', function(){
+        filterTrade(bestSlug);
+        /* Update headline to feel personalized */
+        var hl = document.getElementById('demos-headline');
+        var labels = {roofing:'roofing',electric:'electrical',plumb:'plumbing',hvac:'HVAC',paint:'painting',landscap:'landscaping',handyman:'handyman',clean:'cleaning',concrete:'concrete',fence:'fencing & decks'};
+        if(hl && labels[bestSlug]) hl.textContent = 'See what your ' + labels[bestSlug] + ' site could look like';
+      });
+    }
+  }
 })();
 </script>
 
