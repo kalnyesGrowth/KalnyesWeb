@@ -320,6 +320,7 @@
       <div style="background:rgba(255,255,255,0.97);border-radius:12px;padding:20px;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center">
         <p style="font-size:0.8rem;font-weight:600;color:#6b7280;margin-bottom:12px;text-align:center">📅 Pick a time — it's free</p>
         <div class="calendly-inline-widget" data-url="https://calendly.com/kalnyesgrowth/boost-your-business?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=1a73e8" style="min-width:280px;height:460px;width:100%"></div>
+        <p style="font-size:0.76rem;color:#9ca3af;margin-top:14px;text-align:center">Not ready for a call? <a href="#lead-form" style="color:#1a73e8;font-weight:600;text-decoration:underline">Leave your info instead →</a></p>
       </div>
     </div>
   </div>
@@ -2081,6 +2082,51 @@
   </div>
 </section>
 
+<!-- ══ LEAD CAPTURE — NOT READY FOR A CALL? ══ -->
+<section id="lead-form" style="padding:56px 0;background:#f9fafb;border-top:1px solid var(--border)">
+  <div class="container-sm" style="text-align:center">
+    <div class="section-label">Not ready for a call?</div>
+    <h2 style="font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.25">Drop your info — we'll reach out</h2>
+    <p style="font-size:0.95rem;color:var(--text-2);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6">Leave your name, number, and business type. Jose will text you within 24 hours with a free preview link for your specific niche.</p>
+    <form id="lead-capture-form" onsubmit="submitLead(event)" style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:32px;max-width:480px;margin:0 auto;text-align:left;box-shadow:0 2px 16px rgba(0,0,0,0.06)">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-2);display:block;margin-bottom:6px">Your name</label>
+          <input id="lf-name" type="text" placeholder="Mike Johnson" required style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.95rem;font-family:var(--font);outline:none;transition:border-color 0.15s" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-2);display:block;margin-bottom:6px">Your phone number</label>
+          <input id="lf-phone" type="tel" placeholder="(540) 555-1234" required style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.95rem;font-family:var(--font);outline:none;transition:border-color 0.15s" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+        </div>
+        <div>
+          <label style="font-size:0.82rem;font-weight:600;color:var(--text-2);display:block;margin-bottom:6px">Type of business</label>
+          <select id="lf-biz" required style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.95rem;font-family:var(--font);outline:none;background:#fff;transition:border-color 0.15s" onfocus="this.style.borderColor='var(--blue)'" onblur="this.style.borderColor='var(--border)'">
+            <option value="">Select your trade...</option>
+            <option>Roofing</option>
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>HVAC</option>
+            <option>Painter</option>
+            <option>Landscaping</option>
+            <option>Handyman</option>
+            <option>General Contractor</option>
+            <option>Cleaning Service</option>
+            <option>Party Rental</option>
+            <option>Other Home Service</option>
+          </select>
+        </div>
+        <button type="submit" id="lf-submit" style="width:100%;background:var(--blue);color:#fff;font-family:var(--font);font-size:1rem;font-weight:700;padding:14px;border:none;border-radius:8px;cursor:pointer;transition:background 0.15s" onmouseover="this.style.background='var(--blue-dk)'" onmouseout="this.style.background='var(--blue)'">Send My Info — I Want a Free Preview</button>
+        <p style="font-size:0.75rem;color:var(--text-3);text-align:center;margin:0">Jose will text you within 24 hours. No spam. No sales pressure.</p>
+      </div>
+    </form>
+    <div id="lf-success" style="display:none;background:#f0fff4;border:1px solid #c3e6cb;border-radius:12px;padding:32px;max-width:480px;margin:0 auto;text-align:center">
+      <div style="font-size:2rem;margin-bottom:12px">✅</div>
+      <h3 style="font-size:1.15rem;font-weight:700;color:#166534;margin-bottom:8px">Got it! Jose will text you soon.</h3>
+      <p style="font-size:0.9rem;color:#166534;line-height:1.6">You'll hear from Jose at (540) 783-8835 within 24 hours with a free preview link for your business. Check your texts!</p>
+    </div>
+  </div>
+</section>
+
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="container">
@@ -2206,6 +2252,81 @@
     if(orig) orig.style.display = 'none';
   }
 })();
+</script>
+
+<!-- Lead capture form handler -->
+<script>
+function submitLead(e) {
+  e.preventDefault();
+  var name = document.getElementById('lf-name').value.trim();
+  var phone = document.getElementById('lf-phone').value.trim();
+  var biz = document.getElementById('lf-biz').value;
+  var btn = document.getElementById('lf-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  // Send to Jose via WhatsApp pre-filled message (reliable zero-backend fallback)
+  var msg = encodeURIComponent('New lead from kalnyesgrowth.com/free-preview/\nName: ' + name + '\nPhone: ' + phone + '\nBusiness: ' + biz);
+  window.open('https://wa.me/15407838835?text=' + msg, '_blank');
+
+  // GA event
+  if (window.gtag) gtag('event', 'lead_form_submit', {event_category: 'lead', event_label: biz});
+
+  // Show success
+  document.getElementById('lead-capture-form').style.display = 'none';
+  document.getElementById('lf-success').style.display = 'block';
+}
+</script>
+
+<!-- Schema.org LocalBusiness — boosts local SEO for "web designer Stafford VA" searches -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "KalnyesGrowth Web Design",
+  "description": "Local web design for home service contractors in Stafford and Fredericksburg, Virginia. Free website preview — we build it first, you pay only if you love it. $600 to launch including hosting.",
+  "url": "https://kalnyesgrowth.com/free-preview/",
+  "telephone": "+15407838835",
+  "email": "jose@kalnyesgrowth.com",
+  "priceRange": "$600",
+  "image": "https://kalnyesgrowth.com/img/portfolio-kg.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Stafford",
+    "addressRegion": "VA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.4220,
+    "longitude": -77.4083
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Stafford", "sameAs": "https://en.wikipedia.org/wiki/Stafford_County,_Virginia"},
+    {"@type": "City", "name": "Fredericksburg"},
+    {"@type": "City", "name": "Spotsylvania"},
+    {"@type": "City", "name": "King George"},
+    {"@type": "City", "name": "Dumfries"}
+  ],
+  "knowsLanguage": ["en", "es"],
+  "openingHours": "Mo-Sa 08:00-20:00",
+  "sameAs": [
+    "https://kalnyesgrowth.com"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Design Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Free Website Preview",
+        "description": "We build your complete professional website first — you see it before paying anything. $600 to launch with hosting included. Free if you don't love it.",
+        "price": "600",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+}
 </script>
 </body>
 </html>
