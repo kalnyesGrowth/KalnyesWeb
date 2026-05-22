@@ -389,19 +389,8 @@ p{color:var(--body);line-height:1.75}
   gap:36px;perspective:2000px;perspective-origin:50% 30%;
   padding:0 40px 24px
 }
-.port-panel{
-  flex-shrink:0;width:auto;
-  display:flex;flex-direction:column;align-items:center;
-  position:relative;
-  transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s;
-  cursor:pointer
-}
-.port-panel.p-left{transform:perspective(2000px) rotateY(22deg) translateX(-20px) scale(.84);opacity:.45;transform-origin:right center}
-.port-panel.p-active{transform:perspective(2000px) rotateY(0deg) scale(1) translateZ(20px);z-index:2;opacity:1;cursor:default}
-.port-panel.p-right{transform:perspective(2000px) rotateY(-22deg) translateX(20px) scale(.84);opacity:.45;transform-origin:left center}
-.port-panel:not(.p-active){pointer-events:none}
-.port-panel.p-active{pointer-events:auto}
-.port-nav-btn{pointer-events:auto!important;position:relative;z-index:100}
+.device-showcase{display:flex;align-items:flex-end;justify-content:center;gap:28px;padding:0 32px 32px;width:100%}
+.showcase-item{flex-shrink:0;display:flex;flex-direction:column;align-items:center}
 
 /* ─── PHONE (panel 1) ─── */
 .device-phone{
@@ -516,15 +505,8 @@ p{color:var(--body);line-height:1.75}
   transition:all .2s;text-decoration:none
 }
 .port-btn:hover{background:rgba(26,58,191,.2);border-color:rgba(26,58,191,.5);color:#fff}
-.port-carousel-outer{display:flex;align-items:center;justify-content:center;gap:0;width:100%}
-.port-nav-btn{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;z-index:30;position:relative}
-.port-nav-btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
-.port-nav-btn:disabled{opacity:.15;pointer-events:none}
-.port-stage{flex:1;min-width:0}
-@media(max-width:768px){.port-nav-btn{width:56px;height:56px;font-size:2rem;background:var(--gold)!important;border-color:var(--gold)!important;color:#111!important;box-shadow:0 4px 16px rgba(0,0,0,.4)}}
-.port-dots-row{display:flex;justify-content:center;gap:8px;margin-top:24px}
-.port-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0;flex-shrink:0}
-.port-dot.active{width:28px;background:var(--gold)}
+@media(max-width:1060px){.showcase-desktop-item{display:none}.device-showcase{gap:20px}}
+@media(max-width:620px){.showcase-phone-item{display:none}.device-showcase{padding:0 16px 24px}}
 
 /* ══════════════════════════════════════════
    TESTIMONIALS — Google review style
@@ -680,8 +662,6 @@ footer{background:var(--dark);padding:56px 0 32px}
   .steps::before{display:none}
   .faq-layout{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
-  .port-stage{perspective:none;gap:20px;padding:0 20px 24px}
-  .port-panel.p-left,.port-panel.p-right,.port-panel.p-active{transform:none;opacity:1}
   .device-monitor{width:360px}
   .desktop-screen{width:340px;height:213px}
   .desktop-screen iframe{width:1000px;height:625px;transform:scale(0.340);transform-origin:0 0;position:absolute;top:0;left:0}
@@ -711,9 +691,6 @@ footer{background:var(--dark);padding:56px 0 32px}
   .nav-links,.nav-phone{display:none}
   .nav-cta .btn{display:none}
   .hamburger{display:flex}
-  .port-stage{justify-content:center;padding:0 8px 24px}
-  .port-panel.p-left,.port-panel.p-right{display:none}
-  .port-carousel-outer{padding:0 8px}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center}
   .btn-group{flex-direction:column;align-items:flex-start}
@@ -1551,107 +1528,66 @@ footer{background:var(--dark);padding:56px 0 32px}
     </div>
   </div>
 
-  <div class="port-carousel-outer">
-    <button class="port-nav-btn" id="port-prev" disabled aria-label="Previous project">&#8249;</button>
+  <!-- All 3 devices visible at once — no arrows needed -->
+  <div class="device-showcase">
 
-    <div class="port-stage" id="port-stage">
-
-      <!-- Panel 1: Red Apple Tobacco — PHONE -->
-      <div class="port-panel p-left">
-        <div class="device-phone">
-          <span class="phone-pwr"></span>
-          <div class="phone-screen" id="vp-pepes">
-            <div id="pi-pepes">
-              <iframe src="https://kalnyesgrowth.github.io/Tobbaco/" loading="lazy" title="Red Apple Tobacco & Convenience"></iframe>
-            </div>
-          </div>
-          <div class="phone-home-bar"></div>
+    <!-- PHONE: Red Apple Tobacco -->
+    <div class="showcase-item showcase-phone-item">
+      <div class="device-phone">
+        <span class="phone-pwr"></span>
+        <div class="phone-screen">
+          <iframe src="https://kalnyesgrowth.github.io/Tobbaco/" loading="lazy" title="Red Apple Tobacco &amp; Convenience"></iframe>
         </div>
-        <div class="port-footer">
-          <div class="port-tag">📱 Mobile · Tobacco Shop · Stafford, VA</div>
-          <div class="port-name">Red Apple Tobacco &amp; Convenience</div>
-          <a href="https://kalnyesgrowth.github.io/Tobbaco/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
-        </div>
+        <div class="phone-home-bar"></div>
       </div>
-
-      <!-- Panel 2: FreshCut Landscaping — TABLET -->
-      <div class="port-panel p-active">
-        <div class="device-tablet">
-          <div class="tablet-screen" id="vp-kg">
-            <div id="pi-kg">
-              <iframe src="https://kalnyesgrowth.com/freshcut-demo/" loading="lazy" title="FreshCut Landscaping LLC" allow="autoplay; fullscreen; encrypted-media"></iframe>
-            </div>
-          </div>
-          <div class="tablet-home-bar"></div>
-        </div>
-        <div class="port-footer">
-          <div class="port-tag">📟 Tablet · Landscaping · Stafford, VA</div>
-          <div class="port-name">FreshCut Landscaping LLC</div>
-          <a href="https://kalnyesgrowth.com/freshcut-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
-        </div>
+      <div class="port-footer">
+        <div class="port-tag">📱 Mobile · Retail Shop · Stafford, VA</div>
+        <div class="port-name">Red Apple Tobacco</div>
+        <a href="https://kalnyesgrowth.github.io/Tobbaco/" target="_blank" rel="noopener" class="port-btn">View Site →</a>
       </div>
-
-      <!-- Panel 3: Pepe's Party Rental — DESKTOP (live iframe demo) -->
-      <div class="port-panel p-right">
-        <div class="device-desktop">
-          <div class="device-monitor">
-            <div class="desktop-screen" id="vp-freshcut">
-              <div id="pi-freshcut">
-                <iframe src="https://pepespartyrentall.com/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
-              </div>
-            </div>
-          </div>
-          <div class="device-neck"></div>
-          <div class="device-base"></div>
-        </div>
-        <div class="port-footer">
-          <div class="port-tag">🖥 Desktop · Party Rentals · Virginia</div>
-          <div class="port-name">Pepe's Party Rental</div>
-          <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
-        </div>
-      </div>
-
-      <!-- Panel 4: White Plumbing Co. — PHONE -->
-      <div class="port-panel p-right">
-        <div class="device-phone">
-          <span class="phone-pwr"></span>
-          <div class="phone-screen" id="vp-whiteplumbing">
-            <div id="pi-whiteplumbing">
-              <iframe src="https://kalnyesgrowth.com/white-plumbing/" loading="lazy" title="White Plumbing Co."></iframe>
-            </div>
-          </div>
-          <div class="phone-home-bar"></div>
-        </div>
-        <div class="port-footer">
-          <div class="port-tag">📱 Mobile · Plumbing · Stafford, VA</div>
-          <div class="port-name">White Plumbing Co.</div>
-          <a href="https://kalnyesgrowth.com/white-plumbing/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
-        </div>
-      </div>
-
-      <!-- Panel 5: Cooling & Heating of San Antonio — TABLET -->
-      <div class="port-panel p-right">
-        <div class="device-tablet">
-          <div class="tablet-screen" id="vp-hvac">
-            <div id="pi-hvac">
-              <iframe src="https://kalnyesgrowth.com/san-antonio-hvac/" loading="lazy" title="Cooling & Heating of San Antonio"></iframe>
-            </div>
-          </div>
-          <div class="tablet-home-bar"></div>
-        </div>
-        <div class="port-footer">
-          <div class="port-tag">📟 Tablet · HVAC · San Antonio, TX</div>
-          <div class="port-name">Cooling &amp; Heating of San Antonio</div>
-          <a href="https://kalnyesgrowth.com/san-antonio-hvac/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
-        </div>
-      </div>
-
     </div>
 
-    <button class="port-nav-btn" id="port-next" aria-label="Next project">&#8250;</button>
+    <!-- TABLET: FreshCut Landscaping (center) -->
+    <div class="showcase-item">
+      <div class="device-tablet">
+        <div class="tablet-screen">
+          <iframe src="https://kalnyesgrowth.com/freshcut-demo/" loading="lazy" title="FreshCut Landscaping LLC" allow="autoplay; fullscreen; encrypted-media"></iframe>
+        </div>
+        <div class="tablet-home-bar"></div>
+      </div>
+      <div class="port-footer">
+        <div class="port-tag">📟 Tablet · Landscaping · Stafford, VA</div>
+        <div class="port-name">FreshCut Landscaping LLC</div>
+        <a href="https://kalnyesgrowth.com/freshcut-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site →</a>
+      </div>
+    </div>
+
+  <!-- DESKTOP: Pepe's Party Rental -->
+  <div class="showcase-item showcase-desktop-item">
+    <div class="device-desktop">
+      <div class="device-monitor">
+        <div class="desktop-screen">
+          <iframe src="https://pepespartyrentall.com/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
+        </div>
+      </div>
+      <div class="device-neck"></div>
+      <div class="device-base"></div>
+    </div>
+    <div class="port-footer">
+      <div class="port-tag">🖥 Desktop · Party Rentals · Virginia</div>
+      <div class="port-name">Pepe's Party Rental</div>
+      <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="port-btn">View Site →</a>
+    </div>
   </div>
 
-  <div class="port-dots-row" id="port-dots-row"></div>
+</div>
+
+<!-- More demo sites — quick links -->
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:16px 24px 0">
+  <a href="https://kalnyesgrowth.com/white-plumbing/" target="_blank" rel="noopener" class="port-btn">🔧 White Plumbing Co. →</a>
+  <a href="https://kalnyesgrowth.com/san-antonio-hvac/" target="_blank" rel="noopener" class="port-btn">❄️ HVAC San Antonio →</a>
+  <a href="https://kalnyesgrowth.github.io/jesdel-electric-demo/" target="_blank" rel="noopener" class="port-btn">⚡ Jesdel Electric →</a>
+</div>
 
   <div style="text-align:center;margin-top:36px">
     <a href="#book-call" class="btn btn-gold btn-lg">Get a Site Like These →</a>
@@ -2414,67 +2350,6 @@ function toggleFaq(btn) {
 }
 
 // Portfolio: all iframes point to our own GitHub Pages demos — fully embeddable, no fallback needed
-
-// Portfolio carousel
-(function(){
-  var panels = Array.from(document.querySelectorAll('#port-stage .port-panel'));
-  var prevBtn = document.getElementById('port-prev');
-  var nextBtn = document.getElementById('port-next');
-  var dotsRow = document.getElementById('port-dots-row');
-  var cur = 1;
-
-  var labels = ['Red Apple Tobacco', 'FreshCut Landscaping', 'Pepe\'s Party Rental', 'White Plumbing Co.', 'Cooling &amp; Heating SA'];
-  panels.forEach(function(_, i) {
-    var d = document.createElement('button');
-    d.className = 'port-dot' + (i === cur ? ' active' : '');
-    d.setAttribute('aria-label', 'View ' + (labels[i] || 'project ' + (i+1)));
-    d.addEventListener('click', function(){ go(i); });
-    dotsRow.appendChild(d);
-  });
-
-  function go(idx) {
-    cur = Math.max(0, Math.min(panels.length - 1, idx));
-    panels.forEach(function(p, i) {
-      p.classList.remove('p-left', 'p-active', 'p-right');
-      var d = i - cur;
-      if (d === 0) p.classList.add('p-active');
-      else if (d < 0) p.classList.add('p-left');
-      else p.classList.add('p-right');
-    });
-    dotsRow.querySelectorAll('.port-dot').forEach(function(d, i) {
-      d.classList.toggle('active', i === cur);
-    });
-    prevBtn.disabled = cur === 0;
-    nextBtn.disabled = cur === panels.length - 1;
-  }
-
-  function navBtn(btn, handler) {
-    btn.addEventListener('pointerdown', function(e){ e.stopPropagation(); handler(); });
-    btn.addEventListener('touchend', function(e){ e.preventDefault(); }, {passive:false});
-  }
-  navBtn(prevBtn, function(){ go(cur - 1); });
-  navBtn(nextBtn, function(){ go(cur + 1); });
-
-  // Touch swipe support for mobile
-  var stage = document.getElementById('port-stage');
-  var touchStartX = 0;
-  stage.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
-  stage.addEventListener('touchend', function(e){
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40) { dx < 0 ? go(cur + 1) : go(cur - 1); }
-  }, {passive:true});
-
-  document.addEventListener('keydown', function(e) {
-    var s = document.getElementById('work');
-    var r = s.getBoundingClientRect();
-    if (r.top < window.innerHeight && r.bottom > 0) {
-      if (e.key === 'ArrowLeft') go(cur - 1);
-      if (e.key === 'ArrowRight') go(cur + 1);
-    }
-  });
-
-  go(1);
-})();
 
 // Portfolio: no auto-scroll — viewers navigate freely inside each device
 
