@@ -70,24 +70,24 @@
 </div>
 
 <!-- ── EMAIL BLAST ── -->
-<div class="section-head">Email Blast — 101 Drafts Ready to Send</div>
+<div class="section-head">Email Blast — 105 Drafts Ready to Send</div>
 
 <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px;margin-bottom:20px">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
     <div>
-      <div style="font-size:1rem;font-weight:700;color:#fff">📧 101 contractor emails are sitting in Gmail Drafts</div>
+      <div style="font-size:1rem;font-weight:700;color:#fff">📧 105 contractor emails are sitting in Gmail Drafts</div>
       <div style="font-size:0.82rem;color:#64748b;margin-top:4px">Open Gmail → Drafts, or use the Apps Script below to send all at once.</div>
     </div>
     <a href="https://mail.google.com/mail/u/0/#drafts" target="_blank" rel="noopener" style="background:#1d4ed8;color:#fff;font-size:0.82rem;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap">📬 Open Gmail Drafts</a>
   </div>
 
   <div style="background:#0f172a;border:1px solid #1e3a5f;border-radius:10px;padding:16px;margin-bottom:16px">
-    <div style="font-size:0.78rem;font-weight:700;color:#3b82f6;margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase">⚡ Send All 101 Drafts in 1 Click — Google Apps Script</div>
+    <div style="font-size:0.78rem;font-weight:700;color:#3b82f6;margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase">⚡ Send All 105 Drafts in 1 Click — Google Apps Script</div>
     <div style="font-size:0.8rem;color:#94a3b8;line-height:1.8;margin-bottom:12px">
       1. Go to <strong style="color:#f1f5f9">script.google.com</strong> → click <strong style="color:#f1f5f9">New Project</strong><br>
       2. Delete the placeholder code, paste the script below<br>
       3. Click <strong style="color:#f1f5f9">▶ Run</strong> → Authorize → Allow<br>
-      4. Done — all 101 emails send automatically
+      4. Done — all 105 emails send automatically
     </div>
     <div style="background:#020617;border:1px solid #1e3a5f;border-radius:8px;padding:14px;font-family:monospace;font-size:0.75rem;color:#7dd3fc;line-height:1.7;margin-bottom:10px;white-space:pre-wrap;overflow-x:auto" id="apps-script-code">function sendContractorDrafts() {
   var threads = GmailApp.search('in:drafts "I built a" OR "Free website preview"');
@@ -116,7 +116,7 @@
 </div>
 
 <!-- ── LEADS LIST ── -->
-<div class="section-head">101 Leads — Full Email List</div>
+<div class="section-head">105 Leads — Full Email List</div>
 
 <div style="background:#1e293b;border:1px solid #334155;border-radius:12px;overflow:hidden;margin-bottom:24px">
   <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
@@ -498,7 +498,12 @@ var leads = [
   {biz:'VBG Contracting Inc.',trade:'General',email:'vbgrealestate@gmail.com'},
   {biz:'W.V. DeLoach Home Improvements',trade:'General',email:'hntnrbl@aol.com'},
   {biz:'Woodward Electric Co.',trade:'Electrician',email:'craig3@woodwardelectric.com'},
-  {biz:'Worley Enterprise LLC',trade:'General',email:'worleyenterprisellc@gmail.com'}
+  {biz:'Worley Enterprise LLC',trade:'General',email:'worleyenterprisellc@gmail.com'},
+  // Session 3 — final batch
+  {biz:'Eagle Point Construction',trade:'Builder',email:'info@eaglepointva.com'},
+  {biz:'Ortiz Electrical Services',trade:'Electrician (ES)',email:'alberto@ortizelec.com'},
+  {biz:'Tarim Cooling & Heating',trade:'HVAC',email:'mdilshat@yahoo.com'},
+  {biz:'Pristine Water Treatment',trade:'Water Treatment',email:'info@pristinewater.com'}
 ];
 
 (function renderLeads(){
