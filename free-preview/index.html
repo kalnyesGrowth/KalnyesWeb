@@ -208,8 +208,8 @@
       <span class="hero-badge-dot"></span>
       <span id="hero-badge-label">⚡ 3 spots left this week</span>
     </div>
-    <h1>See Your Free Website — <span>Built for Your Business</span></h1>
-    <p class="hero-sub">We build your complete, professional website in 48 hours and show you the full thing before you pay a dollar. $600 to launch with hosting included. Walk away free if you don't love it.</p>
+    <h1 id="hero-h1">See Your Free Website — <span id="hero-h1-span">Built for Your Business</span></h1>
+    <p class="hero-sub" id="hero-sub-text">We build your complete, professional website in 48 hours and show you the full thing before you pay a dollar. $600 to launch with hosting included. Walk away free if you don't love it.</p>
     <div class="niches">
       <span class="niche-pill">🔧 Plumbers</span>
       <span class="niche-pill">⚡ Electricians</span>
@@ -2220,6 +2220,40 @@
 </div>
 
 <script>
+  /* Hero personalization from ?trade= URL param */
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var t = (params.get('trade') || params.get('t') || '').toLowerCase();
+    if(!t) return;
+    var tradeLabels = {
+      roofing:'Free Roofing Website',  electric:'Free Electrician Website',
+      plumb:'Free Plumbing Website',   hvac:'Free HVAC Website',
+      paint:'Free Painting Website',   landscap:'Free Landscaping Website',
+      handyman:'Free Handyman Website',clean:'Free Cleaning Website',
+      concrete:'Free Concrete Website',fence:'Free Fencing Website',
+    };
+    var subLabels = {
+      roofing:'Built for roofing contractors in Virginia — see real examples, then book your free preview call.',
+      electric:'Built for electricians in Virginia — see real demos for your trade, then book your free 15-min call.',
+      plumb:'Built for plumbers in Virginia — see real plumbing demos, then book your free preview call.',
+      hvac:'Built for HVAC contractors in Virginia — AC season is here. See your free site in 48 hours.',
+      paint:'Built for painting contractors in Virginia — see demos for your trade, then book free.',
+      landscap:'Built for landscapers in Virginia — see demos, book a free call, get your site in 48 hours.',
+      handyman:'Built for handymen and general contractors in Virginia — see demos, then book your free site.',
+      clean:'Built for cleaning services in Virginia — see demos from your niche, book your free preview.',
+    };
+    var matched = null;
+    var keys = Object.keys(tradeLabels);
+    for(var i=0;i<keys.length;i++){
+      if(t.indexOf(keys[i])!==-1 || keys[i].indexOf(t)!==-1){ matched=keys[i]; break; }
+    }
+    if(!matched) return;
+    var span = document.getElementById('hero-h1-span');
+    if(span) span.textContent = tradeLabels[matched];
+    var sub = document.getElementById('hero-sub-text');
+    if(sub && subLabels[matched]) sub.textContent = subLabels[matched] + ' $600 to launch. Walk away free if you don\'t love it.';
+  })();
+
   /* Calendly widget trust label — shows dynamic recent booking count */
   (function(){
     var labels = [
