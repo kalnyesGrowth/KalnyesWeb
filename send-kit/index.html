@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 59</div>
+    <div class="progress-count" id="sent-count">0 / 62</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -1076,13 +1076,64 @@
   </div>
 </div>
 
+<!-- 60 -->
+<div class="card" id="card-60">
+  <div class="card-header">
+    <div class="card-name">60. Blue Diamond Maid Services — Stafford</div>
+    <span class="card-sent" id="sent-60">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15715750635" class="phone-num">📞 (571) 575-0635</a>
+  </div>
+  <div class="problem-tag">🔴 No website · House cleaning · Recurring $1,500-3,000/client/yr</div>
+  <div class="msg-box" id="msg-60">Hey — I'm Jose, a web designer in Stafford. I searched "house cleaning Stafford VA" and Blue Diamond Maid Services doesn't come up on Google at all. You're only on Facebook — which means every new homeowner searching right now is calling whoever they find first, and it's not you. A recurring cleaning client is worth $1,500-3,000 a year. Missing 3-4 new clients = $5,000-12,000 left on the table every year. I build sites for local service businesses in Stafford — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(60)">📋 Copy</button>
+    <a href="sms:+15715750635" class="btn btn-sms" onclick="markSent(60)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 61 -->
+<div class="card" id="card-61">
+  <div class="card-header">
+    <div class="card-name">61. A&amp;J Handyman Services INC — Fredericksburg</div>
+    <span class="card-sent" id="sent-61">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15712778134" class="phone-num">📞 (571) 277-8134</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Handyman · In business since 2002 · $150-2k/job</div>
+  <div class="msg-box" id="msg-61">Hey — I'm Jose, a web designer in Stafford. I searched "handyman Fredericksburg VA" and A&amp;J Handyman Services doesn't show up on Google at all. You've been in business since 2002 but every homeowner searching online right now can't find you. Handyman jobs run $150-2,000 each. No website means you're only getting work through referrals while your competitors get Google calls on top of that. I build contractor sites for businesses in Fredericksburg — kalnyesgrowth.com. $600 to go live. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(61)">📋 Copy</button>
+    <a href="sms:+15712778134" class="btn btn-sms" onclick="markSent(61)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 62 -->
+<div class="card" id="card-62">
+  <div class="card-header">
+    <div class="card-name">62. MSR Power Washing — King George (Veteran-Owned)</div>
+    <span class="card-sent" id="sent-62">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15403619895" class="phone-num">📞 (540) 361-9895</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Power washing + gutters · Veteran-owned · $200-600/job</div>
+  <div class="msg-box" id="msg-62">Hey — I'm Jose, a web designer in Stafford. I searched for power washing in King George and MSR Power Washing doesn't show up on Google at all. You're veteran-owned with 9+ years experience and do power washing, window cleaning, and gutter cleaning — but homeowners searching online right now can't find you and are calling whoever shows up first. Power washing jobs run $200-600 each, gutters on top of that. No website means you're leaving easy recurring work on the table. I build contractor sites for businesses in this area — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(62)">📋 Copy</button>
+    <a href="sms:+15403619895" class="btn btn-sms" onclick="markSent(62)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 59;
+const total = 62;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
