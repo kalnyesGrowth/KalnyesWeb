@@ -7,10 +7,10 @@
   var BOOK_URL = 'https://kalnyesgrowth.com/book/';
 
   /* ── Deadline countdown ── */
-  var deadline = new Date('2026-05-26T23:59:59');
+  var deadline = new Date('2026-07-31T23:59:59');
   var daysLeft = Math.ceil((deadline - new Date()) / (24 * 3600 * 1000));
-  var deadlineText = (daysLeft > 0 && daysLeft <= 10)
-    ? '⚠️ ' + daysLeft + ' day' + (daysLeft === 1 ? '' : 's') + ' left to claim this site'
+  var deadlineText = (daysLeft > 0 && daysLeft <= 14)
+    ? '⚠️ ' + daysLeft + ' day' + (daysLeft === 1 ? '' : 's') + ' left at this price'
     : '5 spots open this week';
 
   /* ── Load Calendly popup assets ── */
