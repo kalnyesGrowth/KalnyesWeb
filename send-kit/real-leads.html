@@ -42,6 +42,8 @@
     .progress-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     .progress-dot{width:28px;height:28px;border-radius:50%;background:#1e2433;border:2px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#4b5563;cursor:pointer;transition:all .2s}
     .progress-dot.done{background:#22c55e;border-color:#22c55e;color:#000}
+    .demo-built-badge{display:inline-flex;align-items:center;gap:5px;font-size:.65rem;font-weight:800;color:#000;background:#22c55e;border-radius:100px;padding:3px 10px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em}
+    .card.has-demo{border-color:rgba(34,197,94,.35);background:#141d14}
     footer{text-align:center;margin-top:30px;font-size:.72rem;color:#374151}
   </style>
 </head>
@@ -58,7 +60,7 @@
   </div>
 </div>
 
-<div class="tip">💡 <strong>New strategy — audit messages:</strong> Each message below leads with a specific issue on their website (or money lost without one), pitches the free demo with zero commitment, and asks them to book a 15-min call to see it. Copy → text or WhatsApp → they book the call → you show the demo on the call. <strong>Best send times:</strong> 8–10am or 6–8pm weekdays.</div>
+<div class="tip">💡 <strong>Two message types below:</strong><br><br>🟢 <strong>DEMO BUILT (7 cards)</strong> — Their actual website is already live at kalnyesgrowth.com/[slug]. Message includes the direct URL. No call needed to see it — they can look right now. Highest-priority sends.<br><br>🔵 <strong>Standard audit</strong> — Specific issue observed → money being lost → book free call to see demo. Same closing power, just requires a call first.<br><br><strong>Best send times:</strong> 8–10am or 6–8pm weekdays. Text first, WhatsApp if no response in 24h.</div>
 
 <!-- PROGRESS TRACKER -->
 <div class="progress-section">
@@ -96,8 +98,9 @@ Want to see it? Book a free 15-min call: calendly.com/kalnyesgrowth/boost-your-b
   </div>
 </div>
 
-<div class="card" id="card-2">
+<div class="card has-demo" id="card-2">
   <span class="sent-badge" id="badge-2">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/jf-electrical/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">JF Electrical Contractors</div>
@@ -106,11 +109,13 @@ Want to see it? Book a free 15-min call: calendly.com/kalnyesgrowth/boost-your-b
     </div>
     <div class="card-niche">Electric</div>
   </div>
-  <div class="msg" id="msg-2">Hi — I looked up JF Electrical. You've got 23 Yelp reviews — that's a real asset. But your website doesn't show a single one. Homeowners searching "electrician Fredericksburg" check your site before calling, and when they don't see reviews or past work, they move on to someone who shows that proof.
+  <div class="msg" id="msg-2">Hi — I looked up JF Electrical. You've got 23 Yelp reviews — that's a real asset but your website doesn't show a single one. Homeowners searching "electrician Fredericksburg" check your site before calling, and when they don't see reviews or past work, they move on.
 
-I already built a free demo for an electrical contractor in this area — no commitment.
+I already built YOUR new website — take a look right now: kalnyesgrowth.com/jf-electrical/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? Book a quick 15-min call: calendly.com/kalnyesgrowth/boost-your-business
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -174,8 +179,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
   </div>
 </div>
 
-<div class="card" id="card-5">
+<div class="card has-demo" id="card-5">
   <span class="sent-badge" id="badge-5">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/roofs-fast/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">Roofs Fast</div>
@@ -184,11 +190,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">Roofing</div>
   </div>
-  <div class="msg" id="msg-5">Hey — I searched for Roofs Fast online. Right now during storm season, homeowners with damaged roofs are searching "roofer Stafford VA" every day. Without a website showing up in those results, you're invisible to the people who need you most. A single roofing job pays for the whole site.
+  <div class="msg" id="msg-5">Hey — storm season is here and homeowners with damaged roofs are searching "roofer Stafford VA" every day. Without a site ranking in those results, you're invisible to the exact people who need you right now.
 
-I already built a free demo for a roofing company in this area — no commitment.
+I already built Roofs Fast a website — you can see it right now: kalnyesgrowth.com/roofs-fast/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -301,8 +309,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
   </div>
 </div>
 
-<div class="card" id="card-10">
+<div class="card has-demo" id="card-10">
   <span class="sent-badge" id="badge-10">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/oha-hvac/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">OHA HVAC, Plumbing & Roofing</div>
@@ -311,11 +320,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">HVAC</div>
   </div>
-  <div class="msg" id="msg-10">Hey — I looked up OHA HVAC, Plumbing & Roofing. Three high-ticket services is a huge advantage — but most multi-service sites bury half their services and only rank for one. Homeowners searching "plumber Stafford" and "HVAC near me" should both be finding you. Right now they probably aren't.
+  <div class="msg" id="msg-10">Hey — OHA has three high-ticket services but most multi-service sites only rank for one. Homeowners searching "plumber Stafford" and "HVAC near me" are different searches — you should be capturing all of them.
 
-I already built a free demo for a multi-service company in this area — no commitment.
+I already rebuilt OHA's website to rank for all three services — see it now: kalnyesgrowth.com/oha-hvac/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -402,8 +413,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
 <!-- ══════════════════════════════════════════ -->
 <div class="niche-divider">🖌️ Painters (4 leads)</div>
 
-<div class="card" id="card-14">
+<div class="card has-demo" id="card-14">
   <span class="sent-badge" id="badge-14">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/medias-painting/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">Medias Painting LLC</div>
@@ -412,11 +424,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">Painting</div>
   </div>
-  <div class="msg" id="msg-14">Hey — I searched "painter Stafford VA" to see who's showing up. If Medias Painting isn't in those results, homeowners choosing painters right now aren't finding you. Painting is a visual business — a site with before/after photos and reviews does the selling before they even pick up the phone.
+  <div class="msg" id="msg-14">Hey — painting is a visual business and homeowners choosing painters want to see your work before they call. Right now "painter Stafford VA" search results favor whoever shows the most proof. Medias has 260 reviews and 25 years — none of that is working hard enough online.
 
-I already built a free demo for a painting company in this area — no commitment.
+I already built Medias Painting's new website — see it now: kalnyesgrowth.com/medias-painting/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -475,8 +489,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
   </div>
 </div>
 
-<div class="card" id="card-17">
+<div class="card has-demo" id="card-17">
   <span class="sent-badge" id="badge-17">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/hbs-on-time/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">HBSontime (Painting + Cleaning)</div>
@@ -485,11 +500,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">Painting</div>
   </div>
-  <div class="msg" id="msg-17">Hi — I looked at hbsontime.com. Solid site covering cleaning, handyman, and painting — but it doesn't rank locally for any of the three services separately. Homeowners searching "house cleaner Stafford" and "painter Fredericksburg" are different searches, and right now your competitors who rank for each one are getting those calls.
+  <div class="msg" id="msg-17">Hi — I looked at hbsontime.com. Solid site covering cleaning, handyman, and painting — but it doesn't rank separately for each service. Homeowners searching "painter Fredericksburg" and "house cleaner Stafford" are different queries and right now competitors who rank for each one are getting those calls.
 
-I already built a free demo that ranks each service in local search — no commitment.
+I already rebuilt HBS On Time's website with separate local SEO for each service — see it now: kalnyesgrowth.com/hbs-on-time/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -601,8 +618,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
   </div>
 </div>
 
-<div class="card" id="card-22">
+<div class="card has-demo" id="card-22">
   <span class="sent-badge" id="badge-22">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/grass-roots-lawn/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">Grass Roots Lawn & Landscaping</div>
@@ -611,11 +629,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">Landscaping</div>
   </div>
-  <div class="msg" id="msg-22">Hey — I looked at grassrootslawnandlandscaping.com. Family-owned since 2009 is a huge trust signal that homeowners love — but it's buried on the site and neither are your customer reviews. That 17-year track record should be the first thing visitors see. Right now competitors who feature their story and reviews are winning those recurring contracts.
+  <div class="msg" id="msg-22">Hey — I looked at grassrootslawnandlandscaping.com. Family-owned since 2009 is a huge trust signal that homeowners love — but it's buried on the site and so are your customer reviews. That 17-year track record should be the first thing visitors see, not something they have to hunt for.
 
-I already built a free demo that leads with your history and reviews — no commitment.
+I already rebuilt Grass Roots' website to lead with your story and reviews — see it now: kalnyesgrowth.com/grass-roots-lawn/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
@@ -632,8 +652,9 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
 
 <div class="tip">Woodbridge market — 30 min north of Stafford. Same audit strategy: identify a specific issue on their site or explain the money they're losing without one. Say "serving Stafford and Northern Virginia." Book the call at the end, not the demo link.</div>
 
-<div class="card" id="card-23">
+<div class="card has-demo" id="card-23">
   <span class="sent-badge" id="badge-23">✓ Sent</span>
+  <div class="demo-built-badge">🟢 Demo Built — kalnyesgrowth.com/alex-hvac/</div>
   <div class="card-top">
     <div>
       <div class="card-biz">Alex HVAC Service LLC</div>
@@ -642,11 +663,13 @@ Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-busines
     </div>
     <div class="card-niche">HVAC</div>
   </div>
-  <div class="msg" id="msg-23">Hey Alex — I searched "HVAC Woodbridge VA" and noticed Alex HVAC doesn't have a website showing up in those results. During AC season, Woodbridge homeowners searching for HVAC help are calling whoever shows up on Google. Without a site ranking locally, those $3,000–$8,000 AC jobs are going elsewhere.
+  <div class="msg" id="msg-23">Hey Alex — AC season is here and Woodbridge homeowners searching for HVAC help are calling whoever shows up on Google. Alex HVAC has 322 reviews and 25 years of experience — that reputation should be pulling in jobs automatically online, not sitting invisible in search results.
 
-I already built a free demo for an HVAC company serving Northern Virginia — no commitment.
+I already built Alex HVAC's new website — see it now: kalnyesgrowth.com/alex-hvac/
 
-Book a free 15-min call to see it: calendly.com/kalnyesgrowth/boost-your-business
+No call needed to see it. If you love it, $600 to launch with hosting included. Walk away free if you don't.
+
+Ready to get it live? kalnyesgrowth.com/free-preview/
 
 — Jose, KalnyesGrowth | (540) 783-8835</div>
   <div class="btns">
