@@ -69,6 +69,71 @@
   ⚡ <strong>Fastest path to bookings today:</strong> Post today's content below to Facebook, then open the SMS send-kit and tap the 7 green "SEND THESE FIRST" buttons. Each SMS is pre-written — just tap Send on your phone.
 </div>
 
+<!-- ── EMAIL BLAST ── -->
+<div class="section-head">Email Blast — 30 Drafts Ready to Send</div>
+
+<div style="background:#1e293b;border:1px solid #334155;border-radius:12px;padding:20px;margin-bottom:20px">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+    <div>
+      <div style="font-size:1rem;font-weight:700;color:#fff">📧 30 contractor emails are sitting in Gmail Drafts</div>
+      <div style="font-size:0.82rem;color:#64748b;margin-top:4px">Open Gmail → Drafts, or use the Apps Script below to send all at once.</div>
+    </div>
+    <a href="https://mail.google.com/mail/u/0/#drafts" target="_blank" rel="noopener" style="background:#1d4ed8;color:#fff;font-size:0.82rem;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;white-space:nowrap">📬 Open Gmail Drafts</a>
+  </div>
+
+  <div style="background:#0f172a;border:1px solid #1e3a5f;border-radius:10px;padding:16px;margin-bottom:16px">
+    <div style="font-size:0.78rem;font-weight:700;color:#3b82f6;margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase">⚡ Send All 30 Drafts in 1 Click — Google Apps Script</div>
+    <div style="font-size:0.8rem;color:#94a3b8;line-height:1.8;margin-bottom:12px">
+      1. Go to <strong style="color:#f1f5f9">script.google.com</strong> → click <strong style="color:#f1f5f9">New Project</strong><br>
+      2. Delete the placeholder code, paste the script below<br>
+      3. Click <strong style="color:#f1f5f9">▶ Run</strong> → Authorize → Allow<br>
+      4. Done — all 30 emails send automatically
+    </div>
+    <div style="background:#020617;border:1px solid #1e3a5f;border-radius:8px;padding:14px;font-family:monospace;font-size:0.75rem;color:#7dd3fc;line-height:1.7;margin-bottom:10px;white-space:pre-wrap;overflow-x:auto" id="apps-script-code">function sendContractorDrafts() {
+  var threads = GmailApp.search('in:drafts "I built a" OR "Free website preview"');
+  var sent = 0;
+  threads.forEach(function(t) {
+    t.getMessages().forEach(function(msg) {
+      if (msg.isDraft()) {
+        try {
+          GmailApp.getDraft(msg.getId()).send();
+          sent++;
+          Utilities.sleep(400);
+        } catch(e) { Logger.log('skip: '+e.message); }
+      }
+    });
+  });
+  Logger.log('Sent: ' + sent + ' emails');
+  MailApp.sendEmail(Session.getActiveUser().getEmail(),
+    'KG Outreach: '+sent+' emails sent', sent+' contractor emails sent successfully.');
+}</div>
+    <button class="btn btn-copy" onclick="copyScript(this)" style="font-size:0.8rem">📋 Copy Script</button>
+  </div>
+
+  <div style="font-size:0.8rem;color:#475569;padding:10px 0 0">
+    <strong style="color:#fbbf24">⚠ Once Make.com Gmail is fixed:</strong> Re-authenticate "My Gmail connection" in Make.com → Connections, then scenario 5156467 will auto-blast future leads hands-free.
+  </div>
+</div>
+
+<!-- ── 30 LEADS LIST ── -->
+<div class="section-head">30 Leads — Full Email List</div>
+
+<div style="background:#1e293b;border:1px solid #334155;border-radius:12px;overflow:hidden;margin-bottom:24px">
+  <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
+    <thead>
+      <tr style="background:#0f172a;border-bottom:1px solid #334155">
+        <th style="padding:10px 14px;text-align:left;color:#64748b;font-weight:600">#</th>
+        <th style="padding:10px 14px;text-align:left;color:#64748b;font-weight:600">Business</th>
+        <th style="padding:10px 14px;text-align:left;color:#64748b;font-weight:600">Trade</th>
+        <th style="padding:10px 14px;text-align:left;color:#64748b;font-weight:600">Email</th>
+        <th style="padding:10px 14px;text-align:left;color:#64748b;font-weight:600">Status</th>
+      </tr>
+    </thead>
+    <tbody id="leads-tbody">
+    </tbody>
+  </table>
+</div>
+
 <!-- ── DAILY POSTS ── -->
 <div class="section-head">10-Day Post Schedule</div>
 
@@ -336,6 +401,67 @@ $600 to launch with hosting. Free if you don't love it.
 </div>
 
 <script>
+// ── Leads data ──
+var leads = [
+  // Original 14 from previous session
+  {biz:'JF Electrical Contractors',trade:'Electrician',email:'info@jfelectricalcontractors.com'},
+  {biz:'OHA HVAC',trade:'HVAC',email:'help@fixmyair.com'},
+  {biz:'Medias Painting',trade:'Painter (ES)',email:'job@mediaspainting.com'},
+  {biz:'HBS On Time',trade:'Contractor',email:'info@hbsontime.com'},
+  {biz:'Grass Roots Lawn',trade:'Landscaper',email:'info@grassrootslawnandlandscaping.com'},
+  {biz:'Atlantic Green Plumbing',trade:'Plumber',email:'atlanticgreenllc@gmail.com'},
+  {biz:'Malone Electrical',trade:'Electrician',email:'info@elemalone.com'},
+  {biz:'Logan Electric',trade:'Electrician',email:'LES@Fastmail.net'},
+  {biz:'Yard Sharks Lawn',trade:'Landscaper',email:'office@yardsharks.pro'},
+  {biz:'Comfort Heating & Cooling',trade:'HVAC',email:'contactus@comfortheatingandac.com'},
+  {biz:'ICE Heating & Cooling',trade:'HVAC',email:'info@iceheatingandcooling.com'},
+  {biz:'Total Comfort HVAC',trade:'HVAC',email:'info@yourtotalcomfort.com'},
+  {biz:'Assure Plumbing & Septic',trade:'Plumber',email:'assureplumbingseptic@gmail.com'},
+  {biz:'Plumb Perfect Plumbing',trade:'Plumber',email:'service@plumbperfectva.com'},
+  // 16 new leads added today
+  {biz:'Chancellor Electric',trade:'Electrician',email:'info@chancellor-electric.com'},
+  {biz:'Roof Works of Virginia',trade:'Roofer',email:'info@roofworksofva.com'},
+  {biz:'FXBG VA Handyman',trade:'Handyman',email:'office@fxbgvahandyman.com'},
+  {biz:'Quality Expectations LLC',trade:'General',email:'info@qualityexpectationsllc.com'},
+  {biz:'Painting Contractor Stafford',trade:'Painter',email:'job@paintingcontractorstafford.com'},
+  {biz:'Performance Pressure Washing',trade:'Pressure Wash',email:'support@performancepressureandsoftwashingllc.com'},
+  {biz:'Inside Out Cleaning Services',trade:'Cleaning',email:'insideoutcleaningservicesllc@gmail.com'},
+  {biz:'John Mills Jr Roofing',trade:'Roofer',email:'JohnMillsRoofing@gmail.com'},
+  {biz:'Pristine Cuts Lawn Care',trade:'Landscaper',email:'Pristinecutslawncarellc540@gmail.com'},
+  {biz:'Tadash LLC',trade:'Concrete',email:'tadashnovausa@gmail.com'},
+  {biz:'Super Seal of VA',trade:'Concrete/Seal',email:'supersealofva@gmail.com'},
+  {biz:'Forte Construction & Design',trade:'Flooring',email:'info@forteconstructiondesign.com'},
+  {biz:'CMR Heating & Air',trade:'HVAC',email:'questions@cmrva.com'},
+  {biz:'Loving Air Inc',trade:'HVAC',email:'info@lovingairinc.com'},
+  {biz:'Fredericksburg Heating & Cooling',trade:'HVAC',email:'fhvac@cox.net'},
+  {biz:'Clog Heroes',trade:'Plumber',email:'service@ClogHeroes.com'}
+];
+
+(function renderLeads(){
+  var tb = document.getElementById('leads-tbody');
+  if(!tb) return;
+  leads.forEach(function(l,i){
+    var tr = document.createElement('tr');
+    tr.style.cssText = 'border-bottom:1px solid #1e293b;' + ((i%2===0)?'background:#172033':'');
+    tr.innerHTML = '<td style="padding:8px 14px;color:#475569">'+(i+1)+'</td>'
+      +'<td style="padding:8px 14px;color:#f1f5f9;font-weight:500">'+l.biz+'</td>'
+      +'<td style="padding:8px 14px;color:#94a3b8">'+l.trade+'</td>'
+      +'<td style="padding:8px 14px"><a href="mailto:'+l.email+'" style="color:#3b82f6;font-size:0.78rem">'+l.email+'</a></td>'
+      +'<td style="padding:8px 14px"><span style="background:#14532d;color:#86efac;font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:100px">DRAFT READY</span></td>';
+    tb.appendChild(tr);
+  });
+})();
+
+function copyScript(btn){
+  var code = document.getElementById('apps-script-code').textContent;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(code).then(function(){
+      btn.textContent='✅ Copied!';btn.style.color='#4ade80';btn.style.borderColor='#4ade80';
+      setTimeout(function(){btn.textContent='📋 Copy Script';btn.style.color='';btn.style.borderColor='';},3000);
+    });
+  }
+}
+
 // Build Facebook share URLs
 var captions = {};
 for(var i=1;i<=10;i++){
