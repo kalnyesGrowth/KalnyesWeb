@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 62</div>
+    <div class="progress-count" id="sent-count">0 / 64</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -1127,13 +1127,47 @@
   </div>
 </div>
 
+<!-- 63 -->
+<div class="card" id="card-63">
+  <div class="card-header">
+    <div class="card-name">63. On The Grind Stump &amp; Tree — Spotsylvania</div>
+    <span class="card-sent" id="sent-63">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407487771" class="phone-num">📞 (540) 748-7771</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Tree removal $500-3k · Stump grinding $150-400</div>
+  <div class="msg-box" id="msg-63">Hey Joe — I'm Jose, a web designer in Stafford. I looked up stump removal and tree services in Spotsylvania and On The Grind doesn't show up on Google at all. You're family-owned, fully insured, and have 5-star reviews — but that trust is invisible to any homeowner who searches online. Tree removal runs $500-3k, stump grinding $150-400 each. Miss 3-4 jobs a month and that's real money left on the table. I build contractor sites in this area — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(63)">📋 Copy</button>
+    <a href="sms:+15407487771" class="btn btn-sms" onclick="markSent(63)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 64 -->
+<div class="card" id="card-64">
+  <div class="card-header">
+    <div class="card-name">64. JB's Mobile Auto Repair — Stafford (ASE)</div>
+    <span class="card-sent" id="sent-64">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15713590298" class="phone-num">📞 (571) 359-0298</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Mobile mechanic · ASE certified 16 yrs · $100-500+/job</div>
+  <div class="msg-box" id="msg-64">Hey Jordon — I'm Jose, a web designer in Stafford. I searched "mobile mechanic Stafford VA" and JB's doesn't show up on Google at all. You've been fixing cars for 16 years and you're ASE certified — but every driver with a breakdown searching online right now can't find you. Mobile mechanic jobs run $100-500+ each. No website means you're invisible to everyone who doesn't already know your name. I build local contractor sites in Stafford — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(64)">📋 Copy</button>
+    <a href="sms:+15713590298" class="btn btn-sms" onclick="markSent(64)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 62;
+const total = 64;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
