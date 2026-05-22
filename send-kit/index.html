@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 49</div>
+    <div class="progress-count" id="sent-count">0 / 52</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -770,6 +770,57 @@
   </div>
 </div>
 
+<!-- 50 -->
+<div class="card" id="card-50">
+  <div class="card-header">
+    <div class="card-name">50. ONE STOP Painting &amp; Handyman — Spotsylvania</div>
+    <span class="card-sent" id="sent-50">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15402941755" class="phone-num">📞 (540) 294-1755</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Painting + Handyman · $300-5k/job</div>
+  <div class="msg-box" id="msg-50">Hey — searched painting contractors in Spotsylvania and ONE STOP Painting doesn't show up on Google at all. You do both painting and handyman work — that's two streams of potential clients who can't find you. Painting jobs run $1-5k, handyman $200-500 a call. Right now the only way someone hires you is if they find you on Facebook or hear about you through a referral. I build websites for local contractors — kalnyesgrowth.com to see my work. $600 to go live. Free call to show you what I'd build.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(50)">📋 Copy</button>
+    <a href="sms:+15402941755" class="btn btn-sms" onclick="markSent(50)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 51 -->
+<div class="card" id="card-51">
+  <div class="card-header">
+    <div class="card-name">51. Camouflage Mowing &amp; Junk — King George</div>
+    <span class="card-sent" id="sent-51">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15404191546" class="phone-num">📞 (540) 419-1546</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Lawn + Junk removal · King George VA</div>
+  <div class="msg-box" id="msg-51">Hey — looked up lawn care and junk removal in King George and Camouflage Mowing doesn't come up on Google. King George is a growing county — homeowners searching online right now can't find you. Lawn clients are worth $1,500-2,400 a year each, junk removal jobs $200-500 each. No website means you're only getting jobs from people who already know you exist. I build contractor websites in this area — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(51)">📋 Copy</button>
+    <a href="sms:+15404191546" class="btn btn-sms" onclick="markSent(51)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 52 -->
+<div class="card" id="card-52">
+  <div class="card-header">
+    <div class="card-name">52. R&amp;R Johnsons Landscape &amp; Tree — Spotsylvania</div>
+    <span class="card-sent" id="sent-52">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15405227991" class="phone-num">📞 (540) 522-7991</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Landscape + Tree · Recurring $1.8-3.6k + $800-3k trees</div>
+  <div class="msg-box" id="msg-52">Hey — searched landscaping and tree work in Spotsylvania and R&amp;R Johnsons doesn't show up on Google. You do lawn care, tree removal, stump grinding, mulching — homeowners need all of that and they're searching online. A recurring lawn client is $1,800-3,600 a year, tree jobs $800-3k each. Without a website, all of that goes to whoever shows up on Google first. I build contractor websites in this area — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(52)">📋 Copy</button>
+    <a href="sms:+15405227991" class="btn btn-sms" onclick="markSent(52)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 47 -->
 <div class="card" id="card-47">
   <div class="card-header">
@@ -912,7 +963,7 @@
 
 <script>
 let sentCount = 0;
-const total = 49;
+const total = 52;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
