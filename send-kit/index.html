@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 55</div>
+    <div class="progress-count" id="sent-count">0 / 56</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -804,6 +804,23 @@
   </div>
 </div>
 
+<!-- 56 -->
+<div class="card" id="card-56">
+  <div class="card-header">
+    <div class="card-name">56. J&amp;Y Painting LLC — Stafford</div>
+    <span class="card-sent" id="sent-56">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15712644513" class="phone-num">📞 (571) 264-4513</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Painting $800-4k/job · 14 years experience</div>
+  <div class="msg-box" id="msg-56">Hey — I looked up painters in Stafford and J&Y Painting doesn't show up on Google. You've been in business 14 years, but homeowners searching "painter Stafford VA" right now are calling whoever has a website — and that's not you. Interior/exterior jobs run $800-4k and a single Google lead can pay for a website several times over. I build contractor websites in Stafford — kalnyesgrowth.com. $600 to launch. Free call to show you what I'd build first.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(56)">📋 Copy</button>
+    <a href="sms:+15712644513" class="btn btn-sms" onclick="markSent(56)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 55 -->
 <div class="card" id="card-55">
   <div class="card-header">
@@ -1014,7 +1031,7 @@
 
 <script>
 let sentCount = 0;
-const total = 55;
+const total = 56;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
