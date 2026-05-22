@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 46</div>
+    <div class="progress-count" id="sent-count">0 / 49</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -770,6 +770,57 @@
   </div>
 </div>
 
+<!-- 47 -->
+<div class="card" id="card-47">
+  <div class="card-header">
+    <div class="card-name">47. Eagle Concrete LLC — Fredericksburg</div>
+    <span class="card-sent" id="sent-47">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15713098911" class="phone-num">📞 (571) 309-8911</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Concrete $3-15k/job · Facebook-only</div>
+  <div class="msg-box" id="msg-47">Hey — looked up Eagle Concrete in Fredericksburg and you don't have a website. Homeowners looking to pour a driveway, patio, or retaining wall right now are going to the first contractor they find on Google — and that's not you. Concrete jobs average $3-15k and you're losing those leads to every competitor that has a site. I build contractor websites in Fredericksburg — kalnyesgrowth.com to see my work. $600 to go live. Quick call to show you what I'd build for Eagle Concrete.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(47)">📋 Copy</button>
+    <a href="sms:+15713098911" class="btn btn-sms" onclick="markSent(47)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 48 -->
+<div class="card" id="card-48">
+  <div class="card-header">
+    <div class="card-name">48. JG Drywall LLC — Fredericksburg</div>
+    <span class="card-sent" id="sent-48">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15403715383" class="phone-num">📞 (540) 371-5383</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Drywall $500-4k/job · Facebook-only</div>
+  <div class="msg-box" id="msg-48">Hey — searched drywall contractors in Fredericksburg and JG Drywall doesn't show up on Google. Homeowners need patching, finishing, full basement builds — they search Google first and call whoever shows up. Drywall jobs run $500-4k, finished basements much more. Without a website, you're only getting work through referrals while your competitors get Google leads on top. I build local contractor sites in Fredericksburg — kalnyesgrowth.com. $600 to launch. Free call to go over what I'd build.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(48)">📋 Copy</button>
+    <a href="sms:+15403715383" class="btn btn-sms" onclick="markSent(48)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 49 -->
+<div class="card" id="card-49">
+  <div class="card-header">
+    <div class="card-name">49. Bow Tie Chimney LLC — Spotsylvania</div>
+    <span class="card-sent" id="sent-49">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407464025" class="phone-num">📞 (540) 746-4025</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Chimney $150-600/clean · $1-3k repairs</div>
+  <div class="msg-box" id="msg-49">Hey — searched chimney sweep in Spotsylvania and Fredericksburg and Bow Tie Chimney isn't showing up on Google. Homeowners getting fireplaces ready for fall search online — they call whoever shows up first. Chimney cleanings are $150-300, repairs run $500-3k. No website means you're invisible to every customer who doesn't already know your name. I build contractor sites for businesses in this area — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(49)">📋 Copy</button>
+    <a href="sms:+15407464025" class="btn btn-sms" onclick="markSent(49)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 42 -->
 <div class="card" id="card-42">
   <div class="card-header">
@@ -861,7 +912,7 @@
 
 <script>
 let sentCount = 0;
-const total = 46;
+const total = 49;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
