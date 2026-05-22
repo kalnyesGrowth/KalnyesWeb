@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 39</div>
+    <div class="progress-count" id="sent-count">0 / 41</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -736,13 +736,47 @@
   </div>
 </div>
 
+<!-- 40 -->
+<div class="card" id="card-40">
+  <div class="card-header">
+    <div class="card-name">40. GrassHappens Landscaping LLC</div>
+    <span class="card-sent" id="sent-40">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15406450281" class="phone-num">📞 (540) 645-0281</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Landscaping · Recurring $1.8-3.6k/client/yr</div>
+  <div class="msg-box" id="msg-40">Hey Brandon — looked up landscaping in Stafford and GrassHappens doesn't come up on Google. You've been running this since 2010 but customers searching online right now can't find you — they're going to competitors with websites. Recurring lawn clients are worth $1,800-3,600 a year each, landscaping projects $3-15k. I build local contractor websites in Stafford — kalnyesgrowth.com shows my work. $600 to go live. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(40)">📋 Copy</button>
+    <a href="sms:+15406450281" class="btn btn-sms" onclick="markSent(40)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 41 -->
+<div class="card" id="card-41">
+  <div class="card-header">
+    <div class="card-name">41. Billings Home Services — Lee Billings</div>
+    <span class="card-sent" id="sent-41">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15712414469" class="phone-num">📞 (571) 241-4469</a>
+  </div>
+  <div class="problem-tag">🔴 No website · 40 years in business · Handyman/tree $200-800/job</div>
+  <div class="msg-box" id="msg-41">Hey Lee — 40 years in the business and you still don't have a website. That's a lot of jobs going to whoever shows up on Google first. Searched handyman services in Stafford and Billings Home Services doesn't come up anywhere online — all your new business is word of mouth, which is great until referrals slow down. I build websites for local contractors here — kalnyesgrowth.com. One job covers the $600 cost. Free call to show you what I'd build.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(41)">📋 Copy</button>
+    <a href="sms:+15712414469" class="btn btn-sms" onclick="markSent(41)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 39;
+const total = 41;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
