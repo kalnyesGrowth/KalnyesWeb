@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 54</div>
+    <div class="progress-count" id="sent-count">0 / 55</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -804,6 +804,23 @@
   </div>
 </div>
 
+<!-- 55 -->
+<div class="card" id="card-55">
+  <div class="card-header">
+    <div class="card-name">55. Stafford Handyman Services — Stafford</div>
+    <span class="card-sent" id="sent-55">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15404139222" class="phone-num">📞 (540) 413-9222</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Handyman $150-2k/job · Stafford VA</div>
+  <div class="msg-box" id="msg-55">Hey — searched handyman services in Stafford and couldn't find a website for Stafford Handyman Services. Homeowners around here go straight to Google when something breaks — drywall, doors, fixtures, whatever — and call whoever has a site. Without one, you're invisible to every new customer who doesn't already know you. Handyman jobs run $150-2k and repeat customers are worth thousands a year. I build contractor websites in Stafford — kalnyesgrowth.com. $600 to launch. Free call to show you what I'd build first.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(55)">📋 Copy</button>
+    <a href="sms:+15404139222" class="btn btn-sms" onclick="markSent(55)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 50 -->
 <div class="card" id="card-50">
   <div class="card-header">
@@ -997,7 +1014,7 @@
 
 <script>
 let sentCount = 0;
-const total = 54;
+const total = 55;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
