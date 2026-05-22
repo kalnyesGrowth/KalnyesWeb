@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 36</div>
+    <div class="progress-count" id="sent-count">0 / 39</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -685,13 +685,64 @@
   </div>
 </div>
 
+<!-- 37 -->
+<div class="card" id="card-37">
+  <div class="card-header">
+    <div class="card-name">37. Tommy's Mobile Detailing</div>
+    <span class="card-sent" id="sent-37">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15405481091" class="phone-num">📞 (540) 548-1091</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Mobile detailing $150-300/detail</div>
+  <div class="msg-box" id="msg-37">Hey Tommy — looked up mobile detailing in Fredericksburg and you're not coming up on Google. Your Facebook page looks solid but that's invisible to people searching right now. 1-2 new regular clients a month at $150-300 a detail adds up to $10-20k/year in recurring revenue. I build local business websites in this area — kalnyesgrowth.com shows the work. $600 to launch and start showing up for searches. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(37)">📋 Copy</button>
+    <a href="sms:+15405481091" class="btn btn-sms" onclick="markSent(37)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 38 -->
+<div class="card" id="card-38">
+  <div class="card-header">
+    <div class="card-name">38. Perfect Protection Pest Control</div>
+    <span class="card-sent" id="sent-38">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15714712155" class="phone-num">📞 (571) 471-2155</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Pest control $500-800/client/year recurring</div>
+  <div class="msg-box" id="msg-38">Hey — Googled pest control in Stafford and Perfect Protection Pest Control doesn't come up. You've got Facebook and some directory listings but anyone searching online right now is calling a competitor. Recurring pest control clients are worth $500-800 a year each — miss 10 clients from Google = $5-8k/year gone. I build websites for local contractors here — kalnyesgrowth.com. $600 to go live. Free call to talk through it.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(38)">📋 Copy</button>
+    <a href="sms:+15714712155" class="btn btn-sms" onclick="markSent(38)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 39 -->
+<div class="card" id="card-39">
+  <div class="card-header">
+    <div class="card-name">39. Haldermans Handyman Service</div>
+    <span class="card-sent" id="sent-39">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15406703183" class="phone-num">📞 (540) 670-3183</a>
+  </div>
+  <div class="problem-tag">🔴 Nextdoor-only · No website · Handyman $200-600/job</div>
+  <div class="msg-box" id="msg-39">Hey — tried finding Haldermans Handyman on Google and you don't show up anywhere. You're active on Nextdoor but that only reaches neighbors — customers outside your neighborhood can't find you at all. Handyman jobs average $200-600 each, and a busy week is 4-6 jobs. A website ranking for "handyman Fredericksburg" could bring you 3-5 new calls a week consistently. kalnyesgrowth.com shows my work — $600 to launch. Free call to see the plan.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(39)">📋 Copy</button>
+    <a href="sms:+15406703183" class="btn btn-sms" onclick="markSent(39)">💬 SMS</a>
+  </div>
+</div>
+
 <div class="sent-counter" id="done-msg" style="display:none">
   🎉 All texts sent! Check Messages for replies and follow up with anyone who responds.
 </div>
 
 <script>
 let sentCount = 0;
-const total = 36;
+const total = 39;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
