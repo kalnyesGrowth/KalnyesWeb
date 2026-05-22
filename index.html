@@ -399,9 +399,9 @@ p{color:var(--body);line-height:1.75}
 .port-panel.p-left{transform:perspective(2000px) rotateY(22deg) translateX(-20px) scale(.84);opacity:.45;transform-origin:right center}
 .port-panel.p-active{transform:perspective(2000px) rotateY(0deg) scale(1) translateZ(20px);z-index:2;opacity:1;cursor:default}
 .port-panel.p-right{transform:perspective(2000px) rotateY(-22deg) translateX(20px) scale(.84);opacity:.45;transform-origin:left center}
-.port-panel:not(.p-active) .phone-screen,
-.port-panel:not(.p-active) .tablet-screen,
-.port-panel:not(.p-active) .desktop-screen{pointer-events:none}
+.port-panel:not(.p-active){pointer-events:none}
+.port-panel.p-active{pointer-events:auto}
+.port-nav-btn{pointer-events:auto!important;position:relative;z-index:100}
 
 /* ─── PHONE (panel 1) ─── */
 .device-phone{
@@ -761,6 +761,13 @@ footer{background:var(--dark);padding:56px 0 32px}
 }
 @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .announce-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+@media(max-width:600px){
+  #announce-bar{padding:10px 16px;font-size:.76rem}
+  .announce-inner{flex-direction:column;gap:5px;text-align:center}
+  .announce-inner>span{font-size:.74rem;line-height:1.4}
+  .announce-dot{display:none}
+  .announce-cta{font-size:.74rem;padding:5px 14px}
+}
 .announce-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.9);flex-shrink:0;animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
 .announce-cta{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.2);
@@ -866,7 +873,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .meet-jose-section{padding:80px 0;background:#fff;border-top:1px solid var(--border)}
 .meet-jose-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:960px;margin:0 auto}
 .jose-photo-wrap{position:relative;text-align:center}
-.jose-avatar{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#1a3abf,#0f2899);display:flex;align-items:center;justify-content:center;font-size:5rem;font-weight:900;color:#fff;margin:0 auto;box-shadow:0 16px 48px rgba(26,58,191,.25)}
+.jose-avatar{width:220px;height:220px;border-radius:50%;margin:0 auto;display:block;box-shadow:0 16px 48px rgba(26,58,191,.25);border:4px solid #fff;outline:3px solid var(--gold)}
 .jose-location-badge{display:inline-flex;align-items:center;gap:6px;background:#f0f4ff;color:#1a3abf;font-size:.78rem;font-weight:800;padding:6px 14px;border-radius:50px;margin-top:16px;letter-spacing:.05em}
 .jose-bio h3{font-size:1.6rem;margin-bottom:8px}
 .jose-bio .jose-subtitle{color:var(--muted);font-size:1rem;margin-bottom:20px}
@@ -885,7 +892,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .call-step-icon{font-size:1.8rem;display:block;margin-bottom:8px}
 .call-step-title{font-weight:800;font-size:.88rem;color:var(--dark);margin-bottom:4px}
 .call-step-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
-.call-step-num{display:inline-block;background:var(--gold);color:#fff;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:50px;margin-bottom:8px}
+.call-step-num{display:block;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 @media(max-width:600px){.call-steps{grid-template-columns:1fr}.call-step{text-align:left;display:flex;gap:14px;align-items:flex-start}.call-step-icon{flex-shrink:0}}
 
 /* ── DIRECT CONTACT STRIP ── */
@@ -1589,7 +1596,7 @@ footer{background:var(--dark);padding:56px 0 32px}
           <div class="device-monitor">
             <div class="desktop-screen" id="vp-freshcut">
               <div id="pi-freshcut">
-                <iframe src="https://kalnyesgrowth.com/pepes-demo/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
+                <iframe src="https://pepespartyrentall.com/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
               </div>
             </div>
           </div>
@@ -1599,7 +1606,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="port-footer">
           <div class="port-tag">🖥 Desktop · Party Rentals · Virginia</div>
           <div class="port-name">Pepe's Party Rental</div>
-          <a href="https://kalnyesgrowth.com/pepes-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+          <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
         </div>
       </div>
 
@@ -1664,7 +1671,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="niche-name">Party &amp; Event Rental</div>
         <span class="niche-roi">1 weekend booking = $600–$1,200</span>
         <p class="niche-desc">Show your full inventory, capture online bookings, and rank for "bounce house rental near me" before summer peak season. Your busiest months deserve a site that converts.</p>
-        <a href="https://kalnyesgrowth.com/pepes-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live party rental preview →</a>
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live party rental preview →</a>
       </div>
       <div class="niche-card">
         <div class="niche-icon">❄️</div>
@@ -1742,9 +1749,9 @@ footer{background:var(--dark);padding:56px 0 32px}
         <a href="https://kalnyesgrowth.com/free-preview/" style="display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#fff;padding:12px 22px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">Browse all 162+ demos →</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;min-width:200px">
-        <a href="/white-plumbing/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🔧 <span>Plumbing Demo →</span></a>
+        <a href="https://kalnyesgrowth.github.io/jesdel-electric-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">⚡ <span>Electrician Demo →</span></a>
         <a href="/freshcut-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🌿 <span>Landscaping Demo →</span></a>
-        <a href="/pepes-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🎪 <span>Party Rental Demo →</span></a>
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🎪 <span>Party Rental Demo →</span></a>
         <a href="/cleaning-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🧹 <span>Cleaning Demo →</span></a>
         <a href="/handyman-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🏠 <span>Handyman Demo →</span></a>
         <a href="/painter-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🖌️ <span>Painting Demo →</span></a>
@@ -1762,7 +1769,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   <div class="container">
     <div class="meet-jose-inner">
       <div class="jose-photo-wrap">
-        <div class="jose-avatar">J</div>
+        <img src="/img/jose-profile.jpg" alt="Jose Morales — Web Designer, Stafford VA" class="jose-avatar" style="object-fit:cover;object-position:center top">
         <div class="jose-location-badge">📍 Stafford, VA — Local</div>
       </div>
       <div class="jose-bio">
@@ -1988,19 +1995,19 @@ footer{background:var(--dark);padding:56px 0 32px}
       <h3>What Happens on Your Free 15-Minute Call</h3>
       <div class="call-steps">
         <div class="call-step">
-          <span class="call-step-num">Step 1</span>
+          <span class="call-step-num">01</span>
           <span class="call-step-icon">🔍</span>
           <div class="call-step-title">We Review Your Online Presence</div>
           <p class="call-step-desc">We look at your current website, Google ranking, and what your competitors are doing better.</p>
         </div>
         <div class="call-step">
-          <span class="call-step-num">Step 2</span>
+          <span class="call-step-num">02</span>
           <span class="call-step-icon">🎨</span>
           <div class="call-step-title">We Build Your Free Preview</div>
           <p class="call-step-desc">Within 48 hours we send you a live link to a full preview of your new site. No charge yet.</p>
         </div>
         <div class="call-step">
-          <span class="call-step-num">Step 3</span>
+          <span class="call-step-num">03</span>
           <span class="call-step-icon">✅</span>
           <div class="call-step-title">You Love It, Then Pay</div>
           <p class="call-step-desc">Only if you're 100% happy do you pay. If not, you walk away — no charge, no questions asked.</p>
@@ -2055,7 +2062,7 @@ footer{background:var(--dark);padding:56px 0 32px}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.571l5.847-1.533A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
           WhatsApp Jose
         </a>
-        <a href="sms:+15407838835&body=Hi%20Jose!%20I%27d%20like%20to%20book%20a%20free%20call%20about%20a%20website." style="display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:#fff;padding:11px 20px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">
+        <a href="sms:+15407838835&body=Hi%20Jose!%20I%27d%20like%20to%20book%20a%20free%20call%20about%20a%20website." style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:11px 20px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">
           📱 Text (540) 783-8835
         </a>
       </div>
@@ -2204,12 +2211,12 @@ footer{background:var(--dark);padding:56px 0 32px}
   }
 
   function stepPlumbing(){
-    addMsg("Perfect — I actually built a free demo for a plumbing company in Virginia. Want to see it?","bot");
+    addMsg("Perfect — I actually built a free demo for an electrical contractor in Virginia. Want to see it?","bot");
     showOptions([
       {label:"Yes, show me!",next:function(){
-        addMsg("Here's a live preview I built for White Plumbing Co. — same quality, built for YOUR business.","bot");
+        addMsg("Here's a live preview I built for an electrician — same quality, built for YOUR business.","bot");
         clearOptions();
-        showLink("View Plumbing Demo →","https://kalnyesgrowth.com/white-plumbing/",false);
+        showLink("View Electrician Demo →","https://kalnyesgrowth.github.io/jesdel-electric-demo/",false);
         setTimeout(function(){stepBook();},600);
       }},
       {label:"Just tell me pricing",next:stepPrice}
@@ -2226,7 +2233,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   function stepParty(){
     addMsg("Fun niche! I built a demo for a party rental company — full inventory, booking CTA, the works:","bot");
     clearOptions();
-    showLink("View Party Rental Demo →","https://kalnyesgrowth.com/pepes-demo/",false);
+    showLink("View Party Rental Demo →","https://pepespartyrentall.com/",false);
     setTimeout(function(){stepBook();},600);
   }
 
@@ -2440,15 +2447,9 @@ function toggleFaq(btn) {
     nextBtn.disabled = cur === panels.length - 1;
   }
 
-  panels.forEach(function(p, i) {
-    p.addEventListener('click', function(e) {
-      if (i !== cur && !e.target.closest('a, button, iframe')) go(i);
-    });
-  });
-
   function navBtn(btn, handler) {
-    btn.addEventListener('click', handler);
-    btn.addEventListener('touchend', function(e){ e.preventDefault(); handler(); }, {passive:false});
+    btn.addEventListener('pointerdown', function(e){ e.stopPropagation(); handler(); });
+    btn.addEventListener('touchend', function(e){ e.preventDefault(); }, {passive:false});
   }
   navBtn(prevBtn, function(){ go(cur - 1); });
   navBtn(nextBtn, function(){ go(cur + 1); });
@@ -2476,12 +2477,23 @@ function toggleFaq(btn) {
 
 // Portfolio: no auto-scroll — viewers navigate freely inside each device
 
-// Free audit form — opens WhatsApp with their URL pre-filled
+// Free audit form — notifies Jose via WhatsApp + email
 function handleAudit(e) {
   e.preventDefault();
-  var url = document.getElementById(‘audit-url’).value;
-  var msg = "Hi! I’d like a free website audit for: " + url + " - I found you at KalnyesGrowth.com";
-  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
+  var url = document.getElementById(‘audit-url’).value.trim();
+  if (!url) return;
+  var waMsg = "Hi Jose! I’d like a free website audit for: " + url + " — I found you at KalnyesGrowth.com";
+  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(waMsg), ‘_blank’);
+  var subject = ‘Free Website Audit Request — ‘ + url;
+  var body = ‘Hi Jose,\n\nA visitor requested a personalized website audit for:\n\n’ + url + ‘\n\nPlease review their current site and prepare a personalized report showing what\’s costing them customers and what the new site would look like.\n\n— KalnyesGrowth.com auto-notification’;
+  setTimeout(function(){
+    window.location.href = ‘mailto:kalnyesgrowth@gmail.com?subject=’ + encodeURIComponent(subject) + ‘&body=’ + encodeURIComponent(body);
+  }, 800);
+  var form = e.target;
+  var input = document.getElementById(‘audit-url’);
+  if (input) input.value = ‘’;
+  var btn = form.querySelector(‘button[type=submit]’);
+  if (btn) { btn.textContent = ‘✅ Sent! Check WhatsApp’; btn.disabled = true; setTimeout(function(){ btn.textContent = ‘Get My Free Audit →’; btn.disabled = false; }, 4000); }
 }
 
 // Callback form — WhatsApp (no activation required, instant notification on Jose’s phone)
