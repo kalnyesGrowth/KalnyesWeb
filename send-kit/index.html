@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 56</div>
+    <div class="progress-count" id="sent-count">0 / 58</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -804,6 +804,40 @@
   </div>
 </div>
 
+<!-- 57 -->
+<div class="card" id="card-57">
+  <div class="card-header">
+    <div class="card-name">57. VA Painting LLC — Stafford</div>
+    <span class="card-sent" id="sent-57">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15714738404" class="phone-num">📞 (571) 473-8404</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Painting $800-4k/job · 3 yrs Stafford</div>
+  <div class="msg-box" id="msg-57">Hey — searched painters in Stafford and VA Painting LLC doesn't show up on Google. Homeowners in Stafford go straight to Google when they need interior or exterior work — right now you're invisible to every customer who doesn't already know you. Painting jobs run $800-4k+ and one Google lead can pay for a website several times over. I build contractor websites here in Stafford — kalnyesgrowth.com. $600 to launch. Free call to show you what I'd build first.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(57)">📋 Copy</button>
+    <a href="sms:+15714738404" class="btn btn-sms" onclick="markSent(57)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 58 -->
+<div class="card" id="card-58">
+  <div class="card-header">
+    <div class="card-name">58. SKG Auto Detailing — Fredericksburg</div>
+    <span class="card-sent" id="sent-58">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15403618182" class="phone-num">📞 (540) 361-8182</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Auto detailing $150-600/job · Fredericksburg</div>
+  <div class="msg-box" id="msg-58">Hey — searched auto detailing in Fredericksburg and SKG doesn't show up on Google. Car owners searching "mobile detailing near me" or "car detail Fredericksburg" are calling whoever has a site — right now that's not you. Detail jobs run $150-600 each and repeat customers are worth thousands a year. A simple professional website puts you in front of them. I build local business websites in Fredericksburg — kalnyesgrowth.com. $600 to launch. Free call, no obligation.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(58)">📋 Copy</button>
+    <a href="sms:+15403618182" class="btn btn-sms" onclick="markSent(58)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 56 -->
 <div class="card" id="card-56">
   <div class="card-header">
@@ -1031,7 +1065,7 @@
 
 <script>
 let sentCount = 0;
-const total = 56;
+const total = 58;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
