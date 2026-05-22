@@ -41,7 +41,7 @@
 <div class="progress">
   <div>
     <div class="progress-label">Texts sent</div>
-    <div class="progress-count" id="sent-count">0 / 52</div>
+    <div class="progress-count" id="sent-count">0 / 54</div>
   </div>
   <div style="flex:1;background:#0f1117;border-radius:4px;height:6px;overflow:hidden;margin-left:8px">
     <div id="progress-bar" style="height:100%;background:#22c55e;border-radius:4px;width:0%;transition:width 0.3s"></div>
@@ -770,6 +770,40 @@
   </div>
 </div>
 
+<!-- 53 -->
+<div class="card" id="card-53">
+  <div class="card-header">
+    <div class="card-name">53. Lotty's Cleaning Services — Stafford</div>
+    <span class="card-sent" id="sent-53">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15407621076" class="phone-num">📞 (540) 762-1076</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Cleaning $150-400/clean · Recurring clients</div>
+  <div class="msg-box" id="msg-53">Hey — searched cleaning services in Stafford and Lotty's Cleaning doesn't show up on Google. You're only visible to people who find you on Facebook or Yelp — but most homeowners in Stafford just Google "house cleaning near me" and call whoever shows up. Recurring cleaning clients are worth $1,800-4,800 a year each. Without a website, you're missing all of them. I build websites for local service businesses in Stafford — kalnyesgrowth.com. $600 to launch. Free call to show you what I'd build.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(53)">📋 Copy</button>
+    <a href="sms:+15407621076" class="btn btn-sms" onclick="markSent(53)">💬 SMS</a>
+  </div>
+</div>
+
+<!-- 54 -->
+<div class="card" id="card-54">
+  <div class="card-header">
+    <div class="card-name">54. Steiner &amp; Son's Stump Grinding — Fredericksburg</div>
+    <span class="card-sent" id="sent-54">✓ Sent</span>
+  </div>
+  <div class="phone-row">
+    <a href="tel:+15402270899" class="phone-num">📞 (540) 227-0899</a>
+  </div>
+  <div class="problem-tag">🔴 No website · Stump grinding $150-600/stump · Seasonal demand</div>
+  <div class="msg-box" id="msg-54">Hey — searched stump grinding in Fredericksburg and Steiner &amp; Son's doesn't show up on Google. Spring and fall are when homeowners are looking to clear stumps from storm damage and tree removal — right now they're calling whoever they find first on Google. Stump jobs run $150-600 each, and that work adds up fast with volume. No website means you're getting passed over every time someone searches. I build contractor websites in Fredericksburg — kalnyesgrowth.com. $600 to launch. Free call anytime.</div>
+  <div class="btn-row">
+    <button class="btn btn-copy" onclick="copyMsg(54)">📋 Copy</button>
+    <a href="sms:+15402270899" class="btn btn-sms" onclick="markSent(54)">💬 SMS</a>
+  </div>
+</div>
+
 <!-- 50 -->
 <div class="card" id="card-50">
   <div class="card-header">
@@ -963,7 +997,7 @@
 
 <script>
 let sentCount = 0;
-const total = 52;
+const total = 54;
 
 function copyMsg(n) {
   const msg = document.getElementById('msg-' + n).textContent;
