@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Real VA Leads — KalnyesGrowth</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{overflow-x:hidden}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f1117;color:#e8edf5;padding:16px 16px 80px;-webkit-font-smoothing:antialiased}
+    h1{font-size:1.25rem;font-weight:900;color:#fff;margin-bottom:2px}
+    .sub{font-size:.78rem;color:#6b7280;margin-bottom:18px}
+    .goal-bar{background:#14532d;border:2px solid #22c55e;border-radius:10px;padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .goal-bar-left{font-size:.82rem;color:#86efac;font-weight:700}
+    .goal-count{font-size:1.6rem;font-weight:900;color:#22c55e;line-height:1}
+    .goal-label{font-size:.65rem;color:#86efac;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .tip{background:#1e2433;border-left:3px solid #3b82f6;border-radius:8px;padding:11px 14px;font-size:.78rem;color:#93c5fd;margin-bottom:18px;line-height:1.55}
+    .niche-divider{font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#4b5563;margin:22px 0 10px;padding:0 2px;border-top:1px solid rgba(255,255,255,.06);padding-top:16px}
+    .card{background:#1a1f2e;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:15px;margin-bottom:12px;position:relative}
+    .card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+    .card-biz{font-size:.95rem;font-weight:800;color:#fff}
+    .card-niche{font-size:.65rem;font-weight:700;background:rgba(99,102,241,.15);color:#a5b4fc;border-radius:6px;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0;margin-left:8px;margin-top:2px}
+    .card-phone{font-size:.88rem;font-weight:700;color:#60a5fa;margin-bottom:6px}
+    .card-why{font-size:.72rem;color:#f59e0b;background:rgba(245,158,11,.08);border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:10px;font-weight:600}
+    .msg{background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:11px;font-size:.79rem;color:#d1d5db;line-height:1.65;margin-bottom:10px;white-space:pre-wrap;word-break:break-word}
+    .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 6px;border-radius:8px;font-size:.82rem;font-weight:800;border:none;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;transition:opacity .1s}
+    .btn:active{opacity:.75}
+    .btn-copy{background:#3b82f6;color:#fff}
+    .btn-copy.ok{background:#22c55e;color:#000}
+    .btn-sms{background:#22c55e;color:#000}
+    .btn-wa{background:#25D366;color:#fff;grid-column:span 2}
+    .sent-badge{position:absolute;top:12px;right:12px;font-size:.65rem;font-weight:800;color:#22c55e;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);border-radius:100px;padding:2px 9px;display:none}
+    .sent-badge.show{display:block}
+    .post-section{background:#1a1f2e;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;margin-bottom:14px}
+    .post-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#a78bfa;margin-bottom:10px}
+    .post-body{background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;font-size:.8rem;color:#d1d5db;line-height:1.7;white-space:pre-wrap;word-break:break-word;margin-bottom:10px}
+    .btn-full{display:block;width:100%;padding:13px;border-radius:8px;font-size:.85rem;font-weight:800;border:none;cursor:pointer;text-align:center;text-decoration:none;-webkit-tap-highlight-color:transparent}
+    .progress-section{background:#0f1117;border:2px solid rgba(34,197,94,.25);border-radius:12px;padding:14px;margin-bottom:20px;text-align:center}
+    .progress-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#6b7280;margin-bottom:8px}
+    .progress-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+    .progress-dot{width:28px;height:28px;border-radius:50%;background:#1e2433;border:2px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#4b5563;cursor:pointer;transition:all .2s}
+    .progress-dot.done{background:#22c55e;border-color:#22c55e;color:#000}
+    footer{text-align:center;margin-top:30px;font-size:.72rem;color:#374151}
+  </style>
+</head>
+<body>
+
+<h1>🎯 Real VA Leads — Tap to Text</h1>
+<p class="sub">22 verified local contractors · Stafford / Fredericksburg area · Built May 2026</p>
+
+<div class="goal-bar">
+  <div class="goal-bar-left">Bookings needed this week:<br><span style="font-size:.72rem;color:#86efac;font-weight:600">Text 5 contractors/day = 20 bookings in 3 days</span></div>
+  <div style="text-align:right">
+    <div class="goal-count" id="booked-count">0</div>
+    <div class="goal-label">of 20 booked</div>
+  </div>
+</div>
+
+<div class="tip">💡 <strong>Best time to text:</strong> 8–10am or 6–8pm weekdays. Use the free-preview trade link so they land on a page built for their niche. Send 5 today, 5 tomorrow, 5 Saturday. You'll hit 20.</div>
+
+<!-- PROGRESS TRACKER -->
+<div class="progress-section">
+  <div class="progress-title">Booking tracker — tap a dot when someone schedules</div>
+  <div class="progress-row" id="progress-row"></div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ELECTRICIANS                               -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">⚡ Electricians (2 leads)</div>
+
+<div class="card" id="card-1">
+  <span class="sent-badge" id="badge-1">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Franco's Electrical Services</div>
+      <div class="card-phone">📞 (540) 919-2568</div>
+      <div class="card-why">Stafford, VA · Small local shop · High-margin niche</div>
+    </div>
+    <div class="card-niche">Electric</div>
+  </div>
+  <div class="msg" id="msg-1">Hey — my name is Jose, I'm a web designer based in Stafford. I already built a free demo website for an electrical contractor in this area. Looks like you don't have a site that's bringing in calls.
+
+I'll build yours free — $600 to launch if you love it, zero if you don't. Takes a quick 15-min call to go over it.
+
+See the demo: kalnyesgrowth.com/free-preview/?trade=electrician
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(1)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15409192568" onclick="markSent(1)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15409192568?text=Hey%20%E2%80%94%20my%20name%20is%20Jose%2C%20I%27m%20a%20web%20designer%20based%20in%20Stafford.%20I%20already%20built%20a%20free%20demo%20website%20for%20an%20electrical%20contractor%20in%20this%20area.%20I%27ll%20build%20yours%20free%20%E2%80%94%20%24600%20to%20launch%20if%20you%20love%20it%2C%20zero%20if%20you%20don%27t.%20See%20the%20demo%3A%20kalnyesgrowth.com%2Ffree-preview%2F%3Ftrade%3Delectrician" onclick="markSent(1)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-2">
+  <span class="sent-badge" id="badge-2">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">JF Electrical Contractors</div>
+      <div class="card-phone">📞 (540) 891-1812</div>
+      <div class="card-why">Fredericksburg · 23 Yelp reviews · Deserves more leads</div>
+    </div>
+    <div class="card-niche">Electric</div>
+  </div>
+  <div class="msg" id="msg-2">Hi — Jose here, web designer based in Stafford. Saw JF Electrical on Yelp — 23 reviews, solid reputation. A good website would double the calls you're already getting.
+
+Free demo built for your business — $600 to go live if you love it, zero if you don't. Quick 15-min call to show you:
+
+kalnyesgrowth.com/free-preview/?trade=electrician
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(2)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15408911812" onclick="markSent(2)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15408911812" onclick="markSent(2)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ROOFERS                                    -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">🏠 Roofers (5 leads)</div>
+
+<div class="card" id="card-3">
+  <span class="sent-badge" id="badge-3">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Stafford VA Roofing Pros</div>
+      <div class="card-phone">📞 (540) 600-4433</div>
+      <div class="card-why">Local Stafford · Storm season = peak · $10-20k/job</div>
+    </div>
+    <div class="card-niche">Roofing</div>
+  </div>
+  <div class="msg" id="msg-3">Hey — Jose here, based in Stafford. Storm season means homeowners searching "roof repair Stafford VA" right now. If your site isn't showing up, that job goes to whoever is.
+
+I build roofing websites free — full site, your photos, your reviews. $600 to launch if you love it. Zero if you don't.
+
+See what yours could look like: kalnyesgrowth.com/free-preview/?trade=roofing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(3)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15406004433" onclick="markSent(3)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15406004433" onclick="markSent(3)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-4">
+  <span class="sent-badge" id="badge-4">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Taft Roofing</div>
+      <div class="card-phone">📞 (540) 371-3065</div>
+      <div class="card-why">Fredericksburg · Also does siding + gutters · Multi-service</div>
+    </div>
+    <div class="card-niche">Roofing</div>
+  </div>
+  <div class="msg" id="msg-4">Hi — my name is Jose, I'm a web designer in Stafford. I build websites for roofers in Virginia that rank on Google and turn storm-season searches into booked jobs.
+
+Free site built first — you only pay $600 if you love it. Zero risk.
+
+Quick look: kalnyesgrowth.com/free-preview/?trade=roofing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(4)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403713065" onclick="markSent(4)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403713065" onclick="markSent(4)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-5">
+  <span class="sent-badge" id="badge-5">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Roofs Fast</div>
+      <div class="card-phone">📞 (540) 300-6673</div>
+      <div class="card-why">Locally-owned · Stafford area · Small shop, big potential</div>
+    </div>
+    <div class="card-niche">Roofing</div>
+  </div>
+  <div class="msg" id="msg-5">Hey — Jose here, web designer in Stafford VA. I noticed Roofs Fast doesn't have a website that's bringing in leads. A roofing site that shows up on Google during storm season pays for itself on the first job.
+
+I build it free. $600 to launch if you love it. Walk away free if not.
+
+kalnyesgrowth.com/free-preview/?trade=roofing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(5)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403006673" onclick="markSent(5)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403006673" onclick="markSent(5)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-6">
+  <span class="sent-badge" id="badge-6">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Roof Pros VA</div>
+      <div class="card-phone">📞 (540) 850-5165</div>
+      <div class="card-why">Fredericksburg · Full-service · Free estimates = needs online lead gen</div>
+    </div>
+    <div class="card-niche">Roofing</div>
+  </div>
+  <div class="msg" id="msg-6">Hey — Jose here from Stafford. I build websites for roofing companies in Fredericksburg that capture those emergency storm calls before your competitors do.
+
+I'll build yours free first — show you the full site. $600 to go live if you're happy with it, nothing if you're not.
+
+See a roofing demo: kalnyesgrowth.com/free-preview/?trade=roofing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(6)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15408505165" onclick="markSent(6)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15408505165" onclick="markSent(6)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-7">
+  <span class="sent-badge" id="badge-7">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Ask Zello Roofing</div>
+      <div class="card-phone">📞 (540) 406-3589</div>
+      <div class="card-why">Stafford/Spotsylvania · Local · Free estimate offer</div>
+    </div>
+    <div class="card-niche">Roofing</div>
+  </div>
+  <div class="msg" id="msg-7">Hey — Jose here, Stafford-based web designer. I build roofing websites that rank on Google and send emergency repair calls straight to your phone. Built for Virginia storm season.
+
+Zero cost to see yours — $600 to launch if you love it, free if you don't.
+
+kalnyesgrowth.com/free-preview/?trade=roofing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(7)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15404063589" onclick="markSent(7)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15404063589" onclick="markSent(7)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HVAC                                       -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">❄️ HVAC (6 leads)</div>
+
+<div class="card" id="card-8">
+  <span class="sent-badge" id="badge-8">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Hynes HVAC LLC</div>
+      <div class="card-phone">📞 (540) 300-1557</div>
+      <div class="card-why">Stafford, VA · Local LLC · AC season = right now</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-8">Hey — Jose here, web designer based in Stafford. AC season is here and homeowners are searching "HVAC repair Stafford" right now. If Hynes HVAC isn't showing up on Google, someone else is getting those calls.
+
+I'll build you a full website free — $600 to launch if you love it. Zero if you don't. Quick 15-min call.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(8)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403001557" onclick="markSent(8)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403001557" onclick="markSent(8)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-9">
+  <span class="sent-badge" id="badge-9">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Fredericksburg Heating & Cooling</div>
+      <div class="card-phone">📞 (540) 374-1087</div>
+      <div class="card-why">Fredericksburg · Established · Could rank higher w/ better site</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-9">Hi — Jose here from Stafford. I design HVAC websites that capture emergency AC calls during peak season — the "my AC died at 10pm" searches that turn into $3k repair jobs.
+
+I'll build yours free first, you review every page. $600 to go live if you love it. Nothing if you don't.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(9)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403741087" onclick="markSent(9)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403741087" onclick="markSent(9)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-10">
+  <span class="sent-badge" id="badge-10">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">OHA HVAC, Plumbing & Roofing</div>
+      <div class="card-phone">📞 (540) 205-8755</div>
+      <div class="card-why">Multi-service · High-value · Needs strong local site</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-10">Hey — Jose here, Stafford web designer. OHA is offering HVAC + plumbing + roofing — that's three high-ticket services. A strong website showing all three and ranking locally would bring in jobs all year.
+
+Free site first. $600 to launch. Zero if you walk away.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(10)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15402058755" onclick="markSent(10)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15402058755" onclick="markSent(10)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-11">
+  <span class="sent-badge" id="badge-11">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">I.C.E. Heating & Cooling</div>
+      <div class="card-phone">📞 (540) 654-5518</div>
+      <div class="card-why">Stafford VA · AC season right now · Emergency call market</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-11">Hey — Jose here, local web designer in Stafford. With summer AC season peaking, homeowners are searching for HVAC help every day. A fast mobile site with click-to-call captures those emergency jobs.
+
+I'll build yours free. $600 to launch if you love it. Zero if not. 15-min call to look it over.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(11)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15406545518" onclick="markSent(11)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15406545518" onclick="markSent(11)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-12">
+  <span class="sent-badge" id="badge-12">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Ultimate Air, Inc.</div>
+      <div class="card-phone">📞 (540) 684-5473</div>
+      <div class="card-why">Fredericksburg area · AC repair + installation · Peak demand now</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-12">Hi — Jose here, Stafford-based web designer. Ultimate Air has a great service area — I'd love to build a website that brings those AC emergency calls in all summer long.
+
+Free to build and look at. $600 to launch. Walk away free if it's not exactly right.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(12)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15406845473" onclick="markSent(12)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15406845473" onclick="markSent(12)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-13">
+  <span class="sent-badge" id="badge-13">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Total Comfort HVAC & Plumbing</div>
+      <div class="card-phone">📞 (540) 368-6174</div>
+      <div class="card-why">Fredericksburg · Dual-service · Strong booking potential</div>
+    </div>
+    <div class="card-niche">HVAC</div>
+  </div>
+  <div class="msg" id="msg-13">Hey — Jose here from Stafford. I build HVAC + plumbing websites that rank locally and turn searches into booked calls. Total Comfort is offering both — one site, two revenue streams showing.
+
+Free build first. $600 to launch. Nothing if you don't love it.
+
+kalnyesgrowth.com/free-preview/?trade=hvac
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(13)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403686174" onclick="markSent(13)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403686174" onclick="markSent(13)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PAINTERS                                   -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">🖌️ Painters (4 leads)</div>
+
+<div class="card" id="card-14">
+  <span class="sent-badge" id="badge-14">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Medias Painting LLC</div>
+      <div class="card-phone">📞 (540) 670-3022</div>
+      <div class="card-why">Stafford VA · Local LLC · $2-6k exterior jobs</div>
+    </div>
+    <div class="card-niche">Painting</div>
+  </div>
+  <div class="msg" id="msg-14">Hey — Jose here, web designer in Stafford. I build painting websites with before/after galleries, quote request forms, and Google Maps ranking — the kind of site that books $4k exterior jobs from people searching "painter near me."
+
+Free to build. $600 to launch if you love it. Zero if you don't.
+
+kalnyesgrowth.com/free-preview/?trade=painting
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(14)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15406703022" onclick="markSent(14)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15406703022" onclick="markSent(14)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-15">
+  <span class="sent-badge" id="badge-15">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">JC Custom Painting</div>
+      <div class="card-phone">📞 (571) 200-3668</div>
+      <div class="card-why">NoVA/Fredericksburg · Custom work · Before/after gallery needed</div>
+    </div>
+    <div class="card-niche">Painting</div>
+  </div>
+  <div class="msg" id="msg-15">Hi — Jose here from Stafford. A painting site with your before/after photos and Google reviews does the selling for you — homeowners come pre-sold before they even call.
+
+I'll build it free. $600 to go live if you love it. Nothing if you don't.
+
+See a painting demo: kalnyesgrowth.com/free-preview/?trade=painting
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(15)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15712003668" onclick="markSent(15)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15712003668" onclick="markSent(15)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-16">
+  <span class="sent-badge" id="badge-16">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Immersive Painting LLC</div>
+      <div class="card-phone">📞 (540) 760-7953</div>
+      <div class="card-why">Stafford VA · Great name for branding · Exterior season = now</div>
+    </div>
+    <div class="card-niche">Painting</div>
+  </div>
+  <div class="msg" id="msg-16">Hey — Jose here, local web designer in Stafford. Immersive Painting is a great name — let me build a site that shows off that brand and books exterior jobs all spring and summer.
+
+Free site. $600 to launch if you love it. Walk away free if not. 15-min call.
+
+kalnyesgrowth.com/free-preview/?trade=painting
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(16)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15407607953" onclick="markSent(16)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15407607953" onclick="markSent(16)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-17">
+  <span class="sent-badge" id="badge-17">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">HBSontime (Painting + Cleaning)</div>
+      <div class="card-phone">📞 (540) 376-4624</div>
+      <div class="card-why">Multi-service · Stafford/Fxbg area · Since 2013 · No strong SEO site</div>
+    </div>
+    <div class="card-niche">Painting</div>
+  </div>
+  <div class="msg" id="msg-17">Hi — Jose here from Stafford. HBSontime offers cleaning, handyman, and painting — that's a ton of value. One well-built site that ranks for all three services could fill your calendar all year.
+
+Free to build and review. $600 to launch. Zero if you don't love it.
+
+kalnyesgrowth.com/free-preview/?trade=painting
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(17)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15403764624" onclick="markSent(17)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15403764624" onclick="markSent(17)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- LANDSCAPING                                -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">🌿 Landscaping (4 leads)</div>
+
+<div class="card" id="card-18">
+  <span class="sent-badge" id="badge-18">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Yard Sharks Lawn Care</div>
+      <div class="card-phone">📞 (540) 223-7533</div>
+      <div class="card-why">Fredericksburg/Stafford · Growing season = right now · Recurring contracts</div>
+    </div>
+    <div class="card-niche">Landscaping</div>
+  </div>
+  <div class="msg" id="msg-18">Hey — Jose here, Stafford web designer. Growing season is here and homeowners are looking for reliable lawn care now. A site that ranks for "lawn care Fredericksburg VA" fills your route with recurring customers.
+
+I'll build yours free. $600 to launch if you love it. Nothing if you don't.
+
+kalnyesgrowth.com/free-preview/?trade=landscaping
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(18)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15402237533" onclick="markSent(18)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15402237533" onclick="markSent(18)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-19">
+  <span class="sent-badge" id="badge-19">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Sorensen Outdoor Services</div>
+      <div class="card-phone">📞 (540) 845-6203</div>
+      <div class="card-why">Stafford/King George/Spotsylvania · Call or text business · Perfect fit</div>
+    </div>
+    <div class="card-niche">Landscaping</div>
+  </div>
+  <div class="msg" id="msg-19">Hi — Jose here from Stafford. Sorensen covers a huge service area — a website that shows up in search for each county would send new customers in all season long without any extra marketing spend.
+
+I'll build it free first. $600 to go live. Zero if you don't love it.
+
+kalnyesgrowth.com/free-preview/?trade=landscaping
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(19)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15408456203" onclick="markSent(19)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15408456203" onclick="markSent(19)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-20">
+  <span class="sent-badge" id="badge-20">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Dexter All In One</div>
+      <div class="card-phone">📞 (703) 225-9595</div>
+      <div class="card-why">Fredericksburg · Lawn + power washing + more · Multi-service</div>
+    </div>
+    <div class="card-niche">Landscaping</div>
+  </div>
+  <div class="msg" id="msg-20">Hey — Jose here, web designer based in Stafford. Dexter All In One covers landscaping, power washing, and more — a website showing all your services and ranking locally would bring leads all year.
+
+Free site built first. $600 to launch. Walk away free if it's not exactly right.
+
+kalnyesgrowth.com/free-preview/?trade=landscaping
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(20)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+17032259595" onclick="markSent(20)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/17032259595" onclick="markSent(20)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-21">
+  <span class="sent-badge" id="badge-21">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">PNH Plumbing & Wells</div>
+      <div class="card-phone">📞 (540) 286-2388</div>
+      <div class="card-why">Stafford + Fauquier + Fredericksburg · Plumbing + well pump</div>
+    </div>
+    <div class="card-niche">Plumbing</div>
+  </div>
+  <div class="msg" id="msg-21">Hey — Jose here from Stafford. Plumbing emergencies happen at 3am — if your site doesn't rank for "plumber Stafford VA" you're invisible when they search. A fast, mobile site with click-to-call fixes that.
+
+Free site. $600 to launch. Zero if you don't love it.
+
+kalnyesgrowth.com/free-preview/?trade=plumbing
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(21)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15402862388" onclick="markSent(21)">💬 Text</a>
+    <a class="btn btn-wa" href="https://wa.me/15402862388" onclick="markSent(21)">💬 WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" id="card-22">
+  <span class="sent-badge" id="badge-22">✓ Sent</span>
+  <div class="card-top">
+    <div>
+      <div class="card-biz">Grass Roots Lawn & Landscaping</div>
+      <div class="card-phone">🌐 grassrootslawnandlandscaping.com</div>
+      <div class="card-why">Family-owned since 2009 · Stafford/Fxbg · Could use better SEO site</div>
+    </div>
+    <div class="card-niche">Landscaping</div>
+  </div>
+  <div class="msg" id="msg-22">Hey — Jose here, web designer in Stafford. Grass Roots has been around since 2009 — a refreshed website built for Google local search would bring in more recurring lawn contracts automatically.
+
+Free to see. $600 to launch. Walk away free if it's not right.
+
+kalnyesgrowth.com/free-preview/?trade=landscaping
+
+— Jose (540) 783-8835</div>
+  <div class="btns">
+    <button class="btn btn-copy" onclick="copy(22)">📋 Copy</button>
+    <a class="btn btn-sms" href="sms:+15408456203" onclick="markSent(22)">💬 Text — look up number on site</a>
+    <a class="btn btn-wa" target="_blank" href="https://grassrootslawnandlandscaping.com" onclick="markSent(22)">🌐 Visit Site for #</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SOCIAL MEDIA POSTS                         -->
+<!-- ══════════════════════════════════════════ -->
+<div class="niche-divider">📣 Post These Today — LinkedIn &amp; Facebook</div>
+
+<div class="tip">Post to: your LinkedIn, any VA contractor / home service Facebook groups, Nextdoor (Stafford area), and your own Facebook story. Takes 10 minutes.</div>
+
+<div class="post-section">
+  <div class="post-label">LinkedIn Post — Post Today</div>
+  <div class="post-body" id="post-linkedin">Attention Virginia home service contractors:
+
+I'm a web designer based in Stafford, VA — and I do something most designers don't.
+
+I build your website FIRST. You see the finished product before you pay a single dollar.
+
+Here's what you get free:
+✅ Full custom website built for your specific niche
+✅ Mobile-first (70% of searches happen on phones)
+✅ Google-optimized so you show up locally
+✅ Click-to-call button front and center
+✅ Your real reviews and photos
+
+If you love it → $600 to launch with hosting included.
+If you don't → walk away. Zero charge. No awkward invoice.
+
+I've built 162+ demo sites for Virginia contractors. Electricians, roofers, HVAC, painters, landscapers — I know what converts in your niche.
+
+📞 (540) 783-8835
+🌐 kalnyesgrowth.com/free-preview/
+
+If you know a local contractor who needs a better web presence, tag them below. I respond personally.
+
+— Jose | Kalnyes Growth | Stafford, VA</div>
+  <button class="btn-full" style="background:#0077b5;color:#fff" onclick="copyPost('linkedin')">📋 Copy LinkedIn Post</button>
+</div>
+
+<div class="post-section">
+  <div class="post-label">Facebook Group Post — Contractor Groups</div>
+  <div class="post-body" id="post-facebook">🚨 Virginia Contractors — Free Website Offer (Stafford-based)
+
+Hey everyone — my name is Jose and I build websites for local home service businesses here in Virginia.
+
+My offer is simple:
+👉 I build your FULL website before you pay anything
+👉 You see every page, every section, on any device
+👉 Love it? $600 to launch with hosting included
+👉 Don't love it? Walk away. No charge. No questions.
+
+I've built 162+ demo sites for businesses in this area — electricians, roofers, HVAC, painters, landscapers, plumbers.
+
+If your website is slow, outdated, or you don't have one — this is for you.
+
+📞 Text or call: (540) 783-8835
+🌐 See demos: kalnyesgrowth.com/free-preview/
+
+Comment your niche below or DM me — I'll show you a demo built specifically for your type of business. 🙌</div>
+  <button class="btn-full" style="background:#1877f2;color:#fff;margin-top:8px" onclick="copyPost('facebook')">📋 Copy Facebook Post</button>
+</div>
+
+<div class="post-section">
+  <div class="post-label">Nextdoor Post — Stafford Neighborhood</div>
+  <div class="post-body" id="post-nextdoor">Hi neighbors — I'm Jose, a web designer based right here in Stafford.
+
+I build websites for local home service businesses — free first, you only pay if you love it.
+
+If you know any local contractor (electrician, roofer, plumber, landscaper, painter, HVAC) who has a bad website or no website — please send them my way.
+
+Every site I build:
+• Fully custom for their business
+• Works perfectly on phones
+• Shows up on Google searches
+• Includes click-to-call button
+• $600 flat to launch, or free if they don't love it
+
+📞 (540) 783-8835 | kalnyesgrowth.com</div>
+  <button class="btn-full" style="background:#00b246;color:#fff;margin-top:8px" onclick="copyPost('nextdoor')">📋 Copy Nextdoor Post</button>
+</div>
+
+<footer>KalnyesGrowth · Stafford, VA · (540) 783-8835 · kalnyesgrowth.com</footer>
+
+<script>
+// Progress tracker
+var TOTAL = 20;
+var booked = JSON.parse(localStorage.getItem('kg-booked-2026') || '[]');
+var sent = JSON.parse(localStorage.getItem('kg-sent-2026') || '[]');
+
+function initProgress() {
+  var row = document.getElementById('progress-row');
+  row.innerHTML = '';
+  for (var i = 1; i <= TOTAL; i++) {
+    var d = document.createElement('div');
+    d.className = 'progress-dot' + (booked.includes(i) ? ' done' : '');
+    d.textContent = i;
+    d.title = 'Booking #' + i;
+    (function(idx) {
+      d.addEventListener('click', function() {
+        if (booked.includes(idx)) {
+          booked = booked.filter(function(x){ return x !== idx; });
+        } else {
+          booked.push(idx);
+        }
+        localStorage.setItem('kg-booked-2026', JSON.stringify(booked));
+        document.getElementById('booked-count').textContent = booked.length;
+        initProgress();
+      });
+    })(i);
+    row.appendChild(d);
+  }
+  document.getElementById('booked-count').textContent = booked.length;
+}
+
+// Restore sent badges
+sent.forEach(function(id) {
+  var badge = document.getElementById('badge-' + id);
+  if (badge) badge.classList.add('show');
+});
+
+initProgress();
+
+function copy(id) {
+  var msg = document.getElementById('msg-' + id);
+  if (!msg) return;
+  var btn = event.target;
+  navigator.clipboard.writeText(msg.textContent.trim()).then(function() {
+    btn.textContent = '✅ Copied';
+    btn.classList.add('ok');
+    setTimeout(function() { btn.textContent = '📋 Copy'; btn.classList.remove('ok'); }, 2000);
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = msg.textContent.trim();
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✅ Copied';
+    btn.classList.add('ok');
+    setTimeout(function() { btn.textContent = '📋 Copy'; btn.classList.remove('ok'); }, 2000);
+  });
+}
+
+function markSent(id) {
+  if (!sent.includes(id)) {
+    sent.push(id);
+    localStorage.setItem('kg-sent-2026', JSON.stringify(sent));
+    var badge = document.getElementById('badge-' + id);
+    if (badge) badge.classList.add('show');
+  }
+}
+
+function copyPost(type) {
+  var el = document.getElementById('post-' + type);
+  if (!el) return;
+  var btn = event.target;
+  navigator.clipboard.writeText(el.textContent.trim()).then(function() {
+    btn.textContent = '✅ Copied — Paste and Post!';
+    setTimeout(function() { btn.textContent = '📋 Copy ' + type.charAt(0).toUpperCase() + type.slice(1) + ' Post'; }, 3000);
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = el.textContent.trim();
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✅ Copied!';
+    setTimeout(function() { btn.textContent = '📋 Copy ' + type.charAt(0).toUpperCase() + type.slice(1) + ' Post'; }, 3000);
+  });
+}
+</script>
+
+</body>
+</html>
