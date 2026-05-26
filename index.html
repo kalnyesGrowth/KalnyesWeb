@@ -4,24 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <title>Kalnyes Growth | Web Design That Gets Local Businesses More Customers</title>
-<meta name="description" content="Kalnyes Growth builds high-performance websites for local businesses — mobile-first, Google-optimized, and built to convert visitors into paying customers. Free preview first. $600 to launch.">
+<meta name="description" content="Kalnyes Growth builds high-performance websites for local businesses — mobile-first, Google-optimized, and built to convert visitors into paying customers. 7-day delivery from $600.">
 <link rel="canonical" href="https://kalnyesgrowth.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kalnyesgrowth.com/">
 <meta property="og:title" content="Kalnyes Growth | Web Design That Gets Local Businesses More Customers">
-<meta property="og:description" content="High-performance websites for local businesses. Mobile-first, Google-optimized, built to convert. Free preview before you pay a cent. $600 to launch.">
+<meta property="og:description" content="High-performance websites for local businesses. Mobile-first, Google-optimized, built to convert. 7-day delivery from $600.">
 <meta property="og:image" content="https://kalnyesgrowth.com/img/portfolio-kg.jpg">
 <meta property="og:site_name" content="Kalnyes Growth">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@KalnyesGrowth">
 <meta name="twitter:title" content="Kalnyes Growth | Web Design for Local Businesses">
-<meta name="twitter:description" content="Mobile-first websites that rank on Google and convert visitors into paying customers. Free preview before you pay. $600 to launch.">
+<meta name="twitter:description" content="Mobile-first websites that rank on Google and convert visitors into paying customers. 7-day delivery from $600.">
 <meta name="twitter:image" content="https://kalnyesgrowth.github.io/KalnyesWeb/img/portfolio-kg.jpg">
-<!-- Calendly loaded early so widget initializes on scroll -->
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <!-- Local Business Schema -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Kalnyes Growth","description":"Web design for local businesses in Stafford VA and beyond — mobile-first, Google-optimized, free preview before you pay. Plumbers, HVAC, landscapers, party rentals, cleaning services.","url":"https://kalnyesgrowth.com","telephone":"+1-540-783-8835","email":"kalnyesgrowth@gmail.com","priceRange":"$","address":{"@type":"PostalAddress","addressLocality":"Stafford","addressRegion":"VA","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.4220,"longitude":-77.4083},"areaServed":[{"@type":"City","name":"Stafford","containedInPlace":{"@type":"State","name":"Virginia"}},{"@type":"City","name":"Fredericksburg","containedInPlace":{"@type":"State","name":"Virginia"}},{"@type":"AdministrativeArea","name":"United States"}],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"21:00"},"sameAs":["https://www.facebook.com/kalnyesgrowth","https://www.instagram.com/kalnyesgrowth","https://www.linkedin.com/in/kalnyesgrowth"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Web Design Services","itemListElement":[{"@type":"Offer","name":"Free Website Preview","description":"Full website built free — pay only if you love it","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Launch Package","description":"Full custom website with hosting included","price":"600","priceCurrency":"USD"}]}}
@@ -42,8 +39,8 @@
   --font:'Segoe UI',system-ui,-apple-system,sans-serif
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:var(--font);background:var(--bg);color:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 h1,h2,h3,h4{color:var(--dark);line-height:1.1;letter-spacing:-.02em}
@@ -387,10 +384,21 @@ p{color:var(--body);line-height:1.75}
 .port-stage{
   display:flex;justify-content:center;align-items:flex-end;
   gap:36px;perspective:2000px;perspective-origin:50% 30%;
-  padding:0 40px 24px
+  padding:0 80px 24px
 }
-.device-showcase{display:flex;align-items:flex-end;justify-content:center;gap:28px;padding:0 32px 32px;width:100%}
-.showcase-item{flex-shrink:0;display:flex;flex-direction:column;align-items:center}
+.port-panel{
+  flex-shrink:0;width:auto;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;
+  transition:transform .55s cubic-bezier(.4,0,.2,1),opacity .55s;
+  cursor:pointer
+}
+.port-panel.p-left{transform:perspective(2000px) rotateY(22deg) translateX(-20px) scale(.84);opacity:.45;transform-origin:right center}
+.port-panel.p-active{transform:perspective(2000px) rotateY(0deg) scale(1) translateZ(20px);z-index:2;opacity:1;cursor:default}
+.port-panel.p-right{transform:perspective(2000px) rotateY(-22deg) translateX(20px) scale(.84);opacity:.45;transform-origin:left center}
+.port-panel:not(.p-active) .phone-screen,
+.port-panel:not(.p-active) .tablet-screen,
+.port-panel:not(.p-active) .desktop-screen{pointer-events:none}
 
 /* ─── PHONE (panel 1) ─── */
 .device-phone{
@@ -505,8 +513,15 @@ p{color:var(--body);line-height:1.75}
   transition:all .2s;text-decoration:none
 }
 .port-btn:hover{background:rgba(26,58,191,.2);border-color:rgba(26,58,191,.5);color:#fff}
-@media(max-width:1060px){.showcase-desktop-item{display:none}.device-showcase{gap:20px}}
-@media(max-width:620px){.showcase-phone-item{display:none}.device-showcase{padding:0 16px 24px}}
+.port-carousel-outer{position:relative;display:flex;align-items:center;justify-content:center}
+.port-nav-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.8);font-size:1.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;line-height:1;flex-shrink:0;position:absolute;top:42%;transform:translateY(-50%);z-index:20}
+.port-nav-btn:hover{background:var(--gold);border-color:var(--gold);color:#000}
+.port-nav-btn:disabled{opacity:.18;pointer-events:none}
+#port-prev{left:8px}
+#port-next{right:8px}
+.port-dots-row{display:flex;justify-content:center;gap:8px;margin-top:24px}
+.port-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:all .3s;padding:0;flex-shrink:0}
+.port-dot.active{width:28px;background:var(--gold)}
 
 /* ══════════════════════════════════════════
    TESTIMONIALS — Google review style
@@ -606,9 +621,6 @@ p{color:var(--body);line-height:1.75}
 footer{background:var(--dark);padding:56px 0 32px}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .footer-brand p{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.7;margin-top:12px;max-width:260px}
-.footer-social{display:flex;gap:14px;margin-top:18px;align-items:center}
-.footer-social a{color:rgba(255,255,255,.35);transition:color .15s;display:flex;align-items:center}
-.footer-social a:hover{color:#fff}
 .footer-logo{font-size:1.1rem;font-weight:900;color:#fff}
 .footer-logo span{color:var(--gold)}
 .footer-col h4{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
@@ -665,6 +677,8 @@ footer{background:var(--dark);padding:56px 0 32px}
   .steps::before{display:none}
   .faq-layout{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .port-stage{perspective:none;gap:20px;padding:0 60px 24px}
+  .port-panel.p-left,.port-panel.p-right,.port-panel.p-active{transform:none;opacity:1}
   .device-monitor{width:360px}
   .desktop-screen{width:340px;height:213px}
   .desktop-screen iframe{width:1000px;height:625px;transform:scale(0.340);transform-origin:0 0;position:absolute;top:0;left:0}
@@ -694,13 +708,16 @@ footer{background:var(--dark);padding:56px 0 32px}
   .nav-links,.nav-phone{display:none}
   .nav-cta .btn{display:none}
   .hamburger{display:flex}
+  .port-stage{justify-content:center}
+  .port-panel.p-left,.port-panel.p-right{display:none}
+  .port-carousel-outer{padding:0 44px}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center}
   .btn-group{flex-direction:column;align-items:flex-start}
 }
 
 @media(max-width:768px){
-  .port-carousel-outer{padding:0 4px}
+  .port-carousel-outer{padding:0 28px}
   .device-monitor{width:284px;border-radius:12px;padding:8px 8px 6px}
   .desktop-screen{width:268px;height:168px;border-radius:4px}
   .desktop-screen iframe{width:780px;height:488px;transform:scale(0.3436);transform-origin:0 0;position:absolute;top:0;left:0}
@@ -714,7 +731,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   .phone-screen iframe{width:390px;height:843px;transform:scale(0.3590);transform-origin:0 0;position:absolute;top:0;left:0}
 }
 @media(max-width:400px){
-  .port-carousel-outer{padding:0 2px}
+  .port-carousel-outer{padding:0 16px}
   .device-monitor{width:264px}
   .desktop-screen{width:248px;height:155px}
   .desktop-screen iframe{width:720px;height:450px;transform:scale(0.3444);transform-origin:0 0;position:absolute;top:0;left:0}
@@ -732,8 +749,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 #announce-bar{
   background:var(--gold);padding:11px 24px;text-align:center;
   font-size:.82rem;font-weight:600;color:#fff;
-  position:relative;overflow:hidden;clip-path:inset(0);
-  margin-top:70px
+  position:relative;overflow:hidden
 }
 #announce-bar::before{
   content:'';position:absolute;inset:0;
@@ -742,13 +758,6 @@ footer{background:var(--dark);padding:56px 0 32px}
 }
 @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .announce-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
-@media(max-width:600px){
-  #announce-bar{padding:10px 16px;font-size:.76rem}
-  .announce-inner{flex-direction:column;gap:5px;text-align:center}
-  .announce-inner>span{font-size:.74rem;line-height:1.4}
-  .announce-dot{display:none}
-  .announce-cta{font-size:.74rem;padding:5px 14px}
-}
 .announce-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.9);flex-shrink:0;animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
 .announce-cta{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.2);
@@ -854,7 +863,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .meet-jose-section{padding:80px 0;background:#fff;border-top:1px solid var(--border)}
 .meet-jose-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:960px;margin:0 auto}
 .jose-photo-wrap{position:relative;text-align:center}
-.jose-avatar{width:220px;height:220px;border-radius:50%;margin:0 auto;display:block;box-shadow:0 16px 48px rgba(26,58,191,.25);border:4px solid #fff;outline:3px solid var(--gold)}
+.jose-avatar{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,#1a3abf,#0f2899);display:flex;align-items:center;justify-content:center;font-size:5rem;font-weight:900;color:#fff;margin:0 auto;box-shadow:0 16px 48px rgba(26,58,191,.25)}
 .jose-location-badge{display:inline-flex;align-items:center;gap:6px;background:#f0f4ff;color:#1a3abf;font-size:.78rem;font-weight:800;padding:6px 14px;border-radius:50px;margin-top:16px;letter-spacing:.05em}
 .jose-bio h3{font-size:1.6rem;margin-bottom:8px}
 .jose-bio .jose-subtitle{color:var(--muted);font-size:1rem;margin-bottom:20px}
@@ -873,7 +882,7 @@ footer{background:var(--dark);padding:56px 0 32px}
 .call-step-icon{font-size:1.8rem;display:block;margin-bottom:8px}
 .call-step-title{font-weight:800;font-size:.88rem;color:var(--dark);margin-bottom:4px}
 .call-step-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
-.call-step-num{display:block;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.call-step-num{display:inline-block;background:var(--gold);color:#fff;font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:50px;margin-bottom:8px}
 @media(max-width:600px){.call-steps{grid-template-columns:1fr}.call-step{text-align:left;display:flex;gap:14px;align-items:flex-start}.call-step-icon{flex-shrink:0}}
 
 /* ── DIRECT CONTACT STRIP ── */
@@ -987,8 +996,8 @@ footer{background:var(--dark);padding:56px 0 32px}
 <div id="announce-bar">
   <div class="announce-inner">
     <span class="announce-dot"></span>
-    <span>⚡ <strong>165+ demo sites built for Virginia contractors</strong> — Free preview built for your business in 48 hours. You pay nothing until you love it.</span>
-    <a href="https://kalnyesgrowth.com/free-preview/" class="announce-cta">See Live Demos →</a>
+    <span>⚡ <strong>FREE Website + Facebook Profile Review</strong> — See your custom site before paying a dollar. Limited spots this week.</span>
+    <a href="#book-call" class="announce-cta">Book Free Call →</a>
   </div>
 </div>
 
@@ -1007,7 +1016,7 @@ footer{background:var(--dark);padding:56px 0 32px}
     </div>
     <div class="nav-cta">
       <span class="nav-phone">📞 (540) 783-8835</span>
-      <a href="#book-call" class="btn btn-green">Book Free Call</a>
+      <a href="#book-call" class="btn btn-green">Get a Free Quote</a>
     </div>
     <div class="hamburger" onclick="toggleMenu()" id="hamburger">
       <span></span><span></span><span></span>
@@ -1031,30 +1040,31 @@ footer{background:var(--dark);padding:56px 0 32px}
   <div class="container">
     <div class="hero-layout">
       <div class="hero-left">
-        <div class="hero-badge">📍 Stafford, VA Web Designer — 165+ Local Demos Built</div>
+        <div class="hero-badge">Web Design for Local Businesses — US & Worldwide</div>
         <h1 class="hero-h1">We Build Websites That Make Local Businesses <em>More Money</em></h1>
         <p class="hero-sub">Not just good-looking websites — revenue machines. Every Kalnyes Growth site is mobile-first, Google-optimized, and engineered to turn first-time visitors into paying customers who call, book, and come back.</p>
         <p style="font-size:.95rem;font-weight:700;color:var(--gold);margin-bottom:20px;margin-top:-4px;">✓ We build your site FREE first. You only pay if you love it. Zero risk.</p>
+        <p style="font-size:.88rem;font-weight:600;color:var(--body);margin-bottom:20px;margin-top:-8px;">🔵 <strong>NEW:</strong> Every project includes a free Facebook profile review — we set up your page to bring in more clients every week.</p>
         <div class="btn-group">
           <a href="#book-call" class="btn btn-gold btn-lg">Claim Free Website Preview &nbsp;→</a>
           <a href="#work" class="btn btn-outline btn-lg">See Our Work</a>
         </div>
         <div class="hero-stats">
           <div>
-            <div class="hero-stat-num">$600</div>
-            <div class="hero-stat-label">One-Time Price</div>
+            <div class="hero-stat-num">57+</div>
+            <div class="hero-stat-label">Sites Built</div>
           </div>
           <div>
-            <div class="hero-stat-num">5 Days</div>
-            <div class="hero-stat-label">Preview Delivered</div>
+            <div class="hero-stat-num">7 Days</div>
+            <div class="hero-stat-label">Avg. Delivery</div>
           </div>
           <div>
-            <div class="hero-stat-num">100%</div>
-            <div class="hero-stat-label">Free If You Don't Love It</div>
+            <div class="hero-stat-num">4.9 ★</div>
+            <div class="hero-stat-label">Client Rating</div>
           </div>
           <div>
             <div class="hero-stat-num">$0 Risk</div>
-            <div class="hero-stat-label">Pay Only When Happy</div>
+            <div class="hero-stat-label">Free Preview First</div>
           </div>
         </div>
       </div>
@@ -1098,35 +1108,13 @@ footer{background:var(--dark);padding:56px 0 32px}
 <div id="trust-bar">
   <div class="container">
     <div class="trust-inner">
-      <span class="trust-label">165+ demos built for Virginia businesses:</span>
+      <span class="trust-label">Clients we've built for:</span>
       <div class="trust-clients">
-        <span class="trust-client">🔧 Plumbing</span>
-        <span class="trust-client">❄️ HVAC</span>
-        <span class="trust-client">🌿 Landscaping</span>
-        <span class="trust-client">🎪 Party Rental</span>
-        <span class="trust-client">🏠 Handyman</span>
-        <span class="trust-client">🧹 Cleaning</span>
-        <span class="trust-client">🖌️ Painting</span>
-        <span class="trust-client">🔌 Electrical</span>
+        <span class="trust-client">Pepe's Party Rental</span>
+        <span class="trust-client">FreshCut Landscaping</span>
+        <span class="trust-client">Red Apple Tobacco</span>
+        <span class="trust-client" style="color:var(--muted);background:transparent;border-style:dashed">+54 more businesses</span>
       </div>
-      <a href="https://kalnyesgrowth.com/free-preview/" style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:800;color:var(--gold2);background:var(--gold-bg);border:1px solid rgba(26,58,191,.2);padding:6px 16px;border-radius:50px;white-space:nowrap;text-decoration:none;margin-left:8px">See all demos →</a>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════ LOCAL COVERAGE STRIP ══════════════════ -->
-<div style="background:#fff;padding:18px 0;border-bottom:1px solid var(--border)">
-  <div class="container">
-    <div style="display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;font-size:.82rem;font-weight:600;color:var(--muted)">
-      <span style="color:var(--dark);font-weight:800;font-size:.85rem">📍 Serving Virginia:</span>
-      <span>Stafford</span>
-      <span>Fredericksburg</span>
-      <span>Manassas</span>
-      <span>Woodbridge</span>
-      <span>Dale City</span>
-      <span>Spotsylvania</span>
-      <span>Culpeper</span>
-      <span style="color:var(--gold);font-weight:700">+ All of Northern VA</span>
     </div>
   </div>
 </div>
@@ -1338,7 +1326,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="price-amount">
           <span class="price-dollar">$600</span>
         </div>
-        <p class="price-note">One-time · Hosting included for 1 year</p>
+        <p class="price-note">One-time · You own it forever</p>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>5-page professional website</li>
@@ -1347,13 +1335,12 @@ footer{background:var(--dark);padding:56px 0 32px}
           <li>Google Maps embedded on your site</li>
           <li>Basic local SEO setup</li>
           <li>SSL security certificate (HTTPS)</li>
-          <li>Free preview before you pay a dollar</li>
           <li>Delivered in 7 business days</li>
           <li class="dimmed">Google Business Profile optimization</li>
           <li class="dimmed">Blog section</li>
           <li class="dimmed">Bilingual site (EN/ES)</li>
         </ul>
-        <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-outline">Book Free Call →</a>
+        <a href="#book-call" class="btn btn-outline">Get Started →</a>
       </div>
 
       <!-- GROWTH — MOST POPULAR -->
@@ -1380,7 +1367,7 @@ footer{background:var(--dark);padding:56px 0 32px}
           <li class="dimmed">Bilingual site (EN/ES)</li>
           <li class="dimmed">Booking / reservation system</li>
         </ul>
-        <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-gold">Book Free Call →</a>
+        <a href="#book-call" class="btn btn-gold">Get Started →</a>
       </div>
 
       <!-- PRO -->
@@ -1409,7 +1396,7 @@ footer{background:var(--dark);padding:56px 0 32px}
           <li>SSL + Analytics + Search Console + Sitemap</li>
           <li>Priority delivery + dedicated support</li>
         </ul>
-        <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" rel="noopener" class="btn btn-green">Book Free Call →</a>
+        <a href="#book-call" class="btn btn-green">Let's Talk →</a>
       </div>
 
     </div>
@@ -1448,7 +1435,7 @@ footer{background:var(--dark);padding:56px 0 32px}
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
             <td style="padding:14px 18px;color:var(--dark);font-weight:600">Price</td>
-            <td style="padding:14px 18px;text-align:center;background:rgba(245,166,35,.04);color:#6ee7b7;font-weight:700">$600 one time</td>
+            <td style="padding:14px 18px;text-align:center;background:rgba(245,166,35,.04);color:#6ee7b7;font-weight:700">$400 one time</td>
             <td style="padding:14px 18px;text-align:center;color:var(--muted)">$200–$500/yr + your time</td>
             <td style="padding:14px 18px;text-align:center;color:var(--muted)">$3,000–$10,000+</td>
           </tr>
@@ -1491,7 +1478,7 @@ footer{background:var(--dark);padding:56px 0 32px}
     <div class="process-intro">
       <span class="eyebrow">The Process</span>
       <h2>Your New Website, Live in 7 Business Days</h2>
-      <p style="color:var(--muted)">A proven process that's fast, clear, and completely done-for-you. Here's exactly how it works.</p>
+      <p style="color:var(--muted)">We've built 57+ sites and refined a process that's fast, clear, and completely done-for-you. Here's how it works.</p>
     </div>
     <div class="steps">
       <div class="step">
@@ -1526,71 +1513,112 @@ footer{background:var(--dark);padding:56px 0 32px}
   <div class="container">
     <div class="work-intro">
       <span class="eyebrow" style="color:var(--gold)">Our Work</span>
-      <h2>Live Previews. Real Quality. See It Before You Commit.</h2>
-      <p>These aren't mockups — they're fully functional websites built for real niches. Click the buttons, scroll through, explore every section. This is exactly the quality your customers will see when your site goes live.</p>
+      <h2>Real Sites. Real Clients. Real Results.</h2>
+      <p>These aren't mockups — they're live, active websites we've built for real local businesses. Scroll through them, click the buttons, explore. This is the quality your customers will see.</p>
     </div>
   </div>
 
-  <!-- All 3 devices visible at once — no arrows needed -->
-  <div class="device-showcase">
+  <div class="port-carousel-outer">
+    <button class="port-nav-btn" id="port-prev" disabled aria-label="Previous project">&#8249;</button>
 
-    <!-- PHONE: Red Apple Tobacco -->
-    <div class="showcase-item showcase-phone-item">
-      <div class="device-phone">
-        <span class="phone-pwr"></span>
-        <div class="phone-screen">
-          <iframe src="https://kalnyesgrowth.github.io/Tobbaco/" loading="lazy" title="Red Apple Tobacco &amp; Convenience"></iframe>
+    <div class="port-stage" id="port-stage">
+
+      <!-- Panel 1: Red Apple Tobacco — PHONE -->
+      <div class="port-panel p-left">
+        <div class="device-phone">
+          <span class="phone-pwr"></span>
+          <div class="phone-screen" id="vp-pepes">
+            <div id="pi-pepes">
+              <iframe src="https://kalnyesgrowth.github.io/Tobbaco/" loading="lazy" title="Red Apple Tobacco & Convenience"></iframe>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
         </div>
-        <div class="phone-home-bar"></div>
-      </div>
-      <div class="port-footer">
-        <div class="port-tag">📱 Mobile · Retail Shop · Stafford, VA</div>
-        <div class="port-name">Red Apple Tobacco</div>
-        <a href="https://kalnyesgrowth.github.io/Tobbaco/" target="_blank" rel="noopener" class="port-btn">View Site →</a>
-      </div>
-    </div>
-
-    <!-- TABLET: FreshCut Landscaping (center) -->
-    <div class="showcase-item">
-      <div class="device-tablet">
-        <div class="tablet-screen">
-          <iframe src="https://kalnyesgrowth.com/freshcut-demo/" loading="lazy" title="FreshCut Landscaping LLC" allow="autoplay; fullscreen; encrypted-media"></iframe>
-        </div>
-        <div class="tablet-home-bar"></div>
-      </div>
-      <div class="port-footer">
-        <div class="port-tag">📟 Tablet · Landscaping · Stafford, VA</div>
-        <div class="port-name">FreshCut Landscaping LLC</div>
-        <a href="https://kalnyesgrowth.com/freshcut-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site →</a>
-      </div>
-    </div>
-
-  <!-- DESKTOP: Pepe's Party Rental -->
-  <div class="showcase-item showcase-desktop-item">
-    <div class="device-desktop">
-      <div class="device-monitor">
-        <div class="desktop-screen">
-          <iframe src="https://pepespartyrentall.com/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
+        <div class="port-footer">
+          <div class="port-tag">📱 Mobile · Tobacco Shop · Stafford, VA</div>
+          <div class="port-name">Red Apple Tobacco &amp; Convenience</div>
+          <a href="https://kalnyesgrowth.github.io/Tobbaco/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
         </div>
       </div>
-      <div class="device-neck"></div>
-      <div class="device-base"></div>
+
+      <!-- Panel 2: FreshCut Landscaping — TABLET -->
+      <div class="port-panel p-active">
+        <div class="device-tablet">
+          <div class="tablet-screen" id="vp-kg">
+            <div id="pi-kg">
+              <iframe src="https://kalnyesgrowth.github.io/freshcut-demo/" loading="lazy" title="FreshCut Landscaping LLC" allow="autoplay; fullscreen; encrypted-media"></iframe>
+            </div>
+          </div>
+          <div class="tablet-home-bar"></div>
+        </div>
+        <div class="port-footer">
+          <div class="port-tag">📟 Tablet · Landscaping · Stafford, VA</div>
+          <div class="port-name">FreshCut Landscaping LLC</div>
+          <a href="https://kalnyesgrowth.github.io/freshcut-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+        </div>
+      </div>
+
+      <!-- Panel 3: Pepe's Party Rental — DESKTOP (live iframe demo) -->
+      <div class="port-panel p-right">
+        <div class="device-desktop">
+          <div class="device-monitor">
+            <div class="desktop-screen" id="vp-freshcut">
+              <div id="pi-freshcut">
+                <iframe src="https://kalnyesgrowth.github.io/pepes-demo/" loading="lazy" title="Pepe's Party Rental" allow="autoplay; fullscreen; encrypted-media"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="device-neck"></div>
+          <div class="device-base"></div>
+        </div>
+        <div class="port-footer">
+          <div class="port-tag">🖥 Desktop · Party Rentals · Virginia</div>
+          <div class="port-name">Pepe's Party Rental</div>
+          <a href="https://kalnyesgrowth.github.io/pepes-demo/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+        </div>
+      </div>
+
+      <!-- Panel 4: White Plumbing Co. — PHONE -->
+      <div class="port-panel p-right">
+        <div class="device-phone">
+          <span class="phone-pwr"></span>
+          <div class="phone-screen" id="vp-whiteplumbing">
+            <div id="pi-whiteplumbing">
+              <iframe src="https://kalnyesgrowth.com/white-plumbing/" loading="lazy" title="White Plumbing Co."></iframe>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+        <div class="port-footer">
+          <div class="port-tag">📱 Mobile · Plumbing · Stafford, VA</div>
+          <div class="port-name">White Plumbing Co.</div>
+          <a href="https://kalnyesgrowth.com/white-plumbing/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+        </div>
+      </div>
+
+      <!-- Panel 5: Cooling & Heating of San Antonio — TABLET -->
+      <div class="port-panel p-right">
+        <div class="device-tablet">
+          <div class="tablet-screen" id="vp-hvac">
+            <div id="pi-hvac">
+              <iframe src="https://kalnyesgrowth.com/san-antonio-hvac/" loading="lazy" title="Cooling & Heating of San Antonio"></iframe>
+            </div>
+          </div>
+          <div class="tablet-home-bar"></div>
+        </div>
+        <div class="port-footer">
+          <div class="port-tag">📟 Tablet · HVAC · San Antonio, TX</div>
+          <div class="port-name">Cooling &amp; Heating of San Antonio</div>
+          <a href="https://kalnyesgrowth.com/san-antonio-hvac/" target="_blank" rel="noopener" class="port-btn">View Live Site &nbsp;→</a>
+        </div>
+      </div>
+
     </div>
-    <div class="port-footer">
-      <div class="port-tag">🖥 Desktop · Party Rentals · Virginia</div>
-      <div class="port-name">Pepe's Party Rental</div>
-      <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="port-btn">View Site →</a>
-    </div>
+
+    <button class="port-nav-btn" id="port-next" aria-label="Next project">&#8250;</button>
   </div>
 
-</div>
-
-<!-- More demo sites — quick links -->
-<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;padding:16px 24px 0">
-  <a href="https://kalnyesgrowth.com/white-plumbing/" target="_blank" rel="noopener" class="port-btn">🔧 White Plumbing Co. →</a>
-  <a href="https://kalnyesgrowth.com/san-antonio-hvac/" target="_blank" rel="noopener" class="port-btn">❄️ HVAC San Antonio →</a>
-  <a href="https://kalnyesgrowth.github.io/jesdel-electric-demo/" target="_blank" rel="noopener" class="port-btn">⚡ Jesdel Electric →</a>
-</div>
+  <div class="port-dots-row" id="port-dots-row"></div>
 
   <div style="text-align:center;margin-top:36px">
     <a href="#book-call" class="btn btn-gold btn-lg">Get a Site Like These →</a>
@@ -1609,9 +1637,9 @@ footer{background:var(--dark);padding:56px 0 32px}
       <div class="niche-card">
         <div class="niche-icon">🎪</div>
         <div class="niche-name">Party &amp; Event Rental</div>
-        <span class="niche-roi">1 weekend booking = $600–$1,200</span>
+        <span class="niche-roi">1 weekend booking = $400–$1,200</span>
         <p class="niche-desc">Show your full inventory, capture online bookings, and rank for "bounce house rental near me" before summer peak season. Your busiest months deserve a site that converts.</p>
-        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live party rental preview →</a>
+        <a href="https://kalnyesgrowth.github.io/pepes-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live party rental preview →</a>
       </div>
       <div class="niche-card">
         <div class="niche-icon">❄️</div>
@@ -1632,7 +1660,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="niche-name">Landscaping</div>
         <span class="niche-roi">1 lawn contract = $1,200–$4,800/yr recurring</span>
         <p class="niche-desc">Recurring revenue from a single new client adds up fast. Google Maps + a professional site is how landscapers fill their entire weekly route without chasing referrals.</p>
-        <a href="https://kalnyesgrowth.com/freshcut-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live landscaping preview →</a>
+        <a href="https://kalnyesgrowth.github.io/freshcut-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live landscaping preview →</a>
       </div>
       <div class="niche-card">
         <div class="niche-icon">✨</div>
@@ -1645,7 +1673,6 @@ footer{background:var(--dark);padding:56px 0 32px}
         <div class="niche-name">Painters</div>
         <span class="niche-roi">1 exterior job = $2,000–$6,000</span>
         <p class="niche-desc">Before/after galleries, instant quote requests, and Google rankings turn your painting business into a lead machine. Stop relying on word of mouth alone.</p>
-        <a href="https://kalnyesgrowth.com/painter-demo/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:.85rem;font-weight:700;color:var(--gold);text-decoration:none">See a live painting preview →</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px">
@@ -1654,52 +1681,44 @@ footer{background:var(--dark);padding:56px 0 32px}
   </div>
 </section>
 
-<!-- ══════════════════ WHY TRUST US ══════════════════ -->
+<!-- ══════════════════ TESTIMONIALS ══════════════════ -->
 <section id="testimonials" style="padding:100px 0;background:var(--bg2)">
   <div class="container">
-    <div class="test-intro text-center" style="max-width:640px;margin:0 auto 56px">
-      <span class="eyebrow">Why Trust Kalnyes Growth?</span>
-      <h2>We Don't Ask You to Trust Us. We Prove It First.</h2>
-      <p style="color:var(--muted);font-size:.97rem">Most web designers ask for a deposit before you've seen a single page. We do the opposite — we build your full site first, you inspect every pixel, and you only pay when you're genuinely excited about what you see.</p>
+    <div class="test-intro">
+      <span class="eyebrow">See the Quality</span>
+      <h2>Live Websites We Built — Click to Explore</h2>
+      <p style="color:var(--muted);max-width:600px;margin:12px auto 0;font-size:.95rem;">Don't take our word for it. Browse these live demo sites on your phone right now. This is the exact quality you'll get.</p>
     </div>
+    <div class="test-grid">
 
-    <div class="test-grid" style="margin-bottom:48px">
-      <div class="test-card" style="text-align:center;padding:32px 24px">
-        <div style="font-size:2.4rem;margin-bottom:16px">🎨</div>
-        <h3 style="font-size:1.05rem;margin-bottom:10px">Full Site Built Free First</h3>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.7">We build your complete website — every section, every page — before you pay anything. You get a live link to explore it on any device.</p>
+      <div class="test-card" style="text-align:center;padding:28px 24px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🎉</div>
+        <div class="test-name" style="font-size:1.1rem;margin-bottom:4px;">Pepe's Party Rental</div>
+        <div class="test-biz" style="margin-bottom:12px;">Party Rental · Stafford, VA</div>
+        <p class="test-body" style="font-size:.85rem;margin-bottom:16px;">Full booking system, Google Maps, real reviews, mobile-optimized. Built in 4 days.</p>
+        <a href="/pepes-party-rental" style="color:var(--gold);font-weight:700;text-decoration:none;font-size:.9rem;">View Live Site →</a>
       </div>
-      <div class="test-card" style="text-align:center;padding:32px 24px">
-        <div style="font-size:2.4rem;margin-bottom:16px">🔍</div>
-        <h3 style="font-size:1.05rem;margin-bottom:10px">You Inspect It, You Request Changes</h3>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.7">Review every word, every button, every section. Want something moved or changed? One free revision round is included before you decide anything.</p>
+
+      <div class="test-card" style="text-align:center;padding:28px 24px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🌿</div>
+        <div class="test-name" style="font-size:1.1rem;margin-bottom:4px;">FreshCut Landscaping</div>
+        <div class="test-biz" style="margin-bottom:12px;">Landscaping · Stafford, VA</div>
+        <p class="test-body" style="font-size:.85rem;margin-bottom:16px;">Service pages, gallery, quote form, SEO-optimized for local search. Built in 5 days.</p>
+        <a href="/freshcut-landscaping" style="color:var(--gold);font-weight:700;text-decoration:none;font-size:.9rem;">View Live Site →</a>
       </div>
-      <div class="test-card" style="text-align:center;padding:32px 24px">
-        <div style="font-size:2.4rem;margin-bottom:16px">✅</div>
-        <h3 style="font-size:1.05rem;margin-bottom:10px">You Pay Only If You Love It</h3>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.7">If you're not 100% happy with what you see, you walk away. No invoice, no pressure, no questions asked. Zero financial risk on your end.</p>
+
+      <div class="test-card" style="text-align:center;padding:28px 24px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🍎</div>
+        <div class="test-name" style="font-size:1.1rem;margin-bottom:4px;">Red Apple Tobacco</div>
+        <div class="test-biz" style="margin-bottom:12px;">Retail · Stafford, VA</div>
+        <p class="test-body" style="font-size:.85rem;margin-bottom:16px;">Product showcase, age verification, store hours, real Google reviews embedded. Built in 3 days.</p>
+        <a href="/red-apple-tobacco" style="color:var(--gold);font-weight:700;text-decoration:none;font-size:.9rem;">View Live Site →</a>
       </div>
+
     </div>
-
-    <div style="background:var(--green);border-radius:var(--r-lg);padding:40px 48px;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
-      <div style="flex:1;min-width:240px">
-        <div style="font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px">165+ Live Demo Sites — Right Now</div>
-        <h3 style="color:#fff;font-size:1.4rem;margin-bottom:12px;line-height:1.25">See the Exact Quality We Deliver Before You Call</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:.92rem;line-height:1.7;margin-bottom:16px">We've built fully functional demo sites for 165+ Virginia businesses. These are the real thing — not mockups. Click through them, check the mobile layout, explore every section.</p>
-        <a href="https://kalnyesgrowth.com/free-preview/" style="display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#fff;padding:12px 22px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">Browse all 165+ demos →</a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px;min-width:200px">
-        <a href="https://kalnyesgrowth.github.io/jesdel-electric-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">⚡ <span>Electrician Demo →</span></a>
-        <a href="/freshcut-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🌿 <span>Landscaping Demo →</span></a>
-        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🎪 <span>Party Rental Demo →</span></a>
-        <a href="/cleaning-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🧹 <span>Cleaning Demo →</span></a>
-        <a href="/handyman-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🏠 <span>Handyman Demo →</span></a>
-        <a href="/painter-demo/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:11px 18px;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">🖌️ <span>Painting Demo →</span></a>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:40px">
-      <a href="#book-call" class="btn btn-gold btn-lg">Book a Free Call — We'll Build Yours Next →</a>
+    <div style="text-align:center;margin-top:36px;">
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:16px;">Browse more live demo sites we built for local businesses</p>
+      <a href="#book-call" class="btn btn-gold">Want One for Your Business? →</a>
     </div>
   </div>
 </section>
@@ -1709,23 +1728,19 @@ footer{background:var(--dark);padding:56px 0 32px}
   <div class="container">
     <div class="meet-jose-inner">
       <div class="jose-photo-wrap">
-        <img src="/img/jose-profile.jpg" alt="Jose Morales — Web Designer, Stafford VA" class="jose-avatar" style="object-fit:cover;object-position:center top">
+        <div class="jose-avatar">J</div>
         <div class="jose-location-badge">📍 Stafford, VA — Local</div>
       </div>
       <div class="jose-bio">
         <span class="eyebrow eyebrow-gold">Who You're Talking To</span>
         <h3>Hey, I'm Jose — your neighbor in Stafford.</h3>
         <p class="jose-subtitle">Owner & Lead Designer at Kalnyes Growth</p>
-        <p>I'm not a faceless overseas agency. I'm Jose — a web designer based in Stafford, Virginia. I've built 165+ demo sites for local contractors across Stafford, Fredericksburg, Manassas, and NoVA. I know exactly what it takes to get a home service business found online and turn website visitors into paying customers.</p>
-        <p>Every site I deliver includes a live preview before you pay a single dollar. Call, text, or WhatsApp me directly — I answer personally, in English or Spanish.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;margin-bottom:8px">
-          <a href="tel:+15407838835" style="display:inline-flex;align-items:center;gap:7px;background:var(--green3);color:var(--green);padding:10px 18px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;border:1px solid rgba(0,0,0,.1)">📞 (540) 783-8835</a>
-          <a href="https://wa.me/15407838835?text=Hi%20Jose!%20I%27m%20interested%20in%20a%20free%20website%20preview." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 18px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none">💬 WhatsApp / Español</a>
-        </div>
+        <p>I'm not a faceless overseas agency. I'm Jose — a web designer based in Stafford, Virginia who works with local business owners across the US and internationally. I know what it takes to get a local business found online and turn website visitors into paying customers.</p>
+        <p>I've built websites for party rental companies, landscapers, restaurants, cleaning services, HVAC companies, and service businesses of all kinds. Every site I deliver includes a live preview before you pay a single dollar — because your trust matters more than a quick sale.</p>
         <div class="jose-stats">
-          <div class="jose-stat"><span class="jose-stat-num">165+</span><span class="jose-stat-lbl">Demos Built</span></div>
-          <div class="jose-stat"><span class="jose-stat-num">48 hrs</span><span class="jose-stat-lbl">Preview Delivered</span></div>
-          <div class="jose-stat"><span class="jose-stat-num">$600</span><span class="jose-stat-lbl">One-Time to Launch</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">57+</span><span class="jose-stat-lbl">Sites Delivered</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">7 Days</span><span class="jose-stat-lbl">Avg. Delivery Time</span></div>
+          <div class="jose-stat"><span class="jose-stat-num">4.9★</span><span class="jose-stat-lbl">Client Rating</span></div>
           <div class="jose-stat"><span class="jose-stat-num">$0</span><span class="jose-stat-lbl">Until You Love It</span></div>
         </div>
       </div>
@@ -1761,7 +1776,7 @@ footer{background:var(--dark);padding:56px 0 32px}
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-a">
-            <p>Our most popular offer: <strong>$600 one-time</strong> — a complete local business site (5+ pages, mobile-first, Google-ready) with hosting included for a year. Larger projects with custom features, multiple locations, or e-commerce start at $800–$1,500. Payment plans available — 50% to start, 50% on delivery. And remember: you see the finished site before you pay anything.</p>
+            <p>Sites start at $600 for a core 5-page business site. Most local businesses invest between $800–$1,500 depending on the number of pages, features (booking system, blog, multi-location), and niche. We offer payment plans — 50% to start, 50% on delivery. One new customer from the site covers it.</p>
           </div>
         </div>
 
@@ -1855,8 +1870,8 @@ footer{background:var(--dark);padding:56px 0 32px}
     <div class="cta-trust-row">
       <span class="cta-trust-item">No contracts required</span>
       <span class="cta-trust-item">Sites live in 7 days</span>
-      <span class="cta-trust-item">Free preview before you pay</span>
-      <span class="cta-trust-item">$600 one-time price</span>
+      <span class="cta-trust-item">57+ sites built</span>
+      <span class="cta-trust-item">4.9 ★ average rating</span>
       <span class="cta-trust-item">Payment plans available</span>
     </div>
   </div>
@@ -1909,6 +1924,13 @@ footer{background:var(--dark);padding:56px 0 32px}
       <div style="background:var(--bg2);border-radius:var(--r);padding:24px 22px;display:flex;align-items:flex-start;gap:14px">
         <span style="color:var(--gold);font-size:1.4rem;flex-shrink:0;line-height:1">✓</span>
         <div>
+          <div style="font-weight:800;color:var(--dark);margin-bottom:4px;font-size:.97rem">Facebook Profile Review</div>
+          <div style="font-size:.83rem;color:var(--muted);line-height:1.55">We audit your Facebook page and set it up to bring more clients every week — included free.</div>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:24px 22px;display:flex;align-items:flex-start;gap:14px">
+        <span style="color:var(--gold);font-size:1.4rem;flex-shrink:0;line-height:1">✓</span>
+        <div>
           <div style="font-weight:800;color:var(--dark);margin-bottom:4px;font-size:.97rem">No Obligation. Ever.</div>
           <div style="font-size:.83rem;color:var(--muted);line-height:1.55">Don't love it? Walk away. No invoice. No awkward follow-up. Promise.</div>
         </div>
@@ -1927,7 +1949,7 @@ footer{background:var(--dark);padding:56px 0 32px}
     <div class="book-intro">
       <span class="eyebrow eyebrow-gold">Book Your Free Strategy Call</span>
       <h2>Only <span class="spots-left-num">2</span> Spots Left This Week — Pick Your Time Now</h2>
-      <p>Free 15-minute strategy call. We look at your current online presence, show you what's costing you customers, and if it makes sense — build your full website FREE so you can see it before paying a dollar. No pitch. No pressure. Jose responds to every booking within the hour.</p>
+      <p>Free 15-minute strategy call. We look at your current online presence, review your Facebook profile, show you what's costing you customers, and if it makes sense — build your full website FREE so you can see it before paying a dollar. No pitch. No pressure. Jose responds to every booking within the hour.</p>
     </div>
 
     <!-- What Happens on Your Call -->
@@ -1935,19 +1957,19 @@ footer{background:var(--dark);padding:56px 0 32px}
       <h3>What Happens on Your Free 15-Minute Call</h3>
       <div class="call-steps">
         <div class="call-step">
-          <span class="call-step-num">01</span>
+          <span class="call-step-num">Step 1</span>
           <span class="call-step-icon">🔍</span>
           <div class="call-step-title">We Review Your Online Presence</div>
           <p class="call-step-desc">We look at your current website, Google ranking, and what your competitors are doing better.</p>
         </div>
         <div class="call-step">
-          <span class="call-step-num">02</span>
+          <span class="call-step-num">Step 2</span>
           <span class="call-step-icon">🎨</span>
           <div class="call-step-title">We Build Your Free Preview</div>
-          <p class="call-step-desc">Within 48 hours we send you a live link to a full preview of your new site. No charge yet.</p>
+          <p class="call-step-desc">Within 5–7 days we send you a live link to a full preview of your new site. No charge yet.</p>
         </div>
         <div class="call-step">
-          <span class="call-step-num">03</span>
+          <span class="call-step-num">Step 3</span>
           <span class="call-step-icon">✅</span>
           <div class="call-step-title">You Love It, Then Pay</div>
           <p class="call-step-desc">Only if you're 100% happy do you pay. If not, you walk away — no charge, no questions asked.</p>
@@ -1977,7 +1999,7 @@ footer{background:var(--dark);padding:56px 0 32px}
       <div class="guarantee-icon">🛡️</div>
       <div class="guarantee-text">
         <h3>Zero-Risk Guarantee — You Pay Nothing Until You Love It</h3>
-        <p>We build your full site <strong>in 48 hours</strong> and send you a live preview before you pay a single dollar. If you don't love what you see, you walk away with no charge and no questions asked. <strong>You only pay when you're 100% happy.</strong> That's our promise on every project.</p>
+        <p>We build your full site <strong>in 5–7 days</strong> and send you a live preview before you pay a single dollar. If you don't love what you see, you walk away with no charge and no questions asked. <strong>You only pay when you're 100% happy.</strong> That's our promise on every project.</p>
       </div>
     </div>
 
@@ -1989,23 +2011,6 @@ footer{background:var(--dark);padding:56px 0 32px}
       </div>
       <div class="cal-urgency-item">⚡ Jose responds to every booking within 1 hour</div>
       <div class="cal-urgency-item">🛡️ 100% free — no card required to book</div>
-    </div>
-
-    <!-- Always-visible direct contact above calendar — critical if Calendly shows no slots -->
-    <div style="background:#fff;border:2px solid var(--border);border-radius:var(--r-lg);padding:20px 28px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-      <div>
-        <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:4px">Don't see a time that works?</div>
-        <div style="font-size:1rem;font-weight:700;color:var(--dark)">Text or WhatsApp Jose — he books calls same-day, usually within the hour.</div>
-      </div>
-      <div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
-        <a href="https://wa.me/15407838835?text=Hi%20Jose!%20I%20saw%20your%20site%20and%20I%27d%20like%20to%20book%20a%20free%20call." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 20px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.571l5.847-1.533A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-          WhatsApp Jose
-        </a>
-        <a href="sms:+15407838835&body=Hi%20Jose!%20I%27d%20like%20to%20book%20a%20free%20call%20about%20a%20website." style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:11px 20px;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap">
-          📱 Text (540) 783-8835
-        </a>
-      </div>
     </div>
 
     <div class="calendly-inline-widget" data-url="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&primary_color=1a3abf" style="min-width:320px;height:700px;"></div>
@@ -2145,18 +2150,17 @@ footer{background:var(--dark);padding:56px 0 32px}
       {label:"❄️ HVAC / Heating & Cooling",next:stepHVAC},
       {label:"🎉 Party Rental / Events",next:stepParty},
       {label:"🌿 Landscaping / Lawn Care",next:stepLandscape},
-      {label:"🖌️ Painting",next:stepPainting},
       {label:"🏗️ Other local business",next:stepOther}
     ]);
   }
 
   function stepPlumbing(){
-    addMsg("Perfect — I actually built a free demo for an electrical contractor in Virginia. Want to see it?","bot");
+    addMsg("Perfect — I actually built a free demo for a plumbing company in Virginia. Want to see it?","bot");
     showOptions([
       {label:"Yes, show me!",next:function(){
-        addMsg("Here's a live preview I built for an electrician — same quality, built for YOUR business.","bot");
+        addMsg("Here's a live preview I built for White Plumbing Co. — same quality, built for YOUR business.","bot");
         clearOptions();
-        showLink("View Electrician Demo →","https://kalnyesgrowth.github.io/jesdel-electric-demo/",false);
+        showLink("View Plumbing Demo →","https://kalnyesgrowth.com/white-plumbing/",false);
         setTimeout(function(){stepBook();},600);
       }},
       {label:"Just tell me pricing",next:stepPrice}
@@ -2173,7 +2177,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   function stepParty(){
     addMsg("Fun niche! I built a demo for a party rental company — full inventory, booking CTA, the works:","bot");
     clearOptions();
-    showLink("View Party Rental Demo →","https://pepespartyrentall.com/",false);
+    showLink("View Party Rental Demo →","https://kalnyesgrowth.com/pepes-demo/",false);
     setTimeout(function(){stepBook();},600);
   }
 
@@ -2184,13 +2188,6 @@ footer{background:var(--dark);padding:56px 0 32px}
     setTimeout(function(){stepBook();},600);
   }
 
-  function stepPainting(){
-    addMsg("Great niche — before/after galleries and Google rankings are game-changers for painters. Here's a demo I built:","bot");
-    clearOptions();
-    showLink("View Painting Demo →","https://kalnyesgrowth.com/painter-demo/",false);
-    setTimeout(function(){stepBook();},600);
-  }
-
   function stepOther(){
     addMsg("I build sites for all kinds of local businesses — the approach is the same: mobile-first, Google-optimized, built to get you calls.","bot");
     clearOptions();
@@ -2198,7 +2195,7 @@ footer{background:var(--dark);padding:56px 0 32px}
   }
 
   function stepPrice(){
-    addMsg("The free preview is yours to see at no cost. If you love it and want to launch it as your real site — it's <strong>$600 one time</strong>. Hosting included for a year.","bot");
+    addMsg("The free preview is yours to see at no cost. If you love it and want to launch it as your real site — it's <strong>$400 one time</strong>. Hosting included for a year.","bot");
     clearOptions();
     setTimeout(function(){stepBook();},400);
   }
@@ -2247,22 +2244,7 @@ footer{background:var(--dark);padding:56px 0 32px}
       <div class="footer-brand">
         <div class="footer-logo">Kalnyes<span>Growth</span></div>
         <p>We build high-performance websites for local businesses in Virginia and beyond — mobile-first, Google-optimized, and built to convert visitors into paying customers.</p>
-        <p style="margin-top:12px;color:rgba(255,255,255,.35);font-size:.8rem">📧 kalnyesgrowth@gmail.com<br>📞 (540) 783-8835</p>
-        <!-- Social links -->
-        <div class="footer-social">
-          <a href="https://www.facebook.com/kalnyesgrowth" target="_blank" rel="noopener" aria-label="KalnyesGrowth on Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/kalnyesgrowth" target="_blank" rel="noopener" aria-label="KalnyesGrowth on Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/kalnyesgrowth" target="_blank" rel="noopener" aria-label="KalnyesGrowth on LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://www.google.com/search?q=KalnyesGrowth+web+design+Stafford+VA" target="_blank" rel="noopener" aria-label="Find KalnyesGrowth on Google">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
-          </a>
-        </div>
+        <p style="margin-top:12px;color:rgba(255,255,255,.35);font-size:.8rem">📧 kalnyesgrowth@gmail.com</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -2369,25 +2351,68 @@ function toggleFaq(btn) {
 
 // Portfolio: all iframes point to our own GitHub Pages demos — fully embeddable, no fallback needed
 
+// Portfolio carousel
+(function(){
+  var panels = Array.from(document.querySelectorAll('#port-stage .port-panel'));
+  var prevBtn = document.getElementById('port-prev');
+  var nextBtn = document.getElementById('port-next');
+  var dotsRow = document.getElementById('port-dots-row');
+  var cur = 1;
+
+  var labels = ['Red Apple Tobacco', 'FreshCut Landscaping', 'Pepe\'s Party Rental', 'White Plumbing Co.', 'Cooling &amp; Heating SA'];
+  panels.forEach(function(_, i) {
+    var d = document.createElement('button');
+    d.className = 'port-dot' + (i === cur ? ' active' : '');
+    d.setAttribute('aria-label', 'View ' + (labels[i] || 'project ' + (i+1)));
+    d.addEventListener('click', function(){ go(i); });
+    dotsRow.appendChild(d);
+  });
+
+  function go(idx) {
+    cur = Math.max(0, Math.min(panels.length - 1, idx));
+    panels.forEach(function(p, i) {
+      p.classList.remove('p-left', 'p-active', 'p-right');
+      var d = i - cur;
+      if (d === 0) p.classList.add('p-active');
+      else if (d < 0) p.classList.add('p-left');
+      else p.classList.add('p-right');
+    });
+    dotsRow.querySelectorAll('.port-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === cur);
+    });
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === panels.length - 1;
+  }
+
+  panels.forEach(function(p, i) {
+    p.addEventListener('click', function(e) {
+      if (i !== cur && !e.target.closest('a, button, iframe')) go(i);
+    });
+  });
+
+  prevBtn.addEventListener('click', function(){ go(cur - 1); });
+  nextBtn.addEventListener('click', function(){ go(cur + 1); });
+
+  document.addEventListener('keydown', function(e) {
+    var s = document.getElementById('work');
+    var r = s.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      if (e.key === 'ArrowLeft') go(cur - 1);
+      if (e.key === 'ArrowRight') go(cur + 1);
+    }
+  });
+
+  go(1);
+})();
+
 // Portfolio: no auto-scroll — viewers navigate freely inside each device
 
-// Free audit form — notifies Jose via WhatsApp + email
+// Free audit form — opens WhatsApp with their URL pre-filled
 function handleAudit(e) {
   e.preventDefault();
-  var url = document.getElementById(‘audit-url’).value.trim();
-  if (!url) return;
-  var waMsg = "Hi Jose! I’d like a free website audit for: " + url + " — I found you at KalnyesGrowth.com";
-  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(waMsg), ‘_blank’);
-  var subject = ‘Free Website Audit Request — ‘ + url;
-  var body = ‘Hi Jose,\n\nA visitor requested a personalized website audit for:\n\n’ + url + ‘\n\nPlease review their current site and prepare a personalized report showing what\’s costing them customers and what the new site would look like.\n\n— KalnyesGrowth.com auto-notification’;
-  setTimeout(function(){
-    window.location.href = ‘mailto:kalnyesgrowth@gmail.com?subject=’ + encodeURIComponent(subject) + ‘&body=’ + encodeURIComponent(body);
-  }, 800);
-  var form = e.target;
-  var input = document.getElementById(‘audit-url’);
-  if (input) input.value = ‘’;
-  var btn = form.querySelector(‘button[type=submit]’);
-  if (btn) { btn.textContent = ‘✅ Sent! Check WhatsApp’; btn.disabled = true; setTimeout(function(){ btn.textContent = ‘Get My Free Audit →’; btn.disabled = false; }, 4000); }
+  var url = document.getElementById(‘audit-url’).value;
+  var msg = "Hi! I’d like a free website audit for: " + url + " - I found you at KalnyesGrowth.com";
+  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
 }
 
 // Callback form — WhatsApp (no activation required, instant notification on Jose’s phone)
@@ -2456,6 +2481,9 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
   document.querySelectorAll(‘.spots-left-num’).forEach(function(el){ el.textContent = left; });
 })();
 </script>
+
+<!-- Calendly inline widget script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 
 </body>
