@@ -1882,7 +1882,7 @@ footer{background:var(--dark);padding:56px 0 32px}
     <div class="cta-trust-row">
       <span class="cta-trust-item">No contracts required</span>
       <span class="cta-trust-item">Sites live in 7 days</span>
-      <span class="cta-trust-item">57+ sites built</span>
+      <span class="cta-trust-item">162+ sites built</span>
       <span class="cta-trust-item">4.9 ★ average rating</span>
       <span class="cta-trust-item">Payment plans available</span>
     </div>
@@ -2058,7 +2058,8 @@ footer{background:var(--dark);padding:56px 0 32px}
 <!-- ══════════════════ CHAT WIDGET ══════════════════ -->
 <style>
 #kg-chat-widget{position:fixed;bottom:28px;right:24px;z-index:9999;font-family:'Inter',sans-serif;display:none}
-@media(min-width:768px){#kg-chat-widget{display:block}}
+#kg-chat-widget{display:block}
+@media(max-width:767px){#kg-chat-widget{bottom:70px;right:16px}#kg-chat-bubble{width:48px;height:48px}#kg-chat-bubble svg{width:22px;height:22px}}
 #kg-chat-bubble{width:56px;height:56px;background:linear-gradient(135deg,#6c63ff,#a78bfa);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(108,99,255,.5);transition:transform .2s;margin-left:auto}
 #kg-chat-bubble:hover{transform:scale(1.08)}
 #kg-chat-bubble svg{width:26px;height:26px;fill:#fff}
@@ -2507,7 +2508,8 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
 </div>
 <style>
 @keyframes proofSlide{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-@media(max-width:480px){#proof-ticker{left:10px;right:10px;max-width:none;bottom:70px}}
+@media(max-width:767px){#proof-ticker{left:10px;right:10px;max-width:none;bottom:80px}}
+@media(max-width:480px){#proof-ticker{bottom:80px}}
 </style>
 <script>
 (function(){
@@ -2540,6 +2542,29 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
   setTimeout(function(){ show(); setInterval(show, 12000); }, 8000);
 })();
 </script>
+
+<!-- ══════════════════ STICKY MOBILE CTA BAR ══════════════════ -->
+<div id="mobile-cta-bar">
+  <a href="https://wa.me/15407838835?text=Hi%20Jose!%20I%27m%20interested%20in%20a%20free%20website%20preview%20for%20my%20business." target="_blank" rel="noopener" class="mcta-btn mcta-wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.571l5.847-1.533A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.371l-.359-.213-3.72.976.992-3.628-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+15407838835" class="mcta-btn mcta-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+    Call
+  </a>
+  <a href="#book-call" class="mcta-btn mcta-book">
+    Book Free Call
+  </a>
+</div>
+<style>
+#mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#fff;border-top:1px solid #e5e7eb;padding:8px 12px;gap:8px;box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+@media(max-width:767px){#mobile-cta-bar{display:flex}}
+.mcta-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 8px;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none;text-align:center;white-space:nowrap}
+.mcta-wa{background:#25D366;color:#fff}
+.mcta-call{background:var(--green3);color:var(--dark)}
+.mcta-book{background:var(--gold);color:#fff;flex:1.5}
+</style>
 
 <!-- Calendly inline widget script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
