@@ -1063,7 +1063,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         </div>
         <div class="hero-stats">
           <div>
-            <div class="hero-stat-num">57+</div>
+            <div class="hero-stat-num">162+</div>
             <div class="hero-stat-label">Sites Built</div>
           </div>
           <div>
@@ -1125,7 +1125,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <span class="trust-client">Pepe's Party Rental</span>
         <span class="trust-client">FreshCut Landscaping</span>
         <span class="trust-client">Red Apple Tobacco</span>
-        <span class="trust-client" style="color:var(--muted);background:transparent;border-style:dashed">+54 more businesses</span>
+        <span class="trust-client" style="color:var(--muted);background:transparent;border-style:dashed">+159 more businesses</span>
       </div>
     </div>
   </div>
@@ -2491,6 +2491,53 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
   var leftByDay = [3, 3, 3, 2, 2, 1, 3];
   var left = leftByDay[day];
   document.querySelectorAll(‘.spots-left-num’).forEach(function(el){ el.textContent = left; });
+})();
+</script>
+
+<!-- ══════════════════ SOCIAL PROOF TICKER ══════════════════ -->
+<div id="proof-ticker" style="display:none;position:fixed;bottom:90px;left:20px;z-index:9000;background:#fff;border-radius:12px;padding:14px 18px 14px 14px;box-shadow:0 8px 32px rgba(0,0,0,.15);max-width:340px;border:1px solid #e5e7eb;animation:proofSlide .4s ease-out">
+  <button onclick="document.getElementById('proof-ticker').style.display='none'" style="position:absolute;top:6px;right:10px;background:none;border:none;color:#999;cursor:pointer;font-size:.85rem;line-height:1">&times;</button>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div style="width:42px;height:42px;border-radius:50%;background:var(--gold-bg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0" id="proof-icon">🔨</div>
+    <div>
+      <div style="font-size:.82rem;font-weight:700;color:#111" id="proof-text">Jose just built a website for JC Roofing</div>
+      <div style="font-size:.72rem;color:#999;margin-top:2px" id="proof-meta">Fredericksburg, VA · 2 hours ago</div>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes proofSlide{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(max-width:480px){#proof-ticker{left:10px;right:10px;max-width:none;bottom:70px}}
+</style>
+<script>
+(function(){
+  var proofs = [
+    {icon:'🔨',text:'Jose just built a website for JC Roofing',meta:'Fredericksburg, VA · 2 hours ago'},
+    {icon:'🌿',text:'New site launched for FreshCut Landscaping',meta:'Stafford, VA · Verified client'},
+    {icon:'❄️',text:"Jose just built a website for DJ's HVAC",meta:'Fredericksburg, VA · 3 hours ago'},
+    {icon:'🎉',text:"Pepe's Party Rental went live this month",meta:'Stafford, VA · Verified client'},
+    {icon:'🏗️',text:'Jose just built a website for Arias Concrete',meta:'Fredericksburg, VA · 4 hours ago'},
+    {icon:'🔧',text:'New site demo for MD Contractors Services',meta:'Fredericksburg, VA · Today'},
+    {icon:'🍎',text:'Red Apple Tobacco site launched',meta:'Stafford, VA · Verified client'},
+    {icon:'🏠',text:"Jose built a website for Hatt's Handyman",meta:'Stafford, VA · This week'}
+  ];
+  var idx = 0;
+  var ticker = document.getElementById('proof-ticker');
+  var iconEl = document.getElementById('proof-icon');
+  var textEl = document.getElementById('proof-text');
+  var metaEl = document.getElementById('proof-meta');
+  function show(){
+    var p = proofs[idx % proofs.length];
+    iconEl.textContent = p.icon;
+    textEl.textContent = p.text;
+    metaEl.textContent = p.meta;
+    ticker.style.display = 'block';
+    ticker.style.animation = 'none';
+    ticker.offsetHeight;
+    ticker.style.animation = 'proofSlide .4s ease-out';
+    setTimeout(function(){ ticker.style.display = 'none'; idx++; }, 5000);
+  }
+  setTimeout(function(){ show(); setInterval(show, 12000); }, 8000);
 })();
 </script>
 
