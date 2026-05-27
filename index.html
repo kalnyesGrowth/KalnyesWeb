@@ -2058,8 +2058,8 @@ footer{background:var(--dark);padding:56px 0 32px}
 <!-- ══════════════════ CHAT WIDGET ══════════════════ -->
 <style>
 #kg-chat-widget{position:fixed;bottom:28px;right:24px;z-index:9999;font-family:'Inter',sans-serif;display:none}
-#kg-chat-widget{display:block}
-@media(max-width:767px){#kg-chat-widget{bottom:70px;right:16px}#kg-chat-bubble{width:48px;height:48px}#kg-chat-bubble svg{width:22px;height:22px}}
+@media(min-width:768px){#kg-chat-widget{display:block}}
+@media(max-width:767px){#kg-chat-widget{display:none}}
 #kg-chat-bubble{width:56px;height:56px;background:linear-gradient(135deg,#6c63ff,#a78bfa);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(108,99,255,.5);transition:transform .2s;margin-left:auto}
 #kg-chat-bubble:hover{transform:scale(1.08)}
 #kg-chat-bubble svg{width:26px;height:26px;fill:#fff}
@@ -2237,8 +2237,8 @@ footer{background:var(--dark);padding:56px 0 32px}
     opened=false;
   });
 
-  // Auto-open after 6s if not dismissed this session
-  if(!sessionStorage.getItem('kg-chat-auto')){
+  // Auto-open after 6s — desktop only (mobile has sticky CTA bar)
+  if(!sessionStorage.getItem('kg-chat-auto') && window.innerWidth >= 768){
     setTimeout(function(){
       if(!opened){
         timerFired=true;
