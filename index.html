@@ -35,7 +35,16 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Custom Website Design for Local Businesses","provider":{"@type":"ProfessionalService","name":"Kalnyes Growth","url":"https://kalnyesgrowth.com"},"serviceType":"Web Design","areaServed":[{"@type":"City","name":"Stafford"},{"@type":"City","name":"Fredericksburg"},{"@type":"AdministrativeArea","name":"Virginia"}],"description":"Mobile-first, Google-optimized websites built for local businesses. Free preview before you pay, 7-day delivery, hosting included.","offers":{"@type":"Offer","price":"600","priceCurrency":"USD","description":"Launch package — full custom website with hosting included"}}
 </script>
+<!-- Announcement Bar -->
+<div id="announce-bar" style="background:var(--gold,#1a3abf);color:#fff;text-align:center;padding:10px 16px;font-size:.82rem;font-weight:600;position:relative;z-index:1000;line-height:1.4">
+  <span style="margin-right:6px">🔥</span> <strong>June slots filling fast</strong> — only 3 project openings left this month.
+  <a href="#book-call" style="color:#fff;text-decoration:underline;margin-left:6px;font-weight:700">Claim yours →</a>
+  <button onclick="this.parentElement.style.display='none';document.getElementById('main-nav').style.top='0'" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1rem;line-height:1">&times;</button>
+</div>
+
 <style>
+#main-nav{top:37px!important}
+#announce-bar ~ #main-nav{top:37px}
 /* ══════════════════════════════════════════
    DESIGN TOKENS
 ══════════════════════════════════════════ */
@@ -1779,13 +1788,50 @@ footer{background:var(--dark);padding:56px 0 32px}
       </div>
       <div style="text-align:center;margin-top:20px;">
         <div style="display:inline-flex;align-items:center;gap:20px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 28px;">
-          <div style="text-align:center;"><span style="font-size:1.4rem;font-weight:700;color:var(--gold);display:block;">15+</span><span style="font-size:.72rem;color:var(--muted);">Demo Sites Built</span></div>
+          <div style="text-align:center;"><span style="font-size:1.4rem;font-weight:700;color:var(--gold);display:block;">100+</span><span style="font-size:.72rem;color:var(--muted);">Demo Sites Built</span></div>
           <div style="width:1px;height:32px;background:var(--border);"></div>
-          <div style="text-align:center;"><span style="font-size:1.4rem;font-weight:700;color:var(--gold);display:block;">7</span><span style="font-size:.72rem;color:var(--muted);">Industries Served</span></div>
+          <div style="text-align:center;"><span style="font-size:1.4rem;font-weight:700;color:var(--gold);display:block;">20+</span><span style="font-size:.72rem;color:var(--muted);">Industries Served</span></div>
           <div style="width:1px;height:32px;background:var(--border);"></div>
           <div style="text-align:center;"><span style="font-size:1.4rem;font-weight:700;color:var(--gold);display:block;">100%</span><span style="font-size:.72rem;color:var(--muted);">Preview Before Pay</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ INDUSTRIES WE SERVE ══════════════════ -->
+<section style="padding:80px 0;background:#fff;border-top:1px solid var(--border)">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+      <span class="eyebrow eyebrow-gold">Built for Every Local Business</span>
+      <h2>100+ Websites Across 20+ Industries</h2>
+      <p style="color:var(--muted);font-size:.95rem;margin-top:10px">No matter your trade, we've built a site for a business like yours. Every site is custom-designed for your specific industry — not a generic template.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;max-width:960px;margin:0 auto">
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🔧 Plumbing</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">❄️ HVAC</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">⚡ Electrical</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🏗 Roofing</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🌿 Landscaping</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🧹 Cleaning</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🎨 Painting</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🏠 Remodeling</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🪵 Flooring</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🚧 Concrete</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🌳 Tree Service</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🚿 Pressure Wash</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🎉 Party Rentals</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🚗 Auto Detailing</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🐕 Pet Services</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🏪 Retail</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🍕 Restaurants</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🔒 Locksmith</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🚛 Moving</div>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:16px 14px;text-align:center;font-size:.82rem;font-weight:600;color:var(--dark)">🏊 Pool Service</div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:16px">Don't see your industry? We've probably built one already. Ask us.</p>
+      <a href="#book-call" class="btn btn-gold">See What We'd Build for You →</a>
     </div>
   </div>
 </section>
@@ -1803,7 +1849,7 @@ footer{background:var(--dark);padding:56px 0 32px}
         <h3>Hey, I'm Jose — your neighbor in Stafford.</h3>
         <p class="jose-subtitle">Owner & Lead Designer at Kalnyes Growth</p>
         <p>I'm not a faceless overseas agency. I'm Jose — a web designer based in Stafford, Virginia who works with small businesses across the US and internationally. I know what it takes to get a local business found online and turn website visitors into paying customers.</p>
-        <p>I've built websites for party rental companies, landscapers, restaurants, cleaning services, HVAC companies, and service businesses of all kinds. Every site I deliver includes a live preview before you pay a single dollar — because your trust matters more than a quick sale.</p>
+        <p>I've built over 100 websites for plumbers, electricians, roofers, landscapers, restaurants, cleaning services, HVAC companies, auto detailers, party rentals, and service businesses across 20+ industries. Every site I deliver includes a live preview before you pay a single dollar — because your trust matters more than a quick sale.</p>
         <div class="jose-stats">
           <div class="jose-stat"><span class="jose-stat-num">100%</span><span class="jose-stat-lbl">Free Preview First</span></div>
           <div class="jose-stat"><span class="jose-stat-num">7 Days</span><span class="jose-stat-lbl">Avg. Delivery Time</span></div>
