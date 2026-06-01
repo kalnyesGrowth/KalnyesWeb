@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Got It! | Kalnyes Growth</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --gold:#1a3abf;--gold2:#0f2899;
+  --dark:#111111;--body:#3d3d3d;--muted:#6b7280;
+  --bg:#ffffff;
+  --font:'Segoe UI',system-ui,-apple-system,sans-serif
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.wrap{max-width:560px}
+.check{width:80px;height:80px;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;animation:pop .4s ease}
+.check svg{width:40px;height:40px;color:#fff}
+@keyframes pop{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:900;color:var(--dark);margin-bottom:12px;line-height:1.15}
+p{font-size:1.05rem;margin-bottom:20px;line-height:1.7}
+.highlight{color:var(--gold);font-weight:700}
+.box{background:linear-gradient(135deg,#f0f4ff,#e8edff);border:2px solid var(--gold);border-radius:14px;padding:24px 28px;margin:28px 0;text-align:left}
+.box h3{font-size:1rem;font-weight:800;color:var(--dark);margin-bottom:10px}
+.box ul{list-style:none;padding:0}
+.box li{padding:6px 0;font-size:.95rem;display:flex;align-items:center;gap:10px}
+.box li::before{content:'✓';font-weight:800;color:#22c55e;font-size:1.1rem}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;text-decoration:none;transition:all .2s}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,58,191,.35)}
+.btn-outline{background:transparent;color:var(--dark);border:2px solid #e5e7eb}
+.btn-outline:hover{background:#f8f8f8}
+.footer-note{margin-top:40px;font-size:.78rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="check"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+  <h1>You're in, <span class="highlight">we got your info!</span></h1>
+  <p>Jose will personally call you back <strong>within 1 hour</strong> during business hours (8 AM – 9 PM ET). If you submitted after hours, expect a call first thing in the morning.</p>
+
+  <div class="box">
+    <h3>What happens next:</h3>
+    <ul>
+      <li>Jose calls you to learn about your business (5 min)</li>
+      <li>We build a full website preview — free, no obligation</li>
+      <li>You see it live before paying a single dollar</li>
+      <li>Love it? Launch for $600. Don't? Walk away free.</li>
+    </ul>
+  </div>
+
+  <p style="font-size:.92rem">While you wait, check out what we've built for other local businesses:</p>
+
+  <div class="cta-row">
+    <a href="https://kalnyesgrowth.com/#portfolio" class="btn btn-gold">See Our Work →</a>
+    <a href="https://kalnyesgrowth.com/" class="btn btn-outline">← Back to Home</a>
+  </div>
+
+  <p class="footer-note">Kalnyes Growth · Stafford, VA · (540) 783-8835 · kalnyesgrowth@gmail.com</p>
+</div>
+</body>
+</html>

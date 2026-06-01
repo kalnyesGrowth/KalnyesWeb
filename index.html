@@ -2204,16 +2204,23 @@ footer{background:var(--dark);padding:56px 0 32px}
       </div>
     </div>
 
-    <!-- Callback Request Form — alternative for non-calendar people -->
-    <div class="callback-form-wrap">
-      <h3>Not a calendar person? Just drop your number.</h3>
-      <p>Jose will call you back within the hour — no scheduling app needed.</p>
-      <form class="callback-form" onsubmit="submitCallbackWA(event)">
-        <input type="text" id="cb-name" placeholder="Your name" required>
-        <input type="text" id="cb-biz" placeholder="Business type (e.g. plumber)">
-        <input type="tel" id="cb-phone" placeholder="Phone number" required>
-        <button type="submit">Call Me Back →</button>
+    <!-- Quick Lead Form — ABOVE Calendly for lower friction -->
+    <div class="callback-form-wrap" style="background:linear-gradient(135deg,#f0f4ff,#e8edff);border:2px solid var(--gold);margin-bottom:32px">
+      <div style="text-align:center;margin-bottom:8px"><span style="background:var(--gold);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px">Fastest Way to Get Started</span></div>
+      <h3 style="text-align:center">Not a calendar person? Just drop your info.</h3>
+      <p style="text-align:center;margin-bottom:16px">Jose will call you back within the hour — no scheduling app needed. Or keep scrolling to book a specific time below.</p>
+      <form class="callback-form" action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Lead from KalnyesGrowth.com!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://kalnyesgrowth.com/thanks.html">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="text" name="business" placeholder="Business name & type (e.g. Joe's Plumbing)">
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+        <button type="submit">Get My Free Website Preview →</button>
       </form>
+      <p style="text-align:center;font-size:.75rem;color:var(--muted);margin-top:10px">Zero cost. Zero obligation. Jose responds within 1 hour.</p>
     </div>
   </div>
 </section>
@@ -2587,21 +2594,6 @@ function handleAudit(e) {
   window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
 }
 
-// Callback form — WhatsApp (no activation required, instant notification on Jose’s phone)
-function submitCallbackWA(e) {
-  e.preventDefault();
-  var name = document.getElementById(‘cb-name’).value;
-  var biz  = document.getElementById(‘cb-biz’).value;
-  var phone= document.getElementById(‘cb-phone’).value;
-  var msg  = ‘📞 CALLBACK REQUEST — kalnyesgrowth.com\nName: ‘ + name +
-             (biz ? ‘\nBusiness: ‘ + biz : ‘’) +
-             ‘\nPhone: ‘ + phone +
-             ‘\n\nPlease call me back about a free website preview!’;
-  document.getElementById(‘cb-name’).value = ‘’;
-  document.getElementById(‘cb-biz’).value  = ‘’;
-  document.getElementById(‘cb-phone’).value= ‘’;
-  window.open(‘https://wa.me/15407838835?text=’ + encodeURIComponent(msg), ‘_blank’);
-}
 
 // Exit-intent popup
 function closeExitPopup() {
