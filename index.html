@@ -2716,7 +2716,8 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
   var proofs = [
     {icon:'🏗',text:'M&D Roofing — site delivered in 6 days',meta:'Fredericksburg, VA · May 2026'},
     {icon:'🎪',text:'Shaddai Rentals — bilingual site launched',meta:'Stafford, VA · May 2026'},
-    {icon:'🛡️',text:'234+ sites built — browse any of them live',meta:'Zero risk · $0 until you approve'},
+    {icon:'📅',text:'Jose D. just booked a free website preview',meta:'Stafford, VA · This week'},
+    {icon:'📅',text:'Matthew S. scheduled a business call',meta:'Fredericksburg, VA · This week'},
     {icon:'📞',text:'Jose responds to every message within 1 hour',meta:'Direct line · (540) 783-8835'},
     {icon:'⭐',text:'Free preview first — see your full site before paying',meta:'No contract · No obligation'}
   ];
@@ -2762,6 +2763,45 @@ document.getElementById(‘exit-close’).addEventListener(‘click’, closeExi
 .mcta-call{background:var(--green3);color:var(--dark)}
 .mcta-book{background:var(--gold);color:#fff;flex:1.5}
 </style>
+
+<!-- ══════════════════ EXIT-INTENT POPUP ══════════════════ -->
+<div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:16px;max-width:420px;width:90%;padding:36px 28px;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:exitPop .3s ease-out">
+    <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.4rem;color:#999;cursor:pointer">&times;</button>
+    <div style="font-size:2.2rem;margin-bottom:12px">⚡</div>
+    <h3 style="font-size:1.3rem;margin-bottom:8px;color:#111">Wait — your free preview is ready</h3>
+    <p style="font-size:.9rem;color:#666;margin-bottom:20px;line-height:1.5">Most business owners who leave never come back.<br>Drop your info and Jose will build your preview site — <strong>100% free, no strings attached.</strong></p>
+    <form action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:10px">
+      <input type="hidden" name="_subject" value="EXIT INTENT Lead — KalnyesGrowth.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://kalnyesgrowth.com/thanks.html">
+      <input type="text" name="name" placeholder="Your name" required style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:.95rem">
+      <input type="tel" name="phone" placeholder="Phone number" required style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:.95rem">
+      <input type="text" name="business" placeholder="Business name (optional)" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:.95rem">
+      <button type="submit" style="background:var(--gold);color:#fff;border:none;padding:14px;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px">Get My Free Website Preview →</button>
+    </form>
+    <p style="font-size:.72rem;color:#999;margin-top:12px">Zero cost. Jose responds within 1 hour. No spam ever.</p>
+  </div>
+</div>
+<style>
+@keyframes exitPop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+</style>
+<script>
+(function(){
+  var shown = false;
+  function closeExitPopup(){document.getElementById('exit-popup').style.display='none'}
+  window.closeExitPopup = closeExitPopup;
+  document.addEventListener('mouseout', function(e){
+    if(!e.toElement && !e.relatedTarget && e.clientY < 10 && !shown){
+      shown = true;
+      document.getElementById('exit-popup').style.display='flex';
+      sessionStorage.setItem('exitShown','1');
+    }
+  });
+  if(sessionStorage.getItem('exitShown')) shown = true;
+})();
+</script>
 
 <!-- Calendly inline widget script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
