@@ -297,6 +297,9 @@ nav .container {
 }
 .hero-img { position: relative; }
 .hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: var(--r-lg);
   box-shadow: 0 16px 48px rgba(0,0,0,.08);
   border: 1px solid var(--border);
@@ -556,6 +559,8 @@ nav .container {
 }
 .step-result-img {
   width: 100%;
+  height: auto;
+  display: block;
   border-radius: var(--r);
   margin-bottom: 20px;
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
@@ -668,7 +673,7 @@ nav .container {
 .portfolio-item:hover { transform: scale(1.02); }
 .portfolio-iframe {
   width: 300px;
-  height: 450px;
+  height: 300px;
   border: none;
   pointer-events: none;
 }
@@ -819,6 +824,87 @@ nav .container {
 }
 @media (max-width: 768px) {
   .edu-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SITE AUDIT FORM ── */
+.audit-section { background: var(--text); color: #fff; }
+.audit-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.audit-header h2 { color: #fff; }
+.audit-header p {
+  color: rgba(255,255,255,.7);
+  font-size: 1.05rem;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+.audit-form {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.audit-form input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-family: var(--font);
+  font-size: .95rem;
+  font-weight: 500;
+  transition: border-color .2s, background .2s;
+}
+.audit-form input::placeholder { color: rgba(255,255,255,.45); }
+.audit-form input:focus {
+  outline: none;
+  border-color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.12);
+}
+.audit-form button {
+  padding: 16px 32px;
+  background: #fff;
+  color: var(--text);
+  border: none;
+  border-radius: var(--r);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .3s;
+}
+.audit-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,.15);
+}
+.audit-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 640px;
+  margin: 32px auto 0;
+}
+.audit-feature {
+  text-align: center;
+  padding: 16px 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+}
+.audit-feature .af-icon { font-size: 1.4rem; margin-bottom: 6px; }
+.audit-feature .af-label { font-size: .72rem; color: rgba(255,255,255,.6); line-height: 1.3; }
+@media (max-width: 600px) {
+  .audit-features { grid-template-columns: repeat(2, 1fr); }
+}
+.audit-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
 }
 
 /* ── CALENDLY ── */
@@ -1055,7 +1141,7 @@ footer .container {
       </div>
     </div>
     <div class="hero-img fade-up delay-2">
-      <img src="img/new/hero.png" alt="Professional website and Google Business Profile built by Kalnyes Agency" loading="eager" width="560" height="400">
+      <img src="img/new/hero.png" alt="Professional website and Google Business Profile built by Kalnyes Agency" loading="eager" width="1024" height="1024">
       <div class="hero-stat stat-1">
         <div class="num">10-30</div>
         <div class="label">New Leads<br>Per Month</div>
@@ -1361,7 +1447,7 @@ footer .container {
     <div class="portfolio-scroll">
       <!-- FreshCut Landscaping — LIVE CLIENT -->
       <div class="portfolio-item">
-        <a href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,58,26,.85),rgba(45,90,39,.85)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,58,26,.85),rgba(45,90,39,.85)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#127793;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">FreshCut Landscaping</div>
@@ -1373,7 +1459,7 @@ footer .container {
       </div>
       <!-- Pepe's Party Rental — LIVE CLIENT -->
       <div class="portfolio-item">
-        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,26,46,.85),rgba(15,52,96,.85)),url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,26,46,.85),rgba(15,52,96,.85)),url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#127881;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Pepe's Party Rental</div>
@@ -1385,7 +1471,7 @@ footer .container {
       </div>
       <!-- Ironflow Plumbing — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,22,40,.85),rgba(26,58,106,.85)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(10,22,40,.85),rgba(26,58,106,.85)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#128295;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Ironflow Plumbing</div>
@@ -1397,7 +1483,7 @@ footer .container {
       </div>
       <!-- Patriot Electric — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/patriot-electric/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,32,0,.85),rgba(106,80,0,.85)),url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/patriot-electric/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(42,32,0,.85),rgba(106,80,0,.85)),url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#9889;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Patriot Electric VA</div>
@@ -1409,7 +1495,7 @@ footer .container {
       </div>
       <!-- AirCraft H&C — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,32,64,.85),rgba(26,64,128,.85)),url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(10,32,64,.85),rgba(26,64,128,.85)),url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#10052;&#65039;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">AirCraft Heating & Cooling</div>
@@ -1421,7 +1507,7 @@ footer .container {
       </div>
       <!-- TerraForm Outdoor — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,46,26,.85),rgba(58,106,48,.85)),url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,46,26,.85),rgba(58,106,48,.85)),url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#127807;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">TerraForm Outdoor Design</div>
@@ -1433,7 +1519,7 @@ footer .container {
       </div>
       <!-- Spotless Standard — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/crystalclear-cleaning/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,42,58,.85),rgba(58,106,154,.85)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/crystalclear-cleaning/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,42,58,.85),rgba(58,106,154,.85)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#10024;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Spotless Standard Cleaning</div>
@@ -1445,7 +1531,7 @@ footer .container {
       </div>
       <!-- La Mesa Cocina — PORTFOLIO -->
       <div class="portfolio-item">
-        <a href="portfolio/lamesa-restaurant/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,26,10,.85),rgba(106,58,42,.85)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+        <a href="portfolio/lamesa-restaurant/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(42,26,10,.85),rgba(106,58,42,.85)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
           <div style="padding:24px;">
             <div style="font-size:2.4rem;margin-bottom:12px;">&#127869;</div>
             <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">La Mesa Cocina</div>
@@ -1553,6 +1639,48 @@ footer .container {
       <p style="font-size:1.08rem;max-width:680px;margin:0 auto 24px;color:var(--text);line-height:1.7;">The businesses that win aren't the biggest. They're the ones that show up first, look professional, and make it easy to book. <strong>That's what we build for you.</strong></p>
       <a href="#book-call" class="btn btn-primary">Get Your Free Strategy Call</a>
     </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FREE WEBSITE AUDIT - LEAD CAPTURE            -->
+<!-- ============================================ -->
+<section class="section audit-section" id="free-audit">
+  <div class="container">
+    <div class="audit-header fade-up">
+      <div class="eyebrow" style="color:rgba(255,255,255,.5);">Free Website Analysis</div>
+      <h2>How Does Your Website<br>Stack Up Right Now?</h2>
+      <p>Enter your website URL and we'll analyze your SEO ranking, page speed, mobile performance, and conversion readiness. Get a clear picture of what's working and what's costing you customers.</p>
+    </div>
+    <form class="audit-form fade-up" action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Website Audit Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://kalnyesgrowth.com/#free-audit">
+      <input type="url" name="website_url" placeholder="Enter your website URL (e.g. www.yourbusiness.com)" required>
+      <input type="email" name="email" placeholder="Email to receive your report" required>
+      <input type="text" name="business_name" placeholder="Your business name (optional)">
+      <button type="submit">Analyze My Website Free</button>
+    </form>
+    <div class="audit-features fade-up">
+      <div class="audit-feature">
+        <div class="af-icon">&#9889;</div>
+        <div class="af-label">Speed Score</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#128269;</div>
+        <div class="af-label">SEO Ranking</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#128241;</div>
+        <div class="af-label">Mobile Grade</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#128200;</div>
+        <div class="af-label">Conversion Score</div>
+      </div>
+    </div>
+    <p class="audit-note">Takes 30 seconds. Results delivered to your email within 24 hours.</p>
   </div>
 </section>
 
