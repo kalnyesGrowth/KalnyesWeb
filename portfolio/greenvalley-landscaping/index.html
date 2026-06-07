@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Valley Landscaping | Lawn Care & Landscape Design in Stafford, VA</title>
+<meta name="description" content="Green Valley Landscaping provides professional lawn care, landscape design, hardscaping, and seasonal maintenance in Stafford, Fredericksburg, and Spotsylvania VA. Free estimates. Call (540) 555-3618.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LandscapingBusiness",
+  "name":"Green Valley Landscaping",
+  "description":"Professional lawn care, landscape design, hardscaping, and seasonal maintenance in Stafford and Fredericksburg VA.",
+  "url":"https://greenvalleylandscapingva.com",
+  "telephone":"+1-540-555-3618",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"220 Mine Rd",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "postalCode":"22554",
+    "addressCountry":"US"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"14:00"}
+  ],
+  "priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"83","bestRating":"5"},
+  "areaServed":["Stafford","Fredericksburg","Spotsylvania","King George"]
+}
+</script>
+
+<style>
+:root {
+  --green-deep: #14532d;
+  --green-mid: #166534;
+  --green-bright: #22c55e;
+  --green-light: #86efac;
+  --green-pale: #f0fdf4;
+  --earth: #78716c;
+  --earth-dark: #44403c;
+  --earth-light: #d6d3d1;
+  --white: #ffffff;
+  --off-white: #fafaf9;
+  --gray-100: #f5f5f4;
+  --gray-200: #e7e5e4;
+  --gray-400: #a8a29e;
+  --gray-600: #57534e;
+  --gray-800: #292524;
+  --font: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  --max: 1100px;
+  --r: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); color: var(--gray-800); line-height: 1.7; background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.2; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--gray-200); }
+.nav-top {
+  background: var(--green-deep);
+  padding: 8px 0;
+  font-size: .8rem;
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.logo { font-size: 1.2rem; font-weight: 900; color: var(--green-deep); }
+.logo span { color: var(--green-bright); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--gray-600); font-size: .88rem; font-weight: 600; transition: color .2s; }
+.nav-links a:hover { color: var(--green-mid); }
+.nav-phone {
+  background: var(--green-mid);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .88rem;
+  transition: background .2s;
+}
+.nav-phone:hover { background: var(--green-deep); }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1400&q=80') center/cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20,83,45,.85) 0%, rgba(22,101,52,.7) 50%, rgba(34,197,94,.3) 100%);
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.hero-text h1 em { font-style: normal; color: var(--green-light); }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.85); margin-bottom: 24px; }
+.hero-badges { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+  transition: all .3s;
+}
+.btn-white { background: var(--white); color: var(--green-deep); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.3); }
+.btn-outline:hover { border-color: var(--white); }
+.hero-rating { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); font-size: .85rem; }
+.stars { color: #fbbf24; }
+.hero-img-wrap { position: relative; }
+.hero-img-wrap img {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.3);
+  border: 3px solid rgba(255,255,255,.15);
+}
+.hero-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+.hero-float.tr { top: -10px; right: -10px; }
+.hero-float.bl { bottom: -10px; left: -10px; }
+.hero-float .num { font-size: 1.5rem; font-weight: 900; color: var(--green-mid); }
+.hero-float .label { font-size: .7rem; color: var(--gray-600); font-weight: 500; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges, .hero-btns, .hero-rating { justify-content: center; }
+  .hero-img-wrap { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* TRUST */
+.trust-bar { background: var(--off-white); border-bottom: 1px solid var(--gray-200); padding: 32px 0; }
+.trust-bar .container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center; }
+.trust-item .num { font-size: 1.6rem; font-weight: 900; color: var(--green-deep); }
+.trust-item .label { font-size: .72rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .08em; }
+
+/* SECTION */
+.section-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.section-header .eyebrow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--green-mid); margin-bottom: 12px; }
+.section-header h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; color: var(--gray-800); }
+.section-header p { color: var(--gray-600); font-size: .95rem; margin-top: 12px; }
+
+/* SERVICES */
+.services { padding: 80px 0; background: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  background: var(--green-pale);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all .3s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(22,101,52,.1); border-color: var(--green-bright); }
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--green-mid);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.5rem;
+}
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-800); margin-bottom: 8px; }
+.service-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; }
+@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* WHY US */
+.why-us { padding: 80px 0; background: var(--green-deep); color: var(--white); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.why-img img { border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+.why-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; margin-bottom: 16px; }
+.why-text p { color: rgba(255,255,255,.75); font-size: .95rem; line-height: 1.7; margin-bottom: 24px; }
+.why-list { list-style: none; }
+.why-list li { padding: 8px 0; font-size: .9rem; color: rgba(255,255,255,.8); display: flex; align-items: flex-start; gap: 10px; }
+.why-list li::before { content: '\2713'; color: var(--green-light); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } .why-img { order: -1; } }
+
+/* REVIEWS */
+.reviews { padding: 80px 0; background: var(--off-white); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px; }
+.review-stars { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+.review-text { font-size: .88rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 700; font-size: .88rem; color: var(--gray-800); }
+.review-date { font-size: .72rem; color: var(--gray-400); }
+.review-source { display: inline-flex; align-items: center; gap: 4px; font-size: .68rem; color: var(--gray-400); margin-top: 8px; background: var(--gray-100); padding: 3px 10px; border-radius: 20px; }
+@media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* ABOUT */
+.about { padding: 80px 0; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.about-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; color: var(--gray-800); margin-bottom: 16px; }
+.about-text p { font-size: .95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+.about-img img { border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* CONTACT */
+.contact { padding: 80px 0; background: var(--green-deep); color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h2 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.contact-item .icon { font-size: 1.2rem; margin-top: 2px; }
+.contact-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+.contact-item p { font-size: .85rem; color: rgba(255,255,255,.75); }
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* CTA */
+.cta { padding: 80px 0; background: var(--green-pale); text-align: center; }
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--green-deep); margin-bottom: 14px; }
+.cta p { font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px; color: var(--gray-600); }
+.btn-green { background: var(--green-mid); color: var(--white); }
+.btn-green:hover { background: var(--green-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,101,52,.2); }
+
+footer { padding: 32px 0; background: var(--green-deep); text-align: center; color: rgba(255,255,255,.5); font-size: .78rem; }
+
+.mobile-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+  background: var(--white); padding: 12px 20px; border-top: 2px solid var(--green-mid);
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.mobile-cta a {
+  display: block; background: var(--green-mid); color: var(--white); text-align: center;
+  padding: 14px; border-radius: var(--r); font-weight: 700; font-size: .95rem;
+}
+@media (max-width: 768px) { .mobile-cta { display: block; } body { padding-bottom: 68px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">Free Lawn Assessment for New Customers. Call (540) 555-3618</div>
+  <div class="nav-main">
+    <a href="#" class="logo">Green Valley<span> Landscaping</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+15405553618" class="nav-phone">Call (540) 555-3618</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <div class="badge">&#127793; Licensed & Insured</div>
+        <div class="badge">&#9989; Free Estimates</div>
+      </div>
+      <h1>A Yard Your Neighbors <em>Actually Notice</em></h1>
+      <p class="hero-sub">Professional lawn care, landscape design, and hardscaping for Stafford County homeowners. From weekly maintenance to complete outdoor transformations.</p>
+      <div class="hero-btns">
+        <a href="tel:+15405553618" class="btn btn-white">Call (540) 555-3618</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4.8 stars from 83 Google reviews</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80" alt="Beautiful landscaped front yard with stone pathway" width="560" height="400" style="object-fit:cover;">
+      <div class="hero-float tr">
+        <div class="num">1,200+</div>
+        <div class="label">Properties Served</div>
+      </div>
+      <div class="hero-float bl">
+        <div class="num">9</div>
+        <div class="label">Years in Business</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="num">9+</div><div class="label">Years Experience</div></div>
+    <div class="trust-item"><div class="num">1,200+</div><div class="label">Properties</div></div>
+    <div class="trust-item"><div class="num">83</div><div class="label">Google Reviews</div></div>
+    <div class="trust-item"><div class="num">350+</div><div class="label">Weekly Clients</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">Satisfaction Rate</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Our Services</div>
+      <h2>Everything Your Outdoor Space Needs</h2>
+      <p>From weekly mowing to complete landscape overhauls. One crew, one company, one call.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#127793;</div>
+        <h3>Weekly Lawn Maintenance</h3>
+        <p>Mowing, edging, trimming, and blowing. Consistent cut height, clean lines, and reliable scheduling every week.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127796;</div>
+        <h3>Landscape Design & Install</h3>
+        <p>Custom planting beds, ornamental trees, native shrubs, and seasonal color. Designed for Virginia's climate zones.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#129704;</div>
+        <h3>Hardscaping</h3>
+        <p>Patios, retaining walls, fire pits, walkways, and outdoor kitchens. Natural stone, pavers, and stamped concrete.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128167;</div>
+        <h3>Irrigation Systems</h3>
+        <p>Sprinkler installation, repair, winterization, and spring startup. Smart controllers that adjust to weather conditions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127810;</div>
+        <h3>Seasonal Cleanup</h3>
+        <p>Spring cleanup, fall leaf removal, bed preparation, and mulch installation. Keep your property looking sharp year-round.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127807;</div>
+        <h3>Lawn Treatment Programs</h3>
+        <p>Fertilization, weed control, aeration, and overseeding. 6-application program tailored to Virginia fescue and Bermuda lawns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Professionally landscaped backyard with patio" width="520" height="380" style="object-fit:cover;">
+      </div>
+      <div class="why-text">
+        <h2>Why 350+ Homeowners Trust Us with Their Property</h2>
+        <p>We are not a mow-and-go operation. Every property gets a dedicated crew lead who knows your yard, knows your preferences, and makes sure the work meets our standard before leaving.</p>
+        <ul class="why-list">
+          <li>Same crew every visit. They know your property</li>
+          <li>Licensed pesticide applicator (VDACS #92847)</li>
+          <li>$2M liability insurance on every job</li>
+          <li>Real-time GPS tracking on all crews</li>
+          <li>Text notification 30 minutes before arrival</li>
+          <li>Seasonal property walk-throughs with recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>4.8 Stars from 83 Reviews</h2>
+      <p>Real reviews from homeowners across Stafford County.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"We moved into a new build with nothing but bare clay and weeds. Green Valley designed a complete landscape plan, installed sod, shrubs, a flagstone walkway, and landscape lighting. Our yard went from worst on the street to best in three weeks."</div>
+        <div class="review-author">Justin & Amanda K.</div>
+        <div class="review-date">April 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Three years of weekly service and they have never missed a cut. Same crew every week, same quality. They even text me before they arrive so I can move the dog inside. Small detail but it shows they care about their customers."</div>
+        <div class="review-author">Heather M.</div>
+        <div class="review-date">February 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Built a 400 sq ft paver patio with a fire pit in our backyard. The drainage was tricky because of the slope, but they handled it perfectly. Used natural stone for the retaining wall. It looks like something from HGTV."</div>
+        <div class="review-author">Chris D.</div>
+        <div class="review-date">November 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Our HOA sent us a violation for the overgrown front beds. Green Valley came out the next day, cleaned everything up, replaced the dead boxwoods, added new mulch, and planted seasonal color. HOA sent a compliment letter the following month."</div>
+        <div class="review-author">Tara S.</div>
+        <div class="review-date">September 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="review-text">"Good weekly service overall. Clean cuts, nice edging. Only complaint is they skipped our scheduled week once without notification. When I called, they came out the next day and gave us a free service. So they made it right."</div>
+        <div class="review-author">Rachel & Tom B.</div>
+        <div class="review-date">August 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Installed a full irrigation system in our 0.4-acre yard. 6 zones, rain sensor, Wi-Fi controller. Our water bill actually went down because the old manual sprinklers were wasting so much water. System has worked flawlessly for 2 seasons."</div>
+        <div class="review-author">George P.</div>
+        <div class="review-date">June 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-header" style="text-align:left;margin:0 0 24px;">
+          <div class="eyebrow">Our Story</div>
+          <h2>From One Mower to 350+ Properties</h2>
+        </div>
+        <p>Green Valley Landscaping was started in 2017 by Miguel Santos with a used truck, a zero-turn mower, and five residential clients in the Aquia Harbour neighborhood. Miguel grew up working on his family's farm in El Salvador and brought that same work ethic to Stafford County.</p>
+        <p>Today the company runs 4 full crews, 2 dedicated install teams, and serves over 350 weekly maintenance clients across Stafford, Fredericksburg, and Spotsylvania. Every crew lead has at least 3 years of experience with the company.</p>
+        <p>Miguel still does every design consultation personally. He walks the property, listens to what you want, and creates a plan that works for your budget, your soil, and Virginia's growing seasons.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Landscaping team working on residential property" width="520" height="400" style="object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get Your Free Estimate</h2>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div><h4>Phone</h4><p><a href="tel:+15405553618" style="color:var(--green-light);">(540) 555-3618</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div><h4>Office</h4><p>220 Mine Rd<br>Stafford, VA 22554</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128338;</div>
+          <div><h4>Hours</h4><p>Mon-Fri: 7:00 AM - 6:00 PM<br>Saturday: 7:00 AM - 2:00 PM<br>Sunday: Closed</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128231;</div>
+          <div><h4>Email</h4><p>info@greenvalleylandscapingva.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#127758;</div>
+          <div><h4>Service Area</h4><p>Stafford, Fredericksburg, Spotsylvania, Aquia Harbour, Falmouth, and surrounding areas</p></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div>
+          <p style="font-size:1.2rem;margin-bottom:8px;">&#128205;</p>
+          <p>220 Mine Rd<br>Stafford, VA 22554</p>
+          <p style="margin-top:12px;"><a href="https://maps.google.com/?q=220+Mine+Rd+Stafford+VA" style="color:var(--green-light);font-weight:600;">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Your Dream Yard Starts with a Free Consultation</h2>
+    <p>We walk the property, listen to your vision, and create a plan that fits your budget. No pressure, no obligation.</p>
+    <a href="tel:+15405553618" class="btn btn-green" style="font-size:1.1rem;padding:16px 36px;">Call (540) 555-3618</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Green Valley Landscaping. All rights reserved. VDACS License #92847. Stafford, Virginia.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:+15405553618">Call: (540) 555-3618</a>
+</div>
+
+</body>
+</html>

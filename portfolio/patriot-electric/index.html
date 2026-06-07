@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patriot Electric VA | Licensed Electrician in Stafford & Fredericksburg, Virginia</title>
+<meta name="description" content="Patriot Electric VA provides licensed, insured electrical services in Stafford, Fredericksburg, and Spotsylvania. Panel upgrades, EV chargers, rewiring. Free estimates. Call (540) 555-7193.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Electrician",
+  "name":"Patriot Electric VA",
+  "description":"Licensed master electrician serving Stafford, Fredericksburg, and Spotsylvania. Panel upgrades, EV charger installation, whole-house rewiring, generator hookups.",
+  "url":"https://patriotelectricva.com",
+  "telephone":"+1-540-555-7193",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"1815 Jefferson Davis Hwy",
+    "addressLocality":"Fredericksburg",
+    "addressRegion":"VA",
+    "postalCode":"22401",
+    "addressCountry":"US"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":"38.3032","longitude":"-77.4605"},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"17:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}
+  ],
+  "priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"94","bestRating":"5"},
+  "areaServed":["Stafford","Fredericksburg","Spotsylvania","King George","Caroline"]
+}
+</script>
+
+<style>
+:root {
+  --dark: #1a1a1a;
+  --dark-mid: #2a2a2a;
+  --dark-card: #222;
+  --gold: #f59e0b;
+  --gold-light: #fbbf24;
+  --gold-dark: #d97706;
+  --white: #ffffff;
+  --off-white: #fafaf9;
+  --gray-100: #f5f5f4;
+  --gray-200: #e7e5e4;
+  --gray-400: #a8a29e;
+  --gray-600: #57534e;
+  --gray-800: #292524;
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --max: 1100px;
+  --r: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); color: var(--gray-800); line-height: 1.7; background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.2; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav {
+  background: var(--dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-top {
+  background: var(--gold);
+  padding: 8px 0;
+  font-size: .8rem;
+  color: var(--dark);
+  text-align: center;
+  font-weight: 700;
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--white);
+}
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--gray-400); font-size: .88rem; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-phone {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 10px 20px;
+  border-radius: var(--r);
+  font-weight: 800;
+  font-size: .88rem;
+  transition: background .2s;
+}
+.nav-phone:hover { background: var(--gold-light); }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background: var(--dark);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1400&q=80') center/cover;
+  opacity: .2;
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -.03em;
+}
+.hero-text h1 em { font-style: normal; color: var(--gold); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--gray-400);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.hero-badges {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,.12);
+  border: 1px solid rgba(245,158,11,.25);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+  transition: all .3s;
+}
+.btn-gold { background: var(--gold); color: var(--dark); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.25); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.2); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-400);
+  font-size: .85rem;
+}
+.stars { color: var(--gold); }
+.hero-img-wrap { position: relative; }
+.hero-img-wrap img {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.4);
+  border: 3px solid rgba(245,158,11,.15);
+}
+.hero-float {
+  position: absolute;
+  background: var(--dark);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.hero-float.tr { top: -10px; right: -10px; }
+.hero-float.bl { bottom: -10px; left: -10px; }
+.hero-float .num { font-size: 1.5rem; font-weight: 900; color: var(--gold); }
+.hero-float .label { font-size: .7rem; color: var(--gray-400); font-weight: 500; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges, .hero-btns, .hero-rating { justify-content: center; }
+  .hero-img-wrap { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 32px 0;
+}
+.trust-bar .container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.trust-item .num { font-size: 1.6rem; font-weight: 900; color: var(--dark); }
+.trust-item .label { font-size: .72rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .08em; }
+
+/* SECTION HELPERS */
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.section-header .eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+.section-header h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  color: var(--dark);
+  letter-spacing: -.02em;
+}
+.section-header p { color: var(--gray-600); font-size: .95rem; margin-top: 12px; }
+
+/* SERVICES */
+.services { padding: 80px 0; background: var(--white); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--off-white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 32px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform .3s;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--gold);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.service-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; }
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* WHY SECTION */
+.why-us { padding: 80px 0; background: var(--dark); color: var(--white); }
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.why-img img { border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+.why-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; margin-bottom: 16px; }
+.why-text p { color: var(--gray-400); font-size: .95rem; line-height: 1.7; margin-bottom: 24px; }
+.why-list { list-style: none; }
+.why-list li {
+  padding: 8px 0;
+  font-size: .9rem;
+  color: var(--gray-400);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.why-list li::before { content: '\2713'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-img { order: -1; }
+}
+
+/* REVIEWS */
+.reviews { padding: 80px 0; background: var(--off-white); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 28px;
+}
+.review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 12px; }
+.review-text { font-size: .88rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 700; font-size: .88rem; color: var(--dark); }
+.review-date { font-size: .72rem; color: var(--gray-400); }
+.review-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  color: var(--gray-400);
+  margin-top: 8px;
+  background: var(--gray-100);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+
+/* ABOUT */
+.about { padding: 80px 0; background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-text h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+.about-text p { font-size: .95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+.about-img img { border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* CONTACT */
+.contact { padding: 80px 0; background: var(--dark); color: var(--white); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-info h2 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.contact-item .icon { font-size: 1.2rem; margin-top: 2px; }
+.contact-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+.contact-item p { font-size: .85rem; color: var(--gray-400); }
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(245,158,11,.15);
+  background: var(--dark-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: .85rem;
+  color: var(--gray-400);
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* CTA */
+.cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+  text-align: center;
+  color: var(--dark);
+}
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 14px; }
+.cta p { font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px; }
+.btn-dark { background: var(--dark); color: var(--white); }
+.btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+
+footer {
+  padding: 32px 0;
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,.06);
+  text-align: center;
+  color: var(--gray-400);
+  font-size: .78rem;
+}
+
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--dark);
+  padding: 12px 20px;
+  border-top: 2px solid var(--gold);
+}
+.mobile-cta a {
+  display: block;
+  background: var(--gold);
+  color: var(--dark);
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--r);
+  font-weight: 800;
+  font-size: .95rem;
+}
+@media (max-width: 768px) {
+  .mobile-cta { display: block; }
+  body { padding-bottom: 68px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">Free Electrical Safety Inspection with Every Service Call. Call (540) 555-7193</div>
+  <div class="nav-main">
+    <a href="#" class="logo">Patriot<span>Electric</span> VA</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+15405557193" class="nav-phone">Call (540) 555-7193</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <div class="badge">&#9889; Licensed Master Electrician</div>
+        <div class="badge">&#128737; Fully Insured</div>
+        <div class="badge">&#9989; Free Estimates</div>
+      </div>
+      <h1>Electrical Work Done <em>Safely and Right</em> the First Time</h1>
+      <p class="hero-sub">Panel upgrades, EV charger installs, whole-house rewiring, and everything in between. Serving Stafford, Fredericksburg, and Spotsylvania since 2009.</p>
+      <div class="hero-btns">
+        <a href="tel:+15405557193" class="btn btn-gold">Call (540) 555-7193</a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4.8 stars from 94 Google reviews</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" alt="Licensed electrician installing a circuit breaker panel" width="560" height="400" style="object-fit:cover;">
+      <div class="hero-float tr">
+        <div class="num">3,100+</div>
+        <div class="label">Jobs Completed</div>
+      </div>
+      <div class="hero-float bl">
+        <div class="num">15</div>
+        <div class="label">Years Licensed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="num">15+</div><div class="label">Years Licensed</div></div>
+    <div class="trust-item"><div class="num">3,100+</div><div class="label">Jobs Done</div></div>
+    <div class="trust-item"><div class="num">94</div><div class="label">Google Reviews</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="label">Free Estimates</div></div>
+    <div class="trust-item"><div class="num">A+</div><div class="label">BBB Rating</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Our Services</div>
+      <h2>Residential & Commercial Electrical Services</h2>
+      <p>Every job meets or exceeds NEC code. No shortcuts, no exceptions.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#9889;</div>
+        <h3>Panel Upgrades</h3>
+        <p>100-amp to 200-amp upgrades, sub-panel installs, and Federal Pacific/Zinsco panel replacements. Modern homes need modern power.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128663;</div>
+        <h3>EV Charger Installation</h3>
+        <p>Level 2 charger installation for Tesla, Ford, Chevy, and all EV brands. Dedicated 240V circuit with proper load calculation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128161;</div>
+        <h3>Whole-House Rewiring</h3>
+        <p>Older homes with knob-and-tube or aluminum wiring need updating for safety. Complete rewiring with minimal wall disruption.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127777;</div>
+        <h3>Generator Hookups</h3>
+        <p>Whole-house generator transfer switches and portable generator inlet boxes. Keep your family safe during Virginia storms.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128262;</div>
+        <h3>Lighting & Outlets</h3>
+        <p>Recessed lighting, landscape lighting, GFCI outlets, USB outlets, smart switches. Upgrade your home's convenience and safety.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128736;</div>
+        <h3>Troubleshooting & Repair</h3>
+        <p>Flickering lights, tripping breakers, dead outlets, burning smells. We find the problem fast and fix it permanently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Patriot Electric van and tools" width="520" height="380" style="object-fit:cover;">
+      </div>
+      <div class="why-text">
+        <h2>Why Virginia Homeowners Trust Patriot Electric</h2>
+        <p>Electrical work is not something you take chances with. Every technician on our team holds a journeyman or master electrician license. We pull permits, we schedule inspections, and we guarantee our work passes code the first time.</p>
+        <ul class="why-list">
+          <li>VA Master Electrician License #ELE-2701-008842</li>
+          <li>$3M general liability + workers comp insurance</li>
+          <li>All work permitted and inspected per NEC/Virginia code</li>
+          <li>Upfront flat-rate pricing. No hourly surprises</li>
+          <li>Background-checked, drug-tested technicians</li>
+          <li>2-year warranty on all labor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>4.8 Stars from 94 Reviews</h2>
+      <p>Trusted by homeowners and property managers across the Fredericksburg region.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Had our panel upgraded from 100A to 200A for a home addition. They pulled the permit, coordinated with the county inspector, and had everything done in one day. The inspector said it was one of the cleanest panel installs he had seen."</div>
+        <div class="review-author">Steve & Karen L.</div>
+        <div class="review-date">February 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Installed a Tesla Wall Connector in our garage. Other electricians wanted to run a 100-ft wire from the panel. These guys found a shorter route through the crawlspace, saved us $400, and finished in 3 hours. Professional from start to finish."</div>
+        <div class="review-author">Michael D.</div>
+        <div class="review-date">December 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Our 1960s home had aluminum wiring that our insurance company flagged. Patriot Electric re-wired the entire house. They patched every wall access point, labeled every circuit, and left our house cleaner than they found it. Worth every penny."</div>
+        <div class="review-author">Barbara H.</div>
+        <div class="review-date">October 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"We bought a house with a Federal Pacific panel and no grounding. They replaced the panel and added a ground rod system. Now our homeowners insurance is $200/year cheaper. The panel upgrade paid for itself in three years."</div>
+        <div class="review-author">James & Linda P.</div>
+        <div class="review-date">September 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="review-text">"Good work installing recessed lights in our kitchen and living room. 12 cans total. Only reason for 4 stars is scheduling. Had to wait 10 days for the appointment. But once they arrived, the work took one day and looks great."</div>
+        <div class="review-author">Sarah W.</div>
+        <div class="review-date">August 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Generator transfer switch installed before hurricane season. When we lost power for 36 hours last month, our generator kicked in and kept the fridge, well pump, and a few lights running. Best money we ever spent on the house."</div>
+        <div class="review-author">Dan R.</div>
+        <div class="review-date">July 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-header" style="text-align:left;margin:0 0 24px;">
+          <div class="eyebrow">Our Story</div>
+          <h2>Built on Safety, Driven by Craft</h2>
+        </div>
+        <p>Patriot Electric VA was started in 2009 by Marcus Boyd, a U.S. Army veteran who spent 8 years as a combat engineer before earning his master electrician license. Marcus believes electrical work should be done with the same discipline and precision he learned in the military.</p>
+        <p>What started as a solo operation out of Fredericksburg has grown into a 6-person team serving Stafford, Spotsylvania, King George, and Caroline counties. Every technician on the team is a licensed journeyman or master electrician. No apprentice-only crews, ever.</p>
+        <p>Marcus still personally inspects every panel upgrade and rewiring job before signing off. His name is on the license and on the truck, and he takes that seriously.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80" alt="Electrician working on commercial electrical panel" width="520" height="400" style="object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Request a Free Estimate</h2>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div><h4>Phone</h4><p><a href="tel:+15405557193" style="color:var(--gold);">(540) 555-7193</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div><h4>Office</h4><p>1815 Jefferson Davis Hwy<br>Fredericksburg, VA 22401</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128338;</div>
+          <div><h4>Hours</h4><p>Mon-Fri: 7:00 AM - 5:00 PM<br>Saturday: 8:00 AM - 1:00 PM<br>Sunday: Closed</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128231;</div>
+          <div><h4>Email</h4><p>info@patriotelectricva.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#127758;</div>
+          <div><h4>Service Area</h4><p>Stafford, Fredericksburg, Spotsylvania, King George, Caroline, and Northern Neck</p></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div>
+          <p style="font-size:1.2rem;margin-bottom:8px;">&#128205;</p>
+          <p>1815 Jefferson Davis Hwy<br>Fredericksburg, VA 22401</p>
+          <p style="margin-top:12px;"><a href="https://maps.google.com/?q=1815+Jefferson+Davis+Hwy+Fredericksburg+VA" style="color:var(--gold);font-weight:600;">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Electrical Problems Don't Fix Themselves.<br>And They Don't Get Cheaper.</h2>
+    <p>Free estimates, flat-rate pricing, licensed master electrician on every job. Call today and get it done right.</p>
+    <a href="tel:+15405557193" class="btn btn-dark" style="font-size:1.1rem;padding:16px 36px;">Call (540) 555-7193</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Patriot Electric VA. All rights reserved. VA License #ELE-2701-008842. Fredericksburg, Virginia.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:+15405557193">Call Now: (540) 555-7193</a>
+</div>
+
+</body>
+</html>

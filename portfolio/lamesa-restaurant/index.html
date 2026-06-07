@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Mesa Cocina | Authentic Mexican Restaurant in Fredericksburg, VA</title>
+<meta name="description" content="La Mesa Cocina serves authentic Mexican cuisine in Fredericksburg, VA. Family recipes from Oaxaca. Handmade tortillas, fresh salsas, craft margaritas. Dine-in, takeout, catering. Call (540) 555-6740.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"La Mesa Cocina",
+  "description":"Authentic Mexican restaurant in Fredericksburg, VA. Family recipes from Oaxaca. Handmade tortillas, fresh salsas, and craft margaritas.",
+  "url":"https://lamesacocina.com",
+  "telephone":"+1-540-555-6740",
+  "servesCuisine":"Mexican",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"608 Caroline St",
+    "addressLocality":"Fredericksburg",
+    "addressRegion":"VA",
+    "postalCode":"22401",
+    "addressCountry":"US"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"11:00","closes":"21:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"11:00","closes":"22:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"20:00"}
+  ],
+  "priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"312","bestRating":"5"},
+  "areaServed":["Fredericksburg","Stafford","Spotsylvania"]
+}
+</script>
+
+<style>
+:root {
+  --amber: #d97706;
+  --amber-light: #f59e0b;
+  --amber-dark: #92400e;
+  --amber-pale: #fef3c7;
+  --burgundy: #7f1d1d;
+  --burgundy-mid: #991b1b;
+  --burgundy-deep: #450a0a;
+  --cream: #fefce8;
+  --warm-white: #fffbeb;
+  --white: #ffffff;
+  --gray-100: #f5f5f4;
+  --gray-200: #e7e5e4;
+  --gray-400: #a8a29e;
+  --gray-600: #57534e;
+  --gray-800: #292524;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --max: 1100px;
+  --r: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font-body); color: var(--gray-800); line-height: 1.7; background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
+h4 { font-family: var(--font-body); line-height: 1.3; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav { background: var(--burgundy-deep); position: sticky; top: 0; z-index: 100; }
+.nav-top {
+  background: var(--amber);
+  padding: 8px 0;
+  font-size: .8rem;
+  color: var(--burgundy-deep);
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--font-body);
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.logo { font-size: 1.4rem; font-weight: 800; color: var(--white); font-family: var(--font-display); }
+.logo span { color: var(--amber-light); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,.7); font-size: .88rem; font-weight: 500; transition: color .2s; font-family: var(--font-body); }
+.nav-links a:hover { color: var(--white); }
+.nav-phone {
+  background: var(--amber);
+  color: var(--burgundy-deep);
+  padding: 10px 20px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .88rem;
+  font-family: var(--font-body);
+  transition: background .2s;
+}
+.nav-phone:hover { background: var(--amber-light); }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1400&q=80') center/cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(69,10,10,.88) 0%, rgba(127,29,29,.75) 50%, rgba(217,119,6,.3) 100%);
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.hero-text h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.hero-text h1 em { font-style: italic; color: var(--amber-light); }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 24px; font-family: var(--font-body); }
+.hero-badges { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: var(--white);
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  transition: all .3s;
+}
+.btn-amber { background: var(--amber); color: var(--white); }
+.btn-amber:hover { background: var(--amber-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217,119,6,.3); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.25); }
+.btn-outline:hover { border-color: var(--amber-light); color: var(--amber-light); }
+.hero-rating { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); font-size: .85rem; font-family: var(--font-body); }
+.stars { color: #fbbf24; }
+.hero-img-wrap { position: relative; }
+.hero-img-wrap img {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.35);
+  border: 3px solid rgba(255,255,255,.1);
+}
+.hero-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+.hero-float.tr { top: -10px; right: -10px; }
+.hero-float.bl { bottom: -10px; left: -10px; }
+.hero-float .num { font-size: 1.4rem; font-weight: 800; color: var(--burgundy); font-family: var(--font-display); }
+.hero-float .label { font-size: .7rem; color: var(--gray-600); font-weight: 500; font-family: var(--font-body); }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges, .hero-btns, .hero-rating { justify-content: center; }
+  .hero-img-wrap { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* TRUST */
+.trust-bar { background: var(--cream); border-bottom: 1px solid var(--gray-200); padding: 28px 0; }
+.trust-bar .container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center; }
+.trust-item .num { font-size: 1.5rem; font-weight: 800; color: var(--burgundy); font-family: var(--font-display); }
+.trust-item .label { font-size: .72rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .08em; font-family: var(--font-body); }
+
+/* SECTION */
+.section-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.section-header .eyebrow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--amber-dark); margin-bottom: 12px; font-family: var(--font-body); }
+.section-header h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; color: var(--gray-800); }
+.section-header p { color: var(--gray-600); font-size: .95rem; margin-top: 12px; font-family: var(--font-body); }
+
+/* MENU */
+.menu { padding: 80px 0; background: var(--white); }
+.menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.menu-card {
+  display: flex;
+  gap: 20px;
+  background: var(--cream);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all .3s;
+  align-items: center;
+}
+.menu-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.menu-card-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.menu-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.menu-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.menu-card p { font-size: .82rem; color: var(--gray-600); line-height: 1.5; margin-bottom: 6px; }
+.menu-card .price { font-weight: 700; color: var(--burgundy); font-size: .95rem; font-family: var(--font-display); }
+@media (max-width: 768px) { .menu-grid { grid-template-columns: 1fr; } }
+
+/* STORY */
+.story { padding: 80px 0; background: var(--burgundy-deep); color: var(--white); }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.story-img img { border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+.story-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 16px; }
+.story-text p { color: rgba(255,255,255,.75); font-size: .95rem; line-height: 1.8; margin-bottom: 14px; font-family: var(--font-body); }
+@media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } .story-img { order: -1; } }
+
+/* REVIEWS */
+.reviews { padding: 80px 0; background: var(--cream); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px; }
+.review-stars { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+.review-text { font-size: .85rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 700; font-size: .85rem; color: var(--gray-800); }
+.review-date { font-size: .72rem; color: var(--gray-400); }
+.review-source { display: inline-flex; align-items: center; gap: 4px; font-size: .68rem; color: var(--gray-400); margin-top: 8px; background: var(--gray-100); padding: 3px 10px; border-radius: 20px; }
+@media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* CONTACT */
+.contact { padding: 80px 0; background: var(--burgundy-deep); color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h2 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.contact-item .icon { font-size: 1.2rem; margin-top: 2px; }
+.contact-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; font-family: var(--font-body); }
+.contact-item p { font-size: .85rem; color: rgba(255,255,255,.7); font-family: var(--font-body); }
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* CTA */
+.cta { padding: 80px 0; background: var(--amber-pale); text-align: center; }
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--burgundy); margin-bottom: 14px; }
+.cta p { font-size: 1.05rem; max-width: 560px; margin: 0 auto 28px; color: var(--gray-600); font-family: var(--font-body); }
+.btn-burgundy { background: var(--burgundy); color: var(--white); }
+.btn-burgundy:hover { background: var(--burgundy-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(127,29,29,.25); }
+
+footer { padding: 32px 0; background: var(--burgundy-deep); text-align: center; color: rgba(255,255,255,.4); font-size: .75rem; font-family: var(--font-body); }
+
+.mobile-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+  background: var(--burgundy-deep); padding: 12px 20px;
+  border-top: 2px solid var(--amber);
+}
+.mobile-cta a {
+  display: block; background: var(--amber); color: var(--white); text-align: center;
+  padding: 14px; border-radius: var(--r); font-weight: 700; font-size: .92rem;
+}
+@media (max-width: 768px) { .mobile-cta { display: block; } body { padding-bottom: 68px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">Happy Hour: Mon-Fri 3-6 PM. $6 House Margaritas. $3 Street Tacos.</div>
+  <div class="nav-main">
+    <a href="#" class="logo">La Mesa <span>Cocina</span></a>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Visit Us</a>
+      <a href="tel:+15405556740" class="nav-phone">Call (540) 555-6740</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <div class="badge">&#127798; Authentic Oaxacan Recipes</div>
+        <div class="badge">&#129368; Handmade Tortillas Daily</div>
+      </div>
+      <h1>Real Mexican Food, <em>Made from Scratch</em></h1>
+      <p class="hero-sub">Family recipes from Oaxaca, prepared daily with fresh ingredients. Handmade tortillas, slow-cooked meats, and craft margaritas. Downtown Fredericksburg since 2017.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-amber">View Our Menu</a>
+        <a href="tel:+15405556740" class="btn btn-outline">Order Takeout</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4.7 stars from 312 Google reviews</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Authentic Mexican tacos with fresh ingredients" width="560" height="400" style="object-fit:cover;">
+      <div class="hero-float tr">
+        <div class="num">312</div>
+        <div class="label">Google Reviews</div>
+      </div>
+      <div class="hero-float bl">
+        <div class="num">9</div>
+        <div class="label">Years Downtown</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="num">9</div><div class="label">Years in FXBG</div></div>
+    <div class="trust-item"><div class="num">312</div><div class="label">Google Reviews</div></div>
+    <div class="trust-item"><div class="num">Daily</div><div class="label">Fresh Tortillas</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">From Scratch</div></div>
+    <div class="trust-item"><div class="num">Tue-Sun</div><div class="label">Open 6 Days</div></div>
+  </div>
+</section>
+
+<!-- MENU HIGHLIGHTS -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Menu Highlights</div>
+      <h2>Made Fresh Every Morning</h2>
+      <p>Our masa is ground daily. Our salsas are made from roasted chilies. Nothing comes from a can, a bag, or a freezer.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&q=80" alt="Street tacos al pastor"></div>
+        <div>
+          <h3>Tacos al Pastor</h3>
+          <p>Achiote-marinated pork, slow-roasted on the trompo. Served with grilled pineapple, cilantro, and onion on handmade corn tortillas.</p>
+          <div class="price">$14 (3 tacos)</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1534352956036-cd81e27dd615?w=200&q=80" alt="Mole negro with chicken"></div>
+        <div>
+          <h3>Mole Negro Oaxaqueno</h3>
+          <p>Our grandmother's recipe. 28 ingredients, 6 hours of preparation. Rich, complex, slightly smoky. Served over chicken with rice.</p>
+          <div class="price">$22</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&q=80" alt="Guacamole and chips"></div>
+        <div>
+          <h3>Tableside Guacamole</h3>
+          <p>Made fresh at your table with avocado, serrano peppers, lime, cilantro, and tomato. Served with warm totopos.</p>
+          <div class="price">$13</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=200&q=80" alt="Enchiladas suizas"></div>
+        <div>
+          <h3>Enchiladas Suizas</h3>
+          <p>Corn tortillas filled with shredded chicken, topped with creamy tomatillo salsa, crema, and queso fresco.</p>
+          <div class="price">$18</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1625398407796-82650a8c135f?w=200&q=80" alt="Birria tacos"></div>
+        <div>
+          <h3>Birria Tacos</h3>
+          <p>Slow-braised beef in a guajillo and ancho chili consomme. Served as crispy dipped tacos with a cup of broth for dipping.</p>
+          <div class="price">$16 (3 tacos)</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&q=80" alt="Craft margarita"></div>
+        <div>
+          <h3>La Mesa Margarita</h3>
+          <p>Fresh-squeezed lime, agave nectar, Espolon Blanco, and a splash of fresh orange juice. Salted rim, served on the rocks.</p>
+          <div class="price">$12</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=200&q=80" alt="Churros with chocolate sauce"></div>
+        <div>
+          <h3>Churros con Chocolate</h3>
+          <p>Fried to order, dusted in cinnamon sugar, served with Mexican chocolate dipping sauce and cajeta caramel.</p>
+          <div class="price">$9</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-img"><img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=200&q=80" alt="Ceviche tostada"></div>
+        <div>
+          <h3>Ceviche Tostada</h3>
+          <p>Fresh shrimp and fish cured in lime juice, mixed with cucumber, red onion, serrano, and avocado. Served on a crispy tostada.</p>
+          <div class="price">$15</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Warm restaurant interior with ambient lighting" width="520" height="380" style="object-fit:cover;">
+      </div>
+      <div class="story-text">
+        <h2>From Our Family's Kitchen in Oaxaca to Your Table in Fredericksburg</h2>
+        <p>La Mesa Cocina was opened in 2017 by Rosa and Eduardo Ramirez, who moved to Virginia from Oaxaca, Mexico in 2008. For years, Rosa cooked for friends and family from a small apartment kitchen. Word spread. People offered to pay. She kept cooking.</p>
+        <p>When the space on Caroline Street became available, Eduardo took the leap. They signed the lease with three months of savings and opened with 8 tables, a 4-item menu, and Rosa's mother's mole recipe.</p>
+        <p>Today the restaurant seats 65, employs 14 people, and has been featured in the Free Lance-Star, Virginia Living Magazine, and WUSA9's "Best Bites" segment. But the food has not changed. Rosa still makes the mole herself every Tuesday morning. The tortillas are still made by hand, by the same masa press Rosa's mother used in Oaxaca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>4.7 Stars from 312 Reviews</h2>
+      <p>What our guests say about the food, the service, and the experience.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"The mole negro is the best I have had outside of Mexico. My wife is from Puebla and she said the same thing. We drive 40 minutes from Woodbridge every other weekend specifically for this dish. It is that good."</div>
+        <div class="review-author">Carlos & Elena G.</div>
+        <div class="review-date">March 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Took my parents here for their anniversary. The tableside guacamole was a hit. The birria tacos were incredible. But the thing that stood out most was the service. Our server remembered my dad's birthday from last year. That kind of personal touch makes all the difference."</div>
+        <div class="review-author">Jessica M.</div>
+        <div class="review-date">January 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"We used La Mesa for our rehearsal dinner catering. 45 guests. They set up a taco bar with al pastor, carnitas, barbacoa, and all the fixings. Plus their margarita pitcher. Every single person told us it was the best catering they had ever had at a wedding event."</div>
+        <div class="review-author">Ryan & Michelle K.</div>
+        <div class="review-date">October 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="review-text">"Food is excellent. The churros alone are worth the visit. Giving 4 stars because on Friday and Saturday nights the wait can be 45+ minutes with no reservation. Call ahead if you are going on a weekend. But when you get seated, the experience is top tier."</div>
+        <div class="review-author">Sarah W.</div>
+        <div class="review-date">September 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"I am celiac and finding safe Mexican food is hard. The staff here knows exactly which items are gluten-free. They cook my food on a separate surface. No cross-contamination. I have eaten here over 20 times and never had a reaction. That level of care is rare."</div>
+        <div class="review-author">David H.</div>
+        <div class="review-date">August 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Sunday brunch here is the best kept secret in Fredericksburg. Chilaquiles, huevos rancheros, and horchata French toast. Go before the word gets out because it is going to be impossible to get a table."</div>
+        <div class="review-author">Tony & Lisa A.</div>
+        <div class="review-date">June 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Visit La Mesa Cocina</h2>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div><h4>Phone / Reservations</h4><p><a href="tel:+15405556740" style="color:var(--amber-light);">(540) 555-6740</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div><h4>Location</h4><p>608 Caroline St<br>Fredericksburg, VA 22401<br>(Downtown, next to the Visitor Center)</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128338;</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Monday: Closed<br>
+            Tue-Thu: 11:00 AM - 9:00 PM<br>
+            Fri-Sat: 11:00 AM - 10:00 PM<br>
+            Sunday: 10:00 AM - 8:00 PM (Brunch 10-2)</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#127860;</div>
+          <div><h4>Catering</h4><p>Available for events of 20-200 guests. Custom menus, taco bars, full-service options. Call for a quote.</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128231;</div>
+          <div><h4>Email</h4><p>hola@lamesacocina.com</p></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div>
+          <p style="font-size:1.2rem;margin-bottom:8px;">&#128205;</p>
+          <p>608 Caroline St<br>Fredericksburg, VA 22401</p>
+          <p style="margin-top:12px;"><a href="https://maps.google.com/?q=608+Caroline+St+Fredericksburg+VA" style="color:var(--amber-light);font-weight:600;">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Your Table Is Waiting</h2>
+    <p>Reservations recommended for Friday and Saturday. Walk-ins welcome Tuesday through Thursday. Call ahead for parties of 6 or more.</p>
+    <a href="tel:+15405556740" class="btn btn-burgundy" style="font-size:1.05rem;padding:16px 36px;">Reserve a Table: (540) 555-6740</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 La Mesa Cocina. All rights reserved. 608 Caroline St, Fredericksburg, Virginia.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:+15405556740">Reserve / Order: (540) 555-6740</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Ridge Climate Control | HVAC Repair & Installation in Stafford, VA</title>
+<meta name="description" content="Blue Ridge Climate Control provides HVAC repair, installation, and maintenance in Stafford, Fredericksburg, and Spotsylvania. Carrier certified dealer. Free estimates. Call (540) 555-4291.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HVACBusiness",
+  "name":"Blue Ridge Climate Control",
+  "description":"HVAC repair, installation, and maintenance for homes and businesses in Stafford, Fredericksburg, and Spotsylvania VA.",
+  "url":"https://blueridgeclimatecontrol.com",
+  "telephone":"+1-540-555-4291",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"905 Courthouse Rd",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "postalCode":"22554",
+    "addressCountry":"US"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}
+  ],
+  "priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"156","bestRating":"5"},
+  "areaServed":["Stafford","Fredericksburg","Spotsylvania","King George"]
+}
+</script>
+
+<style>
+:root {
+  --blue-deep: #0c4a6e;
+  --blue-mid: #0369a1;
+  --blue-light: #38bdf8;
+  --blue-pale: #e0f2fe;
+  --blue-50: #f0f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --green: #10b981;
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --max: 1100px;
+  --r: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); color: var(--gray-800); line-height: 1.7; background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.2; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--gray-200); }
+.nav-top {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+  padding: 8px 0;
+  font-size: .8rem;
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.logo { font-size: 1.2rem; font-weight: 800; color: var(--blue-deep); letter-spacing: -.02em; }
+.logo span { color: var(--blue-light); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--gray-600); font-size: .88rem; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--blue-mid); }
+.nav-phone {
+  background: var(--blue-mid);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .88rem;
+  transition: background .2s;
+}
+.nav-phone:hover { background: var(--blue-deep); }
+@media (max-width: 768px) { .nav-links { display: none; } }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 60%, var(--blue-light) 100%);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1400&q=80') center/cover;
+  opacity: .12;
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.hero-text h1 em { font-style: normal; color: var(--blue-light); }
+.hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 24px; }
+.hero-badges { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+  transition: all .3s;
+}
+.btn-white { background: var(--white); color: var(--blue-deep); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.3); }
+.btn-outline:hover { border-color: var(--white); }
+.hero-rating { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); font-size: .85rem; }
+.stars { color: #fbbf24; }
+.hero-img-wrap { position: relative; }
+.hero-img-wrap img {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.25);
+  border: 3px solid rgba(255,255,255,.12);
+}
+.hero-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+.hero-float.tr { top: -10px; right: -10px; }
+.hero-float.bl { bottom: -10px; left: -10px; }
+.hero-float .num { font-size: 1.5rem; font-weight: 800; color: var(--blue-mid); }
+.hero-float .label { font-size: .7rem; color: var(--gray-600); font-weight: 500; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges, .hero-btns, .hero-rating { justify-content: center; }
+  .hero-img-wrap { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* TRUST */
+.trust-bar { background: var(--gray-50); border-bottom: 1px solid var(--gray-200); padding: 32px 0; }
+.trust-bar .container { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center; }
+.trust-item .num { font-size: 1.6rem; font-weight: 800; color: var(--blue-deep); }
+.trust-item .label { font-size: .72rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .08em; }
+
+/* SECTION */
+.section-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.section-header .eyebrow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--blue-mid); margin-bottom: 12px; }
+.section-header h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; color: var(--gray-800); }
+.section-header p { color: var(--gray-600); font-size: .95rem; margin-top: 12px; }
+
+/* SERVICES */
+.services { padding: 80px 0; background: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  background: linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 100%);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all .3s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(3,105,161,.1); border-color: var(--blue-light); }
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--blue-mid) 0%, var(--blue-light) 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.5rem;
+}
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-800); margin-bottom: 8px; }
+.service-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; }
+@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* COMFORT */
+.comfort { padding: 80px 0; background: var(--blue-deep); color: var(--white); }
+.comfort-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.comfort-img img { border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,.25); }
+.comfort-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 16px; }
+.comfort-text p { color: rgba(255,255,255,.75); font-size: .95rem; line-height: 1.7; margin-bottom: 24px; }
+.comfort-list { list-style: none; }
+.comfort-list li { padding: 8px 0; font-size: .9rem; color: rgba(255,255,255,.8); display: flex; align-items: flex-start; gap: 10px; }
+.comfort-list li::before { content: '\2713'; color: var(--blue-light); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 768px) { .comfort-grid { grid-template-columns: 1fr; } .comfort-img { order: -1; } }
+
+/* REVIEWS */
+.reviews { padding: 80px 0; background: var(--gray-50); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px; }
+.review-stars { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+.review-text { font-size: .88rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 700; font-size: .88rem; color: var(--gray-800); }
+.review-date { font-size: .72rem; color: var(--gray-400); }
+.review-source { display: inline-flex; align-items: center; gap: 4px; font-size: .68rem; color: var(--gray-400); margin-top: 8px; background: var(--gray-100); padding: 3px 10px; border-radius: 20px; }
+@media (max-width: 768px) { .reviews-grid { grid-template-columns: 1fr; } }
+
+/* ABOUT */
+.about { padding: 80px 0; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.about-text h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--gray-800); margin-bottom: 16px; }
+.about-text p { font-size: .95rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+.about-img img { border-radius: 16px; box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* CONTACT */
+.contact { padding: 80px 0; background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%); color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h2 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+.contact-item .icon { font-size: 1.2rem; margin-top: 2px; }
+.contact-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+.contact-item p { font-size: .85rem; color: rgba(255,255,255,.75); }
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: .85rem;
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* CTA */
+.cta { padding: 80px 0; background: var(--blue-pale); text-align: center; }
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--blue-deep); margin-bottom: 14px; }
+.cta p { font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px; color: var(--gray-600); }
+.btn-blue { background: var(--blue-mid); color: var(--white); }
+.btn-blue:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(3,105,161,.25); }
+
+footer { padding: 32px 0; background: var(--blue-deep); text-align: center; color: rgba(255,255,255,.5); font-size: .78rem; }
+
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--white);
+  padding: 12px 20px;
+  border-top: 2px solid var(--blue-mid);
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.mobile-cta a {
+  display: block;
+  background: var(--blue-mid);
+  color: var(--white);
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+}
+@media (max-width: 768px) { .mobile-cta { display: block; } body { padding-bottom: 68px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">$50 Off Any AC Repair This Month. Call (540) 555-4291</div>
+  <div class="nav-main">
+    <a href="#" class="logo">Blue Ridge<span> Climate</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+15405554291" class="nav-phone">Call (540) 555-4291</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <div class="badge">&#10052; Carrier Certified Dealer</div>
+        <div class="badge">&#9989; Licensed & Insured</div>
+      </div>
+      <h1>Keep Your Family <em>Comfortable Year-Round</em></h1>
+      <p class="hero-sub">AC repair, furnace installation, and maintenance plans that keep your system running at peak efficiency. Serving Stafford and Fredericksburg since 2013.</p>
+      <div class="hero-btns">
+        <a href="tel:+15405554291" class="btn btn-white">Call (540) 555-4291</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4.9 stars from 156 Google reviews</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1631545806609-85dab8db6002?w=600&q=80" alt="HVAC technician servicing an air conditioning unit" width="560" height="400" style="object-fit:cover;">
+      <div class="hero-float tr">
+        <div class="num">5,800+</div>
+        <div class="label">Service Calls</div>
+      </div>
+      <div class="hero-float bl">
+        <div class="num">11</div>
+        <div class="label">Years Serving VA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="num">11+</div><div class="label">Years in Business</div></div>
+    <div class="trust-item"><div class="num">5,800+</div><div class="label">Service Calls</div></div>
+    <div class="trust-item"><div class="num">156</div><div class="label">Google Reviews</div></div>
+    <div class="trust-item"><div class="num">Same-Day</div><div class="label">Service Available</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="label">Diagnostic Fee*</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">What We Do</div>
+      <h2>Heating, Cooling & Air Quality Solutions</h2>
+      <p>From emergency repairs to full system replacements, we handle every aspect of your home comfort.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#10052;</div>
+        <h3>AC Repair & Installation</h3>
+        <p>Central air, ductless mini-splits, and heat pumps. Same-day repair in most cases. All major brands serviced and installed.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128293;</div>
+        <h3>Heating & Furnace</h3>
+        <p>Gas furnaces, heat pumps, and dual fuel systems. Pre-season tune-ups and emergency heating repair when it matters most.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127744;</div>
+        <h3>Air Quality & Duct Cleaning</h3>
+        <p>Whole-home air purifiers, UV germicidal lights, humidifiers, and professional duct cleaning. Breathe cleaner, healthier air.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128736;</div>
+        <h3>Maintenance Plans</h3>
+        <p>Two tune-ups per year, priority scheduling, and 15% off all repairs. Our Comfort Club members save an average of $340/year.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127968;</div>
+        <h3>New Construction</h3>
+        <p>Custom HVAC design for new builds and major renovations. Manual J load calculations, ductwork design, and equipment selection.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128187;</div>
+        <h3>Smart Thermostats</h3>
+        <p>Ecobee, Nest, and Honeywell installation and setup. Zone control systems for multi-level homes. Save 15-20% on energy bills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMFORT / WHY US -->
+<section class="comfort">
+  <div class="container">
+    <div class="comfort-grid">
+      <div class="comfort-img">
+        <img src="https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=600&q=80" alt="Modern comfortable living room with efficient HVAC" width="520" height="380" style="object-fit:cover;">
+      </div>
+      <div class="comfort-text">
+        <h2>Comfort You Can Count On, Service You Can Trust</h2>
+        <p>Virginia summers hit 95+ degrees and winters drop below freezing. Your HVAC system is not optional. We make sure yours works when you need it, not just when it is convenient.</p>
+        <ul class="comfort-list">
+          <li>Carrier Certified Dealer. Factory-trained on the best equipment</li>
+          <li>EPA 608 Universal Certified technicians</li>
+          <li>Upfront pricing. You approve the cost before we start</li>
+          <li>Same-day service for emergencies (no extra charge)</li>
+          <li>All work backed by a 2-year labor warranty</li>
+          <li>Financing available with approved credit (0% for 12 months)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>4.9 Stars from 156 Reviews</h2>
+      <p>Real feedback from homeowners in Stafford and Fredericksburg.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"AC died on a 98-degree Saturday in July. Called Blue Ridge at 10 AM, they had a tech at our house by noon. Turned out to be a bad capacitor. He replaced it on the spot, $185 total. House was cool again by 1 PM. That is how it should work."</div>
+        <div class="review-author">Danielle R.</div>
+        <div class="review-date">March 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Replaced our 22-year-old Goodman with a Carrier Infinity system. The difference is night and day. Our electric bill dropped $80/month and the house is quieter than it has ever been. Financing made it easy. No payment for 12 months."</div>
+        <div class="review-author">Mark & Susan T.</div>
+        <div class="review-date">January 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Been a Comfort Club member for 3 years. They come out twice a year, tune everything up, catch small issues before they become big ones. Last fall they found a cracked heat exchanger on our furnace before it failed. Saved us from a carbon monoxide situation."</div>
+        <div class="review-author">Kathleen W.</div>
+        <div class="review-date">November 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"We had a mini-split installed in our garage workshop. Other companies quoted $5,000+. Blue Ridge did it for $3,200 including electrical, mounting, and the line set. Works perfectly. My garage is usable year-round now."</div>
+        <div class="review-author">Eric J.</div>
+        <div class="review-date">October 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="review-text">"Solid work on our duct cleaning. Three bedrooms were barely getting any airflow. Turned out we had 15 years of dust buildup in the main trunk line. After the cleaning, every room gets even air now. Giving 4 stars only because they arrived 45 minutes late."</div>
+        <div class="review-author">Priya N.</div>
+        <div class="review-date">August 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Replaced both our AC and furnace as part of a new construction project. They did the Manual J calculation, designed the ductwork, and installed everything. The county inspector said it was textbook. Highly recommend for any new build."</div>
+        <div class="review-author">Brian & Amy D.</div>
+        <div class="review-date">June 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-header" style="text-align:left;margin:0 0 24px;">
+          <div class="eyebrow">About Us</div>
+          <h2>Keeping Families Comfortable Since 2013</h2>
+        </div>
+        <p>Blue Ridge Climate Control was founded by Greg and Amanda Torres after Greg spent 12 years working for a large HVAC corporation. He got tired of seeing homeowners sold equipment they did not need, by technicians paid on commission.</p>
+        <p>So he built a company around a simple idea: diagnose honestly, price fairly, and fix it right. No commission-based upselling. No $89 diagnostic fees that become $89 "trip charges" when you hire someone else.</p>
+        <p>Today the team includes 7 EPA-certified technicians, a dedicated install crew, and Amanda running customer experience. They are a Carrier Certified Dealer and serve over 800 Comfort Club members across Stafford, Fredericksburg, and Spotsylvania.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&q=80" alt="HVAC team with service vehicles" width="520" height="400" style="object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Schedule Your Service</h2>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div><h4>Phone</h4><p><a href="tel:+15405554291" style="color:var(--blue-light);">(540) 555-4291</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div><h4>Office</h4><p>905 Courthouse Rd<br>Stafford, VA 22554</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128338;</div>
+          <div><h4>Hours</h4><p>Mon-Fri: 7:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 2:00 PM<br>Emergency service available 24/7</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128231;</div>
+          <div><h4>Email</h4><p>service@blueridgeclimatecontrol.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#127758;</div>
+          <div><h4>Service Area</h4><p>Stafford, Fredericksburg, Spotsylvania, King George, Falmouth, and surrounding areas</p></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div>
+          <p style="font-size:1.2rem;margin-bottom:8px;">&#128205;</p>
+          <p>905 Courthouse Rd<br>Stafford, VA 22554</p>
+          <p style="margin-top:12px;"><a href="https://maps.google.com/?q=905+Courthouse+Rd+Stafford+VA" style="color:var(--blue-light);font-weight:600;">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Your Comfort Starts with One Call</h2>
+    <p>Free diagnostic with any repair.* Same-day service available. Financing with 0% for 12 months on qualifying systems.</p>
+    <a href="tel:+15405554291" class="btn btn-blue" style="font-size:1.1rem;padding:16px 36px;">Call (540) 555-4291</a>
+    <p style="font-size:.75rem;color:var(--gray-400);margin-top:16px;">*Diagnostic fee waived when repair is completed. Does not apply to second opinion calls.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Blue Ridge Climate Control. All rights reserved. VA HVAC License #2710-068457. Stafford, Virginia.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:+15405554291">Call Now: (540) 555-4291</a>
+</div>
+
+</body>
+</html>

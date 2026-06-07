@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironflow Plumbing | Licensed Plumber in Stafford, VA | 24/7 Emergency Service</title>
+<meta name="description" content="Ironflow Plumbing offers licensed, insured plumbing services in Stafford, Fredericksburg, and Spotsylvania VA. 24/7 emergency service. Free estimates. Call (540) 555-2847.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Plumber",
+  "name":"Ironflow Plumbing",
+  "description":"Licensed and insured plumbing services in Stafford, VA. 24/7 emergency repairs, water heater installation, drain cleaning, and full bathroom remodels.",
+  "url":"https://staffordplumbingco.com",
+  "telephone":"+1-540-555-2847",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"412 Garrisonville Rd, Suite 8",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "postalCode":"22554",
+    "addressCountry":"US"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":"38.4220","longitude":"-77.4083"},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}
+  ],
+  "priceRange":"$$",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"127","bestRating":"5"},
+  "areaServed":["Stafford","Fredericksburg","Spotsylvania","King George","Aquia Harbour"]
+}
+</script>
+
+<style>
+:root {
+  --navy: #0d1b3e;
+  --navy-light: #162550;
+  --blue: #1e3a6e;
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --green: #22c55e;
+  --red: #ef4444;
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --max: 1100px;
+  --r: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); color: var(--gray-800); line-height: 1.7; background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.2; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* NAV */
+nav {
+  background: var(--navy);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-top {
+  background: var(--accent);
+  padding: 8px 0;
+  font-size: .8rem;
+  color: var(--white);
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -.02em;
+}
+.logo span { color: var(--accent-light); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { color: var(--gray-200); font-size: .88rem; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-phone {
+  background: var(--accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .88rem;
+  transition: background .2s;
+}
+.nav-phone:hover { background: var(--accent-light); }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1400&q=80') center/cover;
+  opacity: .18;
+}
+.hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -.03em;
+}
+.hero-text h1 em {
+  font-style: normal;
+  color: var(--accent-light);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--gray-200);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.hero-badges {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.badge .icon { font-size: 1rem; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+  transition: all .3s;
+}
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,.3); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.3); }
+.btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-400);
+  font-size: .85rem;
+}
+.stars { color: #fbbf24; }
+.hero-img-wrap {
+  position: relative;
+}
+.hero-img-wrap img {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.3);
+  border: 3px solid rgba(255,255,255,.1);
+}
+.hero-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  font-size: .85rem;
+  font-weight: 700;
+}
+.hero-float.top-right { top: -10px; right: -10px; }
+.hero-float.bottom-left { bottom: -10px; left: -10px; }
+.hero-float .num { font-size: 1.5rem; color: var(--accent); }
+.hero-float .label { font-size: .7rem; color: var(--gray-600); font-weight: 500; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-badges { justify-content: center; }
+  .hero-btns { justify-content: center; }
+  .hero-rating { justify-content: center; }
+  .hero-img-wrap { order: -1; }
+  .hero-float { display: none; }
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 32px 0;
+}
+.trust-bar .container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.trust-item .num { font-size: 1.6rem; font-weight: 900; color: var(--navy); }
+.trust-item .label { font-size: .72rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .08em; }
+
+/* SERVICES */
+.services {
+  padding: 80px 0;
+  background: var(--white);
+}
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.section-header .eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.section-header h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -.02em;
+}
+.section-header p {
+  color: var(--gray-600);
+  font-size: .95rem;
+  margin-top: 12px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.service-card {
+  background: var(--off-white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 32px 24px;
+  transition: all .3s;
+  text-align: center;
+}
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59,130,246,.1);
+}
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--navy);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.5rem;
+}
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.service-card p { font-size: .85rem; color: var(--gray-600); line-height: 1.6; }
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* WHY US */
+.why-us {
+  padding: 80px 0;
+  background: var(--navy);
+  color: var(--white);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.why-img img {
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.3);
+}
+.why-text h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.why-text p {
+  color: var(--gray-200);
+  font-size: .95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.why-list { list-style: none; }
+.why-list li {
+  padding: 8px 0;
+  font-size: .9rem;
+  color: var(--gray-200);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.why-list li::before {
+  content: '\2713';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-img { order: -1; }
+}
+
+/* REVIEWS */
+.reviews {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 28px;
+}
+.review-stars { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; }
+.review-text { font-size: .88rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 700; font-size: .88rem; color: var(--navy); }
+.review-date { font-size: .72rem; color: var(--gray-400); }
+.review-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  color: var(--gray-400);
+  margin-top: 8px;
+  background: var(--gray-100);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+@media (max-width: 768px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 0;
+  background: var(--white);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.about-text h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.about-text p {
+  font-size: .95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.about-img img {
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+}
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* CONTACT */
+.contact {
+  padding: 80px 0;
+  background: var(--navy);
+  color: var(--white);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.contact-info h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.contact-item .icon { font-size: 1.2rem; margin-top: 2px; }
+.contact-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+.contact-item p { font-size: .85rem; color: var(--gray-200); }
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,.1);
+  background: var(--navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: .85rem;
+  color: var(--gray-400);
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* CTA */
+.cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--accent) 0%, #2563eb 100%);
+  text-align: center;
+  color: var(--white);
+}
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 14px; }
+.cta p { font-size: 1.05rem; max-width: 600px; margin: 0 auto 28px; opacity: .9; }
+.btn-white { background: var(--white); color: var(--navy); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  color: var(--gray-400);
+  font-size: .78rem;
+}
+
+/* MOBILE CTA */
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--navy);
+  padding: 12px 20px;
+  border-top: 2px solid var(--accent);
+}
+.mobile-cta a {
+  display: block;
+  background: var(--accent);
+  color: var(--white);
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+}
+@media (max-width: 768px) {
+  .mobile-cta { display: block; }
+  body { padding-bottom: 68px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">24/7 Emergency Plumbing Service. Call Now: (540) 555-2847</div>
+  <div class="nav-main">
+    <a href="#" class="logo">Stafford<span>Plumbing</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+15405552847" class="nav-phone">Call (540) 555-2847</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badges">
+        <div class="badge"><span class="icon">&#9889;</span> 24/7 Emergency</div>
+        <div class="badge"><span class="icon">&#9989;</span> Licensed & Insured</div>
+      </div>
+      <h1>Reliable Plumbing Repairs for <em>Stafford Homeowners</em></h1>
+      <p class="hero-sub">From leaky faucets to full bathroom remodels. Family-owned since 2011. Over 4,200 jobs completed across Stafford County.</p>
+      <div class="hero-btns">
+        <a href="tel:+15405552847" class="btn btn-primary">Call (540) 555-2847</a>
+        <a href="#services" class="btn btn-outline">See Our Services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>4.9 stars from 127 Google reviews</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80" alt="Professional plumber working under kitchen sink" width="560" height="400" style="object-fit:cover;">
+      <div class="hero-float top-right">
+        <div class="num">4,200+</div>
+        <div class="label">Jobs Completed</div>
+      </div>
+      <div class="hero-float bottom-left">
+        <div class="num">13</div>
+        <div class="label">Years in Stafford</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><div class="num">13+</div><div class="label">Years Experience</div></div>
+    <div class="trust-item"><div class="num">4,200+</div><div class="label">Jobs Completed</div></div>
+    <div class="trust-item"><div class="num">127</div><div class="label">Google Reviews</div></div>
+    <div class="trust-item"><div class="num">24/7</div><div class="label">Emergency Service</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">Satisfaction Guarantee</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Our Services</div>
+      <h2>Complete Plumbing Solutions for Your Home</h2>
+      <p>From simple repairs to complex installations. Licensed master plumber on every job.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128167;</div>
+        <h3>Leak Detection & Repair</h3>
+        <p>Hidden leaks waste money and damage your home. We find them fast with electronic leak detection and fix them right the first time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9832;</div>
+        <h3>Water Heater Service</h3>
+        <p>Tank and tankless water heater installation, repair, and replacement. Same-day service available for no hot water emergencies.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128700;</div>
+        <h3>Drain Cleaning</h3>
+        <p>Clogged drains, slow drains, sewer line blockages. We use camera inspection and hydro jetting for thorough clearing.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128705;</div>
+        <h3>Bathroom Remodels</h3>
+        <p>Full bathroom renovations from demolition to final inspection. Fixtures, tile, plumbing, vanities. All in-house.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127760;</div>
+        <h3>Sewer Line Repair</h3>
+        <p>Trenchless sewer repair and replacement. Less digging, less disruption, and a permanent fix with a 25-year warranty.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#9889;</div>
+        <h3>Emergency Plumbing</h3>
+        <p>Burst pipe at 2 AM? Overflowing toilet on a holiday? We answer the phone 24/7, 365 days a year. No exceptions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Stafford Plumbing service van parked at residential home" width="520" height="380" style="object-fit:cover;">
+      </div>
+      <div class="why-text">
+        <h2>Why Stafford Homeowners Choose Us Over the Competition</h2>
+        <p>We are not a franchise and we are not a call center. Every job is handled by our own trained, background-checked technicians. No subcontractors, no surprises on your bill.</p>
+        <ul class="why-list">
+          <li>Licensed Master Plumber (VA #2701-054218)</li>
+          <li>$2M general liability insurance on file</li>
+          <li>Upfront pricing before any work starts</li>
+          <li>Same-day service in most cases</li>
+          <li>Clean job guarantee. We leave your home cleaner than we found it</li>
+          <li>Warranty on all parts and labor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Customer Reviews</div>
+      <h2>4.9 Stars from 127 Reviews</h2>
+      <p>Real reviews from homeowners in Stafford, Fredericksburg, and Spotsylvania.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Our basement was flooding at 11 PM on a Saturday night. They answered the phone on the second ring and had a technician at our house within 45 minutes. Turned out to be a failed sump pump. They replaced it on the spot. Cannot recommend them enough."</div>
+        <div class="review-author">Patricia K.</div>
+        <div class="review-date">March 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Had three plumbers come out to give quotes on a tankless water heater install. These guys were the only ones who explained exactly what the job involved, showed me options in my price range, and didn't try to upsell me on things I didn't need."</div>
+        <div class="review-author">David & Maria Hernandez</div>
+        <div class="review-date">January 2026</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"They re-piped our entire 1978 house, copper to PEX. It was a massive job. They came in on time, under budget, and cleaned up every day before leaving. Our water pressure is better than it has been in 20 years."</div>
+        <div class="review-author">Tom Whitfield</div>
+        <div class="review-date">November 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"Slow drain in the master bath that two other companies couldn't fix. Stafford Plumbing used a camera to find the actual problem. Tree roots had infiltrated the line 15 feet from the house. Fixed it in one visit. No digging up the yard."</div>
+        <div class="review-author">Jennifer B.</div>
+        <div class="review-date">October 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">"I manage 14 rental properties in the Stafford area. These are the only plumbers I call now. They're always available, they keep their prices fair, and they text me photos before and after every job so I can see exactly what was done."</div>
+        <div class="review-author">Robert Chen</div>
+        <div class="review-date">September 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <div class="review-text">"Good work on replacing our kitchen faucet and garbage disposal. Technician was polite and knew what he was doing. Took about 4 stars because the scheduling window was 8-12 and they arrived closer to noon. But the work itself was solid."</div>
+        <div class="review-author">Angela M.</div>
+        <div class="review-date">August 2025</div>
+        <div class="review-source">&#9679; Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-header" style="text-align:left;margin:0 0 24px;">
+          <div class="eyebrow">About Us</div>
+          <h2>Family-Owned Since 2011</h2>
+        </div>
+        <p>Ironflow Plumbing was founded by Bill and Sarah Mitchell after Bill spent 15 years working for a large commercial plumbing company in Northern Virginia. He saw how big companies treated residential customers as an afterthought and decided to build something better.</p>
+        <p>What started as a one-truck operation out of their Aquia Harbour garage has grown into a team of 8 licensed technicians serving Stafford, Fredericksburg, Spotsylvania, and King George counties.</p>
+        <p>Bill still runs every morning meeting and personally handles the most complex jobs. Sarah manages scheduling and the office. Their son Kyle joined the team in 2022 after completing his apprenticeship. This is a family business. Your plumber knows your name, not your ticket number.</p>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Plumbing team working on residential project" width="520" height="400" style="object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div>
+            <h4>Phone (24/7)</h4>
+            <p><a href="tel:+15405552847" style="color:var(--accent-light);">(540) 555-2847</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div>
+            <h4>Office Address</h4>
+            <p>412 Garrisonville Rd, Suite 8<br>Stafford, VA 22554</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128338;</div>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Monday - Friday: 7:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 2:00 PM<br>Sunday: Emergency calls only</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128231;</div>
+          <div>
+            <h4>Email</h4>
+            <p>service@staffordplumbingco.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#127758;</div>
+          <div>
+            <h4>Service Area</h4>
+            <p>Stafford, Fredericksburg, Spotsylvania, King George, Aquia Harbour, Falmouth, and surrounding areas</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <div>
+          <p style="font-size:1.2rem;margin-bottom:8px;">&#128205;</p>
+          <p>412 Garrisonville Rd, Suite 8<br>Stafford, VA 22554</p>
+          <p style="margin-top:12px;"><a href="https://maps.google.com/?q=412+Garrisonville+Rd+Stafford+VA" style="color:var(--accent-light);font-weight:600;">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Plumbing Problem?<br>We Answer the Phone 24/7.</h2>
+    <p>Free estimates on all non-emergency work. Licensed, insured, and ready to help today.</p>
+    <a href="tel:+15405552847" class="btn btn-white" style="font-size:1.1rem;padding:16px 36px;">Call (540) 555-2847 Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Ironflow Plumbing All rights reserved. VA License #2701-054218. Stafford, Virginia.</p>
+  </div>
+</footer>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta">
+  <a href="tel:+15405552847">Call Now: (540) 555-2847</a>
+</div>
+
+</body>
+</html>

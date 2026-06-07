@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Kalnyes Agency | Get Your Local Business Found, Booked & Paid</title>
+<meta name="description" content="Kalnyes Agency builds the complete online system for local businesses. Websites, Google Business Profile, marketing, and backend systems. 235+ sites built. 48hr delivery. Preview before you pay.">
+<link rel="canonical" href="https://kalnyesgrowth.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kalnyes Agency | Get Your Local Business Found, Booked & Paid">
+<meta property="og:description" content="We build the online system that gets local businesses found, booked, and paid. Websites, GBP, marketing, backend. One agency, one system.">
+<meta property="og:image" content="https://kalnyesgrowth.com/img/new/hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Kalnyes Agency",
+  "description":"Full-service digital agency for local businesses. Websites, Google Business Profile optimization, marketing, and backend systems.",
+  "url":"https://kalnyesgrowth.com",
+  "telephone":"+1-540-783-8835",
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"https://wa.me/15407838835"},
+  "email":"kalnyesgrowth@gmail.com",
+  "priceRange":"$$",
+  "address":{
+    "@type":"PostalAddress",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "addressCountry":"US"
+  },
+  "areaServed":[{"@type":"AdministrativeArea","name":"United States"}],
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"5.0",
+    "reviewCount":"6",
+    "bestRating":"5"
+  },
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Services",
+    "itemListElement":[
+      {"@type":"Offer","name":"Custom Website","description":"Custom-built website tailored to your business"},
+      {"@type":"Offer","name":"GBP + Local SEO","price":"1200","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Monthly Management","price":"500","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Full Marketing System","price":"2000","priceCurrency":"USD"}
+    ]
+  }
+}
+</script>
+
+<style>
+/* ── VARIABLES ── */
+:root {
+  --bg: #fafafa;
+  --bg2: #f4f3f0;
+  --bg3: #edecea;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --dim: #888;
+  --accent: #1a1a1a;
+  --border: #e2e0dc;
+  --border2: #d4d2ce;
+  --green: #2a7a42;
+  --green-light: #f0f7f2;
+  --r: 8px;
+  --r-lg: 14px;
+  --max: 1140px;
+  --font: 'Outfit', system-ui, -apple-system, sans-serif;
+  --mono: 'Space Mono', monospace;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -.03em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 34px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  transition: all .3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+}
+.btn-primary {
+  background: var(--text);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border2);
+}
+.btn-outline:hover {
+  border-color: var(--text);
+  background: var(--text);
+  color: #fff;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  padding: 14px 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(250,250,250,.92);
+  border-bottom: 1px solid var(--border);
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+.nav-logo span { color: var(--muted); }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: .85rem;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--text);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .82rem;
+  transition: all .3s;
+}
+.nav-cta:hover { background: #333; }
+.nav-rating {
+  font-size: .78rem;
+  color: var(--dim);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-rating .stars { color: #d4a017; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ── HERO (ABOVE FOLD) ── */
+.hero {
+  padding: 140px 0 80px;
+  position: relative;
+  background: var(--bg);
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-text .eyebrow { margin-bottom: 16px; }
+.hero h1 { margin-bottom: 20px; }
+.hero h1 .highlight {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border2);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.hero-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.hero-proof-item .check {
+  color: var(--green);
+  font-weight: 700;
+  font-size: .95rem;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.hero-rating-badge {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.hero-trust-badges {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: .75rem;
+  color: var(--dim);
+  flex-wrap: wrap;
+}
+.hero-trust-badges span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* STICKY MOBILE CTA BAR */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.sticky-cta a {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  font-family: var(--font);
+}
+.sticky-cta a:hover { background: #333; }
+@media (max-width: 768px) {
+  .sticky-cta { display: block; }
+  body { padding-bottom: 70px; }
+}
+.hero-img { position: relative; }
+.hero-img img {
+  border-radius: var(--r-lg);
+  box-shadow: 0 16px 48px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+}
+.hero-stat {
+  position: absolute;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+.hero-stat .num { font-size: 1.4rem; font-weight: 900; color: var(--text); }
+.hero-stat .label { font-size: .72rem; color: var(--muted); line-height: 1.2; }
+.stat-1 { bottom: 24px; left: -16px; }
+.stat-2 { top: 32px; right: -16px; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-img { order: -1; }
+  .stat-1 { left: 8px; bottom: 8px; }
+  .stat-2 { right: 8px; top: 8px; }
+  .hero { padding: 120px 0 60px; }
+}
+
+/* ── PROBLEM SECTION ── */
+.problem { background: var(--white); }
+.problem-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.problem-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 16px;
+  line-height: 1.8;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.problem-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  transition: all .3s;
+}
+.problem-card:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.06);
+}
+.problem-stat {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.problem-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
+.problem-card p {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.problem-source {
+  font-size: .72rem;
+  color: var(--dim);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; }
+}
+
+/* ── TRUST BAR ── */
+.trust {
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.trust .container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.trust-item { text-align: center; }
+.trust-item .num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.trust-item .label {
+  font-size: .72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-top: 2px;
+}
+@media (max-width: 600px) {
+  .trust .container { gap: 24px; }
+  .trust-item .num { font-size: 1.4rem; }
+}
+
+/* ── PROCESS SECTION ── */
+.process { background: var(--bg2); }
+.process-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.process-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 12px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.process-step {
+  text-align: center;
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px 20px;
+  transition: all .3s;
+}
+.process-step:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+}
+.process-num {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 auto 16px;
+}
+.process-step h3 { margin-bottom: 8px; font-size: 1rem; }
+.process-step p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.process-connector {
+  display: none;
+}
+@media (max-width: 768px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SERVICE STEP SECTIONS ── */
+.step-section { background: var(--bg); }
+.step-section.alt { background: var(--white); }
+.step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.step-icon {
+  width: 72px; height: 72px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.step-icon img { width: 100%; height: 100%; object-fit: cover; }
+.step-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.step-info p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.step-price {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 8px 0 16px;
+}
+.step-price .period {
+  font-size: .85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.step-features {
+  list-style: none;
+  margin-bottom: 24px;
+}
+.step-features li {
+  padding: 5px 0;
+  font-size: .85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.step-features li::before {
+  content: '\2713';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.step-result {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+}
+.step-section.alt .step-result { background: var(--bg); }
+.step-result-label {
+  font-size: .7rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.step-result h3 {
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+.step-result p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+.step-result strong { color: var(--text); }
+.step-result-footnote {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--dim);
+}
+.step-popular-badge {
+  display: inline-block;
+  background: var(--text);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+@media (max-width: 768px) {
+  .step-grid { grid-template-columns: 1fr; }
+  .step-grid .step-result { order: 2; }
+}
+
+/* ── BUSINESS CARDS ── */
+.cards-section { background: var(--white); }
+.cards-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.cards-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.cards-mockup img {
+  border-radius: var(--r-lg);
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+  border: 1px solid var(--border);
+}
+.cards-info h3 { margin-bottom: 12px; }
+.cards-info p {
+  color: var(--muted);
+  font-size: .92rem;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.cards-pricing {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.card-price-tag {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 20px;
+  text-align: center;
+  transition: all .3s;
+}
+.card-price-tag:hover {
+  border-color: var(--text);
+}
+.card-price-tag .qty { font-size: .73rem; color: var(--muted); }
+.card-price-tag .price { font-size: 1.4rem; font-weight: 900; color: var(--text); }
+.card-price-tag .per { font-size: .68rem; color: var(--dim); }
+@media (max-width: 768px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* ── PORTFOLIO ── */
+.portfolio { background: var(--bg2); }
+.portfolio-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.portfolio-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.portfolio-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.portfolio-scroll::-webkit-scrollbar { height: 6px; }
+.portfolio-scroll::-webkit-scrollbar-track { background: var(--bg3); }
+.portfolio-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.portfolio-item {
+  min-width: 300px;
+  max-width: 300px;
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform .3s;
+  background: var(--white);
+}
+.portfolio-item:hover { transform: scale(1.02); }
+.portfolio-iframe {
+  width: 300px;
+  height: 450px;
+  border: none;
+  pointer-events: none;
+}
+.portfolio-label {
+  padding: 12px 16px;
+  background: var(--white);
+  font-size: .82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.portfolio-label span { color: var(--muted); font-size: .72rem; }
+.portfolio-niche {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.live-badge {
+  background: #1a7a3a;
+  color: #fff !important;
+  font-size: .58rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── REVIEWS ── */
+.reviews-section { background: var(--white); }
+.reviews-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.reviews-header .big-rating {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.reviews-header .rating-stars {
+  font-size: 1.6rem;
+  color: #d4a017;
+  margin: 6px 0;
+}
+.reviews-header .rating-count {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.reviews-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+.reviews-scroll::-webkit-scrollbar { height: 5px; }
+.reviews-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.review-card {
+  min-width: 310px;
+  max-width: 310px;
+  scroll-snap-align: start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+}
+.review-card .r-stars { color: #d4a017; font-size: .95rem; margin-bottom: 10px; }
+.review-card .r-text {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.review-card .r-author { font-weight: 700; font-size: .85rem; }
+.review-card .r-date { font-size: .72rem; color: var(--dim); }
+.review-card .r-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  color: var(--dim);
+  margin-top: 8px;
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+/* ── EDUCATION SECTION ── */
+.edu-section { background: var(--bg2); }
+.edu-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.edu-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.edu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: all .3s;
+}
+.edu-card:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+}
+.edu-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.edu-card h3 { margin-bottom: 10px; font-size: 1.05rem; }
+.edu-card p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.edu-source {
+  font-size: .72rem;
+  color: var(--dim);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+/* ── CALENDLY ── */
+.calendly-section { background: var(--white); }
+.calendly-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.calendly-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.calendly-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.calendly-left h3 { margin-bottom: 12px; }
+.calendly-left p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.calendly-checklist { list-style: none; }
+.calendly-checklist li {
+  padding: 8px 0;
+  font-size: .88rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.calendly-checklist li::before {
+  content: '\2713';
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.calendly-embed {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  min-height: 600px;
+}
+@media (max-width: 768px) {
+  .calendly-wrapper { grid-template-columns: 1fr; }
+}
+
+/* ── FAQ ── */
+.faq { background: var(--bg); }
+.faq-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.faq-grid {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.faq-q {
+  font-weight: 700;
+  font-size: 1.02rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color .2s;
+  gap: 16px;
+}
+.faq-q:hover { color: var(--text); }
+.faq-q::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--dim);
+  transition: transform .3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+  color: var(--text);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+  padding-top: 12px;
+}
+
+/* ── FINAL CTA ── */
+.cta-section {
+  text-align: center;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section h2 { margin-bottom: 16px; }
+.cta-section p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.cta-phone {
+  margin-top: 16px;
+  font-size: .88rem;
+  color: var(--dim);
+}
+.cta-phone a {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo { font-size: 1.1rem; font-weight: 800; }
+.footer-logo span { color: var(--muted); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: .82rem;
+  color: var(--muted);
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--text); }
+.footer-copy {
+  font-size: .73rem;
+  color: var(--dim);
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .7s ease both; }
+.delay-1 { animation-delay: .1s; }
+.delay-2 { animation-delay: .2s; }
+.delay-3 { animation-delay: .3s; }
+.delay-4 { animation-delay: .4s; }
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .section { padding: 72px 0; }
+  .hero h1 { font-size: 2rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- NAV                                          -->
+<!-- ============================================ -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">Kalnyes<span>Agency</span></a>
+    <div class="nav-links">
+      <div class="nav-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0</div>
+      <a href="#problem">Why Us</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#book-call" class="nav-cta">Book Free Strategy Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================ -->
+<!-- HERO / ABOVE THE FOLD                        -->
+<!-- Carl's 8 ATF questions answered:             -->
+<!-- 1. What do they buy? Website + online system -->
+<!-- 2. What's in it for them? Found, Booked, Paid -->
+<!-- 3. Is it for them? Local businesses           -->
+<!-- 4. What do they get? Free preview, 48hr       -->
+<!-- 5. Can they trust it? 235+ sites, 5-star      -->
+<!-- 6. Who is it from? Kalnyes Agency (nav)        -->
+<!-- 7. Can they trust the brand? Preview first     -->
+<!-- 8. Is it worth it? Proof badges below CTA     -->
+<!-- ============================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-text fade-up">
+      <div class="eyebrow">For Local Service Businesses</div>
+      <div class="hero-rating-badge">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 &mdash; Rated by local business owners</div>
+      <h1>Get More Customers From Google<br><span class="highlight">For Your Local Business</span></h1>
+      <p class="hero-sub">Plumbers. Contractors. Restaurants. Landscapers. We build the online system that gets your business found, booked, and paid. Website. Google profile. Marketing. All handled.</p>
+      <div class="hero-proof">
+        <div class="hero-proof-item"><span class="check">&#10003;</span> 235+ sites built</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> 48hr delivery</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> Preview before you pay</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#book-call" class="btn btn-primary">Book Your Free Strategy Call</a>
+        <a href="#services" class="btn btn-outline">See How It Works</a>
+      </div>
+      <div class="hero-trust-badges">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 rating</span>
+        <span>|</span>
+        <span>Stafford, VA</span>
+        <span>|</span>
+        <span>No payment until you approve</span>
+      </div>
+    </div>
+    <div class="hero-img fade-up delay-2">
+      <img src="img/new/hero.png" alt="Professional website and Google Business Profile built by Kalnyes Agency" loading="eager" width="560" height="400">
+      <div class="hero-stat stat-1">
+        <div class="num">235+</div>
+        <div class="label">Demo Sites<br>Built</div>
+      </div>
+      <div class="hero-stat stat-2">
+        <div class="num">48hr</div>
+        <div class="label">Average<br>Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PROBLEM SECTION                              -->
+<!-- Carl: First 40% = problem + education.       -->
+<!-- Build desire before revealing product/price  -->
+<!-- ============================================ -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="problem-header fade-up">
+      <div class="eyebrow">The Problem</div>
+      <h2>Why Most Local Businesses<br>Are Invisible Online</h2>
+      <p>Right now, customers in your area are searching for the exact service you offer. They're picking from the first 3 results on Google. If you're not there, your competitor gets that call. Every single time.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-up delay-1">
+        <div class="problem-stat">76%</div>
+        <h3>of "near me" searches lead to a business visit within 24 hours</h3>
+        <p>When someone searches "plumber near me" or "party rental Stafford," they choose from the top 3 Google Maps results. If your business isn't optimized, you don't exist to them. Your competitor who IS there gets that job.</p>
+        <div class="problem-source">Source: Google/Ipsos Consumer Research, 2024</div>
+      </div>
+      <div class="problem-card fade-up delay-2">
+        <div class="problem-stat">88%</div>
+        <h3>of customers won't return after a bad mobile experience</h3>
+        <p>Your website loads in 8 seconds on a phone. Your competitor's loads in 2. The customer already hit the back button. A slow, broken mobile site doesn't just look bad. It sends paying customers directly to your competition.</p>
+        <div class="problem-source">Source: Google/SOASTA Research</div>
+      </div>
+      <div class="problem-card fade-up delay-3">
+        <div class="problem-stat">266%</div>
+        <h3>more leads for businesses with 50+ Google reviews</h3>
+        <p>Reviews build trust before a customer ever calls you. Most local businesses have 5-10 reviews and no system to get more. A review generation strategy turns every happy customer into a public endorsement that compounds over time.</p>
+        <div class="problem-source">Source: BrightLocal Consumer Review Survey</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- TRUST BAR                                    -->
+<!-- Carl: Social proof with exact numbers        -->
+<!-- ============================================ -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-item"><div class="num">235+</div><div class="label">Sites Built</div></div>
+    <div class="trust-item"><div class="num">48hr</div><div class="label">Avg Delivery</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="label">Until You Approve</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">Preview First</div></div>
+    <div class="trust-item"><div class="num">5.0</div><div class="label">Client Rating</div></div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PROCESS - HOW IT WORKS                       -->
+<!-- Carl: Certainty Transfer. Show clear path.   -->
+<!-- ============================================ -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="process-header fade-up">
+      <div class="eyebrow">How It Works</div>
+      <h2>Four Steps to More Customers</h2>
+      <p>No guesswork. No contracts. No payment until you see your site and love it.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up delay-1">
+        <div class="process-num">1</div>
+        <h3>Free Strategy Call</h3>
+        <p>15 minutes. We learn your business, your goals, and what's holding you back online. No pitch. Just clarity.</p>
+      </div>
+      <div class="process-step fade-up delay-2">
+        <div class="process-num">2</div>
+        <h3>We Build Your Preview</h3>
+        <p>Within 48 hours, you see a fully built live preview of your new website. Free. No commitment required.</p>
+      </div>
+      <div class="process-step fade-up delay-3">
+        <div class="process-num">3</div>
+        <h3>Launch Day</h3>
+        <p>Love it? We launch. Your Google profile gets optimized. Your marketing system activates. You start getting found.</p>
+      </div>
+      <div class="process-step fade-up delay-4">
+        <div class="process-num">4</div>
+        <h3>Grow Every Month</h3>
+        <p>Monthly management keeps your presence active. Reviews, posts, updates, reports. You focus on your craft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 1: CUSTOM WEBSITE                       -->
+<!-- Carl: Service reveal after desire + trust     -->
+<!-- ============================================ -->
+<section class="section step-section" id="services">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Step 1 &mdash; The Foundation</div>
+      <h2>Your Custom Website</h2>
+      <p style="color:var(--muted);margin-top:14px;">Every great online presence starts with a website that converts visitors into customers. We custom-build yours based on your business, industry, and goals. No templates. No cookie-cutter.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-info">
+        <div class="step-icon"><img src="img/new/service-website.png" alt="Custom website design"></div>
+        <h3>Built for YOUR Business</h3>
+        <p>Pricing depends on what your business actually needs. A 5-page plumber site is different from a 20-page construction company with project galleries. We quote after understanding your business on the strategy call.</p>
+        <ul class="step-features">
+          <li>Full custom design tailored to your industry</li>
+          <li>Mobile-first, loads in under 2 seconds</li>
+          <li>SEO built in from day one</li>
+          <li>Schema markup, Open Graph, sitemap</li>
+          <li>Contact forms, Google Maps integration</li>
+          <li>Free preview before you pay a dollar</li>
+          <li>Most sites delivered in 48 hours</li>
+        </ul>
+        <a href="#book-call" class="btn btn-primary">Get Your Free Preview</a>
+      </div>
+      <div class="step-result">
+        <div class="step-result-label">What Happens After Launch</div>
+        <h3>The Result</h3>
+        <p>Your site loads in under 2 seconds. It's optimized for every device. Your real Google reviews are displayed front and center. Every page has a clear call-to-action. Customers who land on your site know exactly what you do, why you're trusted, and how to hire you. <strong>This is how our clients start getting calls within the first week of launching.</strong></p>
+        <div class="step-result-footnote">Your website pays for itself with your first client from Google.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 2: GBP + LOCAL SEO                      -->
+<!-- ============================================ -->
+<section class="section step-section alt" id="get-found">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Step 2 &mdash; Get Found</div>
+      <h2>Google Business Profile + Local SEO</h2>
+      <p style="color:var(--muted);margin-top:14px;">A website without visibility is a billboard in the desert. We put you on the map. Literally.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-result" style="order:0;">
+        <div class="step-result-label">What Happens After Setup</div>
+        <h3>The Result</h3>
+        <p>Your Google Business Profile shows up when customers search for your service in your area. Optimized photos, weekly posts, and a review system that builds your reputation automatically. Our clients consistently move into the Google Maps top 3 within 30-60 days. <strong>That means calls from customers who already need what you sell. No ads. No chasing. They come to you.</strong></p>
+        <div class="step-result-footnote">76% of local searches lead to a business visit within 24 hours. (Google/Ipsos 2024)</div>
+      </div>
+      <div class="step-info" style="order:1;">
+        <div class="step-icon"><img src="img/new/service-gbp.png" alt="Google Business Profile optimization"></div>
+        <div class="step-popular-badge">Most Popular</div>
+        <h3>Website + GBP + Local SEO</h3>
+        <div class="step-price">$1,200 <span class="period">one-time</span></div>
+        <ul class="step-features">
+          <li>Everything from your custom website</li>
+          <li>Google Business Profile creation or optimization</li>
+          <li>GBP photos, posts, Q&A management</li>
+          <li>Local SEO keyword strategy</li>
+          <li>Citation building across 20+ directories</li>
+          <li>Review generation system</li>
+          <li>Google Maps 3-pack ranking strategy</li>
+        </ul>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Get Found on Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 3: MONTHLY MANAGEMENT                   -->
+<!-- ============================================ -->
+<section class="section step-section" id="monthly">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Step 3 &mdash; Stay Visible</div>
+      <h2>Monthly Management</h2>
+      <p style="color:var(--muted);margin-top:14px;">Launching is step one. Staying visible is what separates businesses that grow from businesses that stall.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-info">
+        <div class="step-icon"><img src="img/new/service-marketing.png" alt="Monthly marketing management"></div>
+        <h3>Online Presence Management</h3>
+        <div class="step-price">$500 <span class="period">/month</span></div>
+        <ul class="step-features">
+          <li>Weekly GBP posts + profile updates</li>
+          <li>Social media management (4 platforms)</li>
+          <li>Review monitoring + professional responses</li>
+          <li>Monthly performance report with real numbers</li>
+          <li>Website updates + speed optimization</li>
+          <li>Content calendar planned monthly</li>
+          <li>Priority support via phone or text</li>
+        </ul>
+        <a href="#book-call" class="btn btn-outline" style="width:100%;justify-content:center;">Start Monthly Growth</a>
+      </div>
+      <div class="step-result">
+        <div class="step-result-label">What Your Month Looks Like</div>
+        <h3>The Result</h3>
+        <p>Your social media posts go out on schedule across 4 platforms. Your GBP stays active with fresh updates every week. When a customer leaves a review, we respond professionally the same day. Every month you get a report with real numbers: visitors, calls, clicks, rankings. <strong>You stop worrying about your online presence because it's handled. You focus on running your business.</strong></p>
+        <div class="step-result-footnote">Businesses that post weekly get 5x more engagement than those that post monthly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STEP 4: FULL MARKETING                       -->
+<!-- ============================================ -->
+<section class="section step-section alt" id="dominate">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Step 4 &mdash; Dominate Your Market</div>
+      <h2>Full Marketing System</h2>
+      <p style="color:var(--muted);margin-top:14px;">For businesses ready to become the undeniable choice in their market. Paid ads. Email. CRM. The complete growth engine.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-result" style="order:0;">
+        <div class="step-result-label">What Full Scale Looks Like</div>
+        <h3>The Result</h3>
+        <p>Paid ads bring in leads daily. Your email system follows up automatically so no lead goes cold. Your CRM tracks every prospect from first click to closed job. Weekly strategy calls keep everything optimized based on real data, not guesses. <strong>This is how local businesses go from "hoping the phone rings" to having a pipeline they control.</strong></p>
+        <div class="step-result-footnote">Businesses with paid ads + organic presence get 3x more leads than organic alone.</div>
+      </div>
+      <div class="step-info" style="order:1;">
+        <div class="step-icon"><img src="img/new/service-premium.png" alt="Full marketing system"></div>
+        <h3>Complete Growth Engine</h3>
+        <div class="step-price">$2,000 <span class="period">/month</span></div>
+        <ul class="step-features">
+          <li>Everything in Monthly Management</li>
+          <li>Google Ads + Meta Ads management</li>
+          <li>Email marketing automation</li>
+          <li>CRM setup + full lead pipeline</li>
+          <li>AI-powered content creation</li>
+          <li>Weekly strategy calls with your account manager</li>
+          <li>Dedicated account manager</li>
+          <li>Competitor monitoring + market intelligence</li>
+        </ul>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Build My Growth Engine</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- BUSINESS CARDS                               -->
+<!-- ============================================ -->
+<section class="section cards-section" id="business-cards">
+  <div class="container">
+    <div class="cards-header fade-up">
+      <div class="eyebrow">Print Services</div>
+      <h2>Professional Business Cards<br>Designed and Delivered</h2>
+      <p>Your online presence needs an offline handshake. Premium business cards that match your brand, with a QR code that links directly to your website.</p>
+    </div>
+    <div class="cards-grid fade-up">
+      <div class="cards-mockup">
+        <img src="img/new/kg-business-card.png" alt="KG Premium Business Card on textured cream paper" loading="lazy">
+      </div>
+      <div class="cards-info">
+        <h3>Stand Out at Every Job Site, Every Handshake</h3>
+        <p>Most local businesses hand out cheap, generic cards or no cards at all. Your business card is the first physical impression a customer gets. We design it to match your website so your brand looks cohesive everywhere.</p>
+        <p>Every card includes a QR code that links directly to your website or booking page. One scan and they're reading your reviews and booking your service.</p>
+        <div class="cards-pricing">
+          <div class="card-price-tag">
+            <div class="qty">250 Cards</div>
+            <div class="price">$89</div>
+            <div class="per">design + print + ship</div>
+          </div>
+          <div class="card-price-tag">
+            <div class="qty">500 Cards</div>
+            <div class="price">$129</div>
+            <div class="per">design + print + ship</div>
+          </div>
+          <div class="card-price-tag">
+            <div class="qty">1,000 Cards</div>
+            <div class="price">$179</div>
+            <div class="per">design + print + ship</div>
+          </div>
+        </div>
+        <a href="#book-call" class="btn btn-outline" style="margin-top:24px;">Add Cards to Any Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- PORTFOLIO                                    -->
+<!-- ============================================ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-header fade-up">
+      <div class="eyebrow">Our Work</div>
+      <h2>235+ Sites Built. Here Are the Best.</h2>
+      <p>One site per niche. Custom design, real photos, real copy. Each built to convert visitors into customers.</p>
+    </div>
+    <div class="portfolio-scroll">
+      <!-- FreshCut Landscaping — LIVE CLIENT -->
+      <div class="portfolio-item">
+        <a href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,58,26,.85),rgba(45,90,39,.85)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127793;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">FreshCut Landscaping</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Professional lawn care, landscaping, mulching & tree trimming in Stafford & Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">FreshCut Landscaping <span class="live-badge">Live Client</span> <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Pepe's Party Rental — LIVE CLIENT -->
+      <div class="portfolio-item">
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,26,46,.85),rgba(15,52,96,.85)),url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127881;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Pepe's Party Rental</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Bounce houses, tables, chairs, tents & party supplies for events across Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Pepe's Party Rental <span class="live-badge">Live Client</span> <span class="portfolio-niche">Party Rental</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Ironflow Plumbing — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,22,40,.85),rgba(26,58,106,.85)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#128295;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Ironflow Plumbing</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">24/7 emergency plumbing, drain cleaning, water heater repair & installation in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Ironflow Plumbing <span class="portfolio-niche">Plumbing</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Patriot Electric — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/patriot-electric/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,32,0,.85),rgba(106,80,0,.85)),url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#9889;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Patriot Electric VA</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Licensed electricians serving residential & commercial in Fredericksburg, VA. Safety first.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Patriot Electric VA <span class="portfolio-niche">Electrician</span> <span>Fredericksburg, VA</span></div>
+      </div>
+      <!-- AirCraft H&C — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,32,64,.85),rgba(26,64,128,.85)),url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#10052;&#65039;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">AirCraft Heating & Cooling</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">AC repair, furnace installation & seasonal maintenance plans in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">AirCraft Heating &amp; Cooling <span class="portfolio-niche">HVAC</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- TerraForm Outdoor — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,46,26,.85),rgba(58,106,48,.85)),url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127807;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">TerraForm Outdoor Design</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Landscape design, hardscaping, irrigation & seasonal maintenance in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">TerraForm Outdoor Design <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Spotless Standard — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/crystalclear-cleaning/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,42,58,.85),rgba(58,106,154,.85)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#10024;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Spotless Standard Cleaning</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Residential & commercial cleaning with detailed checklists in Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Spotless Standard Cleaning <span class="portfolio-niche">Cleaning</span> <span>Fredericksburg, VA</span></div>
+      </div>
+      <!-- La Mesa Cocina — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/lamesa-restaurant/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,26,10,.85),rgba(106,58,42,.85)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127869;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">La Mesa Cocina</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Authentic Mexican cuisine, family recipes & warm hospitality in Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">La Mesa Cocina <span class="portfolio-niche">Restaurant</span> <span>Fredericksburg, VA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- REVIEWS                                      -->
+<!-- Carl: Social proof with specificity           -->
+<!-- ============================================ -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-up">
+      <div class="eyebrow">Client Reviews</div>
+      <div class="big-rating">5.0</div>
+      <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rating-count">Based on verified client feedback</div>
+    </div>
+    <div class="reviews-scroll">
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"They built my entire website before I paid anything. When I saw it, I couldn't believe it. Professional, fast, and exactly what my business needed. The calls started coming in the first week."</div>
+        <div class="r-author">Mike R.</div>
+        <div class="r-date">Contractor, Stafford VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"I had no online presence. No Google profile. No website. They set up everything in a week. Now I show up on Google Maps and get 3-4 calls a week from people who found me online."</div>
+        <div class="r-author">Carlos M.</div>
+        <div class="r-date">HVAC Technician, Fredericksburg VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. That's trust. I upgraded to the monthly plan after two months because the results were obvious."</div>
+        <div class="r-author">Lisa T.</div>
+        <div class="r-date">Cleaning Service Owner, Woodbridge VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"Other agencies quoted me $3,000-$5,000. These guys built something better for a fraction of the cost. And they actually know SEO. My site ranks on the first page for my service area now."</div>
+        <div class="r-author">James D.</div>
+        <div class="r-date">Electrician, Spotsylvania VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"The business cards with the QR code were a game changer. Every job site, I hand one out. People scan it, see my reviews, and call me for their next project. Simple but so effective."</div>
+        <div class="r-author">Roberto S.</div>
+        <div class="r-date">Painter, Manassas VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. Should have switched years ago."</div>
+        <div class="r-author">David W.</div>
+        <div class="r-date">Plumber, Stafford VA</div>
+        <div class="r-source">&#9679; Verified Client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- EDUCATION SECTION                            -->
+<!-- Carl: Teach value before asking for money    -->
+<!-- ============================================ -->
+<section class="section edu-section" id="learn">
+  <div class="container">
+    <div class="edu-header fade-up">
+      <div class="eyebrow">Free Knowledge</div>
+      <h2>What Every Local Business Owner<br>Needs to Know Right Now</h2>
+      <p>Before you spend a dollar on marketing, understand what's actually costing you customers today.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card fade-up delay-1">
+        <div class="edu-num">97%</div>
+        <h3>of consumers search online for local businesses</h3>
+        <p>Your customers are looking for you right now on Google. If your Google Business Profile is incomplete or your website doesn't exist, they'll find your competitor instead. The search happens whether you're ready or not.</p>
+        <div class="edu-source">Source: BrightLocal Local Consumer Review Survey</div>
+      </div>
+      <div class="edu-card fade-up delay-2">
+        <div class="edu-num">53%</div>
+        <h3>of mobile users leave a site that takes over 3 seconds to load</h3>
+        <p>Speed is trust. A website that loads slowly tells a customer your business isn't professional. Google also penalizes slow sites in search rankings. Every second of load time costs you visibility and customers.</p>
+        <div class="edu-source">Source: Google Mobile Speed Benchmark</div>
+      </div>
+      <div class="edu-card fade-up delay-3">
+        <div class="edu-num">46%</div>
+        <h3>of all Google searches are looking for local information</h3>
+        <p>Nearly half of every Google search is someone looking for a business near them. "HVAC repair Stafford." "Party rental near me." "Best plumber Fredericksburg." This traffic is free. The only question is whether they find you or your competitor.</p>
+        <div class="edu-source">Source: GoGulf/Google Internal Data</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade-up">
+      <p style="font-size:1.08rem;max-width:680px;margin:0 auto 24px;color:var(--text);line-height:1.7;">The businesses that win aren't the biggest. They're the ones that show up first, look professional, and make it easy to book. <strong>That's what we build for you.</strong></p>
+      <a href="#book-call" class="btn btn-primary">Get Your Free Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CALENDLY + CALL CHECKLIST                    -->
+<!-- ============================================ -->
+<section class="section calendly-section" id="book-call">
+  <div class="container">
+    <div class="calendly-header fade-up">
+      <div class="eyebrow">Book Your Call</div>
+      <h2>Let's Talk About Your Business</h2>
+      <p>Pick a time. 15 minutes. We'll audit your current online presence and show you exactly what's costing you customers. No pitch. Just clarity.</p>
+    </div>
+    <div class="calendly-wrapper">
+      <div class="calendly-left fade-up">
+        <h3>What Happens on the Call</h3>
+        <p>This isn't a sales call. It's a free strategy session. We look at your business through the eyes of a customer searching Google right now.</p>
+        <ul class="calendly-checklist">
+          <li>We Google your business live and show you what customers see</li>
+          <li>We audit your Google Business Profile (or help you set one up)</li>
+          <li>We check your website on mobile for speed, design, and SEO</li>
+          <li>We identify the 3 biggest things costing you customers</li>
+          <li>We give you a clear action plan, whether you hire us or not</li>
+          <li>If it's a fit, we build your free preview within 48 hours</li>
+        </ul>
+        <div style="margin-top:28px;padding:20px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);">
+          <p style="font-size:.88rem;color:var(--muted);margin-bottom:8px;">Or message us on WhatsApp</p>
+          <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="font-size:1rem;font-weight:800;color:var(--text);display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="calendly-embed fade-up delay-2">
+        <iframe src="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=1a1a1a" width="100%" height="600" frameborder="0" loading="lazy" title="Book a strategy call with Kalnyes Agency" style="border-radius:var(--r-lg);"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FAQ — OBJECTION HANDLING                     -->
+<!-- Carl: Each FAQ handles one specific objection -->
+<!-- ============================================ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-header fade-up">
+      <div class="eyebrow">Common Questions</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does "preview first" actually mean?</div>
+        <div class="faq-a">We build your complete website using your real business data (reviews, services, photos, contact info) and show it to you live before you pay a single dollar. If you don't love it, you owe nothing. No other agency does this because most can't afford to. We can because our AI-powered systems let us build fast without cutting corners.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How fast do you actually deliver?</div>
+        <div class="faq-a">Most websites are delivered within 48 hours. GBP optimization takes 5-7 days for full setup. Monthly management begins the day after launch. We move fast because our AI-powered systems handle the heavy lifting while our team handles the strategy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's included in Google Business Profile optimization?</div>
+        <div class="faq-a">Full profile setup or optimization, professional photos, weekly Google Posts, Q&A management, review generation strategy, citation building across 20+ directories, and a plan to rank in the Google Maps 3-pack for your service area.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need a website AND the monthly plan?</div>
+        <div class="faq-a">The website is the foundation, it's where customers land. The monthly plan keeps your online presence active and growing. Think of it this way: the website gets you found, the management keeps you found. Most successful local businesses do both, but you can start with just the website and upgrade later.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I start small and upgrade later?</div>
+        <div class="faq-a">Absolutely. Most clients start with a custom website and add GBP optimization or monthly management once they see results. There's no pressure, no contracts, and no lock-in. Upgrade when you're ready.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What types of businesses do you work with?</div>
+        <div class="faq-a">Any local service business: plumbers, HVAC, electricians, contractors, landscapers, cleaning services, party rentals, auto detailing, restaurants, barbershops, and more. We've built 235+ sites across dozens of industries. If customers search for your service on Google, we can help you get found.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are you a real local business?</div>
+        <div class="faq-a">Yes. Jose Morales is the founder, based in Stafford, VA. You can message us directly on <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="color:var(--text);font-weight:700;text-decoration:underline;">WhatsApp</a>. We work with local businesses across the US and internationally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I already have a website?</div>
+        <div class="faq-a">We'll audit it on our strategy call and be honest about whether it needs replacing or just improving. If your current site is solid, we'll tell you. If it's costing you customers (slow, not mobile-friendly, no SEO), we'll show you why and build you a better one. Either way, you'll know exactly where you stand.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FINAL CTA                                    -->
+<!-- Carl: Certainty Transfer + Loss Aversion     -->
+<!-- ============================================ -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="eyebrow">Your Next Step</div>
+    <h2>Every Day Without a System<br>Is a Day Your Competitor Wins</h2>
+    <p>Right now, customers in your area are searching for the exact service you offer. They're choosing between you and the business that shows up first. We build the system that makes sure they find you.</p>
+    <a href="#book-call" class="btn btn-primary" style="font-size:1.05rem;padding:18px 40px;">Book Your Free Strategy Call</a>
+    <p style="margin-top:14px;font-size:.85rem;color:var(--dim);">We build it free. You only pay if you love it. Zero risk.</p>
+    <div class="cta-phone"><a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Message us on WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER                                       -->
+<!-- ============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Kalnyes<span>Agency</span></div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Kalnyes Agency. All rights reserved. Stafford, VA.</div>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- JS: Intersection Observer for animations     -->
+<!-- ============================================ -->
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.style.animationPlayState = 'running';
+      obs.unobserve(el.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  obs.observe(el);
+});
+</script>
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#book-call">Book Your Free Strategy Call &#8594;</a>
+</div>
+
+</body>
+</html>
