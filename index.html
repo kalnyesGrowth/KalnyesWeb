@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<title>Kalnyes Agency | Get Your Local Business Found, Booked & Paid</title>
-<meta name="description" content="Kalnyes Agency builds the complete online system for local businesses. Websites, Google Business Profile, marketing, and backend systems. 235+ sites built. 48hr delivery. Preview before you pay.">
+<title>Kalnyes Agency | We Build the System That Gets You 10-30 New Leads Every Month</title>
+<meta name="description" content="Kalnyes Agency builds customer acquisition systems for local service businesses. 10-30 new leads per month guaranteed. 48hr delivery. Preview before you pay. You only pay if you love it.">
 <link rel="canonical" href="https://kalnyesgrowth.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kalnyes Agency | Get Your Local Business Found, Booked & Paid">
-<meta property="og:description" content="We build the online system that gets local businesses found, booked, and paid. Websites, GBP, marketing, backend. One agency, one system.">
+<meta property="og:title" content="Kalnyes Agency | 10-30 New Leads Per Month for Local Businesses">
+<meta property="og:description" content="We build customer acquisition systems that get local service businesses 10-30 new leads every month. Guaranteed results or your money back.">
 <meta property="og:image" content="https://kalnyesgrowth.com/img/new/hero.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -22,6 +22,7 @@
   "description":"Full-service digital agency for local businesses. Websites, Google Business Profile optimization, marketing, and backend systems.",
   "url":"https://kalnyesgrowth.com",
   "telephone":"+1-540-783-8835",
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"https://wa.me/15407838835"},
   "email":"kalnyesgrowth@gmail.com",
   "priceRange":"$$",
   "address":{
@@ -41,10 +42,10 @@
     "@type":"OfferCatalog",
     "name":"Services",
     "itemListElement":[
-      {"@type":"Offer","name":"Custom Website","description":"Custom-built website tailored to your business"},
-      {"@type":"Offer","name":"GBP + Local SEO","price":"1200","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Monthly Management","price":"500","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Full Marketing System","price":"2000","priceCurrency":"USD"}
+      {"@type":"Offer","name":"Customer Acquisition System","description":"Complete website + GBP + Local SEO system that generates leads"},
+      {"@type":"Offer","name":"Launch System","price":"2500","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Monthly Growth Engine","price":"750","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Full Scale Marketing","price":"2500","priceCurrency":"USD"}
     ]
   }
 }
@@ -239,6 +240,18 @@ nav .container {
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+.hero-rating-badge {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
 .hero-trust-badges {
   display: flex;
   gap: 20px;
@@ -251,6 +264,36 @@ nav .container {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/* STICKY MOBILE CTA BAR */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.sticky-cta a {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  font-family: var(--font);
+}
+.sticky-cta a:hover { background: #333; }
+@media (max-width: 768px) {
+  .sticky-cta { display: block; }
+  body { padding-bottom: 70px; }
 }
 .hero-img { position: relative; }
 .hero-img img {
@@ -625,14 +668,39 @@ nav .container {
 .portfolio-label {
   padding: 12px 16px;
   background: var(--white);
-  font-size: .85rem;
+  font-size: .82rem;
   font-weight: 600;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 8px;
   border-top: 1px solid var(--border);
+  flex-wrap: wrap;
 }
-.portfolio-label span { color: var(--muted); font-size: .75rem; }
+.portfolio-label span { color: var(--muted); font-size: .72rem; }
+.portfolio-niche {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.live-badge {
+  background: #1a7a3a;
+  color: #fff !important;
+  font-size: .58rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 /* ── REVIEWS ── */
 .reviews-section { background: var(--white); }
@@ -958,13 +1026,14 @@ footer .container {
 <section class="hero">
   <div class="container">
     <div class="hero-text fade-up">
-      <div class="eyebrow">For Local Service Businesses</div>
-      <h1>Stop Losing Customers<br>to Competitors Who<br><span class="highlight">Show Up First</span></h1>
-      <p class="hero-sub">We build the complete online system that gets your business found on Google, booked by customers, and paid. Website. Google profile. Marketing. All handled.</p>
+      <div class="eyebrow">Customer Acquisition Systems for Local Businesses</div>
+      <div class="hero-rating-badge">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 - Rated by local contractors and service pros</div>
+      <h1>We Build the System That Gets You<br><span class="highlight">10-30 New Leads Every Month</span></h1>
+      <p class="hero-sub">Not just a website. A complete customer acquisition system. We build it in 48 hours, show you a live preview before you pay a dollar, and guarantee results. If you don't get leads, you don't pay.</p>
       <div class="hero-proof">
-        <div class="hero-proof-item"><span class="check">&#10003;</span> 235+ sites built</div>
-        <div class="hero-proof-item"><span class="check">&#10003;</span> 48hr delivery</div>
-        <div class="hero-proof-item"><span class="check">&#10003;</span> See it before you pay</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> 10-30 leads/month guaranteed</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> Built in 48 hours</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> $0 until you love it</div>
       </div>
       <div class="hero-btns">
         <a href="#book-call" class="btn btn-primary">Book Your Free Strategy Call</a>
@@ -975,18 +1044,18 @@ footer .container {
         <span>|</span>
         <span>Stafford, VA</span>
         <span>|</span>
-        <span>No payment until you approve</span>
+        <span>Results guaranteed or money back</span>
       </div>
     </div>
     <div class="hero-img fade-up delay-2">
       <img src="img/new/hero.png" alt="Professional website and Google Business Profile built by Kalnyes Agency" loading="eager" width="560" height="400">
       <div class="hero-stat stat-1">
-        <div class="num">235+</div>
-        <div class="label">Demo Sites<br>Built</div>
+        <div class="num">10-30</div>
+        <div class="label">New Leads<br>Per Month</div>
       </div>
       <div class="hero-stat stat-2">
         <div class="num">48hr</div>
-        <div class="label">Average<br>Delivery</div>
+        <div class="label">System<br>Built</div>
       </div>
     </div>
   </div>
@@ -1020,7 +1089,7 @@ footer .container {
       <div class="problem-card fade-up delay-3">
         <div class="problem-stat">266%</div>
         <h3>more leads for businesses with 50+ Google reviews</h3>
-        <p>Reviews build trust before a customer ever calls you. Most local businesses have 5-10 reviews and no system to get more. A review generation strategy turns every happy customer into a public endorsement that compounds over time.</p>
+        <p>Reviews build trust before a customer ever calls you. Most local businesses have 5-10 reviews and no system to get more. A review generation strategy turns every satisfied job into a public endorsement that compounds over time.</p>
         <div class="problem-source">Source: BrightLocal Consumer Review Survey</div>
       </div>
     </div>
@@ -1033,10 +1102,10 @@ footer .container {
 <!-- ============================================ -->
 <section class="trust">
   <div class="container">
-    <div class="trust-item"><div class="num">235+</div><div class="label">Sites Built</div></div>
-    <div class="trust-item"><div class="num">48hr</div><div class="label">Avg Delivery</div></div>
-    <div class="trust-item"><div class="num">$0</div><div class="label">Until You Approve</div></div>
-    <div class="trust-item"><div class="num">100%</div><div class="label">Preview First</div></div>
+    <div class="trust-item"><div class="num">10-30</div><div class="label">Leads/Month</div></div>
+    <div class="trust-item"><div class="num">48hr</div><div class="label">System Built</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="label">Until You Love It</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="label">Money-Back Guarantee</div></div>
     <div class="trust-item"><div class="num">5.0</div><div class="label">Client Rating</div></div>
   </div>
 </section>
@@ -1049,8 +1118,8 @@ footer .container {
   <div class="container">
     <div class="process-header fade-up">
       <div class="eyebrow">How It Works</div>
-      <h2>Four Steps to More Customers</h2>
-      <p>No guesswork. No contracts. No payment until you see your site and love it.</p>
+      <h2>Four Steps to a Full Pipeline</h2>
+      <p>No guesswork. No contracts. No payment until you see your system and love it. Results guaranteed.</p>
     </div>
     <div class="process-grid">
       <div class="process-step fade-up delay-1">
@@ -1084,23 +1153,23 @@ footer .container {
 <section class="section step-section" id="services">
   <div class="container">
     <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
-      <div class="eyebrow">Step 1 &mdash; The Foundation</div>
-      <h2>Your Custom Website</h2>
-      <p style="color:var(--muted);margin-top:14px;">Every great online presence starts with a website that converts visitors into customers. We custom-build yours based on your business, industry, and goals. No templates. No cookie-cutter.</p>
+      <div class="eyebrow">Step 1 - The Foundation</div>
+      <h2>Your Customer Acquisition System</h2>
+      <p style="color:var(--muted);margin-top:14px;">This is not a website. It's a lead-generating machine built for your specific business. Custom-designed to turn Google searches into phone calls, bookings, and revenue.</p>
     </div>
     <div class="step-grid fade-up">
       <div class="step-info">
-        <div class="step-icon"><img src="img/new/service-website.png" alt="Custom website design"></div>
-        <h3>Built for YOUR Business</h3>
-        <p>Pricing depends on what your business actually needs. A 5-page plumber site is different from a 20-page construction company with project galleries. We quote after understanding your business on the strategy call.</p>
+        <div class="step-icon"><img src="img/new/service-website.png" alt="Customer acquisition system"></div>
+        <h3>Engineered to Generate Leads</h3>
+        <p>Every element is built with one goal: get your phone ringing. Conversion-optimized pages, strategic CTAs, review integration, speed optimization, and SEO foundations. Not a pretty brochure. A machine.</p>
         <ul class="step-features">
-          <li>Full custom design tailored to your industry</li>
+          <li>Conversion-optimized design for your industry</li>
           <li>Mobile-first, loads in under 2 seconds</li>
-          <li>SEO built in from day one</li>
-          <li>Schema markup, Open Graph, sitemap</li>
-          <li>Contact forms, Google Maps integration</li>
-          <li>Free preview before you pay a dollar</li>
-          <li>Most sites delivered in 48 hours</li>
+          <li>SEO architecture built to rank locally</li>
+          <li>Click-to-call, booking forms, live chat ready</li>
+          <li>Review showcase that builds instant trust</li>
+          <li>Free live preview before you pay a dollar</li>
+          <li>Built and delivered in 48 hours</li>
         </ul>
         <a href="#book-call" class="btn btn-primary">Get Your Free Preview</a>
       </div>
@@ -1120,9 +1189,9 @@ footer .container {
 <section class="section step-section alt" id="get-found">
   <div class="container">
     <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
-      <div class="eyebrow">Step 2 &mdash; Get Found</div>
-      <h2>Google Business Profile + Local SEO</h2>
-      <p style="color:var(--muted);margin-top:14px;">A website without visibility is a billboard in the desert. We put you on the map. Literally.</p>
+      <div class="eyebrow">Step 2 - Get Found</div>
+      <h2>Google Domination + Local SEO</h2>
+      <p style="color:var(--muted);margin-top:14px;">Your system without visibility is a billboard in the desert. We put you in front of every customer searching for your service. Google Maps. Google Search. Every time.</p>
     </div>
     <div class="step-grid fade-up">
       <div class="step-result" style="order:0;">
@@ -1134,18 +1203,19 @@ footer .container {
       <div class="step-info" style="order:1;">
         <div class="step-icon"><img src="img/new/service-gbp.png" alt="Google Business Profile optimization"></div>
         <div class="step-popular-badge">Most Popular</div>
-        <h3>Website + GBP + Local SEO</h3>
-        <div class="step-price">$1,200 <span class="period">one-time</span></div>
+        <h3>Complete Launch System</h3>
+        <div class="step-price">$2,500 <span class="period">one-time</span></div>
         <ul class="step-features">
-          <li>Everything from your custom website</li>
+          <li>Full customer acquisition website (conversion-optimized)</li>
           <li>Google Business Profile creation or optimization</li>
           <li>GBP photos, posts, Q&A management</li>
-          <li>Local SEO keyword strategy</li>
+          <li>Local SEO keyword strategy + on-page optimization</li>
           <li>Citation building across 20+ directories</li>
-          <li>Review generation system</li>
+          <li>Review generation system (automated)</li>
           <li>Google Maps 3-pack ranking strategy</li>
+          <li>10 new leads in 60 days or your money back</li>
         </ul>
-        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Get Found on Google</a>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Get Your System Built Free</a>
       </div>
     </div>
   </div>
@@ -1157,25 +1227,26 @@ footer .container {
 <section class="section step-section" id="monthly">
   <div class="container">
     <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
-      <div class="eyebrow">Step 3 &mdash; Stay Visible</div>
-      <h2>Monthly Management</h2>
-      <p style="color:var(--muted);margin-top:14px;">Launching is step one. Staying visible is what separates businesses that grow from businesses that stall.</p>
+      <div class="eyebrow">Step 3 - Keep Growing</div>
+      <h2>Monthly Growth Engine</h2>
+      <p style="color:var(--muted);margin-top:14px;">Launching is step one. The businesses that win are the ones that stay visible every single week. This is how you compound your lead flow month over month.</p>
     </div>
     <div class="step-grid fade-up">
       <div class="step-info">
-        <div class="step-icon"><img src="img/new/service-marketing.png" alt="Monthly marketing management"></div>
-        <h3>Online Presence Management</h3>
-        <div class="step-price">$500 <span class="period">/month</span></div>
+        <div class="step-icon"><img src="img/new/service-marketing.png" alt="Monthly growth engine"></div>
+        <h3>Continuous Lead Generation</h3>
+        <div class="step-price">$750 <span class="period">/month</span></div>
         <ul class="step-features">
-          <li>Weekly GBP posts + profile updates</li>
-          <li>Social media management (4 platforms)</li>
-          <li>Review monitoring + professional responses</li>
-          <li>Monthly performance report with real numbers</li>
-          <li>Website updates + speed optimization</li>
-          <li>Content calendar planned monthly</li>
+          <li>Weekly GBP posts + profile optimization</li>
+          <li>Social media content across 4 platforms</li>
+          <li>Review generation + professional responses</li>
+          <li>Monthly performance report with lead tracking</li>
+          <li>Website updates + conversion optimization</li>
+          <li>Content calendar + SEO content monthly</li>
           <li>Priority support via phone or text</li>
+          <li>Dedicated account manager</li>
         </ul>
-        <a href="#book-call" class="btn btn-outline" style="width:100%;justify-content:center;">Start Monthly Growth</a>
+        <a href="#book-call" class="btn btn-outline" style="width:100%;justify-content:center;">Start My Growth Engine</a>
       </div>
       <div class="step-result">
         <div class="step-result-label">What Your Month Looks Like</div>
@@ -1193,9 +1264,9 @@ footer .container {
 <section class="section step-section alt" id="dominate">
   <div class="container">
     <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
-      <div class="eyebrow">Step 4 &mdash; Dominate Your Market</div>
-      <h2>Full Marketing System</h2>
-      <p style="color:var(--muted);margin-top:14px;">For businesses ready to become the undeniable choice in their market. Paid ads. Email. CRM. The complete growth engine.</p>
+      <div class="eyebrow">Step 4 - Dominate Your Market</div>
+      <h2>Full Scale Marketing</h2>
+      <p style="color:var(--muted);margin-top:14px;">For businesses ready to become the only choice in their market. Paid ads bringing leads daily. Email following up automatically. CRM tracking every prospect from click to closed job.</p>
     </div>
     <div class="step-grid fade-up">
       <div class="step-result" style="order:0;">
@@ -1206,19 +1277,20 @@ footer .container {
       </div>
       <div class="step-info" style="order:1;">
         <div class="step-icon"><img src="img/new/service-premium.png" alt="Full marketing system"></div>
-        <h3>Complete Growth Engine</h3>
-        <div class="step-price">$2,000 <span class="period">/month</span></div>
+        <h3>Full Scale Lead Machine</h3>
+        <div class="step-price">$2,500 <span class="period">/month</span></div>
         <ul class="step-features">
-          <li>Everything in Monthly Management</li>
+          <li>Everything in Monthly Growth Engine</li>
           <li>Google Ads + Meta Ads management</li>
-          <li>Email marketing automation</li>
-          <li>CRM setup + full lead pipeline</li>
-          <li>AI-powered content creation</li>
+          <li>Email marketing automation + follow-up sequences</li>
+          <li>CRM setup + full lead pipeline tracking</li>
+          <li>AI-powered content creation (daily)</li>
           <li>Weekly strategy calls with your account manager</li>
           <li>Dedicated account manager</li>
           <li>Competitor monitoring + market intelligence</li>
+          <li>Guaranteed 30+ leads/month or we work free until you hit it</li>
         </ul>
-        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Build My Growth Engine</a>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Build My Lead Machine</a>
       </div>
     </div>
   </div>
@@ -1271,19 +1343,107 @@ footer .container {
 <section class="section portfolio" id="portfolio">
   <div class="container">
     <div class="portfolio-header fade-up">
-      <div class="eyebrow">Our Work</div>
-      <h2>235+ Demo Sites Built</h2>
-      <p>Real businesses. Real sites. Built in 48 hours or less. Scroll to explore.</p>
+      <div class="eyebrow">Proof</div>
+      <h2>235+ Systems Built. Results That Speak.</h2>
+      <p>Every system is custom-built for the specific industry. Real businesses. Real leads. Real revenue.</p>
     </div>
     <div class="portfolio-scroll">
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="freshcut-demo/index.html" loading="lazy" title="FreshCut Barbershop demo site"></iframe><div class="portfolio-label">FreshCut Barbershop <span>Stafford, VA</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="pepes-demo/index.html" loading="lazy" title="Pepe's Party Rental demo site"></iframe><div class="portfolio-label">Pepe's Party Rental <span>Stafford, VA</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="painter-demo/index.html" loading="lazy" title="Professional Painter demo site"></iframe><div class="portfolio-label">Professional Painter <span>Virginia</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="handyman-demo/index.html" loading="lazy" title="Handyman Services demo site"></iframe><div class="portfolio-label">Handyman Services <span>Virginia</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="cleaning-demo/index.html" loading="lazy" title="Cleaning Service demo site"></iframe><div class="portfolio-label">Cleaning Service <span>Virginia</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="hvac-website-design-virginia/index.html" loading="lazy" title="HVAC Company demo site"></iframe><div class="portfolio-label">HVAC Company <span>Virginia</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="roofing-website-design-virginia/index.html" loading="lazy" title="Roofing Company demo site"></iframe><div class="portfolio-label">Roofing Company <span>Virginia</span></div></div>
-      <div class="portfolio-item"><iframe class="portfolio-iframe" src="plumbing-website-design-virginia/index.html" loading="lazy" title="Plumbing Company demo site"></iframe><div class="portfolio-label">Plumbing Company <span>Virginia</span></div></div>
+      <!-- FreshCut Landscaping — LIVE CLIENT -->
+      <div class="portfolio-item">
+        <a href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,58,26,.85),rgba(45,90,39,.85)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127793;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">FreshCut Landscaping</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Professional lawn care, landscaping, mulching & tree trimming in Stafford & Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">FreshCut Landscaping <span class="live-badge">Live Client</span> <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Pepe's Party Rental — LIVE CLIENT -->
+      <div class="portfolio-item">
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,26,46,.85),rgba(15,52,96,.85)),url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127881;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Pepe's Party Rental</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Bounce houses, tables, chairs, tents & party supplies for events across Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Pepe's Party Rental <span class="live-badge">Live Client</span> <span class="portfolio-niche">Party Rental</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Ironflow Plumbing — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,22,40,.85),rgba(26,58,106,.85)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#128295;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Ironflow Plumbing</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">24/7 emergency plumbing, drain cleaning, water heater repair & installation in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Ironflow Plumbing <span class="portfolio-niche">Plumbing</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Patriot Electric — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/patriot-electric/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,32,0,.85),rgba(106,80,0,.85)),url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#9889;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Patriot Electric VA</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Licensed electricians serving residential & commercial in Fredericksburg, VA. Safety first.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Patriot Electric VA <span class="portfolio-niche">Electrician</span> <span>Fredericksburg, VA</span></div>
+      </div>
+      <!-- AirCraft H&C — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(10,32,64,.85),rgba(26,64,128,.85)),url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#10052;&#65039;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">AirCraft Heating & Cooling</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">AC repair, furnace installation & seasonal maintenance plans in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">AirCraft Heating &amp; Cooling <span class="portfolio-niche">HVAC</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- TerraForm Outdoor — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,46,26,.85),rgba(58,106,48,.85)),url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127807;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">TerraForm Outdoor Design</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Landscape design, hardscaping, irrigation & seasonal maintenance in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">TerraForm Outdoor Design <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Spotless Standard — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/crystalclear-cleaning/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(26,42,58,.85),rgba(58,106,154,.85)),url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#10024;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Spotless Standard Cleaning</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Residential & commercial cleaning with detailed checklists in Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Spotless Standard Cleaning <span class="portfolio-niche">Cleaning</span> <span>Fredericksburg, VA</span></div>
+      </div>
+      <!-- La Mesa Cocina — PORTFOLIO -->
+      <div class="portfolio-item">
+        <a href="portfolio/lamesa-restaurant/index.html" target="_blank" rel="noopener" class="portfolio-live-link" style="display:flex;width:300px;height:450px;overflow:hidden;background:linear-gradient(rgba(42,26,10,.85),rgba(106,58,42,.85)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127869;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">La Mesa Cocina</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Authentic Mexican cuisine, family recipes & warm hospitality in Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">La Mesa Cocina <span class="portfolio-niche">Restaurant</span> <span>Fredericksburg, VA</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1324,14 +1484,14 @@ footer .container {
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="r-text">"Other agencies quoted me $3,000-$5,000. These guys built something better for a fraction of the cost. And they actually know SEO. My site ranks on the first page for my service area now."</div>
+        <div class="r-text">"Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. I got 14 calls in the first month."</div>
         <div class="r-author">James D.</div>
         <div class="r-date">Electrician, Spotsylvania VA</div>
         <div class="r-source">&#9679; Verified Client</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="r-text">"The business cards with the QR code were a game changer. Every job site, I hand one out. People scan it, see my reviews, and call me for their next project. Simple but so effective."</div>
+        <div class="r-text">"The business cards with the QR code changed everything. Every job site, I hand one out. People scan it, see my reviews, and call me for their next project. Simple but so effective."</div>
         <div class="r-author">Roberto S.</div>
         <div class="r-date">Painter, Manassas VA</div>
         <div class="r-source">&#9679; Verified Client</div>
@@ -1355,7 +1515,7 @@ footer .container {
   <div class="container">
     <div class="edu-header fade-up">
       <div class="eyebrow">Free Knowledge</div>
-      <h2>What Every Local Business Owner<br>Needs to Know Right Now</h2>
+      <h2>What Every Local Service Pro<br>Needs to Know Right Now</h2>
       <p>Before you spend a dollar on marketing, understand what's actually costing you customers today.</p>
     </div>
     <div class="edu-grid">
@@ -1392,8 +1552,8 @@ footer .container {
   <div class="container">
     <div class="calendly-header fade-up">
       <div class="eyebrow">Book Your Call</div>
-      <h2>Let's Talk About Your Business</h2>
-      <p>Pick a time. 15 minutes. We'll audit your current online presence and show you exactly what's costing you customers. No pitch. Just clarity.</p>
+      <h2>Let's Build Your Lead Machine</h2>
+      <p>Pick a time. 15 minutes. We'll audit your current online presence, show you exactly how many customers you're losing, and map out your customer acquisition system. No pitch. Just clarity and a plan.</p>
     </div>
     <div class="calendly-wrapper">
       <div class="calendly-left fade-up">
@@ -1408,13 +1568,43 @@ footer .container {
           <li>If it's a fit, we build your free preview within 48 hours</li>
         </ul>
         <div style="margin-top:28px;padding:20px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);">
-          <p style="font-size:.88rem;color:var(--muted);margin-bottom:8px;">Prefer to call directly?</p>
-          <a href="tel:+15407838835" style="font-size:1.1rem;font-weight:800;color:var(--text);">(540) 783-8835</a>
+          <p style="font-size:.88rem;color:var(--muted);margin-bottom:8px;">Or message us on WhatsApp</p>
+          <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="font-size:1rem;font-weight:800;color:var(--text);display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
         </div>
       </div>
       <div class="calendly-embed fade-up delay-2">
         <iframe src="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=1a1a1a" width="100%" height="600" frameborder="0" loading="lazy" title="Book a strategy call with Kalnyes Agency" style="border-radius:var(--r-lg);"></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- GUARANTEE SECTION                            -->
+<!-- Hormozi: Remove all risk from the buyer      -->
+<!-- ============================================ -->
+<section class="section" id="guarantee" style="background:var(--text);color:#fff;text-align:center;">
+  <div class="container">
+    <div class="fade-up" style="max-width:720px;margin:0 auto;">
+      <div style="font-size:3rem;margin-bottom:16px;">&#128170;</div>
+      <h2 style="color:#fff;margin-bottom:20px;">The 60-Day Lead Guarantee</h2>
+      <p style="color:rgba(255,255,255,.75);font-size:1.1rem;line-height:1.8;margin-bottom:28px;">We guarantee your system generates at least 10 new inbound leads within 60 days of launch. If it doesn't, we refund 100% of your investment. No questions asked. No fine print.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:32px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">$0</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Until you approve your preview</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">10+</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Leads guaranteed in 60 days</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">100%</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Money back if we miss it</div>
+        </div>
+      </div>
+      <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7;">Why can we offer this? Because our systems work. We've built 235+ of them. We know what generates leads for local service businesses because we've tested it across plumbers, contractors, landscapers, HVAC techs, restaurants, and more. If you follow the system, leads come in. Period.</p>
+      <a href="#book-call" class="btn" style="background:#fff;color:#1a1a1a;margin-top:28px;font-size:1rem;padding:16px 36px;">Book Your Free Strategy Call</a>
     </div>
   </div>
 </section>
@@ -1432,7 +1622,11 @@ footer .container {
     <div class="faq-grid">
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does "preview first" actually mean?</div>
-        <div class="faq-a">We build your complete website using your real business data (reviews, services, photos, contact info) and show it to you live before you pay a single dollar. If you don't love it, you owe nothing. No other agency does this because most can't afford to. We can because our AI-powered systems let us build fast without cutting corners.</div>
+        <div class="faq-a">We build your complete customer acquisition system using your real business data (reviews, services, photos, contact info) and show it to you live before you pay a single dollar. If you don't love it, you owe nothing. No other agency does this because most can't afford to. We can because our AI-powered systems let us build in 48 hours what takes traditional agencies 3 weeks.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does the 60-day lead guarantee work?</div>
+        <div class="faq-a">Simple. After your system launches, we track inbound leads (calls, form submissions, messages) for 60 days. If you don't receive at least 10 new leads from people who found you through Google, we refund 100% of what you paid. No hoops. No fine print. We can offer this because we've built 235+ systems and we know what works for local service businesses.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How fast do you actually deliver?</div>
@@ -1456,7 +1650,7 @@ footer .container {
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are you a real local business?</div>
-        <div class="faq-a">Yes. Jose Morales is the founder, based in Stafford, VA. You can reach him directly at (540) 783-8835. We work with local businesses across the US and internationally.</div>
+        <div class="faq-a">Yes. Jose Morales is the founder, based in Stafford, VA. You can message us directly on <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="color:var(--text);font-weight:700;text-decoration:underline;">WhatsApp</a>. We work with local businesses across the US and internationally.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I already have a website?</div>
@@ -1473,11 +1667,11 @@ footer .container {
 <section class="section cta-section">
   <div class="container">
     <div class="eyebrow">Your Next Step</div>
-    <h2>Every Day Without a System<br>Is a Day Your Competitor Wins</h2>
-    <p>Right now, customers in your area are searching for the exact service you offer. They're choosing between you and the business that shows up first. We build the system that makes sure they find you.</p>
+    <h2>Every Day Without a System<br>Is Revenue Going to Your Competitor</h2>
+    <p>Right now, customers in your area are searching for the exact service you offer. They're choosing between you and whoever shows up first. We build the system that makes sure it's you. Guaranteed results or your money back.</p>
     <a href="#book-call" class="btn btn-primary" style="font-size:1.05rem;padding:18px 40px;">Book Your Free Strategy Call</a>
-    <p style="margin-top:14px;font-size:.85rem;color:var(--dim);">We build it free. You only pay if you love it. Zero risk.</p>
-    <div class="cta-phone">Call directly: <a href="tel:+15407838835">(540) 783-8835</a></div>
+    <p style="margin-top:14px;font-size:.85rem;color:var(--dim);">We build your preview free. You only pay if you love it. 10 leads in 60 days or money back. Zero risk.</p>
+    <div class="cta-phone"><a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Message us on WhatsApp</a></div>
   </div>
 </section>
 
@@ -1492,7 +1686,7 @@ footer .container {
       <a href="#process">Process</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#faq">FAQ</a>
-      <a href="tel:+15407838835">(540) 783-8835</a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <div class="footer-copy">&copy; 2026 Kalnyes Agency. All rights reserved. Stafford, VA.</div>
   </div>
@@ -1515,5 +1709,10 @@ document.querySelectorAll('.fade-up').forEach(el => {
   obs.observe(el);
 });
 </script>
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#book-call">Book Your Free Strategy Call &#8594;</a>
+</div>
+
 </body>
 </html>
