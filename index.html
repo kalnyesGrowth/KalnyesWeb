@@ -43,9 +43,9 @@
     "name":"Services",
     "itemListElement":[
       {"@type":"Offer","name":"Customer Acquisition System","description":"Complete website + GBP + Local SEO system that generates leads"},
-      {"@type":"Offer","name":"Launch System","price":"2500","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Monthly Growth Engine","price":"750","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Full Scale Marketing","price":"2500","priceCurrency":"USD"}
+      {"@type":"Offer","name":"Growth Package","price":"1200","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Domination Package","price":"1600","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Monthly Growth Engine","price":"500","priceCurrency":"USD"}
     ]
   }
 }
@@ -1010,6 +1010,230 @@ nav .container {
   padding-top: 12px;
 }
 
+/* ── PRICING TABLE ── */
+.pricing-table-section { background: var(--white); }
+.pricing-table-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+.pricing-table-header .value-line { font-size: .92rem; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.pricing-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 36px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color .3s, box-shadow .3s;
+}
+.pricing-card:hover {
+  border-color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+}
+.pricing-card.featured {
+  border: 2px solid var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.1);
+}
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 6px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pricing-card-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.pricing-card-desc {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.pricing-card-price {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.pricing-card-period {
+  font-size: .78rem;
+  color: var(--dim);
+  margin-bottom: 20px;
+}
+.pricing-card-value {
+  background: rgba(26,26,26,.04);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pricing-card-value .val-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--dim);
+}
+.pricing-card-value .val-amount {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: line-through;
+  text-decoration-color: rgba(200,50,50,.4);
+}
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.pricing-features li {
+  font-size: .84rem;
+  color: var(--muted);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+.pricing-features li::before {
+  content: '\2713';
+  color: var(--text);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-guarantee {
+  font-size: .76rem;
+  color: var(--dim);
+  text-align: center;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.pricing-guarantee strong { color: var(--text); }
+.pricing-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
+.pricing-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 48px auto 0;
+}
+.pricing-bcard {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 22px;
+  text-align: center;
+  min-width: 130px;
+  flex: 1;
+}
+.pricing-bcard .qty { font-size: .72rem; color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
+.pricing-bcard .price { font-size: 1.3rem; font-weight: 900; color: var(--text); margin: 4px 0 2px; }
+.pricing-bcard .per { font-size: .68rem; color: var(--muted); }
+.pricing-addon-label {
+  text-align: center;
+  margin-top: 20px;
+  font-size: .82rem;
+  color: var(--dim);
+}
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-card.featured { order: -1; }
+}
+
+/* ── HORMOZI PRICING SECTION ── */
+.hormozi-pricing { background: var(--bg2); }
+.hormozi-header { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+.hormozi-header p { color: var(--muted); margin-top: 14px; font-size: .95rem; line-height: 1.6; }
+.pricing-card-tagline {
+  font-size: .82rem; color: var(--muted); font-weight: 500;
+  margin-bottom: 16px; line-height: 1.4; min-height: 40px;
+}
+.pricing-card-includes {
+  font-family: var(--mono); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--dim);
+  margin-bottom: 8px; padding-top: 4px;
+}
+.pricing-monthly-addon {
+  max-width: 680px; margin: 56px auto 0;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 36px 32px;
+  display: flex; align-items: flex-start; gap: 32px;
+}
+.pricing-monthly-addon .addon-left { flex: 0 0 auto; text-align: center; }
+.pricing-monthly-addon .addon-left .addon-label {
+  font-family: var(--mono); font-size: .65rem; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--dim); margin-bottom: 6px;
+}
+.pricing-monthly-addon .addon-left .addon-price {
+  font-size: 2rem; font-weight: 900; color: var(--text); line-height: 1;
+}
+.pricing-monthly-addon .addon-left .addon-period {
+  font-size: .78rem; color: var(--dim); margin-top: 2px;
+}
+.pricing-monthly-addon .addon-right { flex: 1; }
+.pricing-monthly-addon .addon-right h4 {
+  font-size: 1.05rem; font-weight: 800; margin-bottom: 4px;
+}
+.pricing-monthly-addon .addon-right p {
+  font-size: .82rem; color: var(--muted); margin-bottom: 12px; line-height: 1.5;
+}
+.addon-features {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px;
+}
+.addon-features li {
+  font-size: .8rem; color: var(--muted); padding: 3px 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.addon-features li::before {
+  content: '\2713'; color: var(--text); font-weight: 700; flex-shrink: 0;
+}
+.hormozi-guarantees {
+  max-width: 1080px; margin: 56px auto 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.guarantee-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 22px; text-align: center;
+}
+.guarantee-card .g-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--text); color: #fff; font-weight: 900;
+  font-size: 1rem; display: inline-flex; align-items: center;
+  justify-content: center; margin-bottom: 12px;
+}
+.guarantee-card h4 { font-size: .95rem; font-weight: 800; margin-bottom: 8px; }
+.guarantee-card p { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+@media (max-width: 900px) {
+  .hormozi-guarantees { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .pricing-monthly-addon { flex-direction: column; text-align: center; gap: 20px; }
+  .addon-features { grid-template-columns: 1fr; }
+}
+
 /* ── FINAL CTA ── */
 .cta-section {
   text-align: center;
@@ -1097,8 +1321,8 @@ footer .container {
       <div class="nav-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0</div>
       <a href="#problem">Why Us</a>
       <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#reviews">Reviews</a>
       <a href="#book-call" class="nav-cta">Book Free Strategy Call</a>
     </div>
   </div>
@@ -1299,7 +1523,7 @@ footer .container {
         <div class="step-icon"><img src="img/new/service-gbp.png" alt="Google Business Profile optimization"></div>
         <div class="step-popular-badge">Most Popular</div>
         <h3>Complete Launch System</h3>
-        <div class="step-price">$2,500 <span class="period">one-time</span></div>
+        <div class="step-price">$1,200 <span class="period">one-time</span></div>
         <ul class="step-features">
           <li>Full customer acquisition website (conversion-optimized)</li>
           <li>Google Business Profile creation or optimization</li>
@@ -1330,7 +1554,7 @@ footer .container {
       <div class="step-info">
         <div class="step-icon"><img src="img/new/service-marketing.png" alt="Monthly growth engine"></div>
         <h3>Continuous Lead Generation</h3>
-        <div class="step-price">$750 <span class="period">/month</span></div>
+        <div class="step-price">$500 <span class="period">/month</span></div>
         <ul class="step-features">
           <li>Weekly GBP posts + profile optimization</li>
           <li>Social media content across 4 platforms</li>
@@ -1375,7 +1599,7 @@ footer .container {
       <div class="step-info" style="order:1;">
         <div class="step-icon"><img src="img/new/service-premium.png" alt="Full marketing system"></div>
         <h3>Full Scale Lead Machine</h3>
-        <div class="step-price">$2,500 <span class="period">/month</span></div>
+        <div class="step-price">$2,000 <span class="period">/month</span></div>
         <ul class="step-features">
           <li>Everything in Monthly Growth Engine</li>
           <li>Google Ads + Meta Ads management</li>
@@ -1800,6 +2024,138 @@ footer .container {
 </section>
 
 <!-- ============================================ -->
+<!-- HORMOZI PRICING TABLE                        -->
+<!-- Value = (Dream Outcome x Likelihood) /       -->
+<!--         (Time Delay x Effort)                -->
+<!-- ============================================ -->
+<section class="section hormozi-pricing" id="pricing">
+  <div class="container">
+    <div class="hormozi-header fade-up">
+      <div class="eyebrow">Simple Pricing</div>
+      <h2>Pick Your Package.<br>We Handle Everything.</h2>
+      <p>You tell us about your business. We build it. You see it live before you pay a dollar. Every package comes with a guarantee because we know it works.</p>
+    </div>
+
+    <!-- 3 PRICING CARDS -->
+    <div class="pricing-grid fade-up">
+
+      <!-- CARD 1: STARTER -->
+      <div class="pricing-card">
+        <div class="pricing-card-name">Starter</div>
+        <div class="pricing-card-tagline">Your business gets online. Customers can find you, call you, and trust you.</div>
+        <div class="pricing-card-price">$800</div>
+        <div class="pricing-card-period">one-time payment. You own it forever.</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Agencies charge</div>
+          <div class="val-amount">$3,000+</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Custom website designed for your specific business</li>
+          <li>Works perfectly on phones, tablets, and computers</li>
+          <li>Loads in under 2 seconds (most sites take 5+)</li>
+          <li>Your phone number on every page with click-to-call</li>
+          <li>Contact form that sends leads straight to your phone</li>
+          <li>Your real Google reviews displayed on your site</li>
+          <li>Set up so Google can find you in local searches</li>
+          <li>Delivered in 48 hours, not 3 weeks</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> See it live before you pay. Don't love it? Walk away. $0.</div>
+        <a href="#book-call" class="btn btn-outline">Get My Free Preview</a>
+      </div>
+
+      <!-- CARD 2: GROWTH (FEATURED) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-card-name">Growth</div>
+        <div class="pricing-card-tagline">Your business gets found. Show up on Google Maps when customers search for your service.</div>
+        <div class="pricing-card-price">$1,200</div>
+        <div class="pricing-card-period">one-time payment. You own it forever.</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Agencies charge</div>
+          <div class="val-amount">$7,500+</div>
+        </div>
+        <div class="pricing-card-includes">Everything in Starter, plus:</div>
+        <ul class="pricing-features">
+          <li>Google Business Profile fully set up and optimized</li>
+          <li>You show up on Google Maps when people search nearby</li>
+          <li>Listed on 20+ directories so customers find you everywhere</li>
+          <li>Review system that automatically asks happy customers for reviews</li>
+          <li>Local search strategy so you rank above competitors</li>
+          <li>Professional photos and posts on your Google listing</li>
+          <li>Monthly report showing exactly how many people found you</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> 10 new leads in 60 days or 100% of your money back.</div>
+        <a href="#book-call" class="btn btn-primary">Get My Free Preview</a>
+      </div>
+
+      <!-- CARD 3: DOMINATION -->
+      <div class="pricing-card">
+        <div class="pricing-card-name">Domination</div>
+        <div class="pricing-card-tagline">Your business runs on autopilot. Website, Google, social media, content. All handled.</div>
+        <div class="pricing-card-price">$1,600</div>
+        <div class="pricing-card-period">one-time payment. You own it forever.</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Agencies charge</div>
+          <div class="val-amount">$12,000+</div>
+        </div>
+        <div class="pricing-card-includes">Everything in Growth, plus:</div>
+        <ul class="pricing-features">
+          <li>AI content system: record a quick video, we post it to 4 platforms</li>
+          <li>Social media on Instagram, Facebook, LinkedIn, and X</li>
+          <li>First month of content management included free</li>
+          <li>Your own content dashboard to track everything</li>
+          <li>Professional responses to every review (same day)</li>
+          <li>Website updates and improvements whenever you need them</li>
+          <li>Priority support via phone or text (same-day response)</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> 20 new leads in 60 days or we keep working free until you hit it.</div>
+        <a href="#book-call" class="btn btn-outline">Get My Free Preview</a>
+      </div>
+    </div>
+
+    <!-- MONTHLY ADD-ON -->
+    <div class="pricing-monthly-addon fade-up">
+      <div class="addon-left">
+        <div class="addon-label">Add-on</div>
+        <div class="addon-price">$500</div>
+        <div class="addon-period">per month</div>
+      </div>
+      <div class="addon-right">
+        <h4>Keep Growing Every Month</h4>
+        <p>After your site launches, we keep your online presence active and growing. You focus on running your business. We handle the rest.</p>
+        <ul class="addon-features">
+          <li>Weekly social media posts (4 platforms)</li>
+          <li>Weekly Google Business updates</li>
+          <li>Review responses same day</li>
+          <li>Website updates when you need them</li>
+          <li>Monthly report with real numbers</li>
+          <li>Cancel anytime. No contracts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 GUARANTEE CARDS -->
+    <div class="hormozi-guarantees fade-up">
+      <div class="guarantee-card">
+        <div class="g-num">1</div>
+        <h4>See It Before You Pay</h4>
+        <p>We build your complete website using your real business info. You see it live. If you don't love it, you owe nothing. We take the risk, not you.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-num">2</div>
+        <h4>Results or Your Money Back</h4>
+        <p>Growth and Domination packages come with a lead guarantee. If you don't get the leads we promised within 60 days, we refund every dollar. No questions.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-num">3</div>
+        <h4>No Contracts. No Tricks.</h4>
+        <p>You own your website forever. Monthly services cancel with one message. No annual commitments. No cancellation fees. You stay because it works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
 <!-- FINAL CTA                                    -->
 <!-- Carl: Certainty Transfer + Loss Aversion     -->
 <!-- ============================================ -->
@@ -1822,7 +2178,7 @@ footer .container {
     <div class="footer-logo">Kalnyes<span>Agency</span></div>
     <div class="footer-links">
       <a href="#services">Services</a>
-      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#faq">FAQ</a>
       <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener">WhatsApp</a>
