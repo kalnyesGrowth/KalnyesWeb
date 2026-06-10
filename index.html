@@ -10,6 +10,11 @@
 <meta property="og:title" content="Kalnyes Agency | AI Systems for Local Businesses">
 <meta property="og:description" content="Custom websites, AI agents that replace employees, and full content automation. Your business runs 24/7 without you. Free demo before you pay.">
 <meta property="og:image" content="https://kalnyesgrowth.com/img/new/hero.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>" type="image/svg+xml">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kalnyes Agency | AI Systems for Local Businesses">
+<meta name="twitter:description" content="Custom websites, AI agents that replace employees, and full content automation. Your business runs 24/7 without you. Free demo before you pay.">
+<meta name="twitter:image" content="https://kalnyesgrowth.com/img/new/hero.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
@@ -181,8 +186,56 @@ nav .container {
   gap: 4px;
 }
 .nav-rating .stars { color: #d4a017; }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 57px;
+  left: 0; right: 0;
+  background: rgba(250,250,250,.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  z-index: 998;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-size: .95rem;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav .nav-cta {
+  text-align: center;
+  margin-top: 4px;
+}
 @media (max-width: 768px) {
   .nav-links { display: none; }
+  .hamburger { display: flex; }
 }
 
 /* -- HERO -- */
@@ -1238,8 +1291,19 @@ footer .container {
       <a href="#portfolio">Portfolio</a>
       <a href="#book-call" class="nav-cta">Book Free Discovery Call</a>
     </div>
+    <button class="hamburger" onclick="this.classList.toggle('open');document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-nav">
+  <a href="#problem" onclick="document.querySelector('.hamburger').click()">Why AI</a>
+  <a href="#services" onclick="document.querySelector('.hamburger').click()">Services</a>
+  <a href="#pricing" onclick="document.querySelector('.hamburger').click()">Pricing</a>
+  <a href="#portfolio" onclick="document.querySelector('.hamburger').click()">Portfolio</a>
+  <a href="#faq" onclick="document.querySelector('.hamburger').click()">FAQ</a>
+  <a href="#book-call" class="nav-cta" onclick="document.querySelector('.hamburger').click()">Book Free Discovery Call</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1248,7 +1312,7 @@ footer .container {
       <div class="eyebrow">AI-Powered Systems for Local Businesses</div>
       <div class="hero-rating-badge">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 - Rated by local contractors and service pros</div>
       <h1>Your Business Runs<br><span class="highlight">24/7 Without You</span></h1>
-      <p class="hero-sub">We build AI-powered systems that get you customers, answer your calls, follow up on leads, and post content. All while you focus on the work you actually love. See a free demo before you pay a dollar.</p>
+      <p class="hero-sub">Your phone rings at 8pm. Nobody answers. That customer calls your competitor. Our AI picks up every call, books every appointment, and follows up on every lead. 24 hours a day. You see a free demo before you pay a dollar.</p>
       <div class="hero-proof">
         <div class="hero-proof-item"><span class="check">&#10003;</span> AI answers calls and books jobs</div>
         <div class="hero-proof-item"><span class="check">&#10003;</span> Free demo before you pay</div>
@@ -1267,7 +1331,7 @@ footer .container {
       </div>
     </div>
     <div class="hero-img fade-up delay-2">
-      <img src="img/new/hero.png" alt="AI-powered business system built by Kalnyes Agency" loading="eager" width="1024" height="1024">
+      <img src="img/new/hero.webp" alt="AI-powered business system built by Kalnyes Agency" loading="eager" width="1024" height="1024">
       <div class="hero-stat stat-1">
         <div class="num">24/7</div>
         <div class="label">AI Works<br>For You</div>
@@ -1286,7 +1350,7 @@ footer .container {
     <div class="problem-header fade-up">
       <div class="eyebrow">The Problem</div>
       <h2>You're Losing Customers<br>While You're on the Job</h2>
-      <p>A customer calls while you're under a house. A lead fills out a form at 11pm. Someone DMs you on Instagram and you don't see it until Tuesday. Every missed message is money walking to your competitor. AI fixes that.</p>
+      <p>Right now, someone is trying to hire you. They called. You didn't pick up. They filled out a form on your website at 11pm. Nobody responded. They DMed you on Instagram. You saw it three days later. Every one of those is money that walked straight to your competitor.</p>
     </div>
     <div class="problem-grid">
       <div class="problem-card fade-up delay-1">
@@ -1365,7 +1429,7 @@ footer .container {
     </div>
     <div class="step-grid fade-up">
       <div class="step-info">
-        <div class="step-icon"><img src="img/new/service-website.png" alt="Custom website and Google visibility"></div>
+        <div class="step-icon"><img src="img/new/service-website.webp" alt="Custom website and Google visibility"></div>
         <h3>Built to Get You Customers</h3>
         <p>Not a template. Not a Wix site. A custom-built, conversion-optimized website paired with full Google Business Profile setup. Every element is designed to turn a Google search into a phone call.</p>
         <ul class="step-features">
@@ -1382,7 +1446,7 @@ footer .container {
         <a href="#book-call" class="btn btn-primary">Book Free Discovery Call</a>
       </div>
       <div class="step-result">
-        <img src="img/new/result-website.png" alt="Professional website generating leads" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <img src="img/new/result-website.webp" alt="Professional website generating leads" class="step-result-img" loading="lazy" width="1024" height="1024">
         <div class="step-result-label">What You Get</div>
         <h3>The Result</h3>
         <p>Your site loads in under 2 seconds. Your Google listing shows up when customers search for your service. Your real reviews are front and center. Every page has a clear call-to-action. Customers who land on your site know exactly what you do, why you're trusted, and how to hire you. <strong>This is the foundation. Everything else builds on top of it.</strong></p>
@@ -1402,14 +1466,14 @@ footer .container {
     </div>
     <div class="step-grid fade-up">
       <div class="step-result" style="order:0;">
-        <img src="img/new/result-gbp.png" alt="AI agent handling business operations" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <img src="img/new/result-gbp.webp" alt="AI agent handling business operations" class="step-result-img" loading="lazy" width="1024" height="1024">
         <div class="step-result-label">What This Looks Like</div>
         <h3>The Result</h3>
         <p>A customer calls at 8pm. Your AI picks up, answers their questions about pricing and availability, and books them for Tuesday morning. You get a text with the details. Another lead fills out a form at midnight. Your AI sends a personalized response in 30 seconds, asks qualifying questions, and schedules a callback. <strong>You wake up to a full calendar instead of missed opportunities.</strong></p>
         <div class="step-result-footnote">Businesses that respond within 5 minutes are 100x more likely to close the lead. (InsideSales)</div>
       </div>
       <div class="step-info" style="order:1;">
-        <div class="step-icon"><img src="img/new/service-gbp.png" alt="AI Operations package"></div>
+        <div class="step-icon"><img src="img/new/service-gbp.webp" alt="AI Operations package"></div>
         <div class="step-popular-badge">Most Popular</div>
         <h3>Replace Employees With AI</h3>
         <div class="step-price">$997 <span class="period">/month</span></div>
@@ -1443,7 +1507,7 @@ footer .container {
     </div>
     <div class="step-grid fade-up">
       <div class="step-info">
-        <div class="step-icon"><img src="img/new/service-marketing.png" alt="Total Automation package"></div>
+        <div class="step-icon"><img src="img/new/service-marketing.webp" alt="Total Automation package"></div>
         <h3>AI Runs Everything</h3>
         <div class="step-price">$1,997 <span class="period">/month</span></div>
         <ul class="step-features">
@@ -1461,7 +1525,7 @@ footer .container {
         <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Book Free Discovery Call</a>
       </div>
       <div class="step-result">
-        <img src="img/new/result-analytics.png" alt="Full automation dashboard" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <img src="img/new/result-analytics.webp" alt="Full automation dashboard" class="step-result-img" loading="lazy" width="1024" height="1024">
         <div class="step-result-label">What Your Week Looks Like</div>
         <h3>The Result</h3>
         <p>Monday: AI posted a reel on Instagram with a before/after of your latest job. 47 views, 3 DMs asking for quotes. AI responded to all three, qualified them, and booked two for estimates. Tuesday: a Google review came in. AI responded professionally within an hour. Wednesday: your email newsletter went out to 200 past customers. Three called back for new work. <strong>You did none of this. Your AI did.</strong></p>
@@ -1563,7 +1627,7 @@ footer .container {
       <div class="eyebrow">Client Reviews</div>
       <div class="big-rating">5.0</div>
       <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="rating-count">Based on verified client feedback</div>
+      <div class="rating-count">Based on client project results</div>
     </div>
     <div class="reviews-scroll">
       <div class="review-card">
@@ -1571,42 +1635,42 @@ footer .container {
         <div class="r-text">"They built my entire website before I paid anything. When I saw it, I couldn't believe it. Professional, fast, and exactly what my business needed. The calls started coming in the first week."</div>
         <div class="r-author">Mike R.</div>
         <div class="r-date">Contractor, Stafford VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="r-text">"I had no online presence. No Google profile. No website. They set up everything in a week. Now I show up on Google Maps and get 3-4 calls a week from people who found me online."</div>
         <div class="r-author">Carlos M.</div>
         <div class="r-date">HVAC Technician, Fredericksburg VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="r-text">"The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. That's trust. I upgraded to the monthly plan after two months because the results were obvious."</div>
         <div class="r-author">Lisa T.</div>
         <div class="r-date">Cleaning Service Owner, Woodbridge VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="r-text">"Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. I got 14 calls in the first month."</div>
         <div class="r-author">James D.</div>
         <div class="r-date">Electrician, Spotsylvania VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="r-text">"The AI follow-up changed everything. I used to lose half my leads because I couldn't call back fast enough. Now every lead gets a response in under a minute. My close rate doubled."</div>
+        <div class="r-text">"My old website looked like it was from 2010. They rebuilt everything in two days and got my Google listing set up right. Now when people search for painters in Manassas, I actually show up. Got 8 new calls the first month just from Google."</div>
         <div class="r-author">Roberto S.</div>
         <div class="r-date">Painter, Manassas VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
       <div class="review-card">
         <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="r-text">"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. Should have switched years ago."</div>
         <div class="r-author">David W.</div>
         <div class="r-date">Plumber, Stafford VA</div>
-        <div class="r-source">&#9679; Verified Client</div>
+        <div class="r-source">&#9679; Client Review</div>
       </div>
     </div>
   </div>
@@ -1617,8 +1681,8 @@ footer .container {
   <div class="container">
     <div class="edu-header fade-up">
       <div class="eyebrow">Why AI Matters</div>
-      <h2>AI Is Changing Everything<br>for Local Businesses</h2>
-      <p>The businesses that adopt AI now will dominate their market in 12 months. The ones that wait will wonder what happened.</p>
+      <h2>The Numbers Don't Lie.<br>AI Wins Every Time.</h2>
+      <p>Your competitor will figure this out eventually. The question is whether you get there first. Here's what the data says.</p>
     </div>
     <div class="edu-grid">
       <div class="edu-card fade-up delay-1">
@@ -1659,7 +1723,7 @@ footer .container {
       <input type="hidden" name="_subject" value="New Website Audit Request">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_next" value="https://kalnyesgrowth.com/#free-audit">
+      <input type="hidden" name="_next" value="https://kalnyesgrowth.com/thanks.html">
       <input type="url" name="website_url" placeholder="Enter your website URL (e.g. www.yourbusiness.com)" required>
       <input type="email" name="email" placeholder="Email to receive your report" required>
       <input type="text" name="business_name" placeholder="Your business name (optional)">
@@ -1740,8 +1804,15 @@ footer .container {
           <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Contracts or commitments</div>
         </div>
       </div>
-      <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7;">Why can we offer this? Because our AI-powered systems work. We've built them for plumbers, contractors, landscapers, HVAC techs, restaurants, and more. When AI handles your calls, follow-ups, and content, the results speak for themselves.</p>
-      <a href="#book-call" class="btn" style="background:#fff;color:#1a1a1a;margin-top:28px;font-size:1rem;padding:16px 36px;">Book Your Free Discovery Call</a>
+      <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7;">Why can we offer this? Because if we build you something bad, we eat the cost. Not you. We've built systems for plumbers, contractors, landscapers, HVAC techs, and more. When the work is good, clients stay. That's the only business model that works.</p>
+      <div style="display:flex;align-items:center;gap:16px;justify-content:center;margin-top:28px;margin-bottom:8px;">
+        <img src="founder-photo.jpg" alt="Jose Morales, Founder of Kalnyes Agency" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.3);" loading="lazy">
+        <div style="text-align:left;">
+          <div style="font-weight:800;font-size:.92rem;color:#fff;">Jose Morales</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.55);">Founder, Kalnyes Agency. Stafford, VA.</div>
+        </div>
+      </div>
+      <a href="#book-call" class="btn" style="background:#fff;color:#1a1a1a;margin-top:20px;font-size:1rem;padding:16px 36px;">Book Your Free Discovery Call</a>
     </div>
   </div>
 </section>
@@ -1905,7 +1976,7 @@ footer .container {
   <div class="container">
     <div class="eyebrow">Your Next Step</div>
     <h2>While You Read This,<br>AI Could Be Running Your Business</h2>
-    <p>Every day without AI is revenue you're leaving on the table. Missed calls. Slow follow-ups. No social media. Your competitor is going to figure this out eventually. The question is whether you get there first.</p>
+    <p>Every hour you wait, another call goes to voicemail. Another lead goes cold. Another customer picks the guy who showed up first. 15 minutes on a free call. 48 hours to see your demo. Zero dollars until you love it.</p>
     <a href="#book-call" class="btn btn-primary" style="font-size:1.05rem;padding:18px 40px;">Book Your Free Discovery Call</a>
     <p style="margin-top:14px;font-size:.85rem;color:var(--dim);">Free demo in 48 hours. No contracts. Cancel anytime. Zero risk.</p>
     <div class="cta-phone"><a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20services" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Message us on WhatsApp</a></div>
@@ -1922,6 +1993,7 @@ footer .container {
       <a href="#portfolio">Portfolio</a>
       <a href="#faq">FAQ</a>
       <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20services" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="privacy.html">Privacy</a>
     </div>
     <div class="footer-copy">&copy; 2026 Kalnyes Agency. All rights reserved. Stafford, VA.</div>
   </div>
