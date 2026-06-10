@@ -1,0 +1,2784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Kalnyes Agency | AI-Powered Systems That Run Your Business While You Sleep</title>
+<meta name="description" content="We build AI-powered systems for local businesses. Custom websites, Google visibility, AI employees that answer calls, book jobs, and post content. See a free demo before you pay.">
+<link rel="canonical" href="https://kalnyesgrowth.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kalnyes Agency | AI Systems for Local Businesses">
+<meta property="og:description" content="Custom websites, AI agents that replace employees, and full content automation. Your business runs 24/7 without you. Free demo before you pay.">
+<meta property="og:image" content="https://kalnyesgrowth.com/img/new/hero.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>" type="image/svg+xml">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kalnyes Agency | AI Systems for Local Businesses">
+<meta name="twitter:description" content="Custom websites, AI agents that replace employees, and full content automation. Your business runs 24/7 without you. Free demo before you pay.">
+<meta name="twitter:image" content="https://kalnyesgrowth.com/img/new/hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Kalnyes Agency",
+  "description":"AI-powered business systems for local service businesses. Custom websites, Google Business Profile optimization, AI agents, and content automation.",
+  "url":"https://kalnyesgrowth.com",
+  "telephone":"+1-540-783-8835",
+  "contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"https://wa.me/15407838835"},
+  "email":"kalnyesgrowth@gmail.com",
+  "priceRange":"$$-$$$",
+  "address":{
+    "@type":"PostalAddress",
+    "addressLocality":"Stafford",
+    "addressRegion":"VA",
+    "addressCountry":"US"
+  },
+  "areaServed":[{"@type":"AdministrativeArea","name":"United States"}],
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"5.0",
+    "reviewCount":"6",
+    "bestRating":"5"
+  },
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Services",
+    "itemListElement":[
+      {"@type":"Offer","name":"The Foundation","description":"Custom website + Google Business Profile optimization. Free demo before payment."},
+      {"@type":"Offer","name":"AI Operations","description":"Website + AI agents that handle calls, bookings, and follow-ups","price":"997","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Total Automation","description":"Full AI system: website, agents, content automation, client communication","price":"1997","priceCurrency":"USD"}
+    ]
+  }
+}
+</script>
+
+<style>
+/* -- VARIABLES -- */
+:root {
+  --bg: #fafafa;
+  --bg2: #f4f3f0;
+  --bg3: #edecea;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --muted: #555;
+  --dim: #888;
+  --accent: #1a1a1a;
+  --border: #e2e0dc;
+  --border2: #d4d2ce;
+  --green: #2a7a42;
+  --green-light: #f0f7f2;
+  --r: 8px;
+  --r-lg: 14px;
+  --max: 1140px;
+  --font: 'Outfit', system-ui, -apple-system, sans-serif;
+  --mono: 'Space Mono', monospace;
+}
+
+/* -- RESET -- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -.03em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* -- BUTTONS -- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 34px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  transition: all .3s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font);
+}
+.btn-primary {
+  background: var(--text);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border2);
+}
+.btn-outline:hover {
+  border-color: var(--text);
+  background: var(--text);
+  color: #fff;
+}
+
+/* -- NAV -- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  padding: 14px 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(250,250,250,.92);
+  border-bottom: 1px solid var(--border);
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+.nav-logo span { color: var(--muted); }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: .85rem;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--text);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .82rem;
+  transition: all .3s;
+}
+.nav-cta:hover { background: #333; }
+.nav-rating {
+  font-size: .78rem;
+  color: var(--dim);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-rating .stars { color: #d4a017; }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 57px;
+  left: 0; right: 0;
+  background: rgba(250,250,250,.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  z-index: 998;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-size: .95rem;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav .nav-cta {
+  text-align: center;
+  margin-top: 4px;
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* -- HERO -- */
+.hero {
+  padding: 140px 0 80px;
+  position: relative;
+  background: var(--bg);
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-text .eyebrow { margin-bottom: 16px; }
+.hero h1 { margin-bottom: 20px; }
+.hero h1 .highlight {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border2);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 480px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.hero-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.hero-proof-item .check {
+  color: var(--green);
+  font-weight: 700;
+  font-size: .95rem;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.hero-rating-badge {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+.hero-trust-badges {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: .75rem;
+  color: var(--dim);
+  flex-wrap: wrap;
+}
+.hero-trust-badges span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* STICKY MOBILE CTA BAR */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+}
+.sticky-cta a {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: var(--r);
+  font-weight: 700;
+  font-size: .95rem;
+  font-family: var(--font);
+}
+.sticky-cta a:hover { background: #333; }
+@media (max-width: 768px) {
+  .sticky-cta { display: block; }
+  body { padding-bottom: 70px; }
+}
+.hero-img { position: relative; }
+.hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-lg);
+  box-shadow: 0 16px 48px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+}
+.hero-stat {
+  position: absolute;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+.hero-stat .num { font-size: 1.4rem; font-weight: 900; color: var(--text); }
+.hero-stat .label { font-size: .72rem; color: var(--muted); line-height: 1.2; }
+.stat-1 { bottom: 24px; left: -16px; }
+.stat-2 { top: 32px; right: -16px; }
+@media (max-width: 768px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-img { order: -1; }
+  .stat-1 { left: 8px; bottom: 8px; }
+  .stat-2 { right: 8px; top: 8px; }
+  .hero { padding: 120px 0 60px; }
+}
+
+/* -- PROBLEM SECTION -- */
+.problem { background: var(--white); }
+.problem-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.problem-header p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 16px;
+  line-height: 1.8;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.problem-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  transition: all .3s;
+}
+.problem-card:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.06);
+}
+.problem-stat {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.problem-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
+.problem-card p {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.problem-source {
+  font-size: .72rem;
+  color: var(--dim);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .problem-grid { grid-template-columns: 1fr; }
+}
+
+/* -- TRUST BAR -- */
+.trust {
+  padding: 44px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.trust .container {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.trust-item { text-align: center; }
+.trust-item .num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.trust-item .label {
+  font-size: .72rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-top: 2px;
+}
+@media (max-width: 600px) {
+  .trust .container { gap: 24px; }
+  .trust-item .num { font-size: 1.4rem; }
+}
+
+/* -- PROCESS SECTION -- */
+.process { background: var(--bg2); }
+.process-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.process-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 12px;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.process-step {
+  text-align: center;
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px 20px;
+  transition: all .3s;
+}
+.process-step:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+}
+.process-num {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 auto 16px;
+}
+.process-step h3 { margin-bottom: 8px; font-size: 1rem; }
+.process-step p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .process-grid { grid-template-columns: 1fr; }
+}
+
+/* -- SERVICE STEP SECTIONS -- */
+.step-section { background: var(--bg); }
+.step-section.alt { background: var(--white); }
+.step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.step-icon {
+  width: 96px; height: 96px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.step-icon img { width: 100%; height: 100%; object-fit: cover; }
+.step-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.step-info p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.step-price {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 8px 0 16px;
+}
+.step-price .period {
+  font-size: .85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+.step-features {
+  list-style: none;
+  margin-bottom: 24px;
+}
+.step-features li {
+  padding: 5px 0;
+  font-size: .85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.step-features li::before {
+  content: '\2713';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.step-result {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+}
+.step-section.alt .step-result { background: var(--bg); }
+.step-result-label {
+  font-size: .7rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.step-result h3 {
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+.step-result p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+.step-result strong { color: var(--text); }
+.step-result-footnote {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--dim);
+}
+.step-result-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r);
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+}
+.step-popular-badge {
+  display: inline-block;
+  background: var(--text);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+@media (max-width: 768px) {
+  .step-grid { grid-template-columns: 1fr; }
+  .step-grid .step-result { order: 2; }
+}
+
+/* -- BUSINESS CARDS -- */
+.cards-section { background: var(--white); }
+.cards-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.cards-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.cards-mockup img {
+  border-radius: var(--r-lg);
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+  border: 1px solid var(--border);
+}
+.cards-info h3 { margin-bottom: 12px; }
+.cards-info p {
+  color: var(--muted);
+  font-size: .92rem;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.cards-pricing {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.card-price-tag {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 20px;
+  text-align: center;
+  transition: all .3s;
+}
+.card-price-tag:hover {
+  border-color: var(--text);
+}
+.card-price-tag .qty { font-size: .73rem; color: var(--muted); }
+.card-price-tag .price { font-size: 1.4rem; font-weight: 900; color: var(--text); }
+.card-price-tag .per { font-size: .68rem; color: var(--dim); }
+@media (max-width: 768px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* -- PORTFOLIO -- */
+.portfolio { background: var(--bg2); }
+.portfolio-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.portfolio-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.portfolio-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.portfolio-scroll::-webkit-scrollbar { height: 6px; }
+.portfolio-scroll::-webkit-scrollbar-track { background: var(--bg3); }
+.portfolio-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.portfolio-item {
+  min-width: 300px;
+  max-width: 300px;
+  scroll-snap-align: start;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: transform .3s;
+  background: var(--white);
+}
+.portfolio-item:hover { transform: scale(1.02); }
+.portfolio-label {
+  padding: 12px 16px;
+  background: var(--white);
+  font-size: .82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.portfolio-label span { color: var(--muted); font-size: .72rem; }
+.portfolio-niche {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.live-badge {
+  background: #1a7a3a;
+  color: #fff !important;
+  font-size: .58rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* -- REVIEWS -- */
+.reviews-section { background: var(--white); }
+.reviews-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.reviews-header .big-rating {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.reviews-header .rating-stars {
+  font-size: 1.6rem;
+  color: #d4a017;
+  margin: 6px 0;
+}
+.reviews-header .rating-count {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.reviews-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory;
+}
+.reviews-scroll::-webkit-scrollbar { height: 5px; }
+.reviews-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+.review-card {
+  min-width: 310px;
+  max-width: 310px;
+  scroll-snap-align: start;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+}
+.review-card .r-stars { color: #d4a017; font-size: .95rem; margin-bottom: 10px; }
+.review-card .r-text {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.review-card .r-author { font-weight: 700; font-size: .85rem; }
+.review-card .r-date { font-size: .72rem; color: var(--dim); }
+.review-card .r-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .68rem;
+  color: var(--dim);
+  margin-top: 8px;
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+/* -- EDUCATION SECTION -- */
+.edu-section { background: var(--bg2); }
+.edu-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.edu-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.edu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  transition: all .3s;
+}
+.edu-card:hover {
+  border-color: var(--text);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+}
+.edu-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.edu-card h3 { margin-bottom: 10px; font-size: 1.05rem; }
+.edu-card p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.edu-source {
+  font-size: .72rem;
+  color: var(--dim);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+/* -- SITE AUDIT FORM -- */
+.audit-section { background: var(--text); color: #fff; }
+.audit-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.audit-header h2 { color: #fff; }
+.audit-header p {
+  color: rgba(255,255,255,.7);
+  font-size: 1.05rem;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+.audit-form {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.audit-form input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: var(--r);
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-family: var(--font);
+  font-size: .95rem;
+  font-weight: 500;
+  transition: border-color .2s, background .2s;
+}
+.audit-form input::placeholder { color: rgba(255,255,255,.45); }
+.audit-form input:focus {
+  outline: none;
+  border-color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.12);
+}
+.audit-form button {
+  padding: 16px 32px;
+  background: #fff;
+  color: var(--text);
+  border: none;
+  border-radius: var(--r);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .3s;
+}
+.audit-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,.15);
+}
+.audit-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 640px;
+  margin: 32px auto 0;
+}
+.audit-feature {
+  text-align: center;
+  padding: 16px 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+}
+.audit-feature .af-icon { font-size: 1.4rem; margin-bottom: 6px; }
+.audit-feature .af-label { font-size: .72rem; color: rgba(255,255,255,.6); line-height: 1.3; }
+@media (max-width: 600px) {
+  .audit-features { grid-template-columns: repeat(2, 1fr); }
+}
+.audit-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.4);
+}
+
+/* -- CALENDLY -- */
+.calendly-section { background: var(--white); }
+.calendly-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+.calendly-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+}
+.calendly-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.calendly-left h3 { margin-bottom: 12px; }
+.calendly-left p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.calendly-checklist { list-style: none; }
+.calendly-checklist li {
+  padding: 8px 0;
+  font-size: .88rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.calendly-checklist li::before {
+  content: '\2713';
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.calendly-embed {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  min-height: 600px;
+}
+@media (max-width: 768px) {
+  .calendly-wrapper { grid-template-columns: 1fr; }
+}
+
+/* -- FAQ -- */
+.faq { background: var(--bg); }
+.faq-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+.faq-grid {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.faq-q {
+  font-weight: 700;
+  font-size: 1.02rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color .2s;
+  gap: 16px;
+}
+.faq-q:hover { color: var(--text); }
+.faq-q::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--dim);
+  transition: transform .3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q::after {
+  transform: rotate(45deg);
+  color: var(--text);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+  padding-top: 12px;
+}
+
+/* -- PRICING TABLE -- */
+.pricing-section { background: var(--bg2); }
+.pricing-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+.pricing-header p { color: var(--muted); margin-top: 14px; font-size: .95rem; line-height: 1.6; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.pricing-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 36px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color .3s, box-shadow .3s;
+}
+.pricing-card:hover {
+  border-color: var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+}
+.pricing-card.featured {
+  border: 2px solid var(--text);
+  box-shadow: 0 8px 32px rgba(0,0,0,.1);
+}
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 6px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pricing-card-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.pricing-card-tagline {
+  font-size: .82rem; color: var(--muted); font-weight: 500;
+  margin-bottom: 16px; line-height: 1.4; min-height: 40px;
+}
+.pricing-card-price {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.pricing-card-period {
+  font-size: .78rem;
+  color: var(--dim);
+  margin-bottom: 20px;
+}
+.pricing-card-value {
+  background: rgba(26,26,26,.04);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pricing-card-value .val-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--dim);
+}
+.pricing-card-value .val-amount {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: line-through;
+  text-decoration-color: rgba(200,50,50,.4);
+}
+.pricing-card-includes {
+  font-family: var(--mono); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em; color: var(--dim);
+  margin-bottom: 8px; padding-top: 4px;
+}
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.pricing-features li {
+  font-size: .84rem;
+  color: var(--muted);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+.pricing-features li::before {
+  content: '\2713';
+  color: var(--text);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-guarantee {
+  font-size: .76rem;
+  color: var(--dim);
+  text-align: center;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.pricing-guarantee strong { color: var(--text); }
+.pricing-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
+
+.pricing-guarantees {
+  max-width: 1080px; margin: 56px auto 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.guarantee-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 22px; text-align: center;
+}
+.guarantee-card .g-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--text); color: #fff; font-weight: 900;
+  font-size: 1rem; display: inline-flex; align-items: center;
+  justify-content: center; margin-bottom: 12px;
+}
+.guarantee-card h4 { font-size: .95rem; font-weight: 800; margin-bottom: 8px; }
+.guarantee-card p { font-size: .82rem; color: var(--muted); line-height: 1.55; }
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-card.featured { order: -1; }
+  .pricing-guarantees { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
+
+/* -- FINAL CTA -- */
+.cta-section {
+  text-align: center;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section h2 { margin-bottom: 16px; }
+.cta-section p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.cta-phone {
+  margin-top: 16px;
+  font-size: .88rem;
+  color: var(--dim);
+}
+.cta-phone a {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* -- FOOTER -- */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo { font-size: 1.1rem; font-weight: 800; }
+.footer-logo span { color: var(--muted); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: .82rem;
+  color: var(--muted);
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--text); }
+.footer-copy {
+  font-size: .73rem;
+  color: var(--dim);
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* -- ANIMATIONS -- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .7s ease both; }
+.delay-1 { animation-delay: .1s; }
+.delay-2 { animation-delay: .2s; }
+.delay-3 { animation-delay: .3s; }
+.delay-4 { animation-delay: .4s; }
+
+/* -- MOBILE -- */
+@media (max-width: 600px) {
+  .section { padding: 72px 0; }
+  .hero h1 { font-size: 2rem; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+}
+
+/* -- PHONE ANIMATION -- */
+.phone-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.phone {
+  width: 340px;
+  max-width: 100%;
+  background: linear-gradient(180deg, #1B2536, #141C2B);
+  border: 1px solid rgba(148, 163, 184, .16);
+  border-radius: 34px;
+  padding: 18px 16px 20px;
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, .18),
+    0 0 0 1px rgba(255, 255, 255, .03) inset;
+  position: relative;
+  animation: ka-floaty 7s ease-in-out infinite;
+  font-family: var(--font);
+}
+@keyframes ka-floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.phone-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .68rem;
+  color: #9AA7BC;
+  padding: 2px 6px 12px;
+}
+.phone-clock {
+  color: #E9EDF5;
+  font-weight: 700;
+}
+.call-banner {
+  background: rgba(255, 178, 36, .10);
+  border: 1px solid rgba(255, 178, 36, .32);
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ring-dot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #FFB224;
+  color: #1A1404;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.ring-dot::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 178, 36, .5);
+  animation: ka-ring 1.6s ease-out infinite;
+}
+@keyframes ka-ring {
+  0%   { transform: scale(.75); opacity: 1; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+.call-banner .who  { font-weight: 700; font-size: .9rem; line-height: 1.25; color: #E9EDF5; }
+.call-banner .what { font-family: "JetBrains Mono", var(--mono); font-size: .66rem; color: #FFB224; letter-spacing: .06em; }
+.stage-chip {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  background: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .68rem;
+  color: #fff;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 3;
+}
+.stage-chip .live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: ka-pulseDot 1.6s infinite;
+}
+@keyframes ka-pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(42, 122, 66, .55); }
+  60%      { box-shadow: 0 0 0 7px rgba(42, 122, 66, 0); }
+}
+.phone-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-height: 268px;
+}
+.bubble {
+  max-width: 86%;
+  padding: 10px 13px;
+  border-radius: 14px;
+  font-size: .85rem;
+  line-height: 1.45;
+  font-family: inherit;
+  opacity: 0;
+  transform: translateY(10px) scale(.97);
+  transition: opacity .45s, transform .45s cubic-bezier(.2, .8, .2, 1);
+}
+.bubble.show {
+  opacity: 1;
+  transform: none;
+}
+.bubble.cust {
+  background: #222D40;
+  border-bottom-left-radius: 5px;
+  align-self: flex-start;
+  color: #DCE3EF;
+}
+.bubble.ai {
+  background: rgba(42, 122, 66, .15);
+  border: 1px solid rgba(42, 122, 66, .3);
+  border-bottom-right-radius: 5px;
+  align-self: flex-end;
+  color: #D7F5E7;
+}
+.bubble.ai .tag {
+  display: block;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--green);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.bubble.booked {
+  background: var(--green);
+  color: #fff;
+  align-self: center;
+  font-weight: 700;
+  font-size: .82rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 999px;
+  padding: 9px 18px;
+}
+.typing-indicator {
+  align-self: flex-end;
+  display: none;
+  gap: 4px;
+  padding: 11px 14px;
+  background: rgba(42, 122, 66, .15);
+  border: 1px solid rgba(42, 122, 66, .3);
+  border-radius: 14px;
+  border-bottom-right-radius: 5px;
+}
+.typing-indicator.show { display: flex; }
+.typing-indicator i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: ka-blink 1s infinite;
+}
+.typing-indicator i:nth-child(2) { animation-delay: .18s; }
+.typing-indicator i:nth-child(3) { animation-delay: .36s; }
+@keyframes ka-blink {
+  0%, 80%, 100% { opacity: .25; }
+  40%           { opacity: 1; }
+}
+.owner-sms {
+  position: absolute;
+  bottom: 26px;
+  left: -46px;
+  background: var(--white);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 13px 16px;
+  width: 240px;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, .12);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s, transform .55s cubic-bezier(.2, .8, .2, 1);
+  z-index: 3;
+}
+.owner-sms.show {
+  opacity: 1;
+  transform: none;
+}
+.owner-sms .from {
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .62rem;
+  letter-spacing: .1em;
+  color: var(--dim);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.owner-sms p {
+  font-size: .82rem;
+  line-height: 1.45;
+  font-weight: 500;
+  margin: 0;
+}
+.owner-sms b { color: var(--green); }
+@media (prefers-reduced-motion: reduce) {
+  .phone, .ring-dot::after, .stage-chip .live,
+  .typing-indicator i { animation: none !important; }
+  .bubble, .owner-sms { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+@media (max-width: 680px) {
+  .owner-sms { left: auto; right: -8px; }
+}
+
+/* -- AI AGENTS SECTION -- */
+.agents-section {
+  background: linear-gradient(180deg, #0d1117 0%, #131920 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.agents-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+.agents-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.agents-header h2 { color: #fff; }
+.agents-header p { color: rgba(255,255,255,.55); margin-top: 14px; font-size: 1rem; line-height: 1.7; }
+.agents-hub-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(42,122,66,.12);
+  border: 1px solid rgba(42,122,66,.3);
+  border-radius: 999px;
+  padding: 10px 22px;
+  margin-bottom: 40px;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--green);
+}
+.agents-hub-label .hub-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: ka-pulseDot 1.6s infinite;
+}
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto 40px;
+}
+.agent-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 24px 22px;
+  position: relative;
+  transition: all .4s cubic-bezier(.2,.8,.2,1);
+  overflow: hidden;
+}
+.agent-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  opacity: 0;
+  transition: opacity .4s;
+}
+.agent-card:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(42,122,66,.35);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+.agent-card:hover::before { opacity: 1; }
+.agent-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.agent-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(42,122,66,.12);
+  border: 1px solid rgba(42,122,66,.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.agent-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .6rem;
+  color: var(--green);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.agent-status .a-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: ka-pulseDot 1.6s infinite;
+}
+.agent-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #E9EDF5;
+  margin-bottom: 6px;
+}
+.agent-card > p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.agent-activity {
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  padding: 9px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .66rem;
+  color: rgba(255,255,255,.4);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.agent-activity .a-time { color: var(--green); flex-shrink: 0; }
+.agent-activity .a-action {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Agents terminal */
+.agents-terminal {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.terminal-dot { width: 8px; height: 8px; border-radius: 50%; }
+.terminal-dot.red { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green { background: #28c840; }
+.terminal-title {
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .65rem;
+  color: rgba(255,255,255,.35);
+  margin-left: 8px;
+  letter-spacing: .04em;
+}
+.terminal-body {
+  padding: 14px 16px;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: .7rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,.45);
+  height: 140px;
+  overflow: hidden;
+  position: relative;
+}
+.terminal-body::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, rgba(0,0,0,.5));
+  pointer-events: none;
+}
+.terminal-line {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: termLine .5s ease forwards;
+}
+.terminal-line .t-time { color: rgba(255,255,255,.2); flex-shrink: 0; }
+.terminal-line .t-agent { color: var(--green); flex-shrink: 0; }
+.terminal-line .t-action { color: rgba(255,255,255,.5); }
+@keyframes termLine {
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px) {
+  .agents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .agents-grid { grid-template-columns: 1fr; }
+}
+
+/* -- ANIMATED COUNTERS -- */
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* -- SCROLL REVEAL ENHANCEMENTS -- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .25s; }
+.reveal-delay-4 { transition-delay: .3s; }
+.reveal-delay-5 { transition-delay: .35s; }
+.reveal-delay-6 { transition-delay: .4s; }
+
+/* -- GRADIENT TEXT -- */
+.gradient-text {
+  background: linear-gradient(135deg, #E9EDF5 0%, var(--green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* -- PROCESS CONNECTING LINE -- */
+.process-grid { position: relative; }
+.process-step { position: relative; z-index: 1; }
+@media (min-width: 769px) {
+  .process-grid::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--border2), var(--border2), transparent);
+    z-index: 0;
+  }
+}
+
+/* -- ENHANCED PROBLEM CARDS -- */
+.problem-card { position: relative; overflow: hidden; }
+.problem-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--text), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.problem-card:hover::after { opacity: 1; }
+
+/* -- PRICING FEATURED GLOW -- */
+.pricing-card.featured {
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+              linear-gradient(135deg, var(--text), var(--green)) border-box;
+  border: 2px solid transparent;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">Kalnyes<span>Agency</span></a>
+    <div class="nav-links">
+      <div class="nav-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0</div>
+      <a href="#problem">Why AI</a>
+      <a href="#services">Services</a>
+      <a href="#agents">AI Agents</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#book-call" class="nav-cta">Book Free Discovery Call</a>
+    </div>
+    <button class="hamburger" onclick="this.classList.toggle('open');document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="#problem" onclick="document.querySelector('.hamburger').click()">Why AI</a>
+  <a href="#services" onclick="document.querySelector('.hamburger').click()">Services</a>
+  <a href="#agents" onclick="document.querySelector('.hamburger').click()">AI Agents</a>
+  <a href="#pricing" onclick="document.querySelector('.hamburger').click()">Pricing</a>
+  <a href="#portfolio" onclick="document.querySelector('.hamburger').click()">Portfolio</a>
+  <a href="#faq" onclick="document.querySelector('.hamburger').click()">FAQ</a>
+  <a href="#book-call" class="nav-cta" onclick="document.querySelector('.hamburger').click()">Book Free Discovery Call</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-text fade-up">
+      <div class="eyebrow">AI-Powered Systems for Local Businesses</div>
+      <div class="hero-rating-badge">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 - Rated by local contractors and service pros</div>
+      <h1>Your Business Runs<br><span class="highlight">24/7 Without You</span></h1>
+      <p class="hero-sub">Your phone rings at 8pm. Nobody answers. That customer calls your competitor. Our AI picks up every call, books every appointment, and follows up on every lead. 24 hours a day. You see a free demo before you pay a dollar.</p>
+      <div class="hero-proof">
+        <div class="hero-proof-item"><span class="check">&#10003;</span> AI answers calls and books jobs</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> Free demo before you pay</div>
+        <div class="hero-proof-item"><span class="check">&#10003;</span> No contracts, cancel anytime</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#book-call" class="btn btn-primary">See Your Free Demo</a>
+        <a href="#services" class="btn btn-outline">How AI Works for You</a>
+      </div>
+      <div class="hero-trust-badges">
+        <span>&#9733;&#9733;&#9733;&#9733;&#9733; 5.0 rating</span>
+        <span>|</span>
+        <span>Stafford, VA</span>
+        <span>|</span>
+        <span>AI-powered, human-managed</span>
+      </div>
+    </div>
+    <div class="hero-img fade-up delay-2">
+      <div class="phone-stage">
+        <div class="phone" aria-label="Live demo of the AI assistant answering a customer call">
+          <div class="stage-chip"><span class="live"></span> AI ON DUTY</div>
+          <div class="phone-top">
+            <span class="phone-clock">8:47 PM</span>
+            <span>after hours</span>
+          </div>
+          <div class="call-banner">
+            <div class="ring-dot">&#128222;</div>
+            <div>
+              <div class="who">Incoming call — (540) ···-··81</div>
+              <div class="what">YOU'RE OFF THE CLOCK · AI ANSWERING</div>
+            </div>
+          </div>
+          <div class="phone-chat" id="ka-chat">
+            <div class="bubble cust">Hi, my water heater just quit. Are you guys still open? I need someone tomorrow.</div>
+            <div class="bubble ai"><span class="tag">AI Assistant</span>We've got you. We handle water heater repair and replacement. I can get a tech to you tomorrow. Does 9:00 AM work?</div>
+            <div class="bubble cust">9 works. How much is the service call?</div>
+            <div class="bubble ai"><span class="tag">AI Assistant</span>The diagnostic visit is $89, applied to the repair if you move forward. Can I grab your address to lock in 9:00 AM?</div>
+            <div class="bubble cust">Yes, 412 Oakridge Ct, Stafford.</div>
+            <div class="typing-indicator" id="ka-typing"><i></i><i></i><i></i></div>
+            <div class="bubble booked">&#10003; Appointment booked, Tue 9:00 AM</div>
+          </div>
+          <div class="owner-sms" id="ka-owner-sms">
+            <div class="from"><span>Text to you</span><span id="ka-sms-time">8:49 PM</span></div>
+            <p><b>New job booked:</b> water heater repair, Tue 9:00 AM, 412 Oakridge Ct. Full call transcript in your dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="problem-header fade-up">
+      <div class="eyebrow">The Problem</div>
+      <h2>You're Losing Customers<br>While You're on the Job</h2>
+      <p>Right now, someone is trying to hire you. They called. You didn't pick up. They filled out a form on your website at 11pm. Nobody responded. They DMed you on Instagram. You saw it three days later. Every one of those is money that walked straight to your competitor.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-up delay-1">
+        <div class="problem-stat"><span class="count-up" data-count="62" data-suffix="%">0%</span></div>
+        <h3>of calls to local businesses go unanswered during work hours</h3>
+        <p>You're a plumber, not a receptionist. But when a customer calls and nobody picks up, they call the next guy. An AI assistant picks up every call, answers questions about your services, and books the job. You just get a text saying "new appointment confirmed."</p>
+        <div class="problem-source">Source: ServiceTitan Industry Report</div>
+      </div>
+      <div class="problem-card fade-up delay-2">
+        <div class="problem-stat"><span class="count-up" data-count="78" data-suffix="%">0%</span></div>
+        <h3>of customers choose the business that responds first</h3>
+        <p>Speed wins. When someone fills out a contact form, the first business to respond gets the job 78% of the time. An AI agent responds in seconds, not hours. It follows up automatically so no lead ever goes cold.</p>
+        <div class="problem-source">Source: Harvard Business Review / InsideSales</div>
+      </div>
+      <div class="problem-card fade-up delay-3">
+        <div class="problem-stat"><span class="count-up" data-count="4200" data-prefix="$">$0</span></div>
+        <h3>average cost of a receptionist you only need part-time</h3>
+        <p>Hiring someone to answer phones and manage messages costs $50K+/year. An AI agent does it better, faster, and 24/7, for a fraction of the cost. It never calls in sick. It never forgets to follow up. It never takes lunch.</p>
+        <div class="problem-source">Source: BLS / Glassdoor Salary Data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-item"><div class="num">24/7</div><div class="label">AI On Duty</div></div>
+    <div class="trust-item"><div class="num">48hr</div><div class="label">Free Demo</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="label">Until You Love It</div></div>
+    <div class="trust-item"><div class="num">5.0</div><div class="label">Client Rating</div></div>
+    <div class="trust-item"><div class="num">0</div><div class="label">Contracts</div></div>
+  </div>
+</section>
+
+<!-- PROCESS - HOW IT WORKS -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="process-header fade-up">
+      <div class="eyebrow">How It Works</div>
+      <h2>From Zero to AI-Powered in 4 Steps</h2>
+      <p>No tech knowledge needed. No long contracts. You talk, we build. You see it working before you spend a dollar.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up delay-1">
+        <div class="process-num">1</div>
+        <h3>Free Discovery Call</h3>
+        <p>15 minutes. We learn your business, your pain points, and what's costing you money. No pitch. Just clarity.</p>
+      </div>
+      <div class="process-step fade-up delay-2">
+        <div class="process-num">2</div>
+        <h3>We Build Your Demo</h3>
+        <p>Within 48 hours, you see a live demo of your AI-powered system. Your website, your brand, your business. Free.</p>
+      </div>
+      <div class="process-step fade-up delay-3">
+        <div class="process-num">3</div>
+        <h3>You Decide</h3>
+        <p>Love it? We launch. Don't love it? Walk away. $0. No pressure, no guilt, no follow-up calls. Your choice.</p>
+      </div>
+      <div class="process-step fade-up delay-4">
+        <div class="process-num">4</div>
+        <h3>AI Takes Over</h3>
+        <p>Your system goes live. AI answers calls, follows up on leads, posts content, and sends reports. You focus on your craft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 1: THE FOUNDATION -->
+<section class="section step-section" id="services">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Tier 1 - The Foundation</div>
+      <h2>Your Website + Google Visibility</h2>
+      <p style="color:var(--muted);margin-top:14px;">Every AI-powered business starts with a foundation that works. A website built to convert, and a Google presence that gets you found. We build both, show you a demo for free, then you decide.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-info">
+        <div class="step-icon"><img src="img/new/service-website.webp" alt="Custom website and Google visibility"></div>
+        <h3>Built to Get You Customers</h3>
+        <p>Not a template. Not a Wix site. A custom-built, conversion-optimized website paired with full Google Business Profile setup. Every element is designed to turn a Google search into a phone call.</p>
+        <ul class="step-features">
+          <li>Custom website designed for your specific industry</li>
+          <li>Mobile-first, loads in under 2 seconds</li>
+          <li>SEO architecture built to rank locally</li>
+          <li>Click-to-call, booking forms, live chat ready</li>
+          <li>Google Business Profile fully set up and optimized</li>
+          <li>Listed on 20+ directories (Yelp, Facebook, etc.)</li>
+          <li>Review showcase that builds instant trust</li>
+          <li>Free live demo before you pay a dollar</li>
+        </ul>
+        <p style="font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:16px;">Pricing depends on your business needs. Let's talk.</p>
+        <a href="#book-call" class="btn btn-primary">Book Free Discovery Call</a>
+      </div>
+      <div class="step-result">
+        <img src="img/new/result-website.webp" alt="Professional website generating leads" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <div class="step-result-label">What You Get</div>
+        <h3>The Result</h3>
+        <p>Your site loads in under 2 seconds. Your Google listing shows up when customers search for your service. Your real reviews are front and center. Every page has a clear call-to-action. Customers who land on your site know exactly what you do, why you're trusted, and how to hire you. <strong>This is the foundation. Everything else builds on top of it.</strong></p>
+        <div class="step-result-footnote">76% of "near me" searches lead to a business visit within 24 hours. (Google/Ipsos 2024)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 2: AI OPERATIONS -->
+<section class="section step-section alt" id="ai-operations">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Tier 2 - AI Operations</div>
+      <h2>AI Employees That Never Sleep</h2>
+      <p style="color:var(--muted);margin-top:14px;">Your website and Google presence, plus AI agents that replace the employees you can't afford or can't find. They answer calls, book appointments, follow up on leads, and respond to messages. 24 hours a day. 7 days a week.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-result" style="order:0;">
+        <img src="img/new/result-gbp.webp" alt="AI agent handling business operations" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <div class="step-result-label">What This Looks Like</div>
+        <h3>The Result</h3>
+        <p>A customer calls at 8pm. Your AI picks up, answers their questions about pricing and availability, and books them for Tuesday morning. You get a text with the details. Another lead fills out a form at midnight. Your AI sends a personalized response in 30 seconds, asks qualifying questions, and schedules a callback. <strong>You wake up to a full calendar instead of missed opportunities.</strong></p>
+        <div class="step-result-footnote">Businesses that respond within 5 minutes are 100x more likely to close the lead. (InsideSales)</div>
+      </div>
+      <div class="step-info" style="order:1;">
+        <div class="step-icon"><img src="img/new/service-gbp.webp" alt="AI Operations package"></div>
+        <div class="step-popular-badge">Most Popular</div>
+        <h3>Replace Employees With AI</h3>
+        <div class="step-price">$997 <span class="period">/month</span></div>
+        <ul class="step-features">
+          <li>Everything in The Foundation (website + Google)</li>
+          <li>AI receptionist that answers calls 24/7</li>
+          <li>AI lead follow-up (responds in seconds, not hours)</li>
+          <li>Automated appointment booking and confirmations</li>
+          <li>AI email responses for customer inquiries</li>
+          <li>AI text/SMS follow-up sequences</li>
+          <li>CRM setup to track every lead from first touch to closed job</li>
+          <li>Monthly performance report with real numbers</li>
+          <li>Cancel anytime. No contracts.</li>
+        </ul>
+        <div style="background:var(--green-light);border:1px solid #c3e0cc;border-radius:var(--r);padding:14px 18px;margin-bottom:16px;">
+          <p style="font-size:.85rem;color:var(--green);font-weight:700;margin:0;">Replaces a $4,200/mo receptionist + $3,000/mo lead manager. You pay $997.</p>
+        </div>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Book Free Discovery Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 3: TOTAL AUTOMATION -->
+<section class="section step-section" id="total-automation">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto 48px;" class="fade-up">
+      <div class="eyebrow">Tier 3 - Total Automation</div>
+      <h2>Your Entire Business on Autopilot</h2>
+      <p style="color:var(--muted);margin-top:14px;">Everything in AI Operations, plus AI that creates content, posts to social media, answers reviews, replies to DMs, and manages your entire online presence. Your business grows while you sleep.</p>
+    </div>
+    <div class="step-grid fade-up">
+      <div class="step-info">
+        <div class="step-icon"><img src="img/new/service-marketing.webp" alt="Total Automation package"></div>
+        <h3>AI Runs Everything</h3>
+        <div class="step-price">$1,997 <span class="period">/month</span></div>
+        <ul class="step-features">
+          <li>Everything in AI Operations ($997/mo value)</li>
+          <li>AI content creation across Instagram, Facebook, LinkedIn, X</li>
+          <li>AI answers every DM and comment on social media</li>
+          <li>AI responds to every Google and Facebook review (same day)</li>
+          <li>AI email marketing and nurture sequences</li>
+          <li>Weekly AI-generated social posts on all platforms</li>
+          <li>Automated Google Business Profile posts and updates</li>
+          <li>Competitor monitoring and market intelligence</li>
+          <li>Weekly strategy calls with your account manager</li>
+          <li>Cancel anytime. No contracts.</li>
+        </ul>
+        <a href="#book-call" class="btn btn-primary" style="width:100%;justify-content:center;">Book Free Discovery Call</a>
+      </div>
+      <div class="step-result">
+        <img src="img/new/result-analytics.webp" alt="Full automation dashboard" class="step-result-img" loading="lazy" width="1024" height="1024">
+        <div class="step-result-label">What Your Week Looks Like</div>
+        <h3>The Result</h3>
+        <p>Monday: AI posted a reel on Instagram with a before/after of your latest job. 47 views, 3 DMs asking for quotes. AI responded to all three, qualified them, and booked two for estimates. Tuesday: a Google review came in. AI responded professionally within an hour. Wednesday: your email newsletter went out to 200 past customers. Three called back for new work. <strong>You did none of this. Your AI did.</strong></p>
+        <div class="step-result-footnote">Businesses with consistent social presence get 5x more engagement and 3x more leads than those that don't post.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-header fade-up">
+      <div class="eyebrow">Proof</div>
+      <h2>Real Businesses. Real Systems. Real Results.</h2>
+      <p>Every system is custom-built for the specific industry. Click any card to see the live site.</p>
+    </div>
+    <div class="portfolio-scroll">
+      <!-- FreshCut Landscaping -->
+      <div class="portfolio-item">
+        <a href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,58,26,.85),rgba(45,90,39,.85)),url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127793;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">FreshCut Landscaping</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Professional lawn care, landscaping, mulching &amp; tree trimming in Stafford &amp; Fredericksburg, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">FreshCut Landscaping <span class="live-badge">Live Client</span> <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Pepe's Party Rental -->
+      <div class="portfolio-item">
+        <a href="https://pepespartyrentall.com/" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,26,46,.85),rgba(15,52,96,.85)),url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127881;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Pepe's Party Rental</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Bounce houses, tables, chairs, tents &amp; party supplies for events across Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">Visit Live Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Pepe's Party Rental <span class="live-badge">Live Client</span> <span class="portfolio-niche">Party Rental</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Ironflow Plumbing -->
+      <div class="portfolio-item">
+        <a href="portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(10,22,40,.85),rgba(26,58,106,.85)),url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#128295;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Ironflow Plumbing</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">24/7 emergency plumbing, drain cleaning, water heater repair &amp; installation in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Ironflow Plumbing <span class="portfolio-niche">Plumbing</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- Patriot Electric -->
+      <div class="portfolio-item">
+        <a href="portfolio/patriot-electric/index.html" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(42,32,0,.85),rgba(106,80,0,.85)),url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#9889;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">Patriot Electric VA</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Licensed electricians serving residential &amp; commercial in Fredericksburg, VA. Safety first.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">Patriot Electric VA <span class="portfolio-niche">Electrician</span> <span>Fredericksburg, VA</span></div>
+      </div>
+      <!-- AirCraft H&C -->
+      <div class="portfolio-item">
+        <a href="portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(10,32,64,.85),rgba(26,64,128,.85)),url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#10052;&#65039;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">AirCraft Heating &amp; Cooling</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">AC repair, furnace installation &amp; seasonal maintenance plans in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">AirCraft Heating &amp; Cooling <span class="portfolio-niche">HVAC</span> <span>Stafford, VA</span></div>
+      </div>
+      <!-- TerraForm Outdoor -->
+      <div class="portfolio-item">
+        <a href="portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener" style="display:flex;width:300px;height:300px;overflow:hidden;background:linear-gradient(rgba(26,46,26,.85),rgba(58,106,48,.85)),url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80') center/cover;align-items:center;justify-content:center;text-align:center;color:#fff;">
+          <div style="padding:24px;">
+            <div style="font-size:2.4rem;margin-bottom:12px;">&#127807;</div>
+            <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.02em;margin-bottom:8px;">TerraForm Outdoor Design</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.5;">Landscape design, hardscaping, irrigation &amp; seasonal maintenance in Stafford, VA.</div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:700;">View Site &#8594;</div>
+          </div>
+        </a>
+        <div class="portfolio-label">TerraForm Outdoor Design <span class="portfolio-niche">Landscaping</span> <span>Stafford, VA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <div class="reviews-header fade-up">
+      <div class="eyebrow">Client Reviews</div>
+      <div class="big-rating">5.0</div>
+      <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rating-count">Based on client project results</div>
+    </div>
+    <div class="reviews-scroll">
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"They built my entire website before I paid anything. When I saw it, I couldn't believe it. Professional, fast, and exactly what my business needed. The calls started coming in the first week."</div>
+        <div class="r-author">Mike R.</div>
+        <div class="r-date">Contractor, Stafford VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"I had no online presence. No Google profile. No website. They set up everything in a week. Now I show up on Google Maps and get 3-4 calls a week from people who found me online."</div>
+        <div class="r-author">Carlos M.</div>
+        <div class="r-date">HVAC Technician, Fredericksburg VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. That's trust. I upgraded to the monthly plan after two months because the results were obvious."</div>
+        <div class="r-author">Lisa T.</div>
+        <div class="r-date">Cleaning Service Owner, Woodbridge VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. I got 14 calls in the first month."</div>
+        <div class="r-author">James D.</div>
+        <div class="r-date">Electrician, Spotsylvania VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"My old website looked like it was from 2010. They rebuilt everything in two days and got my Google listing set up right. Now when people search for painters in Manassas, I actually show up. Got 8 new calls the first month just from Google."</div>
+        <div class="r-author">Roberto S.</div>
+        <div class="r-date">Painter, Manassas VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="r-text">"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. Should have switched years ago."</div>
+        <div class="r-author">David W.</div>
+        <div class="r-date">Plumber, Stafford VA</div>
+        <div class="r-source">&#9679; Client Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI EDUCATION SECTION -->
+<section class="section edu-section" id="learn">
+  <div class="container">
+    <div class="edu-header fade-up">
+      <div class="eyebrow">Why AI Matters</div>
+      <h2>The Numbers Don't Lie.<br>AI Wins Every Time.</h2>
+      <p>Your competitor will figure this out eventually. The question is whether you get there first. Here's what the data says.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card fade-up delay-1">
+        <div class="edu-num"><span class="count-up" data-count="64" data-suffix="%">0%</span></div>
+        <h3>of small businesses plan to adopt AI tools by 2027</h3>
+        <p>AI isn't coming. It's here. The businesses using it right now are answering calls faster, following up on leads automatically, and posting content without lifting a finger. The rest are falling behind every day they wait.</p>
+        <div class="edu-source">Source: U.S. Chamber of Commerce / Salesforce 2025</div>
+      </div>
+      <div class="edu-card fade-up delay-2">
+        <div class="edu-num"><span class="count-up" data-count="40" data-suffix="%">0%</span></div>
+        <h3>reduction in operational costs for businesses using AI agents</h3>
+        <p>An AI receptionist costs a fraction of a human one. An AI content creator doesn't call in sick. An AI follow-up system never forgets a lead. The math is simple: better results, lower costs, zero drama.</p>
+        <div class="edu-source">Source: McKinsey Global Institute</div>
+      </div>
+      <div class="edu-card fade-up delay-3">
+        <div class="edu-num"><span class="count-up" data-count="3" data-suffix="x">0x</span></div>
+        <h3>faster response time when AI handles initial customer contact</h3>
+        <p>Speed wins in local business. When a customer reaches out, the first business to respond gets the job most of the time. AI responds in seconds. Your competitor responds in hours. You win.</p>
+        <div class="edu-source">Source: Harvard Business Review</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade-up">
+      <p style="font-size:1.08rem;max-width:680px;margin:0 auto 24px;color:var(--text);line-height:1.7;">You don't need to understand AI. You just need to use it. <strong>We handle all the tech. You get the results.</strong></p>
+      <a href="#book-call" class="btn btn-primary">Book Free Discovery Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- AI AGENTS SECTION -->
+<section class="section agents-section" id="agents">
+  <div class="container">
+    <div class="agents-header reveal">
+      <div class="eyebrow" style="color:rgba(255,255,255,.4);">Your AI Team</div>
+      <h2>6 AI Agents Working<br><span class="gradient-text">24/7 for Your Business</span></h2>
+      <p>Each agent is trained on YOUR business. They work together, share data, and never take a day off. Here's who's on your team.</p>
+      <div class="agents-hub-label"><span class="hub-dot"></span> All systems operational</div>
+    </div>
+    <div class="agents-grid">
+      <div class="agent-card reveal reveal-delay-1">
+        <div class="agent-top">
+          <div class="agent-icon">&#128222;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Reception Agent</h3>
+        <p>Answers every call 24/7. Handles pricing questions, availability, and books appointments on your calendar. Sends you a text summary after every call.</p>
+        <div class="agent-activity">
+          <span class="a-time">2m ago</span>
+          <span class="a-action">Booked water heater repair, Tue 9 AM</span>
+        </div>
+      </div>
+      <div class="agent-card reveal reveal-delay-2">
+        <div class="agent-top">
+          <div class="agent-icon">&#9889;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Lead Agent</h3>
+        <p>Responds to every form submission and inquiry in under 60 seconds. Qualifies leads, asks the right questions, and schedules callbacks automatically.</p>
+        <div class="agent-activity">
+          <span class="a-time">8s ago</span>
+          <span class="a-action">Responded to form lead in 12 seconds</span>
+        </div>
+      </div>
+      <div class="agent-card reveal reveal-delay-3">
+        <div class="agent-top">
+          <div class="agent-icon">&#127912;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Content Agent</h3>
+        <p>Creates posts, reels, and stories for Instagram, Facebook, LinkedIn, and X. Posts consistently so your brand stays visible without you lifting a finger.</p>
+        <div class="agent-activity">
+          <span class="a-time">1h ago</span>
+          <span class="a-action">Posted reel to Instagram, 47 views</span>
+        </div>
+      </div>
+      <div class="agent-card reveal reveal-delay-4">
+        <div class="agent-top">
+          <div class="agent-icon">&#11088;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Review Agent</h3>
+        <p>Monitors Google and Facebook for new reviews. Responds professionally within hours. Flags negative reviews so you can handle them personally.</p>
+        <div class="agent-activity">
+          <span class="a-time">3h ago</span>
+          <span class="a-action">Replied to 5-star Google review</span>
+        </div>
+      </div>
+      <div class="agent-card reveal reveal-delay-5">
+        <div class="agent-top">
+          <div class="agent-icon">&#128172;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Social Agent</h3>
+        <p>Responds to every DM and comment across all platforms. Answers common questions, routes serious inquiries, and turns followers into leads.</p>
+        <div class="agent-activity">
+          <span class="a-time">15m ago</span>
+          <span class="a-action">Responded to 3 Instagram DMs</span>
+        </div>
+      </div>
+      <div class="agent-card reveal reveal-delay-6">
+        <div class="agent-top">
+          <div class="agent-icon">&#128202;</div>
+          <div class="agent-status"><span class="a-dot"></span> Active</div>
+        </div>
+        <h3>Analytics Agent</h3>
+        <p>Tracks every call, lead, booking, and conversion. Generates weekly reports with real numbers so you always know what's working and what's not.</p>
+        <div class="agent-activity">
+          <span class="a-time">Mon</span>
+          <span class="a-action">Weekly report: 23 leads, 14 booked</span>
+        </div>
+      </div>
+    </div>
+    <div class="agents-terminal reveal">
+      <div class="terminal-bar">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">agent-activity-log</span>
+      </div>
+      <div class="terminal-body" id="agent-log"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE WEBSITE AUDIT -->
+<section class="section audit-section" id="free-audit">
+  <div class="container">
+    <div class="audit-header fade-up">
+      <div class="eyebrow" style="color:rgba(255,255,255,.5);">Free Business Analysis</div>
+      <h2>How Much Money Is Your<br>Online Presence Losing You?</h2>
+      <p>Enter your website URL and we'll analyze your SEO ranking, page speed, mobile performance, and show you exactly where AI could save you time and money.</p>
+    </div>
+    <form class="audit-form fade-up" action="https://formsubmit.co/kalnyesgrowth@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Website Audit Request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://kalnyesgrowth.com/thanks.html">
+      <input type="url" name="website_url" placeholder="Enter your website URL (e.g. www.yourbusiness.com)" required>
+      <input type="email" name="email" placeholder="Email to receive your report" required>
+      <input type="text" name="business_name" placeholder="Your business name (optional)">
+      <button type="submit">Analyze My Business Free</button>
+    </form>
+    <div class="audit-features fade-up">
+      <div class="audit-feature">
+        <div class="af-icon">&#9889;</div>
+        <div class="af-label">Speed Score</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#128269;</div>
+        <div class="af-label">SEO Ranking</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#128241;</div>
+        <div class="af-label">Mobile Grade</div>
+      </div>
+      <div class="audit-feature">
+        <div class="af-icon">&#129302;</div>
+        <div class="af-label">AI Opportunity</div>
+      </div>
+    </div>
+    <p class="audit-note">Takes 30 seconds. Results delivered to your email within 24 hours.</p>
+  </div>
+</section>
+
+<!-- CALENDLY -->
+<section class="section calendly-section" id="book-call">
+  <div class="container">
+    <div class="calendly-header fade-up">
+      <div class="eyebrow">Book Your Call</div>
+      <h2>See Your Free Demo in 48 Hours</h2>
+      <p>Pick a time. 15 minutes. We'll learn about your business, show you where AI can save you time and money, and build you a free demo within 48 hours. No pitch. No pressure. If you don't love it, you owe nothing.</p>
+    </div>
+    <div class="calendly-wrapper">
+      <div class="calendly-left fade-up">
+        <h3>What Happens on the Call</h3>
+        <p>This isn't a sales call. It's a free discovery session. We learn your business and show you what's possible with AI.</p>
+        <ul class="calendly-checklist">
+          <li>We learn about your business, your services, and your goals</li>
+          <li>We Google your business live and show you what customers see</li>
+          <li>We identify where AI can save you the most time and money</li>
+          <li>We explain exactly what your system would look like</li>
+          <li>Within 48 hours, you see a live demo built for YOUR business</li>
+          <li>You decide if you want to move forward. No pressure either way.</li>
+        </ul>
+        <div style="margin-top:28px;padding:20px;background:var(--bg);border-radius:var(--r);border:1px solid var(--border);">
+          <p style="font-size:.88rem;color:var(--muted);margin-bottom:8px;">Or message us on WhatsApp</p>
+          <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20services" target="_blank" rel="noopener" style="font-size:1rem;font-weight:800;color:var(--text);display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="calendly-embed fade-up delay-2">
+        <iframe src="https://calendly.com/kalnyesgrowth/boost-your-business?hide_gdpr_banner=1&background_color=ffffff&text_color=1a1a1a&primary_color=1a1a1a" width="100%" height="600" frameborder="0" loading="lazy" title="Book a discovery call with Kalnyes Agency" style="border-radius:var(--r-lg);"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE SECTION -->
+<section class="section" id="guarantee" style="background:var(--text);color:#fff;text-align:center;">
+  <div class="container">
+    <div class="fade-up" style="max-width:720px;margin:0 auto;">
+      <div style="font-size:3rem;margin-bottom:16px;">&#128170;</div>
+      <h2 style="color:#fff;margin-bottom:20px;">Zero Risk. Guaranteed.</h2>
+      <p style="color:rgba(255,255,255,.75);font-size:1.1rem;line-height:1.8;margin-bottom:28px;">We build your demo for free. You see it working before you pay anything. If you don't love it, you walk away and owe nothing. For monthly plans, cancel anytime with one message. No contracts. No cancellation fees. No tricks.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:32px;">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">$0</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Until you approve your demo</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">48hr</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Free demo delivered</div>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px;">
+          <div style="font-size:1.8rem;font-weight:900;color:#fff;">0</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:4px;">Contracts or commitments</div>
+        </div>
+      </div>
+      <p style="color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.7;">Why can we offer this? Because if we build you something bad, we eat the cost. Not you. We've built systems for plumbers, contractors, landscapers, HVAC techs, and more. When the work is good, clients stay. That's the only business model that works.</p>
+      <div style="display:flex;align-items:center;gap:16px;justify-content:center;margin-top:28px;margin-bottom:8px;">
+        <img src="founder-photo.jpg" alt="Jose Morales, Founder of Kalnyes Agency" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.3);" loading="lazy">
+        <div style="text-align:left;">
+          <div style="font-weight:800;font-size:.92rem;color:#fff;">Jose Morales</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.55);">Founder, Kalnyes Agency. Stafford, VA.</div>
+        </div>
+      </div>
+      <a href="#book-call" class="btn" style="background:#fff;color:#1a1a1a;margin-top:20px;font-size:1rem;padding:16px 36px;">Book Your Free Discovery Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-header fade-up">
+      <div class="eyebrow">Common Questions</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does "free demo" actually mean?</div>
+        <div class="faq-a">We build a complete working demo of your system using your real business info (services, reviews, photos, contact info) and show it to you live. It's your actual website with your actual brand. If you don't love it, you owe nothing. We take the risk so you don't have to.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What do you mean by "AI agents"?</div>
+        <div class="faq-a">Think of them as digital employees that work 24/7. An AI receptionist answers your calls when you can't, gives customers info about your services, and books appointments. An AI follow-up agent responds to every lead within seconds and keeps following up until they book. An AI content agent creates and posts social media content for your business. They're not generic chatbots. They're trained on YOUR business.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to be tech-savvy to use this?</div>
+        <div class="faq-a">Not at all. You won't touch any technology. We set everything up, configure the AI agents for your specific business, and manage the whole system. You just get results: more calls, more bookings, more customers. If something needs adjusting, you text us and we handle it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is this different from other web design agencies?</div>
+        <div class="faq-a">Most agencies build you a website and disappear. We build an AI-powered system that actively works for your business every day. The website is just the foundation. On top of it, AI handles your calls, follows up on leads, posts content, and responds to reviews. No other local agency offers this because they don't have the AI infrastructure to do it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I start with just the website and add AI later?</div>
+        <div class="faq-a">Absolutely. Most clients start with The Foundation (website + Google) and upgrade to AI Operations once they see the quality of work. There's no pressure, no contracts, and no lock-in. We'd rather you start small and grow with us than feel pressured into something you're not ready for.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I already have a website?</div>
+        <div class="faq-a">We'll audit it on our discovery call and be honest. If your current site is solid, we'll tell you and focus on adding AI operations on top of it. If it's costing you customers (slow, not mobile-friendly, no SEO), we'll show you why and include a rebuild in your plan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What types of businesses do you work with?</div>
+        <div class="faq-a">Any local service business: plumbers, HVAC, electricians, contractors, landscapers, cleaning services, party rentals, auto detailing, restaurants, barbershops, and more. If customers search for your service on Google, we can help you get found and use AI to handle the rest.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if I want to cancel?</div>
+        <div class="faq-a">You send us one message and you're done. No cancellation fees. No hoops. No "retention specialist" trying to talk you out of it. You keep your website. Monthly AI services stop at the end of your billing cycle. We make it easy to leave because we're confident you won't want to.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are you a real local business?</div>
+        <div class="faq-a">Yes. Jose Morales is the founder, based in Stafford, VA. You can message us directly on <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services" target="_blank" rel="noopener" style="color:var(--text);font-weight:700;text-decoration:underline;">WhatsApp</a>. We work with local businesses across the US and internationally.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="section pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-header fade-up">
+      <div class="eyebrow">Choose Your Level</div>
+      <h2>Three Ways to Grow.<br>All Powered by AI.</h2>
+      <p>Every plan starts with a free demo. You see it working before you pay. No contracts on any tier. Cancel anytime.</p>
+    </div>
+
+    <div class="pricing-grid fade-up">
+
+      <!-- CARD 1: THE FOUNDATION -->
+      <div class="pricing-card">
+        <div class="pricing-card-name">The Foundation</div>
+        <div class="pricing-card-tagline">Your website + Google visibility. The starting point for every AI-powered business.</div>
+        <div class="pricing-card-price" style="font-size:1.6rem;">Custom</div>
+        <div class="pricing-card-period">based on your business needs</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Agencies charge</div>
+          <div class="val-amount">$3,000 - $10,000</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Custom website built for your industry</li>
+          <li>Mobile-first, loads in under 2 seconds</li>
+          <li>Google Business Profile fully optimized</li>
+          <li>Listed on 20+ directories</li>
+          <li>SEO architecture to rank locally</li>
+          <li>Click-to-call + booking forms</li>
+          <li>Review showcase on your site</li>
+          <li>Free live demo in 48 hours</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> See the demo free. Don't love it? $0.</div>
+        <a href="#book-call" class="btn btn-outline">Book Free Discovery Call</a>
+      </div>
+
+      <!-- CARD 2: AI OPERATIONS (FEATURED) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-card-name">AI Operations</div>
+        <div class="pricing-card-tagline">Website + AI employees that answer calls, book jobs, and follow up on leads 24/7.</div>
+        <div class="pricing-card-price">$997</div>
+        <div class="pricing-card-period">per month. Cancel anytime.</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Replaces employees costing</div>
+          <div class="val-amount">$7,200+/mo</div>
+        </div>
+        <div class="pricing-card-includes">Foundation included, plus:</div>
+        <ul class="pricing-features">
+          <li>AI receptionist answers calls 24/7</li>
+          <li>AI lead follow-up in under 60 seconds</li>
+          <li>Automated appointment booking + confirmations</li>
+          <li>AI email and text responses</li>
+          <li>CRM to track every lead</li>
+          <li>Monthly performance report</li>
+          <li>Priority support</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> Free demo + cancel anytime. Zero risk.</div>
+        <a href="#book-call" class="btn btn-primary">Book Free Discovery Call</a>
+      </div>
+
+      <!-- CARD 3: TOTAL AUTOMATION -->
+      <div class="pricing-card">
+        <div class="pricing-card-name">Total Automation</div>
+        <div class="pricing-card-tagline">Everything in AI Ops + content automation, social media, reviews, and full online presence management.</div>
+        <div class="pricing-card-price">$1,997</div>
+        <div class="pricing-card-period">per month. Cancel anytime.</div>
+        <div class="pricing-card-value">
+          <div class="val-label">Replaces team costing</div>
+          <div class="val-amount">$15,000+/mo</div>
+        </div>
+        <div class="pricing-card-includes">AI Operations included, plus:</div>
+        <ul class="pricing-features">
+          <li>AI content creation across 4 platforms</li>
+          <li>AI answers every DM and comment</li>
+          <li>AI responds to all reviews (same day)</li>
+          <li>Email marketing + nurture sequences</li>
+          <li>Weekly GBP posts + updates</li>
+          <li>Competitor monitoring</li>
+          <li>Weekly strategy calls</li>
+        </ul>
+        <div class="pricing-guarantee"><strong>Guarantee:</strong> Free demo + cancel anytime. Zero risk.</div>
+        <a href="#book-call" class="btn btn-outline">Book Free Discovery Call</a>
+      </div>
+    </div>
+
+    <!-- 3 GUARANTEE CARDS -->
+    <div class="pricing-guarantees fade-up">
+      <div class="guarantee-card">
+        <div class="g-num">1</div>
+        <h4>See It Before You Pay</h4>
+        <p>We build your complete demo using your real business info. You see it live. If you don't love it, you owe nothing. We take the risk, not you.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-num">2</div>
+        <h4>Cancel Anytime</h4>
+        <p>Monthly plans cancel with one message. No annual commitments. No cancellation fees. No "retention calls." You stay because the AI works, not because you're locked in.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="g-num">3</div>
+        <h4>You Own Your Website</h4>
+        <p>If you cancel, you keep your website forever. It's yours. We built it for you, and it stays with you. The AI services stop, but the foundation remains.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="eyebrow">Your Next Step</div>
+    <h2>While You Read This,<br>AI Could Be Running Your Business</h2>
+    <p>Every hour you wait, another call goes to voicemail. Another lead goes cold. Another customer picks the guy who showed up first. 15 minutes on a free call. 48 hours to see your demo. Zero dollars until you love it.</p>
+    <a href="#book-call" class="btn btn-primary" style="font-size:1.05rem;padding:18px 40px;">Book Your Free Discovery Call</a>
+    <p style="margin-top:14px;font-size:.85rem;color:var(--dim);">Free demo in 48 hours. No contracts. Cancel anytime. Zero risk.</p>
+    <div class="cta-phone"><a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20services" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Message us on WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Kalnyes<span>Agency</span></div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20services" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Kalnyes Agency. All rights reserved. Stafford, VA.</div>
+  </div>
+</footer>
+
+<!-- JS: Intersection Observer + Phone Animation + Counters + Terminal -->
+<script>
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(el) {
+    if (el.isIntersecting) {
+      el.target.style.animationPlayState = 'running';
+      obs.unobserve(el.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(function(el) {
+  el.style.animationPlayState = 'paused';
+  obs.observe(el);
+});
+
+var revealObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(el) {
+    if (el.isIntersecting) {
+      el.target.classList.add('visible');
+      revealObs.unobserve(el.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(function(el) {
+  revealObs.observe(el);
+});
+
+function animateCounter(el, target, suffix, prefix, duration) {
+  var start = 0;
+  var startTime = null;
+  suffix = suffix || '';
+  prefix = prefix || '';
+  duration = duration || 1800;
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var progress = Math.min((ts - startTime) / duration, 1);
+    var ease = 1 - Math.pow(1 - progress, 3);
+    var current = Math.round(start + (target - start) * ease);
+    el.textContent = prefix + current.toLocaleString() + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var counterObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(el) {
+    if (el.isIntersecting) {
+      var t = el.target;
+      var raw = t.getAttribute('data-count');
+      var suffix = t.getAttribute('data-suffix') || '';
+      var prefix = t.getAttribute('data-prefix') || '';
+      animateCounter(t, parseInt(raw), suffix, prefix);
+      counterObs.unobserve(t);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.count-up').forEach(function(el) {
+  counterObs.observe(el);
+});
+
+(function() {
+  var logEl = document.getElementById('agent-log');
+  if (!logEl) return;
+  var logs = [
+    { time: '1:44 PM', agent: 'RECEPTION', action: 'Answered call from (540) area code, booked appointment' },
+    { time: '1:44 PM', agent: 'LEAD', action: 'Form submission detected, responded in 8 seconds' },
+    { time: '1:43 PM', agent: 'REVIEW', action: 'Replied to new 5-star Google review from Mike R.' },
+    { time: '1:42 PM', agent: 'CONTENT', action: 'Scheduled Instagram reel for 6:00 PM EST' },
+    { time: '1:40 PM', agent: 'SOCIAL', action: 'Responded to 2 Facebook DMs, qualified 1 lead' },
+    { time: '1:38 PM', agent: 'ANALYTICS', action: 'Updated dashboard: 23 leads this week, 61% close rate' },
+    { time: '1:35 PM', agent: 'RECEPTION', action: 'Missed call recovery: texted callback link to (703) number' },
+    { time: '1:33 PM', agent: 'LEAD', action: 'Follow-up email sent to pending lead (day 3 sequence)' },
+    { time: '1:30 PM', agent: 'CONTENT', action: 'Generated caption for before/after project photos' },
+    { time: '1:28 PM', agent: 'REVIEW', action: 'Flagged 2-star review for owner attention' },
+    { time: '1:25 PM', agent: 'SOCIAL', action: 'Comment reply: answered pricing question on IG post' },
+    { time: '1:22 PM', agent: 'ANALYTICS', action: 'Call tracking: 14 inbound calls today, 11 booked' },
+  ];
+  var idx = 0;
+  function addLine() {
+    var log = logs[idx % logs.length];
+    var line = document.createElement('div');
+    line.className = 'terminal-line';
+    line.innerHTML = '<span class="t-time">' + log.time + '</span><span class="t-agent">[' + log.agent + ']</span><span class="t-action">' + log.action + '</span>';
+    logEl.appendChild(line);
+    if (logEl.children.length > 8) logEl.removeChild(logEl.firstChild);
+    logEl.scrollTop = logEl.scrollHeight;
+    idx++;
+  }
+  for (var i = 0; i < 5; i++) addLine();
+  setInterval(addLine, 3000);
+})();
+
+(function () {
+  var clockEl = document.querySelector('.phone-clock');
+  var smsTimeEl = document.getElementById('ka-sms-time');
+  function setClockDisplay() {
+    var d = new Date();
+    var h = d.getHours(), m = String(d.getMinutes()).padStart(2, '0');
+    var ap = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    if (clockEl) clockEl.textContent = h + ':' + m + ' ' + ap;
+    if (smsTimeEl) {
+      var d2 = new Date(d.getTime() + 2 * 60000);
+      var h2 = d2.getHours(), m2 = String(d2.getMinutes()).padStart(2, '0');
+      var ap2 = h2 >= 12 ? 'PM' : 'AM';
+      h2 = h2 % 12 || 12;
+      smsTimeEl.textContent = h2 + ':' + m2 + ' ' + ap2;
+    }
+  }
+  setClockDisplay();
+  setInterval(setClockDisplay, 30000);
+
+  var bubbles = Array.from(document.querySelectorAll('#ka-chat .bubble'));
+  var typing = document.getElementById('ka-typing');
+  var ownerSms = document.getElementById('ka-owner-sms');
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced) {
+    bubbles.forEach(function(b) { b.classList.add('show'); });
+    if (ownerSms) ownerSms.classList.add('show');
+    return;
+  }
+
+  function playConvo() {
+    bubbles.forEach(function(b) { b.classList.remove('show'); });
+    if (typing) typing.classList.remove('show');
+    if (ownerSms) ownerSms.classList.remove('show');
+
+    var t = 900;
+    bubbles.forEach(function(b, i) {
+      var isLast = i === bubbles.length - 1;
+      if (isLast) {
+        setTimeout(function() { if (typing) typing.classList.add('show'); }, t);
+        t += 1300;
+        setTimeout(function() {
+          if (typing) typing.classList.remove('show');
+          b.classList.add('show');
+        }, t);
+        t += 900;
+        setTimeout(function() { if (ownerSms) ownerSms.classList.add('show'); }, t);
+      } else {
+        setTimeout(function() { b.classList.add('show'); }, t);
+        t += b.classList.contains('ai') ? 2100 : 1700;
+      }
+    });
+    setTimeout(playConvo, t + 7500);
+  }
+  playConvo();
+})();
+</script>
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#book-call">Book Your Free Discovery Call &#8594;</a>
+</div>
+
+</body>
+</html>
