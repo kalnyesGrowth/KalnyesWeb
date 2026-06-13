@@ -197,24 +197,50 @@ footer small{font-size:.76rem;color:var(--faint)}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .agent-row{grid-template-columns:1fr;gap:40px}
-  .agent-row.flip .agent-visual{order:0}
+  .agent-row{grid-template-columns:1fr;gap:24px}
+  .agent-visual{order:-1}
+  .agent-row.flip .agent-visual{order:-1}
   .nav-links{display:none}
   .burger{display:flex}
   .bundles{grid-template-columns:1fr 1fr}
   .bundle.pop{order:-1}
   .math-box{grid-template-columns:1fr}
   .hero-stats{gap:32px}
-  .agent-img-wrap{width:260px;height:260px}
+  .agent-img-wrap{width:180px;height:180px}
+  .agent-section{padding:56px 0}
+  .agent-copy h2{font-size:1.5rem}
+  .agent-copy .desc{font-size:.92rem;margin-bottom:14px}
+  .agent-features li{font-size:.88rem}
+  .agent-features{gap:7px;margin-bottom:16px}
+  .use-case{margin-top:14px;padding:14px}
+  .use-case p{font-size:.86rem}
 }
 @media(max-width:600px){
   .bundles{grid-template-columns:1fr}
   .bundle.pop{order:-1}
-  section,.agent-section{padding:64px 0}
-  .hero{padding:120px 0 50px}
-  .agent-img-wrap{width:240px;height:240px}
-  .hero-stats{flex-direction:column;gap:16px}
+  section{padding:48px 0}
+  .agent-section{padding:36px 0}
+  .hero{padding:110px 0 36px}
+  .agent-img-wrap{width:120px;height:120px;border-radius:18px}
+  .agent-row{gap:12px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hero-stat .n{font-size:1.5rem}
   .compare{font-size:.76rem}
+  .agent-copy .desc{font-size:.86rem;line-height:1.55;margin-bottom:10px}
+  .agent-copy .tag{font-size:.68rem;margin-bottom:4px}
+  .agent-copy h2{font-size:1.3rem;margin:4px 0 8px}
+  .agent-features li{font-size:.84rem}
+  .agent-features{gap:5px;margin-bottom:12px}
+  .agent-price-block .price{font-size:1.5rem}
+  .agent-price-block{margin-bottom:4px}
+  .agent-copy .note{font-size:.8rem;margin-bottom:12px}
+  .agent-ctas .btn{padding:12px 20px;font-size:.88rem}
+  .use-case{display:none}
+  .math-box{padding:24px 18px;gap:24px}
+  .math-box h3{font-size:1.1rem}
+  .math-step{padding:10px 14px}
+  .final{padding:64px 0}
+  .bundle{padding:22px 18px}
 }
 </style>
 </head>
