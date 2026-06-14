@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1200">
 <link rel="canonical" href="https://kalnyesgrowth.com/demos/as-electric/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F5A623'><path d='M13 2L3 14h9l-1 10 10-12h-9l1-10z'/></svg>">
-<link rel="preload" as="image" href="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1920" fetchpriority="high">
+<link rel="preload" as="video" href="https://videos.pexels.com/video-files/5391403/5391403-hd_1920_1080_30fps.mp4" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -97,8 +97,30 @@ a { text-decoration: none; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 /* ========== HEADER / NAV ========== */
+.header-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.header-group.scrolled {
+  position: fixed;
+}
+.header-group.scrolled .top-bar { display: none; }
+.header-group.scrolled header {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.header-group.scrolled .logo { color: var(--primary); }
+.header-group.scrolled .logo span { color: var(--accent); }
+.header-group.scrolled nav a { color: var(--text); }
+.header-group.scrolled nav a:hover { color: var(--primary); }
+.header-group.scrolled .hamburger span { background: var(--primary); }
 .top-bar {
-  background: var(--dark);
+  background: rgba(13,27,42,0.5);
+  backdrop-filter: blur(8px);
   color: #fff;
   padding: 8px 0;
   font-size: 0.85rem;
@@ -126,15 +148,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 header {
-  background: #fff;
+  background: transparent;
   padding: 16px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  transition: box-shadow 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -144,26 +161,13 @@ header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
   font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 900;
-  color: var(--primary);
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.3s;
 }
-.logo .bolt {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--accent);
-  border-radius: 10px;
-}
-.logo .bolt svg {
-  width: 22px;
-  height: 22px;
-  fill: var(--dark);
-}
-.logo span { color: var(--accent); }
+.logo span { color: var(--accent); transition: color 0.3s; }
 nav ul {
   display: flex;
   list-style: none;
@@ -173,11 +177,11 @@ nav ul {
 nav a {
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text);
-  transition: color 0.2s;
+  color: rgba(255,255,255,0.9);
+  transition: color 0.3s;
   position: relative;
 }
-nav a:hover { color: var(--primary); }
+nav a:hover { color: #fff; }
 nav a::after {
   content: '';
   position: absolute;
@@ -213,31 +217,47 @@ nav a:hover::after { width: 100%; }
 .hamburger span {
   width: 28px;
   height: 3px;
-  background: var(--primary);
+  background: #fff;
   border-radius: 3px;
   transition: 0.3s;
 }
 
 /* ========== HERO ========== */
 .hero {
-  background: url('https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
-  color: #fff;
-  padding: 100px 0 80px;
   position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1000px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
-.hero::before {
-  content: '';
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(13,27,42,0.82) 0%, rgba(27,58,92,0.75) 50%, rgba(42,90,140,0.7) 100%);
+  background: linear-gradient(135deg, rgba(13,27,42,0.78) 0%, rgba(27,58,92,0.65) 50%, rgba(13,27,42,0.72) 100%);
+  z-index: 1;
 }
 .hero .container {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  z-index: 2;
+}
+.hero-content {
+  max-width: 650px;
 }
 .hero-badge {
   display: inline-flex;
@@ -251,13 +271,15 @@ nav a:hover::after { width: 100%; }
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 20px;
+  backdrop-filter: blur(4px);
 }
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.08;
   margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 .hero h1 .highlight {
   color: var(--accent);
@@ -265,15 +287,16 @@ nav a:hover::after { width: 100%; }
 }
 .hero p {
   font-size: 1.15rem;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 32px;
-  max-width: 480px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 36px;
+  max-width: 520px;
   line-height: 1.7;
 }
 .hero-btns {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 48px;
 }
 .btn {
   display: inline-flex;
@@ -302,37 +325,20 @@ nav a:hover::after { width: 100%; }
 }
 .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
 
-.hero-img {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.hero-img img {
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-  width: 100%;
-  max-width: 500px;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
 .hero-stats {
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+  display: inline-flex;
   gap: 4px;
-  background: #fff;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius);
   padding: 16px 24px;
-  box-shadow: var(--shadow-lg);
-  min-width: 300px;
 }
 .hero-stat {
   text-align: center;
   flex: 1;
   padding: 0 12px;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid rgba(255,255,255,0.2);
 }
 .hero-stat:last-child { border: none; }
 .hero-stat strong {
@@ -340,11 +346,11 @@ nav a:hover::after { width: 100%; }
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary);
+  color: #fff;
 }
 .hero-stat small {
   font-size: 0.75rem;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.7);
   font-weight: 500;
 }
 
@@ -561,6 +567,34 @@ section { padding: 80px 0; }
 }
 .review-name { font-weight: 700; color: var(--dark); font-size: 0.9rem; }
 .review-source { font-size: 0.8rem; color: var(--text-light); }
+.review-cta {
+  text-align: center;
+  margin-top: 48px;
+  padding: 32px;
+  background: var(--bg-warm);
+  border-radius: var(--radius);
+  border: 1px solid rgba(245,166,35,0.2);
+}
+.review-cta p {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.review-cta p strong { color: var(--accent); }
+.review-cta .btn-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.review-cta .btn-review:hover { background: var(--primary-light); transform: translateY(-2px); }
+.review-cta .btn-review svg { flex-shrink: 0; }
 
 /* ========== PROCESS (Timeline) ========== */
 .process-timeline {
@@ -1093,11 +1127,11 @@ footer li a:hover { color: var(--accent); }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
-  .hero .container { grid-template-columns: 1fr; text-align: center; }
-  .hero h1 { font-size: 2.6rem; }
-  .hero p { margin: 0 auto 32px; }
+  .hero h1 { font-size: 2.8rem; }
+  .hero-content { text-align: center; margin: 0 auto; }
+  .hero p { margin: 0 auto 36px; }
   .hero-btns { justify-content: center; }
-  .hero-img { display: none; }
+  .hero-stats { justify-content: center; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .why-us .container { grid-template-columns: 1fr; }
   .why-img { max-height: 350px; width: 100%; }
@@ -1111,9 +1145,12 @@ footer li a:hover { color: var(--accent); }
   .top-bar .container { justify-content: center; text-align: center; }
   nav ul { display: none; }
   .hamburger { display: flex; }
-  .hero { padding: 60px 0 50px; }
+  .hero { min-height: 500px; height: 85vh; }
   .hero h1 { font-size: 2rem; }
   .hero-badge { font-size: 0.75rem; }
+  .hero-stats { padding: 12px 16px; }
+  .hero-stat strong { font-size: 1.2rem; }
+  .hero-stat { padding: 0 8px; }
   .section-title { font-size: 1.8rem; }
   section { padding: 60px 0; }
   .services-grid { grid-template-columns: 1fr; }
@@ -1131,8 +1168,10 @@ footer li a:hover { color: var(--accent); }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.7rem; }
+  .hero { min-height: 450px; height: 80vh; }
   .hero-btns { flex-direction: column; align-items: center; }
   .hero-btns .btn { width: 100%; justify-content: center; }
+  .hero-stats { flex-wrap: wrap; justify-content: center; }
   .areas-grid { grid-template-columns: 1fr 1fr; }
   .process-timeline { grid-template-columns: 1fr; }
 }
@@ -1140,7 +1179,8 @@ footer li a:hover { color: var(--accent); }
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP BAR + HEADER (positioned over hero) -->
+<div class="header-group" id="headerGroup">
 <div class="top-bar">
   <div class="container">
     <span>Laredo's Trusted Electricians</span>
@@ -1148,11 +1188,10 @@ footer li a:hover { color: var(--accent); }
   </div>
 </div>
 
-<!-- HEADER -->
 <header id="header">
   <div class="container nav-wrap">
     <a href="#" class="logo">
-      <span class="bolt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg></span> A&S <span>Electric</span>
+      A&S <span>Electric</span>
     </a>
     <nav>
       <ul>
@@ -1170,6 +1209,7 @@ footer li a:hover { color: var(--accent); }
     </button>
   </div>
 </header>
+</div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -1186,18 +1226,19 @@ footer li a:hover { color: var(--accent); }
 <main>
 <!-- HERO -->
 <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1920">
+    <source src="https://videos.pexels.com/video-files/5391403/5391403-hd_1920_1080_30fps.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-2px"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg> Licensed & Insured Electrician in Laredo, TX</div>
-      <h1>Your Trusted <span class="highlight">Electrical Experts</span> in Laredo</h1>
-      <p>From panel upgrades to EV charger installations, A&S Electric delivers safe, code-compliant electrical work for homes and businesses across Webb County. Free estimates on every job.</p>
+      <div class="hero-badge">Licensed & Insured Electrician in Laredo, TX</div>
+      <h1><span class="highlight">A&S Electric</span>. Your Trusted Experts in Laredo.</h1>
+      <p>From panel upgrades to EV charger installations. Safe, code-compliant electrical work for homes and businesses across Webb County. Free estimates on every job.</p>
       <div class="hero-btns">
         <a href="tel:9569996278" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-2px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Get Free Estimate</a>
         <a href="#services" class="btn btn-outline">View Our Services</a>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A&S Electric professional electrician at work" loading="eager">
       <div class="hero-stats">
         <div class="hero-stat">
           <strong>5.0</strong>
@@ -1433,6 +1474,13 @@ footer li a:hover { color: var(--accent); }
           </div>
         </div>
       </div>
+    </div>
+    <div class="review-cta">
+      <p>Had a great experience with A&S Electric? Leave us a review on Google and get <strong>10% off your next service call</strong>.</p>
+      <a href="https://g.page/r/Cc9PkwcNUt0VEBI/review" target="_blank" rel="noopener" class="btn-review">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        Leave a Google Review
+      </a>
     </div>
   </div>
 </section>
@@ -1707,7 +1755,7 @@ footer li a:hover { color: var(--accent); }
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-          <span class="bolt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg></span> A&S <span>Electric</span>
+          A&S <span>Electric</span>
         </div>
         <p>Licensed residential, commercial, and industrial electrician serving Laredo and Webb County. Free estimates, 24/7 emergency calls, and honest pricing on every job.</p>
         <div class="footer-social">
@@ -1799,9 +1847,12 @@ footer li a:hover { color: var(--accent); }
 </div>
 
 <script>
-// Sticky header
+// Sticky header - transparent over hero, solid on scroll
+const heroSection = document.querySelector('.hero');
+const headerGroup = document.getElementById('headerGroup');
 window.addEventListener('scroll', () => {
-  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+  const heroBottom = heroSection.offsetHeight - 80;
+  headerGroup.classList.toggle('scrolled', window.scrollY > heroBottom);
 });
 
 // Mobile menu
