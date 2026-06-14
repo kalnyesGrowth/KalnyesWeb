@@ -257,46 +257,33 @@ nav a:hover::after { width: 100%; }
   z-index: 2;
 }
 .hero-content {
-  max-width: 650px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(245,166,35,0.15);
-  border: 1px solid rgba(245,166,35,0.3);
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 20px;
-  backdrop-filter: blur(4px);
-}
-.hero h1 {
+.hero-logo {
   font-family: var(--font-heading);
-  font-size: 3.6rem;
+  font-size: 5rem;
   font-weight: 900;
-  line-height: 1.08;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  line-height: 1.05;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+  color: #fff;
 }
-.hero h1 .highlight {
+.hero-logo .highlight {
   color: var(--accent);
-  position: relative;
 }
-.hero p {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 36px;
-  max-width: 520px;
-  line-height: 1.7;
+.hero-tagline {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
 }
 .hero-btns {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
+  justify-content: center;
 }
 .btn {
   display: inline-flex;
@@ -325,33 +312,8 @@ nav a:hover::after { width: 100%; }
 }
 .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
 
-.hero-stats {
-  display: inline-flex;
-  gap: 4px;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: var(--radius);
-  padding: 16px 24px;
-}
-.hero-stat {
-  text-align: center;
-  flex: 1;
-  padding: 0 12px;
-  border-right: 1px solid rgba(255,255,255,0.2);
-}
-.hero-stat:last-child { border: none; }
-.hero-stat strong {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-}
-.hero-stat small {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
+.hero-stat-placeholder {
+  display: none;
 }
 
 /* ========== TRUST BAR ========== */
@@ -1127,11 +1089,7 @@ footer li a:hover { color: var(--accent); }
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
-  .hero h1 { font-size: 2.8rem; }
-  .hero-content { text-align: center; margin: 0 auto; }
-  .hero p { margin: 0 auto 36px; }
-  .hero-btns { justify-content: center; }
-  .hero-stats { justify-content: center; }
+  .hero-logo { font-size: 4rem; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .why-us .container { grid-template-columns: 1fr; }
   .why-img { max-height: 350px; width: 100%; }
@@ -1146,11 +1104,8 @@ footer li a:hover { color: var(--accent); }
   nav ul { display: none; }
   .hamburger { display: flex; }
   .hero { min-height: 500px; height: 85vh; }
-  .hero h1 { font-size: 2rem; }
-  .hero-badge { font-size: 0.75rem; }
-  .hero-stats { padding: 12px 16px; }
-  .hero-stat strong { font-size: 1.2rem; }
-  .hero-stat { padding: 0 8px; }
+  .hero-logo { font-size: 3.2rem; }
+  .hero-tagline { font-size: 1rem; }
   .section-title { font-size: 1.8rem; }
   section { padding: 60px 0; }
   .services-grid { grid-template-columns: 1fr; }
@@ -1167,11 +1122,9 @@ footer li a:hover { color: var(--accent); }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.7rem; }
+  .hero-logo { font-size: 2.6rem; }
   .hero { min-height: 450px; height: 80vh; }
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-btns .btn { width: 100%; justify-content: center; }
-  .hero-stats { flex-wrap: wrap; justify-content: center; }
+  .hero-tagline { font-size: 0.95rem; margin-bottom: 32px; }
   .areas-grid { grid-template-columns: 1fr 1fr; }
   .process-timeline { grid-template-columns: 1fr; }
 }
@@ -1232,26 +1185,10 @@ footer li a:hover { color: var(--accent); }
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge">Licensed & Insured Electrician in Laredo, TX</div>
-      <h1><span class="highlight">A&S Electric</span>. Your Trusted Experts in Laredo.</h1>
-      <p>From panel upgrades to EV charger installations. Safe, code-compliant electrical work for homes and businesses across Webb County. Free estimates on every job.</p>
+      <h1 class="hero-logo">A&S <span class="highlight">Electric</span></h1>
+      <p class="hero-tagline">Licensed & Insured Electrician in Laredo, TX</p>
       <div class="hero-btns">
-        <a href="tel:9569996278" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style="vertical-align:-2px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Get Free Estimate</a>
-        <a href="#services" class="btn btn-outline">View Our Services</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <strong>5.0</strong>
-          <small>Google Rating</small>
-        </div>
-        <div class="hero-stat">
-          <strong>24/7</strong>
-          <small>Emergency</small>
-        </div>
-        <div class="hero-stat">
-          <strong>100%</strong>
-          <small>Insured</small>
-        </div>
+        <a href="tel:9569996278" class="btn btn-outline">Get Free Estimate</a>
       </div>
     </div>
   </div>
