@@ -156,9 +156,12 @@ header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
   width: 40px;
   height: 40px;
   background: var(--accent);
-  color: var(--dark);
   border-radius: 10px;
-  font-size: 1.3rem;
+}
+.logo .bolt svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--dark);
 }
 .logo span { color: var(--accent); }
 nav ul {
@@ -422,7 +425,6 @@ section { padding: 80px 0; }
 .service-card {
   background: #fff;
   border-radius: var(--radius);
-  padding: 32px 28px;
   border: 1px solid var(--border);
   transition: all 0.3s;
   position: relative;
@@ -442,19 +444,17 @@ section { padding: 80px 0; }
   background: var(--accent);
   transform: scaleX(0);
   transition: transform 0.3s;
+  z-index: 1;
 }
 .service-card:hover::before { transform: scaleX(1); }
-.service-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #fff;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.service-card-body {
+  padding: 24px 28px 28px;
 }
 .service-card h3 {
   font-family: var(--font-heading);
@@ -541,8 +541,15 @@ section { padding: 80px 0; }
   gap: 12px;
 }
 .review-avatar {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+.review-avatar-initials {
+  width: 44px;
+  height: 44px;
   background: var(--primary);
   color: #fff;
   border-radius: 50%;
@@ -551,37 +558,83 @@ section { padding: 80px 0; }
   justify-content: center;
   font-weight: 700;
   font-size: 0.9rem;
+  flex-shrink: 0;
 }
 .review-name { font-weight: 700; color: var(--dark); font-size: 0.9rem; }
 .review-source { font-size: 0.8rem; color: var(--text-light); }
 
-/* ========== PROCESS ========== */
-.process-grid {
+/* ========== PROCESS (Timeline) ========== */
+.process-timeline {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 0;
   counter-reset: step;
+}
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  z-index: 0;
+}
+.process-timeline::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 28px);
+  right: calc(12.5% + 28px);
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 2px;
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.process-timeline.animated::after {
+  transform: scaleX(1);
 }
 .process-step {
   text-align: center;
   position: relative;
-  padding: 32px 20px;
+  padding: 0 16px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
 }
-.process-step::before {
-  counter-increment: step;
-  content: counter(step);
+.process-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.step-circle {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-light);
+  border: 4px solid var(--border);
+  color: var(--text-light);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 50%;
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 800;
   margin: 0 auto 20px;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 3;
+}
+.process-step.visible .step-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 0 8px rgba(27, 58, 92, 0.15);
 }
 .process-step h3 {
   font-family: var(--font-heading);
@@ -592,6 +645,16 @@ section { padding: 80px 0; }
 .process-step p {
   font-size: 0.9rem;
   color: var(--text-light);
+}
+@media (max-width: 768px) {
+  .process-timeline { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+  .process-timeline::before,
+  .process-timeline::after { display: none; }
+  .process-step { opacity: 1; transform: none; }
+  .step-circle { background: var(--primary); border-color: var(--primary); color: #fff; }
+}
+@media (max-width: 480px) {
+  .process-timeline { grid-template-columns: 1fr; }
 }
 
 /* ========== SERVICE AREAS ========== */
@@ -1040,7 +1103,7 @@ footer li a:hover { color: var(--accent); }
   .why-us .container { grid-template-columns: 1fr; }
   .why-img { max-height: 350px; width: 100%; }
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-timeline { grid-template-columns: repeat(2, 1fr); }
   .areas-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1056,7 +1119,7 @@ footer li a:hover { color: var(--accent); }
   section { padding: 60px 0; }
   .services-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .process-grid { grid-template-columns: 1fr 1fr; }
+  .process-timeline { grid-template-columns: 1fr 1fr; }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
@@ -1072,7 +1135,7 @@ footer li a:hover { color: var(--accent); }
   .hero-btns { flex-direction: column; align-items: center; }
   .hero-btns .btn { width: 100%; justify-content: center; }
   .areas-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid { grid-template-columns: 1fr; }
+  .process-timeline { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1090,7 +1153,7 @@ footer li a:hover { color: var(--accent); }
 <header id="header">
   <div class="container nav-wrap">
     <a href="#" class="logo">
-      <span class="bolt">&#9889;</span> A&S <span>Electric</span>
+      <span class="bolt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg></span> A&S <span>Electric</span>
     </a>
     <nav>
       <ul>
@@ -1190,49 +1253,67 @@ footer li a:hover { color: var(--accent); }
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">&#128268;</div>
-        <h3>Electrical Panel Upgrades</h3>
-        <p>Upgrade outdated panels to handle modern electrical demands safely. We install 100-400 amp panels with full code compliance and inspection.</p>
+        <img src="https://images.pexels.com/photos/5767595/pexels-photo-5767595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Electrical panel with circuit breakers" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Electrical Panel Upgrades</h3>
+          <p>Upgrade outdated panels to handle modern electrical demands safely. We install 100-400 amp panels with full code compliance and inspection.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#128161;</div>
-        <h3>Lighting Installation</h3>
-        <p>Interior and exterior lighting design, accent lighting, landscape lighting, and LED retrofits for homes and commercial spaces.</p>
+        <img src="https://images.pexels.com/photos/1253128/pexels-photo-1253128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern ceiling light fixtures in stylish interior" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Lighting Installation</h3>
+          <p>Interior and exterior lighting design, accent lighting, landscape lighting, and LED retrofits for homes and commercial spaces.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#9889;</div>
-        <h3>EV Charger Installation</h3>
-        <p>Level 2 EV charging station installation for your home or business. Proper circuit sizing, dedicated lines, and permit handling included.</p>
+        <img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="EV charging station installed at parking spot" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>EV Charger Installation</h3>
+          <p>Level 2 EV charging station installation for your home or business. Proper circuit sizing, dedicated lines, and permit handling included.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#127968;</div>
-        <h3>Residential Wiring</h3>
-        <p>Complete home wiring for new construction, remodels, and additions. Outlets, switches, ceiling fans, and dedicated circuits.</p>
+        <img src="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Electrician working on residential wiring" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Residential Wiring</h3>
+          <p>Complete home wiring for new construction, remodels, and additions. Outlets, switches, ceiling fans, and dedicated circuits.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#127970;</div>
-        <h3>Commercial Electrical</h3>
-        <p>Electrical solutions for offices, restaurants, retail stores, and warehouses. Tenant improvements, signage, and power distribution.</p>
+        <img src="https://images.pexels.com/photos/7541342/pexels-photo-7541342.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Commercial electrical wiring panel with cables" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Commercial Electrical</h3>
+          <p>Electrical solutions for offices, restaurants, retail stores, and warehouses. Tenant improvements, signage, and power distribution.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#128267;</div>
-        <h3>Backup Generators</h3>
-        <p>Whole-home and commercial generator installation and maintenance. Automatic transfer switches for seamless power during outages.</p>
+        <img src="https://images.pexels.com/photos/5693845/pexels-photo-5693845.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Industrial backup generator installed outdoors" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Backup Generators</h3>
+          <p>Whole-home and commercial generator installation and maintenance. Automatic transfer switches for seamless power during outages.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#128274;</div>
-        <h3>Troubleshooting & Repair</h3>
-        <p>Expert diagnosis of electrical issues including flickering lights, tripped breakers, faulty wiring, and power surges.</p>
+        <img src="https://images.pexels.com/photos/33531830/pexels-photo-33531830.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Electrician using multimeter to diagnose electrical issue" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Troubleshooting & Repair</h3>
+          <p>Expert diagnosis of electrical issues including flickering lights, tripped breakers, faulty wiring, and power surges.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#128225;</div>
-        <h3>Outlets & Switches</h3>
-        <p>GFCI outlets, USB outlets, smart switches, dimmers, and 220V receptacles. Proper installation with ground fault protection.</p>
+        <img src="https://images.pexels.com/photos/3615711/pexels-photo-3615711.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern wall outlet array on white wall" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Outlets & Switches</h3>
+          <p>GFCI outlets, USB outlets, smart switches, dimmers, and 220V receptacles. Proper installation with ground fault protection.</p>
+        </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">&#127909;</div>
-        <h3>Audio/Visual Installation</h3>
-        <p>Structured wiring for home theaters, smart home systems, security cameras, and connected home technology.</p>
+        <img src="https://images.pexels.com/photos/13348768/pexels-photo-13348768.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home theater setup with large screen and audio system" class="service-img" loading="lazy">
+        <div class="service-card-body">
+          <h3>Audio/Visual Installation</h3>
+          <p>Structured wiring for home theaters, smart home systems, security cameras, and connected home technology.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1302,7 +1383,7 @@ footer li a:hover { color: var(--accent); }
         <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
         <p class="review-text">"Excellent customer service! Always pleased with the service. They are my go-to electricians for everything."</p>
         <div class="review-author">
-          <div class="review-avatar">DQ</div>
+          <div class="review-avatar-initials" style="background: #4A90D9;">DQ</div>
           <div>
             <div class="review-name">Diana Quilantan</div>
             <div class="review-source">Google Review</div>
@@ -1313,7 +1394,7 @@ footer li a:hover { color: var(--accent); }
         <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
         <p class="review-text">"Service has always been prompt and thorough, and Mr. Salinas has always been upfront and honest. Highly recommend."</p>
         <div class="review-author">
-          <div class="review-avatar">NV</div>
+          <div class="review-avatar-initials" style="background: #D94A4A;">NV</div>
           <div>
             <div class="review-name">Nic V</div>
             <div class="review-source">Google Review</div>
@@ -1324,7 +1405,7 @@ footer li a:hover { color: var(--accent); }
         <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
         <p class="review-text">"Give them a high respect in detail and on time schedule. HIGHLY recommended for any electrical work you need."</p>
         <div class="review-author">
-          <div class="review-avatar">ML</div>
+          <div class="review-avatar-initials" style="background: #4AD97A;">ML</div>
           <div>
             <div class="review-name">Miguel Lara</div>
             <div class="review-source">Google Review</div>
@@ -1335,7 +1416,7 @@ footer li a:hover { color: var(--accent); }
         <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
         <p class="review-text">"Excellent customer service! Very professional, honest, and reliable. Would not trust anyone else with my home's electrical."</p>
         <div class="review-author">
-          <div class="review-avatar">SS</div>
+          <div class="review-avatar-initials" style="background: #D9A04A;">SS</div>
           <div>
             <div class="review-name">Sonia Salinas</div>
             <div class="review-source">Google Review</div>
@@ -1346,7 +1427,7 @@ footer li a:hover { color: var(--accent); }
         <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
         <p class="review-text">"Very pleased with the work done at my house and the options they provided me. Fair pricing and quality work."</p>
         <div class="review-author">
-          <div class="review-avatar">MM</div>
+          <div class="review-avatar-initials" style="background: #8A4AD9;">MM</div>
           <div>
             <div class="review-name">Mayela Martinez</div>
             <div class="review-source">Google Review</div>
@@ -1365,20 +1446,24 @@ footer li a:hover { color: var(--accent); }
       <h2 class="section-title">From Call to Completion in 4 Simple Steps</h2>
       <p class="section-subtitle">We make the process easy so you can focus on what matters. Here is how every project works.</p>
     </div>
-    <div class="process-grid">
-      <div class="process-step">
+    <div class="process-timeline" id="processTimeline">
+      <div class="process-step" data-step="1">
+        <div class="step-circle">1</div>
         <h3>Call or Text Us</h3>
         <p>Reach us at (956) 999-6278. Describe what you need and we will get you scheduled.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-step="2">
+        <div class="step-circle">2</div>
         <h3>Free Estimate</h3>
         <p>We assess the job, explain what needs to be done, and give you a clear written quote. No obligation.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-step="3">
+        <div class="step-circle">3</div>
         <h3>Expert Installation</h3>
         <p>Our licensed team completes the work on schedule, to code, and with minimal disruption to your day.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-step="4">
+        <div class="step-circle">4</div>
         <h3>Final Walkthrough</h3>
         <p>We walk you through everything we did, clean up, and make sure you are 100% satisfied before we leave.</p>
       </div>
@@ -1623,7 +1708,7 @@ footer li a:hover { color: var(--accent); }
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-          <span class="bolt">&#9889;</span> A&S <span>Electric</span>
+          <span class="bolt"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 10 10-12h-9l1-10z"/></svg></span> A&S <span>Electric</span>
         </div>
         <p>Licensed residential, commercial, and industrial electrician serving Laredo and Webb County. Free estimates, 24/7 emergency calls, and honest pricing on every job.</p>
         <div class="footer-social">
@@ -1782,6 +1867,24 @@ document.querySelectorAll('.popup-overlay').forEach(overlay => {
     if (e.target === overlay) overlay.classList.remove('active');
   });
 });
+
+// Timeline animation on scroll
+const timeline = document.getElementById('processTimeline');
+if (timeline) {
+  const steps = timeline.querySelectorAll('.process-step');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        timeline.classList.add('animated');
+        steps.forEach((step, i) => {
+          setTimeout(() => step.classList.add('visible'), 200 + (i * 300));
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(timeline);
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
