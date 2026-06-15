@@ -155,7 +155,7 @@ header {
 .nav-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .logo {
   font-family: var(--font-heading);
@@ -194,15 +194,23 @@ nav a::after {
 }
 nav a:hover::after { width: 100%; }
 .nav-cta {
-  background: var(--accent);
-  color: var(--dark) !important;
-  padding: 10px 24px;
+  border: 1.5px solid rgba(255,255,255,0.5) !important;
+  color: #fff !important;
+  padding: 8px 20px;
   border-radius: var(--radius-sm);
   font-weight: 700 !important;
-  transition: background 0.2s, transform 0.2s;
+  transition: border-color 0.2s, background 0.2s;
 }
-.nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.nav-cta:hover { border-color: #fff !important; background: rgba(255,255,255,0.1); }
 .nav-cta::after { display: none !important; }
+.header-group.scrolled .nav-cta {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+.header-group.scrolled .nav-cta:hover {
+  background: var(--primary);
+  color: #fff !important;
+}
 
 .hamburger {
   display: none;
@@ -266,7 +274,7 @@ nav a:hover::after { width: 100%; }
   font-size: 5rem;
   font-weight: 900;
   line-height: 1.05;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   text-shadow: 0 4px 30px rgba(0,0,0,0.4);
   color: #fff;
 }
@@ -274,16 +282,24 @@ nav a:hover::after { width: 100%; }
   color: var(--accent);
 }
 .hero-tagline {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: rgba(255,255,255,0.85);
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   letter-spacing: 0.5px;
 }
 .hero-btns {
   display: flex;
   gap: 16px;
   justify-content: center;
+}
+.hero-btns .btn-outline {
+  animation: electric-pulse 3s infinite;
+}
+@keyframes electric-pulse {
+  0%, 85%, 100% { box-shadow: 0 0 0 0 transparent; border-color: rgba(255,255,255,0.4); }
+  90% { box-shadow: 0 0 12px 2px rgba(245,166,35,0.5), 0 0 30px 4px rgba(245,166,35,0.2); border-color: var(--accent); }
+  95% { box-shadow: 0 0 6px 1px rgba(245,166,35,0.3); border-color: rgba(255,255,255,0.6); }
 }
 .btn {
   display: inline-flex;
@@ -1143,9 +1159,6 @@ footer li a:hover { color: var(--accent); }
 
 <header id="header">
   <div class="container nav-wrap">
-    <a href="#" class="logo">
-      A&S <span>Electric</span>
-    </a>
     <nav>
       <ul>
         <li><a href="#services">Services</a></li>
