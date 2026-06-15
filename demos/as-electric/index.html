@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1200">
 <link rel="canonical" href="https://kalnyesgrowth.com/demos/as-electric/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F5A623'><path d='M13 2L3 14h9l-1 10 10-12h-9l1-10z'/></svg>">
-<link rel="preload" as="video" href="https://videos.pexels.com/video-files/5391403/5391403-hd_1920_1080_30fps.mp4" fetchpriority="high">
+<link rel="preload" as="video" href="https://videos.pexels.com/video-files/6520278/6520278-hd_1920_1080_24fps.mp4" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -294,12 +294,35 @@ nav a:hover::after { width: 100%; }
   justify-content: center;
 }
 .hero-btns .btn-outline {
-  animation: electric-pulse 3s infinite;
+  position: relative;
+  overflow: hidden;
+  animation: thunder-glow 3s infinite;
 }
-@keyframes electric-pulse {
-  0%, 85%, 100% { box-shadow: 0 0 0 0 transparent; border-color: rgba(255,255,255,0.4); }
-  90% { box-shadow: 0 0 12px 2px rgba(245,166,35,0.5), 0 0 30px 4px rgba(245,166,35,0.2); border-color: var(--accent); }
-  95% { box-shadow: 0 0 6px 1px rgba(245,166,35,0.3); border-color: rgba(255,255,255,0.6); }
+.hero-btns .btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245,166,35,0.6), rgba(255,255,255,0.8), rgba(245,166,35,0.6), transparent);
+  animation: thunder-streak 3s infinite;
+}
+@keyframes thunder-streak {
+  0%, 84%, 100% { left: -100%; opacity: 0; }
+  85% { left: -40%; opacity: 1; }
+  88% { left: 120%; opacity: 1; }
+  89% { left: 120%; opacity: 0; }
+  91% { left: -40%; opacity: 0.7; }
+  93% { left: 120%; opacity: 0.7; }
+  94%, 100% { left: 120%; opacity: 0; }
+}
+@keyframes thunder-glow {
+  0%, 84%, 100% { box-shadow: none; border-color: rgba(255,255,255,0.4); }
+  86% { box-shadow: 0 0 20px 4px rgba(245,166,35,0.6), 0 0 40px 8px rgba(245,166,35,0.2); border-color: var(--accent); }
+  88% { box-shadow: 0 0 4px 1px rgba(245,166,35,0.2); border-color: rgba(255,255,255,0.5); }
+  90% { box-shadow: 0 0 14px 3px rgba(245,166,35,0.4), 0 0 30px 6px rgba(245,166,35,0.15); border-color: var(--accent); }
+  93%, 100% { box-shadow: none; border-color: rgba(255,255,255,0.4); }
 }
 .btn {
   display: inline-flex;
@@ -1193,7 +1216,7 @@ footer li a:hover { color: var(--accent); }
 <!-- HERO -->
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/photos/8853471/pexels-photo-8853471.jpeg?auto=compress&cs=tinysrgb&w=1920">
-    <source src="https://videos.pexels.com/video-files/5391403/5391403-hd_1920_1080_30fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/6520278/6520278-hd_1920_1080_24fps.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
