@@ -327,6 +327,34 @@ footer small{font-size:.76rem;color:var(--faint)}
   section{padding:64px 0}
   .hero{padding:120px 0 60px}
   .g-nums{grid-template-columns:1fr}
+  .seo-fields{grid-template-columns:1fr}
+}
+
+/* SEO Audit Section */
+.seo-audit-box{max-width:680px;margin:40px auto 0;background:var(--bg-soft);border:1.5px solid var(--line);border-radius:20px;padding:40px}
+.seo-form{display:flex;flex-direction:column;gap:16px}
+.seo-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.seo-fields .seo-field:last-child{grid-column:span 2}
+.seo-field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.seo-field input{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-size:.95rem;font-family:inherit;color:var(--ink);background:#fff;outline:none;transition:border-color .2s}
+.seo-field input:focus{border-color:var(--ink)}
+.seo-submit{width:100%;margin-top:4px;font-size:1.05rem;padding:16px}
+.seo-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:8px}
+.seo-result{margin-top:24px;padding:28px;background:#fff;border-radius:16px;border:1.5px solid var(--line)}
+.seo-score-ring{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative}
+.seo-score-num{font-size:2.4rem;font-weight:800;color:var(--ink)}
+.seo-score-label{font-size:.78rem;color:var(--muted);text-align:center;margin-bottom:20px}
+.seo-checks{display:flex;flex-direction:column;gap:10px}
+.seo-check{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--body)}
+.seo-check .pass{color:var(--green);font-weight:700}
+.seo-check .fail{color:#ef4444;font-weight:700}
+.seo-check .warn{color:var(--gold);font-weight:700}
+.seo-sent{text-align:center;padding:20px 0}
+.seo-sent h3{font-size:1.3rem;margin-bottom:8px}
+.seo-sent p{color:var(--muted);font-size:.92rem}
+@media(max-width:600px){
+  .seo-audit-box{padding:24px}
+  .seo-fields .seo-field:last-child{grid-column:span 1}
 }
 </style>
 </head>
@@ -714,6 +742,38 @@ footer small{font-size:.76rem;color:var(--faint)}
   </div>
 </section>
 
+<!-- FREE SEO AUDIT -->
+<section id="seo-audit">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag">Free Tool</span>
+      <h2>How Does Your Website Score?</h2>
+      <p class="sub">Enter your website URL and we'll analyze your SEO, speed, and mobile performance. Get a detailed report sent straight to your inbox.</p>
+    </div>
+    <div class="seo-audit-box stg">
+      <form id="seo-form" class="seo-form">
+        <div class="seo-fields">
+          <div class="seo-field">
+            <label for="seo-url">Your website URL</label>
+            <input type="url" id="seo-url" name="website_url" placeholder="https://yourbusiness.com" required />
+          </div>
+          <div class="seo-field">
+            <label for="seo-email">Email for your report</label>
+            <input type="email" id="seo-email" name="email" placeholder="you@business.com" required />
+          </div>
+          <div class="seo-field">
+            <label for="seo-name">Your name</label>
+            <input type="text" id="seo-name" name="name" placeholder="John Smith" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-dark seo-submit" id="seo-btn">Analyze My Website</button>
+        <p class="seo-note">100% free. No credit card. Report delivered in under 24 hours.</p>
+      </form>
+      <div id="seo-result" class="seo-result" style="display:none"></div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY AI -->
 <section class="soft" id="why-ai">
   <div class="wrap">
@@ -939,6 +999,83 @@ document.querySelectorAll('.faq button').forEach(btn=>{
     if(!was){faq.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';btn.setAttribute('aria-expanded','true')}
   });
 });
+})();
+
+/* SEO Audit Form */
+(function(){
+  var form = document.getElementById('seo-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var url   = document.getElementById('seo-url').value.trim();
+    var email = document.getElementById('seo-email').value.trim();
+    var name  = document.getElementById('seo-name').value.trim();
+    if (!url || !email) return;
+
+    var btn = document.getElementById('seo-btn');
+    btn.disabled = true;
+    btn.textContent = 'Analyzing...';
+
+    // Send lead to CRM via KGTrack (tracker auto-captures form, but also send explicitly with URL in message)
+    if (window.KGTrack) {
+      KGTrack.lead({ name: name, email: email, message: 'SEO Audit Request: ' + url });
+      KGTrack.email(email, 'seo-audit');
+    }
+
+    // Run a quick client-side check for visual feedback
+    var cleanUrl = url.startsWith('http') ? url : 'https://' + url;
+    var checks = [];
+    var score = 0;
+
+    fetch(cleanUrl, { mode: 'no-cors' }).then(function() {
+      checks.push({ label: 'Website is reachable', status: 'pass' });
+      score += 20;
+    }).catch(function() {
+      checks.push({ label: 'Website is reachable', status: 'warn', note: 'Could not verify' });
+      score += 10;
+    }).finally(function() {
+      // Check if URL has HTTPS
+      if (cleanUrl.startsWith('https://')) {
+        checks.push({ label: 'SSL certificate (HTTPS)', status: 'pass' });
+        score += 20;
+      } else {
+        checks.push({ label: 'SSL certificate (HTTPS)', status: 'fail', note: 'Not secure' });
+      }
+
+      // Estimate based on common issues
+      checks.push({ label: 'Mobile responsiveness', status: 'warn', note: 'Needs full audit' });
+      checks.push({ label: 'Page load speed', status: 'warn', note: 'Needs full audit' });
+      checks.push({ label: 'SEO meta tags', status: 'warn', note: 'Needs full audit' });
+      checks.push({ label: 'Schema markup', status: 'warn', note: 'Needs full audit' });
+      score += 25;
+
+      var color = score >= 50 ? 'var(--gold)' : score >= 30 ? '#ef4444' : '#ef4444';
+      if (score >= 60) color = 'var(--green)';
+
+      var result = document.getElementById('seo-result');
+      result.style.display = 'block';
+      form.style.display = 'none';
+
+      result.innerHTML =
+        '<div class="seo-score-ring" style="border:6px solid ' + color + '">' +
+          '<div class="seo-score-num">' + score + '</div>' +
+        '</div>' +
+        '<div class="seo-score-label">Preliminary Score for ' + url.replace(/https?:\/\//, '').replace(/\/$/, '') + '</div>' +
+        '<div class="seo-checks">' +
+          checks.map(function(c) {
+            var icon = c.status === 'pass' ? '<span class="pass">&#10003;</span>' : c.status === 'fail' ? '<span class="fail">&#10007;</span>' : '<span class="warn">&#9888;</span>';
+            return '<div class="seo-check">' + icon + ' ' + c.label + (c.note ? ' <span style="color:var(--muted);font-size:.78rem">(' + c.note + ')</span>' : '') + '</div>';
+          }).join('') +
+        '</div>' +
+        '<div class="seo-sent" style="margin-top:24px;padding-top:20px;border-top:1px solid var(--line)">' +
+          '<h3>Full Report Coming Soon</h3>' +
+          '<p>We\'ll send a detailed SEO, speed, and mobile audit to <strong>' + email + '</strong> within 24 hours. This includes actionable fixes to improve your rankings.</p>' +
+        '</div>';
+
+      result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
 })();
 </script>
 <script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
