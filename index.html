@@ -193,6 +193,7 @@ nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(26,26,26,.05)}
 .port{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;transition:transform .3s,box-shadow .3s}
 .port:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .port .em{font-size:2rem;margin-bottom:12px}
+.port-img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:14px}
 .port h3{font-size:1.1rem;margin-bottom:6px}
 .port p{font-size:.88rem;color:var(--muted);margin-bottom:14px;flex:1}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
@@ -205,7 +206,8 @@ nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(26,26,26,.05)}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px}
 .tcard blockquote{font-size:.92rem;color:var(--body);margin:12px 0 16px;line-height:1.6}
 .twho{display:flex;gap:10px;align-items:center}
-.tav{width:36px;height:36px;border-radius:50%;background:var(--ink-soft);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:var(--ink)}
+.tav{width:42px;height:42px;border-radius:50%;background:var(--ink-soft);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:var(--ink);overflow:hidden;flex-shrink:0}
+.tav img{width:100%;height:100%;object-fit:cover}
 .nm{font-weight:700;font-size:.88rem;color:var(--ink)}
 .rl{font-size:.76rem;color:var(--muted)}
 
@@ -355,6 +357,43 @@ footer small{font-size:.76rem;color:var(--faint)}
 @media(max-width:600px){
   .seo-audit-box{padding:24px}
   .seo-fields .seo-field:last-child{grid-column:span 1}
+}
+
+/* CHAT WIDGET */
+.cw-btn{position:fixed;bottom:24px;right:24px;width:60px;height:60px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;z-index:95;box-shadow:0 8px 28px rgba(26,26,26,.3);display:flex;align-items:center;justify-content:center;transition:transform .25s,box-shadow .25s}
+.cw-btn:hover{transform:scale(1.08);box-shadow:0 12px 36px rgba(26,26,26,.4)}
+.cw-btn svg{width:28px;height:28px}
+.cw-btn .cw-x{display:none}
+.cw-btn.open svg:first-child{display:none}
+.cw-btn.open .cw-x{display:block}
+.cw-pulse{position:absolute;top:-4px;right:-4px;width:16px;height:16px;border-radius:50%;background:var(--green);border:2.5px solid #fff}
+.cw-btn.open .cw-pulse{display:none}
+.cw-box{position:fixed;bottom:100px;right:24px;width:360px;max-height:500px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);z-index:94;display:none;flex-direction:column;overflow:hidden}
+.cw-box.open{display:flex}
+.cw-head{padding:16px 18px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:10px;border-radius:20px 20px 0 0}
+.cw-head-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+.cw-head-t{font-weight:700;font-size:.92rem}
+.cw-head-s{font-size:.72rem;opacity:.6}
+.cw-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;max-height:340px}
+.cw-msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.86rem;line-height:1.5;animation:cwFade .3s ease}
+.cw-msg.bot{background:var(--bg-soft);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+.cw-msg.usr{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.cw-msg .cw-ts{display:block;font-size:.64rem;opacity:.5;margin-top:4px}
+.cw-typing{align-self:flex-start;padding:10px 14px;background:var(--bg-soft);border-radius:14px;display:none;gap:4px}
+.cw-typing.show{display:flex}
+.cw-typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:cwDot .8s infinite}
+.cw-typing i:nth-child(2){animation-delay:.15s}
+.cw-typing i:nth-child(3){animation-delay:.3s}
+@keyframes cwDot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@keyframes cwFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cw-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+.cw-input input{flex:1;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.88rem;font-family:inherit;outline:none;color:var(--ink)}
+.cw-input input:focus{border-color:var(--ink)}
+.cw-input button{background:var(--ink);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-weight:700;font-size:.84rem;cursor:pointer}
+@media(max-width:600px){
+  .cw-box{right:12px;left:12px;width:auto;bottom:90px}
+  .cw-btn{bottom:80px;right:16px;width:52px;height:52px}
+  .cw-btn svg{width:24px;height:24px}
 }
 </style>
 </head>
@@ -713,12 +752,12 @@ footer small{font-size:.76rem;color:var(--faint)}
       <p class="sub">Every website is custom-built for the specific industry. Click any card to see the live site.</p>
     </div>
     <div class="port-grid stg">
-      <a class="port" href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener"><span class="em">&#127793;</span><h3>FreshCut Landscaping</h3><p>Professional lawn care, landscaping, mulching and tree trimming in Stafford and Fredericksburg, VA.</p><div class="chips"><span class="chip lv">&#9679; Live Client</span><span class="chip">Landscaping</span><span class="chip">Stafford, VA</span></div><span class="plink">Visit Live Site <span class="ar">&rarr;</span></span></a>
-      <a class="port" href="https://pepespartyrentall.com/" target="_blank" rel="noopener"><span class="em">&#127881;</span><h3>Pepe's Party Rental</h3><p>Bounce houses, tables, chairs, tents and party supplies for events across Stafford, VA.</p><div class="chips"><span class="chip lv">&#9679; Live Client</span><span class="chip">Party Rental</span><span class="chip">Stafford, VA</span></div><span class="plink">Visit Live Site <span class="ar">&rarr;</span></span></a>
-      <a class="port" href="https://kalnyesgrowth.com/portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener"><span class="em">&#128295;</span><h3>Ironflow Plumbing</h3><p>24/7 emergency plumbing, drain cleaning, water heater repair and installation in Stafford, VA.</p><div class="chips"><span class="chip">Plumbing</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
-      <a class="port" href="https://kalnyesgrowth.com/portfolio/patriot-electric/index.html" target="_blank" rel="noopener"><span class="em">&#9889;</span><h3>Patriot Electric VA</h3><p>Licensed electricians serving residential and commercial in Fredericksburg, VA. Safety first.</p><div class="chips"><span class="chip">Electrician</span><span class="chip">Fredericksburg, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
-      <a class="port" href="https://kalnyesgrowth.com/portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener"><span class="em">&#10052;</span><h3>AirCraft Heating and Cooling</h3><p>AC repair, furnace installation and seasonal maintenance plans in Stafford, VA.</p><div class="chips"><span class="chip">HVAC</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
-      <a class="port" href="https://kalnyesgrowth.com/portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener"><span class="em">&#127807;</span><h3>TerraForm Outdoor Design</h3><p>Landscape design, hardscaping, irrigation and seasonal maintenance in Stafford, VA.</p><div class="chips"><span class="chip">Landscaping</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://fresh-cut-landscape.com/" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/freshcut.png" alt="FreshCut Landscaping website" loading="lazy"><h3>FreshCut Landscaping</h3><p>Professional lawn care, landscaping, mulching and tree trimming in Stafford and Fredericksburg, VA.</p><div class="chips"><span class="chip lv">&#9679; Live Client</span><span class="chip">Landscaping</span><span class="chip">Stafford, VA</span></div><span class="plink">Visit Live Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://pepespartyrentall.com/" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/pepes.png" alt="Pepe's Party Rental website" loading="lazy"><h3>Pepe's Party Rental</h3><p>Bounce houses, tables, chairs, tents and party supplies for events across Stafford, VA.</p><div class="chips"><span class="chip lv">&#9679; Live Client</span><span class="chip">Party Rental</span><span class="chip">Stafford, VA</span></div><span class="plink">Visit Live Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://kalnyesgrowth.com/portfolio/stafford-plumbing/index.html" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/ironflow.png" alt="Ironflow Plumbing website" loading="lazy"><h3>Ironflow Plumbing</h3><p>24/7 emergency plumbing, drain cleaning, water heater repair and installation in Stafford, VA.</p><div class="chips"><span class="chip">Plumbing</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://kalnyesgrowth.com/portfolio/patriot-electric/index.html" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/patriot.png" alt="Patriot Electric VA website" loading="lazy"><h3>Patriot Electric VA</h3><p>Licensed electricians serving residential and commercial in Fredericksburg, VA. Safety first.</p><div class="chips"><span class="chip">Electrician</span><span class="chip">Fredericksburg, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://kalnyesgrowth.com/portfolio/blueridge-hvac/index.html" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/aircraft.png" alt="AirCraft Heating and Cooling website" loading="lazy"><h3>AirCraft Heating and Cooling</h3><p>AC repair, furnace installation and seasonal maintenance plans in Stafford, VA.</p><div class="chips"><span class="chip">HVAC</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
+      <a class="port" href="https://kalnyesgrowth.com/portfolio/greenvalley-landscaping/index.html" target="_blank" rel="noopener"><img class="port-img" src="img/portfolio/terraform.png" alt="TerraForm Outdoor Design website" loading="lazy"><h3>TerraForm Outdoor Design</h3><p>Landscape design, hardscaping, irrigation and seasonal maintenance in Stafford, VA.</p><div class="chips"><span class="chip">Landscaping</span><span class="chip">Stafford, VA</span></div><span class="plink">View Site <span class="ar">&rarr;</span></span></a>
     </div>
   </div>
 </section>
@@ -732,12 +771,12 @@ footer small{font-size:.76rem;color:var(--faint)}
       <p class="sub" style="margin:0 auto">Based on client project results</p>
     </div>
     <div class="t-grid stg">
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"They built my entire website before I paid anything. When I saw it, I couldn't believe it. Professional, fast, and exactly what my business needed. <b>The calls started coming in the first week.</b>"</blockquote><div class="twho"><span class="tav">MR</span><div><div class="nm">Mike R.</div><div class="rl">Contractor, Stafford VA</div></div></div></article>
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I had no online presence. No Google profile. No website. They set up everything in a week. <b>Now I show up on Google Maps and get 3-4 calls a week</b> from people who found me online."</blockquote><div class="twho"><span class="tav">CM</span><div><div class="nm">Carlos M.</div><div class="rl">HVAC Technician, Fredericksburg VA</div></div></div></article>
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. <b>That's trust.</b> I upgraded to the monthly plan after two months because the results were obvious."</blockquote><div class="twho"><span class="tav">LT</span><div><div class="nm">Lisa T.</div><div class="rl">Cleaning Service Owner, Woodbridge VA</div></div></div></article>
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. <b>I got 14 calls in the first month.</b>"</blockquote><div class="twho"><span class="tav">JD</span><div><div class="nm">James D.</div><div class="rl">Electrician, Spotsylvania VA</div></div></div></article>
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"My old website looked like it was from 2010. They rebuilt everything in two days and got my Google listing set up right. Now when people search for painters in Manassas, I actually show up. <b>Got 8 new calls the first month just from Google.</b>"</blockquote><div class="twho"><span class="tav">RS</span><div><div class="nm">Roberto S.</div><div class="rl">Painter, Manassas VA</div></div></div></article>
-      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. <b>Should have switched years ago.</b>"</blockquote><div class="twho"><span class="tav">DW</span><div><div class="nm">David W.</div><div class="rl">Plumber, Stafford VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"They built my entire website before I paid anything. When I saw it, I couldn't believe it. Professional, fast, and exactly what my business needed. <b>The calls started coming in the first week.</b>"</blockquote><div class="twho"><span class="tav"><img src="img/reviews/mike.jpg" alt="Mike R."></span><div><div class="nm">Mike R.</div><div class="rl">Contractor, Stafford VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I had no online presence. No Google profile. No website. They set up everything in a week. <b>Now I show up on Google Maps and get 3-4 calls a week</b> from people who found me online."</blockquote><div class="twho"><span class="tav"><img src="img/reviews/carlos.jpg" alt="Carlos M."></span><div><div class="nm">Carlos M.</div><div class="rl">HVAC Technician, Fredericksburg VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. <b>That's trust.</b> I upgraded to the monthly plan after two months because the results were obvious."</blockquote><div class="twho"><span class="tav"><img src="img/reviews/lisa.jpg" alt="Lisa T."></span><div><div class="nm">Lisa T.</div><div class="rl">Cleaning Service Owner, Woodbridge VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. <b>I got 14 calls in the first month.</b>"</blockquote><div class="twho"><span class="tav"><img src="img/reviews/james.jpg" alt="James D."></span><div><div class="nm">James D.</div><div class="rl">Electrician, Spotsylvania VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"My old website looked like it was from 2010. They rebuilt everything in two days and got my Google listing set up right. Now when people search for painters in Manassas, I actually show up. <b>Got 8 new calls the first month just from Google.</b>"</blockquote><div class="twho"><span class="tav"><img src="img/reviews/roberto.jpg" alt="Roberto S."></span><div><div class="nm">Roberto S.</div><div class="rl">Painter, Manassas VA</div></div></div></article>
+      <article class="tcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. <b>Should have switched years ago.</b>"</blockquote><div class="twho"><span class="tav"><img src="img/reviews/david.jpg" alt="David W."></span><div><div class="nm">David W.</div><div class="rl">Plumber, Stafford VA</div></div></div></article>
     </div>
   </div>
 </section>
@@ -1076,6 +1115,59 @@ document.querySelectorAll('.faq button').forEach(btn=>{
       result.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   });
+})();
+</script>
+<!-- CHAT WIDGET -->
+<button class="cw-btn" id="cwBtn" aria-label="Chat with AI">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg class="cw-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <span class="cw-pulse"></span>
+</button>
+<div class="cw-box" id="cwBox">
+  <div class="cw-head"><span class="cw-head-dot"></span><div><div class="cw-head-t">Kalnyes AI</div><div class="cw-head-s">Typically replies instantly</div></div></div>
+  <div class="cw-msgs" id="cwMsgs">
+    <div class="cw-msg bot">Hi! I'm the Kalnyes AI assistant. Ask me anything about our websites, AI agents, or pricing. <span class="cw-ts">AI Agent</span></div>
+  </div>
+  <div class="cw-typing" id="cwTyping"><i></i><i></i><i></i></div>
+  <div class="cw-input"><input type="text" id="cwIn" placeholder="Type a message..." autocomplete="off"><button id="cwSend">Send</button></div>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('cwBtn'),box=document.getElementById('cwBox'),msgs=document.getElementById('cwMsgs'),inp=document.getElementById('cwIn'),send=document.getElementById('cwSend'),typing=document.getElementById('cwTyping');
+  var answers={
+    'pricing':['Our website pricing is custom based on your business needs. AI agent bundles start at $497/mo (Core), $797/mo (Growth), or $997/mo (Scale). Book a free call and we\'ll give you an exact quote.','AI Agent'],
+    'website':['We build custom, conversion-optimized websites for local businesses. Every site is mobile-first, SEO-ready, and designed to get your phone ringing. We build a free demo before you pay anything.','AI Agent'],
+    'ai':['Our AI agents handle calls, texts, reviews, webchat, CRM, payments, and follow-ups 24/7. They respond in seconds so you never lose a lead. Want to see a live demo?','AI Agent'],
+    'demo':['We build a complete demo website using your real business info within 48 hours of our discovery call. You see it, approve it, then decide. $0 until you say yes.','AI Agent'],
+    'call':['You can book a free 15-minute discovery call right on this page. Scroll down to the booking section, or I can take you there. No sales pressure, just a conversation about your business.','AI Agent'],
+    'default':['Great question! I can help with info about our websites, AI agents, pricing, or the free demo process. For anything specific, book a free discovery call and our team will walk you through everything.','AI Agent']
+  };
+  function match(t){
+    t=t.toLowerCase();
+    if(/pric|cost|how much|bundle|plan/.test(t))return answers.pricing;
+    if(/website|site|build|design|seo/.test(t))return answers.website;
+    if(/ai|agent|bot|automat|recept|call/.test(t))return answers.ai;
+    if(/demo|free|preview|try/.test(t))return answers.demo;
+    if(/book|call|meet|schedul|calendly/.test(t))return answers.call;
+    return answers['default'];
+  }
+  function addMsg(text,cls,label){
+    var d=document.createElement('div');d.className='cw-msg '+cls;
+    d.innerHTML=text+(label?'<span class="cw-ts">'+label+'</span>':'');
+    msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+  }
+  function respond(text){
+    var a=match(text);
+    typing.classList.add('show');msgs.scrollTop=msgs.scrollHeight;
+    setTimeout(function(){typing.classList.remove('show');addMsg(a[0],'bot',a[1])},800+Math.random()*600);
+  }
+  function handleSend(){
+    var v=inp.value.trim();if(!v)return;
+    addMsg(v,'usr');inp.value='';respond(v);
+  }
+  btn.addEventListener('click',function(){btn.classList.toggle('open');box.classList.toggle('open');if(box.classList.contains('open'))inp.focus()});
+  send.addEventListener('click',handleSend);
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')handleSend()});
 })();
 </script>
 <script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
