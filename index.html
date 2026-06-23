@@ -67,9 +67,15 @@ nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(26,26,26,.05)}
 .nav-links a{font-size:.9rem;font-weight:600;color:var(--body);transition:color .2s}
 .nav-links a:not(.btn):hover{color:var(--ink)}
 .nav-cta{padding:10px 18px;font-size:.86rem}
-.nav-lang{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--muted);border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;transition:border-color .2s,color .2s}
+.nav-lang{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--muted);border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;transition:border-color .2s,color .2s;cursor:pointer;position:relative;user-select:none}
 .nav-lang:hover{border-color:var(--ink);color:var(--ink)}
 .nav-lang svg{opacity:.6}
+.lang-dd{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;min-width:150px;z-index:101}
+.lang-dd.open{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:.86rem;font-weight:600;color:var(--body);cursor:pointer;transition:background .15s}
+.lang-opt:hover{background:var(--bg-soft)}
+.lang-opt.active{color:var(--ink);font-weight:700}
+.lang-opt.active::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);margin-left:auto}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .burger span{width:22px;height:2px;background:var(--ink)}
 .mmenu{display:none;position:fixed;inset:70px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:22px;z-index:99;flex-direction:column;gap:16px;box-shadow:0 20px 40px rgba(26,26,26,.08)}
@@ -417,7 +423,7 @@ footer small{font-size:.76rem;color:var(--faint)}
       <a href="#pricing">Pricing</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#faq">FAQ</a>
-      <a href="/es/" class="nav-lang" aria-label="Cambiar a Espanol"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> ES</a>
+      <div class="nav-lang" id="langToggle" aria-label="Select language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span id="langLabel">EN</span><div class="lang-dd" id="langDd"><div class="lang-opt active" data-lang="en">English</div><div class="lang-opt" data-lang="es">Espanol</div></div></div>
       <a href="#book-call" class="btn btn-dark nav-cta">Book Free Discovery Call</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -425,7 +431,7 @@ footer small{font-size:.76rem;color:var(--faint)}
 </nav>
 <div class="mmenu" id="mmenu">
   <a href="#websites">Websites</a><a href="agents.html">AI Agents</a><a href="#pricing">Pricing</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a>
-  <a href="/es/" class="nav-lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Espanol</a>
+  <div class="nav-lang" id="langToggleMob" aria-label="Select language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span id="langLabelMob">EN</span><div class="lang-dd" id="langDdMob"><div class="lang-opt active" data-lang="en">English</div><div class="lang-opt" data-lang="es">Espanol</div></div></div>
   <a href="#book-call" class="btn btn-dark">Book Free Discovery Call</a>
 </div>
 
@@ -1232,7 +1238,7 @@ document.querySelectorAll('.faq button').forEach(btn=>{
     msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
   }
 
-  var NAV_BTNS={'See Pricing Details':'pricing','See Our Portfolio':'portfolio','See Examples':'portfolio','Ver en Espanol':'/es/','Message on WhatsApp':'wa','Agendar Llamada':'book','Book a Free Call':'book','Book My Free Demo Call':'book'};
+  var NAV_BTNS={'See Pricing Details':'pricing','See Our Portfolio':'portfolio','See Examples':'portfolio','Ver en Espanol':'lang-es','Message on WhatsApp':'wa','Agendar Llamada':'book','Book a Free Call':'book','Book My Free Demo Call':'book'};
 
   function showButtons(btns){
     qrWrap.innerHTML='';
@@ -1245,7 +1251,7 @@ document.querySelectorAll('.faq button').forEach(btn=>{
         addMsg(label,'usr');
         qrWrap.innerHTML='';
         var nav=NAV_BTNS[label];
-        if(nav==='/es/'){window.location.href='/es/';return}
+        if(nav==='lang-es'){if(window.kgSetLang)window.kgSetLang('es');return}
         if(nav==='wa'){window.open('https://wa.me/'+PHONE+'?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services','_blank');return}
         if(nav==='book'){doAction('book');return}
         if(nav){var el=document.getElementById(nav);if(el){btn.classList.remove('open');box.classList.remove('open');el.scrollIntoView({behavior:'smooth'});return}}
@@ -1317,5 +1323,557 @@ document.querySelectorAll('.faq button').forEach(btn=>{
 })();
 </script>
 <script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
+<script>
+(function(){
+  var T={
+    // NAV
+    'nav-websites':['Websites','Sitios Web'],
+    'nav-agents':['AI Agents','Agentes IA'],
+    'nav-pricing':['Pricing','Precios'],
+    'nav-portfolio':['Portfolio','Portafolio'],
+    'nav-faq':['FAQ','Preguntas'],
+    'nav-cta':['Book Free Discovery Call','Reserve Su Llamada Gratis'],
+
+    // HERO
+    'hero-badge':['Serving Local Businesses Across the US','Sirviendo a Negocios Locales en Todo EE.UU.'],
+    'hero-h1':['Custom Websites + AI Agents That Run Your Business 24/7','Sitios Web + Agentes IA Que Manejan Su Negocio 24/7'],
+    'hero-sub':['We build high-converting websites for local businesses. Then we deploy AI agents that answer your calls, follow up on leads, manage reviews, and book appointments. While you sleep.','Construimos sitios web de alta conversion para negocios locales. Luego implementamos agentes IA que contestan sus llamadas, dan seguimiento a clientes potenciales, manejan resenas y agendan citas. Mientras usted duerme.'],
+    'hero-ck1':['Custom websites built for your specific industry','Sitios web personalizados para su industria'],
+    'hero-ck2':['AI agents that answer calls and book jobs 24/7','Agentes IA que contestan llamadas y agendan trabajos 24/7'],
+    'hero-ck3':['Reviews, webchat, CRM, payments. All automated.','Resenas, chat web, CRM, pagos. Todo automatizado.'],
+    'hero-ck4':['See a free demo before you pay anything','Vea una demo gratis antes de pagar'],
+    'hero-cta1':['Book Free Discovery Call','Reserve Su Llamada Gratis'],
+    'hero-cta2':['See AI Agents','Ver Agentes IA'],
+    'hero-social':['Trusted by local businesses in Stafford, Fredericksburg, Manassas, and beyond.','Confiado por negocios locales en Stafford, Fredericksburg, Manassas y mas.'],
+
+    // PHONE WIDGET
+    'phone-title':['Your AI Receptionist','Su Recepcionista IA'],
+    'phone-pb1':['Hi, I need a quote for drain cleaning. Are you available today?','Hola, necesito una cotizacion para limpieza de drenaje. Estan disponibles hoy?'],
+    'phone-pb2a':['Hi! Yes, we have availability today. Can I ask what type of drain issue you\'re experiencing?','Hola! Si, tenemos disponibilidad hoy. Puedo preguntar que tipo de problema de drenaje tiene?'],
+    'phone-pb3':['Kitchen sink is backed up. Water won\'t drain at all.','El fregadero de la cocina esta tapado. El agua no drena.'],
+    'phone-pb4a':['Got it. Kitchen drain backup. We have a 2:30 PM slot today. The diagnostic is $79. Want me to lock that in for you?','Entendido. Drenaje de cocina tapado. Tenemos un espacio a las 2:30 PM hoy. El diagnostico es $79. Quiere que se lo reserve?'],
+    'phone-pb5':['Yes, book it.','Si, reservelo.'],
+    'phone-typing':['AI is typing...','IA escribiendo...'],
+    'phone-sms':['Appointment booked for 2:30 PM. You wake up to a full calendar.','Cita agendada para las 2:30 PM. Usted despierta con el calendario lleno.'],
+
+    // PROBLEM
+    'prob-tag':['The Problem','El Problema'],
+    'prob-h2':['You\'re Losing Customers While You\'re on the Job','Esta Perdiendo Clientes Mientras Trabaja'],
+    'prob-sub':['Every missed call, slow response, and invisible Google listing is money walking out the door. Most local businesses don\'t have the time, staff, or tech to fix it. That\'s where we come in.','Cada llamada perdida, respuesta lenta y perfil invisible en Google es dinero que se va. La mayoria de negocios locales no tienen el tiempo, personal o tecnologia para arreglarlo. Ahi es donde entramos nosotros.'],
+    'prob-c1h':['of calls to local businesses go unanswered','de llamadas a negocios locales no se contestan'],
+    'prob-c1p':['You\'re on a job site. A customer calls. Nobody picks up. They call your competitor instead. That customer is gone forever. An AI receptionist picks up every single call, day or night.','Usted esta en un trabajo. Un cliente llama. Nadie contesta. Llaman a su competencia. Ese cliente se fue para siempre. Un recepcionista IA contesta cada llamada, dia y noche.'],
+    'prob-c2h':['of "near me" searches lead to a visit within 24 hours','de busquedas "cerca de mi" resultan en una visita en 24 horas'],
+    'prob-c2p':['When someone searches "plumber near me" or "HVAC repair Stafford," they\'re ready to buy. If your business doesn\'t show up, you don\'t exist. A custom website with local SEO changes that.','Cuando alguien busca "plomero cerca de mi" o "reparacion HVAC Stafford," estan listos para comprar. Si su negocio no aparece, no existe. Un sitio web con SEO local cambia eso.'],
+    'prob-c3h':['is the window before a lead goes cold','es la ventana antes de que un cliente potencial se enfrie'],
+    'prob-c3p':['Businesses that respond within 5 minutes are 100x more likely to close the deal. AI responds in seconds, not hours. Your competitor responds tomorrow. You win.','Los negocios que responden en 5 minutos tienen 100x mas probabilidad de cerrar. La IA responde en segundos, no horas. Su competencia responde manana. Usted gana.'],
+
+    // WEBSITES
+    'web-tag':['Service 1','Servicio 1'],
+    'web-h2':['Custom Websites Built for Your Industry','Sitios Web Personalizados Para Su Industria'],
+    'web-sub':['Not a template. Not a Wix site. A custom-built, conversion-optimized website paired with full Google Business Profile setup. Every element designed to turn a Google search into a phone call.','No es una plantilla. No es un sitio de Wix. Un sitio web personalizado, optimizado para conversiones, con configuracion completa de Google Business Profile. Cada elemento disenado para convertir una busqueda de Google en una llamada.'],
+    'web-bh':['Built to Get You Customers','Construido Para Conseguirle Clientes'],
+    'web-bp':['Every website we build is designed for one thing: getting your phone to ring. Custom design for your industry, SEO that ranks you locally, and a Google presence that makes customers trust you before they even call.','Cada sitio web que construimos esta disenado para una cosa: hacer que su telefono suene. Diseno personalizado para su industria, SEO que lo posiciona localmente, y una presencia en Google que genera confianza antes de que llamen.'],
+    'web-f1':['Custom website designed for your specific industry','Sitio web personalizado para su industria especifica'],
+    'web-f2':['Mobile-first, loads in under 2 seconds','Movil primero, carga en menos de 2 segundos'],
+    'web-f3':['SEO architecture built to rank locally','Arquitectura SEO construida para posicionar localmente'],
+    'web-f4':['Click-to-call, booking forms, live chat ready','Clic para llamar, formularios de reserva, chat en vivo'],
+    'web-f5':['Google Business Profile fully set up and optimized','Google Business Profile completamente configurado y optimizado'],
+    'web-f6':['Listed on major directories (Yelp, Facebook, BBB, and more)','Listado en directorios principales (Yelp, Facebook, BBB y mas)'],
+    'web-f7':['Review showcase that builds instant trust','Exhibicion de resenas que genera confianza instantanea'],
+    'web-f8':['Free demo website built for YOUR business before you pay','Demo gratis construida para SU negocio antes de pagar'],
+    'web-note':['Pricing depends on your business needs. Book a call and we\'ll build you a free demo in 48 hours.','El precio depende de las necesidades de su negocio. Agende una llamada y le construiremos una demo gratis en 48 horas.'],
+
+    // AI AGENTS
+    'ag-tag':['Service 2','Servicio 2'],
+    'ag-h2':['AI Agents That Work for You 24/7','Agentes IA Que Trabajan Para Usted 24/7'],
+    'ag-sub':['Think of them as digital employees that never sleep, never call in sick, and never miss a customer. Each agent handles a specific part of your business. Pick the ones you need, or bundle them all.','Piense en ellos como empleados digitales que nunca duermen, nunca faltan y nunca pierden un cliente. Cada agente maneja una parte especifica de su negocio. Elija los que necesite, o agrupe todos.'],
+    'ag-pop':['Most Popular','Mas Popular'],
+    'ag1-h':['AI Voice Receptionist','Recepcionista de Voz IA'],
+    'ag1-p':['Answers every call 24/7 with a human-like voice. Handles questions about your services, pricing, and availability. Books appointments directly into your calendar.','Contesta cada llamada 24/7 con voz humana. Responde preguntas sobre sus servicios, precios y disponibilidad. Agenda citas directamente en su calendario.'],
+    'ag2-h':['Missed-Call Text Back','Texto Automatico por Llamada Perdida'],
+    'ag2-p':['When you can\'t answer, AI instantly texts the caller back within seconds. Answers their questions, qualifies the lead, and books them. No customer lost.','Cuando no puede contestar, la IA envia un mensaje al instante. Responde sus preguntas, califica al cliente y lo agenda. Ningun cliente perdido.'],
+    'ag3-h':['Reviews Automation','Automatizacion de Resenas'],
+    'ag3-p':['Automatically requests reviews after every job. Responds to Google and Facebook reviews same-day. Builds your 5-star reputation on autopilot.','Solicita resenas automaticamente despues de cada trabajo. Responde a resenas de Google y Facebook el mismo dia. Construye su reputacion de 5 estrellas en piloto automatico.'],
+    'ag4-h':['AI Webchat Widget','Widget de Chat Web IA'],
+    'ag4-p':['Lives on your website. Answers visitor questions instantly, captures lead info, and books appointments. Turns browsers into buyers 24/7.','Vive en su sitio web. Responde preguntas de visitantes al instante, captura informacion y agenda citas. Convierte visitantes en clientes 24/7.'],
+    'ag5-h':['Unified Messaging Inbox','Bandeja de Mensajes Unificada'],
+    'ag5-p':['One inbox for text, email, Facebook, Instagram, and Google messages. AI drafts responses. You approve or let it handle everything automatically.','Una bandeja para textos, email, Facebook, Instagram y mensajes de Google. La IA redacta respuestas. Usted aprueba o deja que lo maneje todo automaticamente.'],
+    'ag6-h':['Smart CRM + Pipelines','CRM Inteligente + Embudos'],
+    'ag6-p':['Track every lead from first touch to closed job. See where every customer came from, what stage they\'re in, and what\'s converting. AI-powered follow-up sequences built in.','Rastree cada cliente desde el primer contacto hasta el trabajo cerrado. Vea de donde vino cada cliente, en que etapa esta y que convierte. Secuencias de seguimiento con IA incluidas.'],
+    'ag7-h':['Smart Payments','Pagos Inteligentes'],
+    'ag7-p':['Send invoices via text. Customers pay in one tap. Automated payment reminders. Track everything in one dashboard. Get paid faster.','Envie facturas por texto. Los clientes pagan con un toque. Recordatorios automaticos de pago. Rastree todo en un panel. Cobre mas rapido.'],
+    'ag-bundle':['Or save up to 54% with a bundle.','O ahorre hasta un 54% con un paquete.'],
+    'ag-det':['See Full Agent Details','Ver Detalles de Agentes'],
+    'ag-pr':['See Bundle Pricing','Ver Precios de Paquetes'],
+
+    // HOW IT WORKS
+    'how-tag':['How It Works','Como Funciona'],
+    'how-h2':['From Zero to AI-Powered in 4 Steps','De Cero a IA en 4 Pasos'],
+    'how-1h':['Discovery Call','Llamada de Descubrimiento'],
+    'how-1p':['15 minutes. We learn your business, your services, and your biggest pain points. No pitch, no pressure.','15 minutos. Aprendemos sobre su negocio, sus servicios y sus mayores desafios. Sin presion.'],
+    'how-2h':['Free Demo','Demo Gratis'],
+    'how-2p':['Within 48 hours, we build a working demo website using your real business info. You see it live before you decide.','En 48 horas, construimos un sitio web demo usando la informacion real de su negocio. Lo ve en vivo antes de decidir.'],
+    'how-3h':['Launch','Lanzamiento'],
+    'how-3p':['You approve the website. We deploy your AI agents. Configure them for your services, hours, and pricing. Go live.','Usted aprueba el sitio web. Implementamos sus agentes IA. Los configuramos para sus servicios, horarios y precios. Salen en vivo.'],
+    'how-4h':['Grow','Crecer'],
+    'how-4p':['Your website attracts customers. AI handles calls, leads, reviews, and bookings. You focus on the work. We handle the rest.','Su sitio web atrae clientes. La IA maneja llamadas, clientes potenciales, resenas y reservas. Usted se enfoca en el trabajo. Nosotros manejamos el resto.'],
+
+    // BOT SCENE
+    'bot-tag':['See It In Action','Vealo en Accion'],
+    'bot-h':['Your AI Team, Handling Everything','Su Equipo IA, Manejandolo Todo'],
+    'bot-p':['A customer calls at 8pm. Your AI receptionist picks up, answers their questions, and books them for Tuesday morning. Another lead fills out a form at midnight. AI responds in 30 seconds, qualifies them, and schedules a callback. A Google review comes in. AI responds professionally within the hour. You did none of this.','Un cliente llama a las 8pm. Su recepcionista IA contesta, responde sus preguntas y los agenda para el martes. Otro cliente llena un formulario a medianoche. La IA responde en 30 segundos, los califica y agenda una devolucion de llamada. Llega una resena de Google. La IA responde profesionalmente en una hora. Usted no hizo nada de esto.'],
+    'bot-math-t':['The math is simple:','Las matematicas son simples:'],
+    'bot-math-p':['3 missed calls/day x $200 average job value x 20 business days = ','3 llamadas perdidas/dia x $200 valor promedio x 20 dias habiles = '],
+    'bot-math-b':['$12,000/month in lost revenue.','$12,000/mes en ingresos perdidos.'],
+    'bot-math-end':[' Your AI bundle costs a fraction of that.',' Su paquete de IA cuesta una fraccion de eso.'],
+
+    // PRICING
+    'pr-tag':['Pricing','Precios'],
+    'pr-h2':['AI Agent Bundles. Save Up to 54%.','Paquetes de Agentes IA. Ahorre Hasta 54%.'],
+    'pr-sub':['Pick individual agents or bundle them for the best value. Website pricing is custom based on your business. Book a call to get a free demo and a quote.','Elija agentes individuales o agrupe para el mejor valor. El precio del sitio web es personalizado. Agende una llamada para una demo gratis y cotizacion.'],
+    'pr-core-h':['Core','Core'],
+    'pr-core-d':['Your front line. AI answers calls, texts back missed calls, and chats with website visitors.','Su primera linea. La IA contesta llamadas, responde mensajes de llamadas perdidas y chatea con visitantes del sitio web.'],
+    'pr-core-r':['Individual total: $791/mo','Total individual: $791/mes'],
+    'pr-core-s':['Save $294/mo (37%)','Ahorre $294/mes (37%)'],
+    'pr-c1':['AI Voice Receptionist (24/7 call answering)','Recepcionista de Voz IA (llamadas 24/7)'],
+    'pr-c2':['Missed-Call Text Back (instant follow-up)','Texto por Llamada Perdida (seguimiento instantaneo)'],
+    'pr-c3':['AI Webchat Widget (website lead capture)','Widget de Chat Web IA (captura de clientes)'],
+    'pr-c4':['Basic reporting dashboard','Panel de reportes basico'],
+    'pr-c5':['Cancel anytime. No contracts.','Cancele cuando quiera. Sin contratos.'],
+    'pr-growth-h':['Growth','Growth'],
+    'pr-growth-d':['Full customer management. AI handles calls, leads, reviews, messages, and tracks everything in your CRM.','Gestion completa de clientes. La IA maneja llamadas, clientes potenciales, resenas, mensajes y rastrea todo en su CRM.'],
+    'pr-growth-r':['Individual total: $1,582/mo','Total individual: $1,582/mes'],
+    'pr-growth-s':['Save $785/mo (50%)','Ahorre $785/mes (50%)'],
+    'pr-g1':['Everything in Core, plus:','Todo en Core, mas:'],
+    'pr-g2':['Reviews Automation (request + respond)','Automatizacion de Resenas (solicitar + responder)'],
+    'pr-g3':['Unified Messaging Inbox (all platforms)','Bandeja de Mensajes Unificada (todas las plataformas)'],
+    'pr-g4':['Smart CRM + Pipelines (lead tracking)','CRM Inteligente + Embudos (seguimiento de clientes)'],
+    'pr-g5':['AI follow-up sequences (email + text)','Secuencias de seguimiento IA (email + texto)'],
+    'pr-g6':['Monthly performance report','Reporte de rendimiento mensual'],
+    'pr-g7':['Priority support','Soporte prioritario'],
+    'pr-scale-h':['Scale','Scale'],
+    'pr-scale-d':['Your entire business on autopilot. Every agent, every feature, plus content creation and weekly strategy calls.','Todo su negocio en piloto automatico. Cada agente, cada funcion, mas creacion de contenido y llamadas de estrategia semanales.'],
+    'pr-scale-r':['Individual total: $1,729/mo + extras','Total individual: $1,729/mes + extras'],
+    'pr-scale-s':['Save 54% vs individual','Ahorre 54% vs individual'],
+    'pr-s1':['Everything in Growth, plus:','Todo en Growth, mas:'],
+    'pr-s2':['Smart Payments (text-to-pay invoicing)','Pagos Inteligentes (facturacion por texto)'],
+    'pr-s3':['AI content creation (social media posts)','Creacion de contenido IA (publicaciones en redes)'],
+    'pr-s4':['AI replies to DMs and comments (IG + FB)','IA responde a DMs y comentarios (IG + FB)'],
+    'pr-s5':['Google Business Profile posts + updates','Publicaciones y actualizaciones de Google Business Profile'],
+    'pr-s6':['Weekly strategy calls','Llamadas de estrategia semanales'],
+    'pr-s7':['Competitor monitoring','Monitoreo de competencia'],
+    'pr-webquote':['+ Custom website quoted separately','+ Sitio web cotizado por separado'],
+    'pr-a1h':['1. See Your Website Free','1. Vea Su Sitio Web Gratis'],
+    'pr-a1p':['We build a complete demo using your real business info. You see it live. Don\'t love it? $0.','Construimos una demo completa con su informacion real. Lo ve en vivo. No le encanta? $0.'],
+    'pr-a2h':['2. Cancel Anytime','2. Cancele Cuando Quiera'],
+    'pr-a2p':['Monthly plans cancel with one message. No annual commitments. No cancellation fees. No retention calls.','Los planes mensuales se cancelan con un mensaje. Sin compromisos anuales. Sin cargos de cancelacion. Sin llamadas de retencion.'],
+    'pr-a3h':['3. You Own Your Website','3. Usted Es Dueno de Su Sitio Web'],
+    'pr-a3p':['If you cancel, you keep your website forever. The AI services stop, but the foundation remains yours.','Si cancela, conserva su sitio web para siempre. Los servicios de IA se detienen, pero la base sigue siendo suya.'],
+
+    // PORTFOLIO
+    'port-tag':['Our Work','Nuestro Trabajo'],
+    'port-h2':['Real Websites. Real Businesses. Real Results.','Sitios Web Reales. Negocios Reales. Resultados Reales.'],
+    'port-sub':['Every website is custom-built for the specific industry. Click any card to see the live site.','Cada sitio web esta hecho a medida para la industria. Haga clic en cualquier tarjeta para ver el sitio en vivo.'],
+    'port-live':['Live Client','Cliente Activo'],
+    'port-visit':['Visit Live Site','Visitar Sitio en Vivo'],
+    'port-view':['View Site','Ver Sitio'],
+
+    // REVIEWS
+    'rev-tag':['Client Reviews','Resenas de Clientes'],
+    'rev-sub':['Based on client project results','Basado en resultados de proyectos'],
+    'rev1':['They built my entire website before I paid anything. When I saw it, I couldn\'t believe it. Professional, fast, and exactly what my business needed. <b>The calls started coming in the first week.</b>','Construyeron todo mi sitio web antes de pagar nada. Cuando lo vi, no podia creerlo. Profesional, rapido y exactamente lo que mi negocio necesitaba. <b>Las llamadas empezaron a llegar la primera semana.</b>'],
+    'rev1-r':['Contractor, Stafford VA','Contratista, Stafford VA'],
+    'rev2':['I had no online presence. No Google profile. No website. They set up everything in a week. <b>Now I show up on Google Maps and get 3-4 calls a week</b> from people who found me online.','No tenia presencia en linea. Sin perfil de Google. Sin sitio web. Configuraron todo en una semana. <b>Ahora aparezco en Google Maps y recibo 3-4 llamadas por semana</b> de personas que me encontraron en linea.'],
+    'rev2-r':['HVAC Technician, Fredericksburg VA','Tecnico HVAC, Fredericksburg VA'],
+    'rev3':['The preview-first model removed all my fear. I saw my actual website with my real reviews before I spent a cent. <b>That\'s trust.</b> I upgraded to the monthly plan after two months because the results were obvious.','El modelo de vista previa elimino todo mi miedo. Vi mi sitio web real con mis resenas reales antes de gastar un centavo. <b>Eso es confianza.</b> Me pase al plan mensual despues de dos meses porque los resultados eran obvios.'],
+    'rev3-r':['Cleaning Service Owner, Woodbridge VA','Duena de Servicio de Limpieza, Woodbridge VA'],
+    'rev4':['Other agencies wanted $5,000-$8,000 with no guarantee. Kalnyes built something better AND guaranteed results. My site ranks on the first page for my service area. <b>I got 14 calls in the first month.</b>','Otras agencias pedian $5,000-$8,000 sin garantia. Kalnyes construyo algo mejor Y garantizo resultados. Mi sitio aparece en la primera pagina para mi area de servicio. <b>Recibi 14 llamadas en el primer mes.</b>'],
+    'rev4-r':['Electrician, Spotsylvania VA','Electricista, Spotsylvania VA'],
+    'rev5':['My old website looked like it was from 2010. They rebuilt everything in two days and got my Google listing set up right. Now when people search for painters in Manassas, I actually show up. <b>Got 8 new calls the first month just from Google.</b>','Mi antiguo sitio web parecia de 2010. Reconstruyeron todo en dos dias y configuraron bien mi perfil de Google. Ahora cuando la gente busca pintores en Manassas, realmente aparezco. <b>Recibi 8 llamadas nuevas el primer mes solo de Google.</b>'],
+    'rev5-r':['Painter, Manassas VA','Pintor, Manassas VA'],
+    'rev6':['I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. <b>Should have switched years ago.</b>','Pagaba a otra empresa $500/mes por basicamente nada. Cambie a Kalnyes y obtuve un mejor sitio web, presencia real en Google y clientes reales. <b>Deberia haber cambiado hace anos.</b>'],
+    'rev6-r':['Plumber, Stafford VA','Plomero, Stafford VA'],
+
+    // SEO AUDIT
+    'seo-tag':['Free Tool','Herramienta Gratis'],
+    'seo-h2':['How Does Your Website Score?','Como Puntua Su Sitio Web?'],
+    'seo-sub':['Enter your website URL and we\'ll analyze your SEO, speed, and mobile performance. Get a detailed report sent straight to your inbox.','Ingrese la URL de su sitio web y analizaremos su SEO, velocidad y rendimiento movil. Reciba un reporte detallado directo a su correo.'],
+    'seo-l1':['Your website URL','URL de su sitio web'],
+    'seo-l2':['Email for your report','Email para su reporte'],
+    'seo-l3':['Your name','Su nombre'],
+    'seo-btn':['Analyze My Website','Analizar Mi Sitio Web'],
+    'seo-note':['100% free. No credit card. Report delivered in under 24 hours.','100% gratis. Sin tarjeta de credito. Reporte entregado en menos de 24 horas.'],
+
+    // WHY AI
+    'why-tag':['Why AI','Por Que IA'],
+    'why-h2':['The Numbers Don\'t Lie. AI Wins Every Time.','Los Numeros No Mienten. La IA Gana Siempre.'],
+    'why-c1h':['of small businesses plan to adopt AI tools by 2027','de pequenos negocios planean adoptar herramientas de IA para 2027'],
+    'why-c1p':['AI isn\'t coming. It\'s here. The businesses using it right now are answering calls faster, following up automatically, and booking more jobs. The rest are falling behind.','La IA no viene. Ya esta aqui. Los negocios que la usan ahora contestan llamadas mas rapido, dan seguimiento automatico y agendan mas trabajos. El resto se esta quedando atras.'],
+    'why-c2h':['reduction in operational costs for businesses using AI agents','reduccion en costos operativos para negocios usando agentes IA'],
+    'why-c2p':['An AI receptionist costs a fraction of a human one. An AI follow-up system never forgets a lead. Better results, lower costs, zero drama.','Un recepcionista IA cuesta una fraccion de uno humano. Un sistema de seguimiento IA nunca olvida un cliente. Mejores resultados, menores costos, cero drama.'],
+    'why-c3h':['more likely to close a lead when you respond in under 5 minutes','mas probabilidad de cerrar un cliente cuando responde en menos de 5 minutos'],
+    'why-c3p':['AI responds in seconds. Your competitor responds in hours. You win the customer. Simple math.','La IA responde en segundos. Su competencia responde en horas. Usted gana el cliente. Matematica simple.'],
+
+    // BOOK CALL
+    'book-tag':['Book Your Call','Agende Su Llamada'],
+    'book-h2':['See Your Free Demo Website in 48 Hours','Vea Su Sitio Web Demo Gratis en 48 Horas'],
+    'book-sub':['Pick a time. 15 minutes. We\'ll learn about your business, and within 48 hours we\'ll build you a free demo website using your real business info. You see it, you approve it, then you decide.','Elija un horario. 15 minutos. Aprendemos sobre su negocio, y en 48 horas le construimos un sitio web demo gratis con su informacion real. Lo ve, lo aprueba, luego decide.'],
+    'book-wh':['What Happens on the Call','Que Pasa en la Llamada'],
+    'book-wp':['This isn\'t a sales call. It\'s a free discovery session.','No es una llamada de ventas. Es una sesion de descubrimiento gratuita.'],
+    'book-l1':['We learn about your business, services, and goals','Aprendemos sobre su negocio, servicios y metas'],
+    'book-l2':['We Google your business live and show you what customers see','Buscamos su negocio en Google en vivo y le mostramos lo que ven los clientes'],
+    'book-l3':['We identify which AI agents would save you the most time and money','Identificamos cuales agentes IA le ahorrarian mas tiempo y dinero'],
+    'book-l4':['We explain exactly what your system would look like and cost','Explicamos exactamente como se veria su sistema y cuanto costaria'],
+    'book-l5':['Within 48 hours, you see a live demo built for YOUR business','En 48 horas, ve una demo en vivo construida para SU negocio'],
+    'book-l6':['You decide if you want to move forward. No pressure either way.','Usted decide si quiere avanzar. Sin presion.'],
+    'book-wa-note':['Or message us on WhatsApp','O escribanos por WhatsApp'],
+    'book-wa-btn':['Chat on WhatsApp','Chatear por WhatsApp'],
+
+    // GUARANTEE
+    'guar-tag':['Zero Risk. Guaranteed.','Cero Riesgo. Garantizado.'],
+    'guar-h2':['We build your demo website for free. You approve it before you pay.','Construimos su sitio web demo gratis. Usted lo aprueba antes de pagar.'],
+    'guar-p':['We design a custom demo website using your real business info. You see it live. If you love it, we move forward. If not, you walk away and owe nothing. For monthly AI agent plans, cancel anytime with one message. No contracts. No tricks.','Disenamos un sitio web demo personalizado con su informacion real. Lo ve en vivo. Si le encanta, avanzamos. Si no, se va y no debe nada. Para planes mensuales de agentes IA, cancele cuando quiera con un mensaje. Sin contratos. Sin trucos.'],
+    'guar-n1l':['Until you approve your website','Hasta que apruebe su sitio web'],
+    'guar-n2l':['Free demo website delivered','Sitio web demo gratis entregado'],
+    'guar-n3l':['Contracts or commitments','Contratos o compromisos'],
+    'guar-cta':['Book Your Free Discovery Call','Reserve Su Llamada Gratis'],
+    'guar-quote':['"We take the risk so you don\'t have to."','"Nosotros tomamos el riesgo para que usted no tenga que hacerlo."'],
+
+    // FAQ
+    'faq-tag':['Common Questions','Preguntas Comunes'],
+    'faq-h2':['Frequently Asked Questions','Preguntas Frecuentes'],
+    'faq1q':['What does "free demo website" mean?','Que significa "sitio web demo gratis"?'],
+    'faq1a':['We build a complete working demo website using your real business info, services, reviews, photos, and contact details. You see it live with your actual brand. If you love it, we move forward and you pay. If not, you walk away and owe nothing.','Construimos un sitio web demo completo usando su informacion real, servicios, resenas, fotos y datos de contacto. Lo ve en vivo con su marca real. Si le encanta, avanzamos y paga. Si no, se va y no debe nada.'],
+    'faq2q':['What are AI agents?','Que son los agentes IA?'],
+    'faq2a':['Think of them as digital employees that work 24/7. An AI Voice Receptionist answers your calls when you can\'t, gives customers info about your services, and books appointments. A Missed-Call Text Back agent follows up instantly when you miss a call. A Reviews agent requests and responds to reviews automatically. They\'re not generic chatbots. They\'re trained on YOUR business.','Piense en ellos como empleados digitales que trabajan 24/7. Un Recepcionista de Voz IA contesta sus llamadas cuando usted no puede, da informacion sobre sus servicios y agenda citas. Un agente de Texto por Llamada Perdida da seguimiento instantaneo cuando pierde una llamada. Un agente de Resenas solicita y responde resenas automaticamente. No son chatbots genericos. Estan entrenados en SU negocio.'],
+    'faq3q':['Can I pick individual agents or do I need a bundle?','Puedo elegir agentes individuales o necesito un paquete?'],
+    'faq3a':['Both options are available. You can pick any individual agent at its listed price, or save up to 54% by choosing a bundle. Most businesses start with the Core bundle (AI Receptionist + Missed-Call Text Back + Webchat) and upgrade as they see results.','Ambas opciones estan disponibles. Puede elegir cualquier agente individual a su precio listado, o ahorrar hasta 54% eligiendo un paquete. La mayoria de negocios empiezan con el paquete Core (Recepcionista IA + Texto por Llamada Perdida + Webchat) y mejoran al ver resultados.'],
+    'faq4q':['Do I need to be tech-savvy?','Necesito saber de tecnologia?'],
+    'faq4a':['Not at all. You won\'t touch any technology. We set everything up, configure the AI agents for your specific business, and manage the whole system. You just get results: more calls, more bookings, more customers.','Para nada. Usted no toca ninguna tecnologia. Nosotros configuramos todo, configuramos los agentes IA para su negocio especifico y manejamos todo el sistema. Usted solo obtiene resultados: mas llamadas, mas reservas, mas clientes.'],
+    'faq5q':['How is this different from other agencies?','En que se diferencia de otras agencias?'],
+    'faq5a':['Most agencies build you a website and disappear. We build a conversion-optimized website AND deploy AI agents that actively work for your business every day. The website is the foundation. AI handles your calls, follows up on leads, manages reviews, and books appointments. Plus, we show you a free demo before you pay anything.','La mayoria de agencias le construyen un sitio web y desaparecen. Nosotros construimos un sitio web optimizado para conversiones Y desplegamos agentes IA que trabajan activamente para su negocio todos los dias. El sitio web es la base. La IA maneja sus llamadas, da seguimiento a clientes, administra resenas y agenda citas. Ademas, le mostramos una demo gratis antes de pagar.'],
+    'faq6q':['Can I start with just the website and add AI agents later?','Puedo empezar solo con el sitio web y agregar agentes IA despues?'],
+    'faq6a':['Absolutely. Most clients start with a custom website and add AI agents once they see the quality of work. There\'s no pressure, no contracts, and no lock-in. Start small and grow with us.','Por supuesto. La mayoria de clientes empiezan con un sitio web personalizado y agregan agentes IA cuando ven la calidad del trabajo. Sin presion, sin contratos, sin ataduras. Empiece pequeno y crezca con nosotros.'],
+    'faq7q':['What types of businesses do you work with?','Con que tipos de negocios trabajan?'],
+    'faq7a':['Any local service business: plumbers, HVAC, electricians, contractors, landscapers, cleaning services, party rentals, auto detailing, restaurants, barbershops, dental offices, and more. If customers search for your service on Google, we can help.','Cualquier negocio de servicio local: plomeros, HVAC, electricistas, contratistas, jardineros, servicios de limpieza, renta de fiestas, detallado de autos, restaurantes, barberias, consultorios dentales y mas. Si los clientes buscan su servicio en Google, podemos ayudar.'],
+    'faq8q':['What happens if I want to cancel?','Que pasa si quiero cancelar?'],
+    'faq8a':['Send us one message and you\'re done. No cancellation fees. No hoops. No "retention specialist." You keep your website. Monthly AI services stop at the end of your billing cycle. We make it easy to leave because we\'re confident you won\'t want to.','Envienos un mensaje y listo. Sin cargos de cancelacion. Sin obstaculos. Sin "especialista de retencion." Usted conserva su sitio web. Los servicios mensuales de IA se detienen al final de su ciclo de facturacion. Lo hacemos facil porque estamos seguros de que no querra irse.'],
+    'faq9q':['How much does a custom website cost?','Cuanto cuesta un sitio web personalizado?'],
+    'faq9a':['It depends on your business, industry, and what you need. That\'s why we start with a free discovery call and build a free demo first. You see exactly what you\'re getting before we discuss pricing. No surprises.','Depende de su negocio, industria y lo que necesite. Por eso empezamos con una llamada de descubrimiento gratuita y construimos una demo gratis primero. Usted ve exactamente lo que obtiene antes de hablar de precios. Sin sorpresas.'],
+
+    // FINAL CTA
+    'final-tag':['Your Next Step','Su Siguiente Paso'],
+    'final-h2':['While You Read This, AI Could Be Running Your Business','Mientras Lee Esto, la IA Podria Estar Manejando Su Negocio'],
+    'final-sub':['Every hour you wait, another call goes to voicemail. Another lead goes cold. Another customer picks the business that showed up first. 15 minutes on a free call. 48 hours to see your demo. You approve before you pay.','Cada hora que espera, otra llamada va al buzon de voz. Otro cliente potencial se enfria. Otro cliente elige al negocio que aparecio primero. 15 minutos en una llamada gratis. 48 horas para ver su demo. Usted aprueba antes de pagar.'],
+    'final-wa':['Message us on WhatsApp','Escribanos por WhatsApp'],
+    'final-note':['Free demo website in 48 hours. You approve before you pay. No contracts.','Sitio web demo gratis en 48 horas. Usted aprueba antes de pagar. Sin contratos.'],
+
+    // FOOTER
+    'foot-copy':['2026 Kalnyes Agency. All rights reserved. Stafford, VA.','2026 Kalnyes Agency. Todos los derechos reservados. Stafford, VA.'],
+
+    // STICKY
+    'sticky-cta':['Book Your Free Discovery Call','Reserve Su Llamada Gratis'],
+
+    // CHATBOT
+    'cw-greet':['Hi! I\'m the Kalnyes AI assistant. How can I help you today?','Hola! Soy el asistente IA de Kalnyes. Como puedo ayudarle hoy?'],
+    'cw-placeholder':['Type a message...','Escriba un mensaje...']
+  };
+
+  var lang='en';
+  var mapped=[];
+
+  function mapElements(){
+    if(mapped.length)return;
+    var q=function(sel){return document.querySelector(sel)};
+    var qa=function(sel){return document.querySelectorAll(sel)};
+
+    var navLinks=qa('.nav-links > a:not(.btn):not(.nav-lang)');
+    var mLinks=qa('#mmenu > a:not(.btn):not(.nav-lang)');
+    var navCtas=qa('.nav-cta');
+    var hero=q('.hero');
+    var prob=q('#problem');
+    var webs=q('#websites');
+    var agents=q('#agents');
+    var how=q('#how');
+    var botSec=qa('section.soft')[1];
+    var pricing=q('#pricing');
+    var portfolio=q('#portfolio');
+    var reviews=q('#reviews');
+    var seoAudit=q('#seo-audit');
+    var whyAi=q('#why-ai');
+    var bookCall=q('#book-call');
+    var guarSec=qa('section.soft');
+    var faqSec=q('#faq');
+    var finalSec=q('.final');
+
+    function m(el,key,prop){if(el)mapped.push({el:el,key:key,prop:prop||'textContent'})}
+    function mh(el,key){if(el)mapped.push({el:el,key:key,prop:'innerHTML'})}
+
+    // Nav
+    if(navLinks[0])m(navLinks[0],'nav-websites');
+    if(navLinks[1])m(navLinks[1],'nav-agents');
+    if(navLinks[2])m(navLinks[2],'nav-pricing');
+    if(navLinks[3])m(navLinks[3],'nav-portfolio');
+    if(navLinks[4])m(navLinks[4],'nav-faq');
+    if(mLinks[0])m(mLinks[0],'nav-websites');
+    if(mLinks[1])m(mLinks[1],'nav-agents');
+    if(mLinks[2])m(mLinks[2],'nav-pricing');
+    if(mLinks[3])m(mLinks[3],'nav-portfolio');
+    if(mLinks[4])m(mLinks[4],'nav-faq');
+    navCtas.forEach(function(c){m(c,'nav-cta')});
+
+    // Hero
+    if(hero){
+      m(hero.querySelector('.hero-badge'),'hero-badge');
+      m(hero.querySelector('h1'),'hero-h1');
+      m(hero.querySelector('.sub'),'hero-sub');
+      var cks=hero.querySelectorAll('.checks li');
+      var ckKeys=['hero-ck1','hero-ck2','hero-ck3','hero-ck4'];
+      cks.forEach(function(li,i){if(ckKeys[i]){var sp=li.childNodes;if(sp.length>1)mapped.push({el:li,key:ckKeys[i],prop:'lastText'})}});
+      var acts=hero.querySelectorAll('.hero-actions .btn');
+      if(acts[0])m(acts[0],'hero-cta1');
+      if(acts[1])m(acts[1],'hero-cta2');
+      m(hero.querySelector('.hero-social'),'hero-social');
+      m(hero.querySelector('.ps-head'),'phone-title');
+      var pbs=hero.querySelectorAll('#pChat .pb');
+      var pbKeys=['phone-pb1','phone-pb2a','phone-pb3','phone-pb4a','phone-pb5'];
+      pbs.forEach(function(p,i){if(pbKeys[i])mh(p,pbKeys[i])});
+      m(q('#pTyping'),'phone-typing');
+      m(q('#pSms'),'phone-sms');
+    }
+
+    // Problem
+    if(prob){
+      m(prob.querySelector('.tag'),'prob-tag');
+      m(prob.querySelector('h2'),'prob-h2');
+      m(prob.querySelector('.sub'),'prob-sub');
+      var cards=prob.querySelectorAll('.card');
+      var cKeys=[['prob-c1h','prob-c1p'],['prob-c2h','prob-c2p'],['prob-c3h','prob-c3p']];
+      cards.forEach(function(c,i){if(cKeys[i]){m(c.querySelector('h3'),cKeys[i][0]);m(c.querySelector('p'),cKeys[i][1])}});
+    }
+
+    // Websites
+    if(webs){
+      m(webs.querySelector('.tag'),'web-tag');
+      m(webs.querySelector('h2'),'web-h2');
+      m(webs.querySelector('.sub'),'web-sub');
+      var tc=webs.querySelector('.t-copy');
+      if(tc){
+        m(tc.querySelector('h3'),'web-bh');
+        m(tc.querySelector('.sub'),'web-bp');
+        var feats=tc.querySelectorAll('.feat li');
+        var fKeys=['web-f1','web-f2','web-f3','web-f4','web-f5','web-f6','web-f7','web-f8'];
+        feats.forEach(function(li,i){if(fKeys[i])mapped.push({el:li,key:fKeys[i],prop:'lastText'})});
+        var ps=tc.querySelectorAll('p');
+        ps.forEach(function(p){if(p.textContent.indexOf('Pricing depends')>-1||p.textContent.indexOf('El precio depende')>-1)m(p,'web-note')});
+      }
+    }
+
+    // AI Agents
+    if(agents){
+      m(agents.querySelector('.tag'),'ag-tag');
+      m(agents.querySelector('h2'),'ag-h2');
+      m(agents.querySelector('.sub'),'ag-sub');
+      var acs=agents.querySelectorAll('.agent-card');
+      var agKeys=[['ag1-h','ag1-p'],['ag2-h','ag2-p'],['ag3-h','ag3-p'],['ag4-h','ag4-p'],['ag5-h','ag5-p'],['ag6-h','ag6-p'],['ag7-h','ag7-p']];
+      acs.forEach(function(c,i){if(agKeys[i]){m(c.querySelector('h3'),agKeys[i][0]);m(c.querySelector('p'),agKeys[i][1])}});
+      var atag=agents.querySelector('.agent-tag');if(atag)m(atag,'ag-pop');
+    }
+
+    // How It Works
+    if(how){
+      m(how.querySelector('.tag'),'how-tag');
+      m(how.querySelector('h2'),'how-h2');
+      var hCards=how.querySelectorAll('.card');
+      var hKeys=[['how-1h','how-1p'],['how-2h','how-2p'],['how-3h','how-3p'],['how-4h','how-4p']];
+      hCards.forEach(function(c,i){if(hKeys[i]){m(c.querySelector('h3'),hKeys[i][0]);m(c.querySelector('p'),hKeys[i][1])}});
+    }
+
+    // Pricing
+    if(pricing){
+      m(pricing.querySelector('.tag'),'pr-tag');
+      m(pricing.querySelector('h2'),'pr-h2');
+      m(pricing.querySelector('.sub'),'pr-sub');
+      var plans=pricing.querySelectorAll('.plan');
+      var planData=[[['pr-core-h','pr-core-d','pr-core-r','pr-core-s'],['pr-c1','pr-c2','pr-c3','pr-c4','pr-c5']],[['pr-growth-h','pr-growth-d','pr-growth-r','pr-growth-s'],['pr-g1','pr-g2','pr-g3','pr-g4','pr-g5','pr-g6','pr-g7','pr-c5']],[['pr-scale-h','pr-scale-d','pr-scale-r','pr-scale-s'],['pr-s1','pr-s2','pr-s3','pr-s4','pr-s5','pr-s6','pr-s7','pr-c5']]];
+      plans.forEach(function(pl,pi){
+        if(!planData[pi])return;
+        var d=planData[pi];
+        m(pl.querySelector('h3'),d[0][0]);
+        m(pl.querySelector('.pd'),d[0][1]);
+        m(pl.querySelector('.repl'),d[0][2]);
+        m(pl.querySelector('.plan-save'),d[0][3]);
+        var lis=pl.querySelectorAll('li');
+        lis.forEach(function(li,li_i){if(d[1][li_i])mapped.push({el:li,key:d[1][li_i],prop:'lastText'})});
+        var pg=pl.querySelector('.plan-g');if(pg)m(pg,'pr-webquote');
+      });
+      var assures=pricing.querySelectorAll('.assure div');
+      var aKeys=[['pr-a1h','pr-a1p'],['pr-a2h','pr-a2p'],['pr-a3h','pr-a3p']];
+      assures.forEach(function(a,i){if(aKeys[i]){m(a.querySelector('h4'),aKeys[i][0]);m(a.querySelector('p'),aKeys[i][1])}});
+    }
+
+    // Portfolio
+    if(portfolio){
+      m(portfolio.querySelector('.tag'),'port-tag');
+      m(portfolio.querySelector('h2'),'port-h2');
+      m(portfolio.querySelector('.sub'),'port-sub');
+    }
+
+    // Reviews
+    if(reviews){
+      m(reviews.querySelector('.tag'),'rev-tag');
+      m(reviews.querySelector('.sub'),'rev-sub');
+      var tcards=reviews.querySelectorAll('.tcard');
+      var rKeys=[['rev1','rev1-r'],['rev2','rev2-r'],['rev3','rev3-r'],['rev4','rev4-r'],['rev5','rev5-r'],['rev6','rev6-r']];
+      tcards.forEach(function(tc,i){if(rKeys[i]){mh(tc.querySelector('blockquote'),rKeys[i][0]);var rl=tc.querySelector('.rl');if(rl)m(rl,rKeys[i][1])}});
+    }
+
+    // SEO Audit
+    if(seoAudit){
+      m(seoAudit.querySelector('.tag'),'seo-tag');
+      m(seoAudit.querySelector('h2'),'seo-h2');
+      m(seoAudit.querySelector('.sub'),'seo-sub');
+      var labels=seoAudit.querySelectorAll('label');
+      var lKeys=['seo-l1','seo-l2','seo-l3'];
+      labels.forEach(function(l,i){if(lKeys[i])m(l,lKeys[i])});
+      m(q('#seo-btn'),'seo-btn');
+      var sn=seoAudit.querySelector('.seo-note');if(sn)m(sn,'seo-note');
+    }
+
+    // Why AI
+    if(whyAi){
+      m(whyAi.querySelector('.tag'),'why-tag');
+      m(whyAi.querySelector('h2'),'why-h2');
+      var wCards=whyAi.querySelectorAll('.card');
+      var wKeys=[['why-c1h','why-c1p'],['why-c2h','why-c2p'],['why-c3h','why-c3p']];
+      wCards.forEach(function(c,i){if(wKeys[i]){m(c.querySelector('h3'),wKeys[i][0]);m(c.querySelector('p'),wKeys[i][1])}});
+    }
+
+    // Book Call
+    if(bookCall){
+      m(bookCall.querySelector('.tag'),'book-tag');
+      m(bookCall.querySelector('h2'),'book-h2');
+      m(bookCall.querySelector('.sub'),'book-sub');
+      var bDiv=bookCall.querySelector('.book-grid > div');
+      if(bDiv){
+        m(bDiv.querySelector('h3'),'book-wh');
+        m(bDiv.querySelector('p'),'book-wp');
+        var bLis=bDiv.querySelectorAll('.book-list li');
+        var bKeys=['book-l1','book-l2','book-l3','book-l4','book-l5','book-l6'];
+        bLis.forEach(function(li,i){if(bKeys[i])mapped.push({el:li,key:bKeys[i],prop:'lastText'})});
+      }
+    }
+
+    // FAQ
+    if(faqSec){
+      m(faqSec.querySelector('.tag'),'faq-tag');
+      m(faqSec.querySelector('h2'),'faq-h2');
+      var faqs=faqSec.querySelectorAll('.faq');
+      var fqKeys=[['faq1q','faq1a'],['faq2q','faq2a'],['faq3q','faq3a'],['faq4q','faq4a'],['faq5q','faq5a'],['faq6q','faq6a'],['faq7q','faq7a'],['faq8q','faq8a'],['faq9q','faq9a']];
+      faqs.forEach(function(f,i){if(fqKeys[i]){
+        var btn=f.querySelector('button');if(btn)mapped.push({el:btn,key:fqKeys[i][0],prop:'firstText'});
+        var p=f.querySelector('.faq-b p');if(p)m(p,fqKeys[i][1]);
+      }});
+    }
+
+    // Final CTA
+    if(finalSec){
+      m(finalSec.querySelector('.tag'),'final-tag');
+      m(finalSec.querySelector('h2'),'final-h2');
+      m(finalSec.querySelector('.sub'),'final-sub');
+      m(finalSec.querySelector('.final-note'),'final-note');
+    }
+
+    // Sticky
+    var sticky=q('.sticky .btn');if(sticky)m(sticky,'sticky-cta');
+
+    // Chatbot
+    m(q('#cwMsgs .cw-msg.bot'),'cw-greet');
+  }
+
+  function applyLang(newLang){
+    lang=newLang;
+    var idx=lang==='es'?1:0;
+    mapElements();
+    mapped.forEach(function(item){
+      var val=T[item.key];
+      if(!val)return;
+      var txt=val[idx];
+      if(item.prop==='innerHTML'){
+        item.el.innerHTML=txt+(item.el.querySelector('.cw-ts')?'<span class="cw-ts">AI Agent</span>':'');
+      }else if(item.prop==='lastText'){
+        var nodes=item.el.childNodes;
+        for(var n=nodes.length-1;n>=0;n--){
+          if(nodes[n].nodeType===3&&nodes[n].textContent.trim()){nodes[n].textContent=' '+txt;break}
+        }
+      }else if(item.prop==='firstText'){
+        var nodes2=item.el.childNodes;
+        for(var n2=0;n2<nodes2.length;n2++){
+          if(nodes2[n2].nodeType===3&&nodes2[n2].textContent.trim()){nodes2[n2].textContent=txt;break}
+        }
+      }else{
+        if(item.el.querySelector&&item.el.querySelector('.ar')){
+          var ar=item.el.querySelector('.ar');
+          item.el.textContent=txt+' ';
+          item.el.appendChild(ar);
+        }else{
+          item.el.textContent=txt;
+        }
+      }
+    });
+
+    // Update input placeholder
+    var cwIn=document.getElementById('cwIn');
+    if(cwIn)cwIn.placeholder=T['cw-placeholder'][idx];
+
+    // Update lang labels
+    var ll=document.getElementById('langLabel'),llm=document.getElementById('langLabelMob');
+    if(ll)ll.textContent=lang.toUpperCase();
+    if(llm)llm.textContent=lang.toUpperCase();
+
+    // Update active states
+    document.querySelectorAll('.lang-opt').forEach(function(o){
+      o.classList.toggle('active',o.dataset.lang===lang);
+    });
+
+    // Update html lang
+    document.documentElement.lang=lang;
+    localStorage.setItem('kg-lang',lang);
+  }
+
+  window.kgSetLang=applyLang;
+
+  // Toggle dropdown
+  function setupToggle(toggleId,ddId){
+    var toggle=document.getElementById(toggleId),dd=document.getElementById(ddId);
+    if(!toggle||!dd)return;
+    toggle.addEventListener('click',function(e){
+      e.stopPropagation();
+      // Close other dropdowns
+      document.querySelectorAll('.lang-dd.open').forEach(function(d){if(d!==dd)d.classList.remove('open')});
+      dd.classList.toggle('open');
+    });
+    dd.querySelectorAll('.lang-opt').forEach(function(opt){
+      opt.addEventListener('click',function(e){
+        e.stopPropagation();
+        dd.classList.remove('open');
+        applyLang(opt.dataset.lang);
+      });
+    });
+  }
+
+  setupToggle('langToggle','langDd');
+  setupToggle('langToggleMob','langDdMob');
+
+  // Close dropdown on outside click
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.lang-dd.open').forEach(function(d){d.classList.remove('open')});
+  });
+
+  // Apply saved language preference
+  var saved=localStorage.getItem('kg-lang');
+  if(saved==='es')applyLang('es');
+})();
+</script>
 </body>
 </html>
