@@ -118,6 +118,7 @@ nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(26,26,26,.05)}
 
 /* PROBLEM */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.cards4{grid-template-columns:repeat(4,1fr)}
 .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 28px;transition:transform .3s,box-shadow .3s}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
 .card .big-n{font-size:2.8rem;font-weight:900;color:var(--ink);line-height:1;margin-bottom:10px}
@@ -393,6 +394,10 @@ footer small{font-size:.76rem;color:var(--faint)}
 .cw-input input{flex:1;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.88rem;font-family:inherit;outline:none;color:var(--ink)}
 .cw-input input:focus{border-color:var(--ink)}
 .cw-input button{background:var(--ink);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-weight:700;font-size:.84rem;cursor:pointer}
+.cw-qr{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.cw-qr:empty{display:none}
+.cw-qr-btn{background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.78rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;font-family:inherit;white-space:nowrap}
+.cw-qr-btn:hover{background:var(--bg-soft);border-color:var(--ink);transform:translateY(-1px)}
 @media(max-width:600px){
   .cw-box{right:12px;left:12px;width:auto;bottom:90px}
   .cw-btn{bottom:80px;right:16px;width:52px;height:52px}
@@ -610,7 +615,7 @@ footer small{font-size:.76rem;color:var(--faint)}
       <span class="tag">How It Works</span>
       <h2>From Zero to AI-Powered in 4 Steps</h2>
     </div>
-    <div class="cards3 stg" style="grid-template-columns:repeat(4,1fr);margin-top:44px">
+    <div class="cards3 cards4 stg" style="margin-top:44px">
       <div class="card" style="text-align:center"><div class="big-n" style="color:var(--faint);font-size:2rem">1</div><h3>Discovery Call</h3><p>15 minutes. We learn your business, your services, and your biggest pain points. No pitch, no pressure.</p></div>
       <div class="card" style="text-align:center"><div class="big-n" style="color:var(--faint);font-size:2rem">2</div><h3>Free Demo</h3><p>Within 48 hours, we build a working demo website using your real business info. You see it live before you decide.</p></div>
       <div class="card" style="text-align:center"><div class="big-n" style="color:var(--faint);font-size:2rem">3</div><h3>Launch</h3><p>You approve the website. We deploy your AI agents. Configure them for your services, hours, and pricing. Go live.</p></div>
@@ -1131,48 +1136,184 @@ document.querySelectorAll('.faq button').forEach(btn=>{
 <div class="cw-box" id="cwBox">
   <div class="cw-head"><span class="cw-head-dot"></span><div><div class="cw-head-t">Kalnyes AI</div><div class="cw-head-s">Typically replies instantly</div></div></div>
   <div class="cw-msgs" id="cwMsgs">
-    <div class="cw-msg bot">Hi! I'm the Kalnyes AI assistant. Ask me anything about our websites, AI agents, or pricing. <span class="cw-ts">AI Agent</span></div>
+    <div class="cw-msg bot">Hi! I'm the Kalnyes AI assistant. How can I help you today? <span class="cw-ts">AI Agent</span></div>
   </div>
+  <div class="cw-qr" id="cwQr"></div>
   <div class="cw-typing" id="cwTyping"><i></i><i></i><i></i></div>
   <div class="cw-input"><input type="text" id="cwIn" placeholder="Type a message..." autocomplete="off"><button id="cwSend">Send</button></div>
 </div>
 <script>
 (function(){
-  var btn=document.getElementById('cwBtn'),box=document.getElementById('cwBox'),msgs=document.getElementById('cwMsgs'),inp=document.getElementById('cwIn'),send=document.getElementById('cwSend'),typing=document.getElementById('cwTyping');
+  var btn=document.getElementById('cwBtn'),box=document.getElementById('cwBox'),msgs=document.getElementById('cwMsgs'),inp=document.getElementById('cwIn'),send=document.getElementById('cwSend'),typing=document.getElementById('cwTyping'),qrWrap=document.getElementById('cwQr');
+  var PHONE='15407838835';
+  var CAL_URL='https://calendly.com/kalnyesgrowth/boost-your-business';
+
   var answers={
-    'pricing':['Our website pricing is custom based on your business needs. AI agent bundles start at $497/mo (Core), $797/mo (Growth), or $997/mo (Scale). Book a free call and we\'ll give you an exact quote.','AI Agent'],
-    'website':['We build custom, conversion-optimized websites for local businesses. Every site is mobile-first, SEO-ready, and designed to get your phone ringing. We build a free demo before you pay anything.','AI Agent'],
-    'ai':['Our AI agents handle calls, texts, reviews, webchat, CRM, payments, and follow-ups 24/7. They respond in seconds so you never lose a lead. Want to see a live demo?','AI Agent'],
-    'demo':['We build a complete demo website using your real business info within 48 hours of our discovery call. You see it, approve it, then decide. $0 until you say yes.','AI Agent'],
-    'call':['You can book a free 15-minute discovery call right on this page. Scroll down to the booking section, or I can take you there. No sales pressure, just a conversation about your business.','AI Agent'],
-    'default':['Great question! I can help with info about our websites, AI agents, pricing, or the free demo process. For anything specific, book a free discovery call and our team will walk you through everything.','AI Agent']
+    'book':{
+      text:'I\'ll take you to our booking calendar right now. Pick any time that works for you. It\'s a free 15-minute call, no pressure.',
+      action:'book'
+    },
+    'pricing':{
+      text:'Our website pricing is custom based on your business needs. AI agent bundles start at:<br><br><b>Core</b> $497/mo (calls + texts + webchat)<br><b>Growth</b> $797/mo (+ reviews, CRM, inbox)<br><b>Scale</b> $997/mo (everything + content + strategy)<br><br>Want to book a free call for an exact quote?',
+      buttons:['Book a Free Call','See Pricing Details']
+    },
+    'website':{
+      text:'We build custom, conversion-optimized websites for local businesses. Mobile-first, SEO-ready, designed to get your phone ringing. We build a <b>free demo</b> before you pay anything. Want to see examples?',
+      buttons:['See Our Portfolio','Book a Free Call']
+    },
+    'agents':{
+      text:'Our AI agents work for you 24/7:<br><br>&#128222; <b>Voice Receptionist</b> - answers every call<br>&#128172; <b>Missed-Call Text Back</b> - instant follow-up<br>&#11088; <b>Reviews Automation</b> - builds your reputation<br>&#128187; <b>Webchat Widget</b> - captures website leads<br>&#128233; <b>Unified Inbox</b> - all messages in one place<br>&#128202; <b>Smart CRM</b> - tracks every lead<br>&#128179; <b>Smart Payments</b> - get paid via text<br><br>Pick individual agents or bundle them and save up to 54%.',
+      buttons:['See Bundle Pricing','Book a Free Call']
+    },
+    'demo':{
+      text:'Here\'s how the free demo works:<br><br>1. You book a 15-minute discovery call<br>2. Within 48 hours, we build a complete website using YOUR real business info<br>3. You see it live and decide<br>4. Don\'t love it? You owe $0.<br><br>Zero risk. Ready to get started?',
+      buttons:['Book My Free Demo Call','See Examples']
+    },
+    'portfolio':{
+      text:'Check out some of our recent work. Each site is custom-built for the specific industry.',
+      action:'portfolio'
+    },
+    'whatsapp':{
+      text:'Sure! You can message us directly on WhatsApp. We typically respond within minutes.',
+      action:'whatsapp'
+    },
+    'hours':{
+      text:'We\'re available Monday through Saturday, 9 AM to 7 PM EST. AI agents work 24/7, but our team is available during business hours for calls and consultations. Want to book a time?',
+      buttons:['Book a Free Call','Message on WhatsApp']
+    },
+    'location':{
+      text:'We\'re based in Stafford, Virginia, but we serve local businesses across the entire US. Everything is done remotely, so your location doesn\'t matter. We\'ve built sites for businesses in VA, MD, TX, CA, and more.',
+      buttons:['Book a Free Call']
+    },
+    'cancel':{
+      text:'You can cancel anytime with one message. No cancellation fees, no contracts, no retention calls. You keep your website forever. Monthly AI services stop at the end of your billing cycle. We make it easy because we\'re confident you won\'t want to.',
+      buttons:['Book a Free Call']
+    },
+    'time':{
+      text:'Here\'s our timeline:<br><br>&#9201; <b>Discovery call:</b> 15 minutes<br>&#128197; <b>Free demo delivered:</b> within 48 hours<br>&#128640; <b>Full launch:</b> as soon as you approve<br><br>Most businesses go from zero to live in under a week.',
+      buttons:['Book My Free Demo Call']
+    },
+    'spanish':{
+      text:'Claro que si. Tambien hablamos espanol. Puede ver nuestro sitio en espanol o agendar una llamada gratuita. Respondemos en espanol sin problema.',
+      buttons:['Ver en Espanol','Agendar Llamada']
+    },
+    'hello':{
+      text:'Hey! Welcome to Kalnyes Agency. We build custom websites and deploy AI agents for local businesses. What would you like to know?',
+      buttons:['How It Works','See Pricing','Book a Free Call']
+    },
+    'default':{
+      text:'I can help with that! Here are the most common things people ask about. Or you can book a free call and our team will walk you through everything.',
+      buttons:['How It Works','See Pricing','AI Agents','Book a Free Call']
+    }
   };
+
   function match(t){
     t=t.toLowerCase();
-    if(/pric|cost|how much|bundle|plan/.test(t))return answers.pricing;
-    if(/website|site|build|design|seo/.test(t))return answers.website;
-    if(/ai|agent|bot|automat|recept|call/.test(t))return answers.ai;
-    if(/demo|free|preview|try/.test(t))return answers.demo;
-    if(/book|call|meet|schedul|calendly/.test(t))return answers.call;
+    if(/book|schedule|appointment|agendar|llamada|calendar|reserve|ready|let'?s (go|do|start)|sign.?up|get started|start/.test(t))return answers.book;
+    if(/pric|cost|how much|cuanto|bundle|plan|package|afford|budget|rate|charge|cobr|dinero|money/.test(t))return answers.pricing;
+    if(/cancel|refund|contract|commitment|devol/.test(t))return answers.cancel;
+    if(/portfolio|example|work|sample|show me|see.*site|muestra/.test(t))return answers.portfolio;
+    if(/how long|timeline|fast|quick|when|rapido|tiempo|how soon/.test(t))return answers.time;
+    if(/where|location|area|city|state|stafford|virginia|serve|ubicacion|donde/.test(t))return answers.location;
+    if(/hour|open|available|when.*work|horario|disponib/.test(t))return answers.hours;
+    if(/whatsapp|text me|message|chat.*directly|contact|contacto/.test(t))return answers.whatsapp;
+    if(/website|site|build|design|seo|pagina|web|diseno/.test(t))return answers.website;
+    if(/ai|agent|bot|automat|recept|voice|review|crm|inbox|payment|agente|inteligencia/.test(t))return answers.agents;
+    if(/demo|free|preview|try|gratis|prueba/.test(t))return answers.demo;
+    if(/espanol|spanish|habla|idioma/.test(t))return answers.spanish;
+    if(/^(hi|hey|hello|hola|sup|yo|what'?s up|buenos|buenas)/.test(t))return answers.hello;
+    if(/how.*work|como funciona|process|paso|step/.test(t))return answers.demo;
     return answers['default'];
   }
+
   function addMsg(text,cls,label){
     var d=document.createElement('div');d.className='cw-msg '+cls;
     d.innerHTML=text+(label?'<span class="cw-ts">'+label+'</span>':'');
     msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
   }
+
+  var NAV_BTNS={'See Pricing Details':'pricing','See Our Portfolio':'portfolio','See Examples':'portfolio','Ver en Espanol':'/es/','Message on WhatsApp':'wa','Agendar Llamada':'book','Book a Free Call':'book','Book My Free Demo Call':'book'};
+
+  function showButtons(btns){
+    qrWrap.innerHTML='';
+    if(!btns||!btns.length)return;
+    btns.forEach(function(label){
+      var b=document.createElement('button');
+      b.className='cw-qr-btn';
+      b.textContent=label;
+      b.addEventListener('click',function(){
+        addMsg(label,'usr');
+        qrWrap.innerHTML='';
+        var nav=NAV_BTNS[label];
+        if(nav==='/es/'){window.location.href='/es/';return}
+        if(nav==='wa'){window.open('https://wa.me/'+PHONE+'?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services','_blank');return}
+        if(nav==='book'){doAction('book');return}
+        if(nav){var el=document.getElementById(nav);if(el){btn.classList.remove('open');box.classList.remove('open');el.scrollIntoView({behavior:'smooth'});return}}
+        respond(label);
+      });
+      qrWrap.appendChild(b);
+    });
+    msgs.scrollTop=msgs.scrollHeight;
+  }
+
+  function doAction(action){
+    if(action==='book'){
+      var el=document.getElementById('book-call');
+      if(el){
+        btn.classList.remove('open');box.classList.remove('open');
+        el.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    }else if(action==='portfolio'){
+      var el2=document.getElementById('portfolio');
+      if(el2){
+        btn.classList.remove('open');box.classList.remove('open');
+        el2.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    }else if(action==='whatsapp'){
+      window.open('https://wa.me/'+PHONE+'?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20services','_blank');
+    }
+  }
+
   function respond(text){
     var a=match(text);
     typing.classList.add('show');msgs.scrollTop=msgs.scrollHeight;
-    setTimeout(function(){typing.classList.remove('show');addMsg(a[0],'bot',a[1])},800+Math.random()*600);
+    setTimeout(function(){
+      typing.classList.remove('show');
+      addMsg(a.text,'bot','AI Agent');
+      if(a.action){
+        setTimeout(function(){doAction(a.action)},1200);
+      }
+      if(a.buttons){
+        var mapped=a.buttons.map(function(label){
+          if(label==='See Pricing Details')return label;
+          if(label==='See Our Portfolio'||label==='See Examples')return label;
+          if(label==='Ver en Espanol')return label;
+          return label;
+        });
+        setTimeout(function(){showButtons(mapped)},300);
+      }
+      if(window.KGTrack){
+        KGTrack.event('chatbot_msg',{query:text,matched:a===answers['default']?'default':'matched'});
+      }
+    },800+Math.random()*600);
   }
+
   function handleSend(){
     var v=inp.value.trim();if(!v)return;
-    addMsg(v,'usr');inp.value='';respond(v);
+    addMsg(v,'usr');inp.value='';qrWrap.innerHTML='';respond(v);
   }
-  btn.addEventListener('click',function(){btn.classList.toggle('open');box.classList.toggle('open');if(box.classList.contains('open'))inp.focus()});
+
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('open');box.classList.toggle('open');
+    if(box.classList.contains('open'))inp.focus();
+  });
   send.addEventListener('click',handleSend);
   inp.addEventListener('keydown',function(e){if(e.key==='Enter')handleSend()});
+
+  // Show initial quick replies after a brief delay
+  setTimeout(function(){
+    showButtons(['How It Works','See Pricing','AI Agents','Book a Free Call']);
+  },1500);
 })();
 </script>
 <script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
