@@ -67,6 +67,9 @@ nav.scrolled{border-color:var(--line);box-shadow:0 4px 20px rgba(26,26,26,.05)}
 .nav-links a{font-size:.9rem;font-weight:600;color:var(--body);transition:color .2s}
 .nav-links a:not(.btn):hover{color:var(--ink)}
 .nav-cta{padding:10px 18px;font-size:.86rem}
+.nav-lang{display:inline-flex;align-items:center;gap:5px;font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--muted);border:1.5px solid var(--line);border-radius:8px;padding:6px 12px;transition:border-color .2s,color .2s}
+.nav-lang:hover{border-color:var(--ink);color:var(--ink)}
+.nav-lang svg{opacity:.6}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .burger span{width:22px;height:2px;background:var(--ink)}
 .mmenu{display:none;position:fixed;inset:70px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:22px;z-index:99;flex-direction:column;gap:16px;box-shadow:0 20px 40px rgba(26,26,26,.08)}
@@ -409,6 +412,7 @@ footer small{font-size:.76rem;color:var(--faint)}
       <a href="#pricing">Pricing</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#faq">FAQ</a>
+      <a href="/es/" class="nav-lang" aria-label="Cambiar a Espanol"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> ES</a>
       <a href="#book-call" class="btn btn-dark nav-cta">Book Free Discovery Call</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -416,6 +420,7 @@ footer small{font-size:.76rem;color:var(--faint)}
 </nav>
 <div class="mmenu" id="mmenu">
   <a href="#websites">Websites</a><a href="agents.html">AI Agents</a><a href="#pricing">Pricing</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a>
+  <a href="/es/" class="nav-lang"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Espanol</a>
   <a href="#book-call" class="btn btn-dark">Book Free Discovery Call</a>
 </div>
 
@@ -1117,13 +1122,6 @@ document.querySelectorAll('.faq button').forEach(btn=>{
   });
 })();
 </script>
-<!-- LANGUAGE TOGGLE -->
-<a href="/es/" class="lang-toggle" aria-label="Cambiar a Espanol">ES / EN</a>
-<style>
-.lang-toggle{position:fixed;bottom:96px;right:24px;z-index:96;display:flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.06em;box-shadow:0 6px 20px rgba(26,26,26,.25);transition:transform .25s,box-shadow .25s;text-decoration:none}
-.lang-toggle:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(26,26,26,.35)}
-@media(max-width:768px){.lang-toggle{bottom:96px;right:16px}}
-</style>
 <!-- CHAT WIDGET -->
 <button class="cw-btn" id="cwBtn" aria-label="Chat with AI">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
