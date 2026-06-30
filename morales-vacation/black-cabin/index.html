@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:hidden;background:#fff;color:#222;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
+html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
 
 /* ── Loading screen ── */
 .loader{position:fixed;inset:0;z-index:9999;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s}
@@ -395,7 +395,9 @@ html,body{overflow-x:hidden;background:#fff;color:#222;font-family:'DM Sans',sys
         sectionDots[j].classList.toggle('active', displayProgress >= sec.start && displayProgress < sec.end);
       }
 
-      nav.classList.toggle('scrolled', window.scrollY > window.innerHeight * 0.5);
+      var afterContent = document.querySelector('.after-content');
+      var pastVideo = afterContent && window.scrollY >= afterContent.offsetTop - 60;
+      nav.classList.toggle('scrolled', pastVideo);
 
       if (displayProgress >= 0.99) {
         videoStage.style.opacity = Math.max(0, 1 - (displayProgress - 0.99) * 100);
