@@ -11,12 +11,13 @@
     :root {
       --coral: #FF385C;
       --coral-dark: #E31C5F;
-      --bg: #0B0B10;
-      --bg-card: #13131A;
-      --bg-elevated: #1A1A24;
-      --text: #F0F0F5;
-      --sub: #9CA3AF;
-      --border: rgba(255,255,255,0.08);
+      --bg: #FFFFFF;
+      --bg-card: #F7F7F7;
+      --bg-elevated: #EFEFEF;
+      --bg-warm: #F7F7F7;
+      --text: #222222;
+      --sub: #717171;
+      --border: #DDDDDD;
       --gold: #FBBF24;
       --font: 'DM Sans', system-ui, -apple-system, sans-serif;
       --font-serif: 'DM Serif Display', Georgia, serif;
@@ -36,16 +37,19 @@
       background: transparent;
       transition: background 0.4s ease;
     }
-    .nav.scrolled { background: rgba(11, 11, 16, 0.95); }
+    .nav.scrolled { background: rgba(255, 255, 255, 0.97); box-shadow: 0 1px 12px rgba(0,0,0,0.08); }
     .nav-logo { display: flex; align-items: center; gap: 10px; }
     .nav-logo img { height: 32px; width: auto; border-radius: 6px; }
-    .nav-logo span { font-size: 0.9rem; font-weight: 600; color: var(--text); opacity: 0.9; }
+    .nav-logo span { font-size: 0.9rem; font-weight: 600; color: #fff; opacity: 0.9; transition: color 0.4s; }
+    .nav.scrolled .nav-logo span { color: var(--text); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.75);
-      transition: color 0.2s; letter-spacing: 0.02em;
+      transition: color 0.3s; letter-spacing: 0.02em;
     }
     .nav-links a:hover { color: #fff; }
+    .nav.scrolled .nav-links a { color: var(--sub); }
+    .nav.scrolled .nav-links a:hover { color: var(--text); }
 
     /* SCROLL-SCRUBBED VIDEO */
     .video-stage {
@@ -281,7 +285,7 @@
       font-size: 0.88rem; font-weight: 600; color: var(--text);
       transition: border-color 0.2s, background 0.2s;
     }
-    .review-cta:hover { border-color: rgba(255,255,255,0.2); background: var(--bg-elevated); }
+    .review-cta:hover { border-color: #bbb; background: var(--bg-elevated); }
 
     .booking-section { padding: 60px 0 80px; text-align: center; }
     .booking-section h2 {
@@ -310,7 +314,7 @@
       border: 1.5px solid var(--border);
       transition: border-color 0.2s, background 0.2s;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: var(--bg-card); }
+    .btn-ghost:hover { border-color: #bbb; background: var(--bg-card); }
 
     .footer {
       padding: 28px 24px; border-top: 1px solid var(--border); text-align: center;
@@ -347,7 +351,7 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="morales-vacation.html" class="nav-logo">
+  <a href="./" class="nav-logo">
     <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260618_015507_4da133fe-4e36-41dd-8084-3e5630079f60.png" alt="Morales Vacation">
     <span>Morales Vacation</span>
   </a>
