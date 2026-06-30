@@ -348,6 +348,16 @@
       white-space:nowrap; cursor:pointer; border:none; font-family:var(--font);
     }
     .btn-direct:hover { background:var(--coral-dark); transform:translateY(-1px); }
+    .btn-walk {
+      display:inline-flex; align-items:center; gap:5px;
+      padding:9px 16px; border-radius:var(--radius-btn);
+      border:1.5px solid var(--text);
+      font-size:0.8rem; font-weight:600; color:var(--text);
+      transition:border-color 0.15s, background 0.15s, color 0.15s;
+      white-space:nowrap; cursor:pointer; background:#fff; font-family:var(--font);
+      text-decoration:none;
+    }
+    .btn-walk:hover { background:var(--text); color:#fff; }
 
     /* PERKS SECTION (replaces old savings banner) */
     .perks-banner {
@@ -818,7 +828,7 @@
       .prop-photo-thumbs { grid-template-columns:repeat(3,1fr); }
       .prop-footer { flex-direction:column; align-items:flex-start; gap:12px; }
       .prop-btns { width:100%; }
-      .btn-airbnb, .btn-direct { flex:1; justify-content:center; }
+      .btn-airbnb, .btn-direct, .btn-walk { flex:1; justify-content:center; }
       .hero-btns { flex-direction:column; align-items:center; }
       .perks-row { grid-template-columns:1fr 1fr; }
       .host-intro-stats { gap:20px; }
@@ -987,7 +997,8 @@
               <span class="prop-perk">Early check-in and grocery stocking available</span>
             </div>
             <div class="prop-btns">
-              <a href="aframe.html" class="btn-airbnb" style="text-decoration:none;text-align:center">View Photos</a>
+              <a href="aframe.html" class="btn-walk">&#9654; Walkthrough</a>
+              <button class="btn-airbnb" onclick="openLightbox(0)">View Photos</button>
               <button class="btn-direct" onclick="openBooking(0)">Book Direct</button>
             </div>
           </div>
@@ -1089,7 +1100,8 @@
               <span class="prop-perk">Celebration setups and early check-in available</span>
             </div>
             <div class="prop-btns">
-              <a href="black-cabin/" class="btn-airbnb" style="text-decoration:none;text-align:center">View Photos</a>
+              <a href="black-cabin/" class="btn-walk">&#9654; Walkthrough</a>
+              <button class="btn-airbnb" onclick="openLightbox(2)">View Photos</button>
               <button class="btn-direct" onclick="openBooking(2)">Book Direct</button>
             </div>
           </div>

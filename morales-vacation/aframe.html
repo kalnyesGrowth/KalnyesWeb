@@ -610,7 +610,9 @@ function update() {
   const activeIndex = Math.min(4, Math.floor(progress * 5));
   dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
 
-  nav.classList.toggle('scrolled', scrollY > windowH * 0.5);
+  const listingEl = document.getElementById('listing');
+  const pastVideo = listingEl && scrollY >= listingEl.offsetTop - 60;
+  nav.classList.toggle('scrolled', pastVideo);
 
   if (scrollInd) scrollInd.style.opacity = scrollY > 100 ? '0' : '0.5';
 
