@@ -218,6 +218,18 @@ section{padding:100px 0}
 .rev-screen-stars{text-align:center;padding:8px 0;font-size:.7rem;color:#f5a623;letter-spacing:2px;opacity:0;transform:translateY(6px)}
 .in .rev-screen-stars{animation:bubbleIn .35s ease forwards}
 
+/* === BLOG CARDS === */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.blog-card:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateY(-3px)}
+.blog-card-body{padding:24px 22px;flex:1;display:flex;flex-direction:column}
+.blog-card-tag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.blog-card-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--white);line-height:1.35;margin-bottom:10px}
+.blog-card-excerpt{font-size:.85rem;color:var(--text);line-height:1.6;flex:1}
+.blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--green);margin-top:16px;transition:gap .25s}
+.blog-card:hover .blog-card-link{gap:10px}
+.blog-more{text-align:center;margin-top:40px}
+
 /* === SCARCITY === */
 .scarcity{text-align:center;padding:80px 0;background:linear-gradient(180deg,var(--bg) 0%,rgba(34,197,94,0.03) 50%,var(--bg) 100%)}
 .sc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:999px;padding:6px 16px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f5a623;margin-bottom:24px}
@@ -303,6 +315,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   .svc-info p{margin:0 auto}
   .dev-phone{width:200px;height:400px;border-radius:26px}
   .rev-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
   .founder-grid{grid-template-columns:1fr;text-align:center}
   .founder-photo{max-width:280px;margin:0 auto}
   .timeline{padding-left:32px}
@@ -326,6 +339,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <a href="#how">How It Works</a>
       <a href="#results">Results</a>
       <a href="#reviews">Reviews</a>
+      <a href="#blog">Blog</a>
       <a href="#" class="btn btn-ghost nav-cta" onclick="openBooking();return false">Book a Call <span class="ar">&rarr;</span></a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
@@ -340,6 +354,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   <a href="#how" class="menu-link">How It Works</a>
   <a href="#results" class="menu-link">Results</a>
   <a href="#reviews" class="menu-link">Reviews</a>
+  <a href="#blog" class="menu-link">Blog</a>
   <a href="#" class="btn btn-green menu-link" onclick="openBooking();return false">Book a Call</a>
 </div>
 
@@ -717,6 +732,62 @@ footer p{font-size:.78rem;color:var(--muted)}
         <blockquote>"I was paying another company $500/month for basically nothing. Switched to Kalnyes and got a better website, real Google presence, and actual leads. <b>Should have switched years ago.</b>"</blockquote>
         <div class="rev-who"><span class="rev-av"><img src="img/reviews/david.jpg" alt="David W."></span><div><div class="rev-nm">David W.</div><div class="rev-rl">Plumber, Stafford VA</div></div></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tag">Resources</span>
+      <h2>Learn how it all works.</h2>
+      <p>Real strategies for real businesses. No fluff.</p>
+    </div>
+    <div class="blog-grid">
+      <a href="blog/ai-receptionist-for-small-business.html" class="blog-card rv">
+        <div class="blog-card-body">
+          <div class="blog-card-tag">AI Receptionist</div>
+          <div class="blog-card-title">AI Receptionist for Small Business: What It Is and Why You Need One</div>
+          <p class="blog-card-excerpt">An AI receptionist answers calls, books appointments, and qualifies leads 24/7. How it works and what it costs compared to hiring staff.</p>
+          <span class="blog-card-link">Read more <span class="ar">&rarr;</span></span>
+        </div>
+      </a>
+      <a href="blog/how-to-automate-lead-follow-up.html" class="blog-card rv">
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Lead Follow-Up</div>
+          <div class="blog-card-title">How to Automate Lead Follow-Up for Your Business</div>
+          <p class="blog-card-excerpt">Speed, consistency, and AI tools that convert more leads into paying customers. No potential customer falls through the cracks.</p>
+          <span class="blog-card-link">Read more <span class="ar">&rarr;</span></span>
+        </div>
+      </a>
+      <a href="blog/how-often-should-you-post-on-social-media.html" class="blog-card rv">
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Social Inbox</div>
+          <div class="blog-card-title">How Often Should a Local Business Post on Social Media?</div>
+          <p class="blog-card-excerpt">Data-backed recommendations for Facebook, Instagram, LinkedIn, and more. The ideal posting frequency for local businesses.</p>
+          <span class="blog-card-link">Read more <span class="ar">&rarr;</span></span>
+        </div>
+      </a>
+      <a href="blog/how-to-get-more-google-reviews.html" class="blog-card rv">
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Reviews Engine</div>
+          <div class="blog-card-title">How to Get More Google Reviews for Your Local Business</div>
+          <p class="blog-card-excerpt">Proven strategies to get more Google reviews. More reviews mean higher rankings, more trust, and more customers calling you.</p>
+          <span class="blog-card-link">Read more <span class="ar">&rarr;</span></span>
+        </div>
+      </a>
+      <a href="blog/what-is-ai-automation-for-business.html" class="blog-card rv">
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Command Center</div>
+          <div class="blog-card-title">What Is AI Automation for Business? A Simple Explanation</div>
+          <p class="blog-card-excerpt">AI automation explained in plain English. How small businesses are using AI to save time, reduce costs, and grow faster.</p>
+          <span class="blog-card-link">Read more <span class="ar">&rarr;</span></span>
+        </div>
+      </a>
+    </div>
+    <div class="blog-more rv">
+      <a href="blog.html" class="btn btn-ghost">View All Articles <span class="ar">&rarr;</span></a>
     </div>
   </div>
 </section>
