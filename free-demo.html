@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Your Free Website + AI Demo | KalnyesGrowth</title>
+<meta name="description" content="We build your website and AI receptionist free in 48 hours. You only pay if you love it. No contracts, no risk.">
+<meta property="og:title" content="Get Your Free Website + AI Demo | KalnyesGrowth">
+<meta property="og:description" content="Your website + AI receptionist, built free in 48 hours. You only pay if you love it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kalnyesgrowth.com/free-demo.html">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.04);
+  --card-hover:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1200px;margin:0 auto;padding:24px 24px 0;
+}
+.nav-logo{
+  font-family:var(--serif);font-weight:700;font-size:1.25rem;
+  color:var(--white);text-decoration:none;
+}
+.nav-logo span{color:var(--green)}
+.nav-back{
+  color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;
+  transition:color .2s;
+}
+.nav-back:hover{color:var(--white)}
+
+/* CALCULATOR BANNER */
+.calc-banner{
+  max-width:1100px;margin:24px auto 0;padding:0 24px;
+}
+.calc-banner-inner{
+  background:rgba(245,166,35,0.06);border:1px solid rgba(245,166,35,0.18);
+  border-radius:12px;padding:14px 20px;
+  font-size:.9rem;color:#f5a623;font-weight:600;text-align:center;
+}
+.calc-banner-inner strong{color:var(--white)}
+
+/* LAYOUT */
+.demo-wrap{
+  max-width:1100px;margin:0 auto;padding:60px 24px 80px;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;
+}
+@media(max-width:768px){
+  .demo-wrap{grid-template-columns:1fr;gap:40px;padding:40px 24px 60px}
+}
+
+/* PITCH COLUMN */
+.pitch{padding-top:16px}
+.pitch-eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+}
+.pitch h1{
+  font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);font-weight:600;
+  color:var(--white);line-height:1.15;margin-bottom:12px;
+}
+.pitch-sub{font-size:1.1rem;color:var(--muted);margin-bottom:32px;font-weight:500}
+
+.trust-points{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.trust-point{
+  display:flex;align-items:center;gap:12px;
+  font-size:.9rem;color:var(--text);line-height:1.4;
+}
+.trust-icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);
+  display:flex;align-items:center;justify-content:center;
+}
+.trust-icon svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.testimonial-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:24px;
+}
+.testimonial-card blockquote{
+  font-size:.9rem;color:var(--text);line-height:1.65;margin-bottom:14px;font-style:normal;
+}
+.testimonial-card blockquote b{color:var(--white)}
+.testimonial-who{display:flex;gap:10px;align-items:center}
+.testimonial-av{
+  width:36px;height:36px;border-radius:50%;overflow:hidden;
+  background:rgba(255,255,255,0.06);flex-shrink:0;
+}
+.testimonial-av img{width:100%;height:100%;object-fit:cover}
+.testimonial-nm{font-weight:700;font-size:.85rem;color:var(--white)}
+.testimonial-rl{font-size:.72rem;color:var(--muted)}
+
+/* FORM CARD */
+.form-card{
+  background:var(--surface);border:1px solid var(--border-s);border-radius:var(--r);
+  padding:32px;position:relative;
+}
+
+/* PROGRESS BAR */
+.progress{
+  height:4px;background:var(--border);border-radius:2px;margin-bottom:28px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:var(--green);border-radius:2px;
+  transition:width .4s cubic-bezier(.2,.8,.2,1);width:20%;
+}
+
+/* STEP INDICATOR */
+.step-indicator{
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:20px;
+}
+
+/* FORM STEPS */
+.form-step{display:none}
+.form-step.active{display:block}
+.form-step label{
+  display:block;font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:10px;
+}
+.form-step .helper{
+  font-size:.75rem;color:var(--muted);margin-top:6px;line-height:1.4;
+}
+
+.f-input,.f-select,.f-textarea{
+  width:100%;padding:14px 16px;font-size:1rem;font-family:var(--font);
+  background:var(--bg);color:var(--white);
+  border:1px solid var(--border-s);border-radius:12px;
+  outline:none;transition:border-color .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--green)}
+.f-select{
+  background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  padding-right:40px;cursor:pointer;
+}
+.f-select option{background:var(--surface);color:var(--white)}
+.f-textarea{resize:vertical;min-height:100px}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--dim)}
+
+.f-error{
+  font-size:.75rem;color:#ef4444;margin-top:6px;display:none;
+}
+
+/* CHECKBOX */
+.f-check{
+  display:flex;align-items:center;gap:10px;margin-top:12px;cursor:pointer;
+  font-size:.875rem;color:var(--text);
+}
+.f-check input{
+  width:18px;height:18px;accent-color:var(--green);cursor:pointer;
+}
+
+/* ALT GBP FIELDS */
+.alt-gbp{display:none;margin-top:14px}
+.alt-gbp .f-input{margin-bottom:10px}
+
+/* LANGUAGE TOGGLE */
+.lang-toggle{
+  display:flex;gap:0;border:1px solid var(--border-s);border-radius:10px;overflow:hidden;
+  margin-top:14px;
+}
+.lang-opt{
+  flex:1;padding:10px;text-align:center;font-size:.875rem;font-weight:600;
+  cursor:pointer;transition:all .2s;color:var(--muted);background:transparent;
+  border:none;font-family:var(--font);
+}
+.lang-opt.active{background:var(--green);color:#fff}
+
+/* INPUT ROW */
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:480px){.f-row{grid-template-columns:1fr}}
+
+/* BUTTONS */
+.btn-row{display:flex;gap:10px;margin-top:24px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 32px;border-radius:12px;font-size:1rem;font-weight:700;
+  font-family:var(--font);text-decoration:none;cursor:pointer;
+  transition:all .25s;border:none;
+}
+.btn-green{background:var(--green);color:#fff;width:100%}
+.btn-green:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-green:disabled{opacity:.5;cursor:not-allowed;transform:none;filter:none}
+.btn-back{
+  background:transparent;color:var(--muted);border:1px solid var(--border);
+  padding:14px 20px;font-size:.875rem;
+}
+.btn-back:hover{border-color:var(--border-s);color:var(--white)}
+
+/* THANK YOU */
+.thank-you{display:none;text-align:center;padding:40px 20px}
+.thank-you h2{
+  font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;
+  color:var(--white);margin-bottom:12px;
+}
+.thank-you p{font-size:1rem;color:var(--text);margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.thank-you .links{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;
+}
+.thank-you .links a{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:14px 20px;font-size:.85rem;font-weight:600;color:var(--green);
+  text-decoration:none;transition:all .2s;
+}
+.thank-you .links a:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.2)}
+.thank-you .dashboard-note{
+  font-size:.85rem;color:var(--muted);line-height:1.6;
+  border-top:1px solid var(--border);padding-top:20px;margin-top:8px;
+  max-width:420px;margin-left:auto;margin-right:auto;
+}
+
+/* HONEYPOT */
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+
+/* FOOTER */
+.footer{
+  max-width:1100px;margin:0 auto;padding:0 24px 60px;text-align:center;
+}
+.footer p{font-size:.75rem;color:var(--dim)}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--white)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Kalnyes<span>Growth</span></a>
+  <a href="/" class="nav-back">&larr; Back to site</a>
+</nav>
+
+<div class="calc-banner" id="calcBanner" style="display:none">
+  <div class="calc-banner-inner">
+    You're losing ~<strong id="bannerLoss">$0</strong>/mo to missed calls. Let's fix that.
+  </div>
+</div>
+
+<div class="demo-wrap">
+
+  <!-- PITCH -->
+  <div class="pitch">
+    <p class="pitch-eyebrow">Your Free Demo</p>
+    <h1>Your website + AI receptionist, built free in 48 hours.</h1>
+    <p class="pitch-sub">You only pay if you love it.</p>
+
+    <div class="trust-points">
+      <div class="trust-point">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        We build everything before you pay a cent
+      </div>
+      <div class="trust-point">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        Your AI receptionist, trained on YOUR business
+      </div>
+      <div class="trust-point">
+        <div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Cancel anytime. No contracts.
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>"They built my entire website before I paid anything. When I saw it, I couldn't believe it. <b>The calls started coming in the first week.</b>"</blockquote>
+      <div class="testimonial-who">
+        <div class="testimonial-av"><img src="img/reviews/mike.jpg" alt="Mike R." loading="lazy"></div>
+        <div>
+          <div class="testimonial-nm">Mike R.</div>
+          <div class="testimonial-rl">Contractor, Stafford VA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="step-indicator" id="stepIndicator">Step 1 of 5</div>
+
+    <!-- STEP 1: Business Name -->
+    <div class="form-step active" data-step="1">
+      <label for="bizName">What's your business name?</label>
+      <input type="text" id="bizName" class="f-input" placeholder="e.g. Smith's Plumbing" required>
+      <p class="f-error" id="bizNameError">Please enter your business name.</p>
+      <div class="btn-row"><button class="btn btn-green" id="next1">Next</button></div>
+    </div>
+
+    <!-- STEP 2: GBP -->
+    <div class="form-step" data-step="2">
+      <label for="gbpUrl">Your Google Business Profile link</label>
+      <input type="url" id="gbpUrl" class="f-input" placeholder="https://maps.app.goo.gl/...">
+      <p class="helper">Search your business on Google Maps, click Share, copy the link.</p>
+      <p class="f-error" id="gbpError">Please enter a valid Google Maps link (google.com/maps, maps.app.goo.gl, or g.co/kgs).</p>
+
+      <label class="f-check">
+        <input type="checkbox" id="noGbp"> I don't have one yet
+      </label>
+
+      <div class="alt-gbp" id="altGbp">
+        <input type="text" id="bizCity" class="f-input" placeholder="City (e.g. Stafford, VA)">
+        <input type="text" id="bizWhat" class="f-input" placeholder="What do you do? (e.g. Plumbing)">
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-back" id="back2">&larr;</button>
+        <button class="btn btn-green" id="next2" style="flex:1">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Industry + Language -->
+    <div class="form-step" data-step="3">
+      <label for="industry">Your industry</label>
+      <select id="industry" class="f-select">
+        <option value="">Select your industry</option>
+        <option value="HVAC">HVAC</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Landscaping">Landscaping</option>
+        <option value="Contractor / Remodeling">Contractor / Remodeling</option>
+        <option value="Cleaning">Cleaning</option>
+        <option value="Painting">Painting</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Party Rentals">Party Rentals</option>
+        <option value="Other">Other</option>
+      </select>
+      <p class="f-error" id="industryError">Please select your industry.</p>
+
+      <label style="display:block;margin-top:20px;font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:10px">Website language</label>
+      <div class="lang-toggle">
+        <button type="button" class="lang-opt active" data-lang="English">English</button>
+        <button type="button" class="lang-opt" data-lang="Espanol">Espanol</button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-back" id="back3">&larr;</button>
+        <button class="btn btn-green" id="next3" style="flex:1">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Contact -->
+    <div class="form-step" data-step="4">
+      <label for="email">Your email</label>
+      <input type="email" id="email" class="f-input" placeholder="you@business.com" required>
+      <p class="f-error" id="emailError">Please enter a valid email address.</p>
+
+      <div style="margin-top:14px">
+        <label for="phone">Phone <span style="color:var(--muted);font-weight:400">(optional, for a text when your demo is ready)</span></label>
+        <input type="tel" id="phone" class="f-input" placeholder="(540) 555-0123">
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-back" id="back4">&larr;</button>
+        <button class="btn btn-green" id="next4" style="flex:1">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Notes + Submit -->
+    <div class="form-step" data-step="5">
+      <label for="notes">Anything we should know? <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+      <textarea id="notes" class="f-textarea" placeholder="Special services, target customers, anything that makes your business unique..."></textarea>
+
+      <!-- Honeypot -->
+      <div class="hp"><input type="text" id="hpField" tabindex="-1" autocomplete="off"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-back" id="back5">&larr;</button>
+        <button class="btn btn-green" id="submitBtn" style="flex:1">Build My Free Demo</button>
+      </div>
+    </div>
+
+    <!-- THANK YOU -->
+    <div class="thank-you" id="thankYou">
+      <h2>We're on it.</h2>
+      <p>Your demo will be ready within 48 hours. We'll send it to the email you provided.</p>
+      <div class="links">
+        <a href="calculator.html">Missed Call Calculator</a>
+        <a href="blog/ai-receptionist-for-small-business.html">AI Receptionist Guide</a>
+        <a href="blog/how-to-get-more-google-reviews.html">Get More Reviews</a>
+      </div>
+      <p class="dashboard-note">Your demo includes access to your own KG Dashboard, where you'll see every call, lead, and booking your system handles.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; <span id="footerYear">2026</span> <a href="/">KalnyesGrowth</a>. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  // TODO: Replace with actual Formspree form ID or Vercel serverless function URL
+  var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  // TODO: Replace with production KG app URL and webhook secret
+  var KG_APP_URL = 'https://project-kday6.vercel.app';
+  var KG_WEBHOOK_SECRET = 'YOUR_WEBHOOK_SECRET';
+
+  var currentStep = 1;
+  var totalSteps = 5;
+  var language = 'English';
+
+  // Elements
+  var progressFill = document.getElementById('progressFill');
+  var stepIndicator = document.getElementById('stepIndicator');
+  var formCard = document.getElementById('formCard');
+  var thankYou = document.getElementById('thankYou');
+  var calcBanner = document.getElementById('calcBanner');
+
+  // Parse URL params from calculator
+  var params = new URLSearchParams(window.location.search);
+  var calcData = null;
+  if(params.get('monthlyLoss')){
+    calcData = {
+      monthlyLoss: params.get('monthlyLoss'),
+      annualLoss: params.get('annualLoss')
+    };
+    calcBanner.style.display = 'block';
+    document.getElementById('bannerLoss').textContent = '$' + parseInt(calcData.monthlyLoss).toLocaleString('en-US');
+  }
+  if(params.get('industry')){
+    var ind = document.getElementById('industry');
+    for(var i = 0; i < ind.options.length; i++){
+      if(ind.options[i].value === params.get('industry')){
+        ind.selectedIndex = i;
+        break;
+      }
+    }
+  }
+
+  // Show thank-you directly if ?done=1
+  if(params.get('done') === '1'){
+    showThankYou();
+  }
+
+  function updateProgress(){
+    progressFill.style.width = (currentStep / totalSteps * 100) + '%';
+    stepIndicator.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+  }
+
+  function showStep(n){
+    var steps = document.querySelectorAll('.form-step');
+    steps.forEach(function(s){ s.classList.remove('active') });
+    var target = document.querySelector('[data-step="' + n + '"]');
+    if(target) target.classList.add('active');
+    currentStep = n;
+    updateProgress();
+  }
+
+  function showError(id){
+    document.getElementById(id).style.display = 'block';
+  }
+  function hideError(id){
+    document.getElementById(id).style.display = 'none';
+  }
+
+  function showThankYou(){
+    var steps = document.querySelectorAll('.form-step');
+    steps.forEach(function(s){ s.classList.remove('active') });
+    document.querySelector('.progress').style.display = 'none';
+    stepIndicator.style.display = 'none';
+    thankYou.style.display = 'block';
+  }
+
+  // GBP validation
+  function isValidGbp(url){
+    return /google\.com\/maps|maps\.app\.goo\.gl|g\.co\/kgs/i.test(url);
+  }
+
+  // Email validation
+  function isValidEmail(e){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  }
+
+  // No GBP checkbox
+  var noGbp = document.getElementById('noGbp');
+  var altGbp = document.getElementById('altGbp');
+  var gbpUrl = document.getElementById('gbpUrl');
+  noGbp.addEventListener('change', function(){
+    altGbp.style.display = this.checked ? 'block' : 'none';
+    gbpUrl.style.display = this.checked ? 'none' : 'block';
+    gbpUrl.required = !this.checked;
+  });
+
+  // Language toggle
+  document.querySelectorAll('.lang-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.lang-opt').forEach(function(b){ b.classList.remove('active') });
+      this.classList.add('active');
+      language = this.dataset.lang;
+    });
+  });
+
+  // Navigation
+  document.getElementById('next1').addEventListener('click', function(){
+    var name = document.getElementById('bizName').value.trim();
+    if(!name){ showError('bizNameError'); return; }
+    hideError('bizNameError');
+    showStep(2);
+  });
+
+  document.getElementById('next2').addEventListener('click', function(){
+    hideError('gbpError');
+    if(!noGbp.checked){
+      var url = gbpUrl.value.trim();
+      if(url && !isValidGbp(url)){ showError('gbpError'); return; }
+    }
+    showStep(3);
+  });
+
+  document.getElementById('next3').addEventListener('click', function(){
+    var ind = document.getElementById('industry').value;
+    if(!ind){ showError('industryError'); return; }
+    hideError('industryError');
+    showStep(4);
+  });
+
+  document.getElementById('next4').addEventListener('click', function(){
+    var email = document.getElementById('email').value.trim();
+    if(!isValidEmail(email)){ showError('emailError'); return; }
+    hideError('emailError');
+    showStep(5);
+  });
+
+  // Back buttons
+  document.getElementById('back2').addEventListener('click', function(){ showStep(1) });
+  document.getElementById('back3').addEventListener('click', function(){ showStep(2) });
+  document.getElementById('back4').addEventListener('click', function(){ showStep(3) });
+  document.getElementById('back5').addEventListener('click', function(){ showStep(4) });
+
+  // Submit
+  document.getElementById('submitBtn').addEventListener('click', function(){
+    // Honeypot check
+    if(document.getElementById('hpField').value) {
+      showThankYou();
+      return;
+    }
+
+    var btn = this;
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    var payload = {
+      source: 'website-demo-funnel',
+      businessName: document.getElementById('bizName').value.trim(),
+      gbpUrl: noGbp.checked ? null : gbpUrl.value.trim(),
+      city: noGbp.checked ? document.getElementById('bizCity').value.trim() : null,
+      whatDoYouDo: noGbp.checked ? document.getElementById('bizWhat').value.trim() : null,
+      industry: document.getElementById('industry').value,
+      language: language,
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim() || null,
+      notes: document.getElementById('notes').value.trim() || null,
+      calculator: calcData,
+      createdAt: new Date().toISOString()
+    };
+
+    // Send to both endpoints, don't block on either
+    var formPromise = fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(payload)
+    }).catch(function(){});
+
+    var webhookPromise = fetch(KG_APP_URL + '/api/leads', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-kg-webhook-secret': KG_WEBHOOK_SECRET
+      },
+      body: JSON.stringify(payload)
+    }).catch(function(){});
+
+    Promise.all([formPromise, webhookPromise]).then(function(){
+      showThankYou();
+    }).catch(function(){
+      showThankYou();
+    });
+  });
+
+  // Enter key advances steps
+  document.querySelectorAll('.f-input').forEach(function(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        var step = this.closest('.form-step');
+        var nextBtn = step.querySelector('.btn-green');
+        if(nextBtn) nextBtn.click();
+      }
+    });
+  });
+
+  // Footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+})();
+</script>
+
+<script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
+</body>
+</html>

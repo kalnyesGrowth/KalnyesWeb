@@ -35,7 +35,11 @@
     {"@type": "Question", "name": "How long does it take to see results?", "acceptedAnswer": {"@type": "Answer", "text": "Most clients see their first new leads within 30 days of launch. The system improves over time as it learns your market and customer patterns. Full optimization typically takes 60-90 days."}},
     {"@type": "Question", "name": "What does the discovery call include?", "acceptedAnswer": {"@type": "Answer", "text": "We spend 15 minutes learning about your business, your current challenges, and where you're losing customers. No sales pitch. No pressure. If we can help, we'll explain how. If we can't, we'll tell you that too."}},
     {"@type": "Question", "name": "Do I need a website already?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our systems include everything you need. If you already have a website, we can integrate with it. If you don't, we'll build one as part of your system. Either way, you're covered."}},
-    {"@type": "Question", "name": "What if it doesn't work for my business?", "acceptedAnswer": {"@type": "Answer", "text": "We only take on clients we're confident we can help. That's why the discovery call exists. If your business isn't a good fit for our systems, we'll be upfront about it before you spend anything."}}
+    {"@type": "Question", "name": "What if it doesn't work for my business?", "acceptedAnswer": {"@type": "Answer", "text": "We only take on clients we're confident we can help. That's why the discovery call exists. If your business isn't a good fit for our systems, we'll be upfront about it before you spend anything."}},
+    {"@type": "Question", "name": "Can I switch plans later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can upgrade or downgrade at any time. Most clients start with the Growth plan and adjust based on their results. There are no penalties for switching."}},
+    {"@type": "Question", "name": "What happens if I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "You keep your website. We transfer everything to you. No hostage situations, no hidden fees. If you leave, you leave with what you paid for."}},
+    {"@type": "Question", "name": "Do you work with businesses outside Virginia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area."}},
+    {"@type": "Question", "name": "What's included in the free demo?", "acceptedAnswer": {"@type": "Answer", "text": "We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings."}}
   ]
 }
 </script>
@@ -362,6 +366,124 @@ footer p{font-size:.78rem;color:var(--muted)}
   .stat-n{font-size:1.1rem}
   .stat-l{font-size:.58rem}
 }
+
+/* === PLANS === */
+.plans-free{
+  background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);border-radius:var(--r);
+  padding:20px 28px;text-align:center;margin-bottom:24px;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.plans-free-text{font-size:.95rem;color:var(--text)}
+.plans-free-text strong{color:var(--white)}
+.plans-free a{font-size:.88rem;font-weight:700;color:var(--green);text-decoration:none}
+.plans-free a:hover{text-decoration:underline}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.plan-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:32px 24px;display:flex;flex-direction:column;transition:all .35s cubic-bezier(.2,.8,.2,1);
+}
+.plan-card:hover{background:var(--card-hover);transform:translateY(-3px)}
+.plan-card.popular{
+  border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.04);
+  position:relative;
+}
+.plan-pop-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--green);color:#fff;font-size:.62rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 16px;border-radius:999px;
+  white-space:nowrap;
+}
+.plan-name{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.plan-price{font-family:var(--serif);font-size:clamp(2rem,4vw,2.6rem);font-weight:700;color:var(--white);margin-bottom:4px}
+.plan-price span{font-size:.9rem;font-weight:500;color:var(--muted)}
+.plan-desc{font-size:.85rem;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.plan-features{list-style:none;margin-bottom:24px;flex:1}
+.plan-features li{
+  font-size:.85rem;color:var(--text);padding:6px 0;
+  display:flex;align-items:flex-start;gap:8px;line-height:1.4;
+}
+.plan-features li::before{content:'';display:inline-block;width:16px;height:16px;flex-shrink:0;margin-top:2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain}
+.plan-cta{
+  display:block;text-align:center;padding:14px;border-radius:12px;
+  font-weight:700;font-size:.9rem;transition:all .25s;text-decoration:none;
+}
+.plan-cta-green{background:var(--green);color:#fff}
+.plan-cta-green:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.plan-cta-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
+.plan-cta-ghost:hover{border-color:var(--green);color:var(--green)}
+.plans-guarantee{
+  text-align:center;padding:16px;font-size:.85rem;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.plans-guarantee svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:2;flex-shrink:0}
+.plans-compare{
+  text-align:center;font-size:.82rem;color:var(--muted);margin-top:8px;
+}
+.plans-compare strong{color:var(--white)}
+@media(max-width:768px){
+  .plans-grid{grid-template-columns:1fr}
+  .plan-card.popular{order:-1}
+}
+
+/* === DASHBOARD TEASER === */
+.dash-teaser{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;max-width:1060px;margin:0 auto}
+.dash-browser{
+  background:#0a0a0f;border:1px solid rgba(255,255,255,0.1);border-radius:12px;
+  overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5);
+}
+.dash-browser-bar{
+  display:flex;align-items:center;gap:6px;padding:10px 14px;
+  border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);
+}
+.dash-browser-dot{width:8px;height:8px;border-radius:50%}
+.dash-browser-url{
+  flex:1;margin-left:8px;background:rgba(255,255,255,0.04);border-radius:6px;
+  padding:4px 10px;font-size:.6rem;color:var(--muted);font-family:monospace;
+}
+.dash-browser-screen{padding:16px}
+.dash-mock-header{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+}
+.dash-mock-logo{font-family:var(--serif);font-size:.8rem;font-weight:700;color:var(--white)}
+.dash-mock-badge{font-size:.5rem;color:var(--green);font-weight:700;background:var(--green-dim);padding:3px 8px;border-radius:6px}
+.dash-mock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+.dash-mock-stat{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);
+  border-radius:8px;padding:10px 6px;text-align:center;
+}
+.dash-mock-stat-n{font-family:var(--serif);font-size:.9rem;font-weight:700;color:var(--green)}
+.dash-mock-stat-l{font-size:.42rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.dash-mock-chart{
+  height:60px;background:linear-gradient(180deg,rgba(34,197,94,0.08) 0%,transparent 100%);
+  border-radius:8px;position:relative;overflow:hidden;margin-bottom:12px;
+}
+.dash-mock-chart-line{
+  position:absolute;bottom:0;left:0;right:0;height:100%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cpath d='M0,50 Q25,45 50,35 T100,20 T150,28 T200,10' fill='none' stroke='%2322c55e' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+.dash-mock-feed{display:flex;flex-direction:column;gap:4px}
+.dash-mock-row{
+  display:flex;gap:6px;align-items:center;padding:5px 8px;
+  background:rgba(255,255,255,0.02);border-radius:6px;font-size:.48rem;
+}
+.dash-mock-row-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.dash-mock-row-text{flex:1;color:rgba(255,255,255,0.5)}
+.dash-mock-row-time{color:var(--dim);font-size:.4rem}
+.dash-info .tag{display:block;margin-bottom:12px}
+.dash-info h2{margin-bottom:14px}
+.dash-info>p{font-size:.95rem;color:var(--text);line-height:1.7;margin-bottom:24px}
+.dash-bullets{list-style:none;margin-bottom:28px}
+.dash-bullets li{
+  font-size:.9rem;color:var(--text);padding:8px 0;
+  display:flex;align-items:flex-start;gap:10px;line-height:1.5;
+}
+.dash-bullets li::before{content:'';display:inline-block;width:18px;height:18px;flex-shrink:0;margin-top:2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain}
+@media(max-width:768px){
+  .dash-teaser{grid-template-columns:1fr;gap:32px}
+  .dash-browser{order:2}
+  .dash-info{text-align:center}
+  .dash-bullets li{text-align:left}
+}
 </style>
 </head>
 <body>
@@ -373,6 +495,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <div class="nav-links">
       <a href="#how">How It Works</a>
       <a href="#results">Results</a>
+      <a href="#plans">Plans</a>
       <a href="#reviews">Reviews</a>
       <a href="#blog">Blog</a>
       <a href="es/index.html" style="font-size:.78rem;font-weight:700;color:var(--green);letter-spacing:.04em">ES</a>
@@ -389,6 +512,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   <button class="m-close" id="menuClose" aria-label="Close menu">&times;</button>
   <a href="#how" class="menu-link">How It Works</a>
   <a href="#results" class="menu-link">Results</a>
+  <a href="#plans" class="menu-link">Plans</a>
   <a href="#reviews" class="menu-link">Reviews</a>
   <a href="#blog" class="menu-link">Blog</a>
   <a href="es/index.html" class="menu-link" style="font-size:.95rem;color:var(--green)">Espanol</a>
@@ -730,6 +854,52 @@ footer p{font-size:.78rem;color:var(--muted)}
   </div>
 </section>
 
+<!-- DASHBOARD TEASER -->
+<section>
+  <div class="wrap">
+    <div class="dash-teaser">
+      <div class="dash-browser rv-l">
+        <div class="dash-browser-bar">
+          <span class="dash-browser-dot" style="background:#ff5f57"></span>
+          <span class="dash-browser-dot" style="background:#ffbd2e"></span>
+          <span class="dash-browser-dot" style="background:#28c840"></span>
+          <span class="dash-browser-url">app.kalnyesgrowth.com/dashboard</span>
+        </div>
+        <div class="dash-browser-screen">
+          <div class="dash-mock-header">
+            <span class="dash-mock-logo">KG Dashboard</span>
+            <span class="dash-mock-badge">Live</span>
+          </div>
+          <div class="dash-mock-grid">
+            <div class="dash-mock-stat"><div class="dash-mock-stat-n">47</div><div class="dash-mock-stat-l">Calls</div></div>
+            <div class="dash-mock-stat"><div class="dash-mock-stat-n">23</div><div class="dash-mock-stat-l">Leads</div></div>
+            <div class="dash-mock-stat"><div class="dash-mock-stat-n">12</div><div class="dash-mock-stat-l">Booked</div></div>
+            <div class="dash-mock-stat"><div class="dash-mock-stat-n">4.9</div><div class="dash-mock-stat-l">Rating</div></div>
+          </div>
+          <div class="dash-mock-chart"><div class="dash-mock-chart-line"></div></div>
+          <div class="dash-mock-feed">
+            <div class="dash-mock-row"><span class="dash-mock-row-dot" style="background:var(--green)"></span><span class="dash-mock-row-text">New lead: Sarah K. via website</span><span class="dash-mock-row-time">2m</span></div>
+            <div class="dash-mock-row"><span class="dash-mock-row-dot" style="background:#3b82f6"></span><span class="dash-mock-row-text">AI answered: Maria G. (2:14)</span><span class="dash-mock-row-time">8m</span></div>
+            <div class="dash-mock-row"><span class="dash-mock-row-dot" style="background:#f5a623"></span><span class="dash-mock-row-text">Review posted: Mike R. (5 stars)</span><span class="dash-mock-row-time">15m</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-info rv-r">
+        <span class="tag">Your Command Center</span>
+        <h2>See everything. Miss nothing.</h2>
+        <p>Every client gets their own dashboard. Calls, leads, bookings, reviews, AI conversations. All in one place, updated in real time.</p>
+        <ul class="dash-bullets">
+          <li>Every call logged with recording, duration, and outcome</li>
+          <li>AI receptionist conversations you can review anytime</li>
+          <li>Lead pipeline from first contact to booked appointment</li>
+          <li>Review alerts the moment a customer posts feedback</li>
+        </ul>
+        <a href="free-demo.html" class="btn btn-green">See your free demo <span class="ar" style="transition:transform .25s">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SCARCITY -->
 <section class="scarcity">
   <div class="wrap">
@@ -796,6 +966,75 @@ footer p{font-size:.78rem;color:var(--muted)}
   </div>
 </section>
 
+<!-- PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tag">Plans</span>
+      <h2>Simple pricing. Real results.</h2>
+      <p>Every plan includes your website, AI receptionist, and dashboard. Pick the system that fits your business.</p>
+    </div>
+
+    <div class="plans-free rv">
+      <span class="plans-free-text"><strong>Not sure yet?</strong> We build your demo free. No card, no commitment.</span>
+      <a href="free-demo.html">Get your free demo &rarr;</a>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card rv">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$297<span>/mo</span></div>
+        <p class="plan-desc">Website + AI receptionist. The essentials to stop losing calls.</p>
+        <ul class="plan-features">
+          <li>Custom website built for your business</li>
+          <li>AI receptionist answers 24/7</li>
+          <li>Missed call text-back</li>
+          <li>Google Business Profile setup</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false">Book a call</a>
+      </div>
+
+      <div class="plan-card popular rv">
+        <span class="plan-pop-badge">Most Popular</span>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$597<span>/mo</span></div>
+        <p class="plan-desc">Full acquisition system. Website, AI, reviews, and lead pipeline.</p>
+        <ul class="plan-features">
+          <li>Everything in Starter</li>
+          <li>Automated review requests</li>
+          <li>Lead follow-up sequences</li>
+          <li>Social inbox (IG, FB, Google)</li>
+          <li>KG Dashboard with real-time analytics</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="plan-cta plan-cta-green" onclick="openBooking();return false">Book a call</a>
+      </div>
+
+      <div class="plan-card rv">
+        <div class="plan-name">Custom</div>
+        <div class="plan-price">$1,500+<span>/mo</span></div>
+        <p class="plan-desc">Enterprise-grade system. Multi-location, custom integrations, dedicated support.</p>
+        <ul class="plan-features">
+          <li>Everything in Growth</li>
+          <li>Multi-location support</li>
+          <li>Custom AI training and workflows</li>
+          <li>CRM and POS integrations</li>
+          <li>Dedicated account manager</li>
+          <li>Custom reporting and analytics</li>
+        </ul>
+        <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false">Let's talk</a>
+      </div>
+    </div>
+
+    <div class="plans-guarantee rv">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      90-day guarantee. If the system doesn't pay for itself, we work free until it does.
+    </div>
+    <p class="plans-compare rv">Other agencies charge <strong>$5,000-$8,000</strong> upfront with no guarantee. We build first, you pay only if you love it.</p>
+  </div>
+</section>
+
 <!-- CONVERSION LADDER -->
 <section>
   <div class="wrap">
@@ -805,13 +1044,13 @@ footer p{font-size:.78rem;color:var(--muted)}
       <p>Not ready for a call? No problem. Pick the option that fits.</p>
     </div>
     <div class="svc-grid" style="grid-template-columns:repeat(3,1fr)">
-      <a href="#" class="svc rv" style="text-decoration:none;text-align:center">
+      <a href="calculator.html" class="svc rv" style="text-decoration:none;text-align:center">
         <div class="svc-ico" style="margin:0 auto 18px"><svg viewBox="0 0 24 24"><path d="M12 20V10M6 20V4M18 20v-6"/></svg></div>
         <h3>Missed Call Calculator</h3>
         <p>See how much revenue you lose each month from missed calls. Takes 30 seconds.</p>
         <span style="display:inline-block;margin-top:16px;font-size:.85rem;font-weight:700;color:var(--green)">Calculate Now &rarr;</span>
       </a>
-      <a href="free-preview/index.html" class="svc rv" style="text-decoration:none;text-align:center">
+      <a href="free-demo.html" class="svc rv" style="text-decoration:none;text-align:center">
         <div class="svc-ico" style="margin:0 auto 18px"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <h3>Get a Free Demo</h3>
         <p>See your actual website and AI system built out before you spend a cent. No commitment.</p>
@@ -916,6 +1155,10 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="faq"><button aria-expanded="false">What does the discovery call include?<span class="faq-plus">+</span></button><div class="faq-body"><p>We spend 15 minutes learning about your business, your current challenges, and where you're losing customers. No sales pitch. No pressure. If we can help, we'll explain how. If we can't, we'll tell you that too.</p></div></div>
       <div class="faq"><button aria-expanded="false">Do I need a website already?<span class="faq-plus">+</span></button><div class="faq-body"><p>No. Our systems include everything you need. If you already have a website, we can integrate with it. If you don't, we'll build one as part of your system. Either way, you're covered.</p></div></div>
       <div class="faq"><button aria-expanded="false">What if it doesn't work for my business?<span class="faq-plus">+</span></button><div class="faq-body"><p>We only take on clients we're confident we can help. That's why the discovery call exists. If your business isn't a good fit for our systems, we'll be upfront about it before you spend anything.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Can I switch plans later?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. You can upgrade or downgrade at any time. Most clients start with the Growth plan and adjust based on their results. There are no penalties for switching.</p></div></div>
+      <div class="faq"><button aria-expanded="false">What happens if I cancel?<span class="faq-plus">+</span></button><div class="faq-body"><p>You keep your website. We transfer everything to you. No hostage situations, no hidden fees. If you leave, you leave with what you paid for.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do you work with businesses outside Virginia?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area.</p></div></div>
+      <div class="faq"><button aria-expanded="false">What's included in the free demo?<span class="faq-plus">+</span></button><div class="faq-body"><p>We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings.</p></div></div>
     </div>
   </div>
 </section>
@@ -965,7 +1208,8 @@ footer p{font-size:.78rem;color:var(--muted)}
     </div>
     <div>
       <p style="font-size:.78rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px">Get Started</p>
-      <p style="font-size:.85rem;line-height:2.2"><a href="free-preview/index.html" style="color:var(--text)">Free Demo</a></p>
+      <p style="font-size:.85rem;line-height:2.2"><a href="free-demo.html" style="color:var(--text)">Free Demo</a></p>
+      <p style="font-size:.85rem;line-height:2.2"><a href="calculator.html" style="color:var(--text)">Missed Call Calculator</a></p>
       <p style="font-size:.85rem;line-height:2.2"><a href="#" onclick="openBooking();return false" style="color:var(--text)">Book a Call</a></p>
       <p style="font-size:.85rem;line-height:2.2"><a href="book/index.html" style="color:var(--text)">Schedule Online</a></p>
     </div>
