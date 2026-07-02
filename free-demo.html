@@ -413,11 +413,8 @@ body{
 
 <script>
 (function(){
-  // TODO: Replace with actual Formspree form ID or Vercel serverless function URL
-  var FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-  // TODO: Replace with production KG app URL and webhook secret
-  var KG_APP_URL = 'https://project-kday6.vercel.app';
-  var KG_WEBHOOK_SECRET = 'YOUR_WEBHOOK_SECRET';
+  var LEAD_ENDPOINT = 'https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/capture-lead';
+  var CLIENT_ID = '992d9253-6123-4d51-91b9-007efd8ad03c';
 
   var currentStep = 1;
   var totalSteps = 5;
@@ -563,42 +560,39 @@ body{
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
-    var payload = {
-      source: 'website-demo-funnel',
-      businessName: document.getElementById('bizName').value.trim(),
-      gbpUrl: noGbp.checked ? null : gbpUrl.value.trim(),
-      city: noGbp.checked ? document.getElementById('bizCity').value.trim() : null,
-      whatDoYouDo: noGbp.checked ? document.getElementById('bizWhat').value.trim() : null,
-      industry: document.getElementById('industry').value,
-      language: language,
-      email: document.getElementById('email').value.trim(),
-      phone: document.getElementById('phone').value.trim() || null,
-      notes: document.getElementById('notes').value.trim() || null,
-      calculator: calcData,
-      createdAt: new Date().toISOString()
-    };
+    var bizName = document.getElementById('bizName').value.trim();
+    var emailVal = document.getElementById('email').value.trim();
+    var phoneVal = document.getElementById('phone').value.trim() || null;
+    var notesVal = document.getElementById('notes').value.trim() || null;
+    var industryVal = document.getElementById('industry').value;
+    var gbpVal = noGbp.checked ? null : gbpUrl.value.trim();
+    var cityVal = noGbp.checked ? document.getElementById('bizCity').value.trim() : null;
+    var whatVal = noGbp.checked ? document.getElementById('bizWhat').value.trim() : null;
 
-    // Send to both endpoints, don't block on either
-    var formPromise = fetch(FORM_ENDPOINT, {
+    var messageParts = ['Source: Free Demo Funnel'];
+    messageParts.push('Business: ' + bizName);
+    messageParts.push('Industry: ' + industryVal);
+    messageParts.push('Language: ' + language);
+    if(gbpVal) messageParts.push('GBP: ' + gbpVal);
+    if(cityVal) messageParts.push('City: ' + cityVal);
+    if(whatVal) messageParts.push('Service: ' + whatVal);
+    if(notesVal) messageParts.push('Notes: ' + notesVal);
+    if(calcData) messageParts.push('Calculator: losing ~$' + calcData.monthlyLoss + '/mo ($' + calcData.annualLoss + '/yr)');
+
+    fetch(LEAD_ENDPOINT, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(payload)
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        client_id: CLIENT_ID,
+        name: bizName,
+        email: emailVal,
+        phone: phoneVal,
+        message: messageParts.join(' | '),
+        source_url: window.location.href
+      })
     }).catch(function(){});
 
-    var webhookPromise = fetch(KG_APP_URL + '/api/leads', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-kg-webhook-secret': KG_WEBHOOK_SECRET
-      },
-      body: JSON.stringify(payload)
-    }).catch(function(){});
-
-    Promise.all([formPromise, webhookPromise]).then(function(){
-      showThankYou();
-    }).catch(function(){
-      showThankYou();
-    });
+    showThankYou();
   });
 
   // Enter key advances steps

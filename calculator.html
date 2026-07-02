@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missed Call Cost Calculator for Local Businesses | KalnyesGrowth</title>
+<meta name="description" content="Find out how much missed calls are really costing your business. Free calculator with industry-specific data. No email required.">
+<meta property="og:title" content="Missed Call Cost Calculator | KalnyesGrowth">
+<meta property="og:description" content="Find out how much missed calls cost your business every month. Free tool, real math, no email required.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kalnyesgrowth.com/calculator.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How many calls do small businesses miss?", "acceptedAnswer": {"@type": "Answer", "text": "According to 411 Locals, 62% of calls to small businesses go unanswered. For home service businesses specifically, the range is 27-62% depending on the industry and time of day."}},
+    {"@type": "Question", "name": "Do missed callers call back?", "acceptedAnswer": {"@type": "Answer", "text": "No. Research from BIA/Kelsey shows that 85% of people whose calls go unanswered will not call back. They move on to the next business in their search results."}},
+    {"@type": "Question", "name": "What is the average cost of a missed call for a local business?", "acceptedAnswer": {"@type": "Answer", "text": "The cost varies by industry. For HVAC companies, a missed call represents roughly $450 in lost revenue. For contractors, it can be $2,500 or more. The average across all local service businesses is approximately $1,200 per missed opportunity."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.04);
+  --card-hover:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1200px;margin:0 auto;padding:24px 24px 0;
+}
+.nav-logo{
+  font-family:var(--serif);font-weight:700;font-size:1.25rem;
+  color:var(--white);text-decoration:none;
+}
+.nav-logo span{color:var(--green)}
+.nav-back{
+  color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;
+  transition:color .2s;
+}
+.nav-back:hover{color:var(--white)}
+
+/* HERO */
+.hero{
+  max-width:720px;margin:0 auto;padding:80px 24px 40px;text-align:center;
+}
+.hero-eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin-bottom:16px;
+}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);font-weight:600;
+  color:var(--white);line-height:1.15;margin-bottom:16px;
+}
+.hero p{
+  font-size:1.05rem;color:var(--muted);max-width:480px;margin:0 auto;
+}
+
+/* CALCULATOR CARD */
+.calc-wrap{
+  max-width:900px;margin:0 auto;padding:0 24px 80px;
+}
+.calc-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:40px;
+}
+@media(max-width:600px){
+  .calc-card{padding:24px 16px}
+}
+
+/* INPUT GROUPS */
+.input-group{margin-bottom:28px}
+.input-group label{
+  display:block;font-size:.875rem;font-weight:600;color:var(--white);margin-bottom:8px;
+}
+.input-group .helper{
+  font-size:.75rem;color:var(--muted);margin-top:6px;line-height:1.4;
+}
+
+/* SELECT + NUMBER */
+.calc-select,.calc-input{
+  width:100%;padding:14px 16px;font-size:1rem;font-family:var(--font);
+  background:var(--surface);color:var(--white);
+  border:1px solid var(--border-s);border-radius:12px;
+  outline:none;transition:border-color .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.calc-select:focus,.calc-input:focus{border-color:var(--green)}
+.calc-select{
+  background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+  padding-right:40px;cursor:pointer;
+}
+.calc-select option{background:var(--surface);color:var(--white)}
+
+/* RANGE SLIDER */
+.range-wrap{position:relative;padding-top:4px}
+.range-value{
+  position:absolute;top:-2px;right:0;
+  font-size:.875rem;font-weight:700;color:var(--green);
+}
+.calc-range{
+  width:100%;height:6px;-webkit-appearance:none;appearance:none;
+  background:var(--border-s);border-radius:3px;outline:none;cursor:pointer;
+}
+.calc-range::-webkit-slider-thumb{
+  -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--green);border:3px solid var(--bg);cursor:pointer;
+  box-shadow:0 0 8px rgba(34,197,94,.4);
+}
+.calc-range::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;border:3px solid var(--bg);
+  background:var(--green);cursor:pointer;
+  box-shadow:0 0 8px rgba(34,197,94,.4);
+}
+
+/* TWO COL */
+.input-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+@media(max-width:600px){
+  .input-row{grid-template-columns:1fr}
+}
+
+/* FORMULA */
+.formula-strip{
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:16px 20px;margin:32px 0;font-size:.8rem;color:var(--muted);
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+  line-height:1.7;word-break:break-all;
+}
+.formula-strip span{color:var(--green);font-weight:600}
+
+/* RESULTS */
+.results{
+  background:var(--surface);border:1px solid var(--border-s);border-radius:var(--r);
+  padding:40px;text-align:center;margin-top:8px;
+}
+@media(max-width:600px){
+  .results{padding:28px 16px}
+}
+.results-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green);margin-bottom:12px;
+}
+.results-big{
+  font-family:var(--serif);font-size:clamp(2.4rem,7vw,4rem);font-weight:700;
+  color:var(--white);line-height:1;margin-bottom:4px;
+}
+.results-annual{
+  font-size:1.2rem;font-weight:600;color:var(--muted);margin-bottom:8px;
+}
+.results-context{
+  font-size:.9rem;color:var(--muted);margin-bottom:28px;
+}
+.results-context strong{color:var(--green);font-weight:700}
+
+/* BREAKDOWN TABLE */
+.breakdown{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--border);border-radius:12px;overflow:hidden;margin-bottom:32px;
+}
+.breakdown-item{
+  background:var(--bg);padding:20px 12px;text-align:center;
+}
+.breakdown-num{
+  font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--white);
+  margin-bottom:4px;
+}
+.breakdown-label{font-size:.75rem;color:var(--muted);line-height:1.3}
+@media(max-width:480px){
+  .breakdown{grid-template-columns:1fr}
+  .breakdown-item{padding:14px 12px}
+  .breakdown-num{font-size:1.25rem}
+}
+
+/* CTA BUTTONS */
+.cta-row{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:24px;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 32px;border-radius:12px;font-size:1rem;font-weight:700;
+  font-family:var(--font);text-decoration:none;cursor:pointer;
+  transition:all .25s;border:none;
+}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--white);border:1.5px solid var(--border-s);
+}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+
+/* EMAIL FORM */
+.email-section{
+  border-top:1px solid var(--border);padding-top:24px;margin-top:8px;
+}
+.email-section p{
+  font-size:.85rem;color:var(--muted);margin-bottom:14px;
+}
+.email-row{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+}
+.email-row input{
+  padding:12px 16px;font-size:.9rem;font-family:var(--font);
+  background:var(--bg);color:var(--white);
+  border:1px solid var(--border-s);border-radius:10px;
+  outline:none;flex:1;min-width:140px;max-width:220px;
+}
+.email-row input:focus{border-color:var(--green)}
+.email-row input::placeholder{color:var(--dim)}
+.btn-sm{
+  padding:12px 24px;font-size:.85rem;border-radius:10px;font-weight:700;
+  background:var(--green);color:#fff;border:none;cursor:pointer;font-family:var(--font);
+  transition:all .25s;
+}
+.btn-sm:hover{filter:brightness(1.1)}
+.email-success{
+  display:none;font-size:.9rem;color:var(--green);font-weight:600;margin-top:10px;
+}
+
+/* FOOTER */
+.footer{
+  max-width:900px;margin:0 auto;padding:0 24px 60px;text-align:center;
+}
+.footer p{font-size:.75rem;color:var(--dim)}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--white)}
+
+/* ANIMATIONS */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">Kalnyes<span>Growth</span></a>
+  <a href="/" class="nav-back">&larr; Back to site</a>
+</nav>
+
+<section class="hero rv">
+  <p class="hero-eyebrow">Free Tool</p>
+  <h1>How much are missed calls costing you?</h1>
+  <p>30 seconds. Real math. No email required to see your number.</p>
+</section>
+
+<div class="calc-wrap">
+  <div class="calc-card rv">
+
+    <div class="input-group">
+      <label for="industry">Your industry</label>
+      <select id="industry" class="calc-select">
+        <option value="500">Select your industry</option>
+        <option value="450">HVAC ($450 avg job)</option>
+        <option value="425">Plumbing ($425 avg job)</option>
+        <option value="400">Electrical ($400 avg job)</option>
+        <option value="250">Landscaping ($250 avg job)</option>
+        <option value="2500">Contractor / Remodeling ($2,500 avg job)</option>
+        <option value="175">Cleaning ($175 avg job)</option>
+        <option value="1200">Painting ($1,200 avg job)</option>
+        <option value="60">Restaurant ($60 avg ticket)</option>
+        <option value="600">Party Rentals ($600 avg job)</option>
+        <option value="500">Other ($500 avg job)</option>
+      </select>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label for="jobValue">Average job value ($)</label>
+        <input type="number" id="jobValue" class="calc-input" value="500" min="1" max="100000">
+      </div>
+      <div class="input-group">
+        <label for="callsWeek">Calls per week</label>
+        <input type="number" id="callsWeek" class="calc-input" value="20" min="1" max="500">
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="missPct">Calls missed</label>
+      <div class="range-wrap">
+        <span class="range-value" id="missPctVal">40%</span>
+        <input type="range" id="missPct" class="calc-range" min="0" max="100" value="40">
+      </div>
+      <p class="helper">Industry data: small businesses miss ~62% of calls (411 Locals). Home services: 27-62%.</p>
+    </div>
+
+    <div class="input-group">
+      <label for="closeRate">Close rate on answered calls</label>
+      <div class="range-wrap">
+        <span class="range-value" id="closeRateVal">40%</span>
+        <input type="range" id="closeRate" class="calc-range" min="0" max="100" value="40">
+      </div>
+      <p class="helper">Average close rate for qualified inbound calls: 30-50% depending on industry.</p>
+    </div>
+
+    <div class="formula-strip">
+      <span>missed/mo</span> = calls/wk &times; miss% &times; 4.33<br>
+      <span>leads lost</span> = missed/mo &times; 0.85 (85% never call back, BIA/Kelsey)<br>
+      <span>monthly $</span> = leads lost &times; close% &times; avg job value<br>
+      <span>annual $</span> = monthly &times; 12
+    </div>
+  </div>
+
+  <div class="results rv" id="results">
+    <p class="results-label">You're losing an estimated</p>
+    <p class="results-big" id="monthlyLoss">$0</p>
+    <p class="results-annual"><span id="annualLoss">$0</span> / year</p>
+    <p class="results-context">That's <strong id="planMultiple">0</strong>x the cost of our most popular plan.</p>
+
+    <div class="breakdown">
+      <div class="breakdown-item">
+        <p class="breakdown-num" id="missedMo">0</p>
+        <p class="breakdown-label">Missed calls per month</p>
+      </div>
+      <div class="breakdown-item">
+        <p class="breakdown-num" id="leadsLost">0</p>
+        <p class="breakdown-label">Leads lost forever (85% stat)</p>
+      </div>
+      <div class="breakdown-item">
+        <p class="breakdown-num" id="jobsLost">0</p>
+        <p class="breakdown-label">Jobs lost per month</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#" id="demoLink" class="btn btn-green">Stop the leak. See your free demo</a>
+      <a href="https://calendly.com/kalnyesgrowth/boost-your-business" target="_blank" class="btn btn-ghost">Book a call instead</a>
+    </div>
+
+    <div class="email-section">
+      <p>Want this report saved? We'll email it to you.</p>
+      <form id="emailForm" class="email-row">
+        <input type="text" name="name" placeholder="First name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit" class="btn-sm">Send report</button>
+      </form>
+      <p class="email-success" id="emailSuccess">Report sent. Check your inbox.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; <span id="footerYear">2026</span> <a href="/">KalnyesGrowth</a>. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  var LEAD_ENDPOINT = 'https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/capture-lead';
+  var CLIENT_ID = '992d9253-6123-4d51-91b9-007efd8ad03c';
+
+  // TODO: Analytics events to implement:
+  // - calculator_started: fire on first input interaction
+  // - calculator_completed: fire when results are first displayed
+  // - calculator_email_submitted: fire on email form submit
+
+  var industry = document.getElementById('industry');
+  var jobValue = document.getElementById('jobValue');
+  var callsWeek = document.getElementById('callsWeek');
+  var missPct = document.getElementById('missPct');
+  var closeRate = document.getElementById('closeRate');
+  var missPctVal = document.getElementById('missPctVal');
+  var closeRateVal = document.getElementById('closeRateVal');
+
+  var monthlyEl = document.getElementById('monthlyLoss');
+  var annualEl = document.getElementById('annualLoss');
+  var planEl = document.getElementById('planMultiple');
+  var missedMoEl = document.getElementById('missedMo');
+  var leadsLostEl = document.getElementById('leadsLost');
+  var jobsLostEl = document.getElementById('jobsLost');
+  var demoLink = document.getElementById('demoLink');
+
+  function fmt(n){
+    return n >= 1000
+      ? '$' + Math.round(n).toLocaleString('en-US')
+      : '$' + Math.round(n);
+  }
+
+  function calc(){
+    var jv = parseFloat(jobValue.value) || 0;
+    var cw = parseFloat(callsWeek.value) || 0;
+    var mp = parseFloat(missPct.value) / 100;
+    var cr = parseFloat(closeRate.value) / 100;
+
+    var missedPerMonth = cw * mp * 4.33;
+    var lostLeads = missedPerMonth * 0.85;
+    var monthly = lostLeads * cr * jv;
+    var annual = monthly * 12;
+    var jobsPerMonth = lostLeads * cr;
+    var multiple = monthly > 0 ? Math.round(monthly / 597) : 0;
+
+    monthlyEl.textContent = fmt(monthly);
+    annualEl.textContent = fmt(annual);
+    planEl.textContent = multiple;
+    missedMoEl.textContent = Math.round(missedPerMonth);
+    leadsLostEl.textContent = Math.round(lostLeads);
+    jobsLostEl.textContent = Math.round(jobsPerMonth);
+
+    var industryName = industry.options[industry.selectedIndex].text.split(' (')[0];
+    if(industryName === 'Select your industry') industryName = 'Other';
+    demoLink.href = '/free-demo.html?industry=' + encodeURIComponent(industryName)
+      + '&monthlyLoss=' + Math.round(monthly)
+      + '&annualLoss=' + Math.round(annual);
+  }
+
+  industry.addEventListener('change', function(){
+    jobValue.value = this.value;
+    calc();
+  });
+
+  missPct.addEventListener('input', function(){
+    missPctVal.textContent = this.value + '%';
+    calc();
+  });
+
+  closeRate.addEventListener('input', function(){
+    closeRateVal.textContent = this.value + '%';
+    calc();
+  });
+
+  jobValue.addEventListener('input', calc);
+  callsWeek.addEventListener('input', calc);
+
+  calc();
+
+  // Email form
+  var form = document.getElementById('emailForm');
+  var successMsg = document.getElementById('emailSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.querySelector('[name="name"]').value;
+    var email = form.querySelector('[name="email"]').value;
+    var msg = 'Source: Calculator | Industry: ' + industry.options[industry.selectedIndex].text
+      + ' | Monthly loss: ' + monthlyEl.textContent
+      + ' | Annual loss: ' + annualEl.textContent
+      + ' | Missed calls/mo: ' + missedMoEl.textContent
+      + ' | Leads lost: ' + leadsLostEl.textContent
+      + ' | Jobs lost: ' + jobsLostEl.textContent;
+
+    fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        client_id: CLIENT_ID,
+        name: name,
+        email: email,
+        message: msg,
+        source_url: window.location.href
+      })
+    }).catch(function(){});
+
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+  });
+
+  // Footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Reveal animations
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+})();
+</script>
+
+<script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
+</body>
+</html>

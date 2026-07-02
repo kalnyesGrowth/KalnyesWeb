@@ -14,25 +14,12 @@
 - Added "Plans" to desktop nav and mobile menu
 - Added calculator + free-demo links to footer
 
-## Environment Variables / TODOs
+## Lead Capture (LIVE)
 
-### Formspree (or Vercel Serverless)
-Both `calculator.html` and `free-demo.html` have a `FORM_ENDPOINT` constant that needs a real value.
-
-**Option A (Formspree, works on GitHub Pages):**
-1. Create a form at https://formspree.io
-2. Replace `'https://formspree.io/f/YOUR_FORM_ID'` in both files
-
-**Option B (Vercel Serverless):**
-1. Migrate site to Vercel (or create a separate API project)
-2. Create `/api/demo-lead.js` endpoint using Resend for email delivery
-3. Update FORM_ENDPOINT to point to the Vercel function URL
-
-### KG Dashboard Webhook
-`free-demo.html` sends leads to the KG Dashboard app.
-
-- `KG_APP_URL` - Currently set to `https://project-kday6.vercel.app`
-- `KG_WEBHOOK_SECRET` - Replace `'YOUR_WEBHOOK_SECRET'` with the actual secret from the KG app environment
+Both forms POST directly to the existing Supabase `capture-lead` edge function:
+- Endpoint: `https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/capture-lead`
+- Client ID: `992d9253-6123-4d51-91b9-007efd8ad03c`
+- No Formspree or webhook secret needed. Leads appear in the KG Dashboard with push notifications.
 
 ### Analytics Events (TODO)
 `calculator.html` has TODO comments for these events:
