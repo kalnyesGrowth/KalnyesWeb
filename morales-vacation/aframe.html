@@ -546,7 +546,7 @@ function loadFrames() {
   for (let i = 0; i < TOTAL_FRAMES; i++) {
     const img = new Image();
     const num = String(i + 1).padStart(4, '0');
-    img.src = 'frames/f_' + num + '.jpg';
+    img.src = 'https://pub-e536261f1f0447678f1063299dd1880d.r2.dev/kalnyesweb/morales-vacation/frames/f_' + num + '.jpg';
     img.onload = function() {
       frames[i] = img;
       loaded++;
