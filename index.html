@@ -110,7 +110,7 @@ nav.scrolled{background:transparent}
 .video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,13,0.5) 0%,rgba(8,8,13,0.4) 40%,rgba(8,8,13,0.7) 80%,rgba(8,8,13,0.95) 100%);pointer-events:none}
 
 /* === SCROLL TRACK === */
-.scroll-track{height:1200vh;position:relative;z-index:1;pointer-events:none}
+.scroll-track{height:960vh;position:relative;z-index:1;pointer-events:none}
 
 /* === TEXT PANELS === */
 .text-panel{position:fixed;top:50%;z-index:5;opacity:0;pointer-events:none;transition:opacity .6s ease,transform .6s ease;max-width:600px;padding:0 24px}
@@ -411,6 +411,15 @@ footer p{font-size:.78rem;color:var(--muted)}
 .plan-cta-green:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .plan-cta-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
 .plan-cta-ghost:hover{border-color:var(--green);color:var(--green)}
+.plan-val{margin-left:auto;font-size:.72rem;font-weight:600;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.plan-stack{border-top:1px solid var(--border-s);margin:0 0 20px;padding:16px 0 0}
+.plan-stack-row{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;padding:3px 0}
+.plan-stack-row.total .plan-stack-label{color:var(--muted);font-weight:500}
+.plan-stack-row.total .plan-stack-amt{color:var(--muted);text-decoration:line-through;font-weight:500}
+.plan-stack-row.pay .plan-stack-label{color:var(--white);font-weight:700}
+.plan-stack-row.pay .plan-stack-amt{color:var(--white);font-weight:700;font-size:.95rem}
+.plan-stack-row.save .plan-stack-label{color:var(--green);font-weight:700;font-size:.78rem}
+.plan-stack-row.save .plan-stack-amt{color:var(--green);font-weight:700;font-size:.78rem}
 .plans-guarantee{
   text-align:center;padding:16px;font-size:.85rem;color:var(--muted);
   display:flex;align-items:center;justify-content:center;gap:8px;
@@ -529,33 +538,25 @@ footer p{font-size:.78rem;color:var(--muted)}
 <div class="scroll-track" id="scrollTrack"></div>
 
 <!-- TEXT PANELS -->
-<div class="text-panel from-center" data-range="0.00,0.18">
+<div class="text-panel from-center" data-range="0.00,0.22">
   <div class="tp-badge"><span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);animation:pulse 1.6s infinite"></span> Now Accepting Clients</div>
   <div class="tp-logo">KalnyesGrowth</div>
   <p class="tp-sub">Client Acquisition Systems for Local Businesses</p>
 </div>
 
-<div class="text-panel from-left" data-range="0.17,0.38">
+<div class="text-panel from-left" data-range="0.20,0.45">
   <p class="tp-h">Every day, potential customers search for services like yours. Right now, they're calling your competitors instead.</p>
   <p class="tp-cite">62% of calls to small businesses go unanswered. 85% of missed callers never call back. (Source: 411 Locals, BIA/Kelsey)</p>
 </div>
 
-<div class="text-panel from-right" data-range="0.37,0.58">
+<div class="text-panel from-right" data-range="0.43,0.70">
   <p class="tp-h">We build systems that capture, follow up, and convert those leads. Automatically. 24 hours a day.</p>
   <p class="tp-sub">No more missed calls. No more leads going cold. No more leaving money on the table.</p>
 </div>
 
-<div class="text-panel from-center" data-range="0.57,0.78">
+<div class="text-panel from-center" data-range="0.68,1.00">
   <div class="tp-stat">3.2x</div>
   <p class="tp-h">Average increase in monthly leads within the first 90 days.</p>
-</div>
-
-<div class="text-panel from-center" data-range="0.77,1.00">
-  <p class="tp-h">See exactly where you're losing customers.</p>
-  <div class="tp-cta-wrap">
-    <a href="#" class="btn btn-green btn-pulse" onclick="openBooking();return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
-    <span class="tp-fine">15 minutes. No pressure. No commitment.</span>
-  </div>
 </div>
 
 <!-- SCROLL DOTS -->
@@ -564,8 +565,18 @@ footer p{font-size:.78rem;color:var(--muted)}
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
-  <span class="dot"></span>
 </div>
+
+<!-- POST-HERO CTA -->
+<section style="position:relative;z-index:2;background:linear-gradient(180deg,rgba(8,8,13,0.95) 0%,var(--bg) 100%);padding:80px 0 96px;text-align:center">
+  <div class="wrap">
+    <h2 style="color:#fff;margin-bottom:12px">See exactly where you're losing customers.</h2>
+    <div style="margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <a href="#" class="btn btn-green btn-pulse" onclick="openBooking();return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
+      <span style="font-size:.82rem;color:rgba(255,255,255,0.5)">15 minutes. No pressure. No commitment.</span>
+    </div>
+  </div>
+</section>
 
 <!-- TECH BG VIDEO (fixed, visible behind biz sections) -->
 <div class="tech-bg-wrap" id="techBgWrap" aria-hidden="true">
@@ -984,14 +995,19 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="plan-card rv">
         <div class="plan-name">Core</div>
         <div class="plan-price">$1,497<span>/mo</span></div>
-        <p class="plan-desc">Your front line. AI receptionist, missed-call text back, and webchat widget.</p>
+        <p class="plan-desc">Your front line. AI receptionist, appointment reminders, and webchat widget.</p>
         <ul class="plan-features">
-          <li>AI Voice Receptionist 24/7</li>
-          <li>Missed-Call Text Back</li>
-          <li>AI Webchat Widget</li>
-          <li>Basic reporting dashboard</li>
+          <li>AI Voice Receptionist 24/7 <span class="plan-val">$1,297/mo</span></li>
+          <li>Appointment Reminders <span class="plan-val">$597/mo</span></li>
+          <li>AI Webchat Widget <span class="plan-val">$597/mo</span></li>
+          <li>Basic reporting dashboard <span class="plan-val">included</span></li>
           <li>Cancel anytime</li>
         </ul>
+        <div class="plan-stack">
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$2,491/mo</span></div>
+          <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$1,497/mo</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$994/mo (40%)</span></div>
+        </div>
         <a href="https://buy.stripe.com/fZueV618H9TF0fi3V57Zu00" target="_blank" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
       </div>
@@ -1002,13 +1018,18 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="plan-price">$2,497<span>/mo</span></div>
         <p class="plan-desc">Full customer management. Calls, leads, reviews, messages, and CRM.</p>
         <ul class="plan-features">
-          <li>Everything in Core</li>
-          <li>Reviews Automation</li>
-          <li>Unified Messaging Inbox</li>
-          <li>Smart CRM + Pipelines</li>
-          <li>AI follow-up sequences</li>
-          <li>Priority support</li>
+          <li>Everything in Core <span class="plan-val">$2,491/mo</span></li>
+          <li>Reviews Automation <span class="plan-val">$797/mo</span></li>
+          <li>Unified Messaging Inbox <span class="plan-val">$797/mo</span></li>
+          <li>Smart CRM + Pipelines <span class="plan-val">$997/mo</span></li>
+          <li>AI follow-up sequences <span class="plan-val">included</span></li>
+          <li>Priority support <span class="plan-val">included</span></li>
         </ul>
+        <div class="plan-stack">
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$5,082/mo</span></div>
+          <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$2,497/mo</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,585/mo (51%)</span></div>
+        </div>
         <a href="https://buy.stripe.com/00w14g4kTd5Rd24crB7Zu01" target="_blank" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
       </div>
@@ -1018,13 +1039,18 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="plan-price">$2,997<span>/mo</span></div>
         <p class="plan-desc">All 7 AI agents plus content creation, strategy calls, and competitor monitoring.</p>
         <ul class="plan-features">
-          <li>Everything in Growth</li>
-          <li>Smart Payments</li>
-          <li>AI content creation</li>
-          <li>Weekly strategy calls</li>
-          <li>Competitor monitoring</li>
-          <li>Dedicated account manager</li>
+          <li>Everything in Growth <span class="plan-val">$5,082/mo</span></li>
+          <li>Smart Payments <span class="plan-val">$497/mo</span></li>
+          <li>AI content creation <span class="plan-val">included</span></li>
+          <li>Weekly strategy calls <span class="plan-val">included</span></li>
+          <li>Competitor monitoring <span class="plan-val">included</span></li>
+          <li>Dedicated account manager <span class="plan-val">included</span></li>
         </ul>
+        <div class="plan-stack">
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$5,579/mo</span></div>
+          <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$2,997/mo</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,582/mo (46%)</span></div>
+        </div>
         <a href="https://buy.stripe.com/3cIdR2g3BfdZ4vyfDN7Zu02" target="_blank" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
       </div>
