@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started | KalnyesGrowth</title>
+<meta name="description" content="Set up your AI business system. Fill out your business details and subscribe to your chosen plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;--surface:#111118;
+  --card:rgba(255,255,255,0.08);--card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);--border-s:rgba(255,255,255,0.12);
+  --white:#fff;--text:rgba(255,255,255,0.72);--muted:rgba(255,255,255,0.45);
+  --green:#22c55e;--green-soft:rgba(34,197,94,0.08);
+  --r:16px;--mono:ui-monospace,"SF Mono","Courier New",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1160px;margin:0 auto;padding:0 24px}
+.logo{font-weight:900;font-size:1.2rem;color:var(--white);letter-spacing:-.02em}
+.nav-back{font-size:.88rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* layout */
+.checkout-grid{display:grid;grid-template-columns:1fr 380px;gap:48px;padding:120px 0 80px;align-items:start}
+
+/* form side */
+.form-title{font-size:clamp(1.6rem,3vw,2rem);font-weight:800;color:var(--white);margin-bottom:6px}
+.form-sub{color:var(--muted);font-size:.9rem;margin-bottom:32px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{
+  width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border-s);
+  background:rgba(255,255,255,0.04);color:var(--white);font-family:inherit;font-size:.92rem;
+  transition:border-color .2s,background .2s;outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);background:rgba(255,255,255,0.06)}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field select option{background:#1a1a24;color:#fff}
+.field textarea{resize:vertical;min-height:80px}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit-btn{
+  width:100%;padding:16px;border-radius:12px;border:none;
+  background:var(--green);color:#fff;font-family:inherit;font-size:1rem;font-weight:700;
+  cursor:pointer;transition:all .25s;margin-top:8px;
+}
+.submit-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;filter:none}
+.submit-note{text-align:center;font-size:.76rem;color:var(--muted);margin-top:12px}
+
+/* plan summary side */
+.plan-summary{
+  position:sticky;top:94px;
+  background:var(--card);border:1px solid var(--border-s);border-radius:var(--r);
+  padding:28px 24px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+}
+.ps-badge{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.ps-name{font-size:1.6rem;font-weight:800;color:var(--white);margin-bottom:4px}
+.ps-price{font-size:2rem;font-weight:800;color:var(--white);margin-bottom:16px}
+.ps-price span{font-size:.9rem;font-weight:500;color:var(--muted)}
+.ps-features{list-style:none;margin-bottom:20px}
+.ps-features li{
+  font-size:.82rem;color:var(--text);padding:5px 0;display:flex;align-items:center;gap:8px;
+}
+.ps-features li::before{
+  content:'';display:inline-block;width:14px;height:14px;flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+.ps-val{margin-left:auto;font-size:.7rem;font-weight:600;color:var(--muted);white-space:nowrap}
+.ps-stack{border-top:1px solid var(--border-s);padding:14px 0 0;margin-top:4px}
+.ps-row{display:flex;justify-content:space-between;font-size:.82rem;padding:2px 0}
+.ps-row.total .r{color:var(--muted);text-decoration:line-through}
+.ps-row.pay{font-weight:700;color:var(--white);font-size:.88rem}
+.ps-row.save{font-weight:700;color:var(--green);font-size:.78rem}
+.ps-guarantee{display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted);margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.ps-guarantee svg{width:16px;height:16px;fill:none;stroke:var(--green);stroke-width:2;flex-shrink:0}
+
+/* error */
+.form-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#f87171;font-size:.82rem;padding:12px 16px;border-radius:10px;margin-bottom:16px;display:none}
+
+/* responsive */
+@media(max-width:800px){
+  .checkout-grid{grid-template-columns:1fr;gap:28px;padding:100px 0 60px}
+  .plan-summary{position:static;order:-1}
+  .row-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="logo">Kalnyes<span style="color:rgba(255,255,255,0.45);font-weight:700">Growth</span></a>
+    <a href="/#plans" class="nav-back">&larr; Back to plans</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="checkout-grid">
+
+    <!-- FORM -->
+    <div>
+      <h1 class="form-title">Tell us about your business</h1>
+      <p class="form-sub">We need a few details to set up your AI agents. Takes about 60 seconds.</p>
+
+      <div class="form-error" id="formError"></div>
+
+      <form id="checkoutForm" autocomplete="on">
+        <div class="field">
+          <label for="business_name">Business Name</label>
+          <input type="text" id="business_name" name="business_name" placeholder="e.g. Mike's Plumbing" required autocomplete="organization">
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="owner_name">Your Name</label>
+            <input type="text" id="owner_name" name="owner_name" placeholder="Full name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@business.com" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="business_type">Type of Business</label>
+          <select id="business_type" name="business_type" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="hvac">HVAC</option>
+            <option value="electrical">Electrical</option>
+            <option value="landscaping">Landscaping</option>
+            <option value="roofing">Roofing</option>
+            <option value="cleaning">Cleaning Services</option>
+            <option value="auto">Auto Repair / Detailing</option>
+            <option value="restaurant">Restaurant / Food Service</option>
+            <option value="salon">Salon / Barbershop</option>
+            <option value="dental">Dental / Medical</option>
+            <option value="legal">Legal Services</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="construction">General Contracting</option>
+            <option value="pest-control">Pest Control</option>
+            <option value="moving">Moving Services</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="services">What services do you offer? (so the AI knows what to say)</label>
+          <textarea id="services" name="services" placeholder="e.g. Residential plumbing, emergency repairs, water heater installation, drain cleaning. Service area: Stafford, Fredericksburg, Spotsylvania."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Continue to Payment</button>
+        <p class="submit-note">You'll be redirected to our secure Stripe checkout. Cancel anytime.</p>
+      </form>
+    </div>
+
+    <!-- PLAN SUMMARY (populated by JS) -->
+    <div class="plan-summary" id="planSummary">
+      <div class="ps-badge">Your Plan</div>
+      <div class="ps-name" id="psName">Core</div>
+      <div class="ps-price" id="psPrice">$1,497<span>/mo</span></div>
+      <ul class="ps-features" id="psFeatures"></ul>
+      <div class="ps-stack" id="psStack"></div>
+      <div class="ps-guarantee">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        90-day guarantee. If the system doesn't pay for itself, we work free until it does.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var PLANS = {
+  core: {
+    name: 'Core',
+    price: '$1,497',
+    features: [
+      ['AI Voice Receptionist 24/7', '$1,297/mo'],
+      ['Appointment Reminders', '$597/mo'],
+      ['AI Webchat Widget', '$597/mo'],
+      ['Basic reporting dashboard', 'included'],
+      ['Cancel anytime', ''],
+    ],
+    totalValue: '$2,491/mo',
+    youPay: '$1,497/mo',
+    youSave: '$994/mo (40%)',
+  },
+  growth: {
+    name: 'Growth',
+    price: '$2,497',
+    features: [
+      ['Everything in Core', '$2,491/mo'],
+      ['Reviews Automation', '$797/mo'],
+      ['Unified Messaging Inbox', '$797/mo'],
+      ['Smart CRM + Pipelines', '$997/mo'],
+      ['AI follow-up sequences', 'included'],
+      ['Priority support', 'included'],
+    ],
+    totalValue: '$5,082/mo',
+    youPay: '$2,497/mo',
+    youSave: '$2,585/mo (51%)',
+  },
+  scale: {
+    name: 'Scale',
+    price: '$2,997',
+    features: [
+      ['Everything in Growth', '$5,082/mo'],
+      ['Smart Payments', '$497/mo'],
+      ['AI content creation', 'included'],
+      ['Weekly strategy calls', 'included'],
+      ['Competitor monitoring', 'included'],
+      ['Dedicated account manager', 'included'],
+    ],
+    totalValue: '$5,579/mo',
+    youPay: '$2,997/mo',
+    youSave: '$2,582/mo (46%)',
+  },
+};
+
+var params = new URLSearchParams(window.location.search);
+var planKey = (params.get('plan') || 'core').toLowerCase();
+if (!PLANS[planKey]) planKey = 'core';
+var plan = PLANS[planKey];
+
+document.getElementById('psName').textContent = plan.name;
+document.getElementById('psPrice').innerHTML = plan.price + '<span>/mo</span>';
+
+var featHtml = '';
+plan.features.forEach(function(f) {
+  featHtml += '<li>' + f[0];
+  if (f[1]) featHtml += '<span class="ps-val">' + f[1] + '</span>';
+  featHtml += '</li>';
+});
+document.getElementById('psFeatures').innerHTML = featHtml;
+
+document.getElementById('psStack').innerHTML =
+  '<div class="ps-row total"><span>Total value</span><span class="r">' + plan.totalValue + '</span></div>' +
+  '<div class="ps-row pay"><span>You pay</span><span>' + plan.youPay + '</span></div>' +
+  '<div class="ps-row save"><span>You save</span><span>' + plan.youSave + '</span></div>';
+
+var EDGE_URL = 'https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/website-checkout';
+
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var errEl = document.getElementById('formError');
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Setting up your account...';
+
+  var data = {
+    plan: planKey,
+    business_name: document.getElementById('business_name').value.trim(),
+    owner_name: document.getElementById('owner_name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    business_type: document.getElementById('business_type').value,
+    services: document.getElementById('services').value.trim(),
+  };
+
+  fetch(EDGE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(result) {
+    if (result.url) {
+      window.location.href = result.url;
+    } else {
+      throw new Error(result.error || 'Something went wrong. Please try again.');
+    }
+  })
+  .catch(function(err) {
+    errEl.textContent = err.message;
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Continue to Payment';
+  });
+});
+</script>
+
+</body>
+</html>
