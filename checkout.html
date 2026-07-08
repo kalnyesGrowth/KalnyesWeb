@@ -161,8 +161,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,13,.92);
         </div>
 
         <div class="field">
-          <label for="services">What services do you offer? (so the AI knows what to say)</label>
-          <textarea id="services" name="services" placeholder="e.g. Residential plumbing, emergency repairs, water heater installation, drain cleaning. Service area: Stafford, Fredericksburg, Spotsylvania."></textarea>
+          <label for="google_link">Google Business Profile or Google Maps Link</label>
+          <input type="url" id="google_link" name="google_link" placeholder="e.g. https://maps.google.com/... or https://g.co/..." autocomplete="url">
+        </div>
+
+        <div class="field">
+          <label for="website">Your Website (if you have one)</label>
+          <input type="url" id="website" name="website" placeholder="e.g. https://yourbusiness.com" autocomplete="url">
         </div>
 
         <button type="submit" class="submit-btn" id="submitBtn">Continue to Payment</button>
@@ -272,7 +277,8 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
     email: document.getElementById('email').value.trim(),
     phone: document.getElementById('phone').value.trim(),
     business_type: document.getElementById('business_type').value,
-    services: document.getElementById('services').value.trim(),
+    google_link: document.getElementById('google_link').value.trim(),
+    website: document.getElementById('website').value.trim(),
   };
 
   fetch(EDGE_URL, {

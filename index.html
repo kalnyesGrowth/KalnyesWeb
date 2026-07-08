@@ -508,7 +508,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <a href="#plans">Plans</a>
       <a href="#reviews">Reviews</a>
       <a href="#blog">Blog</a>
-      <a href="es/index.html" style="font-size:.78rem;font-weight:700;color:var(--green);letter-spacing:.04em">ES</a>
+      <a href="#" id="langToggle" onclick="toggleLang();return false" style="font-size:.78rem;font-weight:700;color:var(--green);letter-spacing:.04em">ES</a>
       <a href="#" class="btn btn-ghost nav-cta" onclick="openBooking();return false">Book a Call <span class="ar">&rarr;</span></a>
     </div>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
@@ -525,7 +525,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   <a href="#plans" class="menu-link">Plans</a>
   <a href="#reviews" class="menu-link">Reviews</a>
   <a href="#blog" class="menu-link">Blog</a>
-  <a href="es/index.html" class="menu-link" style="font-size:.95rem;color:var(--green)">Espanol</a>
+  <a href="#" class="menu-link" onclick="toggleLang();closeMobileMenu();return false" style="font-size:.95rem;color:var(--green)" id="langToggleMobile">Espanol</a>
   <a href="#" class="btn btn-green menu-link" onclick="openBooking();return false">Book a Call</a>
 </div>
 
@@ -682,7 +682,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <p class="rv" style="color:var(--text);font-size:1.05rem;max-width:600px;margin:0 auto 20px">Other agencies charge $5,000 to $8,000 upfront before you see anything. We build your entire system first. You see it working. Then you decide.</p>
     <p class="rv" style="color:var(--muted);font-size:.92rem;max-width:520px;margin:0 auto 36px">Zero risk. Zero upfront cost. If you don't love it, you don't pay. That's how confident we are in what we build.</p>
     <div class="rv" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="free-preview/index.html" class="btn btn-ghost">See Your Free Demo <span class="ar">&rarr;</span></a>
+      <a href="free-demo.html" class="btn btn-ghost">See Your Free Demo <span class="ar">&rarr;</span></a>
       <a href="#" class="btn btn-green" onclick="openBooking();return false">Book a Call <span class="ar">&rarr;</span></a>
     </div>
   </div>
@@ -1233,7 +1233,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <p style="font-size:.85rem;line-height:2.2"><a href="agency.html" style="color:var(--text)">Services</a></p>
       <p style="font-size:.85rem;line-height:2.2"><a href="agents.html" style="color:var(--text)">AI Agents</a></p>
       <p style="font-size:.85rem;line-height:2.2"><a href="blog.html" style="color:var(--text)">Blog</a></p>
-      <p style="font-size:.85rem;line-height:2.2"><a href="es/index.html" style="color:var(--text)">Espanol</a></p>
+      <p style="font-size:.85rem;line-height:2.2"><a href="#" onclick="toggleLang();window.scrollTo(0,0);return false" style="color:var(--text)" id="langToggleFooter">Espanol</a></p>
       <p style="font-size:.85rem;line-height:2.2"><a href="privacy.html" style="color:var(--text)">Privacy</a></p>
     </div>
     <div>
@@ -1471,6 +1471,87 @@ function openBooking(){
   });
 
 })();
+</script>
+
+<script>
+var LANG='en';
+var TR={
+  // Nav
+  'How It Works':'Como Funciona','Results':'Resultados','Plans':'Planes','Reviews':'Opiniones','Blog':'Blog','Book a Call':'Reservar Llamada',
+  // Hero panels
+  'Now Accepting Clients':'Aceptando Clientes','Client Acquisition Systems for Local Businesses':'Sistemas de Captacion de Clientes para Negocios Locales',
+  // Stats
+  'Every day, potential customers search for services like yours. Right now, they\'re calling your competitors instead.':'Cada dia, clientes potenciales buscan servicios como los tuyos. Ahora mismo, estan llamando a tu competencia.',
+  '62% of calls to small businesses go unanswered. 85% of missed callers never call back. (Source: 411 Locals, BIA/Kelsey)':'El 62% de las llamadas a pequenos negocios no se contestan. El 85% de los que no logran comunicarse nunca vuelven a llamar. (Fuente: 411 Locals, BIA/Kelsey)',
+  'We build systems that capture, follow up, and convert those leads. Automatically. 24 hours a day.':'Construimos sistemas que capturan, dan seguimiento y convierten esos prospectos. Automaticamente. Las 24 horas del dia.',
+  'No more missed calls. No more leads going cold. No more leaving money on the table.':'No mas llamadas perdidas. No mas prospectos enfriandose. No mas dinero sobre la mesa.',
+  'Average increase in monthly leads within the first 90 days.':'Aumento promedio en prospectos mensuales en los primeros 90 dias.',
+  // Post-hero CTA
+  'See exactly where you\'re losing customers.':'Descubre exactamente donde estas perdiendo clientes.',
+  'Book Your Free Discovery Call':'Reserva Tu Llamada Gratuita',
+  '15 minutes. No pressure. No commitment.':'15 minutos. Sin presion. Sin compromiso.',
+  // Section heads
+  'How It Works':'Como Funciona','Results You Can Measure':'Resultados que Puedes Medir',
+  'Simple pricing. Real results.':'Precios simples. Resultados reales.',
+  'Every plan includes your website, AI receptionist, and dashboard. Pick the system that fits your business.':'Cada plan incluye tu sitio web, recepcionista IA y panel de control. Elige el sistema que se adapte a tu negocio.',
+  'Not sure yet?':'No estas seguro?','We build your demo free. No card, no commitment.':'Construimos tu demo gratis. Sin tarjeta, sin compromiso.','Get your free demo':'Obten tu demo gratis',
+  // Plan names
+  'Core':'Core','Growth':'Growth','Scale':'Scale',
+  // Plan descriptions
+  'Your front line. AI receptionist, appointment reminders, and webchat widget.':'Tu primera linea. Recepcionista IA, recordatorios de citas y chat web.',
+  'Full customer management. Calls, leads, reviews, messages, and CRM.':'Gestion completa de clientes. Llamadas, prospectos, resenas, mensajes y CRM.',
+  'All 7 AI agents plus content creation, strategy calls, and competitor monitoring.':'Los 7 agentes IA mas creacion de contenido, llamadas estrategicas y monitoreo de competencia.',
+  // Plan features
+  'AI Voice Receptionist 24/7':'Recepcionista IA 24/7','Appointment Reminders':'Recordatorios de Citas','AI Webchat Widget':'Chat Web IA','Basic reporting dashboard':'Panel de reportes basico','Cancel anytime':'Cancela cuando quieras',
+  'Everything in Core':'Todo en Core','Reviews Automation':'Automatizacion de Resenas','Unified Messaging Inbox':'Bandeja de Mensajes Unificada','Smart CRM + Pipelines':'CRM Inteligente + Pipelines','AI follow-up sequences':'Secuencias de seguimiento IA','Priority support':'Soporte prioritario',
+  'Everything in Growth':'Todo en Growth','Smart Payments':'Pagos Inteligentes','AI content creation':'Creacion de contenido IA','Weekly strategy calls':'Llamadas estrategicas semanales','Competitor monitoring':'Monitoreo de competencia','Dedicated account manager':'Gerente de cuenta dedicado',
+  // Stack
+  'Total value':'Valor total','You pay':'Tu pagas','You save':'Tu ahorras',
+  'Subscribe Now':'Suscribete Ahora','Book a call':'Reservar llamada',
+  // Guarantee
+  '90-day guarantee. If the system doesn\'t pay for itself, we work free until it does.':'Garantia de 90 dias. Si el sistema no se paga solo, trabajamos gratis hasta que lo haga.',
+  // Why Us
+  'We build it first. You pay only if you love it.':'Construimos primero. Solo pagas si te encanta.',
+  'See Your Free Demo':'Ve Tu Demo Gratis',
+  // Reviews
+  'What our clients say':'Lo que dicen nuestros clientes',
+  // Free tools
+  'Start wherever you\'re comfortable.':'Empieza donde te sientas comodo.',
+  'Not ready for a call? No problem. Pick the option that fits.':'No listo para una llamada? No hay problema. Elige la opcion que prefieras.',
+  // Footer
+  'Espanol':'English',
+};
+function toggleLang(){
+  LANG=LANG==='en'?'es':'en';
+  var btn=document.getElementById('langToggle');
+  var btnM=document.getElementById('langToggleMobile');
+  var btnF=document.getElementById('langToggleFooter');
+  if(btn) btn.textContent=LANG==='en'?'ES':'EN';
+  if(btnM) btnM.textContent=LANG==='en'?'Espanol':'English';
+  if(btnF) btnF.textContent=LANG==='en'?'Espanol':'English';
+  document.querySelectorAll('h2,h3,p,li,a,span,button').forEach(function(el){
+    if(el.closest('script')||el.closest('style')) return;
+    var kids=el.childNodes;
+    for(var i=0;i<kids.length;i++){
+      if(kids[i].nodeType===3){
+        var txt=kids[i].textContent.trim();
+        if(!txt) continue;
+        if(!el._origTexts) el._origTexts={};
+        if(!el._origTexts[i]) el._origTexts[i]=txt;
+        var orig=el._origTexts[i];
+        if(LANG==='es'&&TR[orig]){kids[i].textContent=kids[i].textContent.replace(orig,TR[orig])}
+        else if(LANG==='en'&&el._origTexts[i]){
+          var currentTr=TR[orig];
+          if(currentTr&&kids[i].textContent.trim()===currentTr){kids[i].textContent=kids[i].textContent.replace(currentTr,orig)}
+        }
+      }
+    }
+  });
+}
+function closeMobileMenu(){
+  var m=document.getElementById('mobileMenu');
+  if(m){m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+}
 </script>
 
 <!-- KG Dashboard Tracker -->
