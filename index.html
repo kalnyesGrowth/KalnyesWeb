@@ -110,7 +110,7 @@ nav.scrolled{background:transparent}
 .video-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,13,0.5) 0%,rgba(8,8,13,0.4) 40%,rgba(8,8,13,0.7) 80%,rgba(8,8,13,0.95) 100%);pointer-events:none}
 
 /* === SCROLL TRACK === */
-.scroll-track{height:960vh;position:relative;z-index:1;pointer-events:none}
+.scroll-track{height:720vh;position:relative;z-index:1;pointer-events:none}
 
 /* === TEXT PANELS === */
 .text-panel{position:fixed;top:50%;z-index:5;opacity:0;pointer-events:none;transition:opacity .6s ease,transform .6s ease;max-width:600px;padding:0 24px}
@@ -539,25 +539,20 @@ footer p{font-size:.78rem;color:var(--muted)}
 <div class="scroll-track" id="scrollTrack"></div>
 
 <!-- TEXT PANELS -->
-<div class="text-panel from-center" data-range="0.00,0.22">
+<div class="text-panel from-center" data-range="0.00,0.28">
   <div class="tp-badge"><span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);animation:pulse 1.6s infinite"></span> Now Accepting Clients</div>
   <div class="tp-logo">KalnyesGrowth</div>
   <p class="tp-sub">Client Acquisition Systems for Local Businesses</p>
 </div>
 
-<div class="text-panel from-left" data-range="0.20,0.45">
+<div class="text-panel from-left" data-range="0.26,0.58">
   <p class="tp-h">Every day, potential customers search for services like yours. Right now, they're calling your competitors instead.</p>
   <p class="tp-cite">62% of calls to small businesses go unanswered. 85% of missed callers never call back. (Source: 411 Locals, BIA/Kelsey)</p>
 </div>
 
-<div class="text-panel from-right" data-range="0.43,0.70">
+<div class="text-panel from-right" data-range="0.56,1.00">
   <p class="tp-h">We build systems that capture, follow up, and convert those leads. Automatically. 24 hours a day.</p>
   <p class="tp-sub">No more missed calls. No more leads going cold. No more leaving money on the table.</p>
-</div>
-
-<div class="text-panel from-center" data-range="0.68,1.00">
-  <div class="tp-stat">3.2x</div>
-  <p class="tp-h">Average increase in monthly leads within the first 90 days.</p>
 </div>
 
 <!-- SCROLL DOTS -->
@@ -565,14 +560,15 @@ footer p{font-size:.78rem;color:var(--muted)}
   <span class="dot active"></span>
   <span class="dot"></span>
   <span class="dot"></span>
-  <span class="dot"></span>
 </div>
 
 <!-- POST-HERO CTA -->
 <section style="position:relative;z-index:2;background:linear-gradient(180deg,rgba(8,8,13,0.95) 0%,var(--bg) 100%);padding:80px 0 96px;text-align:center">
   <div class="wrap">
-    <h2 style="color:#fff;margin-bottom:12px">See exactly where you're losing customers.</h2>
-    <div style="margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:12px">
+    <div class="tp-stat" style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);margin-bottom:8px">3.2x</div>
+    <p style="font-size:clamp(1.1rem,2vw,1.4rem);font-weight:600;color:var(--white);margin-bottom:6px">Average increase in monthly leads within the first 90 days.</p>
+    <p style="color:rgba(255,255,255,0.45);font-size:.88rem;margin-bottom:32px">See exactly where you're losing customers.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
       <a href="#" class="btn btn-green btn-pulse" onclick="openBooking();return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
       <span style="font-size:.82rem;color:rgba(255,255,255,0.5)">15 minutes. No pressure. No commitment.</span>
     </div>
