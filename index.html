@@ -267,6 +267,29 @@ section{padding:100px 0}
 .blog-card:hover .blog-card-link{gap:10px}
 .blog-more{text-align:center;margin-top:40px}
 
+/* === AGENTS CAROUSEL === */
+.agents-carousel{padding:80px 0}
+.agents-carousel .section-head{text-align:center;margin-bottom:40px}
+.agents-carousel .section-head p{color:var(--text);font-size:1rem;max-width:520px;margin:8px auto 0}
+.ac-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 max(24px,calc((100vw - 1160px)/2 + 24px)) 16px;scrollbar-width:none}
+.ac-track::-webkit-scrollbar{display:none}
+.ac-card{flex:0 0 280px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .3s,transform .3s}
+.ac-card:hover{border-color:var(--green);transform:translateY(-4px)}
+.ac-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.ac-card-body{padding:20px}
+.ac-card-body h3{font-size:1.05rem;margin-bottom:6px}
+.ac-card-body p{font-size:.85rem;color:var(--text);line-height:1.55;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ac-price{display:flex;align-items:baseline;gap:6px;margin-bottom:16px}
+.ac-price span:first-child{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white)}
+.ac-price span:last-child{font-size:.78rem;color:var(--muted)}
+.ac-card .btn{width:100%;padding:12px;font-size:.82rem;border-radius:10px}
+.ac-nav{display:flex;justify-content:center;gap:12px;margin-top:24px}
+.ac-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--border-s);background:var(--surface);color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;touch-action:manipulation}
+.ac-nav button:hover{border-color:var(--green);background:var(--green-dim)}
+@media(max-width:768px){
+  .ac-card{flex:0 0 260px}
+}
+
 /* === SCARCITY === */
 .scarcity{text-align:center;padding:80px 0;background:linear-gradient(180deg,var(--bg) 0%,rgba(34,197,94,0.03) 50%,var(--bg) 100%)}
 .sc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:999px;padding:6px 16px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f5a623;margin-bottom:24px}
@@ -506,6 +529,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <a href="#how">How It Works</a>
       <a href="#results">Results</a>
       <a href="#plans">Plans</a>
+      <a href="agents.html">AI Agents</a>
       <a href="#reviews">Reviews</a>
       <a href="#blog">Blog</a>
       <a href="#" id="langToggle" onclick="toggleLang();return false" style="font-size:.78rem;font-weight:700;color:var(--green);letter-spacing:.04em">ES</a>
@@ -523,6 +547,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   <a href="#how" class="menu-link">How It Works</a>
   <a href="#results" class="menu-link">Results</a>
   <a href="#plans" class="menu-link">Plans</a>
+  <a href="agents.html" class="menu-link">AI Agents</a>
   <a href="#reviews" class="menu-link">Reviews</a>
   <a href="#blog" class="menu-link">Blog</a>
   <a href="#" class="menu-link" onclick="toggleLang();closeMobileMenu();return false" style="font-size:.95rem;color:var(--green)" id="langToggleMobile">Espanol</a>
@@ -859,6 +884,134 @@ footer p{font-size:.78rem;color:var(--muted)}
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- AI AGENTS CAROUSEL -->
+<section class="agents-carousel" id="agents">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tag">Meet Your AI Team</span>
+      <h2>12 agents. One system. Zero missed leads.</h2>
+      <p>Each agent handles a specific part of your client acquisition. Pick what you need, or bundle and save.</p>
+    </div>
+  </div>
+  <div class="ac-track">
+    <a href="agents.html#voice-receptionist" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175906_0fc1e8ac-6f42-4186-bbfa-451255a0528d.png" alt="AI Voice Receptionist" loading="lazy">
+      <div class="ac-card-body">
+        <h3>AI Voice Receptionist</h3>
+        <p>Answers every call 24/7 with a natural voice. Books appointments and qualifies leads while you sleep.</p>
+        <div class="ac-price"><span>$1,297</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#missed-call" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175908_cba1853b-a216-48fd-b031-1540c4e498d3.png" alt="Missed-Call Text Back" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Missed-Call Text Back</h3>
+        <p>Texts callers back within 5 seconds. Qualifies leads and books appointments via text conversation.</p>
+        <div class="ac-price"><span>$597</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#reviews" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175909_7458d060-87e6-4c9b-8c6f-025ada4023b1.png" alt="Reviews Automation" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Reviews Automation</h3>
+        <p>Requests reviews automatically after every job. Responds to all Google reviews the same day.</p>
+        <div class="ac-price"><span>$797</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#webchat" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175911_22b05a2f-3087-4cba-997b-314e64b9e72a.png" alt="AI Webchat Widget" loading="lazy">
+      <div class="ac-card-body">
+        <h3>AI Webchat Widget</h3>
+        <p>Turns website visitors into booked customers. Greets, qualifies, and captures leads 24/7.</p>
+        <div class="ac-price"><span>$597</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#messaging" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_180016_c349d78e-ba46-4a03-b5c9-1c44afb9d631.png" alt="Unified Messaging Inbox" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Unified Messaging Inbox</h3>
+        <p>One inbox for texts, emails, Facebook, Instagram, and Google messages. AI drafts every reply.</p>
+        <div class="ac-price"><span>$797</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#crm" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175914_14420465-21ab-48f0-bef8-76f769a4fbce.png" alt="Smart CRM + Pipelines" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Smart CRM + Pipelines</h3>
+        <p>Tracks every lead from first contact to closed job. AI follow-ups make sure nothing slips.</p>
+        <div class="ac-price"><span>$997</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#payments" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175915_0bd7e919-bea2-4761-945e-c48131474008.png" alt="Smart Payments" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Smart Payments</h3>
+        <p>Send invoices via text. Customers pay with one tap. Automated reminders handle the rest.</p>
+        <div class="ac-price"><span>$497</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#reminders" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193819_4b851e05-38ea-4554-a9da-385d0e55b753.png" alt="Appointment Reminders" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Appointment Reminders</h3>
+        <p>Automated SMS and email reminders that cut no-shows by 50-70%. Customers confirm with one tap.</p>
+        <div class="ac-price"><span>$497</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#social-media" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193820_fbdada43-04b9-4b0f-bb2e-706109871721.png" alt="Social Media Manager" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Social Media Manager</h3>
+        <p>AI generates and schedules posts across Facebook, Instagram, and Google. Stays visible on autopilot.</p>
+        <div class="ac-price"><span>$797</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#campaigns" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193823_eaac2bc0-0295-480d-b428-625b75fc889b.png" alt="Email and SMS Campaigns" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Email &amp; SMS Campaigns</h3>
+        <p>Drip campaigns, seasonal promos, and follow-ups. AI writes the copy and picks the best send time.</p>
+        <div class="ac-price"><span>$697</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#booking" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193825_9aef6363-af2c-4c3c-8bc6-706869be6ab3.png" alt="Online Booking" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Online Booking</h3>
+        <p>Self-serve booking page. Customers pick a time, fill details, and get instant confirmation 24/7.</p>
+        <div class="ac-price"><span>$597</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+    <a href="agents.html#reactivation" class="ac-card rv">
+      <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193827_daf55511-6071-4f0b-a7cb-e6696af2cc45.png" alt="Customer Reactivation" loading="lazy">
+      <div class="ac-card-body">
+        <h3>Customer Reactivation</h3>
+        <p>Wins back past customers who haven't booked in 30-90 days. Personalized outreach on autopilot.</p>
+        <div class="ac-price"><span>$597</span><span>/mo</span></div>
+        <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
+      </div>
+    </a>
+  </div>
+  <div class="ac-nav">
+    <button onclick="document.querySelector('.ac-track').scrollBy({left:-300,behavior:'smooth'})" aria-label="Scroll left">&larr;</button>
+    <button onclick="document.querySelector('.ac-track').scrollBy({left:300,behavior:'smooth'})" aria-label="Scroll right">&rarr;</button>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <a href="agents.html" class="btn btn-green">Explore All Agents <span class="ar">&rarr;</span></a>
   </div>
 </section>
 
