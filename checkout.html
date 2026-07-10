@@ -18,8 +18,8 @@
   --r:16px;--mono:ui-monospace,"SF Mono","Courier New",monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
 
@@ -197,45 +197,104 @@ var PLANS = {
     name: 'Core',
     price: '$1,497',
     features: [
-      ['AI Voice Receptionist 24/7', '$1,297/mo'],
-      ['Appointment Reminders', '$597/mo'],
+      ['AI Voice Receptionist 24/7', '$997/mo'],
+      ['Appointment Reminders', '$497/mo'],
       ['AI Webchat Widget', '$597/mo'],
       ['Basic reporting dashboard', 'included'],
       ['Cancel anytime', ''],
     ],
-    totalValue: '$2,491/mo',
+    totalValue: '$2,091/mo',
     youPay: '$1,497/mo',
-    youSave: '$994/mo (40%)',
+    youSave: '$594/mo (28%)',
   },
   growth: {
     name: 'Growth',
     price: '$2,497',
     features: [
-      ['Everything in Core', '$2,491/mo'],
+      ['Everything in Core', '$2,091/mo'],
       ['Reviews Automation', '$797/mo'],
       ['Unified Messaging Inbox', '$797/mo'],
       ['Smart CRM + Pipelines', '$997/mo'],
       ['AI follow-up sequences', 'included'],
       ['Priority support', 'included'],
     ],
-    totalValue: '$5,082/mo',
+    totalValue: '$4,682/mo',
     youPay: '$2,497/mo',
-    youSave: '$2,585/mo (51%)',
+    youSave: '$2,185/mo (47%)',
   },
   scale: {
     name: 'Scale',
     price: '$2,997',
     features: [
-      ['Everything in Growth', '$5,082/mo'],
+      ['Everything in Growth', '$4,682/mo'],
       ['Smart Payments', '$497/mo'],
       ['AI content creation', 'included'],
       ['Weekly strategy calls', 'included'],
       ['Competitor monitoring', 'included'],
       ['Dedicated account manager', 'included'],
     ],
-    totalValue: '$5,579/mo',
+    totalValue: '$5,179/mo',
     youPay: '$2,997/mo',
-    youSave: '$2,582/mo (46%)',
+    youSave: '$2,182/mo (42%)',
+  },
+  receptionist: {
+    name: 'AI Voice Receptionist',
+    price: '$997',
+    features: [
+      ['24/7 AI call answering', 'included'],
+      ['Appointment scheduling', 'included'],
+      ['Trained to sell and upsell', 'included'],
+      ['Objection handling', 'included'],
+      ['Call recordings and transcripts', 'included'],
+      ['Reporting dashboard', 'included'],
+      ['Cancel anytime', ''],
+    ],
+    totalValue: '$997/mo',
+    youPay: '$997/mo',
+    youSave: 'Individual agent',
+  },
+  'lead-followup': {
+    name: 'Lead Follow-Up',
+    price: '$797',
+    features: [
+      ['Sub-30-second response time', 'included'],
+      ['Text, email, and call follow-up', 'included'],
+      ['AI-powered lead qualification', 'included'],
+      ['Missed-call text back', 'included'],
+      ['Automated sequences', 'included'],
+      ['Cancel anytime', ''],
+    ],
+    totalValue: '$797/mo',
+    youPay: '$797/mo',
+    youSave: 'Individual agent',
+  },
+  messaging: {
+    name: 'Unified Messaging Inbox',
+    price: '$797',
+    features: [
+      ['Instagram, Facebook, Google, WhatsApp', 'included'],
+      ['AI-suggested replies', 'included'],
+      ['One inbox for all channels', 'included'],
+      ['Response time tracking', 'included'],
+      ['Cancel anytime', ''],
+    ],
+    totalValue: '$797/mo',
+    youPay: '$797/mo',
+    youSave: 'Individual agent',
+  },
+  reviews: {
+    name: 'Reviews Automation',
+    price: '$797',
+    features: [
+      ['Automated review requests after jobs', 'included'],
+      ['Same-day Google review responses', 'included'],
+      ['Review monitoring dashboard', 'included'],
+      ['Reputation score tracking', 'included'],
+      ['Cancel anytime', ''],
+    ],
+    totalValue: '$797/mo',
+    youPay: '$797/mo',
+    youSave: 'Individual agent',
   },
 };
 

@@ -198,6 +198,11 @@ section{padding:100px 0}
 .svc-info h3{font-size:clamp(1.3rem,2.5vw,1.6rem);margin-bottom:10px}
 .svc-info p{font-size:.95rem;color:var(--text);line-height:1.7;max-width:440px}
 .svc-info .tag{display:block;margin-bottom:10px}
+.svc-price{display:flex;align-items:baseline;gap:6px;margin-top:16px}
+.svc-price .price-amount{font-size:1.6rem;font-weight:800;color:var(--white);font-family:var(--serif)}
+.svc-price .price-per{font-size:.85rem;font-weight:500;color:var(--muted)}
+.svc-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.svc-ctas .btn{padding:12px 24px;font-size:.85rem}
 .svc-device{flex:0 0 auto}
 
 /* Phone Frame */
@@ -373,6 +378,8 @@ footer p{font-size:.78rem;color:var(--muted)}
   .svc-info{text-align:center}
   .svc-info .svc-ico{margin:0 auto 18px}
   .svc-info p{margin:0 auto}
+  .svc-price{justify-content:center}
+  .svc-ctas{justify-content:center}
   .dev-phone{width:200px;height:400px;border-radius:26px}
   .rev-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:1fr}
@@ -720,7 +727,12 @@ footer p{font-size:.78rem;color:var(--muted)}
     <div class="svc-info rv-l">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
       <h3>AI Receptionist</h3>
-      <p>Never miss a call again. Your AI receptionist answers 24/7, schedules appointments, and gives customers the information they need. It sounds human, handles objections, and books revenue while you sleep.</p>
+      <p>Never miss a call again. Your AI receptionist answers 24/7, schedules appointments, sells your services, and upsells when the opportunity is right. It sounds human, handles objections, and books revenue while you sleep.</p>
+      <div class="svc-price"><span class="price-amount">$997</span><span class="price-per">/mo</span></div>
+      <div class="svc-ctas">
+        <a href="checkout.html?plan=receptionist" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+        <a href="free-demo.html" class="btn btn-ghost">Try Free Demo</a>
+      </div>
     </div>
     <div class="svc-device rv-r">
       <div class="dev-phone">
@@ -750,6 +762,10 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
       <h3>Lead Follow-Up</h3>
       <p>When a lead comes in, your system responds in under 30 seconds. Text, email, or call. No lead goes cold. Speed to lead is everything, and your competitors are slow.</p>
+      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <div class="svc-ctas">
+        <a href="checkout.html?plan=lead-followup" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+      </div>
     </div>
     <div class="svc-device rv-l">
       <div class="dev-phone">
@@ -778,6 +794,10 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
       <h3>Social Inbox</h3>
       <p>Every message from Instagram, Facebook, Google, and WhatsApp in one place. AI suggests replies so you respond in minutes, not hours. No message falls through the cracks.</p>
+      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <div class="svc-ctas">
+        <a href="checkout.html?plan=messaging" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+      </div>
     </div>
     <div class="svc-device rv-r">
       <div class="dev-phone">
@@ -825,6 +845,10 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="svc-ico"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
       <h3>Reviews Engine</h3>
       <p>Automatically request reviews after every job. Respond to Google reviews same-day. Build your 5-star reputation on autopilot. More reviews means more trust means more customers.</p>
+      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <div class="svc-ctas">
+        <a href="checkout.html?plan=reviews" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+      </div>
     </div>
     <div class="svc-device rv-l">
       <div class="dev-phone">
@@ -854,6 +878,10 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
       <h3>Command Center</h3>
       <p>Every call, message, lead, and booking tracked in one place. See your full pipeline at a glance. Know exactly what's working and where to double down.</p>
+      <div class="svc-price"><span class="price-amount">Included</span></div>
+      <div class="svc-ctas">
+        <a href="#plans" class="btn btn-green">Explore Plans <span class="ar">&rarr;</span></a>
+      </div>
     </div>
     <div class="svc-device rv-r">
       <div class="dev-phone">
@@ -897,8 +925,8 @@ footer p{font-size:.78rem;color:var(--muted)}
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175906_0fc1e8ac-6f42-4186-bbfa-451255a0528d.png" alt="AI Voice Receptionist" loading="lazy">
       <div class="ac-card-body">
         <h3>AI Voice Receptionist</h3>
-        <p>Answers every call 24/7 with a natural voice. Books appointments and qualifies leads while you sleep.</p>
-        <div class="ac-price"><span>$1,297</span><span>/mo</span></div>
+        <p>Answers every call 24/7 with a natural voice. Sells, upsells, and books appointments while you sleep.</p>
+        <div class="ac-price"><span>$997</span><span>/mo</span></div>
         <span class="btn btn-ghost">Learn More <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1143,16 +1171,16 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="plan-price">$1,497<span>/mo</span></div>
         <p class="plan-desc">Your front line. AI receptionist, appointment reminders, and webchat widget.</p>
         <ul class="plan-features">
-          <li>AI Voice Receptionist 24/7 <span class="plan-val">$1,297/mo</span></li>
-          <li>Appointment Reminders <span class="plan-val">$597/mo</span></li>
+          <li>AI Voice Receptionist 24/7 <span class="plan-val">$997/mo</span></li>
+          <li>Appointment Reminders <span class="plan-val">$497/mo</span></li>
           <li>AI Webchat Widget <span class="plan-val">$597/mo</span></li>
           <li>Basic reporting dashboard <span class="plan-val">included</span></li>
           <li>Cancel anytime</li>
         </ul>
         <div class="plan-stack">
-          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$2,491/mo</span></div>
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$2,091/mo</span></div>
           <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$1,497/mo</span></div>
-          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$994/mo (40%)</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$594/mo (28%)</span></div>
         </div>
         <a href="checkout.html?plan=core" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
@@ -1164,7 +1192,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="plan-price">$2,497<span>/mo</span></div>
         <p class="plan-desc">Full customer management. Calls, leads, reviews, messages, and CRM.</p>
         <ul class="plan-features">
-          <li>Everything in Core <span class="plan-val">$2,491/mo</span></li>
+          <li>Everything in Core <span class="plan-val">$2,091/mo</span></li>
           <li>Reviews Automation <span class="plan-val">$797/mo</span></li>
           <li>Unified Messaging Inbox <span class="plan-val">$797/mo</span></li>
           <li>Smart CRM + Pipelines <span class="plan-val">$997/mo</span></li>
@@ -1172,9 +1200,9 @@ footer p{font-size:.78rem;color:var(--muted)}
           <li>Priority support <span class="plan-val">included</span></li>
         </ul>
         <div class="plan-stack">
-          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$5,082/mo</span></div>
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$4,682/mo</span></div>
           <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$2,497/mo</span></div>
-          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,585/mo (51%)</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,185/mo (47%)</span></div>
         </div>
         <a href="checkout.html?plan=growth" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
@@ -1185,7 +1213,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="plan-price">$2,997<span>/mo</span></div>
         <p class="plan-desc">All 7 AI agents plus content creation, strategy calls, and competitor monitoring.</p>
         <ul class="plan-features">
-          <li>Everything in Growth <span class="plan-val">$5,082/mo</span></li>
+          <li>Everything in Growth <span class="plan-val">$4,682/mo</span></li>
           <li>Smart Payments <span class="plan-val">$497/mo</span></li>
           <li>AI content creation <span class="plan-val">included</span></li>
           <li>Weekly strategy calls <span class="plan-val">included</span></li>
@@ -1193,9 +1221,9 @@ footer p{font-size:.78rem;color:var(--muted)}
           <li>Dedicated account manager <span class="plan-val">included</span></li>
         </ul>
         <div class="plan-stack">
-          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$5,579/mo</span></div>
+          <div class="plan-stack-row total"><span class="plan-stack-label">Total value</span><span class="plan-stack-amt">$5,179/mo</span></div>
           <div class="plan-stack-row pay"><span class="plan-stack-label">You pay</span><span class="plan-stack-amt">$2,997/mo</span></div>
-          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,582/mo (46%)</span></div>
+          <div class="plan-stack-row save"><span class="plan-stack-label">You save</span><span class="plan-stack-amt">$2,182/mo (42%)</span></div>
         </div>
         <a href="checkout.html?plan=scale" class="plan-cta plan-cta-green">Subscribe Now</a>
         <a href="#" class="plan-cta plan-cta-ghost" onclick="openBooking();return false" style="margin-top:8px">Book a call</a>
@@ -1308,7 +1336,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <span class="tag">The Person Behind The Systems</span>
         <h2>Jose Jessyt Morales</h2>
         <div class="founder-role">Founder, KalnyesGrowth | Stafford, VA</div>
-        <p>I'm JJ. I'm based in Stafford, Virginia, and I built KalnyesGrowth because I saw local business owners getting charged thousands by agencies that delivered templates. Every system I build starts with understanding your business from the inside out. I study your market, your competitors, and your customers before I write a single line of code.</p>
+        <p>I'm JJ. I'm based in Stafford, Virginia, and I built KalnyesGrowth because I saw local businesses getting charged thousands by agencies that delivered templates. Every system I build starts with understanding your business from the inside out. I study your market, your competitors, and your customers before I write a single line of code.</p>
         <p>I work with businesses across Northern Virginia, and I'm bilingual in English and Spanish. I'm not a big agency sending templated proposals. I treat every client like my only client. If I can't help you, I'll tell you.</p>
         <p style="font-size:.88rem;color:var(--muted);margin-top:8px">(540) 407-8635 &middot; I answer my own phone.</p>
       </div>
