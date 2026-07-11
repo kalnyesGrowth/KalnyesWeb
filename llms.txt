@@ -1,0 +1,57 @@
+# KalnyesGrowth
+
+> Client Acquisition Systems for Local Businesses
+
+KalnyesGrowth builds automated client acquisition systems for local service businesses. We combine custom websites with AI-powered tools that handle calls, texts, reviews, bookings, and follow-ups 24/7.
+
+## Services
+
+- **Custom Websites**: Professional websites built for local businesses with mobile-first design, SEO optimization, and conversion-focused layouts.
+- **AI Voice Receptionist**: Answers calls 24/7, books appointments, and answers FAQs in the business owner's brand voice.
+- **Missed-Call Text Back**: Automatically texts missed callers within 60 seconds so no lead is lost.
+- **Reviews Automation**: Requests, monitors, and responds to Google reviews automatically.
+- **AI Webchat**: Website chat widget that answers customer questions and captures leads.
+- **Unified Messaging**: One inbox for SMS, email, Facebook, Instagram, Google, and webchat.
+- **CRM**: Track every lead, customer, and conversation in one place.
+- **Payments**: Send invoices and collect payments via text or email.
+- **Appointment Reminders**: Automated SMS and email reminders to reduce no-shows.
+- **Social Media Manager**: Schedule and publish posts across all platforms.
+- **Email & SMS Campaigns**: Broadcast promotions, updates, and offers to your customer list.
+- **Online Booking**: Let customers book appointments directly from your website or Google.
+- **Customer Reactivation**: Re-engage past customers with automated win-back campaigns.
+- **Google Visibility (SEO)**: Monthly SEO service to rank local businesses higher on Google Search and Maps.
+
+## Pricing
+
+### AI Systems (Monthly)
+- Core: $1,497/mo (Website + AI Receptionist + Missed-Call Text Back + Reviews)
+- Growth: $2,497/mo (Core + CRM + Payments + Reminders + Campaigns)
+- Scale: $2,997/mo (Growth + Social Media + Reactivation + Priority Support)
+
+### Individual AI Agents
+- $497 to $1,297/mo each, depending on the agent
+
+### SEO Plans (Monthly)
+- Foundation: $497/mo (GBP optimization, on-page SEO, 30+ citations, monthly report)
+- Growth: $897/mo (Foundation + 2 blog posts/mo, review strategy, competitor monitoring)
+- Dominate: $1,297/mo (Growth + 4 blog posts/mo, backlinks, Google Ads management)
+
+## Contact
+
+- Phone: (540) 407-8635
+- Email: hello@kalnyesgrowth.com
+- Website: https://kalnyesgrowth.com
+- Location: Stafford, Virginia (serving Northern Virginia and nationwide)
+- Languages: English, Spanish (Hablamos Espanol)
+- Book a call: https://calendly.com/kalnyesgrowth/boost-your-business
+
+## Links
+
+- [Homepage](https://kalnyesgrowth.com/)
+- [AI Agents](https://kalnyesgrowth.com/agents.html)
+- [Google Visibility (SEO)](https://kalnyesgrowth.com/seo.html)
+- [Free Demo](https://kalnyesgrowth.com/free-demo.html)
+- [Missed Call Calculator](https://kalnyesgrowth.com/calculator.html)
+- [Blog](https://kalnyesgrowth.com/blog.html)
+- [Privacy Policy](https://kalnyesgrowth.com/privacy.html)
+- [Terms of Service](https://kalnyesgrowth.com/terms.html)

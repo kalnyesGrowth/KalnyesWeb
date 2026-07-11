@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
+Disallow: /checkout.html
+Disallow: /checkout-success.html
+Disallow: /thanks.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://kalnyesgrowth.com/sitemap.xml
