@@ -320,6 +320,8 @@ document.getElementById('psStack').innerHTML =
   '<div class="ps-row save"><span>You save</span><span>' + plan.youSave + '</span></div>';
 
 var EDGE_URL = 'https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/website-checkout';
+var LEAD_ENDPOINT = 'https://boddsbxlaytcrkpuckyn.supabase.co/functions/v1/capture-lead';
+var CLIENT_ID = '992d9253-6123-4d51-91b9-007efd8ad03c';
 
 document.getElementById('checkoutForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -339,6 +341,20 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
     google_link: document.getElementById('google_link').value.trim(),
     website: document.getElementById('website').value.trim(),
   };
+
+  fetch(LEAD_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      client_id: CLIENT_ID,
+      name: data.owner_name,
+      email: data.email,
+      phone: data.phone,
+      message: 'Source: Checkout | Plan: ' + plan.name + ' (' + plan.price + '/mo) | Business: ' + data.business_name + ' | Industry: ' + data.business_type,
+      source_url: window.location.href,
+      channel: 'checkout'
+    })
+  }).catch(function(){});
 
   fetch(EDGE_URL, {
     method: 'POST',
@@ -362,5 +378,6 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
 });
 </script>
 
+<script src="https://project-kday6.vercel.app/tracker/tracker.js" data-client="992d9253-6123-4d51-91b9-007efd8ad03c"></script>
 </body>
 </html>
