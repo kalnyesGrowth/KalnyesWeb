@@ -473,12 +473,18 @@ body{
     e.preventDefault();
     var name = form.querySelector('[name="name"]').value;
     var email = form.querySelector('[name="email"]').value;
-    var msg = 'Source: Calculator | Industry: ' + industry.options[industry.selectedIndex].text
+    var industryLabel = industry.options[industry.selectedIndex].text.split(' (')[0];
+    if(industryLabel === 'Select your industry') industryLabel = 'Other';
+    var msg = 'Source: Calculator | Industry: ' + industryLabel
       + ' | Monthly loss: ' + monthlyEl.textContent
       + ' | Annual loss: ' + annualEl.textContent
       + ' | Missed calls/mo: ' + missedMoEl.textContent
       + ' | Leads lost: ' + leadsLostEl.textContent
-      + ' | Jobs lost: ' + jobsLostEl.textContent;
+      + ' | Jobs lost: ' + jobsLostEl.textContent
+      + ' | Calls/week: ' + callsWeek.value
+      + ' | Miss rate: ' + missPct.value + '%'
+      + ' | Close rate: ' + closeRate.value + '%'
+      + ' | Avg job: $' + jobValue.value;
 
     fetch(LEAD_ENDPOINT, {
       method: 'POST',
@@ -488,7 +494,8 @@ body{
         name: name,
         email: email,
         message: msg,
-        source_url: window.location.href
+        source_url: window.location.href,
+        channel: 'calculator'
       })
     }).catch(function(){});
 
