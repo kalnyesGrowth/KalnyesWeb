@@ -7,34 +7,47 @@ KalnyesGrowth builds automated client acquisition systems for local service busi
 ## Services
 
 - **Custom Websites**: Professional websites built for local businesses with mobile-first design, SEO optimization, and conversion-focused layouts.
-- **AI Voice Receptionist**: Answers calls 24/7, books appointments, and answers FAQs in the business owner's brand voice.
-- **Missed-Call Text Back**: Automatically texts missed callers within 60 seconds so no lead is lost.
-- **Reviews Automation**: Requests, monitors, and responds to Google reviews automatically.
-- **AI Webchat**: Website chat widget that answers customer questions and captures leads.
-- **Unified Messaging**: One inbox for SMS, email, Facebook, Instagram, Google, and webchat.
-- **CRM**: Track every lead, customer, and conversation in one place.
-- **Payments**: Send invoices and collect payments via text or email.
-- **Appointment Reminders**: Automated SMS and email reminders to reduce no-shows.
-- **Social Media Manager**: Schedule and publish posts across all platforms.
-- **Email & SMS Campaigns**: Broadcast promotions, updates, and offers to your customer list.
-- **Online Booking**: Let customers book appointments directly from your website or Google.
-- **Customer Reactivation**: Re-engage past customers with automated win-back campaigns.
+- **AI Voice Receptionist**: Answers calls 24/7, books appointments, and answers FAQs in the business owner's brand voice. $997/mo.
+- **Missed-Call Text Back**: Automatically texts missed callers within 5 seconds so no lead is lost. $597/mo.
+- **Reviews Automation**: Requests, monitors, and responds to Google reviews automatically. $497/mo.
+- **AI Webchat Widget**: Website chat widget that answers customer questions and captures leads 24/7. $497/mo.
+- **Unified Messaging Inbox**: One inbox for SMS, email, Facebook, Instagram, Google, and webchat with AI-drafted replies. $797/mo.
+- **Smart CRM + Pipelines**: Track every lead, customer, and conversation with AI-powered follow-up sequences. $997/mo.
+- **Smart Payments**: Send invoices and collect payments via text or email with automated reminders. $497/mo.
+- **Appointment Reminders**: Automated SMS and email reminders to reduce no-shows by 50-70%. $497/mo.
+- **Email & SMS Campaigns**: Broadcast promotions, updates, and offers to your customer list with AI-written copy. $697/mo.
+- **Online Booking**: Let customers book appointments 24/7 from your website or Google. $299/mo.
+- **Customer Reactivation**: Re-engage past customers with automated win-back campaigns. $399/mo.
 - **Google Visibility (SEO)**: Monthly SEO service to rank local businesses higher on Google Search and Maps.
 
 ## Pricing
 
-### AI Systems (Monthly)
-- Core: $1,497/mo (Website + AI Receptionist + Missed-Call Text Back + Reviews)
-- Growth: $2,497/mo (Core + CRM + Payments + Reminders + Campaigns)
-- Scale: $2,997/mo (Growth + Social Media + Reactivation + Priority Support)
+### AI Systems (Monthly Bundles)
+- Core: $1,497/mo (AI Voice Receptionist + Appointment Reminders + AI Webchat Widget)
+- Growth: $2,497/mo (Core + Reviews Automation + Unified Messaging + Smart CRM)
+- Scale: $2,997/mo (Growth + Smart Payments + Email & SMS Campaigns + Customer Reactivation + Priority Support)
 
 ### Individual AI Agents
-- $497 to $1,297/mo each, depending on the agent
+- $299 to $997/mo each, depending on the agent. No contracts. Cancel anytime.
 
 ### SEO Plans (Monthly)
 - Foundation: $497/mo (GBP optimization, on-page SEO, 30+ citations, monthly report)
 - Growth: $897/mo (Foundation + 2 blog posts/mo, review strategy, competitor monitoring)
 - Dominate: $1,297/mo (Growth + 4 blog posts/mo, backlinks, Google Ads management)
+
+## Individual Agent Pages
+
+- [AI Voice Receptionist](https://kalnyesgrowth.com/agents/voice-receptionist.html): 24/7 AI phone answering, appointment booking, lead qualification. $997/mo.
+- [Missed-Call Text Back](https://kalnyesgrowth.com/agents/missed-call-text-back.html): Automatic text response within 5 seconds of a missed call. $597/mo.
+- [Reviews Automation](https://kalnyesgrowth.com/agents/reviews-automation.html): Automated Google review requests and AI-powered review responses. $497/mo.
+- [AI Webchat Widget](https://kalnyesgrowth.com/agents/webchat.html): Website chatbot that captures leads and books appointments 24/7. $497/mo.
+- [Unified Messaging Inbox](https://kalnyesgrowth.com/agents/unified-messaging.html): Single inbox for all customer messages with AI-drafted replies. $797/mo.
+- [Smart CRM + Pipelines](https://kalnyesgrowth.com/agents/crm.html): AI-powered CRM with visual pipelines and automated follow-ups. $997/mo.
+- [Smart Payments](https://kalnyesgrowth.com/agents/payments.html): Text and email invoicing with one-tap payment and auto-reminders. $497/mo.
+- [Appointment Reminders](https://kalnyesgrowth.com/agents/appointment-reminders.html): Automated SMS/email reminders that reduce no-shows by 50-70%. $497/mo.
+- [Email & SMS Campaigns](https://kalnyesgrowth.com/agents/email-sms-campaigns.html): AI-written drip campaigns and seasonal promotions. $697/mo.
+- [Online Booking](https://kalnyesgrowth.com/agents/online-booking.html): Self-serve booking page with real-time calendar sync. $299/mo.
+- [Customer Reactivation](https://kalnyesgrowth.com/agents/customer-reactivation.html): Automated win-back messages for dormant customers. $399/mo.
 
 ## Contact
 
