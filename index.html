@@ -331,6 +331,7 @@ section{padding:100px 0}
 .ac-card:hover{border-color:var(--green);transform:translateY(-4px)}
 .ac-card img{width:100%;aspect-ratio:1/1;object-fit:cover}
 .ac-card-body{padding:20px}
+.ac-agent-name{display:block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
 .ac-card-body h3{font-size:1.05rem;margin-bottom:6px}
 .ac-card-body p{font-size:.85rem;color:var(--text);line-height:1.55;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ac-price{display:flex;align-items:baseline;gap:6px;margin-bottom:16px}
@@ -382,6 +383,27 @@ section{padding:100px 0}
 .final-cta h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px}
 .final-cta p{color:var(--text);font-size:1rem;max-width:480px;margin:0 auto 32px}
 .final-fine{font-size:.82rem;color:var(--muted);margin-top:16px}
+
+/* === CONTACT FORM === */
+.contact-section{padding:96px 0 80px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info h2{margin-bottom:16px}
+.contact-info>p{font-size:1rem;color:var(--text);line-height:1.7;margin-bottom:32px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:.92rem;color:var(--text)}
+.contact-detail svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.contact-detail a{color:var(--white);font-weight:600}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.contact-form label{display:block;font-size:.78rem;font-weight:600;color:var(--white);margin-bottom:6px;letter-spacing:.02em}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border-s);border-radius:10px;color:var(--white);font-family:var(--font);font-size:.9rem;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--green)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted)}
+.contact-form textarea{resize:vertical;min-height:80px}
+.contact-form .form-group{margin-bottom:12px}
+.sms-consent{display:flex;align-items:flex-start;gap:10px;margin:16px 0 20px;cursor:pointer}
+.sms-consent input[type="checkbox"]{width:18px;height:18px;margin-top:2px;accent-color:var(--green);flex-shrink:0;cursor:pointer}
+.sms-consent span{font-size:.78rem;color:var(--muted);line-height:1.5}
+.sms-consent a{color:var(--green);text-decoration:underline}
 
 /* === FAQ === */
 .faq-wrap{max-width:700px;margin:0 auto}
@@ -439,6 +461,9 @@ footer p{font-size:.78rem;color:var(--muted)}
   .timeline{padding-left:32px}
   .timeline::before{left:11px}
   .tl-dot{left:-27px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-form .form-row{grid-template-columns:1fr}
+  .contact-form{padding:24px}
 }
 @media(max-width:480px){
   .stat{padding:20px 6px}
@@ -968,6 +993,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#voice-receptionist" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175906_0fc1e8ac-6f42-4186-bbfa-451255a0528d.png" alt="AI Voice Receptionist" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">SENTRY</span>
         <h3>AI Voice Receptionist</h3>
         <p>Answers every call 24/7 with a natural voice. Sells, upsells, and books appointments while you sleep.</p>
         <div class="ac-price"><span>$997</span><span>/mo</span></div>
@@ -977,6 +1003,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#missed-call" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175908_cba1853b-a216-48fd-b031-1540c4e498d3.png" alt="Missed-Call Text Back" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">SNAP</span>
         <h3>Missed-Call Text Back</h3>
         <p>Texts callers back within 5 seconds. Qualifies leads and books appointments via text conversation.</p>
         <div class="ac-price"><span>$597</span><span>/mo</span></div>
@@ -986,6 +1013,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#reviews" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175909_7458d060-87e6-4c9b-8c6f-025ada4023b1.png" alt="Reviews Automation" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">ECHO</span>
         <h3>Reviews Automation</h3>
         <p>Requests reviews automatically after every job. Responds to all Google reviews the same day.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
@@ -995,6 +1023,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#webchat" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175911_22b05a2f-3087-4cba-997b-314e64b9e72a.png" alt="AI Webchat Widget" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">RELAY</span>
         <h3>AI Webchat Widget</h3>
         <p>Turns website visitors into booked customers. Greets, qualifies, and captures leads 24/7.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
@@ -1004,6 +1033,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#messaging" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_180016_c349d78e-ba46-4a03-b5c9-1c44afb9d631.png" alt="Unified Messaging Inbox" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">NEXUS</span>
         <h3>Unified Messaging Inbox</h3>
         <p>One inbox for texts, emails, Facebook, Instagram, and Google messages. AI drafts every reply.</p>
         <div class="ac-price"><span>$797</span><span>/mo</span></div>
@@ -1013,6 +1043,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#crm" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175914_14420465-21ab-48f0-bef8-76f769a4fbce.png" alt="Smart CRM + Pipelines" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">ATLAS</span>
         <h3>Smart CRM + Pipelines</h3>
         <p>Tracks every lead from first contact to closed job. AI follow-ups make sure nothing slips.</p>
         <div class="ac-price"><span>$997</span><span>/mo</span></div>
@@ -1022,6 +1053,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#payments" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260613_175915_0bd7e919-bea2-4761-945e-c48131474008.png" alt="Smart Payments" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">VAULT</span>
         <h3>Smart Payments</h3>
         <p>Send invoices via text. Customers pay with one tap. Automated reminders handle the rest.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
@@ -1031,6 +1063,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#reminders" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193819_4b851e05-38ea-4554-a9da-385d0e55b753.png" alt="Appointment Reminders" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">NUDGE</span>
         <h3>Appointment Reminders</h3>
         <p>Automated SMS and email reminders that cut no-shows by 50-70%. Customers confirm with one tap.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
@@ -1040,6 +1073,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#campaigns" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193823_eaac2bc0-0295-480d-b428-625b75fc889b.png" alt="Email and SMS Campaigns" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">BLAST</span>
         <h3>Email &amp; SMS Campaigns</h3>
         <p>Drip campaigns, seasonal promos, and follow-ups. AI writes the copy and picks the best send time.</p>
         <div class="ac-price"><span>$697</span><span>/mo</span></div>
@@ -1049,6 +1083,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#booking" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193825_9aef6363-af2c-4c3c-8bc6-706869be6ab3.png" alt="Online Booking" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">DOCK</span>
         <h3>Online Booking</h3>
         <p>Self-serve booking page. Customers pick a time, fill details, and get instant confirmation 24/7.</p>
         <div class="ac-price"><span>$299</span><span>/mo</span></div>
@@ -1058,6 +1093,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <a href="agents.html#reactivation" class="ac-card rv">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260709_193827_daf55511-6071-4f0b-a7cb-e6696af2cc45.png" alt="Customer Reactivation" loading="lazy">
       <div class="ac-card-body">
+        <span class="ac-agent-name">REVIVE</span>
         <h3>Customer Reactivation</h3>
         <p>Wins back past customers who haven't booked in 30-90 days. Personalized outreach on autopilot.</p>
         <div class="ac-price"><span>$399</span><span>/mo</span></div>
@@ -1523,13 +1559,57 @@ footer p{font-size:.78rem;color:var(--muted)}
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact">
   <div class="wrap">
-    <h2 class="rv">Ready to stop losing customers?</h2>
-    <p class="rv">Book a 15-minute discovery call. We'll show you exactly where your leads are going and how to get them back.</p>
-    <a href="#" class="btn btn-green btn-pulse rv" onclick="openBooking();return false">Book Your Discovery Call <span class="ar">&rarr;</span></a>
-    <div class="final-fine rv">No pressure. No commitment. Just clarity.</div>
+    <div class="contact-grid">
+      <div class="contact-info rv">
+        <span class="tag">Get Started</span>
+        <h2>Ready to stop losing customers?</h2>
+        <p>Fill out the form and we'll reach out within 1 business day to schedule your free discovery call. Or call us directly.</p>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+15404078635">(540) 407-8635</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:hello@kalnyesgrowth.com">hello@kalnyesgrowth.com</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Stafford, VA. Serving all of Northern Virginia.</span>
+        </div>
+      </div>
+      <form class="contact-form rv" action="https://project-kday6.vercel.app/api/contact" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name *</label>
+            <input type="text" id="cf-name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number *</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="(540) 555-1234" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email Address *</label>
+          <input type="email" id="cf-email" name="email" placeholder="john@yourbusiness.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-business">Business Name</label>
+          <input type="text" id="cf-business" name="business" placeholder="Smith's Plumbing">
+        </div>
+        <div class="form-group">
+          <label for="cf-message">How can we help?</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
+        </div>
+        <label class="sms-consent">
+          <input type="checkbox" name="sms_consent" required>
+          <span>I agree to receive text messages from KalnyesGrowth at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. View our <a href="privacy.html">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="btn btn-green" style="width:100%">Send Message <span class="ar">&rarr;</span></button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -1838,6 +1918,13 @@ var TR={
   // Free tools
   'Start wherever you\'re comfortable.':'Empieza donde te sientas comodo.',
   'Not ready for a call? No problem. Pick the option that fits.':'No listo para una llamada? No hay problema. Elige la opcion que prefieras.',
+  // Contact form
+  'Ready to stop losing customers?':'Listo para dejar de perder clientes?',
+  'Fill out the form and we\'ll reach out within 1 business day to schedule your free discovery call. Or call us directly.':'Llena el formulario y nos comunicaremos en 1 dia habil para agendar tu llamada gratuita. O llamanos directamente.',
+  'Stafford, VA. Serving all of Northern Virginia.':'Stafford, VA. Sirviendo todo el norte de Virginia.',
+  'Send Message':'Enviar Mensaje',
+  'How can we help?':'Como podemos ayudarte?',
+  'I agree to receive text messages from KalnyesGrowth at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. View our':'Acepto recibir mensajes de texto de KalnyesGrowth al numero proporcionado. La frecuencia varia. Aplican tarifas de mensajes y datos. Responde STOP para cancelar. Ver nuestra',
   // Footer
   'Espanol':'English',
 };
