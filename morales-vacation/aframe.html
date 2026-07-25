@@ -235,13 +235,45 @@
     .photo-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      grid-auto-rows: 200px;
+      grid-template-rows: 200px 200px;
       gap: 6px; border-radius: 16px; overflow: hidden; margin: 32px 0;
     }
     .photo-grid .photo-main { grid-row: 1 / 3; }
     .photo-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
     .photo-grid div:hover img { transform: scale(1.03); }
     .photo-grid div { overflow: hidden; cursor: pointer; }
+    .photo-grid.collapsed > div:nth-child(n+6) { display: none; }
+    .btn-show-photos {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin: 20px 0 0; padding: 12px 28px; background: #fff;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      font-size: 0.88rem; font-weight: 600; color: var(--text);
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-show-photos:hover { border-color: #222; background: #f7f7f7; }
+    .booking-form { max-width: 520px; margin: 0 auto; text-align: left; }
+    .booking-form .form-row { display: flex; gap: 12px; margin-bottom: 14px; }
+    .booking-form .form-row > * { flex: 1; }
+    .booking-form label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--sub); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .booking-form input, .booking-form select, .booking-form textarea {
+      width: 100%; padding: 14px 16px; border: 1.5px solid var(--border);
+      border-radius: 10px; font-family: var(--font); font-size: 0.95rem;
+      color: var(--text); background: #fff; transition: border-color 0.2s;
+    }
+    .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
+      outline: none; border-color: var(--coral);
+    }
+    .booking-form textarea { resize: vertical; min-height: 80px; }
+    .btn-submit-booking {
+      width: 100%; padding: 16px; background: var(--coral); color: #fff;
+      border: none; border-radius: 50px; font-family: var(--font);
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      box-shadow: 0 4px 24px rgba(255,56,92,0.35);
+      transition: background 0.2s, transform 0.15s; margin-top: 8px;
+    }
+    .btn-submit-booking:hover { background: var(--coral-dark); transform: translateY(-2px); }
+    .form-or { text-align: center; color: var(--sub); font-size: 0.85rem; margin: 16px 0; }
+    .form-alt-btns { display: flex; gap: 12px; justify-content: center; }
 
     .host-row {
       display: flex; align-items: center; gap: 16px;
@@ -339,6 +371,8 @@
       .photo-grid .photo-main { grid-column: 1 / 3; }
       .amenities-grid { grid-template-columns: 1fr; }
       .booking-btns { flex-direction: column; align-items: center; }
+      .booking-form .form-row { flex-direction: column; gap: 0; }
+      .form-alt-btns { flex-direction: column; align-items: center; }
       .scroll-indicator { display: none; }
     }
     @media (max-width: 480px) {
@@ -438,7 +472,7 @@
       </div>
     </div>
 
-    <div class="photo-grid" id="photos">
+    <div class="photo-grid collapsed" id="photos">
       <div class="photo-main">
         <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/407d3ad1-816c-4b1d-9ddd-d26cb7249948.jpeg?im_w=720" alt="A-Frame Cabin exterior at twilight" loading="lazy">
       </div>
@@ -470,6 +504,10 @@
         <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b4a8e67e-12c3-4171-90d7-1a2e13626639.jpeg?im_w=720" alt="Sofa bed area" loading="lazy">
       </div>
     </div>
+    <button class="btn-show-photos" onclick="this.previousElementSibling.classList.remove('collapsed');this.style.display='none'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      See all photos
+    </button>
 
     <div class="host-row">
       <img class="host-avatar" src="https://a0.muscache.com/im/pictures/user/User-476223972/original/8e572997-5d0a-4bc5-bec3-f101149417b9.jpeg?im_w=720" alt="Cinthia">
@@ -515,13 +553,30 @@
 
     <div class="booking-section" id="booking">
       <h2>Ready to <span style="color:var(--coral)">book direct</span>?</h2>
-      <p>Skip the platform fees. Message Cinthia directly to reserve your dates and get access to guest perks.</p>
-      <div class="booking-btns">
-        <a href="https://wa.me/15407797560?text=Hi%20Cinthia%2C%20I%27m%20interested%20in%20the%20A-Frame%20Cabin" class="btn-coral">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Message Cinthia
+      <p>Skip the platform fees. Fill out the form below and Cinthia will confirm your reservation within 2 hours.</p>
+      <form class="booking-form" onsubmit="return submitBooking(this,'A-Frame Cabin, Stafford VA')">
+        <div class="form-row">
+          <div><label for="b-name">Full Name</label><input type="text" id="b-name" name="name" required placeholder="Your full name"></div>
+          <div><label for="b-phone">Phone</label><input type="tel" id="b-phone" name="phone" required placeholder="(555) 123-4567"></div>
+        </div>
+        <div class="form-row">
+          <div><label for="b-email">Email</label><input type="email" id="b-email" name="email" required placeholder="you@email.com"></div>
+          <div><label for="b-guests">Guests</label><select id="b-guests" name="guests"><option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option selected>5 guests</option><option>6 guests</option></select></div>
+        </div>
+        <div class="form-row">
+          <div><label for="b-checkin">Check-in</label><input type="date" id="b-checkin" name="checkin" required></div>
+          <div><label for="b-checkout">Check-out</label><input type="date" id="b-checkout" name="checkout" required></div>
+        </div>
+        <div><label for="b-msg">Message (optional)</label><textarea id="b-msg" name="message" placeholder="Any special requests, questions, or notes for Cinthia..."></textarea></div>
+        <button type="submit" class="btn-submit-booking">Request to Book</button>
+      </form>
+      <div class="form-or">or reach out directly</div>
+      <div class="form-alt-btns">
+        <a href="https://wa.me/15407797560?text=Hi%20Cinthia%2C%20I%27m%20interested%20in%20the%20A-Frame%20Cabin" class="btn-ghost" style="font-size:0.88rem;padding:12px 24px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> WhatsApp
         </a>
-        <a href="tel:+15407797560" class="btn-ghost">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg> Call to book
+        <a href="tel:+15407797560" class="btn-ghost" style="font-size:0.88rem;padding:12px 24px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg> Call
         </a>
       </div>
     </div>
@@ -641,6 +696,26 @@ window.addEventListener('resize', update);
 
 loadFrames();
 update();
+</script>
+<script>
+function submitBooking(form, property) {
+  var d = new FormData(form);
+  var msg = 'New Booking Request\n\n';
+  msg += 'Property: ' + property + '\n';
+  msg += 'Name: ' + d.get('name') + '\n';
+  msg += 'Phone: ' + d.get('phone') + '\n';
+  msg += 'Email: ' + d.get('email') + '\n';
+  msg += 'Guests: ' + d.get('guests') + '\n';
+  msg += 'Check-in: ' + d.get('checkin') + '\n';
+  msg += 'Check-out: ' + d.get('checkout') + '\n';
+  if (d.get('message')) msg += 'Message: ' + d.get('message') + '\n';
+  var url = 'https://wa.me/15407797560?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+  form.querySelector('.btn-submit-booking').textContent = 'Request Sent!';
+  form.querySelector('.btn-submit-booking').style.background = '#2ecc71';
+  setTimeout(function(){ form.querySelector('.btn-submit-booking').textContent = 'Request to Book'; form.querySelector('.btn-submit-booking').style.background = ''; }, 3000);
+  return false;
+}
 </script>
 
 </body>
