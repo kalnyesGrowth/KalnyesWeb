@@ -245,6 +245,20 @@
     .pt-full img{width:100%;border-radius:12px;display:block}
     .pt-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
     .pt-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+    .photo-tour.collapsed .pt-nav-item:nth-child(n+6){display:none}
+    .photo-tour.collapsed > .pt-section ~ .pt-section{display:none}
+    .btn-see-more{display:block;margin:24px auto;padding:14px 32px;background:#fff;color:#222;border:1.5px solid #222;border-radius:8px;font-family:'DM Sans',system-ui,sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+    .btn-see-more:hover{background:#222;color:#fff}
+    .photo-tour:not(.collapsed) .btn-see-more{display:none}
+    .reviews-carousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:16px 0 24px;scrollbar-width:none}
+    .reviews-carousel::-webkit-scrollbar{display:none}
+    .review-card{flex:0 0 320px;scroll-snap-align:start;background:#fff;border:1px solid #ddd;border-radius:16px;padding:24px}
+    .rc-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .rc-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover}
+    .rc-name{font-weight:700;font-size:0.95rem}
+    .rc-date{font-size:0.8rem;color:#717171}
+    .rc-stars{color:#222;font-size:0.85rem;margin-bottom:8px}
+    .rc-text{color:#484848;font-size:0.9rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
     .booking-form { max-width: 520px; margin: 0 auto; text-align: left; }
     .booking-form .form-row { display: flex; gap: 12px; margin-bottom: 14px; }
     .booking-form .form-row > * { flex: 1; }
@@ -363,6 +377,7 @@
       .pt-images{max-width:100%}
       .photo-tour h2{font-size:22px}
       .pt-section h3{font-size:18px}
+      .review-card{flex:0 0 280px}
       .amenities-grid { grid-template-columns: 1fr; }
       .booking-btns { flex-direction: column; align-items: center; }
       .booking-form .form-row { flex-direction: column; gap: 0; }
@@ -466,7 +481,7 @@
       </div>
     </div>
 
-    <div class="photo-tour" id="photos">
+    <div class="photo-tour collapsed" id="photos">
       <h2>Photo tour</h2>
       <div class="pt-nav">
         <a href="#pt-living-room" class="pt-nav-item">
@@ -700,6 +715,10 @@
         </div>
       </div>
 
+      <button class="btn-see-more" onclick="this.parentElement.classList.remove('collapsed')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:6px"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        See more photos
+      </button>
     </div>
 
     <div class="host-row">
@@ -737,10 +756,60 @@
       <div class="reviews-summary">
         <span class="big-star">&#9733;</span>
         <strong>4.76</strong>
-        <span>119 reviews</span>
+        <span>123 reviews</span>
+      </div>
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/4fa40225-6b1b-4f16-b1b6-544a802b6c16.jpg?im_w=120" alt="Leila" loading="lazy">
+            <div><div class="rc-name">Leila</div><div class="rc-date">July 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Great few days spent at this unique house. Perfect set up for multiple families with the bathrooms and bedrooms spaced out. Beautiful deck to relax and super comfortable beds!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/User/original/e966915c-239c-4bb2-9c80-c53e4d7d681d.jpeg?im_w=120" alt="Karee" loading="lazy">
+            <div><div class="rc-name">Karee</div><div class="rc-date">June 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">The house was stunning. We traveled with three children 5, 7, and 11 and they had so many things to keep them occupied, jumbo Jenna, chess, arcade and hot tub. The adults enjoyed the large deck. Honestly this was a great stay, if we weren't there for a graduation we may have never left the house, we loved it so much!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/User/original/e4b31fad-656d-4db4-901a-b91bd6125ff2.jpeg?im_w=120" alt="Alaina" loading="lazy">
+            <div><div class="rc-name">Alaina</div><div class="rc-date">May 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Nice place. Kitchen didn't have everything needed for cooking or dining but was clean. Had a few bugs but nothing too bad. Host was responsive and helpful. The property, dock, and fire pit area looked nice.</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/User-564726925/original/92db9d68-12a5-4bb9-89b3-359bec79a8b6.jpeg?im_w=120" alt="Cortyne" loading="lazy">
+            <div><div class="rc-name">Cortyne</div><div class="rc-date">March 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Cinthia's cabin on the lake was the perfect weekend getaway for our family and friends! Our kids really enjoyed the large yard, lake, basketball goal, game room and hot tub. The wrap around deck was lovely! This place is a hidden gem! We will for sure be booking this lake house again.</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/438511b2-7b75-48d5-80da-e891f5188c81.jpg?im_w=120" alt="Simone" loading="lazy">
+            <div><div class="rc-name">Simone</div><div class="rc-date">February 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Great place. Very cozy &amp; comfortable fit for my group of six (4 adults 2 children). Plenty of windows so the mornings are bright. It's about 15-20 min from most stores but groceries, fast food, etc. are all easily accessible by car. Overall we enjoyed our stay.</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/users/19348913/profile_pic/1439846658/original.jpg?im_w=120" alt="Matthew" loading="lazy">
+            <div><div class="rc-name">Matthew</div><div class="rc-date">May 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Thank you. You can tell the time and effort is being made into property. There was work being done on the property that did not bother us because it was communicated ahead of time. Look forward to our next visit.</p>
+        </div>
       </div>
       <a href="https://www.airbnb.com/rooms/1029385900540075782" target="_blank" rel="noopener" class="review-cta">
-        Read all 119 reviews on Airbnb &#8599;
+        Read all 123 reviews on Airbnb &#8599;
       </a>
     </div>
 

@@ -86,6 +86,20 @@ html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',
 .pt-full img{width:100%;border-radius:12px;display:block}
 .pt-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pt-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.photo-tour.collapsed .pt-nav-item:nth-child(n+6){display:none}
+.photo-tour.collapsed > .pt-section ~ .pt-section{display:none}
+.btn-see-more{display:block;margin:24px auto;padding:14px 32px;background:#fff;color:#222;border:1.5px solid #222;border-radius:8px;font-family:'DM Sans',system-ui,sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.btn-see-more:hover{background:#222;color:#fff}
+.photo-tour:not(.collapsed) .btn-see-more{display:none}
+.reviews-carousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:16px 0 24px;scrollbar-width:none}
+.reviews-carousel::-webkit-scrollbar{display:none}
+.review-card{flex:0 0 320px;scroll-snap-align:start;background:#fff;border:1px solid #ddd;border-radius:16px;padding:24px}
+.rc-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.rc-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.rc-name{font-weight:700;font-size:0.95rem}
+.rc-date{font-size:0.8rem;color:#717171}
+.rc-stars{color:#222;font-size:0.85rem;margin-bottom:8px}
+.rc-text{color:#484848;font-size:0.9rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
 .booking-form{max-width:520px;margin:0 auto;text-align:left}
 .booking-form .form-row{display:flex;gap:12px;margin-bottom:14px}
 .booking-form .form-row > *{flex:1}
@@ -151,6 +165,7 @@ html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',
   .pt-images{max-width:100%}
   .photo-tour h2{font-size:22px}
   .pt-section h3{font-size:18px}
+  .review-card{flex:0 0 280px}
   .amenities-grid{grid-template-columns:1fr}
   .booking-btns{flex-direction:column;align-items:center}
   .booking-form .form-row{flex-direction:column;gap:0}
@@ -282,7 +297,7 @@ html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',
       </div>
     </div>
 
-    <div class="photo-tour" id="photos">
+    <div class="photo-tour collapsed" id="photos">
       <h2>Photo tour</h2>
       <div class="pt-nav">
         <a href="#pt-living-room" class="pt-nav-item">
@@ -538,6 +553,10 @@ html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',
         </div>
       </div>
 
+      <button class="btn-see-more" onclick="this.parentElement.classList.remove('collapsed')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:6px"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        See more photos
+      </button>
     </div>
 
     <div class="host-row">
@@ -575,10 +594,60 @@ html,body{overflow-x:hidden;background:#0a0a0f;color:#222;font-family:'DM Sans',
       <div class="reviews-summary">
         <span class="big-star">&#9733;</span>
         <strong>4.93</strong>
-        <span>46 reviews</span>
+        <span>51 reviews</span>
+      </div>
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/fd492878-df55-48d3-9646-4d3544f3125e.jpg?im_w=120" alt="Amanda" loading="lazy">
+            <div><div class="rc-name">Amanda</div><div class="rc-date">July 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">This was a great space for our group of 8. With 4 kids and 4 adults, there was plenty of space to stretch out. The back porch was great, there's a fun chess set the kids played. Close to a swimming hole where we searched for sharks teeth. Really nice neighbors. Would book again!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/bc538a7a-d965-4bc9-aa0c-bd844508d06f.jpg?im_w=120" alt="Alice" loading="lazy">
+            <div><div class="rc-name">Alice</div><div class="rc-date">July 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Our stay was wonderful. We had 3 kids, one dog, and 4 adults and were not nearly crowded! The cabin is beautiful, modern, clean, and well-equipped. The fire pit and outside deck was a real bonus. Flag Pond is a beautiful beach and we found several shark teeth and fossils. The house was perfect!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/d792e57b-810f-4c9e-ad5d-7adf299103ac.jpg?im_w=120" alt="Sarah" loading="lazy">
+            <div><div class="rc-name">Sarah</div><div class="rc-date">July 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Cinthia's luxury cabin in Lusby was an absolutely fantastic home base for our family's needs for a weekend wedding! Not only was Cinthia proactive and responsive with her communication, the cabin was exactly as described. 10/10 highly recommend!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/4bfbc637-db0c-4da5-aef8-16adee096d84.jpg?im_w=120" alt="Jarrod" loading="lazy">
+            <div><div class="rc-name">Jarrod</div><div class="rc-date">May 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Everyone had such a great time staying here. The cabin was cozy, plenty of space, and nice break from the hustle and bustle of life. The beds and pillows are extremely comfortable and Cinthia was very responsive to our needs during the stay.</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/User/original/0276f548-dc4f-4692-ba43-ff399cda8737.jpeg?im_w=120" alt="Christopher" loading="lazy">
+            <div><div class="rc-name">Christopher</div><div class="rc-date">May 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Our stay was great! We loved hanging outside by the fire and the kitchen provided everything you would need to cook a great meal! Plenty of room for our group of 7 plus pets! I would definitely recommend staying here for a peaceful getaway!</p>
+        </div>
+        <div class="review-card">
+          <div class="rc-header">
+            <img class="rc-avatar" src="https://a0.muscache.com/im/pictures/user/User-338211969/original/4659c076-d473-4063-829d-1f74fdead889.jpeg?im_w=120" alt="Ben" loading="lazy">
+            <div><div class="rc-name">Ben</div><div class="rc-date">March 2026</div></div>
+          </div>
+          <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="rc-text">Stayed here for the weekend and the cabin was absolutely beautiful so cozy and it was so clean! Cinthia was very responsive if we had any problems and the recommendations she gave us were great! Will definitely be coming back!</p>
+        </div>
       </div>
       <a href="https://www.airbnb.com/rooms/1348204027057107747" target="_blank" rel="noopener" class="review-cta">
-        Read all 46 reviews on Airbnb &#8599;
+        Read all 51 reviews on Airbnb &#8599;
       </a>
     </div>
 
