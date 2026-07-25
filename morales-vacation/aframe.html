@@ -232,25 +232,19 @@
       font-size: 0.75rem; font-weight: 700;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 200px 200px;
-      gap: 6px; border-radius: 16px; overflow: hidden; margin: 32px 0;
-    }
-    .photo-grid .photo-main { grid-row: 1 / 3; }
-    .photo-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-    .photo-grid div:hover img { transform: scale(1.03); }
-    .photo-grid div { overflow: hidden; cursor: pointer; }
-    .photo-grid.collapsed > div:nth-child(n+6) { display: none; }
-    .btn-show-photos {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin: 20px 0 0; padding: 12px 28px; background: #fff;
-      border: 1.5px solid var(--border); border-radius: 10px;
-      font-size: 0.88rem; font-weight: 600; color: var(--text);
-      cursor: pointer; transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-show-photos:hover { border-color: #222; background: #f7f7f7; }
+    .photo-tour{margin:32px 0}
+    .photo-tour h2{font-size:26px;font-weight:700;margin-bottom:20px;color:#222}
+    .pt-nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:40px}
+    .pt-nav-item{text-decoration:none;color:#222;text-align:center}
+    .pt-nav-item img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;margin-bottom:6px}
+    .pt-nav-item span{font-size:13px;font-weight:500;color:#222}
+    .pt-section{margin-bottom:48px;scroll-margin-top:80px}
+    .pt-section h3{font-size:22px;font-weight:600;margin-bottom:4px;color:#222}
+    .pt-amenities{font-size:14px;color:#717171;margin-bottom:16px}
+    .pt-images{display:flex;flex-direction:column;gap:8px;max-width:640px}
+    .pt-full img{width:100%;border-radius:12px;display:block}
+    .pt-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .pt-pair img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
     .booking-form { max-width: 520px; margin: 0 auto; text-align: left; }
     .booking-form .form-row { display: flex; gap: 12px; margin-bottom: 14px; }
     .booking-form .form-row > * { flex: 1; }
@@ -364,11 +358,11 @@
       .text-headline { font-size: clamp(2rem, 8vw, 2.8rem); }
       .text-desc { font-size: 0.88rem; }
       .scroll-progress { right: 12px; }
-      .photo-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 180px 120px 120px;
-      }
-      .photo-grid .photo-main { grid-column: 1 / 3; }
+      .pt-nav{grid-template-columns:repeat(3,1fr);gap:8px}
+      .pt-nav-item span{font-size:11px}
+      .pt-images{max-width:100%}
+      .photo-tour h2{font-size:22px}
+      .pt-section h3{font-size:18px}
       .amenities-grid { grid-template-columns: 1fr; }
       .booking-btns { flex-direction: column; align-items: center; }
       .booking-form .form-row { flex-direction: column; gap: 0; }
@@ -472,42 +466,241 @@
       </div>
     </div>
 
-    <div class="photo-grid collapsed" id="photos">
-      <div class="photo-main">
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/407d3ad1-816c-4b1d-9ddd-d26cb7249948.jpeg?im_w=720" alt="A-Frame Cabin exterior at twilight" loading="lazy">
+    <div class="photo-tour" id="photos">
+      <h2>Photo tour</h2>
+      <div class="pt-nav">
+        <a href="#pt-living-room" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/639d4f2e-df9b-4c8c-aaba-82056aee1be8.jpeg?im_w=720" alt="Living room" loading="lazy">
+          <span>Living room</span>
+        </a>
+        <a href="#pt-full-kitchen" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/ea96dd0e-6ff9-403f-8b11-f0c40cff0dee.jpeg?im_w=720" alt="Full kitchen" loading="lazy">
+          <span>Full kitchen</span>
+        </a>
+        <a href="#pt-dining-area" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/8b3ea08b-7d41-45aa-9c81-db4b22490dd7.jpeg?im_w=720" alt="Dining area" loading="lazy">
+          <span>Dining area</span>
+        </a>
+        <a href="#pt-bedroom-1" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/98a8c08c-ed80-4ec0-9107-3a71620e59c8.jpeg?im_w=720" alt="Bedroom 1" loading="lazy">
+          <span>Bedroom 1</span>
+        </a>
+        <a href="#pt-bedroom-2" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b9f08147-135b-4566-844c-7766e1d16520.jpeg?im_w=720" alt="Bedroom 2" loading="lazy">
+          <span>Bedroom 2</span>
+        </a>
+        <a href="#pt-bedroom-3" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/63d7e825-219b-4d7d-be4f-41a75b3eb4ab.jpeg?im_w=720" alt="Bedroom 3" loading="lazy">
+          <span>Bedroom 3</span>
+        </a>
+        <a href="#pt-bedroom-4" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b28f2bbc-4afe-47e4-b7ee-9e406dd7a149.jpeg?im_w=720" alt="Bedroom 4" loading="lazy">
+          <span>Bedroom 4</span>
+        </a>
+        <a href="#pt-full-bathroom-1" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/4200bda9-9e57-457f-94f3-5ac14b934334.jpeg?im_w=720" alt="Full bathroom 1" loading="lazy">
+          <span>Full bathroom 1</span>
+        </a>
+        <a href="#pt-full-bathroom-2" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/08ea97c2-6c92-482d-ab71-0e0f37b0d69e.jpeg?im_w=720" alt="Full bathroom 2" loading="lazy">
+          <span>Full bathroom 2</span>
+        </a>
+        <a href="#pt-full-bathroom-3" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/72c459f6-385c-447d-989b-c84f743cfac5.jpeg?im_w=720" alt="Full bathroom 3" loading="lazy">
+          <span>Full bathroom 3</span>
+        </a>
+        <a href="#pt-backyard" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/e0669c5e-e02c-4581-b927-eb5b08661d7f.jpeg?im_w=720" alt="Backyard" loading="lazy">
+          <span>Backyard</span>
+        </a>
+        <a href="#pt-laundry-area" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/1d4fbdbf-3675-4682-bd3b-b89dcacb11e2.jpeg?im_w=720" alt="Laundry area" loading="lazy">
+          <span>Laundry area</span>
+        </a>
+        <a href="#pt-exterior" class="pt-nav-item">
+          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/25df66ce-f3a0-485f-b701-43dd342b506f.jpeg?im_w=720" alt="Exterior" loading="lazy">
+          <span>Exterior</span>
+        </a>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/ce56c7b2-680c-4bfa-98ba-0db90ef5a0f2.jpeg?im_w=720" alt="A-Frame interior living space" loading="lazy">
+
+      <div class="pt-section" id="pt-living-room">
+        <h3>Living room</h3>
+        <p class="pt-amenities">Arcade games, Air conditioning, Indoor fireplace, TV</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/639d4f2e-df9b-4c8c-aaba-82056aee1be8.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/cf899d64-cec9-469e-82d4-2a66374e85e9.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/1287da67-cc40-44a8-8fa6-d17a7995dca4.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/e964e5be-75f7-45e2-9e97-745674c5c7d7.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/eecc7c0f-87ca-45d9-9895-5ce41700870b.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/1b68beb7-5f0f-4a38-bd71-b9b786ea7fd6.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/450b419e-b170-4efb-acda-4656cb61535f.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/6ecb42ca-5ce4-4183-a494-bfd631a1dd22.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/896e60b3-56bd-4786-81b3-4c5e685c96dc.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/ffc60020-3e55-4879-b7e9-70bc0e14940b.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/c887b506-f42a-45f6-9735-91f79de95e35.jpeg?im_w=720" alt="Living room" loading="lazy"></div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/deee322d-2b14-4cb8-ac28-da6af17286ed.jpeg?im_w=720" alt="Deck with outdoor seating" loading="lazy">
+
+      <div class="pt-section" id="pt-full-kitchen">
+        <h3>Full kitchen</h3>
+        <p class="pt-amenities">Barbecue utensils, Blender, Coffee, Coffee maker, Cooking basics, Dishes and silverware</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/ea96dd0e-6ff9-403f-8b11-f0c40cff0dee.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/8354619f-f7a1-4ea1-bb1e-bc4a84f9c53f.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/4b847fc4-56d3-4a7e-bd85-094258117bd6.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/788fc253-001a-4e0d-b120-71236588ced1.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/93fdb6f7-1d32-4edf-8286-688199e43574.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/8a0340a1-fba5-403a-9a0a-a2485b52d30d.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/36bb90f9-45a8-4196-bb3f-8f22c9d0ae15.jpeg?im_w=720" alt="Full kitchen" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/d3c01291-11d0-4641-8237-aef900ed84ab.jpeg?im_w=720" alt="Cabin deck and surroundings" loading="lazy">
+
+      <div class="pt-section" id="pt-dining-area">
+        <h3>Dining area</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/8b3ea08b-7d41-45aa-9c81-db4b22490dd7.jpeg?im_w=720" alt="Dining area" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/4b47798a-c359-4a53-9617-0e55638d23b8.jpeg?im_w=720" alt="Dining area" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/3cca704c-ecaf-4e63-88f4-ca1b113b619e.jpeg?im_w=720" alt="Dining area" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/100c7262-ce64-4036-8e8c-4e9a153e6dd2.jpeg?im_w=720" alt="Dining area" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/aff4a02c-17e3-4688-92a1-e01389250ce3.png?im_w=720" alt="A-Frame cabin aerial view" loading="lazy">
+
+      <div class="pt-section" id="pt-bedroom-1">
+        <h3>Bedroom 1</h3>
+        <p class="pt-amenities">King bed, Air conditioning, Bed linens, Clothing storage, Hangers, Heating</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/98a8c08c-ed80-4ec0-9107-3a71620e59c8.jpeg?im_w=720" alt="Bedroom 1" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/f95f3ddf-469a-4e12-927f-ebc4897eed1e.jpeg?im_w=720" alt="Bedroom 1" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b48abb2c-44f3-4cb7-b369-21e5cc166a74.jpeg?im_w=720" alt="Bedroom 1" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/60e59af8-0527-49b2-9f50-d238234d1ca3.jpeg?im_w=720" alt="Bedroom 1" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/98a8c08c-ed80-4ec0-9107-3a71620e59c8.jpeg?im_w=720" alt="Primary bedroom" loading="lazy">
+
+      <div class="pt-section" id="pt-bedroom-2">
+        <h3>Bedroom 2</h3>
+        <p class="pt-amenities">2 single beds</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b9f08147-135b-4566-844c-7766e1d16520.jpeg?im_w=720" alt="Bedroom 2" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/37d9642e-139e-4f4b-b613-ebb86c8c96e5.jpeg?im_w=720" alt="Bedroom 2" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/eb99d4a6-ee2c-4d1e-b556-f4b7254e6241.jpeg?im_w=720" alt="Bedroom 2" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/9f4137f2-930a-4df0-9680-ac2d1a3dafde.jpeg?im_w=720" alt="Bedroom 2" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b9f08147-135b-4566-844c-7766e1d16520.jpeg?im_w=720" alt="Twin guest bedroom" loading="lazy">
+
+      <div class="pt-section" id="pt-bedroom-3">
+        <h3>Bedroom 3</h3>
+        <p class="pt-amenities">Single bed</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/63d7e825-219b-4d7d-be4f-41a75b3eb4ab.jpeg?im_w=720" alt="Bedroom 3" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/f8fb6d94-1b49-4887-a103-c470643e815e.jpeg?im_w=720" alt="Bedroom 3" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/1aee40a7-22e1-4e49-b127-62ca8b215657.jpeg?im_w=720" alt="Bedroom 3" loading="lazy"></div>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/63d7e825-219b-4d7d-be4f-41a75b3eb4ab.jpeg?im_w=720" alt="Loft bedroom nook" loading="lazy">
+
+      <div class="pt-section" id="pt-bedroom-4">
+        <h3>Bedroom 4</h3>
+        <p class="pt-amenities">Queen bed</p>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b28f2bbc-4afe-47e4-b7ee-9e406dd7a149.jpeg?im_w=720" alt="Bedroom 4" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b28f2bbc-4afe-47e4-b7ee-9e406dd7a149.jpeg?im_w=720" alt="Bedroom with live-edge headboard" loading="lazy">
+
+      <div class="pt-section" id="pt-full-bathroom-1">
+        <h3>Full bathroom 1</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/4200bda9-9e57-457f-94f3-5ac14b934334.jpeg?im_w=720" alt="Full bathroom 1" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/5a869329-72b9-468e-aec5-6bfc70f98118.jpeg?im_w=720" alt="Full bathroom 1" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/8b15e8ca-543a-426c-bf21-3dce6f2800f4.jpeg?im_w=720" alt="Full bathroom 1" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/f0dfdb41-d005-426c-955e-d18fb595452f.jpeg?im_w=720" alt="Full bathroom 1" loading="lazy"></div>
+        </div>
       </div>
-      <div>
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/b4a8e67e-12c3-4171-90d7-1a2e13626639.jpeg?im_w=720" alt="Sofa bed area" loading="lazy">
+
+      <div class="pt-section" id="pt-full-bathroom-2">
+        <h3>Full bathroom 2</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/08ea97c2-6c92-482d-ab71-0e0f37b0d69e.jpeg?im_w=720" alt="Full bathroom 2" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/4df11e68-b2ec-4457-a3f4-8fa091a30686.jpeg?im_w=720" alt="Full bathroom 2" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/af166402-1c77-4bd7-9572-01bb796b33d6.jpeg?im_w=720" alt="Full bathroom 2" loading="lazy"></div>
+          </div>
+        </div>
       </div>
+
+      <div class="pt-section" id="pt-full-bathroom-3">
+        <h3>Full bathroom 3</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/72c459f6-385c-447d-989b-c84f743cfac5.jpeg?im_w=720" alt="Full bathroom 3" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/fb752fb6-2660-4de8-9dd6-c1822f643d7b.jpeg?im_w=720" alt="Full bathroom 3" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-section" id="pt-backyard">
+        <h3>Backyard</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/e0669c5e-e02c-4581-b927-eb5b08661d7f.jpeg?im_w=720" alt="Backyard" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/694aa615-46a8-4e8b-972c-a03023dd644c.jpeg?im_w=720" alt="Backyard" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/a749cce3-93ca-4a5b-9d34-a3b2cc1bf222.jpeg?im_w=720" alt="Backyard" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/e138a2dc-b324-420b-9df8-645b0b915dd1.jpeg?im_w=720" alt="Backyard" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/43318c2b-d97c-4f97-b92b-e2fb92288afe.jpeg?im_w=720" alt="Backyard" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-section" id="pt-laundry-area">
+        <h3>Laundry area</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/1d4fbdbf-3675-4682-bd3b-b89dcacb11e2.jpeg?im_w=720" alt="Laundry area" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="pt-section" id="pt-exterior">
+        <h3>Exterior</h3>
+        <div class="pt-images">
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/25df66ce-f3a0-485f-b701-43dd342b506f.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/9e59080c-aa1f-49ca-9926-d2d387591a2e.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/2a56f22f-c98c-4a95-9a7c-78fae07b7c80.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/f5faafa0-0c08-4c43-8a96-eb7b6d21c14a.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/d3c01291-11d0-4641-8237-aef900ed84ab.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/c7f6e45d-2853-479a-8834-86819c4a6bff.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          </div>
+          <div class="pt-full"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/deee322d-2b14-4cb8-ac28-da6af17286ed.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          <div class="pt-pair">
+            <div><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/899e44aa-9009-49a6-b3bc-d9b931a71f62.jpeg?im_w=720" alt="Exterior" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <button class="btn-show-photos" onclick="this.previousElementSibling.classList.remove('collapsed');this.style.display='none'">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      See all photos
-    </button>
 
     <div class="host-row">
       <img class="host-avatar" src="https://a0.muscache.com/im/pictures/user/User-476223972/original/8e572997-5d0a-4bc5-bec3-f101149417b9.jpeg?im_w=720" alt="Cinthia">
