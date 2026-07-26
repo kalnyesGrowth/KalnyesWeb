@@ -221,7 +221,7 @@ section{padding:100px 0}
 
 /* === TIMELINE === */
 .timeline{max-width:680px;margin:0 auto;position:relative;padding-left:40px}
-.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:1px;background:var(--border-s)}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:rgba(34,197,94,0.3)}
 .tl-step{position:relative;padding-bottom:48px}
 .tl-step:last-child{padding-bottom:0}
 .tl-dot{position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--border-s);background:var(--bg);transition:all .5s;z-index:1}
@@ -255,12 +255,12 @@ section{padding:100px 0}
 .svc-device{flex:0 0 auto}
 
 /* Phone Frame */
-.dev-phone{width:230px;height:460px;border-radius:30px;border:2px solid rgba(0,0,0,0.1);background:#f5f5f7;position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.05)}
-.dev-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#e8e8ed;border-radius:0 0 14px 14px;z-index:5}
-.dev-screen{position:absolute;top:6px;left:6px;right:6px;bottom:6px;border-radius:24px;overflow:hidden;background:#ffffff;display:flex;flex-direction:column}
+.dev-phone{width:230px;height:460px;border-radius:30px;border:2px solid rgba(255,255,255,0.08);background:#1e1e2a;position:relative;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.06)}
+.dev-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#1a1a26;border-radius:0 0 14px 14px;z-index:5}
+.dev-screen{position:absolute;top:6px;left:6px;right:6px;bottom:6px;border-radius:24px;overflow:hidden;background:#f0f1f5;display:flex;flex-direction:column}
 
 /* Screen Header */
-.scr-head{padding:30px 14px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,0,0,0.08)}
+.scr-head{padding:30px 14px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(0,0,0,0.1)}
 .scr-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0}
 .scr-title{font-size:.64rem;font-weight:700;color:#1a1a2e;flex:1}
 .scr-badge{font-size:.5rem;color:var(--green);font-weight:600;white-space:nowrap}
@@ -294,16 +294,16 @@ section{padding:100px 0}
 
 /* Dashboard (Command Center) */
 .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:8px}
-.dash-card{background:#f5f5f7;border-radius:8px;padding:8px;text-align:center;opacity:0;transform:translateY(6px)}
+.dash-card{background:#e8e9ee;border-radius:8px;padding:8px;text-align:center;opacity:0;transform:translateY(6px)}
 .in .dash-card{animation:bubbleIn .35s ease forwards}
-.dash-num{font-family:var(--serif);font-size:.82rem;font-weight:700;color:var(--green)}
+.dash-num{font-family:var(--serif);font-size:.82rem;font-weight:700;color:#16a34a}
 .dash-label{font-size:.44rem;color:#6b7280;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
 .dash-activity{padding:6px 10px;opacity:0;transform:translateY(6px)}
 .in .dash-activity{animation:bubbleIn .35s ease forwards}
-.dash-row{display:flex;gap:6px;align-items:center;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:.48rem}
+.dash-row{display:flex;gap:6px;align-items:center;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:.48rem}
 .dash-row-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.dash-row-text{flex:1;color:rgba(255,255,255,0.6)}
-.dash-row-time{color:var(--muted);font-size:.42rem}
+.dash-row-text{flex:1;color:#374151}
+.dash-row-time{color:#9ca3af;font-size:.42rem}
 
 /* Review Screen */
 .rev-screen-stars{text-align:center;padding:8px 0;font-size:.7rem;color:#f5a623;letter-spacing:2px;opacity:0;transform:translateY(6px)}
@@ -600,7 +600,7 @@ footer p{font-size:.78rem;color:var(--muted)}
 .dash-mock-badge{font-size:.5rem;color:var(--green);font-weight:700;background:var(--green-dim);padding:3px 8px;border-radius:6px}
 .dash-mock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
 .dash-mock-stat{
-  background:#f5f5f7;border:1px solid rgba(0,0,0,0.06);
+  background:#e8e9ee;border:1px solid rgba(0,0,0,0.06);
   border-radius:8px;padding:10px 6px;text-align:center;
 }
 .dash-mock-stat-n{font-family:var(--serif);font-size:.9rem;font-weight:700;color:#16a34a}
