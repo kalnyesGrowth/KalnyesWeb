@@ -221,7 +221,8 @@ section{padding:100px 0}
 
 /* === TIMELINE === */
 .timeline{max-width:680px;margin:0 auto;position:relative;padding-left:40px}
-.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:rgba(34,197,94,0.3)}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:rgba(34,197,94,0.15)}
+.tl-progress{position:absolute;left:15px;top:0;width:2px;height:0;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.4);z-index:1;transition:none}
 .tl-step{position:relative;padding-bottom:48px}
 .tl-step:last-child{padding-bottom:0}
 .tl-dot{position:absolute;left:-33px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--border-s);background:var(--bg);transition:all .5s;z-index:1}
@@ -471,6 +472,7 @@ footer p{font-size:.78rem;color:var(--muted)}
   .founder-photo{max-width:280px;margin:0 auto}
   .timeline{padding-left:32px}
   .timeline::before{left:11px}
+  .tl-progress{left:11px}
   .tl-dot{left:-27px}
   .contact-grid{grid-template-columns:1fr}
   .contact-form .form-row{grid-template-columns:1fr}
@@ -750,6 +752,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <h2>Four steps. Zero guesswork.</h2>
     </div>
     <div class="timeline">
+      <div class="tl-progress" id="tlProgress"></div>
       <div class="tl-step rv-l">
         <div class="tl-dot"></div>
         <div class="tl-num">Step 01</div>
@@ -1816,6 +1819,25 @@ function openBooking(){
     });
   },{threshold:0.15});
   reveals.forEach(function(el){revObs.observe(el)});
+
+  /* === TIMELINE SCROLL PROGRESS === */
+  var tlProgress=document.getElementById('tlProgress');
+  var timeline=document.querySelector('.timeline');
+  if(tlProgress&&timeline){
+    var dots=timeline.querySelectorAll('.tl-dot');
+    function updateTlProgress(){
+      var rect=timeline.getBoundingClientRect();
+      var tlTop=rect.top;
+      var viewTrigger=window.innerHeight*0.6;
+      var scrolled=viewTrigger-tlTop;
+      var maxH=timeline.offsetHeight;
+      if(scrolled<0){tlProgress.style.height='0px';return}
+      var h=Math.min(scrolled,maxH);
+      tlProgress.style.height=h+'px';
+    }
+    window.addEventListener('scroll',updateTlProgress,{passive:true});
+    updateTlProgress();
+  }
 
   /* === STAT COUNTERS === */
   var statEls=document.querySelectorAll('.stat-n[data-count]');
