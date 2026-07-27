@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Webchat System | How It Works | KalnyesGrowth</title>
+<meta name="description" content="See how the AI Webchat system turns website visitors into booked customers 24/7. Visual workflow showing every step from first visit to confirmed appointment.">
+<link rel="canonical" href="https://kalnyesgrowth.com/systems/ai-webchat.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.08);
+  --card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--white);font-weight:600;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+h3{font-family:var(--font);font-weight:700;font-size:clamp(1.1rem,2vw,1.35rem)}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;font-family:var(--font);font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(34,197,94,0)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.3)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.btn-pulse{animation:btnPulse 2.5s infinite}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+
+/* nav */
+nav{padding:16px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:-.01em}
+.logo span{color:var(--muted);font-weight:400}
+.nav-back{font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* hero */
+.hero{padding:80px 0 60px;text-align:center}
+.hero h1{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:16px}
+.hero .sub{font-size:1.05rem;color:var(--text);max-width:580px;margin:0 auto;line-height:1.7}
+
+/* workflow */
+.workflow-section{padding:20px 0 80px}
+.wf-timeline{max-width:680px;margin:0 auto;position:relative;padding-left:48px}
+.wf-timeline::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:rgba(34,197,94,0.15)}
+.wf-progress{position:absolute;left:19px;top:0;width:2px;height:0;background:var(--green);box-shadow:0 0 8px rgba(34,197,94,0.4);z-index:1;transition:none}
+
+.wf-step{position:relative;padding-bottom:48px}
+.wf-step:last-child{padding-bottom:0}
+.wf-dot{position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;border:2px solid var(--border-s);background:var(--bg);transition:all .5s;z-index:2}
+.wf-step.in .wf-dot{border-color:var(--green);background:var(--green);box-shadow:0 0 12px rgba(34,197,94,0.4)}
+
+.wf-card{background:var(--card);border:1px solid var(--border-s);border-radius:var(--r);padding:24px 28px;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.wf-card:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateX(4px)}
+.wf-num{font-size:.68rem;font-weight:700;color:var(--green);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.wf-card h3{margin-bottom:8px}
+.wf-card p{font-size:.92rem;color:var(--text);line-height:1.65;max-width:520px}
+
+/* icon inside wf-card */
+.wf-icon{width:40px;height:40px;border-radius:10px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0}
+.wf-icon svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* features grid */
+.features-section{padding:80px 0;border-top:1px solid var(--border)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px 24px;text-align:center;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.feat:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateY(-3px)}
+.feat-icon{width:48px;height:48px;border-radius:14px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.feat-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{margin-bottom:8px;font-size:1.05rem}
+.feat p{font-size:.88rem;color:var(--text);line-height:1.6}
+
+/* pricing */
+.pricing-section{padding:80px 0;border-top:1px solid var(--border);text-align:center}
+.price-card{max-width:420px;margin:32px auto 0;background:var(--card);border:2px solid var(--green);border-radius:20px;padding:40px 32px;box-shadow:0 0 40px rgba(34,197,94,0.08)}
+.price-amount{font-size:3rem;font-weight:800;color:var(--white);font-family:var(--serif)}
+.price-amount small{font-size:1rem;font-weight:500;color:var(--muted)}
+.price-note{font-size:.88rem;color:var(--muted);margin:12px 0 24px}
+.price-includes{text-align:left;margin-bottom:24px}
+.price-includes li{display:flex;gap:10px;align-items:center;font-size:.9rem;color:var(--text);padding:6px 0}
+.ck{width:18px;height:18px;border-radius:50%;background:var(--green-dim);color:var(--green);display:inline-flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;flex-shrink:0}
+
+/* final cta */
+.final-cta{text-align:center;padding:100px 0 80px;position:relative}
+.final-cta::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(var(--border),transparent)}
+.final-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px}
+.final-cta>p{color:var(--text);font-size:1rem;max-width:480px;margin:0 auto 28px}
+.final-fine{font-size:.82rem;color:var(--muted);margin-top:14px}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--border)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot .logo{font-size:1rem}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{font-size:.82rem;color:var(--muted);font-weight:500;transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+footer small{font-size:.76rem;color:var(--dim)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.stg>*{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
+.stg.in>*{opacity:1;transform:none}
+.stg.in>*:nth-child(2){transition-delay:.12s}
+.stg.in>*:nth-child(3){transition-delay:.24s}
+
+/* responsive */
+@media(max-width:768px){
+  .features-grid{grid-template-columns:1fr}
+  .hero{padding:60px 0 40px}
+  .hero h1{font-size:1.8rem}
+  .wf-timeline{padding-left:40px}
+  .wf-dot{left:-29px;width:12px;height:12px}
+  .wf-timeline::before,.wf-progress{left:15px}
+  .wf-card{padding:18px 20px}
+  .wf-card p{font-size:.86rem}
+  .price-card{padding:28px 20px}
+  .price-amount{font-size:2.4rem}
+  .features-section,.pricing-section{padding:56px 0}
+  .final-cta{padding:64px 0 56px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <a href="/agents.html" class="nav-back">&larr; Back to AI Systems</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag" style="display:block;margin-bottom:14px">System 03 . AI Webchat</span>
+      <h1>Turn Website Visitors Into Booked Customers</h1>
+      <p class="sub">A smart chat widget that lives on your website and works 24/7. It greets visitors, answers their questions, captures their info, and books appointments. All while you sleep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="workflow-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
+      <span class="tag">How It Works</span>
+      <h2>The System Behind Your Webchat</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:520px;margin:14px auto 0">From first visit to confirmed appointment. Here is every step the AI handles for you.</p>
+    </div>
+
+    <div class="wf-timeline" id="wfTimeline">
+      <div class="wf-progress" id="wfProgress"></div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+          </div>
+          <div class="wf-num">Step 01</div>
+          <h3>Visitor Lands on Your Website</h3>
+          <p>Someone finds your site through Google, social media, or a referral. The chat widget appears in the bottom corner, ready to engage.</p>
+        </div>
+      </div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="wf-num">Step 02</div>
+          <h3>AI Greets the Visitor</h3>
+          <p>A friendly message opens the conversation. "Hi! Need help with [your service]? I can answer questions or get you a free estimate." No forms. No friction. Just a conversation.</p>
+        </div>
+      </div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="wf-num">Step 03</div>
+          <h3>Answers Questions in Real Time</h3>
+          <p>Trained on your services, pricing, and availability. The AI responds instantly to any question about your business. No waiting, no "we'll get back to you."</p>
+        </div>
+      </div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="wf-num">Step 04</div>
+          <h3>Captures Lead Information</h3>
+          <p>Collects name, phone number, email, and project details naturally through the conversation. No cold forms. The visitor shares their info because the AI earned their trust first.</p>
+        </div>
+      </div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="wf-num">Step 05</div>
+          <h3>Books the Appointment</h3>
+          <p>Checks your calendar and books the visitor into an open slot. Sends a confirmation to both of you. The visitor goes from browsing to booked in under 2 minutes.</p>
+        </div>
+      </div>
+
+      <div class="wf-step rv">
+        <div class="wf-dot"></div>
+        <div class="wf-card">
+          <div class="wf-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="wf-num">Step 06</div>
+          <h3>Lead Enters Your Command Center</h3>
+          <p>Every conversation, contact, and booking flows into your dashboard automatically. You see the full history, the lead's details, and the appointment on your calendar. Nothing falls through the cracks.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Built for Your Business</span>
+      <h2>Simple to Set Up. Powerful to Use.</h2>
+    </div>
+    <div class="features-grid stg">
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Customizable to Your Brand</h3>
+        <p>Match your brand colors, set your greeting message, and train the AI on your specific services. It feels like an extension of your team, not a generic bot.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Works on Every Device</h3>
+        <p>Desktop, tablet, or phone. The chat widget adapts to any screen size. Your visitors get the same experience no matter how they find you.</p>
+      </div>
+
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Installs in One Line of Code</h3>
+        <p>We add a single script tag to your website. That's it. No plugins, no integrations, no technical headaches. Works with any website platform.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag">Simple Pricing</span>
+      <h2>One Price. Everything Included.</h2>
+    </div>
+    <div class="price-card rv">
+      <div class="price-amount">$150 <small>/month</small></div>
+      <p class="price-note">Command Center included free when bundled with a KalnyesGrowth website.</p>
+      <ul class="price-includes">
+        <li><span class="ck">&#10003;</span> AI chatbot trained on your business</li>
+        <li><span class="ck">&#10003;</span> 24/7 availability</li>
+        <li><span class="ck">&#10003;</span> Lead capture and appointment booking</li>
+        <li><span class="ck">&#10003;</span> Custom branding and greeting</li>
+        <li><span class="ck">&#10003;</span> Mobile-responsive widget</li>
+        <li><span class="ck">&#10003;</span> Reporting dashboard</li>
+        <li><span class="ck">&#10003;</span> $0 setup fee</li>
+        <li><span class="ck">&#10003;</span> No contracts. Cancel anytime.</li>
+      </ul>
+      <a href="#" class="btn btn-green" style="width:100%" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Free Discovery Call <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <span class="tag rv">Your Next Step</span>
+    <h2 class="rv">Stop Losing Website Visitors</h2>
+    <p class="rv">Most visitors leave your site without contacting you. The AI Webchat changes that. 15 minutes on a free call. See it in action with your own business.</p>
+    <div class="rv" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+      <a href="#" class="btn btn-green btn-pulse" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none">Message us on WhatsApp</a>
+    </div>
+    <p class="rv final-fine">Free demo. No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <div class="foot-links">
+      <a href="/index.html">Home</a>
+      <a href="/agents.html">AI Systems</a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a>
+    </div>
+    <small>&copy; 2026 KalnyesGrowth. All rights reserved. Stafford, VA.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* reveal on scroll */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv,.stg').forEach(function(el){io.observe(el)});
+
+/* timeline scroll progress */
+var wfProgress=document.getElementById('wfProgress');
+var wfTimeline=document.getElementById('wfTimeline');
+if(wfProgress&&wfTimeline){
+  function updateProgress(){
+    var rect=wfTimeline.getBoundingClientRect();
+    var trigger=window.innerHeight*0.6;
+    var scrolled=trigger-rect.top;
+    var maxH=wfTimeline.offsetHeight;
+    if(scrolled<0){wfProgress.style.height='0px';return}
+    wfProgress.style.height=Math.min(scrolled,maxH)+'px';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  updateProgress();
+}
+})();
+</script>
+</body>
+</html>

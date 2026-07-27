@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Engine | How It Works | KalnyesGrowth</title>
+<meta name="description" content="See how the Marketing Engine automates email and SMS campaigns, seasonal promotions, and customer reactivation for your local business.">
+<link rel="canonical" href="https://kalnyesgrowth.com/systems/marketing-engine.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.08);
+  --card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--white);font-weight:600;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-family:var(--font);font-weight:700}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;font-family:var(--font);font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.3)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.btn-pulse{animation:btnPulse 2.5s infinite}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+
+/* nav */
+nav{padding:16px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:0 24px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:-.01em}
+.logo span{color:var(--muted);font-weight:400}
+.nav-back{font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* hero */
+.hero{padding:80px 0 60px;text-align:center}
+.hero h1{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:16px}
+.hero .sub{font-size:1.05rem;color:var(--text);max-width:600px;margin:0 auto 12px;line-height:1.7}
+.hero .tag{display:block;margin-bottom:14px}
+
+/* section */
+section{padding:80px 0}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head .tag{display:block;margin-bottom:12px}
+.section-head p{color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0}
+
+/* workflow tracks */
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.track{background:var(--card);border:1px solid var(--border-s);border-radius:20px;padding:32px 28px;position:relative}
+.track-label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.track-label svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* workflow nodes */
+.wf-node{position:relative;padding:16px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border-s);border-radius:14px;margin-bottom:16px;transition:all .3s}
+.wf-node:last-child{margin-bottom:0}
+.wf-node:hover{background:rgba(255,255,255,0.06);border-color:rgba(34,197,94,0.2)}
+.wf-node .step-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green-dim);color:var(--green);font-size:.7rem;font-weight:800;margin-right:10px;flex-shrink:0}
+.wf-node h4{font-size:.92rem;color:var(--white);font-weight:700;font-family:var(--font);margin-bottom:4px;display:flex;align-items:center}
+.wf-node p{font-size:.82rem;color:var(--muted);line-height:1.5;padding-left:34px}
+
+/* connector lines */
+.wf-connector{display:flex;justify-content:center;margin:0 0 16px;position:relative;height:20px}
+.wf-connector::before{content:'';width:2px;height:100%;background:linear-gradient(var(--green),rgba(34,197,94,0.2));border-radius:2px}
+
+/* feature grid */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 22px;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.feat-card:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateY(-3px)}
+.feat-ico{width:44px;height:44px;border-radius:12px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.feat-ico svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat-card h3{margin-bottom:6px;font-size:1rem}
+.feat-card p{font-size:.88rem;color:var(--text);line-height:1.6}
+
+/* pricing */
+.pricing-block{text-align:center;padding:60px 0}
+.pricing-card{display:inline-block;background:var(--card);border:2px solid var(--green);border-radius:20px;padding:40px 56px;text-align:center;box-shadow:0 0 40px rgba(34,197,94,0.08)}
+.pricing-card .price{font-size:3rem;font-weight:800;color:var(--white);font-family:var(--serif)}
+.pricing-card .price small{font-size:1rem;font-weight:500;color:var(--muted)}
+.pricing-card .note{font-size:.88rem;color:var(--muted);margin-top:8px;margin-bottom:24px}
+
+/* cta */
+.final-cta{text-align:center;padding:80px 0 60px;border-top:1px solid var(--border)}
+.final-cta h2{margin-bottom:14px}
+.final-cta p{color:var(--text);font-size:1rem;max-width:520px;margin:0 auto 28px}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--border)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot .logo{font-size:1rem}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{font-size:.82rem;color:var(--muted);font-weight:500;transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+footer small{font-size:.76rem;color:var(--dim)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .tracks{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .hero{padding:48px 0 36px}
+  .hero h1{font-size:1.6rem}
+  section{padding:48px 0}
+  .feat-grid{grid-template-columns:1fr}
+  .pricing-card{padding:28px 32px}
+  .pricing-card .price{font-size:2.2rem}
+  .track{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <a href="/agents.html" class="nav-back">&larr; Back to AI Systems</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag">Add-On . Available on Any System</span>
+      <h1>Marketing Engine</h1>
+      <p class="sub">Automated email and SMS campaigns that keep your business top of mind. Seasonal promotions, customer reactivation, and drip sequences. AI writes the copy, picks the send time, and tracks the results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tag">How It Works</span>
+      <h2>Two Automation Tracks, One System</h2>
+      <p>The Marketing Engine runs two parallel workflows: proactive campaigns to your audience and automated win-back sequences for inactive customers.</p>
+    </div>
+
+    <div class="tracks rv">
+      <!-- Track A -->
+      <div class="track">
+        <div class="track-label">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Track A: Campaign Automation
+        </div>
+
+        <div class="wf-node">
+          <h4><span class="step-num">1</span> Set Campaign Parameters</h4>
+          <p>Choose your audience segment, message type (promotion, reminder, update), and delivery schedule.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">2</span> AI Writes the Copy</h4>
+          <p>Personalized messaging for each segment. The AI adapts tone, offers, and content based on service history.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">3</span> Smart Timing</h4>
+          <p>AI picks the optimal send time for each recipient based on past open and response patterns.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">4</span> Multi-Channel Delivery</h4>
+          <p>Messages go out via email and SMS simultaneously, reaching customers on whichever channel they prefer.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">5</span> Performance Tracking</h4>
+          <p>Track opens, clicks, bookings, and revenue generated. See exactly which campaigns drive results.</p>
+        </div>
+      </div>
+
+      <!-- Track B -->
+      <div class="track">
+        <div class="track-label">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Track B: Customer Reactivation
+        </div>
+
+        <div class="wf-node">
+          <h4><span class="step-num">1</span> Detect Inactive Customers</h4>
+          <p>The system automatically identifies customers who have not booked in 30, 60, or 90+ days.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">2</span> Personalize the Win-Back Message</h4>
+          <p>AI crafts a message based on their past service history, referencing the exact work you did for them.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">3</span> Deliver an Incentive</h4>
+          <p>A time-limited offer specific to their service type. "15% off your next carpet cleaning this week."</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">4</span> Customer Re-engages</h4>
+          <p>They book an appointment or reply to the message. AI handles the conversation and confirms the booking.</p>
+        </div>
+        <div class="wf-connector"></div>
+        <div class="wf-node">
+          <h4><span class="step-num">5</span> Feeds Back into CRM</h4>
+          <p>The reactivated customer moves back into your active pipeline. Revenue recovered is tracked in your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="tag">Capabilities</span>
+      <h2>Built-In Intelligence</h2>
+      <p>Every component of the Marketing Engine is designed to run without manual intervention.</p>
+    </div>
+    <div class="feat-grid rv">
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>AI Copywriting</h3>
+        <p>Every message is written by AI trained on your business. Personalized subject lines, body text, and calls to action.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Audience Segmentation</h3>
+        <p>Customers are grouped by service history, engagement level, and recency. Each segment gets different messaging.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Send-Time Optimization</h3>
+        <p>AI analyzes past open rates and picks the best time to send for each individual recipient.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Multi-Channel</h3>
+        <p>Email and SMS delivered together. Customers get the message on whichever channel they respond to best.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>Win-Back Automation</h3>
+        <p>30, 60, and 90-day reactivation sequences run automatically. Past customers come back without you chasing them.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Revenue Attribution</h3>
+        <p>Every booking and sale from a campaign is tracked. You see the exact revenue each campaign generated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="pricing-block rv">
+  <div class="pricing-card">
+    <span class="tag" style="display:block;margin-bottom:14px">Marketing Engine</span>
+    <div class="price">$497 <small>per month</small></div>
+    <p class="note">Available as an add-on to any system.</p>
+    <a href="#" class="btn btn-green btn-pulse" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Free Discovery Call <span class="ar">&rarr;</span></a>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap rv">
+    <span class="tag" style="display:block;margin-bottom:14px">Start Growing</span>
+    <h2>Turn Past Customers Into Repeat Buyers</h2>
+    <p>Most local businesses leave thousands of dollars on the table by not following up. The Marketing Engine brings them back on autopilot. 15 minutes on a free call. See how it works with your own customer list.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn btn-green" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none">Message us on WhatsApp</a>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin-top:16px">Free demo. No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <div class="foot-links">
+      <a href="/index.html">Home</a>
+      <a href="/agents.html">AI Systems</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a>
+    </div>
+    <small>&copy; 2026 KalnyesGrowth. All rights reserved. Stafford, VA.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

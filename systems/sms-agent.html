@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS Agent - How It Works | KalnyesGrowth</title>
+<meta name="description" content="See how the SMS Agent system works. Missed-call text back, appointment reminders, review requests, and AI follow-ups in one automated system.">
+<link rel="canonical" href="https://kalnyesgrowth.com/systems/sms-agent.html">
+<meta property="og:title" content="SMS Agent - How It Works | KalnyesGrowth">
+<meta property="og:description" content="One system handles missed-call texts, appointment reminders, review requests, and follow-ups. See the workflow.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.08);
+  --card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--white);font-weight:600;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-family:var(--font);font-weight:700}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;font-family:var(--font);font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(34,197,94,0)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.3)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.btn-pulse{animation:btnPulse 2.5s infinite}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+
+/* nav */
+nav{padding:16px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:0 24px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:-.01em}
+.logo span{color:var(--muted);font-weight:400}
+.nav-back{font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* hero */
+.hero{padding:80px 0 60px;text-align:center}
+.hero h1{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:16px}
+.hero .sub{font-size:1.05rem;color:var(--text);max-width:600px;margin:0 auto;line-height:1.7}
+
+/* brain node */
+.brain-section{padding:0 0 80px}
+.brain-node{max-width:420px;margin:0 auto 48px;background:var(--card);border:2px solid var(--green);border-radius:20px;padding:28px 24px;text-align:center;position:relative;box-shadow:0 0 40px rgba(34,197,94,0.08)}
+.brain-node h3{font-size:1.2rem;margin-bottom:6px;color:var(--white)}
+.brain-node p{font-size:.88rem;color:var(--text)}
+.brain-icon{width:48px;height:48px;border-radius:14px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.brain-icon svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* connector lines */
+.connector{display:flex;justify-content:center;gap:0;margin-bottom:32px}
+.conn-line{width:2px;height:48px;background:linear-gradient(var(--green),rgba(34,197,94,0.2))}
+.conn-split{display:flex;justify-content:center;position:relative;height:48px;margin-bottom:0}
+.conn-split::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:24px;background:var(--green)}
+.conn-split::after{content:'';position:absolute;top:24px;left:calc(50% - 200px);width:400px;height:2px;background:var(--green)}
+.conn-drop{position:absolute;top:24px;width:2px;height:24px;background:var(--green)}
+.conn-drop.left{left:calc(50% - 200px)}
+.conn-drop.center{left:50%;transform:translateX(-50%)}
+.conn-drop.right{left:calc(50% + 200px)}
+
+/* tracks */
+.tracks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.track{display:flex;flex-direction:column;gap:0;align-items:center}
+.track-label{text-align:center;margin-bottom:16px}
+.track-label h4{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:4px;font-family:var(--font)}
+.track-label p{font-size:.78rem;color:var(--muted)}
+
+/* flow nodes */
+.flow-node{width:100%;background:var(--card);border:1px solid var(--border-s);border-radius:14px;padding:18px 16px;text-align:center;transition:all .3s}
+.flow-node:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15)}
+.flow-node.trigger{border-left:3px solid var(--green)}
+.flow-node.action{border-left:3px solid #3b82f6}
+.flow-node.result{border-left:3px solid #a855f7;background:rgba(168,85,247,0.04)}
+.node-type{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.flow-node.trigger .node-type{color:var(--green)}
+.flow-node.action .node-type{color:#3b82f6}
+.flow-node.result .node-type{color:#a855f7}
+.flow-node h4{font-size:.88rem;color:var(--white);font-weight:700;margin-bottom:4px;font-family:var(--font)}
+.flow-node p{font-size:.76rem;color:var(--muted);line-height:1.4}
+
+/* flow arrow between nodes */
+.flow-arrow{display:flex;justify-content:center;padding:6px 0}
+.flow-arrow svg{width:16px;height:16px;stroke:rgba(34,197,94,0.4);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* features grid */
+.features-section{padding:80px 0;border-top:1px solid var(--border)}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 22px;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.feat:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateY(-2px)}
+.feat-ico{width:40px;height:40px;border-radius:10px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.feat-ico svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:1rem;margin-bottom:6px}
+.feat p{font-size:.88rem;color:var(--text);line-height:1.6}
+
+/* pricing */
+.pricing-section{padding:80px 0;border-top:1px solid var(--border)}
+.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:720px;margin:44px auto 0}
+.tier{background:var(--card);border:1px solid var(--border-s);border-radius:16px;padding:28px 20px;text-align:center;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.tier:hover{background:var(--card-hover);transform:translateY(-3px)}
+.tier.pop{border:2px solid var(--green);box-shadow:0 0 32px rgba(34,197,94,0.08);position:relative}
+.tier-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:.62rem;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.tier h4{font-size:1.05rem;color:var(--white);font-weight:700;margin-bottom:4px;font-family:var(--font)}
+.tier-vol{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.tier-price{font-size:2rem;font-weight:800;color:var(--white);font-family:var(--serif)}
+.tier-price span{font-size:.82rem;font-weight:500;color:var(--muted)}
+.tier-note{font-size:.74rem;color:var(--muted);margin-top:10px}
+
+/* cta */
+.cta-section{padding:100px 0 80px;text-align:center;border-top:1px solid var(--border);position:relative}
+.cta-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(var(--border),transparent)}
+.cta-section h2{margin-bottom:16px}
+.cta-section>p{color:var(--text);font-size:1rem;max-width:520px;margin:0 auto 32px}
+.cta-fine{font-size:.82rem;color:var(--muted);margin-top:16px}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--border)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot .logo{font-size:1rem}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{font-size:.82rem;color:var(--muted);font-weight:500;transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+footer small{font-size:.76rem;color:var(--dim)}
+
+/* responsive */
+@media(max-width:900px){
+  .tracks{grid-template-columns:1fr;gap:40px}
+  .conn-split{display:none}
+  .feat-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .hero{padding:48px 0 36px}
+  .hero h1{font-size:1.8rem}
+  .feat-grid{grid-template-columns:1fr}
+  .tier-cards{grid-template-columns:1fr;gap:12px}
+  .brain-node{margin:0 auto 32px;padding:20px 16px}
+  .features-section,.pricing-section{padding:48px 0}
+  .cta-section{padding:64px 0 48px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <a href="/agents.html" class="nav-back">&larr; Back to AI Systems</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag" style="margin-bottom:12px;display:block">System 02 . How It Works</span>
+      <h1>SMS Agent</h1>
+      <p class="sub">One system handles everything your business needs from text messaging. Missed-call texts, appointment reminders, review requests, and follow-up sequences, all running on autopilot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="brain-section">
+  <div class="wrap">
+
+    <!-- Central brain -->
+    <div class="brain-node rv">
+      <div class="brain-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <h3>SMS Agent Brain</h3>
+      <p>AI monitors triggers across your business and sends the right message at the right time, automatically.</p>
+    </div>
+
+    <!-- Split connector (desktop) -->
+    <div class="conn-split rv">
+      <div class="conn-drop left"></div>
+      <div class="conn-drop center"></div>
+      <div class="conn-drop right"></div>
+    </div>
+
+    <!-- 3 Tracks -->
+    <div class="tracks">
+
+      <!-- TRACK A: Missed Call -->
+      <div class="track rv">
+        <div class="track-label">
+          <h4>Track A</h4>
+          <p>Missed Call Recovery</p>
+        </div>
+
+        <div class="flow-node trigger">
+          <div class="node-type">Trigger</div>
+          <h4>Call Goes Unanswered</h4>
+          <p>Customer calls, you're busy or after hours</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Action</div>
+          <h4>AI Texts Back in 5 Seconds</h4>
+          <p>"Thanks for calling! We're on a job. How can we help?"</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Conversation</div>
+          <h4>AI Handles the Text Thread</h4>
+          <p>Answers questions, qualifies the lead, collects details</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node result">
+          <div class="node-type">Result</div>
+          <h4>Appointment Booked</h4>
+          <p>Lead captured and added to your calendar</p>
+        </div>
+      </div>
+
+      <!-- TRACK B: Post-Job -->
+      <div class="track rv">
+        <div class="track-label">
+          <h4>Track B</h4>
+          <p>Post-Job Reviews</p>
+        </div>
+
+        <div class="flow-node trigger">
+          <div class="node-type">Trigger</div>
+          <h4>Job Marked Complete</h4>
+          <p>You finish a job and close it in the system</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Action</div>
+          <h4>Review Request Sent</h4>
+          <p>"Thanks for choosing us! Would you leave a quick Google review?"</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Customer Action</div>
+          <h4>Customer Taps Link</h4>
+          <p>One-tap Google review. 5 stars posted in seconds.</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node result">
+          <div class="node-type">Result</div>
+          <h4>AI Responds to Review</h4>
+          <p>Professional response posted same day. Rating climbs.</p>
+        </div>
+      </div>
+
+      <!-- TRACK C: Appointment -->
+      <div class="track rv">
+        <div class="track-label">
+          <h4>Track C</h4>
+          <p>Appointment Reminders</p>
+        </div>
+
+        <div class="flow-node trigger">
+          <div class="node-type">Trigger</div>
+          <h4>Appointment Scheduled</h4>
+          <p>Customer books via phone, chat, or online</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Day Before</div>
+          <h4>Reminder Text Sent</h4>
+          <p>"Your appointment is tomorrow at 10am. Reply YES to confirm."</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node action">
+          <div class="node-type">Hour Before</div>
+          <h4>Final Reminder Sent</h4>
+          <p>"Just a heads up, we'll be there in about an hour!"</p>
+        </div>
+        <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+
+        <div class="flow-node result">
+          <div class="node-type">Result</div>
+          <h4>Confirmed or Rescheduled</h4>
+          <p>No-shows drop 50-70%. No more driving to empty houses.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Everything Included</span>
+      <h2>One System. Every Text Your Business Needs.</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0">No more juggling separate tools for reminders, reviews, and follow-ups. The SMS Agent handles all of it.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <h3>Missed-Call Text Back</h3>
+        <p>Within 5 seconds of a missed call, your customer gets a text. AI handles the conversation and captures the lead before they call a competitor.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Appointment Reminders</h3>
+        <p>Day-before and hour-before texts with one-tap confirm, reschedule, or cancel. No-shows drop 50-70%.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Review Requests</h3>
+        <p>Automatic Google review requests after every completed job. AI responds to reviews the same day. Your 5-star reputation builds on autopilot.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Follow-Up Sequences</h3>
+        <p>Leads who went quiet get automated follow-up texts. AI keeps the conversation going until they book or say no.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>AI Conversations</h3>
+        <p>Not just one-way blasts. The AI reads customer replies, answers questions about your services, and qualifies leads through real text conversations.</p>
+      </div>
+      <div class="feat rv">
+        <div class="feat-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Smart Scheduling</h3>
+        <p>Books appointments directly from text threads. Syncs with your calendar in real time so double-bookings never happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Simple Pricing</span>
+      <h2>Pay Based on Your Volume</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0">Pick the tier that matches your business. Upgrade or downgrade anytime.</p>
+    </div>
+    <div class="tier-cards rv">
+      <div class="tier">
+        <h4>Quiet</h4>
+        <p class="tier-vol">Light message volume</p>
+        <div class="tier-price">$297<span>/mo</span></div>
+        <p class="tier-note">Ideal for businesses just starting out</p>
+      </div>
+      <div class="tier pop">
+        <span class="tier-badge">Most Common</span>
+        <h4>Steady</h4>
+        <p class="tier-vol">Moderate volume</p>
+        <div class="tier-price">$497<span>/mo</span></div>
+        <p class="tier-note">Best for established local businesses</p>
+      </div>
+      <div class="tier">
+        <h4>Busy</h4>
+        <p class="tier-vol">High volume</p>
+        <div class="tier-price">$897<span>/mo</span></div>
+        <p class="tier-note">For high-traffic, multi-location operations</p>
+      </div>
+    </div>
+    <p class="rv" style="text-align:center;margin-top:20px;font-size:.84rem;color:var(--muted)">All tiers include the Command Center dashboard for free. No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <span class="tag rv">Your Next Step</span>
+    <h2 class="rv">See the SMS Agent in Action</h2>
+    <p class="rv">15 minutes on a free call. We'll show you how the system works with your own business info. No pressure. No commitment.</p>
+    <div class="rv" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn btn-green btn-pulse" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none">Message us on WhatsApp</a>
+    </div>
+    <p class="rv cta-fine">Free demo. No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <div class="foot-links">
+      <a href="/index.html">Home</a>
+      <a href="/agents.html">AI Systems</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a>
+    </div>
+    <small>&copy; 2026 KalnyesGrowth. All rights reserved. Stafford, VA.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
