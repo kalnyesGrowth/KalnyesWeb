@@ -55,7 +55,7 @@
       {"@type": "Offer", "name": "Never Miss a Call", "price": "397", "priceCurrency": "USD", "description": "AI voice receptionist answers every call 24/7. Sells, books appointments, speaks any language."},
       {"@type": "Offer", "name": "SMS Agent", "price": "297", "priceCurrency": "USD", "description": "Missed-call text back, appointment reminders, review requests, and follow-ups. All automated."},
       {"@type": "Offer", "name": "AI Webchat", "price": "150", "priceCurrency": "USD", "description": "Smart chat widget that captures leads, answers questions, and books appointments 24/7."},
-      {"@type": "Offer", "name": "Command Center", "price": "0", "priceCurrency": "USD", "description": "CRM, unified inbox, and pipeline tracking. Free with any qualifying system."},
+      {"@type": "Offer", "name": "Command Center", "price": "750", "priceCurrency": "USD", "description": "CRM, unified inbox, and pipeline tracking. Every channel in one dashboard."},
       {"@type": "Offer", "name": "Marketing Engine", "price": "497", "priceCurrency": "USD", "description": "Email and SMS campaigns, customer reactivation, and seasonal promotions."}
     ]
   }
@@ -81,7 +81,7 @@
     {"@type": "Question", "name": "What does the discovery call include?", "acceptedAnswer": {"@type": "Answer", "text": "We spend 15 minutes learning about your business, your current challenges, and where you're losing customers. No sales pitch. No pressure. If we can help, we'll explain how. If we can't, we'll tell you that too."}},
     {"@type": "Question", "name": "Do I need a website already?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our systems include everything you need. If you already have a website, we can integrate with it. If you don't, we'll build one as part of your system. Either way, you're covered."}},
     {"@type": "Question", "name": "What if it doesn't work for my business?", "acceptedAnswer": {"@type": "Answer", "text": "We only take on clients we're confident we can help. That's why the discovery call exists. If your business isn't a good fit for our systems, we'll be upfront about it before you spend anything."}},
-    {"@type": "Question", "name": "Can I switch plans later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can upgrade or downgrade at any time. Most clients start with the FORTIFY tier and adjust based on their results. There are no penalties for switching."}},
+    {"@type": "Question", "name": "Can I switch plans later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can upgrade or downgrade at any time. Most clients start with one system and add more as they see results. There are no penalties for switching."}},
     {"@type": "Question", "name": "What happens if I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "You keep your website. We transfer everything to you. No hostage situations, no hidden fees. If you leave, you leave with what you paid for."}},
     {"@type": "Question", "name": "Do you work with businesses outside Virginia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area."}},
     {"@type": "Question", "name": "What's included in the free demo?", "acceptedAnswer": {"@type": "Answer", "text": "We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings."}}
@@ -253,6 +253,7 @@ section{padding:100px 0}
 .svc-price{display:flex;align-items:baseline;gap:6px;margin-top:16px}
 .svc-price .price-amount{font-size:1.6rem;font-weight:800;color:var(--white);font-family:var(--serif)}
 .svc-price .price-per{font-size:.85rem;font-weight:500;color:var(--muted)}
+.svc-setup{font-size:.8rem;color:var(--muted);margin-top:4px;font-weight:500}
 .svc-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 .svc-ctas .btn{padding:12px 24px;font-size:.85rem}
 .svc-device{flex:0 0 auto}
@@ -341,6 +342,7 @@ section{padding:100px 0}
 .ac-price{display:flex;align-items:baseline;gap:6px;margin-bottom:16px}
 .ac-price span:first-child{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--white)}
 .ac-price span:last-child{font-size:.78rem;color:var(--muted)}
+.ac-setup{font-size:.72rem;color:var(--muted);margin-bottom:12px;font-weight:500}
 .ac-card .btn{width:100%;padding:12px;font-size:.82rem;border-radius:10px}
 .ac-nav{display:flex;justify-content:center;gap:12px;margin-top:24px}
 .ac-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--border-s);background:var(--surface);color:var(--white);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;touch-action:manipulation}
@@ -717,20 +719,20 @@ footer p{font-size:.78rem;color:var(--muted)}
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span>AI Receptionist</span><span class="sep">&#9679;</span>
-    <span>Lead Follow-Up</span><span class="sep">&#9679;</span>
-    <span>Reviews Automation</span><span class="sep">&#9679;</span>
-    <span>Smart CRM</span><span class="sep">&#9679;</span>
-    <span>Missed-Call Text Back</span><span class="sep">&#9679;</span>
-    <span>Appointment Booking</span><span class="sep">&#9679;</span>
+    <span>Never Miss a Call</span><span class="sep">&#9679;</span>
+    <span>SMS Agent</span><span class="sep">&#9679;</span>
+    <span>AI Webchat</span><span class="sep">&#9679;</span>
+    <span>Command Center</span><span class="sep">&#9679;</span>
+    <span>Marketing Engine</span><span class="sep">&#9679;</span>
     <span>24/7 Availability</span><span class="sep">&#9679;</span>
-    <span>AI Receptionist</span><span class="sep">&#9679;</span>
-    <span>Lead Follow-Up</span><span class="sep">&#9679;</span>
-    <span>Reviews Automation</span><span class="sep">&#9679;</span>
-    <span>Smart CRM</span><span class="sep">&#9679;</span>
-    <span>Missed-Call Text Back</span><span class="sep">&#9679;</span>
-    <span>Appointment Booking</span><span class="sep">&#9679;</span>
+    <span>Zero Missed Leads</span><span class="sep">&#9679;</span>
+    <span>Never Miss a Call</span><span class="sep">&#9679;</span>
+    <span>SMS Agent</span><span class="sep">&#9679;</span>
+    <span>AI Webchat</span><span class="sep">&#9679;</span>
+    <span>Command Center</span><span class="sep">&#9679;</span>
+    <span>Marketing Engine</span><span class="sep">&#9679;</span>
     <span>24/7 Availability</span><span class="sep">&#9679;</span>
+    <span>Zero Missed Leads</span><span class="sep">&#9679;</span>
   </div>
 </div>
 
@@ -801,22 +803,23 @@ footer p{font-size:.78rem;color:var(--muted)}
 <section id="services">
   <div class="wrap">
     <div class="section-head rv">
-      <span class="tag">Your System</span>
+      <span class="tag">Your AI Systems</span>
       <h2>Everything working together.</h2>
-      <p>One integrated system. Not a pile of disconnected tools.</p>
+      <p>One integrated platform. Not a pile of disconnected tools.</p>
     </div>
   </div>
 
-  <!-- 1. AI Receptionist -->
+  <!-- 1. Never Miss a Call -->
   <div class="svc-row">
     <div class="svc-info rv-l">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-      <h3>AI Receptionist</h3>
-      <p>Never miss a call again. Your AI receptionist answers 24/7, schedules appointments, sells your services, and upsells when the opportunity is right. It sounds human, handles objections, and books revenue while you sleep.</p>
-      <div class="svc-price"><span class="price-amount">$997</span><span class="price-per">/mo</span></div>
+      <h3>Never Miss a Call</h3>
+      <p>Your AI receptionist answers every call 24/7. It schedules appointments, sells your services, upsells when the opportunity is right, and speaks whatever language your customers need. Sounds human, handles objections, and books revenue while you sleep.</p>
+      <div class="svc-price"><span class="price-amount">From $397</span><span class="price-per">/mo</span></div>
+      <div class="svc-setup">$700 one-time setup (AI training + integration)</div>
       <div class="svc-ctas">
-        <a href="checkout.html?plan=receptionist" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
-        <a href="free-demo.html" class="btn btn-ghost">Try Free Demo</a>
+        <a href="systems/never-miss-a-call.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
       </div>
     </div>
     <div class="svc-device rv-r">
@@ -825,7 +828,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="dev-screen">
           <div class="scr-head">
             <span class="scr-dot"></span>
-            <span class="scr-title">AI Receptionist</span>
+            <span class="scr-title">Never Miss a Call</span>
             <span class="scr-badge">Active Call</span>
           </div>
           <div class="scr-body">
@@ -841,15 +844,17 @@ footer p{font-size:.78rem;color:var(--muted)}
     </div>
   </div>
 
-  <!-- 2. Lead Follow-Up -->
+  <!-- 2. SMS Agent -->
   <div class="svc-row reverse">
     <div class="svc-info rv-r">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-      <h3>Lead Follow-Up</h3>
-      <p>When a lead comes in, your system responds in under 30 seconds. Text, email, or call. No lead goes cold. Speed to lead is everything, and your competitors are slow.</p>
-      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <h3>SMS Agent</h3>
+      <p>Missed a call? Your system texts back in under 5 seconds. It also sends appointment reminders, requests reviews after every job, and follows up with leads who went quiet. All automated. All personalized.</p>
+      <div class="svc-price"><span class="price-amount">From $297</span><span class="price-per">/mo</span></div>
+      <div class="svc-setup">$500 one-time setup</div>
       <div class="svc-ctas">
-        <a href="checkout.html?plan=lead-followup" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+        <a href="systems/sms-agent.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
       </div>
     </div>
     <div class="svc-device rv-l">
@@ -858,30 +863,32 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="dev-screen">
           <div class="scr-head">
             <span class="scr-dot"></span>
-            <span class="scr-title">Lead Follow-Up</span>
-            <span class="scr-badge">28s response</span>
+            <span class="scr-title">SMS Agent</span>
+            <span class="scr-badge">Auto-reply</span>
           </div>
           <div class="scr-body">
-            <div class="bubble bubble-alert" style="animation-delay:.5s">New Lead: Sarah K. via Website</div>
-            <div class="bubble bubble-ai" style="animation-delay:1.3s">Hi Sarah! Thanks for reaching out. When would be a good time to discuss your project?</div>
-            <div class="bubble bubble-user" style="animation-delay:2.1s">Tomorrow afternoon works for me</div>
-            <div class="bubble bubble-ai" style="animation-delay:2.8s">I've booked you for tomorrow at 3pm. You'll get a calendar invite shortly. Talk soon!</div>
-            <div class="bubble bubble-status" style="animation-delay:3.5s">Call Scheduled</div>
+            <div class="bubble bubble-alert" style="animation-delay:.5s">Missed Call: (540) 555-0199</div>
+            <div class="bubble bubble-ai" style="animation-delay:1.3s">Hey! Sorry we missed your call. How can we help? Reply here or we'll call you back.</div>
+            <div class="bubble bubble-user" style="animation-delay:2.1s">I need a quote for a brake job on my F-150</div>
+            <div class="bubble bubble-ai" style="animation-delay:2.8s">Brake jobs start at $249. Want to schedule an inspection? We have openings tomorrow.</div>
+            <div class="bubble bubble-status" style="animation-delay:3.5s">Lead Captured</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 3. Social Inbox (restored) -->
+  <!-- 3. AI Webchat -->
   <div class="svc-row">
     <div class="svc-info rv-l">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-      <h3>Social Inbox</h3>
-      <p>Every message from Instagram, Facebook, Google, and WhatsApp in one place. AI suggests replies so you respond in minutes, not hours. No message falls through the cracks.</p>
-      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <h3>AI Webchat</h3>
+      <p>A smart chat widget on your website that greets visitors, answers their questions, captures their info, and books appointments. Works 24/7. Turns browsers into buyers while you focus on your work.</p>
+      <div class="svc-price"><span class="price-amount">$150</span><span class="price-per">/mo</span></div>
+      <div class="svc-setup">$400 one-time setup</div>
       <div class="svc-ctas">
-        <a href="checkout.html?plan=messaging" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+        <a href="systems/ai-webchat.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
       </div>
     </div>
     <div class="svc-device rv-r">
@@ -890,49 +897,33 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="dev-screen">
           <div class="scr-head">
             <span class="scr-dot"></span>
-            <span class="scr-title">Social Inbox</span>
-            <span class="scr-badge">4 new</span>
+            <span class="scr-title">AI Webchat</span>
+            <span class="scr-badge">Online</span>
           </div>
-          <div class="scr-body" style="padding:0;gap:0">
-            <div class="inbox-item" style="animation-delay:.5s">
-              <span class="inbox-icon inbox-ig">IG</span>
-              <div class="inbox-text"><div class="inbox-from">@jessica_m</div><div class="inbox-msg">Do you offer weekend appointments?</div></div>
-              <span class="inbox-time">2m</span>
-            </div>
-            <div class="inbox-item" style="animation-delay:1s">
-              <span class="inbox-icon inbox-fb">f</span>
-              <div class="inbox-text"><div class="inbox-from">Maria Lopez</div><div class="inbox-msg">What's the cost for a full detail?</div></div>
-              <span class="inbox-time">8m</span>
-            </div>
-            <div class="inbox-item" style="animation-delay:1.5s">
-              <span class="inbox-icon inbox-gl">G</span>
-              <div class="inbox-text"><div class="inbox-from">David R.</div><div class="inbox-msg">Are you guys open right now?</div></div>
-              <span class="inbox-time">12m</span>
-            </div>
-            <div class="inbox-item" style="animation-delay:2s">
-              <span class="inbox-icon inbox-wa">W</span>
-              <div class="inbox-text"><div class="inbox-from">+1 (540) 555-0182</div><div class="inbox-msg">I need a quote for my office cleaning</div></div>
-              <span class="inbox-time">15m</span>
-            </div>
-            <div class="inbox-suggest" style="animation-delay:2.6s">
-              <div class="inbox-suggest-label">AI Suggested Reply</div>
-              <div class="inbox-suggest-text">Yes, we're open until 6pm today! Would you like to schedule a visit?</div>
-            </div>
+          <div class="scr-body">
+            <div class="bubble bubble-ai" style="animation-delay:.5s">Hey there! Looking for a service or want to book an appointment? I can help.</div>
+            <div class="bubble bubble-user" style="animation-delay:1.2s">How much for a full house cleaning?</div>
+            <div class="bubble bubble-ai" style="animation-delay:2s">Our full house cleaning starts at $149 for homes up to 1,500 sq ft. Want me to book you in?</div>
+            <div class="bubble bubble-user" style="animation-delay:2.8s">Yes, Thursday works</div>
+            <div class="bubble bubble-ai" style="animation-delay:3.5s">Done! Thursday at 9am. I just need your name and phone number to confirm.</div>
+            <div class="bubble bubble-status" style="animation-delay:4.2s">Lead Captured</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 4. Reviews Engine -->
+  <!-- 4. Marketing Engine -->
   <div class="svc-row reverse">
     <div class="svc-info rv-r">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <h3>Reviews Engine</h3>
-      <p>Automatically request reviews after every job. Respond to Google reviews same-day. Build your 5-star reputation on autopilot. More reviews means more trust means more customers.</p>
-      <div class="svc-price"><span class="price-amount">$797</span><span class="price-per">/mo</span></div>
+      <h3>Marketing Engine</h3>
+      <p>Email and SMS campaigns, customer reactivation, and seasonal promotions. AI writes the copy and picks the best send time. Win back past customers and keep current ones coming back.</p>
+      <div class="svc-price"><span class="price-amount">$497</span><span class="price-per">/mo add-on</span></div>
+      <div class="svc-setup">$500 one-time setup</div>
       <div class="svc-ctas">
-        <a href="checkout.html?plan=reviews" class="btn btn-green">Subscribe <span class="ar">&rarr;</span></a>
+        <a href="systems/marketing-engine.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
       </div>
     </div>
     <div class="svc-device rv-l">
@@ -941,16 +932,16 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="dev-screen">
           <div class="scr-head">
             <span class="scr-dot"></span>
-            <span class="scr-title">Reviews Engine</span>
+            <span class="scr-title">Marketing Engine</span>
             <span class="scr-badge">Autopilot</span>
           </div>
           <div class="scr-body">
-            <div class="bubble bubble-ai" style="animation-delay:.5s">Thanks for choosing Tony's! Would you mind leaving a quick review? It means a lot.</div>
-            <div class="bubble bubble-ai" style="animation-delay:1.1s">Tap here to leave a Google Review</div>
-            <div class="rev-screen-stars" style="animation-delay:1.8s">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <div class="bubble bubble-user" style="animation-delay:2.4s">Amazing service! Got me in same day and the price was fair. Highly recommend.</div>
-            <div class="bubble bubble-ai" style="animation-delay:3.1s">Thank you so much for the kind words, Mike! We appreciate your business.</div>
-            <div class="bubble bubble-status" style="animation-delay:3.8s">+12 reviews this month</div>
+            <div class="bubble bubble-ai" style="animation-delay:.5s">Campaign sent: "Summer Special" to 847 past customers</div>
+            <div class="bubble bubble-status" style="animation-delay:1.1s">42% open rate</div>
+            <div class="bubble bubble-alert" style="animation-delay:1.8s">12 appointments booked from campaign</div>
+            <div class="bubble bubble-ai" style="animation-delay:2.4s">Reactivation: 23 dormant customers contacted</div>
+            <div class="bubble bubble-status" style="animation-delay:3.1s">8 came back this month</div>
+            <div class="bubble bubble-ai" style="animation-delay:3.8s">$4,200 revenue recovered from reactivation</div>
           </div>
         </div>
       </div>
@@ -962,10 +953,12 @@ footer p{font-size:.78rem;color:var(--muted)}
     <div class="svc-info rv-l">
       <div class="svc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
       <h3>Command Center</h3>
-      <p>Every call, message, lead, and booking tracked in one place. See your full pipeline at a glance. Know exactly what's working and where to double down.</p>
-      <div class="svc-price"><span class="price-amount">Included</span></div>
+      <p>Every call, message, lead, and booking tracked in one dashboard. CRM, unified inbox, and pipeline tracking. See your full business at a glance. Know exactly what's working and where to double down.</p>
+      <div class="svc-price"><span class="price-amount">$750</span><span class="price-per">/mo</span></div>
+      <div class="svc-setup">$1,500 one-time setup</div>
       <div class="svc-ctas">
-        <a href="#plans" class="btn btn-green">Explore Plans <span class="ar">&rarr;</span></a>
+        <a href="systems/command-center.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
       </div>
     </div>
     <div class="svc-device rv-r">
@@ -1013,6 +1006,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <h3>Never Miss a Call</h3>
         <p>AI receptionist answers every call 24/7. Sells, upsells, books appointments, and speaks any language.</p>
         <div class="ac-price"><span>From $397</span><span>/mo</span></div>
+        <div class="ac-setup">+ $700 setup</div>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1023,6 +1017,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <h3>SMS Agent</h3>
         <p>Missed-call text back, appointment reminders, review requests, and follow-ups. All automated.</p>
         <div class="ac-price"><span>From $297</span><span>/mo</span></div>
+        <div class="ac-setup">+ $500 setup</div>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1033,6 +1028,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <h3>AI Webchat</h3>
         <p>Smart chat widget that greets visitors, answers questions, captures leads, and books appointments 24/7.</p>
         <div class="ac-price"><span>$150</span><span>/mo</span></div>
+        <div class="ac-setup">+ $400 setup</div>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1041,8 +1037,9 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="ac-card-body">
         <span class="ac-agent-name">SYSTEM 04</span>
         <h3>Command Center</h3>
-        <p>CRM, unified inbox, and pipeline tracking. Every channel in one dashboard. Free with any system.</p>
-        <div class="ac-price"><span>FREE</span><span>with qualifying system</span></div>
+        <p>CRM, unified inbox, and pipeline tracking. Every channel in one dashboard.</p>
+        <div class="ac-price"><span>$750</span><span>/mo</span></div>
+        <div class="ac-setup">+ $1,500 setup</div>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1053,6 +1050,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <h3>Marketing Engine</h3>
         <p>Email and SMS campaigns, customer reactivation, and seasonal promotions. All on autopilot.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
+        <div class="ac-setup">+ $500 setup</div>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1879,7 +1877,9 @@ var TR={
   'Book Your Free Discovery Call':'Reserva Tu Llamada Gratuita',
   '15 minutes. No pressure. No commitment.':'15 minutos. Sin presion. Sin compromiso.',
   // Marquee
-  'AI Receptionist':'Recepcionista IA','Lead Follow-Up':'Seguimiento de Prospectos','Reviews Automation':'Automatizacion de Resenas','Smart CRM':'CRM Inteligente','Missed-Call Text Back':'Mensaje de Llamada Perdida','Appointment Booking':'Reserva de Citas','24/7 Availability':'Disponibilidad 24/7',
+  'Never Miss a Call':'Nunca Pierdas una Llamada','SMS Agent':'Agente SMS','AI Webchat':'Chat IA','Command Center':'Centro de Comando','Marketing Engine':'Motor de Marketing','24/7 Availability':'Disponibilidad 24/7','Zero Missed Leads':'Cero Prospectos Perdidos',
+  '$700 one-time setup (AI training + integration)':'$700 configuracion inicial (entrenamiento IA + integracion)','$500 one-time setup':'$500 configuracion inicial','$400 one-time setup':'$400 configuracion inicial','$1,500 one-time setup':'$1,500 configuracion inicial',
+  'See How It Works':'Ve Como Funciona','Book a Call':'Agenda una Llamada',
   // How It Works
   'Four steps. Zero guesswork.':'Cuatro pasos. Cero adivinanzas.',
   'Step 01':'Paso 01','Step 02':'Paso 02','Step 03':'Paso 03','Step 04':'Paso 04',
