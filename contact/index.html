@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://project-kday6.vercel.app; style-src 'self' 'unsafe-inline' https://assets.calendly.com https://api.fontshare.com; img-src 'self' data:; font-src 'self' https://api.fontshare.com https://cdn.fontshare.com data:; connect-src 'self' https://calendly.com https://assets.calendly.com https://project-kday6.vercel.app; frame-src https://calendly.com; object-src 'none'; base-uri 'self'; form-action 'self' https://project-kday6.vercel.app;">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<title>Contact Us | KalnyesGrowth</title>
+<meta name="description" content="Get in touch with KalnyesGrowth. Fill out our contact form to schedule a free discovery call about client acquisition systems for your local business.">
+<link rel="canonical" href="https://kalnyesgrowth.com/contact/">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.08);
+  --card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --green:#22c55e;
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{padding:16px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:-.02em}
+.logo span{color:var(--green)}
+.nav-back{font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* CONTACT */
+.contact-section{padding:80px 0 60px;flex:1}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+h1{font-size:2rem;font-weight:700;color:var(--white);line-height:1.2;margin:12px 0 16px}
+.contact-info>p{font-size:1rem;color:var(--text);line-height:1.7;margin-bottom:32px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:.92rem;color:var(--text)}
+.contact-detail svg{width:20px;height:20px;color:var(--green);flex-shrink:0}
+.contact-detail a{color:var(--white);font-weight:600}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px}
+.contact-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.contact-form label{display:block;font-size:.78rem;font-weight:600;color:var(--white);margin-bottom:6px;letter-spacing:.02em}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border-s);border-radius:10px;color:var(--white);font-family:var(--font);font-size:.9rem;transition:border-color .2s}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--green)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted)}
+.contact-form textarea{resize:vertical;min-height:80px}
+.contact-form .form-group{margin-bottom:12px}
+.sms-consent{display:flex;align-items:flex-start;gap:10px;margin:16px 0 20px;cursor:pointer}
+.sms-consent input[type="checkbox"]{width:18px;height:18px;margin-top:2px;accent-color:var(--green);flex-shrink:0;cursor:pointer}
+.sms-consent span{font-size:.78rem;color:var(--muted);line-height:1.5}
+.sms-consent a{color:var(--green);text-decoration:underline}
+.btn-green{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;background:var(--green);color:#000;font-family:var(--font);font-size:.92rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.3)}
+.ar{transition:transform .25s}.btn-green:hover .ar{transform:translateX(4px)}
+
+/* FOOTER */
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:.78rem;color:var(--muted)}
+footer a{color:var(--text)}
+
+@media(max-width:768px){
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .contact-form .form-row{grid-template-columns:1fr}
+  .contact-form{padding:24px}
+  h1{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="logo">Kalnyes<span>Growth</span></a>
+    <a href="/" class="nav-back">&larr; Back to Home</a>
+  </div>
+</nav>
+
+<section class="contact-section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="tag">Get Started</span>
+        <h1>Ready to stop losing customers?</h1>
+        <p>Fill out the form and we'll reach out within 1 business day to schedule your free discovery call. Or call us directly.</p>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+15404078635">(540) 407-8635</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:hello@kalnyesgrowth.com">hello@kalnyesgrowth.com</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Stafford, VA. Serving all of Northern Virginia.</span>
+        </div>
+      </div>
+      <form class="contact-form" action="https://project-kday6.vercel.app/api/contact" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name *</label>
+            <input type="text" id="cf-name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number *</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="(540) 555-1234" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email Address *</label>
+          <input type="email" id="cf-email" name="email" placeholder="john@yourbusiness.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-business">Business Name</label>
+          <input type="text" id="cf-business" name="business" placeholder="Smith's Plumbing">
+        </div>
+        <div class="form-group">
+          <label for="cf-message">How can we help?</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
+        </div>
+        <label class="sms-consent">
+          <input type="checkbox" name="sms_consent">
+          <span>I agree to receive recurring automated text messages from KalnyesGrowth at the phone number provided, including service updates, appointment reminders, and follow-ups. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time. Consent is not a condition of purchase or submission of this form. View our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-and-conditions">Terms</a>.</span>
+        </label>
+        <button type="submit" class="btn-green" style="width:100%">Send Message <span class="ar">&rarr;</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 KalnyesGrowth. All rights reserved. | <a href="/privacy-policy">Privacy</a> | <a href="/terms-and-conditions">Terms</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

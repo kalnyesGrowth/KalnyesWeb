@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Center | How It Works | KalnyesGrowth</title>
+<meta name="description" content="See how the Command Center unifies every message, lead, and conversation into one dashboard. CRM, unified inbox, visual pipelines, and AI-drafted responses.">
+<link rel="canonical" href="https://kalnyesgrowth.com/systems/command-center.html">
+<meta property="og:title" content="Command Center | How It Works | KalnyesGrowth">
+<meta property="og:description" content="One dashboard for every message, lead, and conversation. CRM, unified inbox, pipelines, and AI responses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kalnyesgrowth.com/systems/command-center.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=erode@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080d;
+  --surface:#111118;
+  --card:rgba(255,255,255,0.08);
+  --card-hover:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.06);
+  --border-s:rgba(255,255,255,0.12);
+  --white:#ffffff;
+  --text:rgba(255,255,255,0.72);
+  --muted:rgba(255,255,255,0.40);
+  --dim:rgba(255,255,255,0.20);
+  --green:#22c55e;
+  --green-glow:rgba(34,197,94,0.15);
+  --green-dim:rgba(34,197,94,0.08);
+  --r:16px;
+  --font:'General Sans',system-ui,-apple-system,sans-serif;
+  --serif:'Erode',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--white);font-weight:600;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+h3{font-size:clamp(1.1rem,2vw,1.35rem);font-family:var(--font);font-weight:700}
+section{padding:100px 0}
+.tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;font-family:var(--font);font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:all .3s cubic-bezier(.2,.8,.2,1)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(34,197,94,0)}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,197,94,0.3)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid var(--border-s)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translateX(4px)}
+.btn-pulse{animation:btnPulse 2.5s infinite}
+@keyframes btnPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+
+/* nav */
+nav{padding:16px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:-.01em}
+.logo span{color:var(--muted);font-weight:400}
+.nav-back{font-size:.88rem;color:var(--text);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--white)}
+
+/* hero */
+.wf-hero{padding:100px 0 60px;text-align:center}
+.wf-hero h1{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:16px}
+.wf-hero .sub{font-size:1.05rem;color:var(--text);max-width:600px;margin:0 auto;line-height:1.7}
+.wf-hero .tag{display:block;margin-bottom:14px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== HUB-AND-SPOKE WORKFLOW ===== */
+.workflow-section{padding:80px 0}
+.workflow-section .section-head{text-align:center;margin-bottom:56px}
+.workflow-section .section-head .tag{display:block;margin-bottom:12px}
+.workflow-section .section-head p{color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0}
+
+/* Spoke inputs */
+.spokes{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:40px}
+.spoke{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border-s);border-radius:12px;padding:14px 20px;transition:all .3s}
+.spoke:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.2)}
+.spoke-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.spoke-icon svg{width:18px;height:18px;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.spoke-label{font-size:.85rem;font-weight:600;color:var(--white)}
+.spoke-sub{font-size:.72rem;color:var(--muted)}
+
+.spoke-icon.phone{background:rgba(59,130,246,0.12);color:#3b82f6}
+.spoke-icon.phone svg{stroke:#3b82f6}
+.spoke-icon.sms{background:rgba(34,197,94,0.1);color:#22c55e}
+.spoke-icon.sms svg{stroke:#22c55e}
+.spoke-icon.email{background:rgba(245,158,11,0.12);color:#f59e0b}
+.spoke-icon.email svg{stroke:#f59e0b}
+.spoke-icon.fb{background:rgba(24,119,242,0.12);color:#1877f2}
+.spoke-icon.fb svg{stroke:#1877f2}
+.spoke-icon.ig{background:rgba(225,48,108,0.12);color:#e1306c}
+.spoke-icon.ig svg{stroke:#e1306c}
+.spoke-icon.google{background:rgba(66,133,244,0.12);color:#4285f4}
+.spoke-icon.google svg{stroke:#4285f4}
+.spoke-icon.chat{background:var(--green-dim);color:var(--green)}
+.spoke-icon.chat svg{stroke:var(--green)}
+
+/* Converge arrow */
+.converge{text-align:center;margin:0 auto 40px;position:relative}
+.converge-line{width:2px;height:60px;background:linear-gradient(to bottom,var(--border-s),var(--green));margin:0 auto}
+.converge-arrow{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:10px solid var(--green);margin:0 auto}
+.converge-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:12px}
+
+/* Hub */
+.hub{max-width:640px;margin:0 auto 48px;background:var(--card);border:2px solid var(--green);border-radius:20px;padding:36px 32px;text-align:center;position:relative;box-shadow:0 0 40px rgba(34,197,94,0.06)}
+.hub::before{content:'';position:absolute;inset:-1px;border-radius:20px;background:linear-gradient(135deg,rgba(34,197,94,0.08),transparent 60%);pointer-events:none;z-index:0}
+.hub>*{position:relative;z-index:1}
+.hub h3{font-size:1.4rem;margin-bottom:8px;font-family:var(--serif)}
+.hub p{font-size:.92rem;color:var(--text);max-width:480px;margin:0 auto}
+.hub-dot{width:10px;height:10px;border-radius:50%;background:var(--green);margin:0 auto 14px;box-shadow:0 0 12px rgba(34,197,94,0.5);animation:hubPulse 2s infinite}
+@keyframes hubPulse{0%,100%{box-shadow:0 0 8px rgba(34,197,94,0.4)}50%{box-shadow:0 0 20px rgba(34,197,94,0.6)}}
+
+/* Output flows */
+.outputs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+.output-card{background:var(--card);border:1px solid var(--border-s);border-radius:16px;padding:28px 22px;text-align:center;transition:all .35s}
+.output-card:hover{background:var(--card-hover);transform:translateY(-3px);border-color:rgba(34,197,94,0.15)}
+.output-icon{width:44px;height:44px;border-radius:12px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.output-icon svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.output-card h4{font-size:1rem;color:var(--white);font-weight:700;margin-bottom:8px;font-family:var(--font)}
+.output-card p{font-size:.86rem;color:var(--text);line-height:1.6}
+
+/* Diverge arrows */
+.diverge{text-align:center;margin:0 auto 32px}
+.diverge-line{width:2px;height:40px;background:linear-gradient(to bottom,var(--green),var(--border-s));margin:0 auto}
+.diverge-branches{display:flex;justify-content:center;gap:0;margin-top:-1px}
+.diverge-branch{flex:1;max-width:300px;height:20px;position:relative}
+.diverge-branch::after{content:'';position:absolute;bottom:0;left:50%;width:2px;height:20px;background:var(--border-s);transform:translateX(-50%)}
+
+/* Pipeline visual */
+.pipeline-section{padding:60px 0 80px;border-top:1px solid var(--border)}
+.pipeline-visual{display:flex;align-items:center;justify-content:center;gap:0;margin-top:40px;flex-wrap:wrap}
+.pipe-stage{background:var(--card);border:1px solid var(--border-s);border-radius:12px;padding:16px 22px;text-align:center;min-width:120px;transition:all .3s}
+.pipe-stage:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.2)}
+.pipe-stage .stage-name{font-size:.82rem;font-weight:700;color:var(--white)}
+.pipe-stage .stage-count{font-size:1.3rem;font-weight:800;color:var(--green);font-family:var(--serif);margin-top:4px}
+.pipe-arrow{color:var(--green);font-size:1.2rem;padding:0 8px;flex-shrink:0}
+
+/* Feature grid */
+.features-section{padding:80px 0;border-top:1px solid var(--border)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:32px 24px;transition:all .35s}
+.feat:hover{background:var(--card-hover);border-color:rgba(34,197,94,0.15);transform:translateY(-3px)}
+.feat-ico{width:44px;height:44px;border-radius:12px;background:var(--green-dim);border:1px solid rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.feat-ico svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{margin-bottom:8px;font-size:1.05rem}
+.feat p{font-size:.88rem;color:var(--text);line-height:1.6}
+
+/* Pricing */
+.pricing-section{padding:80px 0;border-top:1px solid var(--border)}
+.pricing-card{max-width:560px;margin:40px auto 0;background:var(--card);border:2px solid var(--green);border-radius:20px;padding:40px 36px;text-align:center;box-shadow:0 0 40px rgba(34,197,94,0.06)}
+.pricing-card .free-label{font-size:2.8rem;font-weight:800;color:var(--green);font-family:var(--serif);margin-bottom:4px}
+.pricing-card .free-sub{font-size:1rem;color:var(--text);margin-bottom:28px}
+.conditions{display:flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:28px}
+.condition{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--text);padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px}
+.ck{width:20px;height:20px;border-radius:50%;background:var(--green-dim);color:var(--green);display:inline-flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;flex-shrink:0}
+
+/* CTA */
+.cta-section{text-align:center;padding:100px 0 80px;position:relative}
+.cta-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(var(--border),transparent)}
+.cta-section h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px}
+.cta-section p{color:var(--text);font-size:1rem;max-width:520px;margin:0 auto 32px}
+.cta-fine{font-size:.82rem;color:var(--muted);margin-top:16px}
+
+/* footer */
+footer{padding:32px 0;border-top:1px solid var(--border)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot .logo{font-size:1rem}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{font-size:.82rem;color:var(--muted);font-weight:500;transition:color .2s}
+.foot-links a:hover{color:var(--white)}
+footer small{font-size:.76rem;color:var(--dim)}
+
+@media(max-width:900px){
+  .outputs{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .pipeline-visual{gap:6px}
+  .pipe-stage{min-width:80px;padding:12px 14px}
+  .pipe-stage .stage-name{font-size:.72rem}
+  .pipe-stage .stage-count{font-size:1rem}
+  .pipe-arrow{font-size:.9rem;padding:0 4px}
+}
+@media(max-width:600px){
+  section{padding:48px 0}
+  .wf-hero{padding:60px 0 36px}
+  .wf-hero h1{font-size:1.8rem}
+  .spokes{gap:8px}
+  .spoke{padding:10px 14px;gap:8px}
+  .spoke-icon{width:28px;height:28px;border-radius:8px}
+  .spoke-icon svg{width:14px;height:14px}
+  .spoke-label{font-size:.78rem}
+  .spoke-sub{display:none}
+  .hub{padding:24px 18px}
+  .hub h3{font-size:1.1rem}
+  .feat-grid{grid-template-columns:1fr}
+  .pricing-card{padding:28px 20px}
+  .pricing-card .free-label{font-size:2.2rem}
+  .pipeline-visual{flex-direction:column;gap:0}
+  .pipe-arrow{transform:rotate(90deg);padding:4px 0}
+  .cta-section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <a href="/agents.html" class="nav-back">&larr; Back to AI Systems</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="wf-hero">
+  <div class="wrap rv">
+    <span class="tag">System 04</span>
+    <h1>Command Center</h1>
+    <p class="sub">Every message, every lead, every conversation, one dashboard. The Command Center pulls together your texts, emails, social media messages, and webchat into a single inbox with a built-in CRM, visual pipelines, and AI-drafted responses.</p>
+  </div>
+</section>
+
+<!-- WORKFLOW: HUB AND SPOKE -->
+<section class="workflow-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">The Workflow</span>
+      <h2>How It All Connects</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0">Every channel your customers use flows into one place. Here is exactly how it works.</p>
+    </div>
+
+    <!-- Spokes: Input channels -->
+    <div class="spokes rv" style="margin-top:48px">
+      <div class="spoke">
+        <div class="spoke-icon phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div><div class="spoke-label">Phone Calls</div><div class="spoke-sub">AI transcripts</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon sms">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div><div class="spoke-label">Text Messages</div><div class="spoke-sub">SMS / MMS</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon email">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div><div class="spoke-label">Email</div><div class="spoke-sub">Inbox</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon fb">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </div>
+        <div><div class="spoke-label">Facebook</div><div class="spoke-sub">Messenger</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon ig">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div><div class="spoke-label">Instagram</div><div class="spoke-sub">DMs</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon google">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        </div>
+        <div><div class="spoke-label">Google</div><div class="spoke-sub">Business</div></div>
+      </div>
+      <div class="spoke">
+        <div class="spoke-icon chat">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div><div class="spoke-label">Webchat</div><div class="spoke-sub">Website</div></div>
+      </div>
+    </div>
+
+    <!-- Converge arrow -->
+    <div class="converge rv">
+      <div class="converge-line"></div>
+      <div class="converge-arrow"></div>
+      <div class="converge-label">All channels converge</div>
+    </div>
+
+    <!-- Hub: Command Center -->
+    <div class="hub rv">
+      <div class="hub-dot"></div>
+      <h3>Command Center Dashboard</h3>
+      <p>Every message from every channel lands in one unified inbox. AI reads each message, drafts a professional response, and waits for your approval, or handles it automatically. Every contact becomes a CRM record with full conversation history.</p>
+    </div>
+
+    <!-- Diverge arrow -->
+    <div class="diverge rv">
+      <div class="diverge-line"></div>
+      <div class="converge-arrow"></div>
+      <div class="converge-label" style="margin-top:12px">Data flows into three engines</div>
+    </div>
+
+    <!-- Outputs -->
+    <div class="outputs rv">
+      <div class="output-card">
+        <div class="output-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h4>Lead Pipeline</h4>
+        <p>Visual stages track every lead from first contact to completed job. See who is new, who has been contacted, who is quoted, and who is booked.</p>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h4>AI Response Engine</h4>
+        <p>AI reads incoming messages and drafts professional responses in seconds. Approve with one tap or let the AI handle replies automatically.</p>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h4>Analytics Dashboard</h4>
+        <p>Track which channels bring the best leads, your close rate, revenue per source, and response times. Make decisions based on data, not guessing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE VISUAL -->
+<section class="pipeline-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Visual Pipeline</span>
+      <h2>See Every Lead at a Glance</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0">Your pipeline shows exactly where each customer stands. No guessing. No spreadsheets.</p>
+    </div>
+    <div class="pipeline-visual rv">
+      <div class="pipe-stage">
+        <div class="stage-name">New</div>
+        <div class="stage-count">12</div>
+      </div>
+      <span class="pipe-arrow">&#8594;</span>
+      <div class="pipe-stage">
+        <div class="stage-name">Contacted</div>
+        <div class="stage-count">8</div>
+      </div>
+      <span class="pipe-arrow">&#8594;</span>
+      <div class="pipe-stage">
+        <div class="stage-name">Quoted</div>
+        <div class="stage-count">5</div>
+      </div>
+      <span class="pipe-arrow">&#8594;</span>
+      <div class="pipe-stage">
+        <div class="stage-name">Booked</div>
+        <div class="stage-count">4</div>
+      </div>
+      <span class="pipe-arrow">&#8594;</span>
+      <div class="pipe-stage" style="border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.04)">
+        <div class="stage-name">Completed</div>
+        <div class="stage-count">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Features</span>
+      <h2>Everything in One Dashboard</h2>
+    </div>
+    <div class="feat-grid rv">
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>One Inbox for Everything</h3>
+        <p>Texts, emails, Facebook messages, Instagram DMs, Google messages, and webchat. All in one place. No more switching between apps.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Visual Pipeline</h3>
+        <p>Drag-and-drop pipeline stages. See every lead's status at a glance. Know exactly who needs follow-up and who is ready to book.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Source Tracking</h3>
+        <p>Know which channel brings your best leads. Google, Facebook, Instagram, referrals. Data tells you where to invest, not guesswork.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>AI-Drafted Responses</h3>
+        <p>AI reads every incoming message and drafts a professional reply. You approve it with one tap. Or enable auto-reply and let AI handle everything.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Mobile App</h3>
+        <p>Manage everything from your phone. Respond to messages, check your pipeline, and review lead activity wherever you are.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-ico">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Revenue Dashboard</h3>
+        <p>Track your revenue, close rate, average job value, and monthly trends. See the numbers that matter in real time. Make smarter decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="tag">Pricing</span>
+      <h2>Your Business HQ</h2>
+      <p style="color:var(--text);font-size:1rem;max-width:560px;margin:14px auto 0">The Command Center ties every system together into one powerful dashboard. CRM, unified inbox, pipelines, and analytics.</p>
+    </div>
+    <div class="pricing-card rv">
+      <div class="free-label" style="color:var(--white)">$750<span style="font-size:1rem;font-weight:500;color:var(--muted)">/mo</span></div>
+      <p class="free-sub">$1,500 one-time setup fee</p>
+      <div class="conditions">
+        <div class="condition">
+          <span class="ck">&#10003;</span>
+          <span><strong style="color:var(--white)">Full CRM</strong> with visual pipeline tracking</span>
+        </div>
+        <div class="condition">
+          <span class="ck">&#10003;</span>
+          <span><strong style="color:var(--white)">Unified inbox</strong> for SMS, email, social, Google, and webchat</span>
+        </div>
+        <div class="condition">
+          <span class="ck">&#10003;</span>
+          <span><strong style="color:var(--white)">AI-drafted responses</strong> and automated lead capture</span>
+        </div>
+        <div class="condition">
+          <span class="ck">&#10003;</span>
+          <span><strong style="color:var(--white)">Mobile app</strong> to manage your business from anywhere</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-green btn-pulse" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false" style="width:100%">Book Free Discovery Call <span class="ar">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <span class="tag rv">Your Next Step</span>
+    <h2 class="rv">See the Command Center in Action</h2>
+    <p class="rv">15 minutes on a free call. We show you the dashboard with your own business info. See how every channel, every lead, and every conversation comes together in one place.</p>
+    <div class="rv" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+      <a href="#" class="btn btn-green btn-pulse" onclick="window.open('https://calendly.com/kalnyesgrowth/boost-your-business','_blank');return false">Book Your Free Discovery Call <span class="ar">&rarr;</span></a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;border:none">Message us on WhatsApp</a>
+    </div>
+    <p class="rv cta-fine">Free demo. No contracts. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a href="/index.html" class="logo">Kalnyes<span>Growth</span></a>
+    <div class="foot-links">
+      <a href="/index.html">Home</a>
+      <a href="/agents.html">AI Systems</a>
+      <a href="/index.html#plans">Plans</a>
+      <a href="/index.html#portfolio">Portfolio</a>
+      <a href="https://wa.me/15407838835?text=Hi%20I%20found%20you%20online%20and%20I%27m%20interested%20in%20your%20AI%20systems" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/terms-and-conditions/">Terms</a>
+    </div>
+    <small>&copy; 2026 KalnyesGrowth. All rights reserved. Stafford, VA.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
