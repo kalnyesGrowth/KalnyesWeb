@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- CORE PAGES                                                    -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://kalnyesgrowth.com/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kalnyesgrowth.com/agents.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kalnyesgrowth.com/seo.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kalnyesgrowth.com/free-demo.html</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agency.html</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kalnyesgrowth.com/calculator.html</loc>
     <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/book/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -42,9 +57,127 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- SYSTEMS PAGES (canonical service pages, linked from homepage) -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://kalnyesgrowth.com/systems/never-miss-a-call.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/systems/sms-agent.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/systems/ai-webchat.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/systems/command-center.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/systems/marketing-engine.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- AGENT PAGES (unique, no /systems/ duplicate)                  -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/reviews-automation.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/unified-messaging.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/payments.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/appointment-reminders.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/online-booking.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/agents/customer-reactivation.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- PORTFOLIO                                                      -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/greenvalley-landscaping/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/blueridge-hvac/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/crystalclear-cleaning/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/lamesa-restaurant/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/patriot-electric/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalnyesgrowth.com/portfolio/stafford-plumbing/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- BLOG                                                           -->
+  <!-- ══════════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://kalnyesgrowth.com/blog.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -309,72 +442,6 @@
   <url>
     <loc>https://kalnyesgrowth.com/blog/dry-cleaner-laundromat-website-design.html</loc>
     <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/voice-receptionist.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/missed-call-text-back.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/reviews-automation.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/webchat.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/unified-messaging.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/crm.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/payments.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/appointment-reminders.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/email-sms-campaigns.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/online-booking.html</loc>
-    <lastmod>2026-07-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kalnyesgrowth.com/agents/customer-reactivation.html</loc>
-    <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
