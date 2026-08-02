@@ -4,12 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morales Vacation | 4 Luxury Properties in Virginia & Maryland</title>
-  <meta name="description" content="4 luxury vacation rentals personally hosted by Cinthia across Virginia and Maryland. A-Frame lake cabin, countryside cottage, luxury cabins, and a DC-area home. 291 reviews, 4.79 rating. Book your next getaway direct.">
-  <meta property="og:title" content="Morales Vacation | Cinthia's VA & MD Getaway Collection">
-  <meta property="og:description" content="4 luxury vacation properties personally hosted by Cinthia. 291 reviews, 4.79 rating. Browse the full collection and book direct.">
+  <meta name="description" content="4 luxury vacation rentals in Virginia & Maryland. A-Frame lake cabin, countryside cottage, luxury cabins near DC. 291 reviews, 4.79 rating. Book direct with host Cinthia.">
+  <link rel="canonical" href="https://kalnyesgrowth.com/morales-vacation/">
+  <meta property="og:title" content="Morales Vacation | Luxury Rentals in Virginia & Maryland">
+  <meta property="og:description" content="4 luxury vacation rentals in Virginia & Maryland. A-Frame lake cabin, countryside cottage, luxury cabins near DC. 291 reviews, 4.79 rating. Book direct.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kalnyesgrowth.com/morales-vacation/">
+  <meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/407d3ad1-816c-4b1d-9ddd-d26cb7249948.jpeg?im_w=1200">
   <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Morales Vacation">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Morales Vacation | Luxury Rentals in Virginia & Maryland">
+  <meta name="twitter:description" content="4 luxury vacation rentals in Virginia & Maryland. A-Frame lake cabin, countryside cottage, luxury cabins near DC. 291 reviews, 4.79 rating. Book direct.">
+  <meta name="twitter:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/407d3ad1-816c-4b1d-9ddd-d26cb7249948.jpeg?im_w=1200">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Morales Vacation",
+    "description": "4 luxury vacation rental properties in Virginia and Maryland, personally hosted by Cinthia. A-Frame lake cabin, countryside cottage, luxury cabins, and a DC-area home.",
+    "url": "https://kalnyesgrowth.com/morales-vacation/",
+    "image": "https://a0.muscache.com/im/pictures/hosting/Hosting-1029385900540075782/original/407d3ad1-816c-4b1d-9ddd-d26cb7249948.jpeg?im_w=1200",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.79",
+      "reviewCount": "291",
+      "bestRating": "5"
+    },
+    "areaServed": [
+      {"@type": "State", "name": "Virginia"},
+      {"@type": "State", "name": "Maryland"},
+      {"@type": "City", "name": "Stafford, VA"},
+      {"@type": "City", "name": "Sumerduck, VA"},
+      {"@type": "City", "name": "Lusby, MD"},
+      {"@type": "City", "name": "Laurel, MD"}
+    ],
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Hot Tub", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Lake View", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Fire Pit", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Game Room", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Bilingual Host", "value": true}
+    ],
+    "review": [
+      {"@type":"Review","author":{"@type":"Person","name":"Cortyne"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Cinthia's cabin on the lake was the perfect weekend getaway for our family and friends! Our kids really enjoyed the large yard, lake, basketball goal, game room and hot tub. The wrap-around views are stunning."},
+      {"@type":"Review","author":{"@type":"Person","name":"Tynia"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"The home was absolutely stunning, very clean and well maintained. My family rented the Lusby cabin for Christmas and it was perfect for 10 people. Quiet neighborhood, exactly as described."},
+      {"@type":"Review","author":{"@type":"Person","name":"Wendy"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Felt right at home. So many fun games that kept the granddaughters entertained. The house was clean, and Cinthia communicated so well throughout the whole stay. Would absolutely stay again."}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Morales Vacation",
+    "url": "https://kalnyesgrowth.com/morales-vacation/"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -41,27 +95,37 @@
     /* NAV */
     .nav {
       position:fixed; top:0; left:0; right:0; z-index:200;
-      background:var(--bg);
-      border-bottom:1px solid var(--border);
+      background:transparent;
+      border-bottom:none;
       display:flex; align-items:center; justify-content:space-between;
       padding:0 32px; height:72px;
+      transition:background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      background:var(--bg);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 2px 20px rgba(0,0,0,0.1);
     }
     .nav-logo {
       display:flex; align-items:center; gap:10px;
-      font-size:1.05rem; font-weight:700; color:var(--coral);
+      font-size:1.05rem; font-weight:700; color:#fff;
+      transition:color 0.3s;
     }
+    .nav.scrolled .nav-logo { color:var(--coral); }
     .nav-logo img { width:36px; height:36px; border-radius:8px; object-fit:contain; }
     .nav-search-pill {
       display:flex; align-items:center;
-      border:1px solid var(--border);
+      border:1px solid rgba(255,255,255,0.4);
       border-radius:50px;
       padding:8px 8px 8px 16px;
-      gap:10px; font-size:0.85rem; font-weight:600;
+      gap:10px; font-size:0.85rem; font-weight:600; color:#fff;
       box-shadow:0 1px 6px rgba(0,0,0,0.1);
-      cursor:pointer; transition:box-shadow 0.2s;
+      cursor:pointer; transition:box-shadow 0.2s, border-color 0.3s, color 0.3s;
     }
+    .nav.scrolled .nav-search-pill { border-color:var(--border); color:var(--text); }
     .nav-search-pill:hover { box-shadow:0 2px 12px rgba(0,0,0,0.15); }
-    .nav-search-divider { width:1px; height:18px; background:var(--border); }
+    .nav-search-divider { width:1px; height:18px; background:rgba(255,255,255,0.4); transition:background 0.3s; }
+    .nav.scrolled .nav-search-divider { background:var(--border); }
     .nav-search-btn {
       width:34px; height:34px; border-radius:50%;
       background:var(--coral); display:flex; align-items:center; justify-content:center;
@@ -70,9 +134,11 @@
     .nav-right { display:flex; align-items:center; gap:8px; }
     .nav-link {
       padding:10px 14px; border-radius:50px; font-size:0.88rem; font-weight:600;
-      color:var(--text); transition:background 0.15s;
+      color:#fff; transition:background 0.15s, color 0.3s;
     }
-    .nav-link:hover { background:var(--bg-warm); }
+    .nav.scrolled .nav-link { color:var(--text); }
+    .nav-link:hover { background:rgba(255,255,255,0.15); }
+    .nav.scrolled .nav-link:hover { background:var(--bg-warm); }
     .nav-cta-btn {
       background:var(--coral); color:#fff;
       padding:10px 20px; border-radius:50px;
@@ -83,10 +149,12 @@
     .nav-hamburger {
       display:none; flex-direction:column; justify-content:center;
       gap:5px; width:40px; height:40px; cursor:pointer;
-      border:1px solid var(--border); border-radius:50px;
-      align-items:center; padding:8px;
+      border:1px solid rgba(255,255,255,0.4); border-radius:50px;
+      align-items:center; padding:8px; transition:border-color 0.3s;
     }
-    .nav-hamburger span { width:18px; height:2px; background:var(--text); border-radius:2px; display:block; }
+    .nav.scrolled .nav-hamburger { border-color:var(--border); }
+    .nav-hamburger span { width:18px; height:2px; background:#fff; border-radius:2px; display:block; transition:background 0.3s; }
+    .nav.scrolled .nav-hamburger span { background:var(--text); }
 
     /* MOBILE MENU */
     .mobile-menu {
@@ -111,8 +179,7 @@
 
     /* HERO */
     .hero {
-      margin-top:72px;
-      position:relative; height:72vh; min-height:480px;
+      position:relative; height:80vh; min-height:540px;
       display:flex; align-items:center; justify-content:center;
       overflow:hidden;
     }
@@ -938,7 +1005,7 @@
   <div class="section-wrap">
     <div class="section-header">
       <div class="section-tag">The Collection</div>
-      <h2 class="section-title">Cinthia's Getaway Properties</h2>
+      <h2 class="section-title">Vacation Rental Properties in Virginia & Maryland</h2>
       <p class="section-sub">Every property is personally managed, fully furnished, professionally cleaned, and ready to create memories.</p>
     </div>
 
@@ -1197,7 +1264,7 @@
   <div class="why-inner">
     <div class="section-header centered">
       <div class="section-tag">Direct Guest Perks</div>
-      <h2 class="section-title" style="color:#fff">Exclusive Benefits for Direct Guests</h2>
+      <h2 class="section-title" style="color:#fff">Why Book Your Vacation Rental Direct</h2>
       <p class="section-sub" style="color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto">When you book directly with Cinthia, you get a personal relationship with your host and perks you can't get through any platform.</p>
     </div>
 
@@ -1245,7 +1312,7 @@
   <div class="section-wrap">
     <div class="section-header">
       <div class="section-tag">Guest Reviews</div>
-      <h2 class="section-title">What Guests Are Saying</h2>
+      <h2 class="section-title">Guest Reviews From Virginia & Maryland Stays</h2>
       <p class="section-sub">291 reviews across all properties, 4.79 average rating and rising. Every review is from a verified guest stay.</p>
     </div>
     <div class="reviews-grid">
@@ -1308,7 +1375,7 @@
       </div>
       <div class="about-content">
         <div class="section-tag">Meet Your Host</div>
-        <h2 class="section-title">Hi, I'm Cinthia</h2>
+        <h2 class="section-title">Meet Your Host, Cinthia</h2>
         <p class="about-p">I live in Stafford, Virginia and personally manage all 4 properties. No property management companies, no third parties. When you book with me, you deal with me directly, in English or Spanish, whichever is easier for you.</p>
         <p class="about-p">My guests don't come back because of a discount code. They come back because I remember what they liked, I respond within the hour, and I treat every stay like it's personal. That's the difference between a platform transaction and a real relationship.</p>
         <p class="about-p">Whether you need an early check-in after a long drive, groceries stocked before you arrive, or a celebration setup for a special occasion, just ask. Direct guests always come first.</p>
@@ -1994,10 +2061,11 @@ if (cForm) {
   });
 }
 
-/* Nav shadow on scroll */
+/* Nav scroll state */
 var nav = document.querySelector('.nav');
 window.addEventListener('scroll', function() {
-  nav.style.boxShadow = window.scrollY > 60 ? '0 2px 20px rgba(0,0,0,0.1)' : 'none';
+  if (window.scrollY > 80) { nav.classList.add('scrolled'); }
+  else { nav.classList.remove('scrolled'); }
 }, { passive: true });
 </script>
 
