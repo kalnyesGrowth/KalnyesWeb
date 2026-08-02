@@ -112,6 +112,8 @@
       transition:color 0.3s;
     }
     .nav.scrolled .nav-logo { color:var(--coral); }
+    .nav-logo-sub { font-weight:400; color:rgba(255,255,255,0.7); transition:color 0.3s; }
+    .nav.scrolled .nav-logo-sub { color:var(--sub); }
     .nav-logo img { width:36px; height:36px; border-radius:8px; object-fit:contain; }
     .nav-search-pill {
       display:flex; align-items:center;
@@ -179,7 +181,7 @@
 
     /* HERO */
     .hero {
-      position:relative; height:80vh; min-height:540px;
+      position:relative; height:100vh; min-height:600px;
       display:flex; align-items:center; justify-content:center;
       overflow:hidden;
     }
@@ -189,7 +191,7 @@
     }
     .hero-overlay {
       position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.58) 100%);
+      background:linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%);
     }
     .hero-content {
       position:relative; z-index:2; text-align:center;
@@ -908,7 +910,7 @@
 <nav class="nav">
   <a href="#" class="nav-logo">
     <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38DvIrVBfKAlbHvCuX7mdJZHgNn/hf_20260618_015507_4da133fe-4e36-41dd-8084-3e5630079f60.png" alt="Morales Vacation Logo">
-    Morales<span style="color:var(--sub);font-weight:400"> Vacation</span>
+    Morales<span class="nav-logo-sub"> Vacation</span>
   </a>
 
   <div class="nav-search-pill">
