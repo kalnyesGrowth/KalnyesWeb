@@ -4,3 +4,6 @@
 .qa-stamp
 qa-*.png
 qa-*.jpeg
+*.backup.html
+index.prev.html
+index.v2-backup.html
