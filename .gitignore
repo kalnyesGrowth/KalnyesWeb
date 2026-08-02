@@ -1,2 +1,6 @@
 .vercel
 .wrangler/
+.playwright-mcp/
+.qa-stamp
+qa-*.png
+qa-*.jpeg
