@@ -1,3 +1,4 @@
+<!-- QA: 88/100 | 2026-08-02 | NO-GO -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +85,7 @@
     {"@type": "Question", "name": "Can I switch plans later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can upgrade or downgrade at any time. Most clients start with one system and add more as they see results. There are no penalties for switching."}},
     {"@type": "Question", "name": "What happens if I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "You keep your website. We transfer everything to you. No hostage situations, no hidden fees. If you leave, you leave with what you paid for."}},
     {"@type": "Question", "name": "Is there a contract?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A simple month-to-month agreement that protects both sides: your data stays yours, your pricing is locked in writing, and you can cancel with 30 days' notice. What we don't do is 12-month lock-ins. We have to earn every month."}},
-    {"@type": "Question", "name": "Do you work with businesses outside Virginia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area."}},
+    {"@type": "Question", "name": "Do you work with businesses outside Virginia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. We're based in Northern Virginia and currently expanding with clients into Texas."}},
     {"@type": "Question", "name": "What's included in the free demo?", "acceptedAnswer": {"@type": "Answer", "text": "We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings."}}
   ]
 }
@@ -391,16 +392,6 @@ section{padding:100px 0}
 .final-cta p{color:var(--text);font-size:1rem;max-width:480px;margin:0 auto 32px}
 .final-fine{font-size:.82rem;color:var(--muted);margin-top:16px}
 
-/* === TRUST LOGOS === */
-.trust-logos{padding:48px 0;border-bottom:1px solid var(--border)}
-.trust-logos-label{text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
-.trust-logos-row{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-.trust-logo{height:28px;display:flex;align-items:center;gap:8px;opacity:.45;transition:opacity .3s;flex-shrink:0}
-.trust-logo:hover{opacity:.85}
-.trust-logo svg{height:28px;width:auto}
-.trust-logo span{font-size:.95rem;font-weight:700;color:var(--white);letter-spacing:.02em;white-space:nowrap}
-@media(max-width:768px){.trust-logos-row{gap:24px}.trust-logo{height:22px}.trust-logo svg{height:22px}.trust-logo span{font-size:.82rem}}
-
 /* === CONTACT FORM === */
 .contact-section{padding:96px 0 80px}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
@@ -696,7 +687,7 @@ footer p{font-size:.78rem;color:var(--muted)}
 
 <div class="text-panel from-left" data-range="0.26,0.75">
   <p class="tp-h">Every day, potential customers search for services like yours. Right now, they're calling your competitors instead.</p>
-  <p class="tp-cite">38% of dental calls go unanswered (Peerlogic). Law firms miss 40% of potential-client calls (Clio 2024). Home service companies miss 27-62% of inbound calls (ServiceTitan).</p>
+  <p class="tp-cite">38% of dental calls go unanswered (Peerlogic). Law firms miss 40% of potential-client calls (Clio 2024). Home service companies miss 27-62% of inbound calls (industry call analytics).</p>
 </div>
 
 <!-- SCROLL DOTS -->
@@ -717,8 +708,8 @@ footer p{font-size:.78rem;color:var(--muted)}
   <div class="wrap" style="max-width:600px">
     <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,1.8rem);margin-bottom:10px">Don't take our word for it.</h2>
     <p style="color:var(--text);font-size:1rem;margin-bottom:28px">Call our AI receptionist right now. Ask it anything. English o espanol.</p>
-    <!-- DEMO_LINE_NUMBER: replace tel: value when Twilio demo line is ready -->
-    <a href="tel:+15404078635" class="btn btn-green" style="font-size:1.15rem;padding:18px 40px;display:inline-flex;align-items:center;gap:10px">
+    <!-- DEMO LINE ONLY - never JJ's cell -->
+    <a href="tel:+1XXXXXXXXXX" class="btn btn-green" style="font-size:1.15rem;padding:18px 40px;display:inline-flex;align-items:center;gap:10px">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       Call the AI Now
     </a>
@@ -830,7 +821,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <p>Your AI receptionist answers every call 24/7. It schedules appointments, sells your services, upsells when the opportunity is right, and speaks whatever language your customers need. Sounds human, handles objections, and books revenue while you sleep.</p>
       <div class="svc-price"><span class="price-amount">From $497</span><span class="price-per">/mo</span></div>
       <div class="svc-setup">Setup from $997</div>
-      <div class="svc-setup" style="font-size:.78rem;color:var(--muted);margin-top:4px">Multi-location &amp; FSM integrations (Housecall Pro, ServiceTitan, Jobber): custom quote.</div>
+      <div class="svc-setup" style="font-size:.78rem;color:var(--muted);margin-top:4px">Multi-location &amp; FSM integrations (Housecall Pro, Jobber, FieldEdge): custom quote.</div>
       <div class="svc-ctas">
         <a href="systems/never-miss-a-call.html" class="btn btn-green">See How It Works <span class="ar">&rarr;</span></a>
         <a href="#contact" class="btn btn-ghost">Book a Call</a>
@@ -1053,6 +1044,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <p>Email and SMS campaigns, customer reactivation, and seasonal promotions. All on autopilot.</p>
         <div class="ac-price"><span>$497</span><span>/mo</span></div>
         <div class="ac-setup">+ $500 setup</div>
+        <p style="font-size:.72rem;color:var(--green);margin-top:6px;font-weight:600">Included in COMMAND.</p>
         <span class="btn btn-ghost">See How It Works <span class="ar">&rarr;</span></span>
       </div>
     </a>
@@ -1149,21 +1141,6 @@ footer p{font-size:.78rem;color:var(--muted)}
   </div>
 </section>
 
-<!-- TRUST LOGOS -->
-<div class="trust-logos">
-  <div class="wrap">
-    <p class="trust-logos-label">Built on:</p>
-    <div class="trust-logos-row">
-      <div class="trust-logo"><svg viewBox="0 0 256 262" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" fill="#4285F4"/><path d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" fill="#34A853"/><path d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" fill="#FBBC05"/><path d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" fill="#EA4335"/></svg><span>Google</span></div>
-      <div class="trust-logo"><svg viewBox="0 0 24 24" fill="#635BFF" xmlns="http://www.w3.org/2000/svg"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-7.076-2.18l-.897 5.555C5.014 22.77 7.88 24 11.326 24c2.6 0 4.716-.67 6.221-1.958 1.636-1.374 2.453-3.36 2.453-5.87 0-4.114-2.507-5.834-6.024-7.022z"/></svg><span>Stripe</span></div>
-      <div class="trust-logo"><svg viewBox="0 0 256 260" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M239.184 106.203a64.716 64.716 0 00-5.576-53.103C219.452 28.459 191 15.784 163.213 21.74A65.586 65.586 0 0052.096 45.22a64.716 64.716 0 00-43.23 31.36c-14.31 24.602-11.061 55.634 8.033 76.74a64.665 64.665 0 005.525 53.102c14.174 24.65 42.644 37.324 70.446 31.36a64.72 64.72 0 0048.754 21.744c28.481.025 53.714-18.361 62.414-45.481a64.767 64.767 0 0043.229-31.36c14.137-24.558 10.875-55.423-8.083-76.483zm-97.56 136.338a48.397 48.397 0 01-31.105-11.255l1.535-.87 51.67-29.825a8.595 8.595 0 004.247-7.367v-72.85l21.845 12.636c.218.111.37.32.409.563v60.367c-.056 26.818-21.783 48.545-48.601 48.601zm-104.466-44.61a48.345 48.345 0 01-5.781-32.589l1.534.921 51.722 29.826a8.339 8.339 0 008.441 0l63.181-36.425v25.221a.87.87 0 01-.358.665l-52.335 30.184c-23.257 13.398-52.97 5.431-66.404-17.803zM23.549 85.38a48.499 48.499 0 0125.58-21.333v61.39a8.288 8.288 0 004.195 7.316l62.874 36.272-21.845 12.636a.819.819 0 01-.767 0L41.353 151.53c-23.211-13.454-31.171-43.144-17.804-66.405v.256zm179.466 41.695l-63.08-36.63L161.73 77.86a.819.819 0 01.768 0l52.233 30.184a48.6 48.6 0 01-7.316 87.635v-61.391a8.544 8.544 0 00-4.4-7.213zm21.742-32.69l-1.535-.922-51.619-30.081a8.39 8.39 0 00-8.492 0L99.98 99.808V74.587a.716.716 0 01.307-.665l52.233-30.133a48.652 48.652 0 0172.236 50.391v.205zM88.061 139.097l-21.845-12.585a.87.87 0 01-.41-.614V65.685a48.652 48.652 0 0179.757-37.346l-1.535.87-51.67 29.825a8.595 8.595 0 00-4.246 7.367l-.051 72.697zm11.868-25.58l28.138-16.217 28.188 16.218v32.434l-28.086 16.218-28.188-16.218-.052-32.434z" fill="currentColor"/></svg><span>OpenAI</span></div>
-      <div class="trust-logo"><svg viewBox="0 0 64 64" fill="#E31E26" xmlns="http://www.w3.org/2000/svg"><g transform="scale(.93704)"><path d="M34.1 0C15.3 0 0 15.3 0 34.1s15.3 34.1 34.1 34.1C53 68.3 68.3 53 68.3 34.1S53 0 34.1 0zm0 59.3C20.3 59.3 9 48 9 34.1 9 20.3 20.3 9 34.1 9 48 9 59.3 20.3 59.3 34.1 59.3 48 48 59.3 34.1 59.3z"/><circle cx="42.6" cy="25.6" r="7.1"/><circle cx="42.6" cy="42.6" r="7.1"/><circle cx="25.6" cy="42.6" r="7.1"/><circle cx="25.6" cy="25.6" r="7.1"/></g></svg><span>Twilio</span></div>
-      <div class="trust-logo"><svg viewBox="0 0 48 48" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M24 0C10.745 0 0 10.745 0 24s10.745 24 24 24 24-10.745 24-24S37.255 0 24 0zm6.134 16.476h-3.648c-.433 0-.913.569-.913 1.328v2.631h4.561l-.69 3.746h-3.871V36h-4.282V24.181h-3.91v-3.746h3.91v-2.207c0-3.17 2.204-5.748 5.195-5.748h3.648v4z"/></svg><span>Facebook</span></div>
-      <div class="trust-logo"><svg viewBox="0 0 24 24" fill="#006BFF" xmlns="http://www.w3.org/2000/svg"><path d="M19.655 14.262c-1.7 1.478-3.826 3.322-7.655 3.322h-2.3c-2.786 0-5.322-.992-7.132-2.794C.778 12.98 0 10.717 0 8.238V5.347C0 2.654 2.461 0 5.4 0h2.3C11.55 0 13.22 1.841 14.92 3.322c1.764 1.535 3.287 2.861 7.346 2.861.63 0 1.25-.05 1.852-.145a8.349 8.349 0 00-.85-1.722L21.236 1.2A8.3 8.3 0 0013.99 0H7.558A8.3 8.3 0 00.312 5.445L.312 5.445l-2.716 4.616a8.3 8.3 0 000 8.632l2.716 4.616A8.3 8.3 0 007.558 24h6.432a8.3 8.3 0 007.246-5.445v0l2.716-4.616c.328-.558.609-1.134.85-1.722a9.1 9.1 0 01-1.852-.145c-3.6 0-5.36 1.536-7.346 2.861z"/></svg><span>Calendly</span></div>
-    </div>
-  </div>
-</div>
-
 <!-- PLANS -->
 <section id="plans">
   <div class="wrap">
@@ -1185,17 +1162,16 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="tier-name">IGNITE</div>
         <p class="tier-problem">Your phone isn't ringing enough. You need customers finding you, not the other way around.</p>
         <div class="price-row"><span class="price">$1,497</span><span class="price-period">/mo</span></div>
-        <div class="value-line"><span class="value-orig">$4,688/mo value</span><span class="value-save">Save 68%</span></div>
         <a href="/book/index.html" class="tier-cta cta-ghost" onclick="openBooking();return false">Get Started</a>
         <a class="book-link" href="/book/index.html" onclick="openBooking();return false">Book a discovery call</a>
         <hr class="tier-divider">
         <p class="feat-group-label">Everything you get</p>
         <ul class="features">
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Conversion Website</span> -- built for your niche, designed to turn visitors into calls</span><span class="feat-val">$2,500</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">GBP + Citations</span> -- Google Business optimization, 50 directories, weekly Posts</span><span class="feat-val">$997/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Reviews Automation</span> -- requests reviews after every job, follows up 2x</span><span class="feat-val">$497/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Referral System</span> -- automated "refer a friend" texts with tracking after every job</span><span class="feat-val">$297/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Missed-Call Text Back</span> -- texts callers back in 10 seconds, automatically</span><span class="feat-val">$397/mo</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Conversion Website</span> -- built for your niche, designed to turn visitors into calls</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">GBP + Citations</span> -- Google Business optimization, 50 directories, weekly Posts</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Reviews Automation</span> -- requests reviews after every job, follows up 2x</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Referral System</span> -- automated "refer a friend" texts with tracking after every job</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Missed-Call Text Back</span> -- texts callers back in 10 seconds, automatically</span></li>
           <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Performance Dashboard</span> -- leads, reviews, and visibility metrics in one place</span><span class="feat-val">included</span></li>
         </ul>
       </div>
@@ -1206,18 +1182,17 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="tier-name">FORTIFY</div>
         <p class="tier-problem">Customers are coming in, but falling through the cracks. Missed calls, no follow-up, lost revenue.</p>
         <div class="price-row"><span class="price">$2,997</span><span class="price-period">/mo</span></div>
-        <div class="value-line"><span class="value-orig">$5,082/mo value</span><span class="value-save">Save 41%</span></div>
         <a href="/book/index.html" class="tier-cta cta-green" onclick="openBooking();return false">Get Started</a>
         <a class="book-link" href="/book/index.html" onclick="openBooking();return false">Book a discovery call</a>
         <hr class="tier-divider">
         <p class="feat-group-label">Everything you get</p>
         <ul class="features">
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">AI Voice Receptionist</span> -- answers, qualifies, and books calls 24/7</span><span class="feat-val">$997/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Lead Follow-Up Sequences</span> -- re-engages every cold lead and open quote automatically</span><span class="feat-val">$997/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Smart CRM</span> -- visual deal pipelines, contact history, and job tracking</span><span class="feat-val">$1,497/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Online Booking Page</span> -- self-booking page synced to your calendar</span><span class="feat-val">$397/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Appointment Reminders</span> -- automated text + email reminders, reduces no-shows</span><span class="feat-val">$497/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">AI Webchat</span> -- answers visitor questions and books appointments from your site</span><span class="feat-val">$697/mo</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">AI Voice Receptionist</span> -- answers, qualifies, and books calls 24/7</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Lead Follow-Up Sequences</span> -- re-engages every cold lead and open quote automatically</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Command Center CRM</span> -- visual pipelines, contact history, job tracking (included with every system)</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Online Booking Page</span> -- self-booking page synced to your calendar</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Appointment Reminders</span> -- automated text + email reminders, reduces no-shows</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">AI Webchat</span> -- answers visitor questions and books appointments from your site</span></li>
         </ul>
       </div>
 
@@ -1226,19 +1201,18 @@ footer p{font-size:.78rem;color:var(--muted)}
         <div class="tier-name">COMMAND</div>
         <p class="tier-problem">You're booked out. Growth means more hires, more overhead, more chaos. You need systems, not staff.</p>
         <div class="price-row"><span class="price">$4,997</span><span class="price-period">/mo</span></div>
-        <div class="value-line"><span class="value-orig">$8,667/mo value</span><span class="value-save">Save 42%</span></div>
         <a href="/book/index.html" class="tier-cta cta-ghost" onclick="openBooking();return false">Get Started</a>
         <a class="book-link" href="/book/index.html" onclick="openBooking();return false">Book a discovery call</a>
         <hr class="tier-divider">
         <p class="feat-group-label">Everything in FORTIFY, plus</p>
         <ul class="features">
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Customer Reactivation</span> -- wins back 90/180/365-day dormant customers automatically</span><span class="feat-val">$497/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Cancellation Backfill</span> -- auto-fills canceled slots from your waitlist in minutes</span><span class="feat-val">$497/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Email + SMS Campaigns</span> -- promos, seasonal pushes, and announcements on autopilot</span><span class="feat-val">$697/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Review Response AI</span> -- drafts responses to every Google review for your approval</span><span class="feat-val">$397/mo</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Strategy Calls + Support</span> -- monthly 1-on-1 call + on-demand support access</span><span class="feat-val">$1,497/mo</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Customer Reactivation</span> -- wins back 90/180/365-day dormant customers automatically</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Cancellation Backfill</span> -- auto-fills canceled slots from your waitlist in minutes</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Email + SMS Campaigns</span> -- promos, seasonal pushes, and announcements on autopilot</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Review Response AI</span> -- drafts responses to every Google review for your approval</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Strategy Calls + Support</span> -- monthly 1-on-1 call + on-demand support access</span></li>
           <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Monthly Performance Report</span> -- PDF showing leads, calls, bookings, and revenue attributed</span><span class="feat-val">included</span></li>
-          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Everything in FORTIFY</span> -- full customer capture and retention system</span><span class="feat-val">$5,082/mo</span></li>
+          <li><span class="ico"><svg class="check-svg" viewBox="0 0 10 10" fill="none"><path d="M1.5 5.5L4 8L8.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="feat-name">Everything in FORTIFY</span></span></li>
         </ul>
       </div>
     </div>
@@ -1267,6 +1241,7 @@ footer p{font-size:.78rem;color:var(--muted)}
         <p class="addon-desc">When an appointment cancels, the system texts your waitlist in priority order and fills the slot in minutes. You see a recovered-revenue counter.</p>
         <div class="addon-niches"><span class="addon-niche">Dental</span><span class="addon-niche">Med spa</span><span class="addon-niche">Veterinary</span><span class="addon-niche">Salons</span></div>
         <span class="addon-roi">8 filled slots/mo at $200 = $1,600 against $497</span>
+        <p style="font-size:.72rem;color:var(--green);margin-top:6px;font-weight:600">Included in COMMAND.</p>
       </div>
       <div class="addon rv">
         <div class="addon-top"><span class="addon-name">Neighborhood Marketing</span><span class="addon-price">+$397/mo</span></div>
@@ -1485,7 +1460,7 @@ footer p{font-size:.78rem;color:var(--muted)}
       <div class="faq"><button aria-expanded="false">Can I switch plans later?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. You can upgrade or downgrade at any time. Most clients start with the FORTIFY tier and adjust based on their results. There are no penalties for switching.</p></div></div>
       <div class="faq"><button aria-expanded="false">What happens if I cancel?<span class="faq-plus">+</span></button><div class="faq-body"><p>You keep your website. We transfer everything to you. No hostage situations, no hidden fees. If you leave, you leave with what you paid for.</p></div></div>
       <div class="faq"><button aria-expanded="false">Is there a contract?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. A simple month-to-month agreement that protects both sides: your data stays yours, your pricing is locked in writing, and you can cancel with 30 days' notice. What we don't do is 12-month lock-ins. We have to earn every month.</p></div></div>
-      <div class="faq"><button aria-expanded="false">Do you work with businesses outside Virginia?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do you work with businesses outside Virginia?<span class="faq-plus">+</span></button><div class="faq-body"><p>Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. We're based in Northern Virginia and currently expanding with clients into Texas.</p></div></div>
       <div class="faq"><button aria-expanded="false">What's included in the free demo?<span class="faq-plus">+</span></button><div class="faq-body"><p>We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings.</p></div></div>
     </div>
   </div>
@@ -1845,7 +1820,7 @@ var TR={
   'Now Accepting Clients':'Aceptando Clientes','Client Acquisition Systems for Local Businesses':'Sistemas de Captacion de Clientes para Negocios Locales',
   // Stats
   'Every day, potential customers search for services like yours. Right now, they\'re calling your competitors instead.':'Cada dia, clientes potenciales buscan servicios como los tuyos. Ahora mismo, estan llamando a tu competencia.',
-  '38% of dental calls go unanswered (Peerlogic). Law firms miss 40% of potential-client calls (Clio 2024). Home service companies miss 27-62% of inbound calls (ServiceTitan).':'El 38% de llamadas a dentistas no se contestan (Peerlogic). Firmas de abogados pierden el 40% de llamadas de clientes potenciales (Clio 2024). Empresas de servicios del hogar pierden del 27-62% de llamadas entrantes (ServiceTitan).',
+  '38% of dental calls go unanswered (Peerlogic). Law firms miss 40% of potential-client calls (Clio 2024). Home service companies miss 27-62% of inbound calls (industry call analytics).':'El 38% de llamadas a dentistas no se contestan (Peerlogic). Firmas de abogados pierden el 40% de llamadas de clientes potenciales (Clio 2024). Empresas de servicios del hogar pierden del 27-62% de llamadas entrantes (industry call analytics).',
   'We build systems that capture, follow up, and convert those leads. Automatically. 24 hours a day.':'Construimos sistemas que capturan, dan seguimiento y convierten esos prospectos. Automaticamente. Las 24 horas del dia.',
   'No more missed calls. No more leads going cold. No more leaving money on the table.':'No mas llamadas perdidas. No mas prospectos enfriandose. No mas dinero sobre la mesa.',
   // Post-hero CTA
@@ -1853,7 +1828,7 @@ var TR={
   '15 minutes. No pressure. No commitment.':'15 minutos. Sin presion. Sin compromiso.',
   // Marquee
   'Never Miss a Call':'Nunca Pierdas una Llamada','SMS Agent':'Agente SMS','AI Webchat':'Chat IA','Command Center':'Centro de Comando','Marketing Engine':'Motor de Marketing','24/7 Availability':'Disponibilidad 24/7','Zero Missed Leads':'Cero Prospectos Perdidos',
-  'Setup from $997':'Configuracion desde $997','Multi-location & FSM integrations (Housecall Pro, ServiceTitan, Jobber): custom quote.':'Integraciones multi-ubicacion y FSM (Housecall Pro, ServiceTitan, Jobber): cotizacion personalizada.','$500 one-time setup':'$500 configuracion inicial','$400 one-time setup':'$400 configuracion inicial','$1,500 one-time setup':'$1,500 configuracion inicial',
+  'Setup from $997':'Configuracion desde $997','Multi-location & FSM integrations (Housecall Pro, Jobber, FieldEdge): custom quote.':'Integraciones multi-ubicacion y FSM (Housecall Pro, Jobber, FieldEdge): cotizacion personalizada.','$500 one-time setup':'$500 configuracion inicial','$400 one-time setup':'$400 configuracion inicial','$1,500 one-time setup':'$1,500 configuracion inicial',
   'See How It Works':'Ve Como Funciona','Book a Call':'Agenda una Llamada',
   // How It Works
   'Four steps. Zero guesswork.':'Cuatro pasos. Cero adivinanzas.',
@@ -1999,7 +1974,7 @@ var TR={
   'Is there a contract?':'Hay contrato?',
   'Yes. A simple month-to-month agreement that protects both sides: your data stays yours, your pricing is locked in writing, and you can cancel with 30 days\' notice. What we don\'t do is 12-month lock-ins. We have to earn every month.':'Si. Un acuerdo simple mes a mes que protege a ambas partes: tus datos son tuyos, tu precio queda por escrito, y puedes cancelar con 30 dias de aviso. Lo que no hacemos son contratos de 12 meses. Nos tenemos que ganar cada mes.',
   'Do you work with businesses outside Virginia?':'Trabajan con negocios fuera de Virginia?',
-  'Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. About 40% of our clients are outside our local area.':'Si. Nuestros sistemas funcionan para cualquier negocio de servicios locales en EE.UU. Nos especializamos en el norte de Virginia, pero la tecnologia funciona igual en todas partes. Cerca del 40% de nuestros clientes estan fuera de nuestra area local.',
+  'Yes. Our systems work for any local service business in the US. We specialize in Northern Virginia, but the technology works the same everywhere. We're based in Northern Virginia and currently expanding with clients into Texas.':'Si. Nuestros sistemas funcionan para cualquier negocio de servicios locales en EE.UU. Nos especializamos en el norte de Virginia, pero la tecnologia funciona igual en todas partes. Cerca del 40% de nuestros clientes estan fuera de nuestra area local.',
   'What\'s included in the free demo?':'Que incluye la demo gratis?',
   'We build your actual website and set up your AI receptionist, trained on your business. You see a working demo before you spend anything. If you love it, pick a plan. If not, no hard feelings.':'Construimos tu sitio web real y configuramos tu recepcionista IA, entrenado en tu negocio. Ves una demo funcionando antes de gastar algo. Si te encanta, elige un plan. Si no, sin resentimientos.',
   // Guarantee
@@ -2007,8 +1982,7 @@ var TR={
   'If the system doesn\'t pay for itself in 90 days, we work free until it does.':'Si el sistema no se paga solo en 90 dias, trabajamos gratis hasta que lo haga.',
   'We build your system before you pay. We guarantee results after you start. You have nothing to risk and everything to gain.':'Construimos tu sistema antes de que pagues. Garantizamos resultados despues de que empieces. No tienes nada que arriesgar y todo que ganar.',
   // Trust logos
-  'Built on:':'Construido con:',
-  // Contact form
+    // Contact form
   'Ready to stop losing customers?':'Listo para dejar de perder clientes?',
   'Fill out the form and we\'ll reach out within 1 business day to schedule your free discovery call. Or call us directly.':'Llena el formulario y nos comunicaremos en 1 dia habil para agendar tu llamada gratuita. O llamanos directamente.',
   'Stafford, VA. Serving all of Northern Virginia.':'Stafford, VA. Sirviendo todo el norte de Virginia.',
