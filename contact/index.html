@@ -133,8 +133,20 @@ footer a{color:var(--text)}
           <input type="checkbox" name="sms_consent">
           <span>I agree to receive recurring automated text messages from KalnyesGrowth at the phone number provided, including service updates, appointment reminders, and follow-ups. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time. Consent is not a condition of purchase or submission of this form. View our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-and-conditions">Terms</a>.</span>
         </label>
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none">
         <button type="submit" class="btn-green" style="width:100%">Send Message <span class="ar">&rarr;</span></button>
       </form>
+      <script>
+      (function(){
+        var f=document.querySelector('form.contact-form');
+        if(!f)return;
+        var t0=Date.now();
+        f.addEventListener('submit',function(e){
+          var hp=f.querySelector('input[name="company_website"]');
+          if((hp&&hp.value.trim()!=='')||(Date.now()-t0)<3000){e.preventDefault();}
+        });
+      })();
+      </script>
     </div>
   </div>
 </section>

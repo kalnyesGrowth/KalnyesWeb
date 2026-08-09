@@ -999,7 +999,7 @@ footer p{font-size:.78rem;color:var(--muted)}
     <div class="section-head rv">
       <span class="tag">Meet Your AI Systems</span>
       <h2>4 systems. Complete coverage. Zero missed leads.</h2>
-      <p>Each system handles a critical part of your business. Pick what you need. Every plan includes up to 750 answered calls per month per location. Higher volume, tiered pricing.</p>
+      <p>Each system handles a critical part of your business. Pick what you need. Plans are sized to your monthly call volume — see the rate card.</p>
     </div>
   </div>
   <div class="ac-track">
@@ -1526,8 +1526,20 @@ footer p{font-size:.78rem;color:var(--muted)}
           <input type="checkbox" name="sms_consent">
           <span>I agree to receive recurring automated text messages from KalnyesGrowth at the phone number provided, including service updates, appointment reminders, and follow-ups. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time. Consent is not a condition of purchase or submission of this form. View our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-and-conditions">Terms</a>.</span>
         </label>
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none">
         <button type="submit" class="btn btn-green" style="width:100%">Send Message <span class="ar">&rarr;</span></button>
       </form>
+      <script>
+      (function(){
+        var f=document.querySelector('form.contact-form');
+        if(!f)return;
+        var t0=Date.now();
+        f.addEventListener('submit',function(e){
+          var hp=f.querySelector('input[name="company_website"]');
+          if((hp&&hp.value.trim()!=='')||(Date.now()-t0)<3000){e.preventDefault();}
+        });
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -1864,7 +1876,7 @@ var TR={
   // AI Systems Carousel
   'Meet Your AI Systems':'Conoce Tus Sistemas IA',
   '4 systems. Complete coverage. Zero missed leads.':'4 sistemas. Cobertura completa. Cero prospectos perdidos.',
-  'Each system handles a critical part of your business. Pick what you need. Every plan includes up to 750 answered calls per month per location. Higher volume, tiered pricing.':'Cada sistema maneja una parte critica de tu negocio. Elige lo que necesitas. Cada plan incluye hasta 750 llamadas contestadas por mes por ubicacion. Mayor volumen, precios escalonados.',
+  'Each system handles a critical part of your business. Pick what you need. Plans are sized to your monthly call volume — see the rate card.':'Cada sistema maneja una parte critica de tu negocio. Elige lo que necesitas. Los planes se ajustan a tu volumen mensual de llamadas. Consulta la tarifa.',
   'AI receptionist answers every call 24/7. Sells, upsells, books appointments, and speaks any language.':'Recepcionista IA contesta cada llamada 24/7. Vende, hace upsell, agenda citas y habla cualquier idioma.',
   'Missed-call text back, appointment reminders, review requests, and follow-ups. All automated.':'Texto de llamada perdida, recordatorios de citas, solicitudes de resenas y seguimientos. Todo automatizado.',
   'Smart chat widget that greets visitors, answers questions, captures leads, and books appointments 24/7.':'Widget de chat inteligente que saluda visitantes, responde preguntas, captura prospectos y agenda citas 24/7.',
