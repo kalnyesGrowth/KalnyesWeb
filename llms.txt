@@ -68,3 +68,19 @@ KalnyesGrowth builds automated client acquisition systems for local service busi
 - [Blog](https://kalnyesgrowth.com/blog.html)
 - [Privacy Policy](https://kalnyesgrowth.com/privacy.html)
 - [Terms of Service](https://kalnyesgrowth.com/terms.html)
+
+## Morales Vacation (Vacation Rentals)
+
+> Luxury vacation rentals in Virginia and Maryland, personally hosted by Cinthia. 302 reviews, 4.78 average rating. Book direct with the host.
+
+Morales Vacation is a collection of luxury short-term rental properties across Virginia and Maryland, including A-Frame lake cabins, countryside cottages, and luxury homes near Washington DC. Guests book direct with the host for the best rates.
+
+### Properties
+
+- [A-Frame Lake Cabin](https://kalnyesgrowth.com/morales-vacation/aframe.html): Lakefront A-Frame in Stafford, VA, one hour from Washington DC. Sleeps 8, 3 bedrooms, hot tub, wrap-around deck. $285/night.
+- [Charming Cottage](https://kalnyesgrowth.com/morales-vacation/charming-cottage/): Countryside cottage in Sumerduck, VA on 5 private acres. Sleeps 7, 4 bedrooms, hot tub, fire pit, pet-friendly. $195/night.
+- [Black Luxury Cabin](https://kalnyesgrowth.com/morales-vacation/black-cabin/): Luxury cabin in Lusby, MD near state parks, beaches, and Solomon's Island. Sleeps 10, 4 bedrooms, 5 baths, fire pit. $310/night.
+- Luxury Home near DC & Baltimore: Group-friendly home in Laurel, MD, centrally located between Baltimore and Washington DC. Sleeps 12. $275/night.
+- Farmhouse Getaway: 13-acre luxury retreat in Culpeper, VA with game room and fire pit. Sleeps 13. $295/night.
+
+- All properties: [Morales Vacation](https://kalnyesgrowth.com/morales-vacation/)
